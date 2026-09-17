@@ -9,6 +9,7 @@ This is the private working companion to [hellojdmiller.com](https://hellojdmill
 | Collection | Included | Start here |
 |---|---|---|
 | [VC IT field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
+| [IT operations and succession](operations/README.md) | 15 guides and procedures; 5 working-record CSVs | Emergency cover, planned handover, readiness exercises, operating cadence, lifecycle, alert triage, and support |
 | [n8n workflows](n8n/README.md) | 7 workflow exports with sample data and local tests | Access reviews, renewals, lifecycle completeness, backup evidence, licenses, results, and briefs |
 | [Google and Microsoft baselines](baselines/README.md) | 40 control assertions across 2 platforms | Desired-state catalogs, evidence worksheets, fictional observations, and a local assessment tool |
 | [Cyber-risk operating pack](cyber-risk/README.md) | 11 guides and packs; 36 control proposals | Four checklists, AI risk and agent controls, tabletop exercises, leadership reporting, and evidence records |
