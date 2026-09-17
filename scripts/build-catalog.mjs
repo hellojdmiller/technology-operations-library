@@ -37,6 +37,8 @@ function add(collection, files, readiness) {
 add('Field guides', markdown('library'), 'Proposed operating guidance');
 add('n8n workflows', folders('n8n', 'README.md'), 'Local logic checked; n8n runtime trial pending');
 add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md'], 'Local assessment checked; tenant configuration not applied');
+add('Cyber risk', ['cyber-risk/operating-model.md', 'cyber-risk/controls/README.md', ...markdown('cyber-risk/checklists'), ...markdown('cyber-risk/ai'), ...markdown('cyber-risk/scenarios'), ...markdown('cyber-risk/reporting')], 'Proposed controls and exercises; real-world effectiveness unverified');
+add('AI prompting', markdown('prompting'), 'Provider-neutral guidance and synthetic exercises; model trials pending');
 add('Portable skills', folders('skills', 'SKILL.md'), 'Instructions reviewed; cross-client trials pending');
 add('Documentation', ['documentation/build-buy-decision-example.md', 'documentation/recovery-exercise-example.md', 'documentation/automation-handover-template.md', ...markdown('documentation/policies'), ...markdown('documentation/procedures'), ...markdown('documentation/continuity'), ...markdown('documentation/cyber-risk')], 'Fictional or adapted example; requires internal adoption');
 add('Training', markdown('training'), 'Practice module; labs not executed');

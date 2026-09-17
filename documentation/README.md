@@ -26,6 +26,8 @@ Practical examples for policies, procedures, continuity, and cyber-risk manageme
 
 ## Cyber risk
 
+Use the expanded [cyber-risk operating pack](../cyber-risk/README.md) for checklists, testable controls, AI reviews, tabletop exercises, leadership reporting, and working records. The examples below provide companion document structures.
+
 | Example | Use it for |
 |---|---|
 | [Risk assessment and treatment](cyber-risk/risk-assessment-and-treatment.md) | Separate findings, treatment, evidence, residual risk, and acceptance |

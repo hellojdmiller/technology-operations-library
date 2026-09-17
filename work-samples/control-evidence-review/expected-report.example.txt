@@ -1,0 +1,108 @@
+Control evidence review | 2026-09-17 | FICTIONAL INPUT
+Reviews supplied metadata only. Evidence contents, scope completeness, approval authority, tenant state, and actual control effectiveness are not verified.
+8 assessments; 6 require review; 28 review items.
+
+REVIEW-001 / VCIT-005 / Fictional identity pilot (example-v1)
+  Intended: approved; applicability: applicable
+  Implementation claim: present; evidence: support_recorded
+  Operating claim: effective_for_tested_scope; evidence: no_usable_evidence
+  Exception: none; evidence age limit: 30 days (supplied choice)
+  Evidence E-001: eligible metadata; implementation; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  REVIEW operating_evidence_gap: Plan an authorized behavioral test; implementation evidence alone cannot establish operation. Owner: Fictional service owner
+  REVIEW unsupported_effectiveness_claim: Revise or substantiate the operating claim with a current test for the stated sample and scope. Owner: Fictional service owner
+
+REVIEW-002 / VCIT-015 / Fictional diligence sharing (example-v1)
+  Intended: approved; applicability: applicable
+  Implementation claim: present; evidence: support_recorded
+  Operating claim: ineffective; evidence: adverse_result_recorded
+  Exception: approved; evidence age limit: 30 days (supplied choice)
+  Evidence E-002: eligible metadata; implementation; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  Evidence E-003: eligible metadata; operating_test; contradicts_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: The fictional removed collaborator still opened the synthetic document.
+  REVIEW operating_adverse_result_recorded: Review the recorded results, limitations, and unresolved failures; preserve contrary evidence until disposition. Owner: Fictional service owner
+  REVIEW recorded_operating_gap: Retain the reported operating gap until a reviewer resolves it using appropriate retest evidence. Owner: Fictional service owner
+  REVIEW exception_active: Review the approved deviation and compensating measures with its risk owner; underlying gaps remain visible. Owner: Fictional service owner
+
+REVIEW-003 / VCIT-026 / Fictional SaaS logs (example-v1)
+  Intended: approved; applicability: applicable
+  Implementation claim: unknown; evidence: no_usable_evidence
+  Operating claim: unknown; evidence: no_usable_evidence
+  Exception: none; evidence age limit: 30 days (supplied choice)
+  Evidence E-004: stale_evidence; implementation; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  Evidence E-005: future_evidence; operating_test; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  Evidence E-MISSING: missing_evidence
+  REVIEW stale_evidence [E-004]: Obtain a current observation or explicitly review the freshness requirement. Owner: Fictional service owner
+  REVIEW future_evidence [E-005]: Check the recorded date and clock; future observations cannot support this review date. Owner: Fictional service owner
+  REVIEW missing_evidence [E-MISSING]: Obtain the referenced record or correct the reference; retain the unknown state. Owner: Fictional service owner
+  REVIEW implementation_evidence_gap: Obtain a current implementation observation for this scope; do not infer it from an operating claim. Owner: Fictional service owner
+  REVIEW operating_evidence_gap: Plan an authorized behavioral test; implementation evidence alone cannot establish operation. Owner: Fictional service owner
+  REVIEW implementation_claim_unknown: Have a reviewer resolve the unknown implementation claim against the supplied evidence. Owner: Fictional service owner
+  REVIEW operating_claim_unresolved: Have a reviewer decide the operating conclusion; supplied evidence does not automatically update the claim. Owner: Fictional service owner
+
+REVIEW-004 / VCIT-030 / Fictional isolated restore lab (example-v1)
+  Intended: approved; applicability: applicable
+  Implementation claim: present; evidence: support_recorded
+  Operating claim: effective_for_tested_scope; evidence: support_for_documented_sample
+  Exception: none; evidence age limit: 30 days (supplied choice)
+  Evidence E-006: eligible metadata; implementation; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  Evidence E-007: eligible metadata; operating_test; supports_intended_state
+    Sample: Three synthetic files, one permitted identity, and one denied identity; limits: Illustrates a successful bounded lab sample only; does not assert production recovery.
+  No metadata review issues identified; a human still needs to interpret the actual evidence.
+
+REVIEW-005 / VCIT-034 / Fictional agent tool boundary (example-v1)
+  Intended: approved; applicability: applicable
+  Implementation claim: unknown; evidence: no_usable_evidence
+  Operating claim: unknown; evidence: no_usable_evidence
+  Exception: expired; evidence age limit: 30 days (supplied choice)
+  Evidence E-008: control_mismatch, scope_mismatch, scope_version_mismatch; operating_test; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  REVIEW control_mismatch [E-008]: Link evidence for this control; do not reuse a different control claim without review. Owner: Fictional service owner
+  REVIEW scope_mismatch [E-008]: Obtain evidence for this service scope or formally change the assessment scope. Owner: Fictional service owner
+  REVIEW scope_version_mismatch [E-008]: Reassess evidence after the scope change; do not silently relabel old evidence. Owner: Fictional service owner
+  REVIEW implementation_evidence_gap: Obtain a current implementation observation for this scope; do not infer it from an operating claim. Owner: Fictional service owner
+  REVIEW operating_evidence_gap: Plan an authorized behavioral test; implementation evidence alone cannot establish operation. Owner: Fictional service owner
+  REVIEW implementation_claim_unknown: Have a reviewer resolve the unknown implementation claim against the supplied evidence. Owner: Fictional service owner
+  REVIEW operating_claim_unresolved: Have a reviewer decide the operating conclusion; supplied evidence does not automatically update the claim. Owner: Fictional service owner
+  REVIEW exception_expired: Escalate removal or a new explicit risk decision; do not extend the exception automatically. Owner: Fictional service owner
+
+REVIEW-006 / VCIT-032 / Fictional AI use-case proposal (example-v1)
+  Intended: draft; applicability: applicable
+  Implementation claim: absent; evidence: no_usable_evidence
+  Operating claim: not_tested; evidence: no_usable_evidence
+  Exception: proposed; evidence age limit: 30 days (supplied choice)
+  REVIEW intended_state_not_approved: Have the decision owner define or approve the intended state and boundaries. Owner: Fictional service owner
+  REVIEW implementation_evidence_gap: Obtain a current implementation observation for this scope; do not infer it from an operating claim. Owner: Fictional service owner
+  REVIEW operating_evidence_gap: Plan an authorized behavioral test; implementation evidence alone cannot establish operation. Owner: Fictional service owner
+  REVIEW recorded_implementation_gap: Review the reported gap and assign treatment or a scoped risk decision; positive evidence does not silently close it. Owner: Fictional service owner
+  REVIEW operating_claim_unresolved: Have a reviewer decide the operating conclusion; supplied evidence does not automatically update the claim. Owner: Fictional service owner
+  REVIEW exception_not_approved: Obtain an authorized decision; a proposal does not approve a deviation. Owner: Fictional service owner
+
+REVIEW-007 / VCIT-035 / Fictional AI evaluation (example-v1)
+  Intended: approved; applicability: applicable
+  Implementation claim: present; evidence: support_recorded
+  Operating claim: effective_for_tested_scope; evidence: conflicting_results
+  Exception: none; evidence age limit: 30 days (supplied choice)
+  Evidence E-009: eligible metadata; implementation; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  Evidence E-010: eligible metadata; operating_test; supports_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: Entirely fictional metadata; no actual evidence was collected.
+  Evidence E-011: eligible metadata; operating_test; contradicts_intended_state
+    Sample: Two synthetic identities and one synthetic resource; limits: The fictional test produced an unsupported claim; the later support record does not resolve it.
+  REVIEW operating_conflicting_results: Review the recorded results, limitations, and unresolved failures; preserve contrary evidence until disposition. Owner: Fictional service owner
+  REVIEW unsupported_effectiveness_claim: Revise or substantiate the operating claim with a current test for the stated sample and scope. Owner: Fictional service owner
+
+REVIEW-008 / VCIT-009 / Fictional manual-only workspace (example-v1)
+  Intended: approved; applicability: not_applicable
+  Implementation claim: not_applicable; evidence: no_usable_evidence
+  Operating claim: not_applicable; evidence: no_usable_evidence
+  Exception: none; evidence age limit: 30 days (supplied choice)
+  Evidence E-012: eligible metadata; scope_review; supports_intended_state
+    Sample: Entire fictional scoped identity inventory; limits: The scope decision is fictional; does not establish a real environment inventory.
+  No metadata review issues identified; a human still needs to interpret the actual evidence.
+
+Unlinked evidence (not counted toward an assessment): E-UNLINKED

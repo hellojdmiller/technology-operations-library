@@ -5,6 +5,83 @@
   "visibility": "Private development collection",
   "entries": [
     {
+      "title": "Build a context packet the assistant can use",
+      "collection": "AI prompting",
+      "path": "prompting/02-build-the-context.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Supply the material that changes the answer. A large collection of unrelated files can hide the one paragraph that defines the task. The goal is enough relevant context to support the work, with clear source boundaries and a visible record of…"
+    },
+    {
+      "title": "Copyable prompt patterns for VC IT",
+      "collection": "AI prompting",
+      "path": "prompting/10-prompt-patterns.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Replace bracketed placeholders with approved information. These patterns are drafts to evaluate, not installed skills or guarantees of a correct result. Use synthetic material while learning. None of the prompts grants permission to change a…"
+    },
+    {
+      "title": "Define the result before the prompt",
+      "collection": "AI prompting",
+      "path": "prompting/01-define-the-result.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "A useful prompt gives the assistant a job it can finish and gives the reviewer a way to tell whether it did. “Help with cybersecurity” leaves the audience, decision, evidence, and deliverable unresolved. “Draft a risk decision memo from these…"
+    },
+    {
+      "title": "Diagnose the failure before adding more prompt text",
+      "collection": "AI prompting",
+      "path": "prompting/09-troubleshooting.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Save the input and output that failed, then identify the layer responsible. Prompt wording, missing evidence, retrieval, tools, permissions, model capability, and integration code can fail differently. Repeating “be accurate” will not repair an…"
+    },
+    {
+      "title": "Evaluate the prompt against the work",
+      "collection": "AI prompting",
+      "path": "prompting/08-evaluate-and-improve.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Choose the failure conditions before refining the wording. A response can sound convincing and still omit an important record, invent a source, or confuse a recommendation with an approved action."
+    },
+    {
+      "title": "Give agents authority and reusable instructions deliberately",
+      "collection": "AI prompting",
+      "path": "prompting/07-agents-and-skills.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "An agent can combine reasoning with tools, but the available host determines what it can actually read or change. Describe the outcome and authority together so the assistant can make useful progress inside the intended boundary."
+    },
+    {
+      "title": "Practice prompting with synthetic operating tasks",
+      "collection": "AI prompting",
+      "path": "prompting/11-guided-exercises.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "These exercises help a reader move from a prompt to a reviewed result. They are unexecuted practice material; no model performance or operational control is established by their presence in the library."
+    },
+    {
+      "title": "Prompt for code and automation someone can operate",
+      "collection": "AI prompting",
+      "path": "prompting/06-code-and-automation.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Describe the behavior, operating boundary, and verification method before asking for code. A script that produces output on one sample can still mishandle missing data, change the wrong account, or report success before an external system…"
+    },
+    {
+      "title": "Prompt for documents, tables, and verifiable numbers",
+      "collection": "AI prompting",
+      "path": "prompting/05-documents-and-data.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Decide whether the task is extraction, calculation, interpretation, or presentation. Combining them without explicit checks makes it easy for a missing row or guessed field to become a polished conclusion."
+    },
+    {
+      "title": "Prompt for research that supports a decision",
+      "collection": "AI prompting",
+      "path": "prompting/03-research-and-decisions.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Define the decision before searching. “Research AI security” can produce a broad summary. “What controls should a small firm require before allowing an assistant to search an approved internal knowledge base?” focuses the evidence and the…"
+    },
+    {
+      "title": "Write in a consistent voice without inventing experience",
+      "collection": "AI prompting",
+      "path": "prompting/04-writing-and-voice.md",
+      "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
+      "description": "Give the assistant both a point of view and factual boundaries. “Write in my voice” works better with a few approved examples and a description of what should remain constant: directness, sentence length, technical depth, audience, and how the…"
+    },
+    {
       "title": "Google Workspace: a baseline for VC operations",
       "collection": "Cloud baselines",
       "path": "baselines/google-workspace/README.md",
@@ -17,6 +94,83 @@
       "path": "baselines/microsoft-365/README.md",
       "readiness": "Local assessment checked; tenant configuration not applied",
       "description": "I would treat this as a set of connected operating decisions: who can administer the firm, how staff and guests get access, where information can travel, and how we recover when a control or service fails. A long list of green settings is less…"
+    },
+    {
+      "title": "A leadership brief that leads to a risk decision",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/reporting/leadership-risk-brief.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "Report the exposure, evidence, and decision needed. Counts of completed work help explain progress, but they should not obscure a serious unresolved dependency."
+    },
+    {
+      "title": "A recurring cyber-risk review checklist",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/checklists/recurring-review.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "Use a predictable review to catch drift, ownership gaps, and evidence that no longer describes the environment. These are suggested frequencies to adapt to the business, threat exposure, obligations, and staffing; they are not framework…"
+    },
+    {
+      "title": "Controls for agents, connectors, MCP servers, and skills",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/ai/agent-and-mcp-controls.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "An agent can turn a mistaken interpretation into an action. Review the combination of what it can read, what it can invoke, and where it can write. A good instruction reduces ambiguity; it cannot replace authorization enforced by the…"
+    },
+    {
+      "title": "Cyber controls that can be tested",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/controls/README.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "Start with the business failure: a payment is redirected, a former collaborator can still open diligence materials, a critical SaaS service cannot be recovered, or an AI workflow acts outside its authority. Then decide what should prevent or…"
+    },
+    {
+      "title": "Cyber questions for a deal or critical vendor",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/checklists/deal-and-vendor-review.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "Use a bounded evidence request to understand a dependency before accepting it. Vendor selection and investment diligence have different decision owners and access rights. This checklist supports either conversation; it does not authorize an…"
+    },
+    {
+      "title": "Evaluate an AI workflow with observable results",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/ai/evaluation-playbook.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "The purpose is to answer a bounded question: does this version of the workflow perform the approved task, respect its boundaries, report failures accurately, and stop when required? A polished answer is not the same as evidence that the system…"
+    },
+    {
+      "title": "First 30 days of cyber-risk review",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/checklists/first-30-days.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "Build a defensible picture of the firm's exposure and the next decisions. The schedule is a planning example, not a promise that a firm can be assessed or secured in 30 days. Active incidents and exposed critical services take precedence."
+    },
+    {
+      "title": "Four cyber incident tabletop exercises for an investment firm",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/scenarios/tabletop-exercises.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "A useful tabletop exposes the decision that becomes difficult when the normal process stops working. These exercises focus on the boundaries between investment operations, IT, external providers, and leadership. They are facilitated discussions…"
+    },
+    {
+      "title": "Incident-readiness checklist for VC IT",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/checklists/incident-readiness.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "The practical question is whether the right person can make and verify the next decision when normal systems are unavailable or untrusted. Review the management company, fund-operation providers, and portfolio-company boundaries explicitly.…"
+    },
+    {
+      "title": "Review an AI use case before connecting it to firm work",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/ai/ai-use-case-review.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "Start with the work the firm wants to improve. “Use AI” is not a sufficiently bounded request. “Draft a weekly summary of public vendor release notes, with links and a reviewer, without sending anything” is a use case that can be reviewed and…"
+    },
+    {
+      "title": "Run cyber risk as an operating process",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/operating-model.md",
+      "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
+      "description": "I start with the work the firm needs to keep doing: make decisions, protect deal information, communicate with investors, and move money through authorized processes. The useful question is what could interrupt that work, what would limit the…"
     },
     {
       "title": "AI acceptable use policy",
@@ -276,6 +430,20 @@
       "path": "work-samples/mcp-template/README.md",
       "readiness": "See sample validation and deployment limits",
       "description": "An adapted work sample for designing an MCP service and preparing its deployment contract. It keeps the useful structure of a project template while removing internal service inventories, organization naming, deployment identities, and…"
+    },
+    {
+      "title": "Offline control evidence review",
+      "collection": "Work samples",
+      "path": "work-samples/control-evidence-review/README.md",
+      "readiness": "See sample validation and deployment limits",
+      "description": "An evidence register can look complete while its records are old, cover the wrong service, or describe configuration without testing behavior. This sample turns a supplied inventory into a review queue while keeping the original claims and…"
+    },
+    {
+      "title": "Read-only MCP service catalog",
+      "collection": "Work samples",
+      "path": "work-samples/mcp-service-catalog/README.md",
+      "readiness": "See sample validation and deployment limits",
+      "description": "A runnable local example showing how an assistant can discover a small service inventory and look up ownership, dependencies, and recovery targets through two narrowly scoped tools. All six services are fictional. This sample demonstrates tool…"
     },
     {
       "title": "Resource-calendar configuration comparison",
