@@ -66,3 +66,7 @@ These measures are proposed management tools, not industry benchmarks. If the po
 **Service:** collaboration access. **Observed:** the help queue shows three requests waiting for a business owner; no service outage is established. **Decision needed:** designate an alternate approver for planned leave. **Next action:** operations lead confirms the approved alternate and routes the requests. **Verification:** each request receives a decision and an access outcome check. **Remaining uncertainty:** one request lacks a purpose and end date.
 
 The brief ends with owners and next updates. It does not turn waiting work into a technical failure or an unapproved workaround.
+
+## Service-desk review companions
+
+Use [service-level management](service-level-management.md) to define response, updates, restoration, calendars, and reporting populations. Use [service-desk quality review](service-desk-quality-review.md) to inspect a small case sample for authority, accepted ownership, communications, outcome evidence, and residual work. Report aged open cases beside completed work; improving a ticket status alone does not improve the user outcome.

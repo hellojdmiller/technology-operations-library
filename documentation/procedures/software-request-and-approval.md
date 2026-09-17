@@ -4,6 +4,8 @@
 
 Use this procedure for a new subscription, desktop application, browser extension, AI tool, connector, or material expansion of an existing tool. The outcome is a documented decision with a defined scope, followed by verified provisioning or a recorded decline.
 
+Use the [software request fulfillment SOP](../../operations/sops/software-request-fulfillment.md) for queue handling, approved catalog requests, deployment verification, and closure. This document remains the companion assessment and trial procedure; the operational SOP links to it when new or expanded scope requires review.
+
 ## Roles and handoffs
 
 | Role | Produces |

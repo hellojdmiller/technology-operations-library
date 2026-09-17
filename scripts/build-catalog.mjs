@@ -11,6 +11,9 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'operations/service-level-management.md': 'Define SLA, SLO, OLA, response, updates, restoration, and reporting. Includes fictional P1–P4 targets and six worked timing cases for calendars, pauses, reassignment, and reopen.',
+  'operations/checklists/README.md': 'Six working aids for onboarding, offboarding, software requests, ticket handoffs, SLA targets, and clock calculations. Includes field definitions and blank execution evidence.',
+
   'documentation/automation-handover-template.md': 'Record ownership, inputs, expected results, failure handling, and the checks another operator needs to support an automation.',
   'skills/build-buy-review/SKILL.md': 'Compare building, buying, and combining tools through ownership, operating costs, risk, and a bounded trial.',
   'skills/notes-to-runbook/SKILL.md': 'Turn rough notes into an executable procedure with prerequisites, verification, failure handling, and visible unknowns.',
@@ -35,7 +38,7 @@ function add(collection, files, readiness) {
   }
 }
 add('Field guides', markdown('library'), 'Proposed operating guidance');
-add('IT operations', [...markdown('operations'), ...markdown('operations/succession'), ...markdown('operations/sops'), 'operations/templates/README.md'], 'Adapted or proposed guidance; operational exercises not run');
+add('IT operations', [...markdown('operations'), ...markdown('operations/succession'), ...markdown('operations/sops'), 'operations/templates/README.md', 'operations/checklists/README.md'], 'Adapted or proposed guidance; operational exercises not run');
 add('n8n workflows', folders('n8n', 'README.md'), 'Local logic checked; n8n runtime trial pending');
 add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md'], 'Local assessment checked; tenant configuration not applied');
 add('Cyber risk', ['cyber-risk/operating-model.md', 'cyber-risk/controls/README.md', ...markdown('cyber-risk/checklists'), ...markdown('cyber-risk/ai'), ...markdown('cyber-risk/scenarios'), ...markdown('cyber-risk/reporting')], 'Proposed controls and exercises; real-world effectiveness unverified');
