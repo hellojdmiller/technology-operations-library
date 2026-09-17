@@ -1,0 +1,844 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-17",
+  "fictional": true,
+  "assurance_limit": "Reviews supplied metadata only. Evidence contents, scope completeness, approval authority, tenant state, and actual control effectiveness are not verified.",
+  "summary": {
+    "assessments": 8,
+    "assessments_requiring_review": 6,
+    "review_items": 28,
+    "unlinked_evidence_records": 1
+  },
+  "assessments": [
+    {
+      "assessment_id": "REVIEW-001",
+      "control_id": "VCIT-005",
+      "scope": {
+        "id": "EX-IDENTITY",
+        "label": "Fictional identity pilot",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-001"
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "present",
+      "operating_effectiveness_claim": "effective_for_tested_scope",
+      "implementation_evidence": {
+        "state": "support_recorded",
+        "usable_evidence_ids": [
+          "E-001"
+        ]
+      },
+      "operating_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "none",
+        "reviewed_state": "none"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "control_id": "VCIT-005",
+          "scope_id": "EX-IDENTITY",
+          "scope_version": "example-v1",
+          "kind": "implementation",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-001",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        }
+      ],
+      "review_required": true
+    },
+    {
+      "assessment_id": "REVIEW-002",
+      "control_id": "VCIT-015",
+      "scope": {
+        "id": "EX-SHARING",
+        "label": "Fictional diligence sharing",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-002"
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "present",
+      "operating_effectiveness_claim": "ineffective",
+      "implementation_evidence": {
+        "state": "support_recorded",
+        "usable_evidence_ids": [
+          "E-002"
+        ]
+      },
+      "operating_evidence": {
+        "state": "adverse_result_recorded",
+        "usable_evidence_ids": [
+          "E-003"
+        ]
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "approved",
+        "owner_role": "Fictional risk owner",
+        "reason": "Temporary collaboration dependency pending treatment.",
+        "scope_id": "EX-SHARING",
+        "compensating_measures": "Fictional restricted audience and manual review; effectiveness still needs verification.",
+        "expires_on": "2026-10-01",
+        "approval_reference": "EX-APPROVAL-002",
+        "reviewed_state": "approved"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-002",
+          "control_id": "VCIT-015",
+          "scope_id": "EX-SHARING",
+          "scope_version": "example-v1",
+          "kind": "implementation",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-002",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        },
+        {
+          "evidence_id": "E-003",
+          "control_id": "VCIT-015",
+          "scope_id": "EX-SHARING",
+          "scope_version": "example-v1",
+          "kind": "operating_test",
+          "result": "contradicts_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-003",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "The fictional removed collaborator still opened the synthetic document.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        }
+      ],
+      "review_required": true
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope": {
+        "id": "EX-LOGS",
+        "label": "Fictional SaaS logs",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-003"
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "unknown",
+      "operating_effectiveness_claim": "unknown",
+      "implementation_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "operating_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "none",
+        "reviewed_state": "none"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-004",
+          "control_id": "VCIT-026",
+          "scope_id": "EX-LOGS",
+          "scope_version": "example-v1",
+          "kind": "implementation",
+          "result": "supports_intended_state",
+          "observed_on": "2026-07-01",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-004",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 78,
+          "eligible_for_summary": false,
+          "issues": [
+            "stale_evidence"
+          ]
+        },
+        {
+          "evidence_id": "E-005",
+          "control_id": "VCIT-026",
+          "scope_id": "EX-LOGS",
+          "scope_version": "example-v1",
+          "kind": "operating_test",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-18",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-005",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": -1,
+          "eligible_for_summary": false,
+          "issues": [
+            "future_evidence"
+          ]
+        },
+        {
+          "evidence_id": "E-MISSING",
+          "eligible_for_summary": false,
+          "issues": [
+            "missing_evidence"
+          ]
+        }
+      ],
+      "review_required": true
+    },
+    {
+      "assessment_id": "REVIEW-004",
+      "control_id": "VCIT-030",
+      "scope": {
+        "id": "EX-RESTORE",
+        "label": "Fictional isolated restore lab",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-004"
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "present",
+      "operating_effectiveness_claim": "effective_for_tested_scope",
+      "implementation_evidence": {
+        "state": "support_recorded",
+        "usable_evidence_ids": [
+          "E-006"
+        ]
+      },
+      "operating_evidence": {
+        "state": "support_for_documented_sample",
+        "usable_evidence_ids": [
+          "E-007"
+        ]
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "none",
+        "reviewed_state": "none"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-006",
+          "control_id": "VCIT-030",
+          "scope_id": "EX-RESTORE",
+          "scope_version": "example-v1",
+          "kind": "implementation",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-006",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        },
+        {
+          "evidence_id": "E-007",
+          "control_id": "VCIT-030",
+          "scope_id": "EX-RESTORE",
+          "scope_version": "example-v1",
+          "kind": "operating_test",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-007",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Three synthetic files, one permitted identity, and one denied identity",
+          "limitations": "Illustrates a successful bounded lab sample only; does not assert production recovery.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        }
+      ],
+      "review_required": false
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope": {
+        "id": "EX-AGENT",
+        "label": "Fictional agent tool boundary",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-005"
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "unknown",
+      "operating_effectiveness_claim": "unknown",
+      "implementation_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "operating_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "approved",
+        "owner_role": "Fictional risk owner",
+        "reason": "Previous action-boundary review pending.",
+        "scope_id": "EX-AGENT",
+        "compensating_measures": "Fictional tool execution remains disabled.",
+        "expires_on": "2026-09-01",
+        "approval_reference": "EX-APPROVAL-005",
+        "reviewed_state": "expired"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-008",
+          "control_id": "VCIT-033",
+          "scope_id": "EX-DIFFERENT-SCOPE",
+          "scope_version": "example-v0",
+          "kind": "operating_test",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-008",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 1,
+          "eligible_for_summary": false,
+          "issues": [
+            "control_mismatch",
+            "scope_mismatch",
+            "scope_version_mismatch"
+          ]
+        }
+      ],
+      "review_required": true
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope": {
+        "id": "EX-AI-PROPOSAL",
+        "label": "Fictional AI use-case proposal",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "draft",
+        "reference": null
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "absent",
+      "operating_effectiveness_claim": "not_tested",
+      "implementation_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "operating_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "proposed",
+        "owner_role": "Fictional business owner",
+        "reason": "Proposed pilot boundary awaiting a decision.",
+        "scope_id": "EX-AI-PROPOSAL",
+        "compensating_measures": "No enabled workspace; synthetic design review only.",
+        "expires_on": null,
+        "approval_reference": null,
+        "reviewed_state": "proposed"
+      },
+      "evidence": [],
+      "review_required": true
+    },
+    {
+      "assessment_id": "REVIEW-007",
+      "control_id": "VCIT-035",
+      "scope": {
+        "id": "EX-AI-EVALUATION",
+        "label": "Fictional AI evaluation",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-007"
+      },
+      "applicability": {
+        "status": "applicable",
+        "rationale": null
+      },
+      "implementation_claim": "present",
+      "operating_effectiveness_claim": "effective_for_tested_scope",
+      "implementation_evidence": {
+        "state": "support_recorded",
+        "usable_evidence_ids": [
+          "E-009"
+        ]
+      },
+      "operating_evidence": {
+        "state": "conflicting_results",
+        "usable_evidence_ids": [
+          "E-010",
+          "E-011"
+        ]
+      },
+      "scope_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "exception": {
+        "status": "none",
+        "reviewed_state": "none"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-009",
+          "control_id": "VCIT-035",
+          "scope_id": "EX-AI-EVALUATION",
+          "scope_version": "example-v1",
+          "kind": "implementation",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-009",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        },
+        {
+          "evidence_id": "E-010",
+          "control_id": "VCIT-035",
+          "scope_id": "EX-AI-EVALUATION",
+          "scope_version": "example-v1",
+          "kind": "operating_test",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-010",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "Entirely fictional metadata; no actual evidence was collected.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        },
+        {
+          "evidence_id": "E-011",
+          "control_id": "VCIT-035",
+          "scope_id": "EX-AI-EVALUATION",
+          "scope_version": "example-v1",
+          "kind": "operating_test",
+          "result": "contradicts_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-011",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Two synthetic identities and one synthetic resource",
+          "limitations": "The fictional test produced an unsupported claim; the later support record does not resolve it.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        }
+      ],
+      "review_required": true
+    },
+    {
+      "assessment_id": "REVIEW-008",
+      "control_id": "VCIT-009",
+      "scope": {
+        "id": "EX-NO-AUTOMATION",
+        "label": "Fictional manual-only workspace",
+        "version": "example-v1"
+      },
+      "owner_role": "Fictional service owner",
+      "max_evidence_age_days": 30,
+      "intended_state": {
+        "status": "approved",
+        "reference": "EX-DECISION-REVIEW-008"
+      },
+      "applicability": {
+        "status": "not_applicable",
+        "rationale": "Fictional scoped inventory contains no automation identities. Reassess before introducing one."
+      },
+      "implementation_claim": "not_applicable",
+      "operating_effectiveness_claim": "not_applicable",
+      "implementation_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "operating_evidence": {
+        "state": "no_usable_evidence",
+        "usable_evidence_ids": []
+      },
+      "scope_evidence": {
+        "state": "support_recorded",
+        "usable_evidence_ids": [
+          "E-012"
+        ]
+      },
+      "exception": {
+        "status": "none",
+        "reviewed_state": "none"
+      },
+      "evidence": [
+        {
+          "evidence_id": "E-012",
+          "control_id": "VCIT-009",
+          "scope_id": "EX-NO-AUTOMATION",
+          "scope_version": "example-v1",
+          "kind": "scope_review",
+          "result": "supports_intended_state",
+          "observed_on": "2026-09-16",
+          "reviewer_role": "Fictional evidence reviewer",
+          "private_reference": "EX-RECORD-E-012",
+          "population": "Synthetic lab objects only; no production inventory",
+          "sample": "Entire fictional scoped identity inventory",
+          "limitations": "The scope decision is fictional; does not establish a real environment inventory.",
+          "age_days": 1,
+          "eligible_for_summary": true,
+          "issues": []
+        }
+      ],
+      "review_required": false
+    }
+  ],
+  "review_queue": [
+    {
+      "assessment_id": "REVIEW-001",
+      "control_id": "VCIT-005",
+      "scope_id": "EX-IDENTITY",
+      "owner_role": "Fictional service owner",
+      "code": "operating_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Plan an authorized behavioral test; implementation evidence alone cannot establish operation."
+    },
+    {
+      "assessment_id": "REVIEW-001",
+      "control_id": "VCIT-005",
+      "scope_id": "EX-IDENTITY",
+      "owner_role": "Fictional service owner",
+      "code": "unsupported_effectiveness_claim",
+      "evidence_id": null,
+      "next_action": "Revise or substantiate the operating claim with a current test for the stated sample and scope."
+    },
+    {
+      "assessment_id": "REVIEW-002",
+      "control_id": "VCIT-015",
+      "scope_id": "EX-SHARING",
+      "owner_role": "Fictional service owner",
+      "code": "operating_adverse_result_recorded",
+      "evidence_id": null,
+      "next_action": "Review the recorded results, limitations, and unresolved failures; preserve contrary evidence until disposition."
+    },
+    {
+      "assessment_id": "REVIEW-002",
+      "control_id": "VCIT-015",
+      "scope_id": "EX-SHARING",
+      "owner_role": "Fictional service owner",
+      "code": "recorded_operating_gap",
+      "evidence_id": null,
+      "next_action": "Retain the reported operating gap until a reviewer resolves it using appropriate retest evidence."
+    },
+    {
+      "assessment_id": "REVIEW-002",
+      "control_id": "VCIT-015",
+      "scope_id": "EX-SHARING",
+      "owner_role": "Fictional service owner",
+      "code": "exception_active",
+      "evidence_id": null,
+      "next_action": "Review the approved deviation and compensating measures with its risk owner; underlying gaps remain visible."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "stale_evidence",
+      "evidence_id": "E-004",
+      "next_action": "Obtain a current observation or explicitly review the freshness requirement."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "future_evidence",
+      "evidence_id": "E-005",
+      "next_action": "Check the recorded date and clock; future observations cannot support this review date."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "missing_evidence",
+      "evidence_id": "E-MISSING",
+      "next_action": "Obtain the referenced record or correct the reference; retain the unknown state."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "implementation_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Obtain a current implementation observation for this scope; do not infer it from an operating claim."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "operating_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Plan an authorized behavioral test; implementation evidence alone cannot establish operation."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "implementation_claim_unknown",
+      "evidence_id": null,
+      "next_action": "Have a reviewer resolve the unknown implementation claim against the supplied evidence."
+    },
+    {
+      "assessment_id": "REVIEW-003",
+      "control_id": "VCIT-026",
+      "scope_id": "EX-LOGS",
+      "owner_role": "Fictional service owner",
+      "code": "operating_claim_unresolved",
+      "evidence_id": null,
+      "next_action": "Have a reviewer decide the operating conclusion; supplied evidence does not automatically update the claim."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "control_mismatch",
+      "evidence_id": "E-008",
+      "next_action": "Link evidence for this control; do not reuse a different control claim without review."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "scope_mismatch",
+      "evidence_id": "E-008",
+      "next_action": "Obtain evidence for this service scope or formally change the assessment scope."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "scope_version_mismatch",
+      "evidence_id": "E-008",
+      "next_action": "Reassess evidence after the scope change; do not silently relabel old evidence."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "implementation_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Obtain a current implementation observation for this scope; do not infer it from an operating claim."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "operating_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Plan an authorized behavioral test; implementation evidence alone cannot establish operation."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "implementation_claim_unknown",
+      "evidence_id": null,
+      "next_action": "Have a reviewer resolve the unknown implementation claim against the supplied evidence."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "operating_claim_unresolved",
+      "evidence_id": null,
+      "next_action": "Have a reviewer decide the operating conclusion; supplied evidence does not automatically update the claim."
+    },
+    {
+      "assessment_id": "REVIEW-005",
+      "control_id": "VCIT-034",
+      "scope_id": "EX-AGENT",
+      "owner_role": "Fictional service owner",
+      "code": "exception_expired",
+      "evidence_id": null,
+      "next_action": "Escalate removal or a new explicit risk decision; do not extend the exception automatically."
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope_id": "EX-AI-PROPOSAL",
+      "owner_role": "Fictional service owner",
+      "code": "intended_state_not_approved",
+      "evidence_id": null,
+      "next_action": "Have the decision owner define or approve the intended state and boundaries."
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope_id": "EX-AI-PROPOSAL",
+      "owner_role": "Fictional service owner",
+      "code": "implementation_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Obtain a current implementation observation for this scope; do not infer it from an operating claim."
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope_id": "EX-AI-PROPOSAL",
+      "owner_role": "Fictional service owner",
+      "code": "operating_evidence_gap",
+      "evidence_id": null,
+      "next_action": "Plan an authorized behavioral test; implementation evidence alone cannot establish operation."
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope_id": "EX-AI-PROPOSAL",
+      "owner_role": "Fictional service owner",
+      "code": "recorded_implementation_gap",
+      "evidence_id": null,
+      "next_action": "Review the reported gap and assign treatment or a scoped risk decision; positive evidence does not silently close it."
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope_id": "EX-AI-PROPOSAL",
+      "owner_role": "Fictional service owner",
+      "code": "operating_claim_unresolved",
+      "evidence_id": null,
+      "next_action": "Have a reviewer decide the operating conclusion; supplied evidence does not automatically update the claim."
+    },
+    {
+      "assessment_id": "REVIEW-006",
+      "control_id": "VCIT-032",
+      "scope_id": "EX-AI-PROPOSAL",
+      "owner_role": "Fictional service owner",
+      "code": "exception_not_approved",
+      "evidence_id": null,
+      "next_action": "Obtain an authorized decision; a proposal does not approve a deviation."
+    },
+    {
+      "assessment_id": "REVIEW-007",
+      "control_id": "VCIT-035",
+      "scope_id": "EX-AI-EVALUATION",
+      "owner_role": "Fictional service owner",
+      "code": "operating_conflicting_results",
+      "evidence_id": null,
+      "next_action": "Review the recorded results, limitations, and unresolved failures; preserve contrary evidence until disposition."
+    },
+    {
+      "assessment_id": "REVIEW-007",
+      "control_id": "VCIT-035",
+      "scope_id": "EX-AI-EVALUATION",
+      "owner_role": "Fictional service owner",
+      "code": "unsupported_effectiveness_claim",
+      "evidence_id": null,
+      "next_action": "Revise or substantiate the operating claim with a current test for the stated sample and scope."
+    }
+  ],
+  "unlinked_evidence_ids": [
+    "E-UNLINKED"
+  ]
+}

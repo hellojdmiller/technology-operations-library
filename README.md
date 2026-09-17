@@ -11,10 +11,12 @@ This is the private working companion to [hellojdmiller.com](https://hellojdmill
 | [VC IT field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
 | [n8n workflows](n8n/README.md) | 7 workflow exports with sample data and local tests | Access reviews, renewals, lifecycle completeness, backup evidence, licenses, results, and briefs |
 | [Google and Microsoft baselines](baselines/README.md) | 40 control assertions across 2 platforms | Desired-state catalogs, evidence worksheets, fictional observations, and a local assessment tool |
+| [Cyber-risk operating pack](cyber-risk/README.md) | 11 guides and packs; 36 control proposals | Four checklists, AI risk and agent controls, tabletop exercises, leadership reporting, and evidence records |
+| [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
 | [Portable skills](skills/README.md) | 4 self-contained skills | Build/buy review, notes to runbook, risk review, and document sanitization |
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
 | [Vendor training](training/README.md) | 6 modules and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
-| [Implementation work samples](work-samples/README.md) | 3 sample collections | MCP design, Azure Bicep, and configuration scripts |
+| [Implementation work samples](work-samples/README.md) | 5 sample collections | MCP design and a runnable local server, Azure Bicep, configuration scripts, and control-evidence review |
 
 For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the private repository and requires access to open resources. Its machine-readable index is [resources.json](catalog/resources.json).
 
@@ -24,7 +26,7 @@ The guidance and examples are ready for private review and adaptation. The code 
 
 The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
 
-The skills share provider-neutral instructions. Use the [platform guide](skills/platform-guide.md) for supported Claude, ChatGPT, Codex, and Cursor delivery methods; native installation and pasting instructions into chat are different routes.
+The skills share provider-neutral instructions. Use the [platform guide](skills/platform-guide.md) for supported Claude, ChatGPT, Codex, and Cursor delivery methods; native installation and pasting instructions into chat are different routes. The [full prompting guide](prompting/README.md) explains how to frame the work and evaluate the result.
 
 ## Local checks
 

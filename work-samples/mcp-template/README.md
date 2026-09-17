@@ -48,3 +48,5 @@ The infrastructure's authentication-mode parameter only passes configuration and
 Use synthetic fixtures and a mock backend first. Then test in an isolated authorized environment. These cases are a test plan; no application implementation or MCP runtime test is included in this work sample.
 
 For handover, record the service owner, client compatibility actually tested, SDK/protocol versions, backend permissions, deployment version, recovery procedure, limits, and evidence of completed checks.
+
+For a runnable companion, see the [local service-catalog MCP demonstration](../mcp-service-catalog/README.md). It uses synthetic data and stdio, and does not implement this template's remote authentication or downstream authorization requirements.

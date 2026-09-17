@@ -1,0 +1,1 @@
+exception_id,related_risk_id,control_id,service_scope,unresolved_condition,business_reason,compensating_control,evidence_ref,risk_owner,decision_authority,decision_status,approved_at_utc,expires_at_utc,review_trigger,treatment_owner,next_action

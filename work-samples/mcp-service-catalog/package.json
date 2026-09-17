@@ -1,0 +1,23 @@
+{
+  "name": "vcpeit-service-catalog-mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only local MCP demonstration backed by a fixed synthetic service catalog.",
+  "license": "GPL-3.0-only",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "check": "node --check src/server.mjs && node --check src/catalog.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "demo": "node scripts/demo-client.mjs",
+    "verify:evaluations": "node scripts/verify-evaluations.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0"
+  }
+}

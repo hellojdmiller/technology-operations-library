@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaluation>
+  <qa_pair id="Q01">
+    <question>In catalog synthetic-v1, compare the services with no recorded dependencies. Which has the smallest recovery point objective? Return its exact name only.</question>
+    <answer>Identity workspace</answer>
+  </qa_pair>
+  <qa_pair id="Q02">
+    <question>In catalog synthetic-v1, which owner is responsible for the tier-1 service whose review status is not-reviewed? Return the exact owner role only.</question>
+    <answer>Recovery owner</answer>
+  </qa_pair>
+  <qa_pair id="Q03">
+    <question>In catalog synthetic-v1, follow all direct and indirect dependencies of the tier-3 service. How many distinct dependency services are tier-1? Count each once and return only the integer.</question>
+    <answer>2</answer>
+  </qa_pair>
+  <qa_pair id="Q04">
+    <question>In catalog synthetic-v1, find the service that depends on two other services and has a six-hour recovery time objective. Return its exact accountable owner role only.</question>
+    <answer>Finance systems owner</answer>
+  </qa_pair>
+  <qa_pair id="Q05">
+    <question>In catalog synthetic-v1, which service is listed as a direct dependency by the most other services? Return its exact name only.</question>
+    <answer>Identity workspace</answer>
+  </qa_pair>
+  <qa_pair id="Q06">
+    <question>In catalog synthetic-v1, consider only services whose review status is documented. What is the largest recovery point objective in hours? Return only the number.</question>
+    <answer>24</answer>
+  </qa_pair>
+  <qa_pair id="Q07">
+    <question>In catalog synthetic-v1, among tier-1 services, which has the most open questions? Return its exact name only.</question>
+    <answer>Fund operations workspace</answer>
+  </qa_pair>
+  <qa_pair id="Q08">
+    <question>In catalog synthetic-v1, exclude the sign-in directory itself. Which remaining tier-1 service has no recorded direct or indirect dependency on that directory? This is a fixture relationship question, not a resilience claim. Return its exact name only.</question>
+    <answer>Recovery evidence workspace</answer>
+  </qa_pair>
+  <qa_pair id="Q09">
+    <question>In catalog synthetic-v1, two services share the shortest recovery time objective. Which of the two permits the older recovery point? Return its exact name only.</question>
+    <answer>Recovery evidence workspace</answer>
+  </qa_pair>
+  <qa_pair id="Q10">
+    <question>In catalog synthetic-v1, find the documented tier-2 service whose dependencies include the team communication service. Return its exact name only.</question>
+    <answer>Research workspace</answer>
+  </qa_pair>
+</evaluation>

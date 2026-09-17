@@ -1,0 +1,84 @@
+{
+  "catalogVersion": "synthetic-v1",
+  "synthetic": true,
+  "services": [
+    {
+      "serviceId": "svc-identity",
+      "name": "Identity workspace",
+      "category": "identity",
+      "criticality": "tier-1",
+      "ownerRole": "Identity owner",
+      "purpose": "Fictional sign-in and group directory for the example firm.",
+      "dependencyIds": [],
+      "recoveryTargets": { "rtoHours": 2, "rpoHours": 1 },
+      "reviewStatus": "documented",
+      "openQuestions": [],
+      "supportRoute": "Protected provider register; independent recovery contact required."
+    },
+    {
+      "serviceId": "svc-collaboration",
+      "name": "Collaboration workspace",
+      "category": "collaboration",
+      "criticality": "tier-1",
+      "ownerRole": "Workplace systems owner",
+      "purpose": "Fictional team messages and shared working files.",
+      "dependencyIds": ["svc-identity"],
+      "recoveryTargets": { "rtoHours": 4, "rpoHours": 2 },
+      "reviewStatus": "gap",
+      "openQuestions": ["Can responders use an independent communication path if sign-in fails?"],
+      "supportRoute": "Workplace service owner coordinates with the fictional provider role."
+    },
+    {
+      "serviceId": "svc-research",
+      "name": "Research workspace",
+      "category": "research",
+      "criticality": "tier-2",
+      "ownerRole": "Research systems owner",
+      "purpose": "Fictional repository for public research notes and synthetic evaluation packs.",
+      "dependencyIds": ["svc-identity", "svc-collaboration"],
+      "recoveryTargets": { "rtoHours": 8, "rpoHours": 4 },
+      "reviewStatus": "documented",
+      "openQuestions": [],
+      "supportRoute": "Research systems owner follows the synthetic service escalation card."
+    },
+    {
+      "serviceId": "svc-fund-operations",
+      "name": "Fund operations workspace",
+      "category": "fund-operations",
+      "criticality": "tier-1",
+      "ownerRole": "Finance systems owner",
+      "purpose": "Fictional coordination record for administrator handoffs; contains no payment capability.",
+      "dependencyIds": ["svc-identity", "svc-collaboration"],
+      "recoveryTargets": { "rtoHours": 6, "rpoHours": 2 },
+      "reviewStatus": "gap",
+      "openQuestions": ["Who can approve a workaround when the normal finance owner is unavailable?", "Which records reconcile an administrator handoff?"],
+      "supportRoute": "Finance owner and the separate fictional administrator role coordinate the handoff."
+    },
+    {
+      "serviceId": "svc-recovery",
+      "name": "Recovery evidence workspace",
+      "category": "recovery",
+      "criticality": "tier-1",
+      "ownerRole": "Recovery owner",
+      "purpose": "Fictional register of recovery objectives and exercise evidence pointers.",
+      "dependencyIds": [],
+      "recoveryTargets": { "rtoHours": 2, "rpoHours": 4 },
+      "reviewStatus": "not-reviewed",
+      "openQuestions": ["Has alternate access to the recovery records been demonstrated?"],
+      "supportRoute": "Recovery owner uses a separately maintained fictional provider contact route."
+    },
+    {
+      "serviceId": "svc-automation",
+      "name": "Automation workspace",
+      "category": "automation",
+      "criticality": "tier-3",
+      "ownerRole": "Automation owner",
+      "purpose": "Fictional manual reporting workflows using synthetic observations.",
+      "dependencyIds": ["svc-identity", "svc-research"],
+      "recoveryTargets": { "rtoHours": 24, "rpoHours": 24 },
+      "reviewStatus": "documented",
+      "openQuestions": [],
+      "supportRoute": "Automation owner uses the local handover example."
+    }
+  ]
+}
