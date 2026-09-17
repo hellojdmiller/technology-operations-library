@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-microsoft-365",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment; not a real organization",
+    "edition": "Mixed synthetic capability examples, not a coherent purchased bundle"
+  },
+  "observations": [
+    {
+      "id": "M365-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-01",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-02",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-02",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-03",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-03",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-04",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-04",
+      "notes": "Only a pilot population was checked."
+    },
+    {
+      "id": "M365-05",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-05",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-06",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-06",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-07",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-07",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-08",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-08",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-09",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-09",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "M365-10",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-10",
+      "notes": "Desired native feature is not available in this fictional licensing scenario; retain as unknown and review the gap."
+    },
+    {
+      "id": "M365-11",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": null,
+      "observed_at": null,
+      "evidence_ref": null,
+      "notes": "Evidence not collected."
+    },
+    {
+      "id": "M365-12",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-12",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-13",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-13",
+      "notes": "Synthetic training record; no tenant evidence exists.",
+      "exception": {
+        "owner": "Fictional service owner",
+        "reason": "One fictional sender is awaiting remediation.",
+        "compensating_control": "Isolated sending subdomain and manual report review.",
+        "expires_on": "2026-10-17"
+      }
+    },
+    {
+      "id": "M365-14",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-14",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "M365-15",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/M365-15",
+      "notes": "Illustrates a reviewed non-applicable control; not a recommendation to omit this workload.",
+      "not_applicable_reason": "Fictional assessment excludes email-hosting and DNS controls; the separately managed email environment requires its own review."
+    }
+  ]
+}

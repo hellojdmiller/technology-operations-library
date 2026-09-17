@@ -8,3 +8,6 @@ __pycache__/
 .venv/
 local-data/
 local-results/
+*.parameters.local.json
+raw-sources/
+source-provenance/

@@ -1,0 +1,80 @@
+{
+  "name": "TOL — SaaS license reconciliation (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"fictional-license-review\",\n    \"asOf\": \"2026-09-17\",\n    \"unusedDays\": 60,\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://license-snapshot\",\n    \"workforce\": [\n      {\n        \"personId\": \"person-001\",\n        \"status\": \"active\"\n      },\n      {\n        \"personId\": \"person-002\",\n        \"status\": \"active\"\n      },\n      {\n        \"personId\": \"person-003\",\n        \"status\": \"leaver\"\n      }\n    ],\n    \"subscriptions\": [\n      {\n        \"skuId\": \"sku-research\",\n        \"service\": \"Research workspace\",\n        \"purchasedSeats\": 5\n      },\n      {\n        \"skuId\": \"sku-automation\",\n        \"service\": \"Automation workspace\",\n        \"purchasedSeats\": 1\n      }\n    ],\n    \"assignments\": [\n      {\n        \"assignmentId\": \"assignment-001\",\n        \"skuId\": \"sku-research\",\n        \"personId\": \"person-001\",\n        \"lastUsedOn\": \"2026-09-16\",\n        \"isServiceAccount\": false,\n        \"ownerRole\": \"Research systems owner\"\n      },\n      {\n        \"assignmentId\": \"assignment-002\",\n        \"skuId\": \"sku-research\",\n        \"personId\": \"person-002\",\n        \"lastUsedOn\": \"2026-06-01\",\n        \"isServiceAccount\": false,\n        \"ownerRole\": \"Research systems owner\"\n      },\n      {\n        \"assignmentId\": \"assignment-003\",\n        \"skuId\": \"sku-research\",\n        \"personId\": \"person-003\",\n        \"lastUsedOn\": \"2026-09-01\",\n        \"isServiceAccount\": false,\n        \"ownerRole\": \"Research systems owner\"\n      },\n      {\n        \"assignmentId\": \"assignment-004\",\n        \"skuId\": \"sku-automation\",\n        \"personId\": \"service-001\",\n        \"lastUsedOn\": null,\n        \"isServiceAccount\": true,\n        \"ownerRole\": \"Automation owner\"\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Prepares candidates; never removes licenses.\nconst items = $input.all();\nconst text = value => typeof value === 'string' && value.trim().length > 0;\nconst date = value => {\n  if (typeof value !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return null;\n  const valueMs = Date.parse(`${value}T00:00:00Z`);\n  return Number.isFinite(valueMs) && new Date(valueMs).toISOString().slice(0, 10) === value ? valueMs : null;\n};\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No license packets supplied.'] } }];\n\nreturn items.map((item, index) => {\n  const input = item.json ?? {};\n  const issues = [];\n  const asOf = date(input.asOf);\n  if (!text(input.reviewId)) issues.push('reviewId must be a nonblank string.');\n  if (asOf === null) issues.push('asOf must be a real YYYY-MM-DD date.');\n  if (!Number.isInteger(input.unusedDays) || input.unusedDays < 1) issues.push('unusedDays must be a positive integer.');\n  if (typeof input.snapshotComplete !== 'boolean') issues.push('snapshotComplete must be a boolean.');\n  const contracts = [\n    ['workforce', 'personId', row => ['active', 'leaver'].includes(row.status)],\n    ['subscriptions', 'skuId', row => text(row.service) && Number.isInteger(row.purchasedSeats) && row.purchasedSeats >= 0],\n    ['assignments', 'assignmentId', row => text(row.skuId) && text(row.personId) && typeof row.isServiceAccount === 'boolean']\n  ];\n  for (const [field, idField, validate] of contracts) {\n    if (!Array.isArray(input[field])) { issues.push(`${field} must be an array.`); continue; }\n    const seen = new Set();\n    for (const [rowIndex, row] of input[field].entries()) {\n      if (!row || !text(row[idField]) || !validate(row)) { issues.push(`${field}[${rowIndex}] has missing or invalid fields; check the input contract.`); continue; }\n      if (seen.has(row[idField])) issues.push(`Duplicate ${field} ${idField}: ${row[idField]}.`);\n      seen.add(row[idField]);\n      if (field === 'assignments' && row.lastUsedOn !== null && (date(row.lastUsedOn) === null || date(row.lastUsedOn) > asOf)) issues.push(`assignments[${rowIndex}].lastUsedOn must be null or a real date no later than asOf.`);\n    }\n  }\n  if (issues.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues }, pairedItem: { item: index } };\n\n  if (!input.snapshotComplete) issues.push('Snapshot is incomplete; reconcile billing, application assignments, workforce, and usage scope.');\n  if (!text(input.evidenceRef)) issues.push('Missing snapshot evidence reference.');\n  if (!input.workforce.length || !input.subscriptions.length || !input.assignments.length) issues.push('Empty workforce, subscription, or assignment scope requires confirmation.');\n  const people = new Map(input.workforce.map(person => [person.personId, person]));\n  const skus = new Map(input.subscriptions.map(sku => [sku.skuId, sku]));\n  // JSON tuple keys avoid collisions when identifiers contain punctuation.\n  const pairKey = row => JSON.stringify([row.skuId, row.personId]);\n  const pairCounts = new Map();\n  for (const assignment of input.assignments) pairCounts.set(pairKey(assignment), (pairCounts.get(pairKey(assignment)) ?? 0) + 1);\n  const rows = input.assignments.map(assignment => {\n    const findings = [];\n    const person = people.get(assignment.personId);\n    const knownSku = skus.has(assignment.skuId);\n    const daysSinceUse = assignment.lastUsedOn === null ? null : Math.floor((asOf - date(assignment.lastUsedOn)) / 86400000);\n    const duplicatePair = pairCounts.get(pairKey(assignment)) > 1;\n    if (!knownSku) findings.push('sku_not_in_subscription_register');\n    if (duplicatePair) findings.push('duplicate_person_sku_assignment');\n    if (!text(assignment.ownerRole)) findings.push('assignment_owner_missing');\n    if (assignment.isServiceAccount) findings.push('service_account_dependency_review');\n    else if (!person) findings.push('identity_not_in_workforce');\n    else if (person.status === 'leaver') findings.push('leaver_license_review');\n    if (daysSinceUse === null) findings.push('usage_unknown');\n    else if (!assignment.isServiceAccount && daysSinceUse >= input.unusedDays) findings.push('unused_license_review');\n    const candidateReason = !assignment.isServiceAccount && person && knownSku && !duplicatePair\n      ? person.status === 'leaver' ? 'leaver' : daysSinceUse !== null && daysSinceUse >= input.unusedDays ? 'unused' : null\n      : null;\n    return {\n      assignmentId: assignment.assignmentId, skuId: assignment.skuId, personId: assignment.personId,\n      isServiceAccount: assignment.isServiceAccount, ownerRole: text(assignment.ownerRole) ? assignment.ownerRole : null,\n      daysSinceUse, candidateReason, findings, decision: 'pending_human_review'\n    };\n  });\n  const subscriptionReview = input.subscriptions.map(sku => {\n    const assignments = input.assignments.filter(row => row.skuId === sku.skuId);\n    const uniqueAssignedSeats = new Set(assignments.map(row => row.personId)).size;\n    const unassignedSeats = Math.max(0, sku.purchasedSeats - uniqueAssignedSeats);\n    const overassignedSeats = Math.max(0, uniqueAssignedSeats - sku.purchasedSeats);\n    const findings = [];\n    if (overassignedSeats) findings.push('assigned_count_exceeds_purchased');\n    if (unassignedSeats) findings.push('unassigned_capacity_review');\n    if (assignments.length !== uniqueAssignedSeats) findings.push('duplicate_assignment_records');\n    return {\n      skuId: sku.skuId, service: sku.service, purchasedSeats: sku.purchasedSeats,\n      assignmentRecordCount: assignments.length, uniqueAssignedSeats, unassignedSeats, overassignedSeats,\n      reviewCandidateCount: rows.filter(row => row.skuId === sku.skuId && row.candidateReason).length,\n      findings\n    };\n  });\n  const attentionCount = rows.filter(row => row.findings.length).length;\n  const candidateCount = rows.filter(row => row.candidateReason).length;\n  return {\n    json: {\n      reviewId: input.reviewId, asOf: input.asOf,\n      status: issues.length || attentionCount || subscriptionReview.some(row => row.findings.length) ? 'needs_review' : 'review_ready',\n      totalAssignmentRecords: rows.length, attentionCount, candidateCount, issues, rows, subscriptionReview,\n      evidenceRef: text(input.evidenceRef) ? input.evidenceRef : null,\n      limitation: 'Assumes one seat per distinct person and SKU. Usage gaps, service identities, holds, retention, dependencies, assignment methods, and contract terms need human review. Unassigned capacity and review candidates are not guaranteed savings. No licenses are changed.'\n    }, pairedItem: { item: index }\n  };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "SaaS license reconciliation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "SaaS license reconciliation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

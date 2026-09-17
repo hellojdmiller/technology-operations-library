@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "id": "tol-microsoft-365",
+  "version": "1.0.0",
+  "title": "Microsoft 365 proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-17",
+  "environment_specific": {
+    "tenant_scope": "[Define privately]",
+    "edition_and_licenses": "[Verify per feature and population]",
+    "in_scope_workloads": "[List services and data classes]",
+    "pilot_population": "[Define users and platforms]",
+    "recovery_objectives": "[Approve per workload]",
+    "records_schedule": "[Obtain records-owner decision]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "M365-01",
+      "category": "licensing",
+      "title": "Entitlement and population map",
+      "assertion": "Every planned access feature is mapped to its required entitlement and the affected licensed population.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Subscription/service-plan inventory and feature-by-population review.",
+      "review_gate": "Conditional Access requires Entra P1; risk-based policies require P2. Verify adjunct product entitlements separately.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Conditional Access licensing",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-02",
+      "category": "identity",
+      "title": "Continuous baseline protection",
+      "assertion": "The tenant uses reviewed security defaults or an effective replacement Conditional Access set, with no unprotected transition.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Chosen mode, effective policy coverage, MFA and legacy-client tests.",
+      "review_gate": "Security defaults are not individually customizable and are not combined with Conditional Access.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Security defaults",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-03",
+      "category": "identity",
+      "title": "Phishing-resistant privileged access",
+      "assertion": "In-scope privileged users are required to use the approved phishing-resistant authentication strength and can complete it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Authentication-strength policy, assignments, registered methods, and pilot sign-ins.",
+      "review_gate": "Requires appropriate Conditional Access licensing; enrollment alone does not prove enforcement.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Phishing-resistant MFA for admins",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-04",
+      "category": "recovery",
+      "title": "Emergency access",
+      "assertion": "Two or more cloud-only emergency accounts have phishing-resistant credentials, monitored use, and tested access independent of normal federation.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Private exercise record, permanent active role review, secure credential custody, and alert test.",
+      "review_gate": "Exclude emergency accounts from blocking/restrictive Conditional Access; do not remove their authentication protection.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Emergency access accounts",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-05",
+      "category": "identity",
+      "title": "Least privilege and accountable admins",
+      "assertion": "Routine administration uses separate identifiable accounts with only required roles and periodic access review.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Privileged assignment roster and a task-to-role review.",
+      "review_gate": "Use the smallest workable role; assess any PIM licensing and recovery implications before changing assignments.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secure identity infrastructure",
+          "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-06",
+      "category": "identity",
+      "title": "Legacy authentication control",
+      "assertion": "Legacy user authentication is blocked with any remaining dependency explicitly recorded and remediated.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Sign-in evidence by client type, effective policy, and approved dependency/exception list.",
+      "review_gate": "Inventory service and device dependencies first; user policies do not govern all workload identities.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Block legacy authentication",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-legacy-authentication",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-07",
+      "category": "devices",
+      "title": "Tested compliant-device access",
+      "assertion": "Selected sensitive workloads enforce reviewed device compliance after enrollment and platform tests pass.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Intune policy/assignment evidence, compliant and noncompliant device tests, effective access policy.",
+      "review_gate": "Create compliance policy first; requiring compliance without validated coverage can interrupt access.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Require device compliance",
+          "url": "https://learn.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-08",
+      "category": "devices",
+      "title": "No unassigned compliant devices",
+      "assertion": "For the selected Intune compliance design, devices with no compliance policy assigned are treated as not compliant.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Tenant compliance setting and assignment-coverage report.",
+      "review_gate": "Verify policy assignments and grace behavior before changing this tenant-wide setting.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Intune compliance policies",
+          "url": "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-09",
+      "category": "sharing",
+      "title": "Authenticated sharing for sensitive content",
+      "assertion": "Sensitive sites and OneDrives avoid Anyone links and use an approved authenticated sharing level and default link type.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Organization/site settings and synthetic internal/external sharing tests.",
+      "review_gate": "Review Teams, Groups, Entra B2B and site settings together; file-request workflows may depend on Anyone links.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "SharePoint and OneDrive sharing",
+          "url": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
+          "reviewed_on": "2026-09-17"
+        },
+        {
+          "title": "Site sharing settings",
+          "url": "https://learn.microsoft.com/en-us/sharepoint/change-external-sharing-site",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-10",
+      "category": "sharing",
+      "title": "Guest ownership and expiry",
+      "assertion": "External access has a sponsor, an end/review date, and a tested revocation process across sites, groups and apps.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Guest review decisions, effective expiry behavior, and resource-level removal test.",
+      "review_gate": "Native access-review capabilities have license requirements; a documented manual review can meet this process objective.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Access reviews and licensing",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-11",
+      "category": "integrations",
+      "title": "Controlled user consent",
+      "assertion": "User consent is restricted by a reviewed policy with an explicit approval route for requests outside it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Effective consent policy, reviewer ownership, and synthetic blocked/approved request tests.",
+      "review_gate": "Review the actual permission grant; verified publisher status alone is not risk acceptance.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure user consent",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-12",
+      "category": "integrations",
+      "title": "Application permission ownership",
+      "assertion": "Enterprise application permissions have an accountable owner, minimum justified access, and a current recertification decision.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Service-principal permissions and owner inventory, delegated/application permission review.",
+      "review_gate": "Review application permissions separately from user access assignments; changing consent can interrupt jobs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Review application permissions",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/manage-application-permissions",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-13",
+      "category": "email",
+      "title": "SPF sender inventory",
+      "assertion": "Each sending domain has a validated SPF record covering all authorized senders without duplicate SPF records or invalid lookup expansion.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "DNS record, sender inventory and representative message-header tests.",
+      "review_gate": "DNS is managed at the domain host; record all non-Microsoft senders before changing it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure SPF",
+          "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-14",
+      "category": "email",
+      "title": "Custom-domain DKIM",
+      "assertion": "Each in-scope custom sending domain has enabled, validated DKIM signing using the tenant-provided selector values.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Actual selector CNAME values, signing status, and received-message verification.",
+      "review_gate": "Microsoft selector formats can vary; obtain actual values rather than synthesizing them.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure DKIM",
+          "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-15",
+      "category": "email",
+      "title": "DMARC enforcement plan",
+      "assertion": "A domain owner has validated alignment and reporting, completed sender remediation, and approved an enforced DMARC policy.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "DMARC policy, sender alignment tests, report review and staged rollout record.",
+      "review_gate": "Do not jump to rejection while legitimate senders remain unverified.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure DMARC",
+          "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-16",
+      "category": "monitoring",
+      "title": "Entra logs retrievable for the need",
+      "assertion": "Identity log sources, native windows, archive needs, access owners, and retrieval tests match the approved investigation requirement.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Source/retention matrix plus a retrieved synthetic sign-in or admin event.",
+      "review_gate": "Entra and Purview audit retention are separate; an upgrade cannot recover expired logs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Entra log retention",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-reports-data-retention",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-17",
+      "category": "monitoring",
+      "title": "Purview audit coverage",
+      "assertion": "Required Microsoft 365 audit activities are searchable and retained for the approved need with verified user licensing and scope.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Audit search result, workload coverage, retention settings and applicable licenses.",
+      "review_gate": "Standard and Premium capabilities differ; do not assume one tenant license covers every user or event.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Purview Audit search and retention",
+          "url": "https://learn.microsoft.com/en-us/purview/audit-search",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-18",
+      "category": "retention",
+      "title": "Approved records lifecycle",
+      "assertion": "Retention and deletion settings match an approved records schedule, with holds and affected workloads checked before rollout.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Records schedule, effective policies/labels and review of preservation/deletion impacts.",
+      "review_gate": "Retention is a records decision; do not assign a universal duration or treat it as a backup.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Purview retention policies and labels",
+          "url": "https://learn.microsoft.com/en-us/purview/retention",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-19",
+      "category": "recovery",
+      "title": "Measured recovery coverage",
+      "assertion": "Critical workloads have an approved recovery method, recovery objectives, protected scope, and a measured restore exercise.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Recovery coverage matrix and restore results for content, ownership and permissions.",
+      "review_gate": "Microsoft 365 Backup is a separate consumption-billed option; verify actual protected units and recovery behavior.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Microsoft 365 Backup",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "M365-20",
+      "category": "change",
+      "title": "Staged access changes",
+      "assertion": "Access changes have documented scope, exclusions, report-only/pilot evidence, business tests and a tested rollback route.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Change plan, representative sign-in tests and independent verifier record.",
+      "review_gate": "Do not disable security defaults until replacement protection is ready; verify recovery before enforcement.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Plan Conditional Access",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    }
+  ]
+}

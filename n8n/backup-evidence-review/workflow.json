@@ -1,0 +1,80 @@
+{
+  "name": "TOL — Backup evidence review (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"fictional-recovery-review\",\n    \"asOf\": \"2026-09-17T12:00:00Z\",\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://protected-workload-inventory\",\n    \"workloads\": [\n      {\n        \"workloadId\": \"workload-001\",\n        \"ownerRole\": \"Operations systems owner\",\n        \"rpoHours\": 24,\n        \"rtoHours\": 4,\n        \"restoreTestMaxAgeDays\": 90,\n        \"backup\": {\n          \"state\": \"success\",\n          \"recoveryPointAt\": \"2026-09-17T06:00:00Z\",\n          \"lastJobAt\": \"2026-09-17T06:15:00Z\",\n          \"evidenceRef\": \"fixture://workload-001-backup\"\n        },\n        \"restoreTest\": {\n          \"outcome\": \"passed\",\n          \"completedAt\": \"2026-09-01T12:00:00Z\",\n          \"recoveryDurationMinutes\": 90,\n          \"dataLossMinutes\": 30,\n          \"evidenceRef\": \"fixture://workload-001-restore\"\n        }\n      },\n      {\n        \"workloadId\": \"workload-002\",\n        \"ownerRole\": \"Finance systems owner\",\n        \"rpoHours\": 4,\n        \"rtoHours\": 2,\n        \"restoreTestMaxAgeDays\": 90,\n        \"backup\": {\n          \"state\": \"success\",\n          \"recoveryPointAt\": \"2026-09-15T12:00:00Z\",\n          \"lastJobAt\": \"2026-09-17T11:00:00Z\",\n          \"evidenceRef\": \"fixture://workload-002-backup\"\n        },\n        \"restoreTest\": {\n          \"outcome\": \"passed\",\n          \"completedAt\": \"2026-05-01T12:00:00Z\",\n          \"recoveryDurationMinutes\": 180,\n          \"dataLossMinutes\": 300,\n          \"evidenceRef\": \"fixture://workload-002-restore\"\n        }\n      },\n      {\n        \"workloadId\": \"workload-003\",\n        \"ownerRole\": \"Research systems owner\",\n        \"rpoHours\": 24,\n        \"rtoHours\": 8,\n        \"restoreTestMaxAgeDays\": 90,\n        \"backup\": {\n          \"state\": \"unknown\",\n          \"recoveryPointAt\": null,\n          \"lastJobAt\": null,\n          \"evidenceRef\": \"\"\n        },\n        \"restoreTest\": {\n          \"outcome\": \"not_tested\",\n          \"completedAt\": null,\n          \"recoveryDurationMinutes\": null,\n          \"dataLossMinutes\": null,\n          \"evidenceRef\": \"\"\n        }\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. No backup jobs or restores are launched.\nconst items = $input.all();\nconst text = value => typeof value === 'string' && value.trim().length > 0;\nconst timestamp = value => {\n  if (typeof value !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$/.test(value)) return null;\n  const valueMs = Date.parse(value);\n  if (!Number.isFinite(valueMs)) return null;\n  return new Date(valueMs).toISOString() === (value.includes('.') ? value : value.replace('Z', '.000Z')) ? valueMs : null;\n};\nconst nonnegative = value => typeof value === 'number' && Number.isFinite(value) && value >= 0;\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No backup review packets supplied.'] } }];\n\nreturn items.map((item, index) => {\n  const input = item.json ?? {};\n  const issues = [];\n  const asOf = timestamp(input.asOf);\n  if (!text(input.reviewId)) issues.push('reviewId must be a nonblank string.');\n  if (asOf === null) issues.push('asOf must be a real UTC timestamp ending in Z.');\n  if (typeof input.snapshotComplete !== 'boolean') issues.push('snapshotComplete must be a boolean.');\n  if (!Array.isArray(input.workloads)) issues.push('workloads must be an array.');\n  else {\n    const seen = new Set();\n    for (const [row, workload] of input.workloads.entries()) {\n      if (!workload || !text(workload.workloadId)) { issues.push(`workloads[${row}] needs workloadId.`); continue; }\n      if (seen.has(workload.workloadId)) issues.push(`Duplicate workloadId: ${workload.workloadId}.`);\n      seen.add(workload.workloadId);\n      for (const field of ['rpoHours', 'rtoHours', 'restoreTestMaxAgeDays']) if (!nonnegative(workload[field]) || workload[field] === 0) issues.push(`workloads[${row}].${field} must be a finite positive number.`);\n      if (!['success', 'failed', 'unknown'].includes(workload.backup?.state)) issues.push(`workloads[${row}].backup.state must be success, failed, or unknown.`);\n      if (!['passed', 'failed', 'not_tested'].includes(workload.restoreTest?.outcome)) issues.push(`workloads[${row}].restoreTest.outcome must be passed, failed, or not_tested.`);\n      for (const [name, value] of [['backup.recoveryPointAt', workload.backup?.recoveryPointAt], ['backup.lastJobAt', workload.backup?.lastJobAt], ['restoreTest.completedAt', workload.restoreTest?.completedAt]]) {\n        if (value !== null && (timestamp(value) === null || timestamp(value) > asOf)) issues.push(`workloads[${row}].${name} must be null or a real timestamp no later than asOf.`);\n      }\n      for (const field of ['recoveryDurationMinutes', 'dataLossMinutes']) {\n        const value = workload.restoreTest?.[field];\n        if (value !== null && !nonnegative(value)) issues.push(`workloads[${row}].restoreTest.${field} must be null or a finite nonnegative number.`);\n      }\n      if (timestamp(workload.backup?.recoveryPointAt) !== null && timestamp(workload.backup?.lastJobAt) !== null && timestamp(workload.backup.recoveryPointAt) > timestamp(workload.backup.lastJobAt)) issues.push(`workloads[${row}] recovery point cannot be later than backup completion.`);\n    }\n  }\n  if (issues.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues }, pairedItem: { item: index } };\n\n  if (!input.snapshotComplete) issues.push('Snapshot is incomplete; reconcile protected and unprotected workloads.');\n  if (!text(input.evidenceRef)) issues.push('Missing inventory evidence reference.');\n  if (!input.workloads.length) issues.push('Empty workload scope requires confirmation.');\n  const rows = input.workloads.map(workload => {\n    const findings = [];\n    if (!text(workload.ownerRole)) findings.push('recovery_owner_missing');\n    if (workload.backup.state !== 'success') findings.push(`backup_${workload.backup.state}`);\n    if (workload.backup.lastJobAt === null) findings.push('backup_job_time_missing');\n    if (!text(workload.backup.evidenceRef)) findings.push('backup_evidence_missing');\n    const recoveryPointAgeHours = workload.backup.recoveryPointAt === null ? null : (asOf - timestamp(workload.backup.recoveryPointAt)) / 3600000;\n    if (recoveryPointAgeHours === null) findings.push('recovery_point_unknown');\n    else if (recoveryPointAgeHours > workload.rpoHours) findings.push('recovery_point_exceeds_rpo');\n    const restoreTestAgeDays = workload.restoreTest.completedAt === null ? null : (asOf - timestamp(workload.restoreTest.completedAt)) / 86400000;\n    if (workload.restoreTest.outcome !== 'passed') findings.push(`restore_${workload.restoreTest.outcome}`);\n    if (restoreTestAgeDays === null) findings.push('restore_test_date_missing');\n    else if (restoreTestAgeDays > workload.restoreTestMaxAgeDays) findings.push('restore_test_stale');\n    if (!text(workload.restoreTest.evidenceRef)) findings.push('restore_evidence_missing');\n    if (workload.restoreTest.recoveryDurationMinutes === null) findings.push('restore_duration_unknown');\n    else if (workload.restoreTest.recoveryDurationMinutes > workload.rtoHours * 60) findings.push('restore_duration_exceeds_rto');\n    if (workload.restoreTest.dataLossMinutes === null) findings.push('restore_data_loss_unknown');\n    else if (workload.restoreTest.dataLossMinutes > workload.rpoHours * 60) findings.push('restore_data_loss_exceeds_rpo');\n    return {\n      workloadId: workload.workloadId, ownerRole: text(workload.ownerRole) ? workload.ownerRole : null,\n      status: findings.length ? 'needs_review' : 'evidence_current', findings,\n      rpoHours: workload.rpoHours, rtoHours: workload.rtoHours, recoveryPointAgeHours, restoreTestAgeDays,\n      recoveryDurationMinutes: workload.restoreTest.recoveryDurationMinutes, dataLossMinutes: workload.restoreTest.dataLossMinutes,\n      backupEvidenceRef: text(workload.backup.evidenceRef) ? workload.backup.evidenceRef : null,\n      restoreEvidenceRef: text(workload.restoreTest.evidenceRef) ? workload.restoreTest.evidenceRef : null\n    };\n  });\n  const attentionCount = rows.filter(row => row.findings.length).length;\n  return {\n    json: {\n      reviewId: input.reviewId, asOf: input.asOf, status: issues.length || attentionCount ? 'needs_review' : 'review_ready',\n      totalWorkloads: rows.length, attentionCount, issues, rows, evidenceRef: text(input.evidenceRef) ? input.evidenceRef : null,\n      limitation: 'Fresh backup evidence is not proof of recoverability. Supplied recovery points, objectives, test scope, integrity, application usability, dependencies, and evidence still need independent verification.'\n    }, pairedItem: { item: index }\n  };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Backup evidence review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Backup evidence review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

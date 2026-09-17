@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-google-workspace",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment; not a real organization",
+    "edition": "Mixed synthetic capability examples, not a coherent purchased bundle"
+  },
+  "observations": [
+    {
+      "id": "GWS-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-01",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-02",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-02",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-03",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-03",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-04",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-04",
+      "notes": "Only a pilot population was checked."
+    },
+    {
+      "id": "GWS-05",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-05",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-06",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-06",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-07",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-07",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-08",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-08",
+      "notes": "Synthetic absence-of-mechanism evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional inventory confirms no domain-wide delegation grants are present; new grants trigger reassessment."
+    },
+    {
+      "id": "GWS-09",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-09",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "GWS-10",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-10",
+      "notes": "Desired native feature is not available in this fictional licensing scenario; retain as unknown and review the gap."
+    },
+    {
+      "id": "GWS-11",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": null,
+      "observed_at": null,
+      "evidence_ref": null,
+      "notes": "Evidence not collected."
+    },
+    {
+      "id": "GWS-12",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-12",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-13",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-13",
+      "notes": "Synthetic training record; no tenant evidence exists.",
+      "exception": {
+        "owner": "Fictional service owner",
+        "reason": "One fictional sender is awaiting remediation.",
+        "compensating_control": "Isolated sending subdomain and manual report review.",
+        "expires_on": "2026-10-17"
+      }
+    },
+    {
+      "id": "GWS-14",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-14",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "GWS-15",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-16T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GWS-15",
+      "notes": "Synthetic alert delivery and response exercise."
+    }
+  ]
+}

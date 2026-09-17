@@ -6,6 +6,11 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 for (const [slug, title] of [
   ['automation-result-review', 'Automation result review'],
   ['operations-brief', 'Operations brief'],
+  ['access-review-preparation', 'Access review preparation'],
+  ['vendor-renewal-triage', 'Vendor renewal triage'],
+  ['joiner-mover-leaver-review', 'Joiner mover leaver review'],
+  ['backup-evidence-review', 'Backup evidence review'],
+  ['saas-license-reconciliation', 'SaaS license reconciliation'],
 ]) {
   const folder = join(root, 'n8n', slug);
   const sample = JSON.parse(readFileSync(join(folder, 'sample-input.json'), 'utf8'));

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "project": { "value": "example-mcp" },
+    "namePrefix": { "value": "example" },
+    "env": { "value": "dev" },
+    "containerImage": { "value": "REPLACE_WITH_REGISTRY.azurecr.io/example-mcp@sha256:REPLACE_WITH_DIGEST" },
+    "acrResourceId": { "value": "/subscriptions/REPLACE_WITH_SUBSCRIPTION/resourceGroups/REPLACE_WITH_REGISTRY_RG/providers/Microsoft.ContainerRegistry/registries/REPLACE_WITH_REGISTRY" },
+    "envVarPrefix": { "value": "EXAMPLE_MCP" },
+    "authMode": { "value": "entra-jwt" },
+    "entraTenantId": { "value": "REPLACE_WITH_TENANT_ID" },
+    "entraClientId": { "value": "REPLACE_WITH_CLIENT_ID" },
+    "entraAppIdUri": { "value": "api://REPLACE_WITH_APP_ID" },
+    "externalIngress": { "value": false },
+    "corsAllowedOrigins": { "value": [] }
+  }
+}

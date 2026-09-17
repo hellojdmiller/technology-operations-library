@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "id": "tol-google-workspace",
+  "version": "1.0.0",
+  "title": "Google Workspace proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-17",
+  "environment_specific": {
+    "tenant_scope": "[Define privately]",
+    "edition_and_licenses": "[Verify per feature and population]",
+    "in_scope_workloads": "[List services and data classes]",
+    "pilot_population": "[Define users and platforms]",
+    "recovery_objectives": "[Approve per workload]",
+    "records_schedule": "[Obtain records-owner decision]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "GWS-01",
+      "category": "identity",
+      "title": "Dedicated least-privilege administrators",
+      "assertion": "Privileged work uses identifiable dedicated admin accounts; routine work and delegated tasks avoid super-admin privilege.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Role roster and task-to-role review covering all administrators.",
+      "review_gate": "Record the owner of each privileged role; test delegation before removing access.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Administrator account security",
+          "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-02",
+      "category": "identity",
+      "title": "Phishing-resistant admin sign-in",
+      "assertion": "Administrators use enforced security-key/passkey-capable sign-in with tested spare credentials.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Effective 2SV method policy and successful administrator sign-in tests.",
+      "review_gate": "Complete enrollment and recovery testing before stricter method enforcement.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Administrator account security",
+          "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
+          "reviewed_on": "2026-09-17"
+        },
+        {
+          "title": "Deploy 2-Step Verification",
+          "url": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-03",
+      "category": "recovery",
+      "title": "Independent administrator recovery",
+      "assertion": "At least two separately accountable super administrators have tested recovery routes and securely stored spare credentials.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Private recovery exercise record, custodians, and dependencies.",
+      "review_gate": "Do not copy shared emergency-account assumptions from another identity provider.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Administrator account security",
+          "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-04",
+      "category": "identity",
+      "title": "Workforce 2SV enforcement",
+      "assertion": "Every in-scope workforce account is covered by the approved 2SV policy, with enrollment verified and temporary exceptions recorded.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Effective OU/group policies plus enrollment and real sign-in evidence.",
+      "review_gate": "Group precedence and report lag can hide gaps; agree onboarding grace and recovery method.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Deploy 2-Step Verification",
+          "url": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-05",
+      "category": "sharing",
+      "title": "Controlled external collaboration",
+      "assertion": "Confidential firm/deal content is shared only through approved authenticated collaboration scopes; broad external links are restricted.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "OU/group settings and allowed/denied sharing tests using synthetic files.",
+      "review_gate": "Map investor, portfolio, counsel, and administrator collaboration before tightening access.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage external sharing",
+          "url": "https://knowledge.workspace.google.com/admin/drive/manage-external-sharing-for-your-organization",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-06",
+      "category": "sharing",
+      "title": "Guest and external permission review",
+      "assertion": "An owner reviews external people and item permissions; access is removed when the collaboration ends.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Dated permission review and a removal test for shared-drive and individually shared content.",
+      "review_gate": "Blocking sharing can leave permissions in place; re-enabling can restore access.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Shared drive access",
+          "url": "https://support.google.com/a/users/answer/12380484?hl=en",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-07",
+      "category": "integrations",
+      "title": "App access review",
+      "assertion": "OAuth apps have an approved owner, purpose, data scope, and access decision; unknown high-access apps are investigated.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "API controls inventory and review of OAuth scopes and effective access decisions.",
+      "review_gate": "A trusted publisher or app label does not establish a business need.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Control app access",
+          "url": "https://knowledge.workspace.google.com/admin/apps/control-which-apps-access-google-workspace-data",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-08",
+      "category": "integrations",
+      "title": "Narrow domain-wide delegation",
+      "assertion": "Every domain-wide delegation grant has an essential business case, narrow scopes, controlled credentials, and a review date.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Grant inventory, scope review, service-account ownership and key-management record.",
+      "review_gate": "Do not grant domain-wide delegation merely to collect this assessment.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Domain-wide delegation best practices",
+          "url": "https://knowledge.workspace.google.com/admin/apps/domain-wide-delegation-best-practices",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-09",
+      "category": "devices",
+      "title": "Managed endpoint requirements",
+      "assertion": "Device owners have an approved platform-specific enrollment, encryption, screen-lock, supported-OS, and lost-device response standard with evidence of coverage.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Device inventory, management capability map, exception list, and synthetic lost-device tabletop.",
+      "review_gate": "Basic and advanced management differ; identify a separate endpoint tool where needed.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Google endpoint management",
+          "url": "https://knowledge.workspace.google.com/admin/devices/overview-manage-devices-with-google-endpoint-management",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-10",
+      "category": "devices",
+      "title": "Context-aware access coverage",
+      "assertion": "Licensed in-scope users accessing selected sensitive apps are covered by tested context-aware access requirements.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "License-by-user coverage, access-level assignments, browser/platform and denied-access tests.",
+      "review_gate": "Unsupported editions do not enforce these policies; service-account/API and app coverage require separate review.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Context-Aware Access",
+          "url": "https://knowledge.workspace.google.com/admin/security/protect-your-business-with-context-aware-access",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-11",
+      "category": "email",
+      "title": "SPF sender inventory",
+      "assertion": "Each sending domain has a validated SPF record covering all authorized senders without duplicate SPF records or invalid lookup expansion.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "DNS record and sender inventory, with message-header tests for each sender class.",
+      "review_gate": "Include investor communications, CRM, finance, ticketing, and marketing before DNS changes.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up SPF",
+          "url": "https://support.google.com/a/answer/33786?hl=en",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-12",
+      "category": "email",
+      "title": "DKIM signing",
+      "assertion": "All in-scope sending domains and services use validated DKIM signing with documented key ownership.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Published key, enabled signing status, and received-message signature test.",
+      "review_gate": "Use the actual vendor-generated key/selector; never copy example DNS values.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up DKIM",
+          "url": "https://knowledge.workspace.google.com/admin/security/set-up-dkim",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-13",
+      "category": "email",
+      "title": "DMARC enforcement plan",
+      "assertion": "A domain owner has validated alignment and reporting, completed sender remediation, and approved an enforced DMARC policy for in-scope domains.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Policy record, representative aligned headers, report review and change approval.",
+      "review_gate": "Monitoring-only is a rollout stage; move toward enforcement after legitimate traffic is understood.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up DMARC",
+          "url": "https://knowledge.workspace.google.com/admin/security/set-up-dmarc",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-14",
+      "category": "monitoring",
+      "title": "Audit coverage and retention",
+      "assertion": "Required audit sources, lag, retention, export path, access owners, and retrieval tests are documented for the actual edition.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "A source-by-source matrix and successful retrieval of a synthetic event.",
+      "review_gate": "Native log windows vary; export before expiry if the approved need is longer.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Data retention and lag times",
+          "url": "https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-15",
+      "category": "monitoring",
+      "title": "Actionable admin alerts",
+      "assertion": "Administrative/security alert types have an owner, escalation route, and a completed delivery-and-response test.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Alert routing settings and dated response exercise.",
+      "review_gate": "Verify the route remains reachable during primary account or mail-service failure.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Administrator account security",
+          "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-16",
+      "category": "retention",
+      "title": "Reviewed retention and holds",
+      "assertion": "A records owner has approved data-type retention and hold requirements, and verified effective Vault coverage or a documented alternative.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Approved schedule, licensed population, rules/hold review and scoped retrieval test.",
+      "review_gate": "Vault needs applicable licenses and configured rules; deletion/license removal can affect retained data.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vault overview",
+          "url": "https://knowledge.workspace.google.com/vault/getting-started/vault-overview",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-17",
+      "category": "recovery",
+      "title": "Tested business recovery",
+      "assertion": "Critical mail and document workloads have agreed recovery objectives, a coverage map, and a restore exercise that verifies content and permissions.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Recovery method per workload, measured restore result, missing-data/permission findings.",
+      "review_gate": "Native recovery windows and Vault exports do not establish end-to-end business recovery.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Recover deleted Drive data",
+          "url": "https://knowledge.workspace.google.com/admin/drive/recover-deleted-files-and-folders-for-drive-users",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-18",
+      "category": "change",
+      "title": "Controlled identity rollout",
+      "assertion": "Identity and access changes have a pilot, enrollment check, business tests, recovery route, and saved previous configuration.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Approved change record and pilot test results.",
+      "review_gate": "Use actual product capabilities; do not assume every Google setting has report-only mode.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Deploy 2-Step Verification",
+          "url": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-19",
+      "category": "ownership",
+      "title": "Durable document ownership",
+      "assertion": "Critical operating records use accountable shared ownership with reviewed membership and continuity when a staff member leaves.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Critical repository map and ownership/permission continuity test.",
+      "review_gate": "Shared-drive availability and supported behavior depend on edition and chosen structure.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Shared drive access",
+          "url": "https://support.google.com/a/users/answer/12380484?hl=en",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "GWS-20",
+      "category": "lifecycle",
+      "title": "Offboarding access and records",
+      "assertion": "A tested leaver process suspends relevant access, addresses delegated/third-party access, and preserves records under the approved schedule.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Synthetic leaver exercise with identity, applications, ownership, retention, and verification checkpoints.",
+      "review_gate": "Suspension is one step; do not equate account deletion with a complete leaver process.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Suspend a user",
+          "url": "https://knowledge.workspace.google.com/admin/users/suspend-a-user-temporarily",
+          "reviewed_on": "2026-09-17"
+        },
+        {
+          "title": "Vault overview",
+          "url": "https://knowledge.workspace.google.com/vault/getting-started/vault-overview",
+          "reviewed_on": "2026-09-17"
+        }
+      ]
+    }
+  ]
+}

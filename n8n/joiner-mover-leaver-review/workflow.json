@@ -1,0 +1,80 @@
+{
+  "name": "TOL — Joiner mover leaver review (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"fictional-lifecycle-review\",\n    \"asOf\": \"2026-09-17\",\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://lifecycle-register\",\n    \"requiredTasks\": {\n      \"joiner\": [\n        \"identity-approved\",\n        \"device-ready\",\n        \"access-verified\"\n      ],\n      \"mover\": [\n        \"new-access-approved\",\n        \"previous-access-reviewed\"\n      ],\n      \"leaver\": [\n        \"sessions-revoked\",\n        \"application-access-removed\",\n        \"data-handover-verified\"\n      ]\n    },\n    \"cases\": [\n      {\n        \"caseId\": \"case-001\",\n        \"type\": \"leaver\",\n        \"effectiveOn\": \"2026-09-16\",\n        \"ownerRole\": \"IT operations lead\",\n        \"scopeApproved\": true,\n        \"scopeApprovalRef\": \"fixture://case-001-scope\",\n        \"additionalRequiredTaskIds\": [],\n        \"tasks\": [\n          {\n            \"taskId\": \"sessions-revoked\",\n            \"state\": \"complete\",\n            \"evidenceRef\": \"fixture://case-001-session-check\",\n            \"verifiedOn\": \"2026-09-16\",\n            \"exceptionRef\": \"\"\n          },\n          {\n            \"taskId\": \"application-access-removed\",\n            \"state\": \"complete\",\n            \"evidenceRef\": \"\",\n            \"verifiedOn\": \"2026-09-16\",\n            \"exceptionRef\": \"\"\n          }\n        ]\n      },\n      {\n        \"caseId\": \"case-002\",\n        \"type\": \"mover\",\n        \"effectiveOn\": \"2026-09-18\",\n        \"ownerRole\": \"IT operations lead\",\n        \"scopeApproved\": true,\n        \"scopeApprovalRef\": \"fixture://case-002-scope\",\n        \"additionalRequiredTaskIds\": [\n          \"deal-workspace-reviewed\"\n        ],\n        \"tasks\": [\n          {\n            \"taskId\": \"new-access-approved\",\n            \"state\": \"complete\",\n            \"evidenceRef\": \"fixture://case-002-approval\",\n            \"verifiedOn\": \"2026-09-17\",\n            \"exceptionRef\": \"\"\n          },\n          {\n            \"taskId\": \"previous-access-reviewed\",\n            \"state\": \"complete\",\n            \"evidenceRef\": \"fixture://case-002-previous-access\",\n            \"verifiedOn\": \"2026-09-17\",\n            \"exceptionRef\": \"\"\n          },\n          {\n            \"taskId\": \"deal-workspace-reviewed\",\n            \"state\": \"not_applicable\",\n            \"evidenceRef\": \"\",\n            \"verifiedOn\": null,\n            \"exceptionRef\": \"fixture://case-002-approved-exception\"\n          }\n        ]\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Reviews evidence; never provisions accounts.\nconst items = $input.all();\nconst text = value => typeof value === 'string' && value.trim().length > 0;\nconst date = value => {\n  if (typeof value !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return null;\n  const valueMs = Date.parse(`${value}T00:00:00Z`);\n  return Number.isFinite(valueMs) && new Date(valueMs).toISOString().slice(0, 10) === value ? valueMs : null;\n};\nconst unique = values => new Set(values).size === values.length;\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No lifecycle review packets supplied.'] } }];\n\nreturn items.map((item, index) => {\n  const input = item.json ?? {};\n  const issues = [];\n  const asOf = date(input.asOf);\n  if (!text(input.reviewId)) issues.push('reviewId must be a nonblank string.');\n  if (asOf === null) issues.push('asOf must be a real YYYY-MM-DD date.');\n  if (typeof input.snapshotComplete !== 'boolean') issues.push('snapshotComplete must be a boolean.');\n  for (const type of ['joiner', 'mover', 'leaver']) {\n    const tasks = input.requiredTasks?.[type];\n    if (!Array.isArray(tasks) || !tasks.length || tasks.some(task => !text(task)) || !unique(tasks)) issues.push(`requiredTasks.${type} must contain unique nonblank task IDs and cannot be empty.`);\n  }\n  if (!Array.isArray(input.cases)) issues.push('cases must be an array.');\n  else {\n    if (!unique(input.cases.map(record => record?.caseId))) issues.push('Duplicate caseIds make lifecycle matching ambiguous.');\n    for (const [row, record] of input.cases.entries()) {\n      if (!record || !text(record.caseId) || !['joiner', 'mover', 'leaver'].includes(record.type)) { issues.push(`cases[${row}] needs caseId and type joiner, mover, or leaver.`); continue; }\n      if (date(record.effectiveOn) === null) issues.push(`cases[${row}].effectiveOn must be a real date.`);\n      if (typeof record.scopeApproved !== 'boolean') issues.push(`cases[${row}].scopeApproved must be a boolean.`);\n      if (!Array.isArray(record.additionalRequiredTaskIds) || record.additionalRequiredTaskIds.some(task => !text(task)) || !unique(record.additionalRequiredTaskIds)) issues.push(`cases[${row}].additionalRequiredTaskIds must contain unique nonblank strings.`);\n      if (!Array.isArray(record.tasks)) { issues.push(`cases[${row}].tasks must be an array.`); continue; }\n      if (!unique(record.tasks.map(task => task?.taskId))) issues.push(`cases[${row}] contains duplicate taskIds.`);\n      for (const [taskIndex, task] of record.tasks.entries()) {\n        if (!task || !text(task.taskId) || !['complete', 'pending', 'blocked', 'not_applicable'].includes(task.state)) { issues.push(`cases[${row}].tasks[${taskIndex}] needs taskId and a supported state.`); continue; }\n        if (task.verifiedOn !== null && (date(task.verifiedOn) === null || date(task.verifiedOn) > asOf)) issues.push(`cases[${row}].tasks[${taskIndex}].verifiedOn must be null or a real date no later than asOf.`);\n      }\n    }\n  }\n  if (issues.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues }, pairedItem: { item: index } };\n\n  if (!input.snapshotComplete) issues.push('Lifecycle snapshot is incomplete; reconcile it with the authoritative change roster.');\n  if (!text(input.evidenceRef)) issues.push('Missing lifecycle snapshot evidence reference.');\n  if (!input.cases.length) issues.push('Empty case scope requires confirmation.');\n  const rows = input.cases.map(record => {\n    const findings = [];\n    if (!text(record.ownerRole)) findings.push('case_owner_missing');\n    if (!record.scopeApproved || !text(record.scopeApprovalRef)) findings.push('scope_approval_missing');\n    const requiredTaskIds = [...new Set([...input.requiredTasks[record.type], ...record.additionalRequiredTaskIds])];\n    const supplied = new Map(record.tasks.map(task => [task.taskId, task]));\n    const taskReview = requiredTaskIds.map(taskId => {\n      const task = supplied.get(taskId);\n      const gaps = [];\n      if (!task) gaps.push('task_missing');\n      else if (task.state === 'complete') {\n        if (!text(task.evidenceRef)) gaps.push('completion_evidence_missing');\n        if (task.verifiedOn === null) gaps.push('verification_date_missing');\n      } else if (task.state === 'not_applicable') {\n        if (!text(task.exceptionRef)) gaps.push('exception_approval_missing');\n      } else gaps.push(task.state === 'blocked' ? 'task_blocked' : 'task_pending');\n      return { taskId, state: task?.state ?? 'missing', gaps, verifiedOn: task?.verifiedOn ?? null, evidenceRef: text(task?.evidenceRef) ? task.evidenceRef : null, exceptionRef: text(task?.exceptionRef) ? task.exceptionRef : null };\n    });\n    const outOfScopeTaskIds = record.tasks.filter(task => !requiredTaskIds.includes(task.taskId)).map(task => task.taskId);\n    if (outOfScopeTaskIds.length) findings.push('tasks_outside_approved_scope');\n    const incompleteTaskCount = taskReview.filter(task => task.gaps.length).length;\n    if (incompleteTaskCount) findings.push('required_task_evidence_incomplete');\n    const daysToEffective = Math.round((date(record.effectiveOn) - asOf) / 86400000);\n    if (findings.length && daysToEffective <= 0) findings.push('effective_date_reached_with_open_review');\n    return {\n      caseId: record.caseId, type: record.type, effectiveOn: record.effectiveOn, daysToEffective,\n      ownerRole: text(record.ownerRole) ? record.ownerRole : null,\n      scopeApprovalRef: text(record.scopeApprovalRef) ? record.scopeApprovalRef : null,\n      status: findings.length ? 'open' : 'evidence_complete', findings,\n      requiredTaskCount: requiredTaskIds.length, incompleteTaskCount, taskReview, outOfScopeTaskIds,\n      approval: 'pending_human_review'\n    };\n  });\n  const openCaseCount = rows.filter(row => row.status === 'open').length;\n  return {\n    json: {\n      reviewId: input.reviewId, asOf: input.asOf, status: issues.length || openCaseCount ? 'needs_review' : 'review_ready',\n      totalCases: rows.length, openCaseCount, issues, rows, evidenceRef: text(input.evidenceRef) ? input.evidenceRef : null,\n      limitation: 'Checks the supplied task catalog and evidence references only. It cannot detect missing case-specific scope, inspect systems, or verify execution. Effective dates use whole UTC days; time-critical access actions need exact local deadlines and independent verification.'\n    }, pairedItem: { item: index }\n  };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Joiner mover leaver review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Joiner mover leaver review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "reviewId": "fictional-renewal-review",
+    "asOf": "2026-09-17",
+    "planningWindowDays": 90,
+    "registerComplete": true,
+    "evidenceRef": "fixture://vendor-register",
+    "vendors": [
+      {
+        "vendorId": "vendor-001",
+        "service": "Research workspace",
+        "ownerRole": "Research systems owner",
+        "renewalOn": "2026-10-01",
+        "noticeDays": 30,
+        "autoRenews": true,
+        "annualCost": 12000,
+        "currency": "USD",
+        "criticality": "critical",
+        "decision": "undecided",
+        "decisionEvidenceRef": "",
+        "exitPlanReady": false,
+        "noticeSent": false,
+        "noticeEvidenceRef": "",
+        "noticeDeliveredOn": null
+      },
+      {
+        "vendorId": "vendor-002",
+        "service": "Meeting workspace",
+        "ownerRole": "Workplace systems owner",
+        "renewalOn": "2026-12-01",
+        "noticeDays": 60,
+        "autoRenews": true,
+        "annualCost": 6000,
+        "currency": "EUR",
+        "criticality": "standard",
+        "decision": "undecided",
+        "decisionEvidenceRef": "",
+        "exitPlanReady": false,
+        "noticeSent": false,
+        "noticeEvidenceRef": "",
+        "noticeDeliveredOn": null
+      },
+      {
+        "vendorId": "vendor-003",
+        "service": "Design workspace",
+        "ownerRole": "Communications lead",
+        "renewalOn": "2027-03-01",
+        "noticeDays": 30,
+        "autoRenews": false,
+        "annualCost": 2400,
+        "currency": "USD",
+        "criticality": "standard",
+        "decision": "renew",
+        "decisionEvidenceRef": "fixture://design-renewal-decision",
+        "exitPlanReady": false,
+        "noticeSent": false,
+        "noticeEvidenceRef": "",
+        "noticeDeliveredOn": null
+      }
+    ]
+  }
+]

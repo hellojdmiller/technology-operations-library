@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "captured_at": "2026-09-17T12:00:00Z",
+  "reference_room": "cedar@example.invalid",
+  "method": "Read-only comparison to a selected reference; matching is not a policy recommendation.",
+  "counts": {
+    "matches_reference": 8,
+    "differs": 2,
+    "unknown": 10
+  },
+  "retrieval_errors": [
+    "willow@example.invalid"
+  ],
+  "comparisons": [
+    {
+      "room": "oak@example.invalid",
+      "setting": "AutomateProcessing",
+      "reference_value": "AutoAccept",
+      "observed_value": "AutoAccept",
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "BookingWindowInDays",
+      "reference_value": 180,
+      "observed_value": 90,
+      "status": "differs"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "MaximumDurationInMinutes",
+      "reference_value": 120,
+      "observed_value": 120,
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "AllowRecurringMeetings",
+      "reference_value": true,
+      "observed_value": true,
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "AllBookInPolicy",
+      "reference_value": true,
+      "observed_value": true,
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "ProcessExternalMeetingMessages",
+      "reference_value": false,
+      "observed_value": false,
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "DeleteSubject",
+      "reference_value": true,
+      "observed_value": false,
+      "status": "differs"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "AddOrganizerToSubject",
+      "reference_value": true,
+      "observed_value": true,
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "DeleteComments",
+      "reference_value": true,
+      "observed_value": true,
+      "status": "matches_reference"
+    },
+    {
+      "room": "oak@example.invalid",
+      "setting": "RemovePrivateProperty",
+      "reference_value": false,
+      "observed_value": false,
+      "status": "matches_reference"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "AutomateProcessing",
+      "reference_value": "AutoAccept",
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "BookingWindowInDays",
+      "reference_value": 180,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "MaximumDurationInMinutes",
+      "reference_value": 120,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "AllowRecurringMeetings",
+      "reference_value": true,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "AllBookInPolicy",
+      "reference_value": true,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "ProcessExternalMeetingMessages",
+      "reference_value": false,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "DeleteSubject",
+      "reference_value": true,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "AddOrganizerToSubject",
+      "reference_value": true,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "DeleteComments",
+      "reference_value": true,
+      "observed_value": null,
+      "status": "unknown"
+    },
+    {
+      "room": "willow@example.invalid",
+      "setting": "RemovePrivateProperty",
+      "reference_value": false,
+      "observed_value": null,
+      "status": "unknown"
+    }
+  ]
+}

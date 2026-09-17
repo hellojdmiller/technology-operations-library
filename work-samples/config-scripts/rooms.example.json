@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "captured_at": "2026-09-17T12:00:00Z",
+  "rooms": [
+    {
+      "identity": "cedar@example.invalid",
+      "retrieval_status": "complete",
+      "settings": {
+        "AutomateProcessing": "AutoAccept",
+        "BookingWindowInDays": 180,
+        "MaximumDurationInMinutes": 120,
+        "AllowRecurringMeetings": true,
+        "AllBookInPolicy": true,
+        "ProcessExternalMeetingMessages": false,
+        "DeleteSubject": true,
+        "AddOrganizerToSubject": true,
+        "DeleteComments": true,
+        "RemovePrivateProperty": false
+      }
+    },
+    {
+      "identity": "oak@example.invalid",
+      "retrieval_status": "complete",
+      "settings": {
+        "AutomateProcessing": "AutoAccept",
+        "BookingWindowInDays": 90,
+        "MaximumDurationInMinutes": 120,
+        "AllowRecurringMeetings": true,
+        "AllBookInPolicy": true,
+        "ProcessExternalMeetingMessages": false,
+        "DeleteSubject": false,
+        "AddOrganizerToSubject": true,
+        "DeleteComments": true,
+        "RemovePrivateProperty": false
+      }
+    },
+    {
+      "identity": "willow@example.invalid",
+      "retrieval_status": "error",
+      "settings": null
+    }
+  ]
+}
