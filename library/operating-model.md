@@ -33,6 +33,8 @@ The receiving operator should demonstrate access to the right environment, find 
 
 Use the [automation handover](../documentation/automation-handover-template.md) and [vendor training path](../training/README.md) as starting points. Handover is incomplete when knowledge is delivered but required access, authority, or acceptance remains unresolved.
 
+The [operations and succession pack](../operations/README.md) supplies the detailed emergency and planned-handover paths, readiness exercises, daily procedures, and working records. Use the [operating cadence](../operations/operating-cadence.md) to keep ownership and unresolved work visible between reviews.
+
 ## Evidence worth keeping
 
 Keep a current service catalog, access review record, change decision, incident record, renewal decision, risk treatment record, and recovery-test result. Store actual identities and technical evidence in protected internal systems. The resource library contains only fictional examples.

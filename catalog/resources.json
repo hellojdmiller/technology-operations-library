@@ -299,6 +299,118 @@
       "description": "This is an illustrative sequence for an incoming IT owner or a firm improving its operating model. Adjust it to urgent risks, staffing, and business deadlines. Calendar milestones are planning aids, not permission to defer a known serious issue."
     },
     {
+      "title": "A working cadence for VC IT",
+      "collection": "IT operations",
+      "path": "operations/operating-cadence.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "A useful operations review answers three questions: can people do their work, what needs a decision, and who is following through? Use this cadence to connect the ticket queue, service owners, providers, and upcoming business deadlines."
+    },
+    {
+      "title": "Application discovery and permission alert review",
+      "collection": "IT operations",
+      "path": "operations/sops/application-alert-review.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Start when discovery, endpoint inventory, consent monitoring, or a user report identifies a new application, unusual adoption, or changed permissions. Cover web services, installed applications, browser extensions, and connected applications.…"
+    },
+    {
+      "title": "Assign ownership and make escalation work",
+      "collection": "IT operations",
+      "path": "operations/succession/ownership-and-escalation.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Technical knowledge, credentials, business authority, and provider execution are different things. A capable operator can recommend and perform work within scope without becoming the person who accepts business risk or approves a new commercial…"
+    },
+    {
+      "title": "Device troubleshooting and vendor escalation",
+      "collection": "IT operations",
+      "path": "operations/sops/device-vendor-escalation.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Use for a managed device with repeatable hardware symptoms, physical damage, unexplained instability, or a persistent application fault requiring vendor help. The outcome is verified restoration or an accepted support case with a continuity…"
+    },
+    {
+      "title": "Joiner, mover, and leaver operations",
+      "collection": "IT operations",
+      "path": "operations/sops/joiner-mover-leaver.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Give people the access their work requires, remove access when its purpose ends, and preserve the business records and dependencies that need to survive a role change. Work from an approved request and a current service inventory rather than a…"
+    },
+    {
+      "title": "Keep operating documents trustworthy",
+      "collection": "IT operations",
+      "path": "operations/document-control.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "A procedure becomes unreliable when the document says one thing, the system does another, and nobody knows which record governs. Keep changing facts in a controlled register, keep the procedure focused on actions, and give evidence its own…"
+    },
+    {
+      "title": "Mailbox and calendar access requests",
+      "collection": "IT operations",
+      "path": "operations/sops/mailbox-calendar-access.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Use for a new, changed, temporary, or removed delegation to a mailbox or calendar. Typical purposes include scheduling coverage and managing a shared service mailbox. Define the resource, delegate, business purpose, capability, and duration…"
+    },
+    {
+      "title": "Network and service reachability triage",
+      "collection": "IT operations",
+      "path": "operations/sops/network-triage.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Start when an approved website or service is unavailable, slow, intermittently reachable, or visibly blocked. Cover the initial separation of application, identity, browser, endpoint, policy, local-network, and upstream-service causes. The…"
+    },
+    {
+      "title": "Plan a handover that transfers work and exposes the remaining gaps",
+      "collection": "IT operations",
+      "path": "operations/succession/planned-handover.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "A useful handover answers two different questions: what was delivered and received, and what the receiving team can demonstrate it can operate. Record those conclusions separately. A delivery can be acknowledged while a service remains…"
+    },
+    {
+      "title": "Prepare and demonstrate emergency administrative access",
+      "collection": "IT operations",
+      "path": "operations/succession/emergency-access-readiness.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "The question is whether an authorized alternate can obtain the capability needed for an approved recovery without relying on the unavailable person. A second account, a custody receipt, and a successful sign-in each establish something narrower…"
+    },
+    {
+      "title": "Request pipeline reconciliation and recovery",
+      "collection": "IT operations",
+      "path": "operations/sops/request-pipeline-recovery.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Start when a submitted request is missing, duplicated, stalled, routed incorrectly, or inconsistent with its downstream result. Cover intake, approval handoff, execution tracking, and completion reporting. Examples include access requests,…"
+    },
+    {
+      "title": "Security alert triage",
+      "collection": "IT operations",
+      "path": "operations/sops/security-alert-triage.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Start when a security platform or a person reports suspected account misuse, phishing, unexpected forwarding, malware, or suspicious application activity. The outcome is a supported disposition or an accepted handoff to the incident lead. This…"
+    },
+    {
+      "title": "Start here when the technology owner is unavailable",
+      "collection": "IT operations",
+      "path": "operations/succession/emergency-start-here.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Use this guide to establish who is coordinating, find the current operating facts, and keep essential work moving within existing authority. It is not a technical recovery procedure or permission to take over another person's accounts."
+    },
+    {
+      "title": "Test whether another operator can perform the work",
+      "collection": "IT operations",
+      "path": "operations/succession/readiness-exercise.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "The exercise should expose what an authorized alternate can do from the documented process, where they need help, and what prevents completion. Keep the result tied to the actual sample and test mode. A tabletop, a lab demonstration, and a live…"
+    },
+    {
+      "title": "Working records for an operational handover",
+      "collection": "IT operations",
+      "path": "operations/templates/README.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Use these five small registers together to answer different questions: what is being handed over, what is known, who may decide or act, what has been demonstrated, and what remains an exception. Their separation prevents a delivered document or…"
+    },
+    {
+      "title": "Write an SOP another operator can use",
+      "collection": "IT operations",
+      "path": "operations/sop-writing-guide.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Start with the event that makes somebody open the document. Then explain what they need, what they may do, how they know it worked, and where they stop. A good SOP reduces the number of things the reader must infer."
+    },
+    {
       "title": "Access review preparation",
       "collection": "n8n workflows",
       "path": "n8n/access-review-preparation/README.md",

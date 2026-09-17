@@ -2,6 +2,8 @@
 
 Practical examples for policies, procedures, continuity, and cyber-risk management. The nine adapted examples below preserve useful working structures while using generic roles and fictional circumstances. Start with the [adaptation guide](ADAPTATION.md).
 
+For the expanded succession package, routine operating procedures, and working records, use [IT operations and succession](../operations/README.md).
+
 ## Policies
 
 | Example | Use it for |
