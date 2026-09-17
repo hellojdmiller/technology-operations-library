@@ -1,0 +1,5 @@
+[
+  {"service":"Document sharing","status":"healthy","summary":"The fictional test account can access the intended sample folder.","owner":"Service owner A","evidenceRef":"fixture://sharing-check"},
+  {"service":"Internet failover","status":"watch","summary":"The secondary path is available; the application-level test remains to be scheduled.","owner":"Service owner B","evidenceRef":"fixture://failover-observation"},
+  {"service":"Backup recovery","status":"action","summary":"A restore job completed, but the restored application's usability has not been checked.","owner":"Service owner C","evidenceRef":"fixture://restore-job"}
+]

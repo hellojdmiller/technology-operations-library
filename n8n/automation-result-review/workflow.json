@@ -1,0 +1,80 @@
+{
+  "name": "VCPEIT — Automation result review (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"runId\": \"fictional-migration-001\",\n    \"expectedIds\": [\n      \"record-001\",\n      \"record-002\",\n      \"record-003\"\n    ],\n    \"observedIds\": [\n      \"record-001\",\n      \"record-003\",\n      \"record-004\"\n    ],\n    \"evidenceRef\": \"fixture://fictional-migration-001\"\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. No external calls.\nconst items = $input.all();\nif (items.length === 0) {\n  return [{ json: { status: \"invalid_input\", issues: [\"No run records supplied.\"] } }];\n}\n\nreturn items.map((item, index) => {\n  const input = item.json ?? {};\n  const issues = [];\n  const text = value => typeof value === \"string\" && value.trim().length > 0;\n  if (!text(input.runId)) issues.push(\"A runId is required.\");\n  for (const field of [\"expectedIds\", \"observedIds\"]) {\n    if (!Array.isArray(input[field]) || input[field].some(id => !text(id))) {\n      issues.push(`${field} must be an array of nonblank strings.`);\n    }\n  }\n  if (issues.length > 0) {\n    return { json: { runId: text(input.runId) ? input.runId : null, status: \"invalid_input\", issues }, pairedItem: { item: index } };\n  }\n\n  const duplicates = values => {\n    const seen = new Set();\n    const repeated = new Set();\n    for (const value of values) {\n      if (seen.has(value)) repeated.add(value);\n      seen.add(value);\n    }\n    return [...repeated];\n  };\n  const expected = new Set(input.expectedIds);\n  const observed = new Set(input.observedIds);\n  const missingIds = [...expected].filter(id => !observed.has(id));\n  const unexpectedIds = [...observed].filter(id => !expected.has(id));\n  const duplicateExpectedIds = duplicates(input.expectedIds);\n  const duplicateObservedIds = duplicates(input.observedIds);\n  if (expected.size === 0) issues.push(\"Expected scope is empty; establish the intended result.\");\n  if (!text(input.evidenceRef)) issues.push(\"An evidence reference is required for review.\");\n  if (missingIds.length) issues.push(\"Expected records are missing.\");\n  if (unexpectedIds.length) issues.push(\"Observed records fall outside the expected scope.\");\n  if (duplicateExpectedIds.length || duplicateObservedIds.length) issues.push(\"Duplicate IDs require review.\");\n\n  return {\n    json: {\n      runId: input.runId,\n      status: issues.length ? \"needs_review\" : \"matched\",\n      expectedCount: input.expectedIds.length,\n      observedCount: input.observedIds.length,\n      missingIds, unexpectedIds, duplicateExpectedIds, duplicateObservedIds,\n      evidenceRef: text(input.evidenceRef) ? input.evidenceRef : null,\n      issues,\n      limitation: \"Compares supplied IDs only. Evidence is referenced, not independently verified; permissions, field values, and workflow usability still need review.\"\n    },\n    pairedItem: { item: index }\n  };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Automation result review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Automation result review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}
