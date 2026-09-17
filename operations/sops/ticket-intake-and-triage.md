@@ -1,0 +1,47 @@
+# Ticket intake and triage
+
+> Proposed procedure, version 0.1. Adapt roles, coverage, approval routes, and ticket visibility before adoption. Examples are fictional and unexecuted. This document establishes no contract, service commitment, or approval to change an environment.
+
+## Trigger, scope, and ownership
+
+Use when work arrives through the service portal, monitoring, email, telephone, or an informal conversation. The outcome is a protected, classified record with a named internal owner, justified priority, next action, and requester update. Intake covers both employees and authorized external requesters; an investment relationship does not grant authority over a portfolio company's systems.
+
+The service desk or MSP captures facts and recommends routing. The **internal case owner**, identified by person in the protected ticket, remains accountable for coordination and communications even when a provider performs work. Resource/business approvers authorize reserved decisions; technical operators execute within that authority; a reviewer checks outcomes. Record combined roles in a small team. Neither queue membership nor administrative access supplies missing approval.
+
+Preconditions are an approved intake system, verified contact routes, service/ownership records, support coverage, and the locally adopted [service-level management guide](../service-level-management.md). If the system is unavailable, use the approved restricted fallback log and later reconcile it without losing original receipt times or creating duplicate actions.
+
+## Classify the work
+
+| Type | Meaning and next route |
+|---|---|
+| Service request | Someone needs information, a standard service, equipment, or access. Confirm eligibility and approvals; a catalog listing alone does not approve the request. |
+| Incident | An unplanned interruption or reduction in an existing service. Prioritize restoring usable service and verifying the result. |
+| Security concern | Suspected compromise, disclosure, fraud, or unsafe activity. Start the restricted security route immediately, with linked service-impact work if needed; do not wait for routine triage completion. |
+| Problem | Investigation of a recurring or underlying cause. Link related incidents; problem analysis must not hold up appropriate service restoration. |
+| Change | A proposed alteration to a service or configuration. Link the request/incident that motivates it; assess risk, approval, implementation, and recovery through the change process. |
+
+These categories can produce linked records. Do not turn an outage into a request merely to obtain a more convenient timer. Atlassian distinguishes a request for something to be provided from an incident's unplanned service disruption. [Service request management](https://www.atlassian.com/itsm/service-request-management).
+
+## Operational steps
+
+1. **Capture receipt and protect the record.** Preserve the supported intake channel's first receipt as `received_at_utc`, plus channel, source reference, and reported event time with its time zone. For unsupported channels, retain the original report and apply the adopted routing rule. Create a stable ticket ID; record later transcription separately. Verify requester identity before revealing service details or discussing access. Use neutral titles; keep personnel matters, investment information, security indicators, and attachments behind appropriate restrictions.
+2. **Screen for urgent risk.** Ask what stopped, who is affected, what deadline is at risk, whether a safe workaround exists, and whether there are compromise or physical-safety signs. Route security concerns to [security alert triage](security-alert-triage.md); use the incident authority and independent communication route if normal identity or messaging may be compromised. Escalate first and fill nonessential fields afterward.
+3. **Make the intake actionable.** Capture requested outcome or failed task, affected service/entity, scope, first occurrence, relevant device/application references, error text, recent changes, business deadline, available workaround, requester availability, and preferred verified contact route. Separate user reports from observations. Collect only necessary evidence; never ask for passwords, recovery keys, MFA codes, or unrestricted mailbox exports.
+4. **Check duplicates and dependencies.** Search for related cases, current outages, pending requests, and recent changes. Link duplicates to a parent without discarding their receipt, impact, or requester-update history. Confirm a missing acknowledgment did not hide a completed action; use [request pipeline recovery](request-pipeline-recovery.md) where delivery or execution is uncertain. Do not submit provisioning twice.
+5. **Set type and priority with reasons.** Use P1 Critical, P2 High, P3 Normal, or P4 Low from the service-level guide. Assess business impact and urgency together: affected capability, exposure, number of people, deadline, and quality of fallback. Seniority alone changes neither. A single person supporting a time-critical business process can have significant impact; many users experiencing a minor inconvenience need not be P1. Record uncertainty, initial priority, and every reassessment with reason and time. Atlassian supports mapping impact and urgency to priority; this library's labels are its own proposed model. [Priority matrix](https://support.atlassian.com/jira-service-management-cloud/docs/how-do-i-create-a-matrix-using-impact-and-urgency-values/).
+6. **Confirm coverage and clocks.** Identify the applicable service definition, calendar, time zone, response/update expectations, and any contractual reference. Keep human response, restoration, resolution, and closure separate. A bot receipt is not `human_response_at_utc`. After-hours monitoring, remote response, onsite attendance, and vendor repair are different capabilities. Record absent onsite coverage and the fallback; do not promise attendance because someone can answer a phone.
+7. **Assign a named owner and next action.** Select the operator by skill, access, capacity, and authority. Use [network triage](network-triage.md), [device/vendor escalation](device-vendor-escalation.md), [mailbox/calendar access](mailbox-calendar-access.md), or [software approval](../../documentation/procedures/software-request-and-approval.md) as appropriate. State the action, approval dependency, verification method, and next review. Follow [ticket escalation](ticket-escalation.md) if another party must accept work; reassignment alone is insufficient.
+8. **Give a meaningful requester update.** State the ticket reference, understood impact, owner/contact route, current action, any precise information needed, and when the next update is due. Distinguish a forecast from a commitment. Check message recipients and whether a comment is public or internal before sending. Sensitive investigation details stay in the restricted record; ordinary status can link to it without exposing content.
+9. **Monitor waiting work.** A waiting status needs a reason, blocker owner, request sent, follow-up point, and fallback. If the requester does not respond, use the adopted contact sequence and an appropriate alternate; reassess urgent, security, and access-removal concerns instead of closing them for silence. Waiting for a user or vendor pauses a service clock only when the adopted definition permits it. Preserve elapsed wall time and pause evidence.
+
+## Exceptions, closure, and reopening
+
+Stop dependent work for ambiguous identity/target, missing authority, unsafe evidence, or unknown ownership. Escalate to the internal owner or duty manager rather than bounce between queues. If sensitive data entered a broadly visible ticket, restrict access and involve the security/privacy owner; deletion from one view does not prove notifications or copies were removed.
+
+Intake is complete when an owner accepts the next action and the requester-update obligation is recorded. It does not resolve the case. Record `restored_at_utc` for verified usable service or accepted workaround, `resolved_at_utc` for the verified agreed remedy, and `closed_at_utc` for administrative closure under the adopted policy. Retain verification, acceptance, residual tasks, and a reopen route. Reopen failed or recurring outcomes without erasing history; link a new record if the platform requires it and initiate problem follow-up for a repeated pattern.
+
+**Fictional example:** EX-INTAKE-061 says “urgent laptop.” Triage discovers a routine replacement request with a working device and flexible timing. It enters the request process with P4 Low proposed, subject to the local model. A separate newly reported inability to reach a critical service is assessed on its actual impact, not the requester's title. No work or approval has occurred in this illustration.
+
+## Evidence and reviewed sources
+
+Keep classification, priority rationale, immutable receipt, human response, internal owner, approval dependencies, coverage/clock references, update history, and accepted next action. The two Atlassian sources above and [ServiceNow SLA definitions](https://www.servicenow.com/docs/r/it-service-management/service-level-management/t_CreateAnSLADefinition.html) were reviewed on 2026-09-17. ServiceNow documents configurable start, pause, stop, and reset conditions; verify actual configuration against adopted terms. The procedure here is a generic recommendation, not a statement that either product enforces it by default.

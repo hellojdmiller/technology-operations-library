@@ -4,6 +4,8 @@ Give people the access their work requires, remove access when its purpose ends,
 
 This is an adapted generic procedure with fictional examples. Platform actions must follow the adopted tenant-specific runbook. No account, device, or production workflow has been changed or tested for this example.
 
+This guide supplies the common lifecycle boundaries and the role-change path. Use the detailed [employee onboarding](employee-onboarding.md) and [employee offboarding](employee-offboarding.md) SOPs and their checklists when handling those events. Keep actual task records in one protected case rather than completing parallel trackers.
+
 ## Trigger, inputs, and authority
 
 The trigger is a recorded personnel or contract change from the authorized people owner, with a verified identity, event type, manager or sponsor, effective time and time zone, and scope. The manager recommends the role's access; each business owner approves access to their service. The IT owner coordinates execution, with the authorized provider or administrator making changes. A reviewer verifies the outcomes; records and legal owners decide preservation and disclosure requirements.

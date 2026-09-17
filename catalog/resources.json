@@ -327,6 +327,20 @@
       "description": "Use for a managed device with repeatable hardware symptoms, physical damage, unexplained instability, or a persistent application fault requiring vendor help. The outcome is verified restoration or an accepted support case with a continuity…"
     },
     {
+      "title": "Employee offboarding: end access and preserve what must survive",
+      "collection": "IT operations",
+      "path": "operations/sops/employee-offboarding.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "This procedure expands the joiner, mover, and leaver guide. It separates access containment, business continuity, records preservation, assets, and final account disposition. These activities may run in parallel; unfinished handover or…"
+    },
+    {
+      "title": "Employee onboarding: from approved request to usable access",
+      "collection": "IT operations",
+      "path": "operations/sops/employee-onboarding.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Use this procedure to coordinate a new employee or sponsored contractor across identity, applications, devices, and orientation. It expands the joiner, mover, and leaver guide; role changes use that guide's difference review. Configure actual…"
+    },
+    {
       "title": "Joiner, mover, and leaver operations",
       "collection": "IT operations",
       "path": "operations/sops/joiner-mover-leaver.md",
@@ -376,11 +390,39 @@
       "description": "Start when a submitted request is missing, duplicated, stalled, routed incorrectly, or inconsistent with its downstream result. Cover intake, approval handoff, execution tracking, and completion reporting. Examples include access requests,…"
     },
     {
+      "title": "Review service-desk quality and improve the next week",
+      "collection": "IT operations",
+      "path": "operations/service-desk-quality-review.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "A fast ticket response is useful when it leads to owned work and a verified outcome. Review speed alongside accuracy, communication, access boundaries, and recurring failure. This guide proposes a small review a VC or PE IT lead can run with an…"
+    },
+    {
       "title": "Security alert triage",
       "collection": "IT operations",
       "path": "operations/sops/security-alert-triage.md",
       "readiness": "Adapted or proposed guidance; operational exercises not run",
       "description": "Start when a security platform or a person reports suspected account misuse, phishing, unexpected forwarding, malware, or suspicious application activity. The outcome is a supported disposition or an accepted handoff to the incident lead. This…"
+    },
+    {
+      "title": "Service levels that describe what the team can deliver",
+      "collection": "IT operations",
+      "path": "operations/service-level-management.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Define SLA, SLO, OLA, response, updates, restoration, and reporting. Includes fictional P1–P4 targets and six worked timing cases for calendars, pauses, reassignment, and reopen."
+    },
+    {
+      "title": "Service-desk checklists and measurement examples",
+      "collection": "IT operations",
+      "path": "operations/checklists/README.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Six working aids for onboarding, offboarding, software requests, ticket handoffs, SLA targets, and clock calculations. Includes field definitions and blank execution evidence."
+    },
+    {
+      "title": "Software requests: from intake to verified delivery",
+      "collection": "IT operations",
+      "path": "operations/sops/software-request-fulfillment.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Turn a software request into an explicit decision and a usable, supported result. Route an eligible request for an approved catalog item through its standard fulfillment path; route a new product or expanded use through a bounded review before…"
     },
     {
       "title": "Start here when the technology owner is unavailable",
@@ -395,6 +437,20 @@
       "path": "operations/succession/readiness-exercise.md",
       "readiness": "Adapted or proposed guidance; operational exercises not run",
       "description": "The exercise should expose what an authorized alternate can do from the documented process, where they need help, and what prevents completion. Keep the result tied to the actual sample and test mode. A tabletop, a lab demonstration, and a live…"
+    },
+    {
+      "title": "Ticket escalation and accepted handoff",
+      "collection": "IT operations",
+      "path": "operations/sops/ticket-escalation.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Escalate when the current operator lacks required skill/access, business impact increases, progress stalls, ownership is disputed, a provider is needed, or a service-level trigger approaches or is breached. Suspected compromise uses security…"
+    },
+    {
+      "title": "Ticket intake and triage",
+      "collection": "IT operations",
+      "path": "operations/sops/ticket-intake-and-triage.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Use when work arrives through the service portal, monitoring, email, telephone, or an informal conversation. The outcome is a protected, classified record with a named internal owner, justified priority, next action, and requester update.…"
     },
     {
       "title": "Working records for an operational handover",
