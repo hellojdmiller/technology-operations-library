@@ -1,0 +1,8 @@
+[
+  {
+    "runId": "fictional-migration-001",
+    "expectedIds": ["record-001", "record-002", "record-003"],
+    "observedIds": ["record-001", "record-003", "record-004"],
+    "evidenceRef": "fixture://fictional-migration-001"
+  }
+]
