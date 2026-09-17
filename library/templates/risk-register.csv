@@ -1,0 +1,4 @@
+risk_id,scenario,inherent_likelihood,inherent_impact,residual_likelihood,residual_impact,status,owner_role,treatment,target_date,verification_evidence,acceptance_authority,review_date
+EX-RISK-A,Fictional former pilot members retain access,2,3,2,3,Open,Workspace owner,Review population and verify removals,Unassigned,Pending,Unassigned,Unassigned
+EX-RISK-B,Fictional restored workspace permissions are unverified,2,3,2,3,Partially implemented,Recovery owner,Test allowed and denied access,Unassigned,Pending,Unassigned,Unassigned
+EX-RISK-C,Fictional alternate operator cannot find procedure,2,2,1,2,Verified closed in fictional scenario,Service owner,Maintain alternate ownership,Not applicable,Fictional exercise reference only,Not applicable,Unassigned

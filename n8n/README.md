@@ -1,11 +1,16 @@
 # n8n workflows
 
-Two small examples to test before connecting a workflow to real systems.
+Seven practical examples to test before connecting a workflow to real systems. They prepare review outputs from supplied evidence and fictional data.
 
 | Workflow | Input | Output |
 |---|---|---|
 | [Automation result review](automation-result-review/README.md) | Expected and observed record IDs, plus an evidence reference | Missing, unexpected, or duplicate IDs and a review status |
 | [Operations brief](operations-brief/README.md) | Service observations with status, owner, and evidence reference | A draft brief with exceptions and unknowns visible |
+| [Access review preparation](access-review-preparation/README.md) | Workforce snapshot and human application grants | Leaver, privileged, dormant, unknown, and ownerless grants for human decisions |
+| [Vendor renewal triage](vendor-renewal-triage/README.md) | Contract register, notice periods, decisions, and delivery evidence | An ordered queue based on decision/notice deadlines |
+| [Joiner, mover, and leaver review](joiner-mover-leaver-review/README.md) | Approved task catalog and lifecycle case evidence | Missing tasks, unsupported completion, and unresolved exceptions |
+| [Backup evidence review](backup-evidence-review/README.md) | Workload objectives, recovery points, and restore-test measurements | Stale data protection, missing tests, and RPO/RTO gaps |
+| [SaaS license reconciliation](saas-license-reconciliation/README.md) | Purchased seats, assignments, workforce, and usage | Capacity mismatches and human review candidates |
 
 Each folder contains a `workflow.json` import, readable `evaluate.js`, and `sample-input.json`. The JSON includes a manual trigger and a sample-data node, so no credentials are needed to try it.
 
@@ -20,4 +25,30 @@ These examples use Manual Trigger version 1 and Code version 2, with **Run Once 
 
 Local tests exercise the JavaScript, input handling, and exported graph. They do not establish compatibility with an installed n8n version. Record the version and observed import/execution result in [VALIDATION.md](../VALIDATION.md) when tested.
 
-References: [n8n import/export](https://docs.n8n.io/workflows/export-import/), [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/).
+## Review packets and results
+
+The five operational reviews take one item per review packet, with nested arrays defined in each README. An explicit `asOf` makes results reproducible; the fixture dates are illustrative and do not silently advance to today. Stable IDs are compared exactly. Unknowns must remain unknown rather than becoming success, zero, or an empty source.
+
+The sample-data node always emits a packet, including when a nested array is empty. If a real collector emits zero n8n items, the next node may not execute; ensure the mapping step still emits a packet with the expected arrays and `snapshotComplete: false` (or `registerComplete: false`). Do not infer completeness from a successful HTTP response or a successful workflow execution.
+
+`invalid_input`, `needs_review`, and `review_ready` are returned as data. They do not throw execution errors. If adding a downstream process, branch explicitly on status; operational findings and technical execution failures need separate handling. The two original examples retain their own documented statuses.
+
+Evidence references are pointers, not fetched or verified by these workflows. The fixture references begin with `fixture://` and refer to no real system. No sample is an approved control or a complete operational standard.
+
+## Integration sequence
+
+1. Import and run the unchanged fixture in a test workspace, then compare the documented results.
+2. Run the failure exercises and record the installed n8n version and observations.
+3. Add read-only collection, pagination, source timestamps, stable ID mapping, and scope reconciliation. Configure credentials through n8n, never in workflow JSON.
+4. Review execution-data access and retention before using workforce, access, vendor, or recovery evidence. Keep source data and generated reports out of this repository.
+5. Add technical failure handling and an explicit internal review destination. Test unavailable sources, partial pages, stale observations, retries, and duplicate delivery.
+6. Add scheduling or approved changes only after someone owns operation, exceptions, and independent verification. These exports include neither.
+
+To regenerate the exports and run the local checks from the repository root:
+
+```sh
+node scripts/build-workflows.mjs
+node --test tests/*.test.mjs
+```
+
+References checked 2026-09-17: [import/export](https://docs.n8n.io/build/manage-workflows/export-and-import), [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/), [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/), [error handling](https://docs.n8n.io/build/flow-logic/handle-errors-gracefully).

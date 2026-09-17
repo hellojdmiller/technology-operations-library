@@ -1,0 +1,24 @@
+[
+  {
+    "reviewId": "fictional-license-review",
+    "asOf": "2026-09-17",
+    "unusedDays": 60,
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://license-snapshot",
+    "workforce": [
+      { "personId": "person-001", "status": "active" },
+      { "personId": "person-002", "status": "active" },
+      { "personId": "person-003", "status": "leaver" }
+    ],
+    "subscriptions": [
+      { "skuId": "sku-research", "service": "Research workspace", "purchasedSeats": 5 },
+      { "skuId": "sku-automation", "service": "Automation workspace", "purchasedSeats": 1 }
+    ],
+    "assignments": [
+      { "assignmentId": "assignment-001", "skuId": "sku-research", "personId": "person-001", "lastUsedOn": "2026-09-16", "isServiceAccount": false, "ownerRole": "Research systems owner" },
+      { "assignmentId": "assignment-002", "skuId": "sku-research", "personId": "person-002", "lastUsedOn": "2026-06-01", "isServiceAccount": false, "ownerRole": "Research systems owner" },
+      { "assignmentId": "assignment-003", "skuId": "sku-research", "personId": "person-003", "lastUsedOn": "2026-09-01", "isServiceAccount": false, "ownerRole": "Research systems owner" },
+      { "assignmentId": "assignment-004", "skuId": "sku-automation", "personId": "service-001", "lastUsedOn": null, "isServiceAccount": true, "ownerRole": "Automation owner" }
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "name": "VCPEIT — Vendor renewal triage (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"fictional-renewal-review\",\n    \"asOf\": \"2026-09-17\",\n    \"planningWindowDays\": 90,\n    \"registerComplete\": true,\n    \"evidenceRef\": \"fixture://vendor-register\",\n    \"vendors\": [\n      {\n        \"vendorId\": \"vendor-001\",\n        \"service\": \"Research workspace\",\n        \"ownerRole\": \"Research systems owner\",\n        \"renewalOn\": \"2026-10-01\",\n        \"noticeDays\": 30,\n        \"autoRenews\": true,\n        \"annualCost\": 12000,\n        \"currency\": \"USD\",\n        \"criticality\": \"critical\",\n        \"decision\": \"undecided\",\n        \"decisionEvidenceRef\": \"\",\n        \"exitPlanReady\": false,\n        \"noticeSent\": false,\n        \"noticeEvidenceRef\": \"\",\n        \"noticeDeliveredOn\": null\n      },\n      {\n        \"vendorId\": \"vendor-002\",\n        \"service\": \"Meeting workspace\",\n        \"ownerRole\": \"Workplace systems owner\",\n        \"renewalOn\": \"2026-12-01\",\n        \"noticeDays\": 60,\n        \"autoRenews\": true,\n        \"annualCost\": 6000,\n        \"currency\": \"EUR\",\n        \"criticality\": \"standard\",\n        \"decision\": \"undecided\",\n        \"decisionEvidenceRef\": \"\",\n        \"exitPlanReady\": false,\n        \"noticeSent\": false,\n        \"noticeEvidenceRef\": \"\",\n        \"noticeDeliveredOn\": null\n      },\n      {\n        \"vendorId\": \"vendor-003\",\n        \"service\": \"Design workspace\",\n        \"ownerRole\": \"Communications lead\",\n        \"renewalOn\": \"2027-03-01\",\n        \"noticeDays\": 30,\n        \"autoRenews\": false,\n        \"annualCost\": 2400,\n        \"currency\": \"USD\",\n        \"criticality\": \"standard\",\n        \"decision\": \"renew\",\n        \"decisionEvidenceRef\": \"fixture://design-renewal-decision\",\n        \"exitPlanReady\": false,\n        \"noticeSent\": false,\n        \"noticeEvidenceRef\": \"\",\n        \"noticeDeliveredOn\": null\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Calendar triage, not contract interpretation.\nconst items = $input.all();\nconst text = value => typeof value === 'string' && value.trim().length > 0;\nconst date = value => {\n  if (typeof value !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return null;\n  const valueMs = Date.parse(`${value}T00:00:00Z`);\n  return Number.isFinite(valueMs) && new Date(valueMs).toISOString().slice(0, 10) === value ? valueMs : null;\n};\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No renewal packets supplied.'] } }];\n\nreturn items.map((item, index) => {\n  const input = item.json ?? {};\n  const issues = [];\n  const asOf = date(input.asOf);\n  if (!text(input.reviewId)) issues.push('reviewId must be a nonblank string.');\n  if (asOf === null) issues.push('asOf must be a real YYYY-MM-DD date.');\n  if (!Number.isInteger(input.planningWindowDays) || input.planningWindowDays < 1) issues.push('planningWindowDays must be a positive integer.');\n  if (typeof input.registerComplete !== 'boolean') issues.push('registerComplete must be a boolean.');\n  if (!Array.isArray(input.vendors)) issues.push('vendors must be an array.');\n  else {\n    const seen = new Set();\n    for (const [row, vendor] of input.vendors.entries()) {\n      if (!vendor || !text(vendor.vendorId) || !text(vendor.service)) { issues.push(`vendors[${row}] needs vendorId and service.`); continue; }\n      if (seen.has(vendor.vendorId)) issues.push(`Duplicate vendorId: ${vendor.vendorId}.`);\n      seen.add(vendor.vendorId);\n      if (date(vendor.renewalOn) === null) issues.push(`vendors[${row}].renewalOn must be a real date.`);\n      if (vendor.noticeDeliveredOn !== null && (date(vendor.noticeDeliveredOn) === null || date(vendor.noticeDeliveredOn) > asOf)) issues.push(`vendors[${row}].noticeDeliveredOn must be null or a real date no later than asOf.`);\n      if (!Number.isInteger(vendor.noticeDays) || vendor.noticeDays < 0 || vendor.noticeDays > 3650) issues.push(`vendors[${row}].noticeDays must be an integer from 0 to 3650.`);\n      if (typeof vendor.autoRenews !== 'boolean' || typeof vendor.exitPlanReady !== 'boolean' || typeof vendor.noticeSent !== 'boolean') issues.push(`vendors[${row}] needs boolean autoRenews, exitPlanReady, and noticeSent.`);\n      if (!['critical', 'standard'].includes(vendor.criticality)) issues.push(`vendors[${row}].criticality must be critical or standard.`);\n      if (!['undecided', 'renew', 'exit'].includes(vendor.decision)) issues.push(`vendors[${row}].decision must be undecided, renew, or exit.`);\n      if (typeof vendor.annualCost !== 'number' || !Number.isFinite(vendor.annualCost) || vendor.annualCost < 0) issues.push(`vendors[${row}].annualCost must be a finite nonnegative number.`);\n      if (typeof vendor.currency !== 'string' || !/^[A-Z]{3}$/.test(vendor.currency)) issues.push(`vendors[${row}].currency must be a three-letter uppercase code.`);\n    }\n  }\n  if (issues.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues }, pairedItem: { item: index } };\n\n  if (!input.registerComplete) issues.push('Register is incomplete; missing vendors may hide renewal exposure.');\n  if (!text(input.evidenceRef)) issues.push('Missing register evidence reference.');\n  if (!input.vendors.length) issues.push('Empty vendor scope requires confirmation.');\n  const rows = input.vendors.map(vendor => {\n    const deadlineMs = date(vendor.renewalOn) - vendor.noticeDays * 86400000;\n    const daysToDeadline = Math.round((deadlineMs - asOf) / 86400000);\n    const findings = [];\n    const decisionRecorded = vendor.decision !== 'undecided' && text(vendor.decisionEvidenceRef);\n    const exitNoticeUnverified = vendor.decision === 'exit' && (!vendor.noticeSent || !text(vendor.noticeEvidenceRef) || vendor.noticeDeliveredOn === null);\n    if (!text(vendor.ownerRole)) findings.push('owner_missing');\n    if (vendor.decision !== 'undecided' && !text(vendor.decisionEvidenceRef)) findings.push('decision_evidence_missing');\n    if (vendor.decision === 'exit' && !vendor.exitPlanReady) findings.push('exit_plan_missing');\n    if (exitNoticeUnverified) findings.push('exit_notice_unverified');\n    if (vendor.decision === 'exit' && vendor.noticeDeliveredOn !== null && date(vendor.noticeDeliveredOn) > deadlineMs) findings.push('notice_delivery_after_deadline');\n    if (date(vendor.renewalOn) < asOf) findings.push('renewal_date_in_past_confirm_current_term');\n    let queue = 'monitor';\n    if ((!decisionRecorded || exitNoticeUnverified) && daysToDeadline < 0) { queue = 'deadline_passed'; findings.push('decision_or_notice_deadline_passed'); }\n    else if ((!decisionRecorded || exitNoticeUnverified) && daysToDeadline <= input.planningWindowDays) { queue = 'decision_due'; findings.push('decision_or_notice_needed_in_planning_window'); }\n    else if (decisionRecorded) queue = 'decision_recorded';\n    if (vendor.autoRenews && (!decisionRecorded || exitNoticeUnverified) && daysToDeadline <= input.planningWindowDays) findings.push('automatic_renewal_exposure');\n    if (vendor.criticality === 'critical' && queue !== 'monitor') findings.push('business_dependency_review');\n    return {\n      vendorId: vendor.vendorId, service: vendor.service, ownerRole: text(vendor.ownerRole) ? vendor.ownerRole : null,\n      renewalOn: vendor.renewalOn, decisionDeadline: new Date(deadlineMs).toISOString().slice(0, 10), daysToDeadline,\n      queue, annualCost: vendor.annualCost, currency: vendor.currency, decision: vendor.decision,\n      decisionEvidenceRef: text(vendor.decisionEvidenceRef) ? vendor.decisionEvidenceRef : null,\n      noticeEvidenceRef: text(vendor.noticeEvidenceRef) ? vendor.noticeEvidenceRef : null,\n      noticeDeliveredOn: vendor.noticeDeliveredOn, findings\n    };\n  }).sort((a, b) => a.daysToDeadline - b.daysToDeadline || a.vendorId.localeCompare(b.vendorId));\n  const attentionCount = rows.filter(row => row.findings.length).length;\n  return {\n    json: {\n      reviewId: input.reviewId, asOf: input.asOf, status: issues.length || attentionCount ? 'needs_review' : 'review_ready',\n      totalVendors: rows.length, attentionCount, issues, rows, evidenceRef: text(input.evidenceRef) ? input.evidenceRef : null,\n      limitation: 'Dates use supplied calendar-day notice periods. Verify contract definitions, delivery requirements, time zones, and current term. Costs are displayed by currency, not summed. No renewal, cancellation, or vendor contact occurs.'\n    }, pairedItem: { item: index }\n  };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Vendor renewal triage",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Vendor renewal triage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

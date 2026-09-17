@@ -5,6 +5,8 @@ description: Compare configuring, buying, combining, or building a technology ca
 
 # Build-versus-buy review
 
+Work with the text, files, and tools actually available in the current environment. No particular provider, connector, or skill loader is required. If a referenced source cannot be inspected, keep it distinct from verified evidence.
+
 Start with the workflow and the outcome people need. Translate product names or a preferred architecture into the capability being evaluated without discarding the user's constraints.
 
 Use the supplied evidence to distinguish required capabilities, preferences, assumptions, and unknowns. Ask only for missing information that could materially change the recommendation; otherwise proceed with a visible assumption.

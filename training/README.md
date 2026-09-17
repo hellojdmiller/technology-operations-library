@@ -1,0 +1,44 @@
+# VC IT operator training
+
+Practical lessons for the person who has to explain a decision, make a bounded change, and prove the result. The setting is a fictional investment firm: a small internal team, outside specialists, sensitive deal material, and people who need access while traveling.
+
+These are independent practice resources. They are not vendor courses, certifications, or records of training already completed. Product references were checked on **September 17, 2026**; record the version and edition used when you run a lab.
+
+## Learning path
+
+Start with ownership, then choose your identity platform and device platform. Finish with workflow operations. A firm using both ecosystems can complete all six modules.
+
+| Order | Module | Practice outcome | Suggested time |
+|---|---|---|---|
+| 1 | [SaaS ownership and handover](saas-ownership-and-handover.md) | A service record that another operator can use | 60–90 minutes |
+| 2A | [Microsoft 365 and Entra operator](microsoft-365-entra-operator.md) | A scoped identity change and a defensible interpretation of sign-in evidence | 75–120 minutes |
+| 2B | [Google Workspace operator](google-workspace-operator.md) | A test-unit change, a coverage check, and a recovery plan | 75–120 minutes |
+| 3A | [Intune device operations](intune-device-operations.md) | A pilot compliance result with its assignment and freshness checked | 75–120 minutes |
+| 3B | [Jamf device operations](jamf-device-operations.md) | A narrowly scoped inventory policy and verified execution | 60–90 minutes |
+| 4 | [n8n workflow operator](n8n-workflow-operator.md) | A workflow trial that checks the business result as well as execution status | 60–90 minutes |
+
+Time estimates exclude purchasing, creating, and enrolling a lab environment. Use the [training record](training-record-template.md) to capture evidence, unresolved questions, and a reviewer’s decision.
+
+## Two ways to complete a module
+
+**Tabletop** is the default. Work through the fictional scenario, draft the proposed configuration, interpret supplied records, and complete the assessment. It requires no tenant changes. Mark results as *simulated*; screenshots copied from documentation are not execution evidence.
+
+**Isolated lab** adds hands-on practice in a separately provisioned test tenant, test service, or disposable device. A test group inside a live firm tenant is not isolation. The module lists the permissions, licenses, accounts, and hardware that must exist first. If those prerequisites are missing, complete the tabletop and record the lab as not attempted.
+
+Never use investor data, deal documents, employee records, live credentials, actual recovery codes, or production exports as training material. Use fictional identifiers and synthetic content. Destructive actions such as wiping devices, deleting users, or rotating a live integration’s credentials remain paper walkthroughs in this collection.
+
+## What counts as completion
+
+Each module has five assessment criteria, scored 0–2 each: 0 for missing or incorrect, 1 for a partly supported answer, and 2 for a correct answer supported by the requested evidence. The suggested threshold is **8/10**, with no zero on scope or recovery. This is an internal practice rubric, not a vendor passing score.
+
+For a tabletop, provide the completed scenario and an honest list of untested assumptions. For an isolated lab, also provide the intended target, actual target, before/after observation, failure observation, and recovery observation. Record elapsed time and unknowns; a green status without context is insufficient.
+
+Keep actual lab evidence in your protected training workspace. Commit only sanitized example records to this repository. A reviewer should be able to distinguish **planned**, **simulated**, **executed**, and **verified** at a glance.
+
+## How this connects to the library
+
+- Use the [n8n examples](../n8n/README.md) for the automation module.
+- Use the [documentation examples](../documentation/README.md) when turning a lab into an operating procedure.
+- Use the [reusable skills](../skills/README.md) to draft a runbook or review a decision, then verify the resulting work against the source system.
+
+Before repeating a lesson, reopen its official sources. If a control, license requirement, or interface has changed, record the difference instead of forcing an old instruction to fit.

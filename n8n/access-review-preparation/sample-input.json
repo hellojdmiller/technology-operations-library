@@ -1,0 +1,18 @@
+[
+  {
+    "reviewId": "fictional-quarterly-access-review",
+    "asOf": "2026-09-17",
+    "dormantDays": 90,
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://access-snapshot",
+    "workforce": [
+      { "personId": "person-001", "status": "active", "managerRole": "Operations lead" },
+      { "personId": "person-002", "status": "leaver", "managerRole": "Finance lead" }
+    ],
+    "grants": [
+      { "grantId": "grant-001", "personId": "person-001", "application": "Research workspace", "accessRole": "Member", "privileged": false, "lastUsedOn": "2026-09-15", "ownerRole": "Research systems owner" },
+      { "grantId": "grant-002", "personId": "person-002", "application": "Finance workspace", "accessRole": "Administrator", "privileged": true, "lastUsedOn": null, "ownerRole": "Finance systems owner" },
+      { "grantId": "grant-003", "personId": "person-001", "application": "Legacy research tool", "accessRole": "Member", "privileged": false, "lastUsedOn": "2026-05-01", "ownerRole": "" }
+    ]
+  }
+]

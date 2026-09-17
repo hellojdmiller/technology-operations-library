@@ -1,0 +1,30 @@
+[
+  {
+    "reviewId": "fictional-lifecycle-review",
+    "asOf": "2026-09-17",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://lifecycle-register",
+    "requiredTasks": {
+      "joiner": ["identity-approved", "device-ready", "access-verified"],
+      "mover": ["new-access-approved", "previous-access-reviewed"],
+      "leaver": ["sessions-revoked", "application-access-removed", "data-handover-verified"]
+    },
+    "cases": [
+      {
+        "caseId": "case-001", "type": "leaver", "effectiveOn": "2026-09-16", "ownerRole": "IT operations lead", "scopeApproved": true, "scopeApprovalRef": "fixture://case-001-scope", "additionalRequiredTaskIds": [],
+        "tasks": [
+          { "taskId": "sessions-revoked", "state": "complete", "evidenceRef": "fixture://case-001-session-check", "verifiedOn": "2026-09-16", "exceptionRef": "" },
+          { "taskId": "application-access-removed", "state": "complete", "evidenceRef": "", "verifiedOn": "2026-09-16", "exceptionRef": "" }
+        ]
+      },
+      {
+        "caseId": "case-002", "type": "mover", "effectiveOn": "2026-09-18", "ownerRole": "IT operations lead", "scopeApproved": true, "scopeApprovalRef": "fixture://case-002-scope", "additionalRequiredTaskIds": ["deal-workspace-reviewed"],
+        "tasks": [
+          { "taskId": "new-access-approved", "state": "complete", "evidenceRef": "fixture://case-002-approval", "verifiedOn": "2026-09-17", "exceptionRef": "" },
+          { "taskId": "previous-access-reviewed", "state": "complete", "evidenceRef": "fixture://case-002-previous-access", "verifiedOn": "2026-09-17", "exceptionRef": "" },
+          { "taskId": "deal-workspace-reviewed", "state": "not_applicable", "evidenceRef": "", "verifiedOn": null, "exceptionRef": "fixture://case-002-approved-exception" }
+        ]
+      }
+    ]
+  }
+]

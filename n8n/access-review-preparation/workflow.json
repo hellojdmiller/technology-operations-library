@@ -1,0 +1,80 @@
+{
+  "name": "VCPEIT — Access review preparation (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"fictional-quarterly-access-review\",\n    \"asOf\": \"2026-09-17\",\n    \"dormantDays\": 90,\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://access-snapshot\",\n    \"workforce\": [\n      {\n        \"personId\": \"person-001\",\n        \"status\": \"active\",\n        \"managerRole\": \"Operations lead\"\n      },\n      {\n        \"personId\": \"person-002\",\n        \"status\": \"leaver\",\n        \"managerRole\": \"Finance lead\"\n      }\n    ],\n    \"grants\": [\n      {\n        \"grantId\": \"grant-001\",\n        \"personId\": \"person-001\",\n        \"application\": \"Research workspace\",\n        \"accessRole\": \"Member\",\n        \"privileged\": false,\n        \"lastUsedOn\": \"2026-09-15\",\n        \"ownerRole\": \"Research systems owner\"\n      },\n      {\n        \"grantId\": \"grant-002\",\n        \"personId\": \"person-002\",\n        \"application\": \"Finance workspace\",\n        \"accessRole\": \"Administrator\",\n        \"privileged\": true,\n        \"lastUsedOn\": null,\n        \"ownerRole\": \"Finance systems owner\"\n      },\n      {\n        \"grantId\": \"grant-003\",\n        \"personId\": \"person-001\",\n        \"application\": \"Legacy research tool\",\n        \"accessRole\": \"Member\",\n        \"privileged\": false,\n        \"lastUsedOn\": \"2026-05-01\",\n        \"ownerRole\": \"\"\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Prepares review; never changes access.\nconst items = $input.all();\nconst text = value => typeof value === 'string' && value.trim().length > 0;\nconst date = value => {\n  if (typeof value !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return null;\n  const valueMs = Date.parse(`${value}T00:00:00Z`);\n  return Number.isFinite(valueMs) && new Date(valueMs).toISOString().slice(0, 10) === value ? valueMs : null;\n};\nconst duplicates = values => [...new Set(values.filter((value, index) => values.indexOf(value) !== index))];\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No review packets supplied.'] } }];\n\nreturn items.map((item, index) => {\n  const input = item.json ?? {};\n  const issues = [];\n  const asOf = date(input.asOf);\n  if (!text(input.reviewId)) issues.push('reviewId must be a nonblank string.');\n  if (asOf === null) issues.push('asOf must be a real YYYY-MM-DD date.');\n  if (!Number.isInteger(input.dormantDays) || input.dormantDays < 1) issues.push('dormantDays must be a positive integer.');\n  if (typeof input.snapshotComplete !== 'boolean') issues.push('snapshotComplete must be a boolean.');\n  for (const field of ['workforce', 'grants']) if (!Array.isArray(input[field])) issues.push(`${field} must be an array.`);\n  if (Array.isArray(input.workforce)) {\n    for (const [row, person] of input.workforce.entries()) {\n      if (!person || !text(person.personId) || !['active', 'leaver'].includes(person.status)) issues.push(`workforce[${row}] needs personId and status active or leaver.`);\n    }\n    if (duplicates(input.workforce.map(person => person?.personId)).length) issues.push('Duplicate workforce personIds make identity matching ambiguous.');\n  }\n  if (Array.isArray(input.grants)) {\n    for (const [row, grant] of input.grants.entries()) {\n      if (!grant || ['grantId', 'personId', 'application', 'accessRole'].some(field => !text(grant[field])) || typeof grant.privileged !== 'boolean') {\n        issues.push(`grants[${row}] needs grantId, personId, application, accessRole, and boolean privileged.`);\n        continue;\n      }\n      if (grant.lastUsedOn !== null && (date(grant.lastUsedOn) === null || date(grant.lastUsedOn) > asOf)) issues.push(`grants[${row}].lastUsedOn must be null or a real date no later than asOf.`);\n    }\n    if (duplicates(input.grants.map(grant => grant?.grantId)).length) issues.push('Duplicate grantIds make grant matching ambiguous.');\n  }\n  if (issues.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues }, pairedItem: { item: index } };\n\n  if (!input.snapshotComplete) issues.push('Snapshot is incomplete; reconcile source scope and pagination before review.');\n  if (!text(input.evidenceRef)) issues.push('Missing snapshot evidence reference.');\n  if (!input.workforce.length || !input.grants.length) issues.push('Empty workforce or grant scope requires confirmation.');\n  const people = new Map(input.workforce.map(person => [person.personId, person]));\n  const rows = input.grants.map(grant => {\n    const person = people.get(grant.personId);\n    const findings = [];\n    const daysSinceUse = grant.lastUsedOn === null ? null : Math.floor((asOf - date(grant.lastUsedOn)) / 86400000);\n    if (!person) findings.push('identity_not_in_workforce');\n    if (person?.status === 'leaver') findings.push('leaver_has_access');\n    if (grant.privileged) findings.push('privileged_access_review');\n    if (!text(grant.ownerRole)) findings.push('application_owner_missing');\n    if (!text(person?.managerRole)) findings.push('workforce_reviewer_missing');\n    if (daysSinceUse === null) findings.push('usage_unknown');\n    else if (daysSinceUse >= input.dormantDays) findings.push('dormant_access_review');\n    return {\n      grantId: grant.grantId, personId: grant.personId, application: grant.application,\n      accessRole: grant.accessRole, ownerRole: text(grant.ownerRole) ? grant.ownerRole : null,\n      reviewerRole: text(person?.managerRole) ? person.managerRole : null,\n      workforceStatus: person?.status ?? 'unknown', daysSinceUse, findings,\n      decision: 'pending_human_review'\n    };\n  });\n  const exceptionCount = rows.filter(row => row.findings.length).length;\n  return {\n    json: {\n      reviewId: input.reviewId, asOf: input.asOf,\n      status: issues.length || exceptionCount ? 'needs_review' : 'review_ready',\n      totalGrants: rows.length, exceptionCount, issues, rows,\n      evidenceRef: text(input.evidenceRef) ? input.evidenceRef : null,\n      limitation: 'Compares supplied snapshots only. All grants still require a human decision; usage and evidence are not independently verified. No access is changed.'\n    }, pairedItem: { item: index }\n  };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Access review preparation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Access review preparation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

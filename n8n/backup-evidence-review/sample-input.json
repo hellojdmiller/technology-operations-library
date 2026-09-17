@@ -1,0 +1,25 @@
+[
+  {
+    "reviewId": "fictional-recovery-review",
+    "asOf": "2026-09-17T12:00:00Z",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://protected-workload-inventory",
+    "workloads": [
+      {
+        "workloadId": "workload-001", "ownerRole": "Operations systems owner", "rpoHours": 24, "rtoHours": 4, "restoreTestMaxAgeDays": 90,
+        "backup": { "state": "success", "recoveryPointAt": "2026-09-17T06:00:00Z", "lastJobAt": "2026-09-17T06:15:00Z", "evidenceRef": "fixture://workload-001-backup" },
+        "restoreTest": { "outcome": "passed", "completedAt": "2026-09-01T12:00:00Z", "recoveryDurationMinutes": 90, "dataLossMinutes": 30, "evidenceRef": "fixture://workload-001-restore" }
+      },
+      {
+        "workloadId": "workload-002", "ownerRole": "Finance systems owner", "rpoHours": 4, "rtoHours": 2, "restoreTestMaxAgeDays": 90,
+        "backup": { "state": "success", "recoveryPointAt": "2026-09-15T12:00:00Z", "lastJobAt": "2026-09-17T11:00:00Z", "evidenceRef": "fixture://workload-002-backup" },
+        "restoreTest": { "outcome": "passed", "completedAt": "2026-05-01T12:00:00Z", "recoveryDurationMinutes": 180, "dataLossMinutes": 300, "evidenceRef": "fixture://workload-002-restore" }
+      },
+      {
+        "workloadId": "workload-003", "ownerRole": "Research systems owner", "rpoHours": 24, "rtoHours": 8, "restoreTestMaxAgeDays": 90,
+        "backup": { "state": "unknown", "recoveryPointAt": null, "lastJobAt": null, "evidenceRef": "" },
+        "restoreTest": { "outcome": "not_tested", "completedAt": null, "recoveryDurationMinutes": null, "dataLossMinutes": null, "evidenceRef": "" }
+      }
+    ]
+  }
+]

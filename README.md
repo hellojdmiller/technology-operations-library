@@ -1,36 +1,47 @@
 # VCPEIT
 
-Practical resources for technology operations in venture capital and private equity.
+Practical resources for technology leaders and operators in venture capital and private equity.
 
-This is the private working companion to [hellojdmiller.com](https://hellojdmiller.com). I’m using it to develop workflows, reusable AI instructions, and documentation that make an idea easier to put into practice.
+This is the private working companion to [hellojdmiller.com](https://hellojdmiller.com). I’m collecting the guidance, workflows, reusable AI instructions, and implementation examples that help turn an operating idea into something another person can use and verify.
 
-## Start here
+## Browse by the work you need to do
 
-| Collection | First resources | Use it for |
+| Collection | Included | Start here |
 |---|---|---|
-| [n8n workflows](n8n/README.md) | Automation result review; operations brief | See what happened, what is missing, and what needs attention |
-| [ChatGPT and agent skills](skills/README.md) | Build-versus-buy review; notes to runbook | Turn a question or working notes into a useful decision or document |
-| [Documentation examples](documentation/README.md) | Decision memo; recovery exercise runbook | Adapt a complete example with its assumptions and acceptance criteria visible |
+| [VC IT field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
+| [n8n workflows](n8n/README.md) | 7 workflow exports with sample data and local tests | Access reviews, renewals, lifecycle completeness, backup evidence, licenses, results, and briefs |
+| [Google and Microsoft baselines](baselines/README.md) | 40 control assertions across 2 platforms | Desired-state catalogs, evidence worksheets, fictional observations, and a local assessment tool |
+| [Portable skills](skills/README.md) | 4 self-contained skills | Build/buy review, notes to runbook, risk review, and document sanitization |
+| [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
+| [Vendor training](training/README.md) | 6 modules and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
+| [Implementation work samples](work-samples/README.md) | 3 sample collections | MCP design, Azure Bicep, and configuration scripts |
 
-The examples use fictional data. The n8n workflows run manually and do not connect to live services or send messages. Their JavaScript is tested locally; importing and executing them in n8n is the next validation step.
+For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the private repository and requires access to open resources. Its machine-readable index is [resources.json](catalog/resources.json).
 
-## How to use this collection
+## What is ready to use
 
-Start with the resource’s README or instructions. Each resource explains the input it expects, what it produces, and what still needs to be checked. Follow the related article for the reasoning behind the example.
+The guidance and examples are ready for private review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). n8n runtime trials, cloud deployment, real-tenant checks, vendor labs, and cross-client skill trials have not been completed.
 
-For the local workflow checks, use Node.js 22 or later. No package installation is needed:
+The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
+
+The skills share provider-neutral instructions. Use the [platform guide](skills/platform-guide.md) for supported Claude, ChatGPT, Codex, and Cursor delivery methods; native installation and pasting instructions into chat are different routes.
+
+## Local checks
+
+With Node.js 22 or later, no package installation is needed for the JavaScript checks:
 
 ```sh
 node scripts/build-workflows.mjs
-node --test tests/workflows.test.mjs
+node --test tests/*.test.mjs baselines/tests/*.test.mjs
+node scripts/build-catalog.mjs
 ```
 
-The build command regenerates the workflow JSON from its readable JavaScript and sample data. Commit both together.
+The workflow build regenerates exports from readable JavaScript and sample inputs. Keep both together. The catalog build indexes the reviewed resource collections.
 
 ## Developing privately
 
-Keep this repository private while the examples are being tried and refined. The website can link to published resources after a separate publication decision. Current readiness and the next checks are recorded in [VALIDATION.md](VALIDATION.md).
+Keep this repository private while resources are tried and refined. The adapted documents use fictional circumstances and omit original identities, architecture, incident history, and source containers. Read the [adaptation guide](documentation/ADAPTATION.md).
 
-New resources should include a clear use case, fictional sample input, expected output, setup instructions, and a meaningful validation step. Keep credentials, private operational data, and environment-specific exports out of examples.
+Keep credentials, original work documents, actual tenant exports, completed assessments, private deployment parameters, and operational evidence outside this repository. Public release is a separate decision about specific resources and their rights, disclosure risk, and validation.
 
 The existing [GPL-3.0 license](LICENSE) is retained.
