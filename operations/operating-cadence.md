@@ -70,3 +70,7 @@ The brief ends with owners and next updates. It does not turn waiting work into 
 ## Service-desk review companions
 
 Use [service-level management](service-level-management.md) to define response, updates, restoration, calendars, and reporting populations. Use [service-desk quality review](service-desk-quality-review.md) to inspect a small case sample for authority, accepted ownership, communications, outcome evidence, and residual work. Report aged open cases beside completed work; improving a ticket status alone does not improve the user outcome.
+
+## Change, asset, and remediation reviews
+
+Use the [change pack](packs/change-management/README.md) for upcoming windows, conflicting work, failed changes, and model recertification. Use the [asset pack](packs/asset-lifecycle/README.md) to reconcile custody and management observations and review held or retired equipment. Use the [patching pack](packs/patching/README.md) for applicability, deployment failures, overdue remediation, and expiring exceptions. Keep each finding attached to an owner and the next evidence needed.

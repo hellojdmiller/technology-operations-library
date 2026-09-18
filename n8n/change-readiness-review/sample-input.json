@@ -1,0 +1,55 @@
+[
+  {
+    "reviewId": "EX-CHANGE-REVIEW",
+    "asOf": "2026-09-17T12:00:00Z",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://scope",
+    "changes": [
+      {
+        "requestId": "EX-CHG-001",
+        "changeType": "normal",
+        "scopeConfirmed": true,
+        "authorizationVerified": true,
+        "windowConfirmed": true,
+        "standardModelMatch": null,
+        "scopeEvidenceRef": "fixture://scope",
+        "authorizationEvidenceRef": "fixture://decision",
+        "pilotEvidenceRef": "fixture://pilot",
+        "recoveryPlanRef": "fixture://recovery",
+        "verificationPlanRef": "fixture://verification",
+        "standardModelRef": null,
+        "standardModelValidUntil": null
+      },
+      {
+        "requestId": "EX-CHG-002",
+        "changeType": "standard",
+        "scopeConfirmed": true,
+        "authorizationVerified": true,
+        "windowConfirmed": true,
+        "standardModelMatch": false,
+        "scopeEvidenceRef": "fixture://scope",
+        "authorizationEvidenceRef": "fixture://decision",
+        "pilotEvidenceRef": "fixture://pilot",
+        "recoveryPlanRef": "fixture://recovery",
+        "verificationPlanRef": "fixture://verification",
+        "standardModelRef": "fixture://model",
+        "standardModelValidUntil": "2026-09-16T12:00:00Z"
+      },
+      {
+        "requestId": "EX-CHG-003",
+        "changeType": "emergency",
+        "scopeConfirmed": true,
+        "authorizationVerified": true,
+        "windowConfirmed": true,
+        "standardModelMatch": null,
+        "scopeEvidenceRef": "fixture://scope",
+        "authorizationEvidenceRef": "fixture://decision",
+        "pilotEvidenceRef": null,
+        "recoveryPlanRef": "fixture://recovery",
+        "verificationPlanRef": "fixture://verification",
+        "standardModelRef": null,
+        "standardModelValidUntil": null
+      }
+    ]
+  }
+]

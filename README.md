@@ -9,14 +9,14 @@ This is the private working companion to [hellojdmiller.com](https://hellojdmill
 | Collection | Included | Start here |
 |---|---|---|
 | [VC IT field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
-| [IT operations and service desk](operations/README.md) | 22 guides and procedures; 11 working-record CSVs | Onboarding, offboarding, software requests, ticket escalation, service levels, quality review, and succession |
-| [n8n workflows](n8n/README.md) | 7 workflow exports with sample data and local tests | Access reviews, renewals, lifecycle completeness, backup evidence, licenses, results, and briefs |
+| [IT operations and service desk](operations/README.md) | 22 guides and procedures; 3 operating packs; 17 CSV aids | Change management, asset lifecycle, patching, service desk, service levels, and succession |
+| [n8n workflows](n8n/README.md) | 10 workflow exports with sample data and local tests | Change readiness, asset reconciliation, patch exceptions, access, renewals, lifecycle, recovery, licenses, results, and briefs |
 | [Google and Microsoft baselines](baselines/README.md) | 40 control assertions across 2 platforms | Desired-state catalogs, evidence worksheets, fictional observations, and a local assessment tool |
 | [Cyber-risk operating pack](cyber-risk/README.md) | 11 guides and packs; 36 control proposals | Four checklists, AI risk and agent controls, tabletop exercises, leadership reporting, and evidence records |
 | [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
 | [Portable skills](skills/README.md) | 4 self-contained skills | Build/buy review, notes to runbook, risk review, and document sanitization |
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
-| [Vendor training](training/README.md) | 6 modules and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
+| [Vendor training](training/README.md) | 6 vendor modules, 3 operating exercises, and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 5 sample collections | MCP design and a runnable local server, Azure Bicep, configuration scripts, and control-evidence review |
 
 For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the private repository and requires access to open resources. Its machine-readable index is [resources.json](catalog/resources.json).

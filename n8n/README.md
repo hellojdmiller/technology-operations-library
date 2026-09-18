@@ -1,9 +1,12 @@
 # n8n workflows
 
-Seven practical examples to test before connecting a workflow to real systems. They prepare review outputs from supplied evidence and fictional data.
+Ten practical examples to test before connecting a workflow to real systems. They prepare review outputs from supplied evidence and fictional data.
 
 | Workflow | Input | Output |
 |---|---|---|
+| [Change readiness review](change-readiness-review/README.md) | Scoped change assertions and plan references | Missing metadata, expired standard models, and mandatory manual emergency review |
+| [Asset reconciliation review](asset-reconciliation-review/README.md) | Inventory plus separately dated management and custody observations | Missing/unexpected assets, stale evidence, and custodian conflicts |
+| [Patch and exception review](patch-exception-review/README.md) | Applicability, observations, local targets, and exception records | Unresolved remediation, overdue targets, and unsupported or expired exceptions |
 | [Automation result review](automation-result-review/README.md) | Expected and observed record IDs, plus an evidence reference | Missing, unexpected, or duplicate IDs and a review status |
 | [Operations brief](operations-brief/README.md) | Service observations with status, owner, and evidence reference | A draft brief with exceptions and unknowns visible |
 | [Access review preparation](access-review-preparation/README.md) | Workforce snapshot and human application grants | Leaver, privileged, dormant, unknown, and ownerless grants for human decisions |
@@ -27,7 +30,7 @@ Local tests exercise the JavaScript, input handling, and exported graph. They do
 
 ## Review packets and results
 
-The five operational reviews take one item per review packet, with nested arrays defined in each README. An explicit `asOf` makes results reproducible; the fixture dates are illustrative and do not silently advance to today. Stable IDs are compared exactly. Unknowns must remain unknown rather than becoming success, zero, or an empty source.
+The eight operational reviews take one item per review packet, with nested arrays defined in each README. An explicit `asOf` makes results reproducible; the fixture dates are illustrative and do not silently advance to today. Stable IDs are compared exactly. Unknowns must remain unknown rather than becoming success, zero, or an empty source.
 
 The sample-data node always emits a packet, including when a nested array is empty. If a real collector emits zero n8n items, the next node may not execute; ensure the mapping step still emits a packet with the expected arrays and `snapshotComplete: false` (or `registerComplete: false`). Do not infer completeness from a successful HTTP response or a successful workflow execution.
 

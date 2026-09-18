@@ -1,0 +1,80 @@
+{
+  "name": "VCPEIT — Patch exception review (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"EX-PATCH-REVIEW\",\n    \"asOf\": \"2026-09-17T12:00:00Z\",\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://scope\",\n    \"maxAgeDays\": 7,\n    \"findings\": [\n      {\n        \"findingId\": \"EX-FIND-001\",\n        \"assetId\": \"EX-ASSET-001\",\n        \"ownerRole\": \"Device operator\",\n        \"applicability\": \"affected\",\n        \"applicabilityEvidenceRef\": \"fixture://applicability\",\n        \"exploited\": false,\n        \"dueAt\": \"2026-09-20T12:00:00Z\",\n        \"observation\": {\n          \"state\": \"fixed\",\n          \"observedAt\": \"2026-09-17T09:00:00Z\",\n          \"evidenceRef\": \"fixture://verify\"\n        },\n        \"exception\": null\n      },\n      {\n        \"findingId\": \"EX-FIND-002\",\n        \"assetId\": \"EX-ASSET-002\",\n        \"ownerRole\": \"Device operator\",\n        \"applicability\": \"affected\",\n        \"applicabilityEvidenceRef\": \"fixture://applicability\",\n        \"exploited\": true,\n        \"dueAt\": \"2026-09-15T12:00:00Z\",\n        \"observation\": {\n          \"state\": \"vulnerable\",\n          \"observedAt\": \"2026-09-17T09:00:00Z\",\n          \"evidenceRef\": \"fixture://finding-02\"\n        },\n        \"exception\": {\n          \"approvalVerified\": true,\n          \"scopeConfirmed\": true,\n          \"effectiveAt\": \"2026-09-14T12:00:00Z\",\n          \"expiresAt\": \"2026-09-17T12:00:00Z\",\n          \"approvalRef\": \"fixture://exception\",\n          \"mitigationEvidenceRef\": \"fixture://mitigation\"\n        }\n      },\n      {\n        \"findingId\": \"EX-FIND-003\",\n        \"assetId\": \"EX-ASSET-003\",\n        \"ownerRole\": \"Device operator\",\n        \"applicability\": \"unknown\",\n        \"applicabilityEvidenceRef\": null,\n        \"exploited\": null,\n        \"dueAt\": null,\n        \"observation\": {\n          \"state\": \"unknown\",\n          \"observedAt\": null,\n          \"evidenceRef\": null\n        },\n        \"exception\": null\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Review supplied metadata only; no external actions.\nconst items = $input.all();\nconst text = v => typeof v === 'string' && v.trim().length > 0;\nconst object = v => v !== null && typeof v === 'object' && !Array.isArray(v);\nconst tri = v => v === true || v === false || v === null;\nconst ref = v => v === null || typeof v === 'string';\nconst stamp = v => {\n  if (typeof v !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$/.test(v)) return null;\n  const n = Date.parse(v);\n  return Number.isFinite(n) && new Date(n).toISOString() === (v.includes('.') ? v : v.replace('Z', '.000Z')) ? n : null;\n};\nconst errorsForRows = (rows, name, id, validate, errors) => {\n  if (!Array.isArray(rows)) { errors.push(`${name} must be an array.`); return; }\n  const seen = new Set();\n  rows.forEach((r, i) => {\n    if (!object(r) || !text(r[id])) { errors.push(`${name}[${i}] requires ${id}.`); return; }\n    if (seen.has(r[id])) errors.push(`Duplicate ${id} in ${name}: ${r[id]}.`);\n    seen.add(r[id]);\n    validate(r, `${name}[${i}]`, errors);\n  });\n};\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No review packets supplied.'] } }];\nreturn items.map((item, index) => {\n  const input = object(item.json) ? item.json : {};\n  const errors = [];\n  const asOf = stamp(input.asOf);\n  if (!text(input.reviewId)) errors.push('reviewId must be nonblank.');\n  if (asOf === null) errors.push('asOf must be a real UTC timestamp ending in Z.');\n  if (typeof input.snapshotComplete !== 'boolean') errors.push('snapshotComplete must be boolean.');\n  if (!ref(input.evidenceRef)) errors.push('evidenceRef must be string or null.');\n  if (!Number.isFinite(input.maxAgeDays) || input.maxAgeDays <= 0) errors.push('maxAgeDays must be a positive number.');\n  errorsForRows(input.findings, 'findings', 'findingId', (r, p, e) => {\n    if (!text(r.assetId) || !ref(r.ownerRole)) e.push(`${p} needs assetId and string/null ownerRole.`);\n    if (!['affected', 'not_affected', 'unknown'].includes(r.applicability)) e.push(`${p}.applicability is invalid.`);\n    if (!ref(r.applicabilityEvidenceRef) || !tri(r.exploited)) e.push(`${p} applicability evidence or exploitation flag is invalid.`);\n    if (r.dueAt !== null && stamp(r.dueAt) === null) e.push(`${p}.dueAt must be a UTC timestamp or null.`);\n    const o = r.observation;\n    if (!object(o) || !['vulnerable', 'fixed', 'unknown'].includes(o.state) || !ref(o.evidenceRef)) e.push(`${p}.observation is invalid.`);\n    else if (o.observedAt !== null && (stamp(o.observedAt) === null || stamp(o.observedAt) > asOf)) e.push(`${p}.observation.observedAt is invalid or future.`);\n    const x = r.exception;\n    if (x !== null) {\n      if (!object(x) || !tri(x.approvalVerified) || !tri(x.scopeConfirmed) || !ref(x.approvalRef) || !ref(x.mitigationEvidenceRef)) e.push(`${p}.exception is invalid.`);\n      else if (stamp(x.effectiveAt) === null || stamp(x.expiresAt) === null || stamp(x.expiresAt) <= stamp(x.effectiveAt)) e.push(`${p}.exception dates must form a valid nonempty UTC interval.`);\n    }\n  }, errors);\n  if (errors.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues: errors }, pairedItem: { item: index } };\n  const issues = [];\n  if (!input.snapshotComplete) issues.push('Snapshot is incomplete; reconcile scope before relying on the review.');\n  if (!text(input.evidenceRef)) issues.push('Source evidence reference is missing.');\n  if (!input.findings.length) issues.push('Empty finding scope requires confirmation.');\n  const rows = input.findings.map(r => {\n    const findings = [], o = r.observation, x = r.exception;\n    const ageDays = o.observedAt === null ? null : (asOf - stamp(o.observedAt)) / 86400000;\n    const fresh = ageDays !== null && ageDays <= input.maxAgeDays && text(o.evidenceRef);\n    const scopeSupported = text(r.applicabilityEvidenceRef);\n    let exceptionState = 'none';\n    if (!text(r.ownerRole)) findings.push('remediation_owner_missing');\n    if (!scopeSupported) findings.push('applicability_evidence_missing');\n    if (r.applicability === 'unknown') findings.push('applicability_unknown');\n    if (r.exploited === null) findings.push('exploitation_status_unknown');\n    if (r.exploited === true) findings.push('exploitation_assessment_required');\n    if (ageDays === null) findings.push('observation_time_unknown');\n    else if (!fresh) findings.push('observation_stale_or_unsupported');\n    if (!text(o.evidenceRef)) findings.push('observation_evidence_missing');\n    if (r.applicability === 'not_affected' && o.state === 'vulnerable') findings.push('contradictory_applicability_and_observation');\n    const unresolved = !(scopeSupported && fresh && ((r.applicability === 'affected' && o.state === 'fixed') || (r.applicability === 'not_affected' && o.state !== 'vulnerable')));\n    if (unresolved) {\n      if (r.dueAt === null) findings.push('remediation_target_missing');\n      else if (stamp(r.dueAt) < asOf) findings.push('remediation_overdue');\n      else if (stamp(r.dueAt) === asOf) findings.push('remediation_due_now');\n      findings.push('remediation_or_applicability_review_open');\n    }\n    if (x) {\n      exceptionState = x.approvalVerified === true && x.scopeConfirmed === true && text(x.approvalRef) && text(x.mitigationEvidenceRef) && stamp(x.effectiveAt) <= asOf && stamp(x.expiresAt) > asOf ? 'documented_exception_for_review' : 'unsupported_or_expired_exception';\n      findings.push(exceptionState);\n    }\n    return { findingId: r.findingId, assetId: r.assetId, findings, exceptionState,\n      observationAgeDays: ageDays, targetDatePassed: r.dueAt !== null && stamp(r.dueAt) < asOf,\n      status: findings.length ? 'needs_review' : 'supplied_evidence_ready', decision: 'pending_human_review' };\n  });\n  const attentionCount = rows.filter(r => r.findings.length).length;\n  return { json: {\n    reviewId: input.reviewId, asOf: input.asOf,\n    status: issues.length || attentionCount ? 'needs_review' : 'review_ready',\n    totalRows: rows.length, attentionCount, issues, rows,\n    evidenceRef: input.evidenceRef,\n    limitation: 'Supplied metadata and evidence pointers are not independently verified. This review neither authorizes nor performs any operational action.'\n  }, pairedItem: { item: index } };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Patch exception review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Patch exception review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

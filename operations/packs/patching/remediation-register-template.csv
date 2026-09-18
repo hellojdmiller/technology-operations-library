@@ -1,0 +1,1 @@
+record_id,campaign_id,asset_scope_ref,finding_ref,applicability,exposure,priority,decision_ref,owner_role,due_at_utc,change_ref,deployment_state,observed_at_utc,observation_ref,verification_state,verification_ref,exception_ref,exception_state,exception_expires_at_utc,next_action,next_review_at_utc,closure_ref

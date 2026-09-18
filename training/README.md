@@ -19,6 +19,18 @@ Start with ownership, then choose your identity platform and device platform. Fi
 
 Time estimates exclude purchasing, creating, and enrolling a lab environment. Use the [training record](training-record-template.md) to capture evidence, unresolved questions, and a reviewer’s decision.
 
+## Operating exercises
+
+The three operating packs add facilitated scenarios and answer keys. Use them after the relevant platform lesson or as a team discussion with your provider. They are fictional paper exercises and authorize no system changes.
+
+| Exercise | Practice |
+|---|---|
+| [Change management](../operations/packs/change-management/exercise.md) | Model mismatch, partial execution, and emergency authority |
+| [Asset lifecycle](../operations/packs/asset-lifecycle/exercise.md) | Custody, evidence conflicts, holds, and disposition boundaries |
+| [Patching and remediation](../operations/packs/patching/exercise.md) | Applicability, deployment failure, and expiring exceptions |
+
+Use each exercise's own answer key and scoring rules; do not translate a tabletop score into a claim of production capability.
+
 ## Two ways to complete a module
 
 **Tabletop** is the default. Work through the fictional scenario, draft the proposed configuration, interpret supplied records, and complete the assessment. It requires no tenant changes. Mark results as *simulated*; screenshots copied from documentation are not execution evidence.

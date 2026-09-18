@@ -11,6 +11,9 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'operations/packs/change-management/README.md': 'Standard, normal, and emergency change procedures with approval, pilot, rollback, verification, a record template, fictional examples, exercises, and an n8n review flow.',
+  'operations/packs/asset-lifecycle/README.md': 'Manage IT assets from purchase and custody through inventory reconciliation, return, sanitization, and disposal, with templates, exercises, and an n8n review flow.',
+  'operations/packs/patching/README.md': 'Prioritize vulnerabilities and patches, plan rollout rings, verify remediation, and review exceptions using an SOP, records, exercises, and an n8n review flow.',
   'operations/service-level-management.md': 'Define SLA, SLO, OLA, response, updates, restoration, and reporting. Includes fictional P1–P4 targets and six worked timing cases for calendars, pauses, reassignment, and reopen.',
   'operations/checklists/README.md': 'Six working aids for onboarding, offboarding, software requests, ticket handoffs, SLA targets, and clock calculations. Includes field definitions and blank execution evidence.',
 
@@ -38,7 +41,7 @@ function add(collection, files, readiness) {
   }
 }
 add('Field guides', markdown('library'), 'Proposed operating guidance');
-add('IT operations', [...markdown('operations'), ...markdown('operations/succession'), ...markdown('operations/sops'), 'operations/templates/README.md', 'operations/checklists/README.md'], 'Adapted or proposed guidance; operational exercises not run');
+add('IT operations', [...markdown('operations'), ...markdown('operations/succession'), ...markdown('operations/sops'), 'operations/templates/README.md', 'operations/checklists/README.md', ...folders('operations/packs', 'README.md')], 'Adapted or proposed guidance; operational exercises not run');
 add('n8n workflows', folders('n8n', 'README.md'), 'Local logic checked; n8n runtime trial pending');
 add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md'], 'Local assessment checked; tenant configuration not applied');
 add('Cyber risk', ['cyber-risk/operating-model.md', 'cyber-risk/controls/README.md', ...markdown('cyber-risk/checklists'), ...markdown('cyber-risk/ai'), ...markdown('cyber-risk/scenarios'), ...markdown('cyber-risk/reporting')], 'Proposed controls and exercises; real-world effectiveness unverified');
