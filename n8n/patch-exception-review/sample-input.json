@@ -1,0 +1,63 @@
+[
+  {
+    "reviewId": "EX-PATCH-REVIEW",
+    "asOf": "2026-09-17T12:00:00Z",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://scope",
+    "maxAgeDays": 7,
+    "findings": [
+      {
+        "findingId": "EX-FIND-001",
+        "assetId": "EX-ASSET-001",
+        "ownerRole": "Device operator",
+        "applicability": "affected",
+        "applicabilityEvidenceRef": "fixture://applicability",
+        "exploited": false,
+        "dueAt": "2026-09-20T12:00:00Z",
+        "observation": {
+          "state": "fixed",
+          "observedAt": "2026-09-17T09:00:00Z",
+          "evidenceRef": "fixture://verify"
+        },
+        "exception": null
+      },
+      {
+        "findingId": "EX-FIND-002",
+        "assetId": "EX-ASSET-002",
+        "ownerRole": "Device operator",
+        "applicability": "affected",
+        "applicabilityEvidenceRef": "fixture://applicability",
+        "exploited": true,
+        "dueAt": "2026-09-15T12:00:00Z",
+        "observation": {
+          "state": "vulnerable",
+          "observedAt": "2026-09-17T09:00:00Z",
+          "evidenceRef": "fixture://finding-02"
+        },
+        "exception": {
+          "approvalVerified": true,
+          "scopeConfirmed": true,
+          "effectiveAt": "2026-09-14T12:00:00Z",
+          "expiresAt": "2026-09-17T12:00:00Z",
+          "approvalRef": "fixture://exception",
+          "mitigationEvidenceRef": "fixture://mitigation"
+        }
+      },
+      {
+        "findingId": "EX-FIND-003",
+        "assetId": "EX-ASSET-003",
+        "ownerRole": "Device operator",
+        "applicability": "unknown",
+        "applicabilityEvidenceRef": null,
+        "exploited": null,
+        "dueAt": null,
+        "observation": {
+          "state": "unknown",
+          "observedAt": null,
+          "evidenceRef": null
+        },
+        "exception": null
+      }
+    ]
+  }
+]

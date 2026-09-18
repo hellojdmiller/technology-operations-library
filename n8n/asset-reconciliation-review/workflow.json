@@ -1,0 +1,80 @@
+{
+  "name": "TOL — Asset reconciliation review (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"EX-ASSET-REVIEW\",\n    \"asOf\": \"2026-09-17T12:00:00Z\",\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://scope\",\n    \"maxAgeDays\": 7,\n    \"inventory\": [\n      {\n        \"assetId\": \"EX-ASSET-001\",\n        \"lifecycle\": \"assigned\",\n        \"ownerRole\": \"IT owner\",\n        \"custodianId\": \"EX-PERSON-01\",\n        \"requiresManagement\": true\n      },\n      {\n        \"assetId\": \"EX-ASSET-002\",\n        \"lifecycle\": \"assigned\",\n        \"ownerRole\": \"IT owner\",\n        \"custodianId\": \"EX-PERSON-02\",\n        \"requiresManagement\": true\n      },\n      {\n        \"assetId\": \"EX-ASSET-003\",\n        \"lifecycle\": \"repair\",\n        \"ownerRole\": \"IT owner\",\n        \"custodianId\": null,\n        \"requiresManagement\": true\n      }\n    ],\n    \"observations\": [\n      {\n        \"assetId\": \"EX-ASSET-001\",\n        \"managed\": true,\n        \"custodianId\": \"EX-PERSON-01\",\n        \"managementObservedAt\": \"2026-09-17T09:00:00Z\",\n        \"custodyObservedAt\": \"2026-09-17T09:00:00Z\",\n        \"managementEvidenceRef\": \"fixture://asset-01\",\n        \"custodyEvidenceRef\": \"fixture://custody-EX-ASSET-001\"\n      },\n      {\n        \"assetId\": \"EX-ASSET-002\",\n        \"managed\": null,\n        \"custodianId\": \"EX-PERSON-03\",\n        \"managementObservedAt\": \"2026-09-01T09:00:00Z\",\n        \"custodyObservedAt\": \"2026-09-17T09:00:00Z\",\n        \"managementEvidenceRef\": \"fixture://asset-02\",\n        \"custodyEvidenceRef\": \"fixture://custody-EX-ASSET-002\"\n      },\n      {\n        \"assetId\": \"EX-ASSET-004\",\n        \"managed\": true,\n        \"custodianId\": null,\n        \"managementObservedAt\": \"2026-09-17T09:00:00Z\",\n        \"custodyObservedAt\": \"2026-09-17T09:00:00Z\",\n        \"managementEvidenceRef\": \"fixture://asset-04\",\n        \"custodyEvidenceRef\": \"fixture://custody-EX-ASSET-004\"\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Review supplied metadata only; no external actions.\nconst items = $input.all();\nconst text = v => typeof v === 'string' && v.trim().length > 0;\nconst object = v => v !== null && typeof v === 'object' && !Array.isArray(v);\nconst tri = v => v === true || v === false || v === null;\nconst ref = v => v === null || typeof v === 'string';\nconst stamp = v => {\n  if (typeof v !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$/.test(v)) return null;\n  const n = Date.parse(v);\n  return Number.isFinite(n) && new Date(n).toISOString() === (v.includes('.') ? v : v.replace('Z', '.000Z')) ? n : null;\n};\nconst errorsForRows = (rows, name, id, validate, errors) => {\n  if (!Array.isArray(rows)) { errors.push(`${name} must be an array.`); return; }\n  const seen = new Set();\n  rows.forEach((r, i) => {\n    if (!object(r) || !text(r[id])) { errors.push(`${name}[${i}] requires ${id}.`); return; }\n    if (seen.has(r[id])) errors.push(`Duplicate ${id} in ${name}: ${r[id]}.`);\n    seen.add(r[id]);\n    validate(r, `${name}[${i}]`, errors);\n  });\n};\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No review packets supplied.'] } }];\nreturn items.map((item, index) => {\n  const input = object(item.json) ? item.json : {};\n  const errors = [];\n  const asOf = stamp(input.asOf);\n  if (!text(input.reviewId)) errors.push('reviewId must be nonblank.');\n  if (asOf === null) errors.push('asOf must be a real UTC timestamp ending in Z.');\n  if (typeof input.snapshotComplete !== 'boolean') errors.push('snapshotComplete must be boolean.');\n  if (!ref(input.evidenceRef)) errors.push('evidenceRef must be string or null.');\n  if (!Number.isFinite(input.maxAgeDays) || input.maxAgeDays <= 0) errors.push('maxAgeDays must be a positive number.');\n  errorsForRows(input.inventory, 'inventory', 'assetId', (r, p, e) => {\n    if (!['assigned', 'stock', 'repair', 'retired'].includes(r.lifecycle)) e.push(`${p}.lifecycle is invalid.`);\n    if (!ref(r.ownerRole) || !ref(r.custodianId)) e.push(`${p} ownerRole/custodianId must be string or null.`);\n    if (typeof r.requiresManagement !== 'boolean') e.push(`${p}.requiresManagement must be boolean.`);\n  }, errors);\n  errorsForRows(input.observations, 'observations', 'assetId', (r, p, e) => {\n    for (const f of ['managementObservedAt', 'custodyObservedAt']) if (r[f] !== null && (stamp(r[f]) === null || stamp(r[f]) > asOf)) e.push(`${p}.${f} must be null or a real UTC timestamp no later than asOf.`);\n    if (!tri(r.managed)) e.push(`${p}.managed must be boolean or null.`);\n    for (const f of ['custodianId', 'managementEvidenceRef', 'custodyEvidenceRef']) if (!ref(r[f])) e.push(`${p}.${f} must be string or null.`);\n  }, errors);\n  if (errors.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues: errors }, pairedItem: { item: index } };\n  const issues = [];\n  if (!input.snapshotComplete) issues.push('Snapshot is incomplete; reconcile scope before relying on the review.');\n  if (!text(input.evidenceRef)) issues.push('Source evidence reference is missing.');\n  if (!input.inventory.length) issues.push('Empty inventory scope requires confirmation.');\n  const inv = new Map(input.inventory.map(r => [r.assetId, r]));\n  const obs = new Map(input.observations.map(r => [r.assetId, r]));\n  const ids = [...new Set([...inv.keys(), ...obs.keys()])];\n  const rows = ids.map(assetId => {\n    const r = inv.get(assetId), o = obs.get(assetId), findings = [];\n    const managementAgeDays = o?.managementObservedAt ? (asOf - stamp(o.managementObservedAt)) / 86400000 : null;\n    const custodyAgeDays = o?.custodyObservedAt ? (asOf - stamp(o.custodyObservedAt)) / 86400000 : null;\n    if (!r) findings.push('observation_not_in_inventory');\n    if (!o) findings.push('observation_missing');\n    if (r && !text(r.ownerRole)) findings.push('asset_owner_missing');\n    if (r?.lifecycle === 'assigned' && !text(r.custodianId)) findings.push('assigned_custodian_unknown');\n    if (o) {\n      if (r?.requiresManagement || !r) {\n        if (managementAgeDays === null) findings.push('management_observation_missing');\n        else if (managementAgeDays > input.maxAgeDays) findings.push('management_observation_stale');\n        if (!text(o.managementEvidenceRef)) findings.push('management_evidence_missing');\n      }\n      if (r?.lifecycle !== 'retired') {\n        if (custodyAgeDays === null) findings.push('custody_observation_missing');\n        else if (custodyAgeDays > input.maxAgeDays) findings.push('custody_observation_stale');\n        if (!text(o.custodyEvidenceRef)) findings.push('custody_evidence_missing');\n      }\n      if (r?.requiresManagement && o.managed !== true) findings.push('required_management_unconfirmed');\n      if (r?.lifecycle === 'assigned' && !text(o.custodianId)) findings.push('observed_custodian_unknown');\n      if (r && text(r.custodianId) && text(o.custodianId) && r.custodianId !== o.custodianId) findings.push('custodian_mismatch');\n      if (r && !text(r.custodianId) && text(o.custodianId)) findings.push('unexpected_custodian');\n      if (r?.lifecycle === 'retired') findings.push('retired_asset_has_observation');\n    }\n    return { assetId, lifecycle: r?.lifecycle ?? null, managementAgeDays, custodyAgeDays,\n      findings, status: findings.length ? 'needs_review' : 'supplied_records_consistent', decision: 'pending_human_review' };\n  });\n  const attentionCount = rows.filter(r => r.findings.length).length;\n  return { json: {\n    reviewId: input.reviewId, asOf: input.asOf,\n    status: issues.length || attentionCount ? 'needs_review' : 'review_ready',\n    totalRows: rows.length, attentionCount, issues, rows,\n    evidenceRef: input.evidenceRef,\n    limitation: 'Supplied metadata and evidence pointers are not independently verified. This review neither authorizes nor performs any operational action.'\n  }, pairedItem: { item: index } };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Asset reconciliation review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Asset reconciliation review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

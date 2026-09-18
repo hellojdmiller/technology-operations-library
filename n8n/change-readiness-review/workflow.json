@@ -1,0 +1,80 @@
+{
+  "name": "TOL — Change readiness review (fictional example)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Run example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "return [\n  {\n    \"reviewId\": \"EX-CHANGE-REVIEW\",\n    \"asOf\": \"2026-09-17T12:00:00Z\",\n    \"snapshotComplete\": true,\n    \"evidenceRef\": \"fixture://scope\",\n    \"changes\": [\n      {\n        \"requestId\": \"EX-CHG-001\",\n        \"changeType\": \"normal\",\n        \"scopeConfirmed\": true,\n        \"authorizationVerified\": true,\n        \"windowConfirmed\": true,\n        \"standardModelMatch\": null,\n        \"scopeEvidenceRef\": \"fixture://scope\",\n        \"authorizationEvidenceRef\": \"fixture://decision\",\n        \"pilotEvidenceRef\": \"fixture://pilot\",\n        \"recoveryPlanRef\": \"fixture://recovery\",\n        \"verificationPlanRef\": \"fixture://verification\",\n        \"standardModelRef\": null,\n        \"standardModelValidUntil\": null\n      },\n      {\n        \"requestId\": \"EX-CHG-002\",\n        \"changeType\": \"standard\",\n        \"scopeConfirmed\": true,\n        \"authorizationVerified\": true,\n        \"windowConfirmed\": true,\n        \"standardModelMatch\": false,\n        \"scopeEvidenceRef\": \"fixture://scope\",\n        \"authorizationEvidenceRef\": \"fixture://decision\",\n        \"pilotEvidenceRef\": \"fixture://pilot\",\n        \"recoveryPlanRef\": \"fixture://recovery\",\n        \"verificationPlanRef\": \"fixture://verification\",\n        \"standardModelRef\": \"fixture://model\",\n        \"standardModelValidUntil\": \"2026-09-16T12:00:00Z\"\n      },\n      {\n        \"requestId\": \"EX-CHG-003\",\n        \"changeType\": \"emergency\",\n        \"scopeConfirmed\": true,\n        \"authorizationVerified\": true,\n        \"windowConfirmed\": true,\n        \"standardModelMatch\": null,\n        \"scopeEvidenceRef\": \"fixture://scope\",\n        \"authorizationEvidenceRef\": \"fixture://decision\",\n        \"pilotEvidenceRef\": null,\n        \"recoveryPlanRef\": \"fixture://recovery\",\n        \"verificationPlanRef\": \"fixture://verification\",\n        \"standardModelRef\": null,\n        \"standardModelValidUntil\": null\n      }\n    ]\n  }\n].map(json => ({ json }));"
+      },
+      "id": "sample-data",
+      "name": "Fictional sample data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Fictional local input. Replace only after checking the input contract in the resource README."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// n8n Code node: Run Once for All Items. Review supplied metadata only; no external actions.\nconst items = $input.all();\nconst text = v => typeof v === 'string' && v.trim().length > 0;\nconst object = v => v !== null && typeof v === 'object' && !Array.isArray(v);\nconst tri = v => v === true || v === false || v === null;\nconst ref = v => v === null || typeof v === 'string';\nconst stamp = v => {\n  if (typeof v !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$/.test(v)) return null;\n  const n = Date.parse(v);\n  return Number.isFinite(n) && new Date(n).toISOString() === (v.includes('.') ? v : v.replace('Z', '.000Z')) ? n : null;\n};\nconst errorsForRows = (rows, name, id, validate, errors) => {\n  if (!Array.isArray(rows)) { errors.push(`${name} must be an array.`); return; }\n  const seen = new Set();\n  rows.forEach((r, i) => {\n    if (!object(r) || !text(r[id])) { errors.push(`${name}[${i}] requires ${id}.`); return; }\n    if (seen.has(r[id])) errors.push(`Duplicate ${id} in ${name}: ${r[id]}.`);\n    seen.add(r[id]);\n    validate(r, `${name}[${i}]`, errors);\n  });\n};\nif (!items.length) return [{ json: { status: 'invalid_input', issues: ['No review packets supplied.'] } }];\nreturn items.map((item, index) => {\n  const input = object(item.json) ? item.json : {};\n  const errors = [];\n  const asOf = stamp(input.asOf);\n  if (!text(input.reviewId)) errors.push('reviewId must be nonblank.');\n  if (asOf === null) errors.push('asOf must be a real UTC timestamp ending in Z.');\n  if (typeof input.snapshotComplete !== 'boolean') errors.push('snapshotComplete must be boolean.');\n  if (!ref(input.evidenceRef)) errors.push('evidenceRef must be string or null.');\n  errorsForRows(input.changes, 'changes', 'requestId', (r, p, e) => {\n    if (!['standard', 'normal', 'emergency'].includes(r.changeType)) e.push(`${p}.changeType is invalid.`);\n    for (const f of ['scopeConfirmed', 'authorizationVerified', 'windowConfirmed', 'standardModelMatch']) if (!tri(r[f])) e.push(`${p}.${f} must be boolean or null.`);\n    for (const f of ['scopeEvidenceRef', 'authorizationEvidenceRef', 'pilotEvidenceRef', 'recoveryPlanRef', 'verificationPlanRef', 'standardModelRef']) if (!ref(r[f])) e.push(`${p}.${f} must be string or null.`);\n    if (r.standardModelValidUntil !== null && stamp(r.standardModelValidUntil) === null) e.push(`${p}.standardModelValidUntil must be a UTC timestamp or null.`);\n  }, errors);\n  if (errors.length) return { json: { reviewId: input.reviewId ?? null, status: 'invalid_input', issues: errors }, pairedItem: { item: index } };\n  const issues = [];\n  if (!input.snapshotComplete) issues.push('Snapshot is incomplete; reconcile scope before relying on the review.');\n  if (!text(input.evidenceRef)) issues.push('Source evidence reference is missing.');\n  if (!input.changes.length) issues.push('Empty change scope requires confirmation.');\n  const rows = input.changes.map(r => {\n    const findings = [];\n    for (const f of ['scopeConfirmed', 'authorizationVerified', 'windowConfirmed']) if (r[f] !== true) findings.push(`${f}_not_confirmed`);\n    for (const f of ['scopeEvidenceRef', 'authorizationEvidenceRef', 'pilotEvidenceRef', 'recoveryPlanRef', 'verificationPlanRef']) if (!text(r[f])) findings.push(`${f}_missing`);\n    if (r.changeType === 'standard') {\n      if (r.standardModelMatch !== true) findings.push('standard_model_not_matched');\n      if (!text(r.standardModelRef)) findings.push('standard_model_reference_missing');\n      if (r.standardModelValidUntil === null) findings.push('standard_model_validity_unknown');\n      else if (stamp(r.standardModelValidUntil) <= asOf) findings.push('standard_model_expired');\n    }\n    if (r.changeType === 'emergency') findings.push('manual_emergency_review');\n    return { requestId: r.requestId, changeType: r.changeType, findings,\n      status: r.changeType === 'emergency' ? 'manual_emergency_review' : findings.length ? 'needs_review' : 'packet_complete_for_review',\n      decision: 'pending_human_review' };\n  });\n  const attentionCount = rows.filter(r => r.findings.length).length;\n  return { json: {\n    reviewId: input.reviewId, asOf: input.asOf,\n    status: issues.length || attentionCount ? 'needs_review' : 'review_ready',\n    totalRows: rows.length, attentionCount, issues, rows,\n    evidenceRef: input.evidenceRef,\n    limitation: 'Supplied metadata and evidence pointers are not independently verified. This review neither authorizes nor performs any operational action.'\n  }, pairedItem: { item: index } };\n});\n"
+      },
+      "id": "evaluate",
+      "name": "Change readiness review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Inspect the returned status. This node has no external action and does not verify referenced evidence."
+    }
+  ],
+  "connections": {
+    "Run example": {
+      "main": [
+        [
+          {
+            "node": "Fictional sample data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fictional sample data": {
+      "main": [
+        [
+          {
+            "node": "Change readiness review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "reviewId": "EX-ASSET-REVIEW",
+    "asOf": "2026-09-17T12:00:00Z",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://scope",
+    "maxAgeDays": 7,
+    "inventory": [
+      {
+        "assetId": "EX-ASSET-001",
+        "lifecycle": "assigned",
+        "ownerRole": "IT owner",
+        "custodianId": "EX-PERSON-01",
+        "requiresManagement": true
+      },
+      {
+        "assetId": "EX-ASSET-002",
+        "lifecycle": "assigned",
+        "ownerRole": "IT owner",
+        "custodianId": "EX-PERSON-02",
+        "requiresManagement": true
+      },
+      {
+        "assetId": "EX-ASSET-003",
+        "lifecycle": "repair",
+        "ownerRole": "IT owner",
+        "custodianId": null,
+        "requiresManagement": true
+      }
+    ],
+    "observations": [
+      {
+        "assetId": "EX-ASSET-001",
+        "managed": true,
+        "custodianId": "EX-PERSON-01",
+        "managementObservedAt": "2026-09-17T09:00:00Z",
+        "custodyObservedAt": "2026-09-17T09:00:00Z",
+        "managementEvidenceRef": "fixture://asset-01",
+        "custodyEvidenceRef": "fixture://custody-EX-ASSET-001"
+      },
+      {
+        "assetId": "EX-ASSET-002",
+        "managed": null,
+        "custodianId": "EX-PERSON-03",
+        "managementObservedAt": "2026-09-01T09:00:00Z",
+        "custodyObservedAt": "2026-09-17T09:00:00Z",
+        "managementEvidenceRef": "fixture://asset-02",
+        "custodyEvidenceRef": "fixture://custody-EX-ASSET-002"
+      },
+      {
+        "assetId": "EX-ASSET-004",
+        "managed": true,
+        "custodianId": null,
+        "managementObservedAt": "2026-09-17T09:00:00Z",
+        "custodyObservedAt": "2026-09-17T09:00:00Z",
+        "managementEvidenceRef": "fixture://asset-04",
+        "custodyEvidenceRef": "fixture://custody-EX-ASSET-004"
+      }
+    ]
+  }
+]
