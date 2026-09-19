@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Test workflow logic, baselines, and evidence review
-        run: node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs
+      - name: Test workflow logic, baselines, reconciliation, and lab assertions
+        run: node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs work-samples/investor-reporting-reconciliation/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs
       - name: Verify the pinned research snapshot
         run: python3 research/verify_sync.py
       - name: Regenerate workflow exports and catalog

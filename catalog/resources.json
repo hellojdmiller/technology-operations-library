@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed_on": "2026-09-18",
+  "reviewed_on": "2026-09-19",
   "repository": "https://github.com/hellojdmiller/VCPEIT",
   "visibility": "Private development collection",
   "entries": [
@@ -446,6 +446,13 @@
       "description": "Use this procedure to coordinate a new employee or sponsored contractor across identity, applications, devices, and orientation. It expands the joiner, mover, and leaver guide; role changes use that guide's difference review. Configure actual…"
     },
     {
+      "title": "Investor-reporting reconciliation pack",
+      "collection": "IT operations",
+      "path": "operations/packs/investor-reporting/README.md",
+      "readiness": "Adapted or proposed guidance; operational exercises not run",
+      "description": "Reconcile investor-report distribution using exact versions and recipients, interrupted-batch procedures, a blank decision record, a fictional exercise, and an offline review tool."
+    },
+    {
       "title": "Joiner, mover, and leaver operations",
       "collection": "IT operations",
       "path": "operations/sops/joiner-mover-leaver.md",
@@ -582,70 +589,70 @@
       "title": "Access review preparation",
       "collection": "n8n workflows",
       "path": "n8n/access-review-preparation/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Prepare a review queue by matching human application grants to an authoritative workforce snapshot. This helps an IT operator separate routine decisions from leaver access, unknown identities, dormant grants, privilege, and missing ownership.…"
     },
     {
       "title": "Asset reconciliation review",
       "collection": "n8n workflows",
       "path": "n8n/asset-reconciliation-review/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Compare an asset register with supplied management and custody observations. Surface missing assets, unexpected records, stale evidence, and conflicting custodians without modifying an inventory or authorizing retirement. Management enrollment,…"
     },
     {
       "title": "Automation result review",
       "collection": "n8n workflows",
       "path": "n8n/automation-result-review/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Compare an intended set of record IDs with an observed set. This is a small component of an acceptance review, useful after a migration or automation run."
     },
     {
       "title": "Backup and recovery evidence review",
       "collection": "n8n workflows",
       "path": "n8n/backup-evidence-review/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Compare supplied recovery evidence with each workload's objectives. This separates the time a backup job finished from the age of the data it protects, and separates backup evidence from measured restore performance."
     },
     {
       "title": "Change readiness review",
       "collection": "n8n workflows",
       "path": "n8n/change-readiness-review/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Review a supplied change packet for missing scope, authority, testing, recovery, and verification metadata. This helps a coordinator identify what needs a decision before scheduling work. It cannot grant approval or establish that a referenced…"
     },
     {
       "title": "Joiner, mover, and leaver completeness review",
       "collection": "n8n workflows",
       "path": "n8n/joiner-mover-leaver-review/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Check lifecycle cases against a declared task catalog and case-specific additions. The useful question is whether approved scope has corresponding completion evidence, including removal of prior access after a move and handover after a…"
     },
     {
       "title": "Operations brief",
       "collection": "n8n workflows",
       "path": "n8n/operations-brief/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Collect service observations into one reviewable draft, keeping incomplete evidence and unassigned ownership visible."
     },
     {
       "title": "Patch and exception review",
       "collection": "n8n workflows",
       "path": "n8n/patch-exception-review/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Build a review queue from supplied remediation observations, local deadlines, and exception records. Keep uncertain applicability, stale verification, exploitation concerns, and overdue work visible. An exception is a decision to manage risk…"
     },
     {
       "title": "SaaS license reconciliation",
       "collection": "n8n workflows",
       "path": "n8n/saas-license-reconciliation/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Compare purchased seats, application assignments, workforce status, and usage to prepare a license review. The output separates spare capacity from unused or departed-user candidates and keeps technical accounts out of automatic reclamation."
     },
     {
       "title": "Vendor renewal triage",
       "collection": "n8n workflows",
       "path": "n8n/vendor-renewal-triage/README.md",
-      "readiness": "Local logic checked; n8n runtime trial pending",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Turn a vendor register into a dated review queue. A renewal 60 days away can already have a missed cancellation deadline, so this workflow orders work by the supplied notice period. It keeps business dependency, decision evidence, exit…"
     },
     {
@@ -675,6 +682,13 @@
       "path": "skills/risk-review/SKILL.md",
       "readiness": "Instructions reviewed; cross-client trials pending",
       "description": "Turn a proposed change into supported risk scenarios, treatment choices, and a decision with clear evidence requirements."
+    },
+    {
+      "title": "A reproducible n8n runtime lab",
+      "collection": "Runtime labs",
+      "path": "labs/n8n-runtime/README.md",
+      "readiness": "Pinned n8n CLI runtime checked with fictional inputs; production integrations untested",
+      "description": "Reproduce 32 isolated CLI import and execution cases across ten workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup."
     },
     {
       "title": "Explore service dependencies through two MCP tools",
@@ -759,6 +773,13 @@
       "path": "work-samples/control-evidence-review/README.md",
       "readiness": "See sample validation and deployment limits",
       "description": "An evidence register can look complete while its records are old, cover the wrong service, or describe configuration without testing behavior. This sample turns a supplied inventory into a review queue while keeping the original claims and…"
+    },
+    {
+      "title": "Offline investor-reporting reconciliation",
+      "collection": "Work samples",
+      "path": "work-samples/investor-reporting-reconciliation/README.md",
+      "readiness": "See sample validation and deployment limits",
+      "description": "Run an offline reconciliation of expected deliveries, version approval, recipient entitlements, retries, and completion observations. Includes a fictional fixture, expected reports, and 33 tests."
     },
     {
       "title": "Read-only MCP service catalog",

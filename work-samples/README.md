@@ -9,5 +9,6 @@ Adapted work samples and new runnable demonstrations of project design, infrastr
 | [Azure Container Apps Bicep](azure-container-app/README.md) | Environment isolation, managed identity, registry access, secret references, and staged deployment | Compiles locally; no Azure deployment or runtime test |
 | [Configuration scripts](config-scripts/README.md) | Parameterized administration and configuration review using fictional examples | Check the sample's validation record before use |
 | [Control-evidence review](control-evidence-review/README.md) | An offline review queue for evidence freshness, scope, unresolved tests, and exceptions | Evaluates supplied records; does not collect or authenticate real evidence |
+| [Investor-reporting reconciliation](investor-reporting-reconciliation/README.md) | Offline comparison of expected recipients, approved versions, attempts, retries, and completion observations | Fictional metadata only; no portal access, distribution, or independent authentication of evidence |
 
 Use the [cloud baselines](../baselines/README.md) to decide the desired controls before adapting a script. Use the [documentation examples](../documentation/README.md) to capture ownership and acceptance. Keep actual deployment parameters, tenant exports, secrets, and evidence outside this repository.

@@ -1,0 +1,921 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "batch_id": "BATCH-Q3-EXAMPLE",
+  "scope_id": "SCOPE-Q3-EXAMPLE",
+  "as_of": "2026-09-19T12:00:00Z",
+  "assurance_limit": "Offline metadata reconciliation only. Approvals, entitlements, snapshot completeness, observations, identities, content, and recipient receipt are supplied claims, not independently verified. No send, retry, release, or compliance decision is authorized.",
+  "batch_state_claim": "interrupted",
+  "snapshots": {
+    "expectations": {
+      "snapshot_id": "SNAP-EXPECTATIONS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete",
+      "age_hours": 0,
+      "usable_for_summary": true,
+      "issues": []
+    },
+    "approvals": {
+      "snapshot_id": "SNAP-APPROVALS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete",
+      "age_hours": 0,
+      "usable_for_summary": true,
+      "issues": []
+    },
+    "entitlements": {
+      "snapshot_id": "SNAP-ENTITLEMENTS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete",
+      "age_hours": 0,
+      "usable_for_summary": true,
+      "issues": []
+    },
+    "attempts": {
+      "snapshot_id": "SNAP-ATTEMPTS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete",
+      "age_hours": 0,
+      "usable_for_summary": true,
+      "issues": []
+    },
+    "verifications": {
+      "snapshot_id": "SNAP-VERIFICATIONS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete",
+      "age_hours": 0,
+      "usable_for_summary": true,
+      "issues": []
+    }
+  },
+  "summary": {
+    "expected_deliveries": 9,
+    "supplied_attempts": 10,
+    "completion_support_recorded": 4,
+    "deliveries_requiring_review": 9,
+    "review_items": 25,
+    "complete_current_snapshot_set": true,
+    "review_required": true
+  },
+  "deliveries": [
+    {
+      "delivery_id": "DELIVERY-001",
+      "recipient_id": "RECIPIENT-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-001"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-001"
+      ],
+      "completion_state": "support_recorded",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-002",
+      "recipient_id": "RECIPIENT-002",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-002"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-002"
+      ],
+      "completion_state": "unverified",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-003",
+      "recipient_id": "RECIPIENT-003",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-003"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-003"
+      ],
+      "completion_state": "unverified",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-004",
+      "recipient_id": "RECIPIENT-004",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-004"
+        ]
+      },
+      "attempt_ids": [],
+      "completion_state": "missing",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-005"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-005A",
+        "ATTEMPT-005B"
+      ],
+      "completion_state": "support_recorded",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-006"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-006A",
+        "ATTEMPT-006B"
+      ],
+      "completion_state": "support_recorded",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-007",
+      "recipient_id": "RECIPIENT-007",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-007"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-007"
+      ],
+      "completion_state": "unverified",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-008",
+      "recipient_id": "RECIPIENT-008",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-008"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-008"
+      ],
+      "completion_state": "conflicting",
+      "review_required": true
+    },
+    {
+      "delivery_id": "DELIVERY-009",
+      "recipient_id": "RECIPIENT-009",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "adverse_claim",
+        "record_ids": [
+          "ENTITLEMENT-009"
+        ]
+      },
+      "attempt_ids": [
+        "ATTEMPT-009"
+      ],
+      "completion_state": "support_recorded",
+      "review_required": true
+    }
+  ],
+  "version_approvals": [
+    {
+      "approval_id": "APPROVAL-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "status": "approved",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-APPROVAL-001",
+      "metadata_eligible": true
+    }
+  ],
+  "entitlements": [
+    {
+      "entitlement_id": "ENTITLEMENT-001",
+      "recipient_id": "RECIPIENT-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-001",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-002",
+      "recipient_id": "RECIPIENT-002",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-002",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-003",
+      "recipient_id": "RECIPIENT-003",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-003",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-004",
+      "recipient_id": "RECIPIENT-004",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-004",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-005",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-006",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-007",
+      "recipient_id": "RECIPIENT-007",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-007",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-008",
+      "recipient_id": "RECIPIENT-008",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-008",
+      "metadata_eligible": true
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-009",
+      "recipient_id": "RECIPIENT-009",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "denied",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-009",
+      "metadata_eligible": true
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": "ATTEMPT-001",
+      "delivery_id": "DELIVERY-001",
+      "recipient_id": "RECIPIENT-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-001",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-001"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-002",
+      "delivery_id": "DELIVERY-002",
+      "recipient_id": "RECIPIENT-099",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-002",
+      "metadata_eligible": true,
+      "expected_target_matches": false,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "missing_claim",
+        "record_ids": []
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "recipient_id": "RECIPIENT-003",
+      "fund_id": "FUND-B",
+      "entity_id": "ENTITY-B",
+      "document_id": "DOC-OTHER",
+      "version": "V1",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-003",
+      "metadata_eligible": true,
+      "expected_target_matches": false,
+      "approval": {
+        "state": "missing_claim",
+        "record_ids": []
+      },
+      "entitlement": {
+        "state": "missing_claim",
+        "record_ids": []
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-005A",
+      "delivery_id": "DELIVERY-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-005A",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-005"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-005B",
+      "delivery_id": "DELIVERY-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": "ATTEMPT-005A",
+      "attempted_at": "2026-09-19T10:10:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-005B",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-005"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-006A",
+      "delivery_id": "DELIVERY-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "failed",
+      "evidence_ref": "EX-SEND-006A",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-006"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-006B",
+      "delivery_id": "DELIVERY-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": "ATTEMPT-006A",
+      "attempted_at": "2026-09-19T10:10:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-006B",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-006"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-007",
+      "delivery_id": "DELIVERY-007",
+      "recipient_id": "RECIPIENT-007",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-007",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-007"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-008",
+      "delivery_id": "DELIVERY-008",
+      "recipient_id": "RECIPIENT-008",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-008",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "support_recorded",
+        "record_ids": [
+          "ENTITLEMENT-008"
+        ]
+      }
+    },
+    {
+      "attempt_id": "ATTEMPT-009",
+      "delivery_id": "DELIVERY-009",
+      "recipient_id": "RECIPIENT-009",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-009",
+      "metadata_eligible": true,
+      "expected_target_matches": true,
+      "approval": {
+        "state": "support_recorded",
+        "record_ids": [
+          "APPROVAL-001"
+        ]
+      },
+      "entitlement": {
+        "state": "adverse_claim",
+        "record_ids": [
+          "ENTITLEMENT-009"
+        ]
+      }
+    }
+  ],
+  "verifications": [
+    {
+      "verification_id": "VERIFY-001",
+      "attempt_id": "ATTEMPT-001",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-001",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-002",
+      "attempt_id": "ATTEMPT-002",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-002",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-003",
+      "attempt_id": "ATTEMPT-003",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-003",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-005A",
+      "attempt_id": "ATTEMPT-005A",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-005A",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-005B",
+      "attempt_id": "ATTEMPT-005B",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-005B",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-006B",
+      "attempt_id": "ATTEMPT-006B",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-006B",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-008A",
+      "attempt_id": "ATTEMPT-008",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-008A",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-008B",
+      "attempt_id": "ATTEMPT-008",
+      "result": "not_confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-008B",
+      "metadata_eligible": true
+    },
+    {
+      "verification_id": "VERIFY-009",
+      "attempt_id": "ATTEMPT-009",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-009",
+      "metadata_eligible": true
+    }
+  ],
+  "review_queue": [
+    {
+      "code": "batch_not_complete",
+      "record_id": "BATCH-Q3-EXAMPLE",
+      "delivery_id": null,
+      "detail": "Supplied batch state is interrupted; reconcile remaining and attempted work before any resume decision."
+    },
+    {
+      "code": "wrong_recipient_id",
+      "record_id": "ATTEMPT-002",
+      "delivery_id": "DELIVERY-002",
+      "detail": "Expected RECIPIENT-002; supplied attempt targets RECIPIENT-099."
+    },
+    {
+      "code": "attempt_entitlement_missing_claim",
+      "record_id": "ATTEMPT-002",
+      "delivery_id": "DELIVERY-002",
+      "detail": "Exact target attempt_entitlement remains missing_claim; no authorization is inferred."
+    },
+    {
+      "code": "wrong_fund_id",
+      "record_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Expected FUND-A; supplied attempt targets FUND-B."
+    },
+    {
+      "code": "wrong_entity_id",
+      "record_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Expected ENTITY-A; supplied attempt targets ENTITY-B."
+    },
+    {
+      "code": "wrong_document_id",
+      "record_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Expected DOC-Q3; supplied attempt targets DOC-OTHER."
+    },
+    {
+      "code": "wrong_version",
+      "record_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Expected V2; supplied attempt targets V1."
+    },
+    {
+      "code": "attempt_approval_missing_claim",
+      "record_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Exact target attempt_approval remains missing_claim; no authorization is inferred."
+    },
+    {
+      "code": "attempt_entitlement_missing_claim",
+      "record_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Exact target attempt_entitlement remains missing_claim; no authorization is inferred."
+    },
+    {
+      "code": "retry_after_uncertain_or_sent",
+      "record_id": "ATTEMPT-005B",
+      "delivery_id": "DELIVERY-005",
+      "detail": "A sent or unknown prior outcome creates duplicate-delivery risk; an explicit retry link does not clear it."
+    },
+    {
+      "code": "attempt_failed",
+      "record_id": "ATTEMPT-006A",
+      "delivery_id": "DELIVERY-006",
+      "detail": "Failed attempt remains in the history even if a later retry succeeds."
+    },
+    {
+      "code": "attempt_entitlement_adverse_claim",
+      "record_id": "ATTEMPT-009",
+      "delivery_id": "DELIVERY-009",
+      "detail": "Exact target attempt_entitlement remains adverse_claim; no authorization is inferred."
+    },
+    {
+      "code": "duplicate_target_sends",
+      "record_id": "ATTEMPT-005A",
+      "delivery_id": "DELIVERY-005",
+      "detail": "Same actual target appears in sent attempts ATTEMPT-005A, ATTEMPT-005B; different delivery IDs or retry links do not establish a single effect."
+    },
+    {
+      "code": "duplicate_target_sends",
+      "record_id": "ATTEMPT-005B",
+      "delivery_id": "DELIVERY-005",
+      "detail": "Same actual target appears in sent attempts ATTEMPT-005A, ATTEMPT-005B; different delivery IDs or retry links do not establish a single effect."
+    },
+    {
+      "code": "verification_not_confirmed",
+      "record_id": "VERIFY-008B",
+      "delivery_id": "DELIVERY-008",
+      "detail": "Supplied observation is not_confirmed; retain it even if another record is positive."
+    },
+    {
+      "code": "completion_unresolved",
+      "record_id": "DELIVERY-002",
+      "delivery_id": "DELIVERY-002",
+      "detail": "Expected-delivery completion is unverified."
+    },
+    {
+      "code": "completion_unresolved",
+      "record_id": "DELIVERY-003",
+      "delivery_id": "DELIVERY-003",
+      "detail": "Expected-delivery completion is unverified."
+    },
+    {
+      "code": "missing_delivery",
+      "record_id": "DELIVERY-004",
+      "delivery_id": "DELIVERY-004",
+      "detail": "No attempt exists in the supplied complete, current snapshot for this expected delivery."
+    },
+    {
+      "code": "multiple_sent_attempts",
+      "record_id": "DELIVERY-005",
+      "delivery_id": "DELIVERY-005",
+      "detail": "2 supplied sent attempts; retry ancestry does not prove only one delivery effect."
+    },
+    {
+      "code": "sent_without_usable_confirmation",
+      "record_id": "ATTEMPT-007",
+      "delivery_id": "DELIVERY-007",
+      "detail": "A send claim alone does not substantiate delivery completion."
+    },
+    {
+      "code": "completion_unresolved",
+      "record_id": "DELIVERY-007",
+      "delivery_id": "DELIVERY-007",
+      "detail": "Expected-delivery completion is unverified."
+    },
+    {
+      "code": "completion_conflict",
+      "record_id": "ATTEMPT-008",
+      "delivery_id": "DELIVERY-008",
+      "detail": "Supplied send and/or verification outcomes conflict; do not select only a favorable record."
+    },
+    {
+      "code": "sent_without_usable_confirmation",
+      "record_id": "ATTEMPT-008",
+      "delivery_id": "DELIVERY-008",
+      "detail": "A send claim alone does not substantiate delivery completion."
+    },
+    {
+      "code": "completion_unresolved",
+      "record_id": "DELIVERY-008",
+      "delivery_id": "DELIVERY-008",
+      "detail": "Expected-delivery completion is conflicting."
+    },
+    {
+      "code": "expected_entitlement_adverse_claim",
+      "record_id": "DELIVERY-009",
+      "delivery_id": "DELIVERY-009",
+      "detail": "Exact target expected_entitlement remains adverse_claim; no authorization is inferred."
+    }
+  ]
+}
