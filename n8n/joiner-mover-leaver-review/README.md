@@ -46,4 +46,8 @@ Collect the authoritative workforce-change roster and ticket/checklist records r
 
 Record who approved scope, who executed each change, and who independently verified the system result. A closed ticket is only one observation. Effective dates here use whole UTC days; access revocation needs an exact agreed deadline, time zone, exception handling, and escalation outside this report. The workflow does not provision, disable, remove, or notify anyone.
 
-Implementation reference: [n8n data structure](https://docs.n8n.io/build/work-with-data/understand-n8ns-data-structure), checked 2026-09-17. Local tests cover the evaluator; n8n import and runtime execution are not yet verified.
+Implementation reference: [n8n data structure](https://docs.n8n.io/build/work-with-data/understand-n8ns-data-structure), checked 2026-09-17. Local evaluator tests and the pinned runtime lab cover this example.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.

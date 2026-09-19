@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-09-19T20:49:42.098Z",
+  "status": "passed",
+  "n8n_version": "2.39.8",
+  "image": "docker.n8n.io/n8nio/n8n@sha256:b73045abaddb40cb4024e86eea1b1f69093501a7339f685a4cd486b7743d23ae",
+  "node_version": "v26.7.0",
+  "architecture": "arm64",
+  "execution_mode": "cli",
+  "runner_mode": "internal",
+  "source_revision": "68706ac1f92390aac4d33ce2c35e6f32aae72701",
+  "source_tree_dirty": true,
+  "sources": [
+    {
+      "slug": "automation-result-review",
+      "workflow_sha256": "df9e70ea6400ccb1129521baa68fc92cf9358064fe2d4483afb1dc156a398c25",
+      "input_sha256": "52bda3f0e11af64d0ab30e2542b01833b712b4d5a4597906b51e820b59b882a0",
+      "evaluator_sha256": "cffc14e0055c16d83b2ee6dba713bbb112f049d8a7ce13b64a47d4d27a2f2629"
+    },
+    {
+      "slug": "operations-brief",
+      "workflow_sha256": "9909a905f6aa17c1fe4d29e6a47115462ae844692e9298c48f377099d3361a2d",
+      "input_sha256": "72c1eb258810a958584fab0a88fcf009efa5a17247de683cb250cc3951be3701",
+      "evaluator_sha256": "f0dbbc9d222d20faa266a133cc3ae876319182aa166c3891dd1a77d4489f6b6e"
+    },
+    {
+      "slug": "access-review-preparation",
+      "workflow_sha256": "7ea9b175b4b6a63368d0ba0ac336893abf1f89e7647d43d54b9b242d52f20e2d",
+      "input_sha256": "99bcf6786b484442e52ed3d13562ca0801012ce893a630d3e5c27314b9289a95",
+      "evaluator_sha256": "95e3c21b807fab178353ee79c95a5772963ab963d66537f8d4623dfa548ee132"
+    },
+    {
+      "slug": "vendor-renewal-triage",
+      "workflow_sha256": "835cb8b555a3957319f3bfe4d6724508de2378675c58fbe0e8f3722bc4a9b5e5",
+      "input_sha256": "973b0040ad95c084f8b2e822766cd1da0ab0cef3359123f9125cd89f75a93236",
+      "evaluator_sha256": "6b498fbeeb3089d4bbad6919031a1d6272f449dd268565027db3e3a28d2be2b7"
+    },
+    {
+      "slug": "joiner-mover-leaver-review",
+      "workflow_sha256": "55a027ea638f0322a723b95787425f59e7116507e72eba10cd8ee72a8004f866",
+      "input_sha256": "c0f4751eb1489ec9723fd7f035f4d25a6acc67c286aaea919db7d360c07966eb",
+      "evaluator_sha256": "4a27d8ada53e045379e8f4b182a0643fb79c92be5784ca00855b0012329ffff4"
+    },
+    {
+      "slug": "backup-evidence-review",
+      "workflow_sha256": "862e616fd9d3e1aaf804c002b26455b1692874dacd41b17214d3fab67292bc53",
+      "input_sha256": "49ae66b08b40f1528241172c31c35c9433b7446771f78a19152fe6bf6989060d",
+      "evaluator_sha256": "8e76a75cac7e54c3d032f3e0e61b5411be10dc2d30c0450d8417914b3c518a18"
+    },
+    {
+      "slug": "saas-license-reconciliation",
+      "workflow_sha256": "e7fd30f22431594e7a143805bb15982671909168b9fbd0f4d46d772a7fb64c61",
+      "input_sha256": "50183655e26223a888d39e69f58e922fbf619eacfe70f777af29004d9a07d783",
+      "evaluator_sha256": "b8efa68bdc7eeba70117e0437de16721acb1bcb1a38560facb0f8ea15c2e2484"
+    },
+    {
+      "slug": "change-readiness-review",
+      "workflow_sha256": "51f5e31f68dc627fa9554db5f3425730c45f6eb41bacf6478f57f1fe249867eb",
+      "input_sha256": "9bd04ada7892c441859698f83f11945dc3e2e58fec9718def1aa9edc5a008df2",
+      "evaluator_sha256": "6a3b7634168db1963340eafa24bf82dc31d6f6880d6dc836009031df183b07a7"
+    },
+    {
+      "slug": "asset-reconciliation-review",
+      "workflow_sha256": "875681e2c1209d75daae27bd0da0241eb8e894bd8d4543b1647d1ce4644021f3",
+      "input_sha256": "61b15736d7d9fdf77de22f78433a64cbda2f75973f53566cce6f4e0ade197f4b",
+      "evaluator_sha256": "25f1b4b5a6b2d4aa6f881e37c682162aeca8028bac62014865cc369a4ade2948"
+    },
+    {
+      "slug": "patch-exception-review",
+      "workflow_sha256": "ac2ee5943dbbff7544925643781dc589ae1f795eed29772d9cebdefb4852b5d1",
+      "input_sha256": "18015dde4a75914670055db5c2b858b524b8e326d89cc967ce3a0d0ab858fdb1",
+      "evaluator_sha256": "eae41abc301bb458d4ec0a15b1be1cc957fdb4f101b7f3c2b7d9729a09604c61"
+    }
+  ],
+  "harness": {
+    "image.json": "4bdb8e669e561d4697342cee798f33575ec9d48a1e239b7b9704e1b27e5efba0",
+    "cases.mjs": "ea4e1d9b76b941eff2bfd196077965b2a699598a3aa06d7367e555e010edd7e0",
+    "validate.mjs": "cebf284b2079410dee478cb591d1694cfc21131af6a3a9d3264d4964dc6925a2",
+    "container-runner.mjs": "737ed650c65c405c440bab7279a768a13862e903a908a56d92843031df797fa9",
+    "run.mjs": "fadd97e79b5cfdb7b5b9833cb7fdb7ef8aca57f37cefa2a89a33e42163da3c16"
+  },
+  "imported_inactive_workflows": 32,
+  "results": [
+    {
+      "id": "VCPEITLab0000001",
+      "slug": "automation-result-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000002",
+      "slug": "automation-result-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000003",
+      "slug": "automation-result-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000004",
+      "slug": "automation-result-review",
+      "case": "zero-items",
+      "passed": true,
+      "observed": "evaluator_not_executed",
+      "output_items": 0,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000005",
+      "slug": "automation-result-review",
+      "case": "technical-failure",
+      "passed": true,
+      "observed": "expected_technical_failure",
+      "output_items": 0,
+      "execution_status": "error",
+      "cli_exit_code": 1
+    },
+    {
+      "id": "VCPEITLab0000006",
+      "slug": "operations-brief",
+      "case": "fixture",
+      "passed": true,
+      "observed": "draft_ready",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000007",
+      "slug": "operations-brief",
+      "case": "malformed",
+      "passed": true,
+      "observed": "needs_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000008",
+      "slug": "operations-brief",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000009",
+      "slug": "access-review-preparation",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000010",
+      "slug": "access-review-preparation",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000011",
+      "slug": "access-review-preparation",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000012",
+      "slug": "vendor-renewal-triage",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000013",
+      "slug": "vendor-renewal-triage",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000014",
+      "slug": "vendor-renewal-triage",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000015",
+      "slug": "joiner-mover-leaver-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000016",
+      "slug": "joiner-mover-leaver-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000017",
+      "slug": "joiner-mover-leaver-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000018",
+      "slug": "backup-evidence-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000019",
+      "slug": "backup-evidence-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000020",
+      "slug": "backup-evidence-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000021",
+      "slug": "saas-license-reconciliation",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000022",
+      "slug": "saas-license-reconciliation",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000023",
+      "slug": "saas-license-reconciliation",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000024",
+      "slug": "change-readiness-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000025",
+      "slug": "change-readiness-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000026",
+      "slug": "change-readiness-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000027",
+      "slug": "asset-reconciliation-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000028",
+      "slug": "asset-reconciliation-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000029",
+      "slug": "asset-reconciliation-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000030",
+      "slug": "patch-exception-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000031",
+      "slug": "patch-exception-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "VCPEITLab0000032",
+      "slug": "patch-exception-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    }
+  ],
+  "warnings": [
+    "Python runner unavailable; this lab exercises JavaScript nodes only.",
+    "Node emitted its experimental localStorage warning."
+  ],
+  "finished_at": "2026-09-19T20:50:45.502Z",
+  "docker_image_id": "sha256:b73045abaddb40cb4024e86eea1b1f69093501a7339f685a4cd486b7743d23ae",
+  "host_cleanup": {
+    "removed": true,
+    "staged_input_removed": true
+  }
+}

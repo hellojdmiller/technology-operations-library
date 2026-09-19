@@ -26,7 +26,7 @@ Each folder contains a `workflow.json` import, readable `evaluate.js`, and `samp
 
 These examples use Manual Trigger version 1 and Code version 2, with **Run Once for All Items** selected. They have no schedule, webhook, credentials, or external action. A completed n8n execution only means the nodes ran; inspect the returned review status to understand the result.
 
-Local tests exercise the JavaScript, input handling, and exported graph. They do not establish compatibility with an installed n8n version. Record the version and observed import/execution result in [VALIDATION.md](../VALIDATION.md) when tested.
+Local tests exercise the JavaScript, input handling, and exported graph. The [pinned runtime lab](../labs/n8n-runtime/README.md) additionally passed 32 CLI import/execution cases across all ten examples on n8n 2.39.8. Its report records source hashes and the exact image. Editor/UI import, other n8n versions, real collectors, and production integrations need their own trials. Record those observations separately in [VALIDATION.md](../VALIDATION.md).
 
 ## Review packets and results
 

@@ -43,4 +43,8 @@ Reconcile a service/workload inventory with backup coverage first; a backup cons
 
 Verify that the restore exercise covered the current workload, data integrity, permissions, application use, dependent services, and the agreed start/end of the recovery clock. Store evidence in a restricted location. This workflow references that evidence; it does not fetch it, launch jobs, perform restores, or verify the business outcome.
 
-Implementation reference: [n8n Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/), checked 2026-09-17. Local tests cover the evaluator; n8n import and runtime execution are not yet verified.
+Implementation reference: [n8n Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/), checked 2026-09-17. Local evaluator tests and the pinned runtime lab cover this example.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.

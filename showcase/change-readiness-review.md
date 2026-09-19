@@ -1,6 +1,6 @@
 # Review a change packet before scheduling work
 
-**Private review · local evaluator verified · n8n runtime trial pending.** [Canonical workflow](../n8n/change-readiness-review/README.md) · [Evaluator](../n8n/change-readiness-review/evaluate.js) · [Import file](../n8n/change-readiness-review/workflow.json)
+**Private review · local evaluator and pinned n8n CLI runtime verified.** [Canonical workflow](../n8n/change-readiness-review/README.md) · [Evaluator](../n8n/change-readiness-review/evaluate.js) · [Import file](../n8n/change-readiness-review/workflow.json)
 
 ## The problem and the intended user
 
@@ -53,6 +53,6 @@ Then remove an authorization pointer, replace a boolean with text, and route an 
 
 On September 18, 2026, Node.js v26.7.0 passed **67 local tests across all ten workflow examples**, including evaluator behavior and generated graph/source consistency. The local change demo produced the results above. This count is the collection's suite, not 67 tests of this workflow alone.
 
-Import and execution in an identified n8n version remain unverified. Evidence contents, actual authorization, source completeness, scheduling conflicts, collectors, and production actions are outside this evaluator. Use the [change-management pack](../operations/packs/change-management/README.md) for the separate recommendation, approval, execution, and verification process.
+The September 19 [runtime lab](../labs/n8n-runtime/README.md) passed this workflow’s fixture, malformed-input, and incomplete-evidence cases in n8n 2.39.8 using CLI import/execution. Editor/UI import and other runtime configurations remain untested. Evidence contents, actual authorization, source completeness, scheduling conflicts, collectors, and production actions are outside this evaluator. Use the [change-management pack](../operations/packs/change-management/README.md) for the separate recommendation, approval, execution, and verification process.
 
 [Choose another example](README.md).

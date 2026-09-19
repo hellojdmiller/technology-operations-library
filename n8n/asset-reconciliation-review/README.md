@@ -53,4 +53,8 @@ Try an observation-only ID, duplicate IDs, missing management evidence, null cus
 
 For a real collector, reconcile pages and source scopes, retain unmapped IDs, preserve both observation timestamps, and emit an explicit incomplete packet when collection fails. Store private identifiers and custody records in the approved restricted system. No collector or external write is included.
 
-Local evaluator and exported-graph tests pass; n8n import/runtime and actual inventory collection remain untested. Manual execution uses the documented [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/) and [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/), reviewed September 17, 2026.
+Local evaluator/export tests and pinned CLI import/runtime checks pass; actual inventory collection remains untested. Manual execution uses the documented [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/) and [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/), reviewed September 17, 2026.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.

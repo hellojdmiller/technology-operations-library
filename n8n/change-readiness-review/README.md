@@ -51,4 +51,8 @@ Before integrating, add source freshness, pagination, exact target mapping, vers
 
 Remove an approval pointer while leaving the assertion true; use an expired standard model; change a boolean into text; duplicate an ID; supply an empty scope; and route an otherwise complete change as emergency. Compare the returned findings with the rules above. These exercises and the companion tabletop are not records of actual training.
 
-Local Node tests cover the evaluator and generated graph. Import and execution in an identified n8n version remain pending. This manual export contains no credentials, schedule, notification, or deployment action. n8n documents [Code node modes](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/) and [manual execution](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/); reviewed September 17, 2026.
+Local Node tests cover the evaluator and generated graph. CLI import and execution passed in the pinned runtime lab. This manual export contains no credentials, schedule, notification, or deployment action. n8n documents [Code node modes](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/) and [manual execution](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/); reviewed September 17, 2026.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.

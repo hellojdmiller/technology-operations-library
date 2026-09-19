@@ -35,3 +35,7 @@ The workflow treats an empty expected scope as unresolved, even if both arrays a
 ## Before real use
 
 Confirm the counting unit and ID mapping, then try missing IDs, duplicates, unexpected IDs, malformed values, and empty input. Review the example’s output locally before attaching a downstream action. No downstream action is included.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.

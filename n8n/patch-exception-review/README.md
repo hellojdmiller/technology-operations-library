@@ -50,4 +50,8 @@ Test a current exception on overdue work, exact exception expiry, future excepti
 
 Before real integration, verify source coverage, asset/finding mapping, applicability, local deadline authority, intelligence freshness, observation meaning, and exception scope. Preserve original deadlines and observed history. Reference actual campaign and change records in the protected system. Do not use absence from a partial scanner result as proof of repair.
 
-Local tests exercise the evaluator and export. Import/runtime behavior in a selected n8n version and real collectors remain untested. See official [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/) and [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/) guidance, reviewed September 17, 2026.
+Local tests exercise the evaluator and export. Pinned CLI import/runtime checks pass; real collectors remain untested. See official [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/) and [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/) guidance, reviewed September 17, 2026.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.
