@@ -27,6 +27,31 @@
 - Recovery method and the person able to perform it:
 - Vendor references and date reopened:
 
+## Vendor study and independent practice
+
+Use this section with the [vendor walkthroughs](vendor-walkthroughs/README.md) or another bounded lesson. Keep these records separate; viewing does not imply vendor course completion or demonstrated operating skill. A tabletop result does not imply technical execution.
+
+| Field | Record |
+|---|---|
+| Task card and repository revision | |
+| Vendor source URL, title and selected chapter/section | |
+| Source publication/update date and product/course version | Unknown if not displayed; distinguish a portal update from a video date |
+| Date source reopened and differences found | |
+| Source access | Public / account required / unavailable / not checked; record the observed condition |
+| Captions and reading alternative | What was actually available and used; unknown if not checked |
+| Initial prediction before study | Preserve the original answer |
+| Viewing/reading status | Not started / partial / completed selected material; actual coverage and date |
+| Vendor course or credential completion | Not attempted / in progress / learner-reported / independently verified; name the actual award and evidence source if applicable |
+| Practice mode and attempt | Tabletop / isolated lab / not attempted; time spent and missing prerequisites |
+| Assistance used | Vendor instructions, hints, AI assistance, peer coaching, or none; specify where |
+| Original work product and observed evidence | Protected reference; distinguish supplied fictional observations from actual lab observations |
+| Corrections after comparison with answer guidance | |
+| Independent repeat | Task, changed input, assistance, expected and observed result; not attempted is valid |
+| Teach-back and changed-scenario response | Learner explanation, reviewer observation and unresolved misunderstanding |
+| Demonstrated scope and limits | State the specific reasoning or task supported; preserve untested scope |
+
+Keep course completion and skill evidence in their own fields even when they differ. Do not sign into a vendor portal merely to verify a self-reported award without appropriate access. These worksheets do not award a vendor credential or independently establish retained learning over time.
+
 ## Observation log
 
 | Step | Planned / simulated / executed / verified | Observation time | Intended result | Actual result | Evidence reference | Open issue |

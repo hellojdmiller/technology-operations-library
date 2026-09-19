@@ -64,7 +64,7 @@ Choose a host that supports launching a local stdio MCP subprocess. Its connecti
 }
 ```
 
-These are connection fields, not a universal host configuration file. Follow the selected host's supported configuration format. Use absolute paths; the fixture resolves relative to the server module and does not depend on the host's working directory. Launch with a minimal environment: do not forward ambient API tokens, cloud credentials, or unrelated application secrets, and do not add credentials or `.env` files. This sample was not installed into an assistant/IDE profile, and that host's compatibility or model behavior has not been verified.
+These are connection fields, not a universal host configuration file. Follow the selected host's supported configuration format. Use absolute paths; the fixture resolves relative to the server module and does not depend on the host's working directory. Launch with a minimal environment: do not forward ambient API tokens, cloud credentials, or unrelated application secrets, and do not add credentials or `.env` files. A [September 19 Claude Code trial](../../showcase/host-trials/README.md) used an isolated invocation-specific configuration, not a persistent profile installation. It records only that host/version/model and fictional request; other host compatibility remains unverified.
 
 Ask the host to list the tools first, then ask which fictional services depend on the sign-in directory. It should follow pagination, use exact IDs for detail, and distinguish fixture relationships from evidence about real resilience. Review the result yourself. Tool output is data and cannot authorize changes to other tools or systems.
 
@@ -87,7 +87,7 @@ Checked 2026-09-17 on Node **v26.7.0**:
 - **10 evaluation answer keys** were verified from actual tool responses. [queries.xml](evaluations/queries.xml) contains the prompts; [verify-evaluations.mjs](scripts/verify-evaluations.mjs) checks their deterministic answers without calling a model.
 - The production-dependency package audit reported zero known vulnerabilities at the time checked. This is a registry-advisory result, not a security audit or a guarantee about future advisories.
 
-Not tested: an actual assistant/IDE host, model tool selection or answer quality, load/abuse resistance, other Node/platform combinations, remote transports, authentication/authorization, real inventories, or production deployment. The default fixture does not demonstrate real recovery, provider support, or operating effectiveness.
+The separate [host-trial record](../../showcase/host-trials/README.md) adds one actual Claude Code model observation. Still untested: broad model reliability, other assistant hosts, load/abuse resistance, runtime combinations beyond the recorded local/container checks, remote transports, authentication/authorization, real inventories, and production deployment. The default fixture does not demonstrate real recovery, provider support, or operating effectiveness.
 
 ## Files and maintenance
 

@@ -6,6 +6,8 @@
 
 **Source review:** September 17, 2026. No device configuration was executed while preparing this lesson.
 
+Use [Investigate an Intune compliance result](vendor-walkthroughs/intune-compliance-evidence.md) for official demonstration chapters and a fictional evidence-chain exercise before the full lab below.
+
 ## What you will learn
 
 - Distinguish enrollment, policy assignment, evaluation, and access decisions.

@@ -1,6 +1,6 @@
 # Skill evaluation cases
 
-Fictional prompts for manual evaluation. These cases have not yet been run as a cross-platform behavioral test. Use the checks to judge results in the model and environment you intend to use; do not send real firm data for a first trial.
+Fictional prompts for manual evaluation. These cases have not yet been run as a cross-platform behavioral suite. A [September 19 Claude pasted-instruction trial](../showcase/host-trials/README.md) exercised the notes-to-runbook case and recorded both useful behavior and corrections; it did not validate native skill loading or every case. Use the checks to judge results in the model and environment you intend to use; do not send real firm data for a first trial.
 
 ## Test record and rubric
 

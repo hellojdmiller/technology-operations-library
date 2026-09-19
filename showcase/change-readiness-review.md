@@ -45,7 +45,7 @@ Every row has `decision: "pending_human_review"`. An empty packet-level `issues`
 
 Read the [fixture](../n8n/change-readiness-review/sample-input.json) alongside its result. The `fixture://` pointers are fictional labels, not fetched evidence. Inspect the exported graph: it contains a manual trigger, sample-data Code node, and evaluation Code node, with no deployment or notification action.
 
-For an n8n trial, follow the [canonical import instructions](../n8n/README.md#import-and-try) in an authorized test workspace. Import the linked JSON, run the unchanged fixture manually, and compare the final node's output with the table above. Record the installed n8n version, workflow revision, and actual result. Keep the workflow inactive.
+For an n8n editor trial, follow the [step-by-step import and evidence walkthrough](n8n-editor-trial.md) and [canonical import instructions](../n8n/README.md#import-and-try) in an authorized test workspace. Import the linked JSON, run the unchanged fixture manually, and compare the final node's output with the table above. Record the installed n8n version, workflow revision, and actual result. Keep the workflow inactive.
 
 Then remove an authorization pointer, replace a boolean with text, and route an otherwise complete request as emergency, one case at a time. Compare results with the [failure exercises](../n8n/change-readiness-review/README.md#failure-exercises). Do not fabricate evidence to clear a result.
 

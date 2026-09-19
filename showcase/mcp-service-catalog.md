@@ -55,6 +55,10 @@ Illustrative targets: RTO 6 hours; RPO 2 hours. Targets are not measured results
 
 On September 18, 2026, Node.js v26.7.0 passed syntax checks, **12 integration tests**, the demo, and **10/10 deterministic answer keys**. The integration review then reran a locked installation with `npm ci --ignore-scripts` and repeated the syntax, test, and answer-key checks successfully. Those same checks also passed in an isolated Node.js v22.23.2 container with networking disabled. The answer-key check calls tools directly; it is not a model evaluation.
 
-The next useful trial is the canonical sample's [assistant/IDE connection exercise](../work-samples/mcp-service-catalog/README.md#connect-a-local-assistant-or-ide), with a chosen host and recorded version. Host installation and model behavior remain unverified. This local sample has no remote authentication, per-user authorization, production inventory, or measured recovery result. It is also not an operating-system sandbox.
+Use the canonical sample's [assistant/IDE connection exercise](../work-samples/mcp-service-catalog/README.md#connect-a-local-assistant-or-ide), with a chosen host and recorded version. A subsequent bounded Claude Code observation is linked below; general host compatibility and model reliability remain unverified. This local sample has no remote authentication, per-user authorization, production inventory, or measured recovery result. It is also not an operating-system sandbox.
 
 [Choose another example](README.md).
+
+## Subsequent assistant-host observation
+
+The [September 19 host-trial record](host-trials/README.md) adds a bounded Claude Code run using only this sample’s two read-only tools. Review the recorded model, inputs, calls and limitations. The earlier SDK tests above remain distinct from this single model observation; other hosts, remote transport, real authentication and production use remain unverified.

@@ -6,6 +6,8 @@
 
 **Source review:** September 17, 2026. This is an unexecuted training lesson.
 
+Use [Check Google user scope](vendor-walkthroughs/google-user-scope.md) for vendor orientation and a short readiness exercise. The separate [shared-drive access card](vendor-walkthroughs/google-shared-drive-access.md) extends practice to membership, effective access and positive/negative file checks.
+
 ## What you will learn
 
 - Explain inherited settings and the target population before changing a control.
