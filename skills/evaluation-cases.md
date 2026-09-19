@@ -2,6 +2,8 @@
 
 Fictional prompts for manual evaluation. These cases have not yet been run as a cross-platform behavioral suite. A [September 19 Claude pasted-instruction trial](../showcase/host-trials/README.md) exercised the notes-to-runbook case and recorded both useful behavior and corrections; it did not validate native skill loading or every case. Use the checks to judge results in the model and environment you intend to use; do not send real firm data for a first trial.
 
+A subsequent [runbook revision comparison](../showcase/host-trials/runbook-revision/README.md) ran six fresh pasted-instruction drafts across the recovery case, a new migration case and three skill versions. The refinement reused those cases after review; it is not a holdout result. Exact prompts, outputs and remaining findings are preserved separately from this rubric.
+
 ## Test record and rubric
 
 For each trial, record the skill/repository revision, host, model, date, native-loader or pasted-instruction delivery, supplied prompt, output, and reviewer. Preserve the output separately from the expected checks below so a reviewer can assess what actually happened.

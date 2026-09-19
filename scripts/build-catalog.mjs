@@ -26,7 +26,7 @@ const descriptions = {
 
   'documentation/automation-handover-template.md': 'Record ownership, inputs, expected results, failure handling, and the checks another operator needs to support an automation.',
   'skills/build-buy-review/SKILL.md': 'Compare building, buying, and combining tools through ownership, operating costs, risk, and a bounded trial.',
-  'skills/notes-to-runbook/SKILL.md': 'Turn rough notes into an executable procedure with prerequisites, verification, failure handling, and visible unknowns.',
+  'skills/notes-to-runbook/SKILL.md': 'Draft a runbook that preserves reported evidence, checks destination results and access, and keeps missing prerequisites and untested recovery visible.',
   'skills/risk-review/SKILL.md': 'Turn a proposed change into supported risk scenarios, treatment choices, and a decision with clear evidence requirements.',
   'skills/document-sanitization/SKILL.md': 'Create a useful derivative of authorized documents while removing direct identifiers, contextual clues, and sensitive operational detail.',
   'training/google-workspace-operator.md': 'Practice settings inheritance, test populations, authentication evidence, and recovery in Google Workspace.',
