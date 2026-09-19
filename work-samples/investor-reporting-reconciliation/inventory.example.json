@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "batch_id": "BATCH-Q3-EXAMPLE",
+  "scope_id": "SCOPE-Q3-EXAMPLE",
+  "max_snapshot_age_hours": 24,
+  "batch_state_claim": "interrupted",
+  "snapshots": {
+    "expectations": {
+      "snapshot_id": "SNAP-EXPECTATIONS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete"
+    },
+    "approvals": {
+      "snapshot_id": "SNAP-APPROVALS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete"
+    },
+    "entitlements": {
+      "snapshot_id": "SNAP-ENTITLEMENTS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete"
+    },
+    "attempts": {
+      "snapshot_id": "SNAP-ATTEMPTS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete"
+    },
+    "verifications": {
+      "snapshot_id": "SNAP-VERIFICATIONS",
+      "scope_id": "SCOPE-Q3-EXAMPLE",
+      "batch_id": "BATCH-Q3-EXAMPLE",
+      "captured_at": "2026-09-19T12:00:00Z",
+      "coverage": "complete"
+    }
+  },
+  "expected_deliveries": [
+    {
+      "delivery_id": "DELIVERY-001",
+      "recipient_id": "RECIPIENT-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-002",
+      "recipient_id": "RECIPIENT-002",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-003",
+      "recipient_id": "RECIPIENT-003",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-004",
+      "recipient_id": "RECIPIENT-004",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-007",
+      "recipient_id": "RECIPIENT-007",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-008",
+      "recipient_id": "RECIPIENT-008",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    },
+    {
+      "delivery_id": "DELIVERY-009",
+      "recipient_id": "RECIPIENT-009",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2"
+    }
+  ],
+  "version_approvals": [
+    {
+      "approval_id": "APPROVAL-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "status": "approved",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-APPROVAL-001"
+    }
+  ],
+  "entitlements": [
+    {
+      "entitlement_id": "ENTITLEMENT-001",
+      "recipient_id": "RECIPIENT-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-001"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-002",
+      "recipient_id": "RECIPIENT-002",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-002"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-003",
+      "recipient_id": "RECIPIENT-003",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-003"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-004",
+      "recipient_id": "RECIPIENT-004",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-004"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-005"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-006"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-007",
+      "recipient_id": "RECIPIENT-007",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-007"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-008",
+      "recipient_id": "RECIPIENT-008",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "allowed",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-008"
+    },
+    {
+      "entitlement_id": "ENTITLEMENT-009",
+      "recipient_id": "RECIPIENT-009",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "status": "denied",
+      "recorded_at": "2026-09-19T08:00:00Z",
+      "evidence_ref": "EX-ENTITLEMENT-009"
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": "ATTEMPT-001",
+      "delivery_id": "DELIVERY-001",
+      "recipient_id": "RECIPIENT-001",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-001"
+    },
+    {
+      "attempt_id": "ATTEMPT-002",
+      "delivery_id": "DELIVERY-002",
+      "recipient_id": "RECIPIENT-099",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-002"
+    },
+    {
+      "attempt_id": "ATTEMPT-003",
+      "delivery_id": "DELIVERY-003",
+      "recipient_id": "RECIPIENT-003",
+      "fund_id": "FUND-B",
+      "entity_id": "ENTITY-B",
+      "document_id": "DOC-OTHER",
+      "version": "V1",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-003"
+    },
+    {
+      "attempt_id": "ATTEMPT-005A",
+      "delivery_id": "DELIVERY-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-005A"
+    },
+    {
+      "attempt_id": "ATTEMPT-005B",
+      "delivery_id": "DELIVERY-005",
+      "recipient_id": "RECIPIENT-005",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": "ATTEMPT-005A",
+      "attempted_at": "2026-09-19T10:10:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-005B"
+    },
+    {
+      "attempt_id": "ATTEMPT-006A",
+      "delivery_id": "DELIVERY-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "failed",
+      "evidence_ref": "EX-SEND-006A"
+    },
+    {
+      "attempt_id": "ATTEMPT-006B",
+      "delivery_id": "DELIVERY-006",
+      "recipient_id": "RECIPIENT-006",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": "ATTEMPT-006A",
+      "attempted_at": "2026-09-19T10:10:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-006B"
+    },
+    {
+      "attempt_id": "ATTEMPT-007",
+      "delivery_id": "DELIVERY-007",
+      "recipient_id": "RECIPIENT-007",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-007"
+    },
+    {
+      "attempt_id": "ATTEMPT-008",
+      "delivery_id": "DELIVERY-008",
+      "recipient_id": "RECIPIENT-008",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-008"
+    },
+    {
+      "attempt_id": "ATTEMPT-009",
+      "delivery_id": "DELIVERY-009",
+      "recipient_id": "RECIPIENT-009",
+      "fund_id": "FUND-A",
+      "entity_id": "ENTITY-A",
+      "document_id": "DOC-Q3",
+      "version": "V2",
+      "retry_of": null,
+      "attempted_at": "2026-09-19T10:00:00Z",
+      "result": "sent",
+      "evidence_ref": "EX-SEND-009"
+    }
+  ],
+  "verifications": [
+    {
+      "verification_id": "VERIFY-001",
+      "attempt_id": "ATTEMPT-001",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-001"
+    },
+    {
+      "verification_id": "VERIFY-002",
+      "attempt_id": "ATTEMPT-002",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-002"
+    },
+    {
+      "verification_id": "VERIFY-003",
+      "attempt_id": "ATTEMPT-003",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-003"
+    },
+    {
+      "verification_id": "VERIFY-005A",
+      "attempt_id": "ATTEMPT-005A",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-005A"
+    },
+    {
+      "verification_id": "VERIFY-005B",
+      "attempt_id": "ATTEMPT-005B",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-005B"
+    },
+    {
+      "verification_id": "VERIFY-006B",
+      "attempt_id": "ATTEMPT-006B",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-006B"
+    },
+    {
+      "verification_id": "VERIFY-008A",
+      "attempt_id": "ATTEMPT-008",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-008A"
+    },
+    {
+      "verification_id": "VERIFY-008B",
+      "attempt_id": "ATTEMPT-008",
+      "result": "not_confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-008B"
+    },
+    {
+      "verification_id": "VERIFY-009",
+      "attempt_id": "ATTEMPT-009",
+      "result": "confirmed",
+      "observed_at": "2026-09-19T11:00:00Z",
+      "method": "recipient_receipt",
+      "observer_role": "Fictional reporting reviewer",
+      "evidence_ref": "EX-RECEIPT-009"
+    }
+  ]
+}

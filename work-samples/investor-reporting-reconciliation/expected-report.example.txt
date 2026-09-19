@@ -1,0 +1,44 @@
+Offline investor-reporting reconciliation
+Fictional: true; batch: BATCH-Q3-EXAMPLE; scope: SCOPE-Q3-EXAMPLE; as of: 2026-09-19T12:00:00Z
+Offline metadata reconciliation only. Approvals, entitlements, snapshot completeness, observations, identities, content, and recipient receipt are supplied claims, not independently verified. No send, retry, release, or compliance decision is authorized.
+
+Expected deliveries: 9; attempts: 10; completion support recorded: 4
+Complete current snapshot set: true; supplied batch state: interrupted
+Deliveries requiring review: 9; review items: 25
+
+DELIVERY-001: completion=support_recorded; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-002: completion=unverified; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-003: completion=unverified; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-004: completion=missing; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-005: completion=support_recorded; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-006: completion=support_recorded; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-007: completion=unverified; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-008: completion=conflicting; approval=support_recorded; entitlement=support_recorded; review_required=true
+DELIVERY-009: completion=support_recorded; approval=support_recorded; entitlement=adverse_claim; review_required=true
+
+Review queue:
+- batch_not_complete | BATCH-Q3-EXAMPLE | batch/snapshot | Supplied batch state is interrupted; reconcile remaining and attempted work before any resume decision.
+- wrong_recipient_id | ATTEMPT-002 | DELIVERY-002 | Expected RECIPIENT-002; supplied attempt targets RECIPIENT-099.
+- attempt_entitlement_missing_claim | ATTEMPT-002 | DELIVERY-002 | Exact target attempt_entitlement remains missing_claim; no authorization is inferred.
+- wrong_fund_id | ATTEMPT-003 | DELIVERY-003 | Expected FUND-A; supplied attempt targets FUND-B.
+- wrong_entity_id | ATTEMPT-003 | DELIVERY-003 | Expected ENTITY-A; supplied attempt targets ENTITY-B.
+- wrong_document_id | ATTEMPT-003 | DELIVERY-003 | Expected DOC-Q3; supplied attempt targets DOC-OTHER.
+- wrong_version | ATTEMPT-003 | DELIVERY-003 | Expected V2; supplied attempt targets V1.
+- attempt_approval_missing_claim | ATTEMPT-003 | DELIVERY-003 | Exact target attempt_approval remains missing_claim; no authorization is inferred.
+- attempt_entitlement_missing_claim | ATTEMPT-003 | DELIVERY-003 | Exact target attempt_entitlement remains missing_claim; no authorization is inferred.
+- retry_after_uncertain_or_sent | ATTEMPT-005B | DELIVERY-005 | A sent or unknown prior outcome creates duplicate-delivery risk; an explicit retry link does not clear it.
+- attempt_failed | ATTEMPT-006A | DELIVERY-006 | Failed attempt remains in the history even if a later retry succeeds.
+- attempt_entitlement_adverse_claim | ATTEMPT-009 | DELIVERY-009 | Exact target attempt_entitlement remains adverse_claim; no authorization is inferred.
+- duplicate_target_sends | ATTEMPT-005A | DELIVERY-005 | Same actual target appears in sent attempts ATTEMPT-005A, ATTEMPT-005B; different delivery IDs or retry links do not establish a single effect.
+- duplicate_target_sends | ATTEMPT-005B | DELIVERY-005 | Same actual target appears in sent attempts ATTEMPT-005A, ATTEMPT-005B; different delivery IDs or retry links do not establish a single effect.
+- verification_not_confirmed | VERIFY-008B | DELIVERY-008 | Supplied observation is not_confirmed; retain it even if another record is positive.
+- completion_unresolved | DELIVERY-002 | DELIVERY-002 | Expected-delivery completion is unverified.
+- completion_unresolved | DELIVERY-003 | DELIVERY-003 | Expected-delivery completion is unverified.
+- missing_delivery | DELIVERY-004 | DELIVERY-004 | No attempt exists in the supplied complete, current snapshot for this expected delivery.
+- multiple_sent_attempts | DELIVERY-005 | DELIVERY-005 | 2 supplied sent attempts; retry ancestry does not prove only one delivery effect.
+- sent_without_usable_confirmation | ATTEMPT-007 | DELIVERY-007 | A send claim alone does not substantiate delivery completion.
+- completion_unresolved | DELIVERY-007 | DELIVERY-007 | Expected-delivery completion is unverified.
+- completion_conflict | ATTEMPT-008 | DELIVERY-008 | Supplied send and/or verification outcomes conflict; do not select only a favorable record.
+- sent_without_usable_confirmation | ATTEMPT-008 | DELIVERY-008 | A send claim alone does not substantiate delivery completion.
+- completion_unresolved | DELIVERY-008 | DELIVERY-008 | Expected-delivery completion is conflicting.
+- expected_entitlement_adverse_claim | DELIVERY-009 | DELIVERY-009 | Exact target expected_entitlement remains adverse_claim; no authorization is inferred.

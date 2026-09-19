@@ -11,6 +11,7 @@ These are newly written generic derivatives of authorized operating material, su
 | A system or service needs to change | [Change-management pack](packs/change-management/README.md) | A scoped decision, controlled implementation, recovery plan, and verified outcome |
 | Equipment needs to be received, assigned, returned, or retired | [Asset-lifecycle pack](packs/asset-lifecycle/README.md) | Reconciled custody and management evidence with separate disposition authority |
 | Vulnerabilities or updates need action | [Patching pack](packs/patching/README.md) | Locally prioritized remediation, staged rollout, verified results, and visible exceptions |
+| Investor-report distribution needs to be reconciled | [Investor-reporting pack](packs/investor-reporting/README.md) | Exact versions and recipients, preserved attempt history, and separately reviewed completion evidence |
 | A new employee or contractor needs to start | [Employee onboarding](sops/employee-onboarding.md) | Approved access and equipment, verified before the person needs them |
 | Someone is leaving | [Employee offboarding](sops/employee-offboarding.md) | Timely access removal, protected information, and tracked residual work |
 | Someone needs software or broader application access | [Software request fulfillment](sops/software-request-fulfillment.md) | An explicit decision, controlled delivery, and a verified user outcome |
@@ -43,13 +44,14 @@ The existing [software approval](../documentation/procedures/software-request-an
 
 ## Complete operating packs
 
-Each pack combines a decision guide, detailed SOP, blank CSV record, fictional worked examples, a facilitated exercise with an answer key, and a companion n8n review flow.
+Each pack combines a decision guide, detailed SOP, blank working record, fictional cases, an exercise with an answer key, and a read-only review tool. The change, asset, and patching packs use CSV records and n8n flows; the investor-reporting pack uses a Markdown decision record and an offline CLI.
 
 | Pack | Main decisions | Review automation |
 |---|---|---|
 | [Change management](packs/change-management/README.md) | Exact standard-model match, normal/emergency authority, rollout, stop, recovery, and verification | [Change readiness](../n8n/change-readiness-review/README.md) |
 | [Asset lifecycle](packs/asset-lifecycle/README.md) | Acquisition, custody, inventory reconciliation, return, holds, sanitization, and disposition | [Asset reconciliation](../n8n/asset-reconciliation-review/README.md) |
 | [Patching and remediation](packs/patching/README.md) | Applicability, exposure, local target, pilot/rings, failed updates, and exceptions | [Patch exceptions](../n8n/patch-exception-review/README.md) |
+| [Investor reporting](packs/investor-reporting/README.md) | Approved versions, recipient entitlements, interrupted batches, uncertain retries, and completion evidence | [Offline reconciliation](../work-samples/investor-reporting-reconciliation/README.md) |
 
 Exercises use fictional facts; the automations review supplied metadata only. Neither a worked answer nor a clear metadata result is an actual approval or proof of completed work.
 
@@ -69,7 +71,7 @@ Keep a procedure separate from the changing contact, inventory, and authority re
 4. Record expected and actual results separately. Assign every unresolved dependency and exception.
 5. Approve the adopted version and its scope; set review triggers and a retest schedule. Review a small case sample with the [quality guide](service-desk-quality-review.md) before expanding.
 
-The collection contains 22 standalone guides and procedures, three complete operating packs, and 17 CSV working aids across those packs and the service-desk/succession records. Sample service targets require local staffing and agreement; they are not contractual promises.
+The collection contains 22 standalone guides and procedures, four complete operating packs, and 17 CSV working aids across those packs and the service-desk/succession records, plus the investor-reporting Markdown decision record. Sample service targets require local staffing and agreement; they are not contractual promises.
 
 The [vendor training modules](../training/README.md), [VC IT field guide](../library/README.md), [cyber-risk pack](../cyber-risk/README.md), and [prompting guide](../prompting/README.md) provide supporting paths. Drafting help from an assistant does not supply missing approval or operational evidence.
 

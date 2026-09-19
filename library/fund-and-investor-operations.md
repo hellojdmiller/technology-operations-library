@@ -32,4 +32,6 @@ Use the [BCP](../documentation/continuity/business-continuity-plan.md) to establ
 
 Use a synthetic reporting pack and fictional recipients. Demonstrate source-to-final version control, independent review, correct recipient access, denied access, delivery failure handling, and reconciliation after an interruption. Record what was tested and which provider dependencies remain unverified.
 
+The [investor-reporting operating pack](../operations/packs/investor-reporting/README.md) provides the SOP, blank decision record, and exercise. Its [offline reconciliation sample](../work-samples/investor-reporting-reconciliation/README.md) compares nine fictional expected deliveries with ten attempts and supplied observations. Use it to inspect unresolved evidence and retry history; actual access and delivery still need independent verification.
+
 Do not use real investor records in a training library. Store actual procedures and evidence in the firm's restricted system.
