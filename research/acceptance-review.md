@@ -1,6 +1,6 @@
 # A practical acceptance review for enterprise AI
 
-> Private-library copy of the September 18, 2026 review edition. See [source and sync notes](SYNC.md); this copy does not assert live publication.
+> Public-library copy of the September 19, 2026 published edition. Original evidence-review dates are preserved. See [source and sync notes](SYNC.md).
 
 I would use this review to answer a concrete question: does the configured workflow produce useful work that we can check, authorize, understand, and recover at a sustainable cost?
 
@@ -75,6 +75,8 @@ For each check, record **supported**, **unsupported**, **unknown**, or **not app
 For a draft, verify the stored artifact and its permitted use. For an action, verify destination state after execution. Approval may support starting an action, but final acceptance waits for required verification. If a required check is unknown, leave the relevant decision pending or narrow the authorized scope; uncertainty is not a pass.
 
 Define containment and recovery before permitting consequences. Identify who can stop the workflow, revoke access, locate affected outputs, reconcile partial changes, and verify recovery. Reversing a technical change may not undo a message already sent or a decision already acted on.
+
+ISACA's [September 2026 agent-security guidance](https://www.isaca.org/resources/white-papers/2026/cybersecurity-recommendations-for-securing-ai-agents) recommends policy enforcement outside the model, scoped memory, and safe fallback modes. I would test those recommendations with fictional inputs and mock destinations: an instruction embedded in a document, an action target changed after approval, a request for another session's memory, and an uncertain result after a timeout. Record the model's response, the independent control decision, and the destination state separately. A refusal and a blocked tool call are different observations; neither alone proves the entire workflow safe. These tests are proposed adaptations, not results reported by ISACA or experiments already performed here.
 
 ## 6. Measure the complete pilot
 

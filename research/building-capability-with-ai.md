@@ -1,6 +1,6 @@
 # Helping people build capability with AI
 
-> Private-library copy of the September 18, 2026 review edition. See [source and sync notes](SYNC.md); this copy does not assert live publication.
+> Public-library copy of the September 19, 2026 published edition. Original evidence-review dates are preserved. See [source and sync notes](SYNC.md).
 
 I want an AI rollout to leave people able to do more, explain more, and make better decisions. Completing today's task matters. So does whether the person can handle a different version of that task next month, recognize a bad answer, or help a colleague through an exception.
 

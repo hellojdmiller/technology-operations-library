@@ -85,91 +85,91 @@
       "title": "A practical acceptance review for enterprise AI",
       "collection": "AI research",
       "path": "research/acceptance-review.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "I would use this review to answer a concrete question: does the configured workflow produce useful work that we can check, authorize, understand, and recover at a sustainable cost?"
     },
     {
       "title": "Acceptance and recovery record",
       "collection": "AI research",
       "path": "research/companions/05-acceptance-and-recovery-record.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "For each row use supported, unsupported, unknown, or not applicable with a reason. Record the evidence, observer, and time. A required unsupported or unknown check prevents final acceptance for that scope. Resolve it, narrow the scope through a…"
     },
     {
       "title": "Beyond the model frontier: chips, context, and human judgment",
       "collection": "AI research",
       "path": "research/beyond-the-model-frontier.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Connect chip architecture, model progress, effective context, human learning, and training-data quality to accepted productivity. Includes nine propositions to test in a bounded workflow."
     },
     {
       "title": "Context, memory, and evidence review",
       "collection": "AI research",
       "path": "research/companions/02-context-and-evidence-review.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Purpose: test which information arrangement helps a bounded task. This evaluates use of context and organizational records, not changes to model weights."
     },
     {
       "title": "Evidence and limitations",
       "collection": "AI research",
       "path": "research/companions/08-evidence-and-limitations.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
-      "description": "Research reviewed September 18, 2026. This ledger accompanies the expanded review edition of Beyond the model frontier and its working companions. It records what each source supports and where I would stop the inference."
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
+      "description": "Research initially reviewed September 18, 2026; agent-security guidance added and reviewed September 19, 2026. This ledger accompanies Beyond the model frontier and its working companions. It records what each source supports and where I would…"
     },
     {
       "title": "Fictional example: a vendor renewal brief",
       "collection": "AI research",
       "path": "research/companions/07-fictional-worked-example.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Every organization, person, document, observation, time, and amount below is invented for teaching. This is not evidence of a real pilot, productivity effect, or vendor price. Example rows are in fictional-pilot-log.csv."
     },
     {
       "title": "Helping people build capability with AI",
       "collection": "AI research",
       "path": "research/building-capability-with-ai.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "I want an AI rollout to leave people able to do more, explain more, and make better decisions. Completing today's task matters. So does whether the person can handle a different version of that task next month, recognize a bad answer, or help a…"
     },
     {
       "title": "Learning, understanding, and oversight exercise",
       "collection": "AI research",
       "path": "research/companions/03-learning-and-oversight-exercise.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Purpose: investigate whether a workflow helps people perform the task while retaining the understanding needed to check and recover it. This is a proposed work-design exercise, not a diagnostic instrument or employee ranking."
     },
     {
       "title": "Model and serving comparison",
       "collection": "AI research",
       "path": "research/companions/01-model-and-serving-comparison.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Purpose: determine whether an accessible configuration improves an actual workflow. This is a proposed evaluation, not a hardware benchmark."
     },
     {
       "title": "Productivity pilot and measurement rules",
       "collection": "AI research",
       "path": "research/companions/04-productivity-pilot.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Define the task and thresholds before testing. Use matched tasks or random assignment where practical. Repeated work creates learning effects. Newly feasible work belongs in a separate cohort from familiar tasks used for a baseline comparison."
     },
     {
       "title": "Test one proposition from the paper",
       "collection": "AI research",
       "path": "research/companions/06-proposition-test-plan.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "These are proposed investigations, not validated controls. Choose one question at a time so a result can be interpreted."
     },
     {
       "title": "User development plan: building capability with AI",
       "collection": "AI research",
       "path": "research/companions/09-user-development-plan.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "Plan coaching, guided practice, transfer tasks, and delayed learning checks. Record observable progress separately from task output and production authority."
     },
     {
       "title": "What makes AI-generated work safe to accept?",
       "collection": "AI research",
       "path": "research/ai-acceptance.md",
-      "readiness": "Pinned website review snapshot; proposed methods and fictional exercises",
+      "readiness": "Pinned published research; proposed methods and fictional exercises",
       "description": "I would begin with the work someone intends to rely on. A fast answer, a convincing explanation, and a completed task are different observations. An acceptance decision needs to connect them to evidence, authority, and an outcome that can be…"
     },
     {

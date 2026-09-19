@@ -1,6 +1,6 @@
 # Evidence and limitations
 
-Research reviewed September 18, 2026. This ledger accompanies the expanded review edition of *Beyond the model frontier* and its working companions. It records what each source supports and where I would stop the inference.
+Research initially reviewed September 18, 2026; agent-security guidance added and reviewed September 19, 2026. This ledger accompanies *Beyond the model frontier* and its working companions. It records what each source supports and where I would stop the inference. The addendum does not change the original review dates of the other entries.
 
 These worksheets are proposed operating methods. The fictional example demonstrates recordkeeping and arithmetic; it does not validate the framework or report a real experiment. The paper is a focused conceptual review, not a systematic review.
 
@@ -39,6 +39,10 @@ Refresh market availability and document versions before a consequential decisio
 | [Real and synthetic data accumulation](https://arxiv.org/abs/2404.01413) | April 2024; research paper | Counterevidence under tested accumulation conditions. Not a universal protection guarantee. |
 | [Task substitution and uplift](https://metr.org/blog/2026-05-08-task-substitution-and-uplift/) | May 8, 2026; analytical note | Separates old-task performance, changed task mix, and value. Does not supply this paper's productivity estimates. |
 | [Developer study-design update](https://metr.org/blog/2026-02-24-uplift-update/) | February 24, 2026; methodological update | Selection effects complicate a current causal estimate. Neither the older slowdown nor current perceived gains settle all tasks. |
+
+## Agent-security addendum
+
+The agent-security addendum uses ISACA's [Cybersecurity Recommendations for Securing AI Agents](https://www.isaca.org/resources/white-papers/2026/cybersecurity-recommendations-for-securing-ai-agents), published September 15, 2026 and reviewed September 19, 2026. The controls in Figure 3 recommend external policy enforcement, scoped identity and memory, untrusted-content handling, and safe recovery. The changed-target, cross-session, timeout, and stop exercises in the paper and acceptance record are my proposed applications. This guidance is not an empirical productivity study, proof of control effectiveness, or a validation of those exercises.
 
 ## Additional evidence for user progression
 

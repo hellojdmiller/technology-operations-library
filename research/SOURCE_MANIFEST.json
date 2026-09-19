@@ -1,31 +1,32 @@
 {
   "source_repository": "https://github.com/hellojdmiller/hellojdmiller",
-  "source_commit": "19ac6589ca1e7e926c0c40a968e44a79ee25710b",
-  "source_branch_at_sync": "research/beyond-model-frontier-revamp",
-  "edition": "Expanded review edition",
+  "source_commit": "4b212df10337348163213fcac1f3b07400a39256",
+  "source_branch_at_sync": "main",
+  "edition": "Published September 19, 2026 release",
   "evidence_review_date_in_source": "2026-09-18",
-  "synced_on": "2026-09-18",
-  "distribution_status_at_sync": "Private library copy of website review branch; no production publication performed by this sync.",
-  "verification_scope": "Inventory, source fidelity, citation preservation, local navigation, and CSV integrity. No new literature review or empirical validation.",
+  "synced_on": "2026-09-19",
+  "distribution_status_at_sync": "Public library copy of the published website edition; no production publication performed by this sync.",
+  "verification_scope": "Inventory, source fidelity, citation preservation, local navigation, CSV integrity, and targeted ISACA guidance recheck. No repeat review of other literature or empirical validation.",
   "files": [
     {
       "source_path": "src/content/perspectives/beyond-the-model-frontier.md",
       "local_path": "beyond-the-model-frontier.md",
-      "source_sha256": "55d1e1a9470d53c22e1539210a1cfbc9947916ba9dd2d70614b18fc42a22b2e1",
-      "local_sha256": "974eef0a0af51f8c78f028a0e57ecec60d73e73e174bb96d17620e94bdf8379a",
+      "source_sha256": "40cd4cf1b7bf7f2d7494415bbec9ac5c2e5c1b3bcee2268160232d681914b9e7",
+      "local_sha256": "a666ed2af83f550ccb077d84cbbbd187e9331f6b05c08792c2de07aae3ab734a",
       "adjustments": [
         "link: /concepts/ai-acceptance -> ai-acceptance.md",
         "link: /guides/acceptance-review -> acceptance-review.md",
         "link: /downloads/ai-research/beyond-model-frontier-companions.zip -> companions/README.md",
         "link: /guides/building-capability-with-ai -> building-capability-with-ai.md",
-        "Added repository provenance note after the title."
+        "link: /downloads/ai-research/05-acceptance-and-recovery-record.md -> companions/05-acceptance-and-recovery-record.md",
+        "Added public-library provenance note after the title; original evidence-review dates preserved."
       ]
     },
     {
       "source_path": "src/content/perspectives/ai-acceptance.md",
       "local_path": "ai-acceptance.md",
       "source_sha256": "fae610497380020138c9fa03dd265c831dd413f5120f548bdaaa2323f01ff207",
-      "local_sha256": "df7c8b6083d6e81220ffe698b2e497e4e3054afe6b426084b3d0343be653e68e",
+      "local_sha256": "68f306a96d8689a0f400956866d464a6f58aad30d03a47316eeaeeb39a26fd94",
       "adjustments": [
         "link: /work/beyond-the-model-frontier -> beyond-the-model-frontier.md",
         "link: /guides/acceptance-review -> acceptance-review.md",
@@ -35,14 +36,14 @@
         "link: /guides/building-capability-with-ai -> building-capability-with-ai.md",
         "link: /guides/acceptance-review -> acceptance-review.md",
         "link: /downloads/ai-research/08-evidence-and-limitations.md -> companions/08-evidence-and-limitations.md",
-        "Added repository provenance note after the title."
+        "Added public-library provenance note after the title; original evidence-review dates preserved."
       ]
     },
     {
       "source_path": "src/content/perspectives/acceptance-review.md",
       "local_path": "acceptance-review.md",
-      "source_sha256": "5c006df78e7828ecbad3458ed5a5e15418109508d77804c4937200bd1afcbfde",
-      "local_sha256": "cd86f59805deae474c6e7cd6b3b473d67147e92565bb38ab0f13fcb1cd70e8b0",
+      "source_sha256": "8dd3a0f5f1a697fe3240780db333de42cfa7cdabf50bcb7e8f6b08370f8ec125",
+      "local_sha256": "79c3d1752efdf5e051fb7a415301f137dbbfe036450817340a157be28cff36b9",
       "adjustments": [
         "link: /work/beyond-the-model-frontier -> beyond-the-model-frontier.md",
         "link: /concepts/ai-acceptance -> ai-acceptance.md",
@@ -66,14 +67,14 @@
         "link: /downloads/ai-research/fictional-user-progress-log.csv -> companions/fictional-user-progress-log.csv",
         "link: /downloads/ai-research/07-fictional-worked-example.md -> companions/07-fictional-worked-example.md",
         "Download-pack link label changed to Browse; no binary archive copied.",
-        "Added repository provenance note after the title."
+        "Added public-library provenance note after the title; original evidence-review dates preserved."
       ]
     },
     {
       "source_path": "src/content/perspectives/building-capability-with-ai.md",
       "local_path": "building-capability-with-ai.md",
       "source_sha256": "e6fae21348c8fc1b5d40979d4263c4f72c762c6a25a51df51cce8ed8fa0368cc",
-      "local_sha256": "41289dac7b3501ea4cab6ae63d4a368857fc0dabdf381966a6a4533701a543dc",
+      "local_sha256": "69a78c268a49b2d7ac03babebc8418eeed543288f2448b5e20c01692ae1ac2bb",
       "adjustments": [
         "link: /work/beyond-the-model-frontier -> beyond-the-model-frontier.md",
         "link: /concepts/ai-acceptance -> ai-acceptance.md",
@@ -86,7 +87,7 @@
         "link: /guides/acceptance-review -> acceptance-review.md",
         "link: /downloads/ai-research/fictional-user-progress-log.csv -> companions/fictional-user-progress-log.csv",
         "link: /downloads/ai-research/09-user-development-plan.md -> companions/09-user-development-plan.md",
-        "Added repository provenance note after the title."
+        "Added public-library provenance note after the title; original evidence-review dates preserved."
       ]
     },
     {
@@ -120,8 +121,8 @@
     {
       "source_path": "src/content/companions/ai-research/05-acceptance-and-recovery-record.md",
       "local_path": "companions/05-acceptance-and-recovery-record.md",
-      "source_sha256": "fc1a7d8bad8a7e0685fc379931d2407460ba2ed51b86588d37ebce23c195e3bc",
-      "local_sha256": "fc1a7d8bad8a7e0685fc379931d2407460ba2ed51b86588d37ebce23c195e3bc",
+      "source_sha256": "034d69389a675b2cf0be83dffed05ecc7f1fc3387add5948358e7ac3953c94fb",
+      "local_sha256": "034d69389a675b2cf0be83dffed05ecc7f1fc3387add5948358e7ac3953c94fb",
       "adjustments": []
     },
     {
@@ -141,8 +142,8 @@
     {
       "source_path": "src/content/companions/ai-research/08-evidence-and-limitations.md",
       "local_path": "companions/08-evidence-and-limitations.md",
-      "source_sha256": "1df529b9327b1cfea8a23c1c65e61a045aeb8bd0ea84b38943d5f739eb038ac0",
-      "local_sha256": "1df529b9327b1cfea8a23c1c65e61a045aeb8bd0ea84b38943d5f739eb038ac0",
+      "source_sha256": "e385390890abcce853d8970d74dfa036cb8934c724418b59f006c57f27af44ec",
+      "local_sha256": "e385390890abcce853d8970d74dfa036cb8934c724418b59f006c57f27af44ec",
       "adjustments": []
     },
     {
@@ -152,14 +153,14 @@
       "local_sha256": "e16bb9c0efec29678c2266050b82621c0d3a6650e80238f907eea325a44b1d13",
       "adjustments": [
         "link: https://hellojdmiller.com/guides/building-capability-with-ai -> ../building-capability-with-ai.md",
-        "Removed website-preview navigation instruction after rewriting to the local guide."
+        "Changed third website companion to third research companion and removed website-preview navigation instruction after rewriting to the local guide."
       ]
     },
     {
       "source_path": "src/content/companions/ai-research/README.md",
       "local_path": "companions/README.md",
-      "source_sha256": "317e095a9057404ee4cb48d138a8dab5e6f1ecb142d04d7e32d2ed0e054f5d64",
-      "local_sha256": "e2c837c9a6c78950a8aeb72568ab8a826c0a4ec0b3c01297f33abf775eefd4a8",
+      "source_sha256": "14be0e4ef27205b7f9f3d4da3a47ba30da41083dc0b950cad8f352a6bd6694ab",
+      "local_sha256": "04b3a29de3fea52c57873b0815c89db7c31f5bc9340cefe79f22e08232aced29",
       "adjustments": [
         "link: https://hellojdmiller.com/work/beyond-the-model-frontier -> ../beyond-the-model-frontier.md",
         "link: https://hellojdmiller.com/guides/acceptance-review -> ../acceptance-review.md",
@@ -170,8 +171,8 @@
     {
       "source_path": "src/content/companions/ai-research/acceptance-checklist.txt",
       "local_path": "companions/acceptance-checklist.txt",
-      "source_sha256": "d231a6c8a91bddc6bd7f5893f73432eff8a037190f7a41ba865156cc277dfa3b",
-      "local_sha256": "d231a6c8a91bddc6bd7f5893f73432eff8a037190f7a41ba865156cc277dfa3b",
+      "source_sha256": "4c52ab9bf4af8e32e4c2246ebb56ba043e3ca57e81d55f8af868b57a214a585f",
+      "local_sha256": "4c52ab9bf4af8e32e4c2246ebb56ba043e3ca57e81d55f8af868b57a214a585f",
       "adjustments": []
     },
     {
@@ -216,5 +217,22 @@
       "local_sha256": "5d068cfd4e7b76a52ab5e964547fa0807b67807e2db1096b62a851046efa76a0",
       "adjustments": []
     }
-  ]
+  ],
+  "agent_security_addendum_review_date_in_source": "2026-09-19",
+  "publication_content_check": {
+    "checked_on": "2026-09-19",
+    "paper_url": "https://hellojdmiller.com/work/beyond-the-model-frontier",
+    "paper_check": "HTTP 200; Put permission checks outside the model heading present.",
+    "download_base_url": "https://hellojdmiller.com/downloads/ai-research/",
+    "download_check": "All 17 companion downloads returned HTTP 200 and were byte-identical to their pinned source_sha256 entries.",
+    "limit": "Point-in-time live-content check; not performed by verify_sync.py and not evidence of an empirical pilot."
+  },
+  "targeted_source_recheck": {
+    "source": "ISACA, Cybersecurity Recommendations for Securing AI Agents",
+    "url": "https://www.isaca.org/resources/white-papers/2026/cybersecurity-recommendations-for-securing-ai-agents",
+    "published_on": "2026-09-15",
+    "reviewed_on": "2026-09-19",
+    "scope": "Official HTML, practice categories and Figure 3 controls; external policy enforcement, authorization, memory isolation, logging, and safe fallback.",
+    "limit": "Practitioner recommendations support proposed adaptations; no empirical results or repeat review of other paper sources."
+  }
 }
