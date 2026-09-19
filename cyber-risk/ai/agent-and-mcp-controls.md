@@ -1,6 +1,6 @@
 # Controls for agents, connectors, MCP servers, and skills
 
-> Proposed controls for a fictional VC IT environment. Review date: September 17, 2026. This document has not configured or tested a product, connector, MCP server, or tenant.
+> Proposed controls for a fictional technology operations environment. Review date: September 17, 2026. This document has not configured or tested a product, connector, MCP server, or tenant.
 
 An agent can turn a mistaken interpretation into an action. Review the combination of what it can read, what it can invoke, and where it can write. A good instruction reduces ambiguity; it cannot replace authorization enforced by the application and the connected service.
 

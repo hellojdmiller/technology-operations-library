@@ -2,7 +2,7 @@
 
 I start with the work the firm needs to keep doing: make decisions, protect deal information, communicate with investors, and move money through authorized processes. The useful question is what could interrupt that work, what would limit the damage, and what evidence supports the answer.
 
-This is a proposed operating model for a small VC/PE firm. Cadences, owners, and examples require local adoption. It is not an assessment of a real organization.
+This is a proposed operating model for a small organization. Cadences, owners, and examples require local adoption. It is not an assessment of a real organization.
 
 ## Start with business scenarios
 

@@ -1,6 +1,6 @@
 # Research before adding to the library
 
-Every library addition should connect current evidence to useful work for technology leaders and operators in venture capital and private equity. Research comes before drafting or implementation and remains visible in the finished resource. This applies to articles, controls, configurations, code samples, n8n flows, skills, procedures, training, and labs, as well as substantive revisions.
+Every library addition should connect current evidence to useful work for technology leaders and operators across organizations. Research comes before drafting or implementation and remains visible in the finished resource. This applies to articles, controls, configurations, code samples, n8n flows, skills, procedures, training, and labs, as well as substantive revisions.
 
 The working sequence is **research the problem, propose an approach, build an example, test what can be tested, and record the limits**. A source should influence a decision, design choice, exercise, or acceptance criterion.
 
@@ -26,7 +26,7 @@ User-supplied papers are valuable starting points. They do not independently aut
 |---|---|
 | Published empirical finding | What was measured, by whom, when, with which population, system, conditions, and limitations. |
 | Guidance or recommendation | The source's proposed practice, its intended scope, and any dependencies. It is not proof of effectiveness or automatically a standards requirement. |
-| Our interpretation or design | Why the evidence matters to a VC/PE task and what approach we propose. Label inferences and unresolved tradeoffs. |
+| Our interpretation or design | Why the evidence matters to a technology operations task and what approach we propose. Label inferences and unresolved tradeoffs. |
 | Observed local result | The actual fixture, revision, environment, command or exercise, output, and verification. State what the result does not establish. |
 
 Keep model behavior, deterministic tool/policy enforcement, human learning, and operational outcomes distinct. A successful mocked check is not a live integration test. A model refusal is not evidence that an external control blocked execution. A correct assisted answer does not establish retained understanding.

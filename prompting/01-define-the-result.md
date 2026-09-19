@@ -4,7 +4,7 @@ A useful prompt gives the assistant a job it can finish and gives the reviewer a
 
 ## Build an assignment with six parts
 
-| Part | What to specify | VC IT example |
+| Part | What to specify | Technology operations example |
 |---|---|---|
 | Outcome | The useful result or decision | A recommendation on whether a synthetic recovery pilot is ready to expand |
 | Audience | Who will read or use it | An operating partner with limited time for technical detail |

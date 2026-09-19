@@ -1,4 +1,4 @@
-# Incident-readiness checklist for VC IT
+# Incident-readiness checklist for technology operations
 
 > Reusable review checklist. Version 0.1; researched 2026-09-17. No organization has been assessed by this document. A blank field or missing evidence is unresolved, not a passing control. Keep completed records and sensitive evidence in a protected internal system.
 

@@ -1,8 +1,8 @@
-# Working on TOL
+# Working on Technology Operations Library
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before adding a library resource or making a substantive change. Research is part of every addition, including code, workflows, baseline configurations, documentation, training, skills, and labs.
 
-Research current authoritative sources before drafting or implementation. Connect the evidence to a concrete VC/PE operating problem, record sources and review dates with the resource, and distinguish published findings, our proposed adaptations, and observed validation. Do not describe research guidance or a fictional example as a tested result.
+Research current authoritative sources before drafting or implementation. Connect the evidence to a concrete technology operations problem, record sources and review dates with the resource, and distinguish published findings, our proposed adaptations, and observed validation. Do not describe research guidance or a fictional example as a tested result.
 
 Keep changes focused. Preserve the existing distinction between recommendation, approval, execution, verification, and acceptance. Preserve missing, stale, partial, conflicting, and unknown evidence explicitly.
 

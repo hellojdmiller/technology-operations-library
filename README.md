@@ -1,8 +1,10 @@
-# TOL
+# Technology Operations Library
 
-Practical resources for technology leaders and operators in venture capital and private equity.
+Practical resources for technology leaders and operators across organizations.
 
 This is the private working companion to [hellojdmiller.com](https://hellojdmiller.com). I’m collecting the guidance, workflows, reusable AI instructions, and implementation examples that help turn an operating idea into something another person can use and verify.
+
+The library is organized around reusable operating work across industries and team structures. Some fictional examples use investment operations; adapt their business roles, data boundaries, and obligations to the intended setting.
 
 ## Start with a complete example
 
@@ -16,7 +18,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 
 | Collection | Included | Start here |
 |---|---|---|
-| [VC IT field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
+| [Technology operations field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
 | [IT operations and service desk](operations/README.md) | 22 guides and procedures; 4 operating packs; 17 CSV aids | Change management, assets, patching, investor reporting, service desk, and succession |
 | [n8n workflows](n8n/README.md) | 10 workflow exports with sample data and local tests | Change readiness, asset reconciliation, patch exceptions, access, renewals, lifecycle, recovery, licenses, results, and briefs |
 | [Google and Microsoft baselines](baselines/README.md) | 40 control assertions across 2 platforms | Desired-state catalogs, evidence worksheets, fictional observations, and a local assessment tool |
@@ -63,5 +65,11 @@ Every addition begins with current research. Follow the [contribution guidelines
 Keep this repository private while resources are tried and refined. The adapted documents use fictional circumstances and omit original identities, architecture, incident history, and source containers. Read the [adaptation guide](documentation/ADAPTATION.md).
 
 Keep credentials, original work documents, actual tenant exports, completed assessments, private deployment parameters, and operational evidence outside this repository. Public release is a separate decision about specific resources and their rights, disclosure risk, and validation.
+
+## Naming and compatibility
+
+The repository's current name is **Technology Operations Library**, with the slug `technology-operations-library`. Existing `tol_*` MCP tool names, baseline identifiers, lab identifiers, and package names remain stable so existing clients, fixtures, and recorded results still agree. Dated validation reports and pinned research provenance retain their original bytes. A new local clone may use the new slug; an existing checkout does not need to move.
+
+GitHub redirects repository web and Git operations after a rename, but recommends updating local remotes. GitHub Pages project URLs and calls to a published action have separate limitations. Do not reuse the previous repository name, because doing so breaks its redirect. [GitHub's repository rename guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository), reviewed September 19, 2026.
 
 The existing [GPL-3.0 license](LICENSE) is retained.

@@ -1,6 +1,6 @@
 # A practical cyber-risk operating pack
 
-Use this collection to turn a concern into a scoped review, a testable control, and a decision with an owner. It is built around the work of VC/PE firms: identity and SaaS operations, restricted deal information, fund-service dependencies, payment verification, recovery, and AI-enabled workflows.
+Use this collection to turn a concern into a scoped review, a testable control, and a decision with an owner. It covers identity and SaaS operations, restricted information, external service dependencies, payment verification, recovery, and AI-enabled workflows. Some fictional exercises use investment operations to make those boundaries concrete.
 
 The pack includes **36 control proposals, four operational checklists, three AI-risk guides, four tabletop scenarios, a leadership brief, and working records**. All examples are generic or fictional. These resources describe proposed practices; they do not establish a real firm's control effectiveness or regulatory compliance. Reference review: **September 17, 2026**.
 

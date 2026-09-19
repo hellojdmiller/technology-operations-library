@@ -1,6 +1,6 @@
 # Review service-desk quality and improve the next week
 
-A fast ticket response is useful when it leads to owned work and a verified outcome. Review speed alongside accuracy, communication, access boundaries, and recurring failure. This guide proposes a small review a VC or PE IT lead can run with an internal team or managed provider.
+A fast ticket response is useful when it leads to owned work and a verified outcome. Review speed alongside accuracy, communication, access boundaries, and recurring failure. This guide proposes a small review an IT lead can run with an internal team or managed provider.
 
 The measures and examples below are original proposed practices. They are not benchmarks, contractual service levels, or evidence of a completed service review. Use the [service-level management guide](service-level-management.md) for clock definitions, sample targets, and reporting rules.
 

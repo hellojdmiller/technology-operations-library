@@ -40,4 +40,4 @@ For each row record an owner, scope, observation date, private evidence referenc
 
 If evidence suggests ongoing unauthorized access, data loss, or fraud, use the incident process. If the review lacks authority, scope, or a recovery route for a proposed test, keep that test pending. Preserve originals and evidence access restrictions. Do not close an unknown by replacing it with a favorable assumption.
 
-This sequencing is an original adaptation for VC IT. Background: [NIST small-business CSF guidance](https://www.nist.gov/itl/smallbusinesscyber/nist-cybersecurity-framework-0), [CISA performance goals](https://www.cisa.gov/cross-sector-cybersecurity-performance-goals). Reviewed September 17, 2026.
+This sequencing is an original adaptation for technology operations. Background: [NIST small-business CSF guidance](https://www.nist.gov/itl/smallbusinesscyber/nist-cybersecurity-framework-0), [CISA performance goals](https://www.cisa.gov/cross-sector-cybersecurity-performance-goals). Reviewed September 17, 2026.

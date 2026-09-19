@@ -2,7 +2,7 @@
 
 A useful service level tells the business what happens next, when someone will communicate, and what the team is working toward. Agree the service boundary and operating capacity before publishing a number. A timer cannot supply coverage, decision authority, a spare device, or a provider escalation route.
 
-This guide proposes an operating method for a fictional VC/PE technology function. The target matrix and timestamp cases are original **fictional, unadopted examples**. They establish no customer commitment, supplier guarantee, actual incident result, or current staffing capability.
+This guide proposes an operating method for a fictional technology function. The target matrix and timestamp cases are original **fictional, unadopted examples**. They establish no customer commitment, supplier guarantee, actual incident result, or current staffing capability.
 
 ## Keep the agreement, objective, and dependency separate
 

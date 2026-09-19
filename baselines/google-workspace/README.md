@@ -1,4 +1,4 @@
-# Google Workspace: a baseline for VC operations
+# Google Workspace: a baseline for technology operations
 
 I would start with the work the firm cannot afford to lose: identity access, investment material, investor communications, finance approvals, and the evidence needed to understand an incident. A useful baseline protects those paths while allowing collaboration with portfolio teams, counsel, fund administrators, and outside advisers.
 

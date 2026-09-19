@@ -1,6 +1,6 @@
 # Review an AI use case before connecting it to firm work
 
-> Proposed operating guidance and fictional examples for VC IT. No provider, product, or use case has been approved or tested by this document. Source review: September 17, 2026.
+> Proposed operating guidance and fictional examples for technology operations. No provider, product, or use case has been approved or tested by this document. Source review: September 17, 2026.
 
 Start with the work the firm wants to improve. “Use AI” is not a sufficiently bounded request. “Draft a weekly summary of public vendor release notes, with links and a reviewer, without sending anything” is a use case that can be reviewed and tested.
 
@@ -14,7 +14,7 @@ Apply the boundary to prompts, screenshots, recordings, attachments, retrieved d
 
 ## Define the smallest useful scope
 
-| Proposed VC IT use | Starting scope | Decision that remains outside the workflow |
+| Proposed use | Starting scope | Decision that remains outside the workflow |
 |---|---|---|
 | Public vendor research | Summarize dated official product documentation; identify unsupported claims and licensing questions | Procurement approval, contractual interpretation, purchase |
 | Operating runbook drafting | Work from approved Internal notes or synthetic procedures; leave missing prerequisites visible | Executing changes or asserting a restore was verified |

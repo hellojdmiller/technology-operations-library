@@ -1,4 +1,4 @@
-# A working cadence for VC IT
+# A working cadence for technology operations
 
 A useful operations review answers three questions: can people do their work, what needs a decision, and who is following through? Use this cadence to connect the ticket queue, service owners, providers, and upcoming business deadlines.
 

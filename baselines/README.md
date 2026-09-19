@@ -1,4 +1,4 @@
-# Cloud baselines for a VC firm
+# Cloud baselines for technology operations
 
 A baseline should answer three questions: what do we want, what have we actually checked, and what would changing it interrupt? These resources turn that discussion into an assessment and a staged configuration plan.
 
