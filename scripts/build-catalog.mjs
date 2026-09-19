@@ -11,6 +11,8 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'research/beyond-the-model-frontier.md': 'Connect chip architecture, model progress, effective context, human learning, and training-data quality to accepted productivity. Includes nine propositions to test in a bounded workflow.',
+  'research/companions/09-user-development-plan.md': 'Plan coaching, guided practice, transfer tasks, and delayed learning checks. Record observable progress separately from task output and production authority.',
   'operations/packs/change-management/README.md': 'Standard, normal, and emergency change procedures with approval, pilot, rollback, verification, a record template, fictional examples, exercises, and an n8n review flow.',
   'operations/packs/asset-lifecycle/README.md': 'Manage IT assets from purchase and custody through inventory reconciliation, return, sanitization, and disposal, with templates, exercises, and an n8n review flow.',
   'operations/packs/patching/README.md': 'Prioritize vulnerabilities and patches, plan rollout rings, verify remediation, and review exceptions using an SOP, records, exercises, and an n8n review flow.',
@@ -50,8 +52,20 @@ add('Portable skills', folders('skills', 'SKILL.md'), 'Instructions reviewed; cr
 add('Documentation', ['documentation/build-buy-decision-example.md', 'documentation/recovery-exercise-example.md', 'documentation/automation-handover-template.md', ...markdown('documentation/policies'), ...markdown('documentation/procedures'), ...markdown('documentation/continuity'), ...markdown('documentation/cyber-risk')], 'Fictional or adapted example; requires internal adoption');
 add('Training', markdown('training'), 'Practice module; labs not executed');
 add('Work samples', folders('work-samples', 'README.md'), 'See sample validation and deployment limits');
+add('AI research', [
+  'research/beyond-the-model-frontier.md',
+  'research/ai-acceptance.md',
+  'research/acceptance-review.md',
+  'research/building-capability-with-ai.md',
+  ...markdown('research/companions'),
+], 'Pinned website review snapshot; proposed methods and fictional exercises');
+add('Showcase', [
+  'showcase/mcp-service-catalog.md',
+  'showcase/control-evidence-review.md',
+  'showcase/change-readiness-review.md',
+], 'Guided local example; see measured checks and remaining limits');
 entries.sort((a, b) => a.collection.localeCompare(b.collection) || a.title.localeCompare(b.title));
-const catalog = { version: 1, reviewed_on: '2026-09-17', repository: 'https://github.com/hellojdmiller/VCPEIT', visibility: 'Private development collection', entries };
+const catalog = { version: 1, reviewed_on: '2026-09-18', repository: 'https://github.com/hellojdmiller/VCPEIT', visibility: 'Private development collection', entries };
 const destination = path.join(root, 'catalog');
 fs.mkdirSync(destination, { recursive: true });
 fs.writeFileSync(path.join(destination, 'resources.json'), JSON.stringify(catalog, null, 2) + '\n');
@@ -60,8 +74,8 @@ const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VCPEIT Resource Library</title>
 <style>
 :root{color-scheme:light;--ink:#132a35;--muted:#53666d;--line:#d4dfe0;--paper:#f4f7f5;--accent:#176459}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:54px 28px}header{max-width:840px;margin-bottom:30px}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--accent)}h1{font-size:clamp(34px,5vw,60px);letter-spacing:-.05em;line-height:1.07;margin:15px 0 20px}p{margin:0 0 14px;color:var(--muted)}a{color:var(--accent)}.controls{display:flex;gap:14px;flex-wrap:wrap;background:white;padding:20px;border:1px solid var(--line);border-radius:12px}label{display:block;font-size:13px;font-weight:650}.search{flex:1;min-width:220px}input,select{font:inherit;display:block;padding:10px 12px;margin-top:5px;border:1px solid #aabfc1;border-radius:6px;background:white;color:var(--ink);width:100%}input:focus,select:focus,a:focus{outline:3px solid #91cabe;outline-offset:2px}.count{margin:22px 0 14px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}article{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:12px;background:white;padding:22px}article h2{font-size:20px;line-height:1.3;letter-spacing:-.02em;margin:0}article p{font-size:14px;margin:0}article .type{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);font-weight:700}.status{margin-top:auto!important;padding-top:14px;border-top:1px solid #e6ecea;font-size:12px!important}footer{margin-top:30px;color:var(--muted);font-size:13px}.empty{padding:20px}noscript{display:block;padding:20px}
-</style></head><body><main><header><div class="eyebrow">JD Miller · Private resource workshop</div><h1>Practical resources<br>for VC IT.</h1><p>Operating guidance, workflows, baseline reviews, portable skills, documentation, training, and implementation samples. Start with the job you need to do.</p><p><a href="https://github.com/hellojdmiller/VCPEIT">Open the private repository</a> · Links require GitHub access.</p></header>
-<section class="controls" aria-label="Filter resources"><label class="search">Search the library<input id="search" type="search" placeholder="Try recovery, access, vendor, AI…"></label><label>Collection<select id="collection"><option value="">All collections</option></select></label></section><p class="count" id="count" role="status" aria-live="polite"></p><section class="grid" id="resources" aria-label="Resources"></section><noscript>Enable JavaScript for filtering, or use the repository README to browse.</noscript><footer>Examples use fictional data. Review each resource's validation limits before use. Nothing here has been applied to a production environment. Catalog reviewed September 17, 2026.</footer></main>
+</style></head><body><main><header><div class="eyebrow">JD Miller · Private resource workshop</div><h1>Practical resources<br>for VC IT.</h1><p>Operating guidance, AI research, workflows, baseline reviews, portable skills, documentation, training, and guided implementation samples. Start with the job you need to do.</p><p><a href="https://github.com/hellojdmiller/VCPEIT">Open the private repository</a> · Links require GitHub access.</p></header>
+<section class="controls" aria-label="Filter resources"><label class="search">Search the library<input id="search" type="search" placeholder="Try recovery, access, vendor, AI…"></label><label>Collection<select id="collection"><option value="">All collections</option></select></label></section><p class="count" id="count" role="status" aria-live="polite"></p><section class="grid" id="resources" aria-label="Resources"></section><noscript>Enable JavaScript for filtering, or use the repository README to browse.</noscript><footer>Examples use fictional data. Review each resource's validation limits before use. Nothing here has been applied to a production environment. Catalog reviewed September 18, 2026.</footer></main>
 <script type="application/json" id="catalog">${data}</script><script>
 const data=JSON.parse(document.getElementById('catalog').textContent);const filter=document.getElementById('collection');const search=document.getElementById('search');const list=document.getElementById('resources');
 for(const category of [...new Set(data.entries.map(x=>x.collection))]){const option=document.createElement('option');option.value=category;option.textContent=category;filter.append(option)}

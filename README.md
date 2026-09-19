@@ -4,6 +4,12 @@ Practical resources for technology leaders and operators in venture capital and 
 
 This is the private working companion to [hellojdmiller.com](https://hellojdmiller.com). I’m collecting the guidance, workflows, reusable AI instructions, and implementation examples that help turn an operating idea into something another person can use and verify.
 
+## Start with a complete example
+
+The [showcase walkthroughs](showcase/README.md) connect three operating problems to runnable examples: a read-only MCP service catalog, a control-evidence review, and a change-readiness workflow. Each explains the input, expected output, checks, and remaining limitations. Start there to understand how I approach the work, then use the collections below for related procedures and templates.
+
+For the AI research, start with [Beyond the model frontier and its companions](research/README.md). Follow the argument from chips, models, context, and learning to a practical pilot, acceptance review, and user-development plan. This is a pinned copy of a website review revision; the research directory records its source and sync process.
+
 ## Browse by the work you need to do
 
 | Collection | Included | Start here |
@@ -18,6 +24,8 @@ This is the private working companion to [hellojdmiller.com](https://hellojdmill
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
 | [Vendor training](training/README.md) | 6 vendor modules, 3 operating exercises, and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 5 sample collections | MCP design and a runnable local server, Azure Bicep, configuration scripts, and control-evidence review |
+| [AI research and companions](research/README.md) | Research paper, three companion readings, and 17 working files | Chips, model progress, context, human learning, accepted productivity, and user progression |
+| [Showcase walkthroughs](showcase/README.md) | 3 guided examples and a private profile draft | Run a sample, inspect its evidence, and understand what it establishes |
 
 For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the private repository and requires access to open resources. Its machine-readable index is [resources.json](catalog/resources.json).
 
@@ -35,11 +43,15 @@ With Node.js 22 or later, no package installation is needed for the JavaScript c
 
 ```sh
 node scripts/build-workflows.mjs
-node --test tests/*.test.mjs baselines/tests/*.test.mjs
+node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs
 node scripts/build-catalog.mjs
 ```
 
 The workflow build regenerates exports from readable JavaScript and sample inputs. Keep both together. The catalog build indexes the reviewed resource collections.
+
+With Python 3.9 or later, `python3 research/verify_sync.py` checks the research copy's hashes, file inventory, local navigation, and CSV structure without network access or extra packages. The [sync guide](research/SYNC.md) also explains how to compare it against the pinned website source commit.
+
+The [GitHub Actions workflow](.github/workflows/validate.yml) runs these checks on pushes to `main` and pull requests, checks for generated-file drift, and separately installs the locked MCP sample dependencies to run its protocol tests and deterministic answer keys. It uses no tenant credentials and performs no deployment. This automation covers local examples; the environment-specific trials in [VALIDATION.md](VALIDATION.md) remain separate.
 
 ## Developing privately
 

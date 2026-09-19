@@ -1,0 +1,47 @@
+BEYOND THE MODEL FRONTIER — ACCEPTANCE CHECKLIST
+Review edition: September 18, 2026
+
+Task / attempt / configuration / artifact version: ____________________
+Permitted use / destination / owner / reviewer / verifier: ___________
+
+For each check record supported, unsupported, unknown, or not applicable
+with a reason. A tick means evidence was recorded, not automatic approval.
+
+BEFORE THE RUN
+[ ] Define the task, quality criteria, consequence, and authorized scope.
+[ ] Record model/alias/version, prompts, tools, permissions, and source set.
+[ ] Record service availability and comparison differences; distinguish
+    a hardware claim from the accessible service and measured task result.
+[ ] Define context/memory strategy, source authority, and correction path.
+[ ] Define the baseline, measurement coverage, and follow-up window.
+[ ] Explain any learning/transfer exercise to participants in advance.
+
+FIVE ACCEPTANCE CHECKS — STATUS AND EVIDENCE REQUIRED
+[ ] QUALITY: Requirements met; material errors and uncertainty visible.
+[ ] AUTHORITY: Owner and approvals match this use and these actions.
+[ ] PATH: Observed data, tools, recipients, and actions stayed in scope.
+[ ] EVIDENCE: Claims and effects have inspectable support; gaps stay visible.
+[ ] FINAL STATE: A verifier checked the intended artifact or destination.
+
+RECOVERY AND MEASUREMENT
+[ ] Identify stop/containment owner, affected state, recovery steps,
+    irreversible effects, notification authority, and reopening checks.
+[ ] Count preparation, production/prompting, supervision, review,
+    correction, and recovery effort.
+[ ] Keep machine wait separate; include rejected/blocked/abandoned attempts.
+[ ] Count a task once after successful retries; retain every attempt's cost.
+[ ] Mark missing measurements unknown; zero requires an observation.
+[ ] Record delayed defects and understanding separately; missed follow-up
+    does not mean zero defects or retained understanding.
+
+SEPARATE THE STATES
+Recommendation / author / rationale: ________________________________
+Approval status / approver / scope / conditions: _____________________
+Execution status / observed actions: _________________________________
+Verification status / verifier / evidence / time: ____________________
+Acceptance: pending / accepted for stated use / revise / rejected
+Unresolved items / owner / next review: ______________________________
+
+A draft's acceptance does not approve its recommendation or authorize
+sending, purchase, access changes, or production execution. A required
+unknown or unsupported check prevents final acceptance for that scope.

@@ -1,6 +1,6 @@
 # Validation and release readiness
 
-This collection is being developed privately. The checks below describe the resource examples, not a production environment. Review date: **September 17, 2026**.
+This collection is being developed privately. The checks below describe the resource examples, not a production environment. Review date: **September 18, 2026**. Earlier platform checks retain the versions and scope recorded below; this review does not claim that every lab was rerun.
 
 ## Current evidence
 
@@ -21,9 +21,15 @@ This collection is being developed privately. The checks below describe the reso
 | Runnable MCP service catalog | 12 integration tests pass through an actual SDK client and stdio server; syntax checks and 10 deterministic evaluation answer keys pass; independent code review completed | Assistant/IDE installation, model tool selection, other runtime platforms, remote transport, authentication, and production use remain untested |
 | Offline control-evidence review | 26 tests pass for dates, evidence association, claims, exceptions, contrary results, malformed input, reproducible reports, and CLI behavior | Reviews supplied synthetic metadata only; evidence contents, authority, population completeness, and real control effectiveness remain unverified |
 | Configuration scripts | 13 PowerShell 7.6.4 checks pass: parsing, offline comparison, missing/false values, invalid inputs, wrong-tenant rejection, and scoped mocked reads | Actual Exchange Online module integration remains untested; no live tenant execution or change |
-| Searchable catalog | 94 resources indexed in ten collections; browser search and collection filters checked, including the 27-entry IT operations collection | GitHub authorization is required to open private resource links |
+| AI research snapshot | Four readings and all 17 companion source files copied from website review commit `19ac6589ca1e7e926c0c40a968e44a79ee25710b`; 21 source/local hashes, permitted transformations, external citation preservation, 93 local link targets, and six CSV schemas verified | This is a review-branch snapshot, not a new literature review or a production website publication; proposed pilots and learning exercises remain unexecuted |
+| Showcase walkthroughs | Three guides connect canonical source, fixtures, exact commands, observed outputs, and limitations; local demos and Markdown targets checked; proposed profile copy remains a private draft | Actual assistant-host installation, n8n runtime import/execution, and public presentation remain pending |
+| Searchable catalog | 110 resources indexed in twelve collections; browser search and collection filters checked, including 13 AI research entries and three showcase walkthroughs | GitHub authorization is required to open private resource links |
 
 The workflow and platform-baseline JavaScript command passes **83 tests**. The work samples have separate checks described in their READMEs and the rows above. Local success does not establish n8n runtime compatibility or real-tenant security. Structural skill validation does not prove that every host will follow the instructions correctly. The MCP answer-key check uses deterministic tool calls, not a model evaluation.
+
+The September 18 packaging review reran **109 tests** together (83 workflow/baseline tests plus 26 evidence-review tests), then the **12 MCP integration tests and ten deterministic answer keys**. They passed on local Node.js v26.7.0 and in an isolated Node.js v22.23.2 container with networking disabled. The local locked MCP install used `npm ci --ignore-scripts`. No production services or tenant credentials were used.
+
+The [Validate library workflow](.github/workflows/validate.yml) runs the local JavaScript and MCP checks on Node.js 22, verifies the research snapshot, and rejects generated workflow/catalog drift. Its permissions are read-only and it has no deployment or publication step. Hosted run results are recorded in [GitHub Actions](https://github.com/hellojdmiller/VCPEIT/actions/workflows/validate.yml); a passing run does not complete the remaining platform trials in this table.
 
 ## Privacy review
 
