@@ -15,6 +15,8 @@ node labs/n8n-runtime/run.mjs
 
 The pull downloads the official image. Execution then runs with Docker networking disabled, two CPUs, and a 2 GiB memory limit. The image's manifest digest supports platform-specific images; the report records the actual architecture and local image ID. [image.json](image.json) records the version and digest.
 
+The temporary staging directory gives the container user read/traverse access even when its Linux UID differs from the host's. Only fictional inputs and lab code are staged; files are read-only, the bind mount is read-only, and the host owner retains permission to remove the directory during cleanup.
+
 The command prints each case result and writes a dated directory under ignored `local-results/n8n-runtime/` containing:
 
 - `report.json`: source and harness hashes, version, architecture, inactive import count, individual results, warnings, and timestamps.
