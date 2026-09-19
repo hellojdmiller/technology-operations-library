@@ -4,17 +4,17 @@
 
 - **Author:** JD Miller.
 - **Source repository:** [hellojdmiller/hellojdmiller](https://github.com/hellojdmiller/hellojdmiller), private.
-- **Source commit:** [`19ac6589ca1e7e926c0c40a968e44a79ee25710b`](https://github.com/hellojdmiller/hellojdmiller/tree/19ac6589ca1e7e926c0c40a968e44a79ee25710b).
-- **Branch at sync:** `research/beyond-model-frontier-revamp`.
-- **Edition and sync date:** expanded review edition, September 18, 2026.
-- **Publication state at sync:** website review preview. This copy makes no assertion that the expanded paper or companions are live on the production website. The sync does not deploy or promote the website.
-- **Research freshness:** the source records a September 18 evidence review. Copying the documents does not constitute another literature review, external-link availability check, or confirmation of current vendor availability.
+- **Source commit:** [`4b212df10337348163213fcac1f3b07400a39256`](https://github.com/hellojdmiller/hellojdmiller/tree/4b212df10337348163213fcac1f3b07400a39256).
+- **Branch at sync:** `main`.
+- **Edition and sync date:** published release edition, September 19, 2026.
+- **Publication state at sync:** public library copy of the published website edition. On September 19, the [live paper](https://hellojdmiller.com/work/beyond-the-model-frontier) returned HTTP 200 and included the new agent-security section; all 17 [companion downloads](https://hellojdmiller.com/downloads/ai-research/README.md) matched the pinned source bytes. This is a recorded live-content check, separate from the local verifier. The sync does not deploy or promote the website.
+- **Research freshness:** the September 18 evidence review and September 19 agent-security addendum retain their separate source dates. The ISACA source for the addendum was rechecked as described below. The other studies, external links, and current vendor availability were not reviewed again for this sync.
 
 The website Markdown remains the editorial source for these 21 copied files. [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json) records the pinned upstream path and SHA-256 plus each local path, SHA-256, and intentional adaptation. Source permalinks require access to the private website repository. The GitHub-relative reading links work within this repository.
 
 ## Source mapping
 
-| Pinned website source | Private-library copy |
+| Pinned website source | Public-library copy |
 | --- | --- |
 | `src/content/perspectives/beyond-the-model-frontier.md` | [Paper](beyond-the-model-frontier.md) |
 | `src/content/perspectives/ai-acceptance.md` | [Concept companion](ai-acceptance.md) |
@@ -23,6 +23,12 @@ The website Markdown remains the editorial source for these 21 copied files. [SO
 | All 17 files in `src/content/companions/ai-research/` | [Editable companions](companions/README.md) |
 
 The companion set contains its README, nine numbered worksheets, six CSVs, and one text checklist. All CSV and text files are byte-identical to the pinned source. Generated HTML/JSON, website layouts, ZIP archives, and production deployment metadata are not copied.
+
+## Addendum source check
+
+ISACA's [Cybersecurity Recommendations for Securing AI Agents](https://www.isaca.org/resources/white-papers/2026/cybersecurity-recommendations-for-securing-ai-agents), published September 15, 2026, was re-read on its official page on September 19. Figure 3 recommends external policy enforcement, authorization for tools and memory, isolation, telemetry, and safe fallback controls. These recommendations support the addendum's operating questions and proposed boundary checks. The changed-approval, uncertain-retry, and recovery cases remain the author's applications of that guidance; they are not experiments reported by ISACA or observed results from this library.
+
+Recheck the guidance and relevant implementation documentation when models, permissions, memory behavior, tools, recovery paths, or the intended workflow change. This targeted check does not refresh the rest of the paper's literature or establish that any proposed control works.
 
 ## Intentional adaptations
 

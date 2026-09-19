@@ -1,5 +1,5 @@
 BEYOND THE MODEL FRONTIER — ACCEPTANCE CHECKLIST
-Review edition: September 18, 2026
+Release edition: September 19, 2026
 
 Task / attempt / configuration / artifact version: ____________________
 Permitted use / destination / owner / reviewer / verifier: ___________
@@ -15,6 +15,10 @@ BEFORE THE RUN
 [ ] Define context/memory strategy, source authority, and correction path.
 [ ] Define the baseline, measurement coverage, and follow-up window.
 [ ] Explain any learning/transfer exercise to participants in advance.
+[ ] For agents, identify external permission checks, memory isolation,
+    and stop/recovery controls. Use the acceptance record's proposed cases.
+[ ] Keep model responses, control decisions, and destination observations
+    separate; record unavailable evidence and unexecuted tests honestly.
 
 FIVE ACCEPTANCE CHECKS — STATUS AND EVIDENCE REQUIRED
 [ ] QUALITY: Requirements met; material errors and uncertainty visible.

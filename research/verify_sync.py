@@ -30,7 +30,7 @@ ROUTES = {
     '/guides/acceptance-review/checklist': 'companions/acceptance-checklist.txt',
     '/downloads/ai-research/beyond-model-frontier-companions.zip': 'companions/README.md',
 }
-PROVENANCE = '\n\n> Private-library copy of the September 18, 2026 review edition. See [source and sync notes](SYNC.md); this copy does not assert live publication.\n'
+PROVENANCE = '\n\n> Public-library copy of the September 19, 2026 published edition. Original evidence-review dates are preserved. See [source and sync notes](SYNC.md).\n'
 
 
 def adapt(text, relative_path):

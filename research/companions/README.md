@@ -1,8 +1,8 @@
 # Beyond the model frontier — working companions
 
-JD Miller · Review edition · September 18, 2026
+JD Miller · Release edition · September 19, 2026
 
-These are editable proposals for testing the ideas in [Beyond the model frontier](../beyond-the-model-frontier.md). The package accompanies the expanded review edition. It does not report experiments performed by the author or certify a model, vendor, or workflow.
+These are editable proposals for testing the ideas in [Beyond the model frontier](../beyond-the-model-frontier.md). This edition includes the September 18 research and learning companions plus a September 19 agent-security addendum informed by ISACA guidance. Original source review dates remain visible in the evidence ledger. The pack does not report experiments performed by the author or certify a model, vendor, or workflow.
 
 ## Start with the question
 

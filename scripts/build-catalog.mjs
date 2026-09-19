@@ -62,7 +62,7 @@ add('AI research', [
   'research/acceptance-review.md',
   'research/building-capability-with-ai.md',
   ...markdown('research/companions'),
-], 'Pinned website review snapshot; proposed methods and fictional exercises');
+], 'Pinned published research; proposed methods and fictional exercises');
 add('Showcase', [
   'showcase/mcp-service-catalog.md',
   'showcase/control-evidence-review.md',

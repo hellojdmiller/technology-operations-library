@@ -6,11 +6,18 @@ This is the public resource companion to [hellojdmiller.com](https://hellojdmill
 
 The library is organized around reusable operating work across industries and team structures. Some fictional examples use investment operations; adapt their business roles, data boundaries, and obligations to the intended setting.
 
-## Start with a complete example
+## Start with the work you want to do
+
+| Your next task | Start here | What you can try |
+|---|---|---|
+| Run an automation | [Change-readiness walkthrough](showcase/change-readiness-review.md) | A fictional change packet, its review result, and the checks behind it |
+| Review your controls | [Control-evidence walkthrough](showcase/control-evidence-review.md) | A local report that keeps missing, stale, and conflicting evidence visible |
+| Learn with AI | [Prompting guide](prompting/README.md) and [portable skills](skills/README.md) | Task framing, context, review, and fictional practice exercises |
+
 
 The [showcase walkthroughs](showcase/README.md) connect three operating problems to runnable examples: a read-only MCP service catalog, a control-evidence review, and a change-readiness workflow. Each explains the input, expected output, checks, and remaining limitations. Start there to understand how I approach the work, then use the collections below for related procedures and templates.
 
-For the AI research, start with [Beyond the model frontier and its companions](research/README.md). Follow the argument from chips, models, context, and learning to a practical pilot, acceptance review, and user-development plan. This is a pinned copy of a website review revision; the research directory records its source and sync process.
+For the AI research, start with [Beyond the model frontier and its companions](research/README.md). Follow the argument from chips, models, context, and learning to a practical pilot, acceptance review, and user-development plan. This is a pinned copy of a published website revision; the research directory records its source and sync process.
 
 For a sensitive reporting workflow, use the [investor-reporting pack](operations/packs/investor-reporting/README.md) and its offline reconciliation sample. The fictional cases cover wrong recipients, versions, uncertain retries, and interrupted batches.
 

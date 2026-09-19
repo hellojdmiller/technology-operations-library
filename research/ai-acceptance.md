@@ -1,6 +1,6 @@
 # What makes AI-generated work safe to accept?
 
-> Private-library copy of the September 18, 2026 review edition. See [source and sync notes](SYNC.md); this copy does not assert live publication.
+> Public-library copy of the September 19, 2026 published edition. Original evidence-review dates are preserved. See [source and sync notes](SYNC.md).
 
 I would begin with the work someone intends to rely on. A fast answer, a convincing explanation, and a completed task are different observations. An acceptance decision needs to connect them to evidence, authority, and an outcome that can be checked.
 

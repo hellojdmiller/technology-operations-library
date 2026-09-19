@@ -1,8 +1,8 @@
 # Beyond the model frontier: chips, context, and human judgment
 
-> Private-library copy of the September 18, 2026 review edition. See [source and sync notes](SYNC.md); this copy does not assert live publication.
+> Public-library copy of the September 19, 2026 published edition. Original evidence-review dates are preserved. See [source and sync notes](SYNC.md).
 
-*A research essay by JD Miller. Evidence reviewed September 18, 2026.*
+*A research essay by JD Miller. Evidence reviewed September 18, 2026; agent-security guidance added September 19, 2026.*
 
 I want to understand what the current pace of AI development gives the person responsible for the work. Faster chips can shorten the wait. Better models can take on harder tasks. Larger context windows can bring more evidence into a conversation. Each improvement changes what is possible. The harder question is what happens to the quality of the work, the cost of checking it, and the judgment of the person who will have to own the result.
 
@@ -113,6 +113,14 @@ Acceptance does not make a statement true or guarantee future value. It records 
 Consider a hypothetical assistant helping with a vendor renewal. It gathers permitted records, distinguishes the executed agreement from sales material, identifies unresolved claims, and drafts a recommendation. A responsible owner decides whether to act. If an approved change follows, a separate check confirms the actual subscription, access, or configuration state. The assistant's completion message is one piece of evidence in that sequence.
 
 I would also ask someone other than the original operator to explain why the recommendation was accepted and how to reverse the change. That tests whether the workflow leaves the firm with usable knowledge. It connects the learning concern to continuity and succession, where understanding must survive a handoff.
+
+### Put permission checks outside the model
+
+ISACA's September 15 guidance on securing AI agents makes the execution boundary more concrete. It recommends enforcing policy between an agent's proposed action and the connected system, limiting identities and tools, isolating memory, and providing containment and recovery mechanisms. These are practitioner recommendations, not experimental evidence that a particular workflow is secure or productive. [ISACA guidance](https://www.isaca.org/resources/white-papers/2026/cybersecurity-recommendations-for-securing-ai-agents)
+
+I would turn that guidance into a few deliberately awkward tests. Put a misleading instruction inside a fictional vendor document. Change the recipient or document version after approving a mock action. Ask one session to retrieve another session's restricted memory. Interrupt a tool after it may have changed something, then check whether the workflow reconciles the destination before retrying.
+
+For each case, I would record what the model proposed, what the execution controls permitted or blocked, and what actually happened in the test destination. Those observations answer different questions. I would also test whether stopping the agent prevents later actions while preserving a record of earlier effects. A stop command cannot unsend a message. These are proposed local exercises; the [acceptance record](companions/05-acceptance-and-recovery-record.md) provides space for their results.
 
 ## Measure productivity through the whole task
 

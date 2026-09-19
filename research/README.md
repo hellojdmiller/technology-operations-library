@@ -2,7 +2,7 @@
 
 I want this collection to help operators connect the AI landscape to decisions they can test: which system to use, what evidence to provide, when to accept its work, and how the person using it continues to develop.
 
-This is a **private copy of the September 18, 2026 review edition**, pinned to website source commit [`19ac658`](https://github.com/hellojdmiller/hellojdmiller/commit/19ac6589ca1e7e926c0c40a968e44a79ee25710b). That edition is on the website's review branch. Copying it here does not publish it on the live site. Read the [source and sync notes](SYNC.md) before updating it.
+This is a **public copy of the September 19, 2026 published edition**, pinned to website source commit [`4b212df`](https://github.com/hellojdmiller/hellojdmiller/commit/4b212df10337348163213fcac1f3b07400a39256). Read it here or start with the [published paper](https://hellojdmiller.com/work/beyond-the-model-frontier). This edition includes the September 18 research and learning companions plus the September 19 agent-security addendum; original evidence-review dates remain visible. The source repository is private, but every reading and worksheet below is available here. Read the [source and sync notes](SYNC.md) before updating the collection.
 
 ## Read the argument, then choose a test
 
@@ -29,7 +29,7 @@ For surrounding practices, see the [prompting guide](../prompting/README.md), [A
 
 ## Evidence and privacy boundaries
 
-The paper is a conceptual review, not a systematic review or a validated productivity model. Its dated sources and limitations are preserved. This library sync checks the copies and their navigation; it is not a new literature review. Recheck availability, release details, and study revisions before relying on time-sensitive claims.
+The paper is a conceptual review, not a systematic review or a validated productivity model. Its dated sources and limitations are preserved. This library sync checks the copies and their navigation. The ISACA guidance supporting the new agent-security addendum was rechecked on September 19; the rest of the literature was not reviewed again for this sync. Recheck availability, release details, and study revisions before relying on time-sensitive claims.
 
 The examples are fictional and the worksheets propose practices to test. Missing, stale, conflicting, partial, and inaccessible evidence remains visible. Unknown numeric values are not zero. Learning progress does not grant production authority; recommendation, approval, execution, verification, and final acceptance remain distinct.
 
