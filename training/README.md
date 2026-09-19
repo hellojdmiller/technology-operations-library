@@ -25,6 +25,12 @@ The [eight vendor walkthroughs](vendor-walkthroughs/README.md) connect official 
 
 Use them before or alongside the full modules. Record what was watched or read, any separately verified vendor course completion, and demonstrated task evidence independently in the [training record](training-record-template.md). Completing a video is not evidence that a tenant change or recovery worked.
 
+## Deliver a first session
+
+The [training delivery pack](delivery/README.md) turns one card into a proposed 60-minute session for an internal coach or service provider. Start with Microsoft request routing without a tenant, then use the coach rubric and blank progress log to plan checks around days 7, 14 and 30. Other cards can use the same format with their own prerequisites and answer guidance.
+
+Keep first answers, coached corrections and later independent explanations separate. The pack includes a fictional, incomplete example and accessible reading/response alternatives. Its timing and progression are proposals; no learner sessions, durable learning result or production authority are established. Research was reviewed September 19, 2026.
+
 ## Operating exercises
 
 The three operating packs add facilitated scenarios and answer keys; a separate incident-readiness workshop provides a shorter cyber-response rehearsal. Use them after the relevant platform lesson or as a team discussion with your provider. They are fictional paper exercises and authorize no system changes.
