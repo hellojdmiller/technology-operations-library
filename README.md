@@ -58,6 +58,8 @@ The [GitHub Actions workflow](.github/workflows/validate.yml) runs these checks 
 
 ## Developing privately
 
+Every addition begins with current research. Follow the [contribution guidelines](CONTRIBUTING.md) to connect sources to the operating problem, proposed approach, testable behavior, and remaining limits.
+
 Keep this repository private while resources are tried and refined. The adapted documents use fictional circumstances and omit original identities, architecture, incident history, and source containers. Read the [adaptation guide](documentation/ADAPTATION.md).
 
 Keep credentials, original work documents, actual tenant exports, completed assessments, private deployment parameters, and operational evidence outside this repository. Public release is a separate decision about specific resources and their rights, disclosure risk, and validation.
