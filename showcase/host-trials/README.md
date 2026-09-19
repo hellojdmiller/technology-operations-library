@@ -2,6 +2,8 @@
 
 The synthetic catalog now has one observed Claude Code trial. A separate run applied the notes-to-runbook instruction body in Claude Code and produced a useful draft that still needs revision. The attempted Codex run was blocked before a model response. These are narrow observations, not a claim that every host, skill or catalog query works.
 
+The later [runbook revision comparison](runbook-revision/README.md) adds six fresh drafts using baseline, initial-revision and refined instructions. It preserves the earlier observations below and records the new inputs, answers and findings separately. Read that comparison for the current skill's observed limits.
+
 | Trial on September 19, 2026 | What actually happened |
 | --- | --- |
 | Claude Code 2.1.267 / host-reported `claude-sonnet-5` / native stdio MCP | Connected to the local catalog; exposed only its two read tools; made two paginated list calls and four exact lookups; answered the service/owner question correctly. |
@@ -95,4 +97,4 @@ Official host guidance was reviewed **September 19, 2026**. Page update dates we
 
 The reusable runner was extracted after the observations; its dry-run commands, path guards and invocation construction were checked locally. The observed model calls used the same prompts and bounded flags through a local recording wrapper; no additional model trials were run to test the extracted helper.
 
-Not tested: every catalog question, another model or repetition, native loaders, ChatGPT chat, Claude chat, an IDE, Codex model behavior, live services, remote MCP authentication, real recovery, or provider retention guarantees. Recheck host flags and repeat the relevant fixture when changing model, host version, skill body, transport or permission configuration.
+The original trials above did not test every catalog question, another model or repetition, native loaders, ChatGPT chat, Claude chat, an IDE, Codex model behavior, live services, remote MCP authentication, real recovery, or provider retention guarantees. Later drafting calls and their separate limits are in the linked revision comparison. Recheck host flags and repeat the relevant fixture when changing model, host version, skill body, transport or permission configuration.

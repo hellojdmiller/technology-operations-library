@@ -681,7 +681,7 @@
       "collection": "Portable skills",
       "path": "skills/notes-to-runbook/SKILL.md",
       "readiness": "Instructions reviewed; cross-client trials pending",
-      "description": "Turn rough notes into an executable procedure with prerequisites, verification, failure handling, and visible unknowns."
+      "description": "Draft a runbook that preserves reported evidence, checks destination results and access, and keeps missing prerequisites and untested recovery visible."
     },
     {
       "title": "Risk review",

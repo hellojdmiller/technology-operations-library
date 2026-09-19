@@ -27,6 +27,8 @@ The [full prompting guide](../prompting/README.md) explains task design, context
 
 Use the fictional prompts and scoring rubric in [evaluation-cases.md](evaluation-cases.md) before relying on a skill. Record the host, model, delivery method, repository revision, output, and result. Frontmatter validation establishes file structure only; it does not establish cross-platform behavior, reliable redaction, or a sound recommendation.
 
-## Observed host trial
+## Observed host trials
 
 The [September 19 assistant trial](../showcase/host-trials/README.md) records one Claude notes-to-runbook trial using pasted instructions, its review findings, and a Codex attempt blocked before model output. This is limited behavioral evidence; native loading and the broader cross-host suite remain untested.
+
+The [runbook revision comparison](../showcase/host-trials/runbook-revision/README.md) adds six fresh drafts across two fictional cases and three instruction versions. It retains exact inputs, unchanged outputs, scores and remaining defects. Read the findings before relying on the revised [notes-to-runbook skill](notes-to-runbook/SKILL.md); a revised instruction body does not remove the need to check the actual draft.
