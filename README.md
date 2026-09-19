@@ -35,7 +35,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
 | [Vendor training](training/README.md) | 6 vendor modules, 3 operating exercises, and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 6 sample collections | MCP design and server, Azure Bicep, configuration scripts, control-evidence review, and investor-reporting reconciliation |
-| [Runtime labs](labs/n8n-runtime/README.md) | 32 isolated n8n CLI cases | Import and execute all ten workflows in a pinned container with fictional inputs |
+| Verification labs | [n8n runtime](labs/n8n-runtime/README.md) and [agent security](labs/agent-security/README.md) | Reproduce n8n cases and inspect offline agent-control decisions with fictional inputs |
 | [AI research and companions](research/README.md) | Research paper, three companion readings, and 17 working files | Chips, model progress, context, human learning, accepted productivity, and user progression |
 | [Showcase walkthroughs](showcase/README.md) | 3 guided examples and a proposed profile introduction | Run a sample, inspect its evidence, and understand what it establishes |
 
@@ -55,7 +55,7 @@ With Node.js 22 or later, no package installation is needed for the JavaScript c
 
 ```sh
 node scripts/build-workflows.mjs
-node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs work-samples/investor-reporting-reconciliation/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs
+node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs work-samples/investor-reporting-reconciliation/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs labs/agent-security/tests/*.test.mjs
 node scripts/build-catalog.mjs
 ```
 

@@ -226,7 +226,7 @@
       "collection": "Cyber risk",
       "path": "cyber-risk/ai/evaluation-playbook.md",
       "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
-      "description": "The purpose is to answer a bounded question: does this version of the workflow perform the approved task, respect its boundaries, report failures accurately, and stop when required? A polished answer is not the same as evidence that the system…"
+      "description": "For runnable control-layer exercises, use the offline agent-security lab, added September 19, 2026. It uses scripted proposals and mock destinations to inspect application controls. Its observed results do not establish model behavior or…"
     },
     {
       "title": "First 30 days of cyber-risk review",
@@ -689,6 +689,13 @@
       "path": "labs/n8n-runtime/README.md",
       "readiness": "Pinned n8n CLI runtime checked with fictional inputs; production integrations untested",
       "description": "Reproduce 32 isolated CLI import and execution cases across ten workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup."
+    },
+    {
+      "title": "Agent security: an offline control lab",
+      "collection": "Runtime labs",
+      "path": "labs/agent-security/README.md",
+      "readiness": "Offline mock-tool controls; actual model behavior and live integrations untested",
+      "description": "Run fictional agent-control exercises for scoped retrieval, approval binding, memory, retries, and stopping actions. Inspect proposed calls, policy decisions, and mock destination effects separately; no model behavior claim."
     },
     {
       "title": "Explore service dependencies through two MCP tools",
