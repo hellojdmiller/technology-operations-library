@@ -1,0 +1,220 @@
+{
+  "source_repository": "https://github.com/hellojdmiller/hellojdmiller",
+  "source_commit": "19ac6589ca1e7e926c0c40a968e44a79ee25710b",
+  "source_branch_at_sync": "research/beyond-model-frontier-revamp",
+  "edition": "Expanded review edition",
+  "evidence_review_date_in_source": "2026-09-18",
+  "synced_on": "2026-09-18",
+  "distribution_status_at_sync": "Private library copy of website review branch; no production publication performed by this sync.",
+  "verification_scope": "Inventory, source fidelity, citation preservation, local navigation, and CSV integrity. No new literature review or empirical validation.",
+  "files": [
+    {
+      "source_path": "src/content/perspectives/beyond-the-model-frontier.md",
+      "local_path": "beyond-the-model-frontier.md",
+      "source_sha256": "55d1e1a9470d53c22e1539210a1cfbc9947916ba9dd2d70614b18fc42a22b2e1",
+      "local_sha256": "974eef0a0af51f8c78f028a0e57ecec60d73e73e174bb96d17620e94bdf8379a",
+      "adjustments": [
+        "link: /concepts/ai-acceptance -> ai-acceptance.md",
+        "link: /guides/acceptance-review -> acceptance-review.md",
+        "link: /downloads/ai-research/beyond-model-frontier-companions.zip -> companions/README.md",
+        "link: /guides/building-capability-with-ai -> building-capability-with-ai.md",
+        "Added repository provenance note after the title."
+      ]
+    },
+    {
+      "source_path": "src/content/perspectives/ai-acceptance.md",
+      "local_path": "ai-acceptance.md",
+      "source_sha256": "fae610497380020138c9fa03dd265c831dd413f5120f548bdaaa2323f01ff207",
+      "local_sha256": "df7c8b6083d6e81220ffe698b2e497e4e3054afe6b426084b3d0343be653e68e",
+      "adjustments": [
+        "link: /work/beyond-the-model-frontier -> beyond-the-model-frontier.md",
+        "link: /guides/acceptance-review -> acceptance-review.md",
+        "link: /downloads/ai-research/beyond-model-frontier-companions.zip -> companions/README.md",
+        "link: /downloads/ai-research/01-model-and-serving-comparison.md -> companions/01-model-and-serving-comparison.md",
+        "link: /downloads/ai-research/03-learning-and-oversight-exercise.md -> companions/03-learning-and-oversight-exercise.md",
+        "link: /guides/building-capability-with-ai -> building-capability-with-ai.md",
+        "link: /guides/acceptance-review -> acceptance-review.md",
+        "link: /downloads/ai-research/08-evidence-and-limitations.md -> companions/08-evidence-and-limitations.md",
+        "Added repository provenance note after the title."
+      ]
+    },
+    {
+      "source_path": "src/content/perspectives/acceptance-review.md",
+      "local_path": "acceptance-review.md",
+      "source_sha256": "5c006df78e7828ecbad3458ed5a5e15418109508d77804c4937200bd1afcbfde",
+      "local_sha256": "cd86f59805deae474c6e7cd6b3b473d67147e92565bb38ab0f13fcb1cd70e8b0",
+      "adjustments": [
+        "link: /work/beyond-the-model-frontier -> beyond-the-model-frontier.md",
+        "link: /concepts/ai-acceptance -> ai-acceptance.md",
+        "link: /guides/building-capability-with-ai -> building-capability-with-ai.md",
+        "link: /downloads/ai-research/beyond-model-frontier-companions.zip -> companions/README.md",
+        "link: /guides/acceptance-review/checklist -> companions/acceptance-checklist.txt",
+        "link: /downloads/ai-research/01-model-and-serving-comparison.md -> companions/01-model-and-serving-comparison.md",
+        "link: /downloads/ai-research/02-context-and-evidence-review.md -> companions/02-context-and-evidence-review.md",
+        "link: /downloads/ai-research/03-learning-and-oversight-exercise.md -> companions/03-learning-and-oversight-exercise.md",
+        "link: /downloads/ai-research/04-productivity-pilot.md -> companions/04-productivity-pilot.md",
+        "link: /downloads/ai-research/05-acceptance-and-recovery-record.md -> companions/05-acceptance-and-recovery-record.md",
+        "link: /downloads/ai-research/06-proposition-test-plan.md -> companions/06-proposition-test-plan.md",
+        "link: /downloads/ai-research/07-fictional-worked-example.md -> companions/07-fictional-worked-example.md",
+        "link: /downloads/ai-research/08-evidence-and-limitations.md -> companions/08-evidence-and-limitations.md",
+        "link: /downloads/ai-research/09-user-development-plan.md -> companions/09-user-development-plan.md",
+        "link: /downloads/ai-research/model-service-comparison.csv -> companions/model-service-comparison.csv",
+        "link: /downloads/ai-research/evidence-register.csv -> companions/evidence-register.csv",
+        "link: /downloads/ai-research/pilot-log.csv -> companions/pilot-log.csv",
+        "link: /downloads/ai-research/fictional-pilot-log.csv -> companions/fictional-pilot-log.csv",
+        "link: /downloads/ai-research/user-progress-log.csv -> companions/user-progress-log.csv",
+        "link: /downloads/ai-research/fictional-user-progress-log.csv -> companions/fictional-user-progress-log.csv",
+        "link: /downloads/ai-research/07-fictional-worked-example.md -> companions/07-fictional-worked-example.md",
+        "Download-pack link label changed to Browse; no binary archive copied.",
+        "Added repository provenance note after the title."
+      ]
+    },
+    {
+      "source_path": "src/content/perspectives/building-capability-with-ai.md",
+      "local_path": "building-capability-with-ai.md",
+      "source_sha256": "e6fae21348c8fc1b5d40979d4263c4f72c762c6a25a51df51cce8ed8fa0368cc",
+      "local_sha256": "41289dac7b3501ea4cab6ae63d4a368857fc0dabdf381966a6a4533701a543dc",
+      "adjustments": [
+        "link: /work/beyond-the-model-frontier -> beyond-the-model-frontier.md",
+        "link: /concepts/ai-acceptance -> ai-acceptance.md",
+        "link: /guides/acceptance-review -> acceptance-review.md",
+        "link: /downloads/ai-research/09-user-development-plan.md -> companions/09-user-development-plan.md",
+        "link: /downloads/ai-research/user-progress-log.csv -> companions/user-progress-log.csv",
+        "link: /downloads/ai-research/fictional-user-progress-log.csv -> companions/fictional-user-progress-log.csv",
+        "link: /downloads/ai-research/beyond-model-frontier-companions.zip -> companions/README.md",
+        "link: /downloads/ai-research/08-evidence-and-limitations.md -> companions/08-evidence-and-limitations.md",
+        "link: /guides/acceptance-review -> acceptance-review.md",
+        "link: /downloads/ai-research/fictional-user-progress-log.csv -> companions/fictional-user-progress-log.csv",
+        "link: /downloads/ai-research/09-user-development-plan.md -> companions/09-user-development-plan.md",
+        "Added repository provenance note after the title."
+      ]
+    },
+    {
+      "source_path": "src/content/companions/ai-research/01-model-and-serving-comparison.md",
+      "local_path": "companions/01-model-and-serving-comparison.md",
+      "source_sha256": "86ce1c54a6ac7c5ed7265985c9b3bb254dfe84f11cd9b97af6d3ff669f044c48",
+      "local_sha256": "86ce1c54a6ac7c5ed7265985c9b3bb254dfe84f11cd9b97af6d3ff669f044c48",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/02-context-and-evidence-review.md",
+      "local_path": "companions/02-context-and-evidence-review.md",
+      "source_sha256": "cc7c348a45516858759129b10a7fd6cde49f292aaeadbd11d335ad2da59576bd",
+      "local_sha256": "cc7c348a45516858759129b10a7fd6cde49f292aaeadbd11d335ad2da59576bd",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/03-learning-and-oversight-exercise.md",
+      "local_path": "companions/03-learning-and-oversight-exercise.md",
+      "source_sha256": "211dc3874aef8524a070be77264a70a9d6782dffdf94903d47758bff34ef3e94",
+      "local_sha256": "211dc3874aef8524a070be77264a70a9d6782dffdf94903d47758bff34ef3e94",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/04-productivity-pilot.md",
+      "local_path": "companions/04-productivity-pilot.md",
+      "source_sha256": "74482a7fabffb4d4fff4fb439261b90f3ac17922f72bb8ebfd60167ab5bb6716",
+      "local_sha256": "74482a7fabffb4d4fff4fb439261b90f3ac17922f72bb8ebfd60167ab5bb6716",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/05-acceptance-and-recovery-record.md",
+      "local_path": "companions/05-acceptance-and-recovery-record.md",
+      "source_sha256": "fc1a7d8bad8a7e0685fc379931d2407460ba2ed51b86588d37ebce23c195e3bc",
+      "local_sha256": "fc1a7d8bad8a7e0685fc379931d2407460ba2ed51b86588d37ebce23c195e3bc",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/06-proposition-test-plan.md",
+      "local_path": "companions/06-proposition-test-plan.md",
+      "source_sha256": "b08058091ac7aba13d84ccdfd5c9eb12ec4bcd58404b508995328811f4cb6a77",
+      "local_sha256": "b08058091ac7aba13d84ccdfd5c9eb12ec4bcd58404b508995328811f4cb6a77",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/07-fictional-worked-example.md",
+      "local_path": "companions/07-fictional-worked-example.md",
+      "source_sha256": "db33df578cbde9c6a9aef46d2a5c7fa668c63bfd304b4cb62b727a00f024b777",
+      "local_sha256": "db33df578cbde9c6a9aef46d2a5c7fa668c63bfd304b4cb62b727a00f024b777",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/08-evidence-and-limitations.md",
+      "local_path": "companions/08-evidence-and-limitations.md",
+      "source_sha256": "1df529b9327b1cfea8a23c1c65e61a045aeb8bd0ea84b38943d5f739eb038ac0",
+      "local_sha256": "1df529b9327b1cfea8a23c1c65e61a045aeb8bd0ea84b38943d5f739eb038ac0",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/09-user-development-plan.md",
+      "local_path": "companions/09-user-development-plan.md",
+      "source_sha256": "dec1bdcaec922b135aa950217d2ba6bf5389d043d4854b6fefbc3cb1af2b09b1",
+      "local_sha256": "e16bb9c0efec29678c2266050b82621c0d3a6650e80238f907eea325a44b1d13",
+      "adjustments": [
+        "link: https://hellojdmiller.com/guides/building-capability-with-ai -> ../building-capability-with-ai.md",
+        "Removed website-preview navigation instruction after rewriting to the local guide."
+      ]
+    },
+    {
+      "source_path": "src/content/companions/ai-research/README.md",
+      "local_path": "companions/README.md",
+      "source_sha256": "317e095a9057404ee4cb48d138a8dab5e6f1ecb142d04d7e32d2ed0e054f5d64",
+      "local_sha256": "e2c837c9a6c78950a8aeb72568ab8a826c0a4ec0b3c01297f33abf775eefd4a8",
+      "adjustments": [
+        "link: https://hellojdmiller.com/work/beyond-the-model-frontier -> ../beyond-the-model-frontier.md",
+        "link: https://hellojdmiller.com/guides/acceptance-review -> ../acceptance-review.md",
+        "link: https://hellojdmiller.com/guides/building-capability-with-ai -> ../building-capability-with-ai.md",
+        "Replaced website-preview navigation instruction with pinned repository navigation."
+      ]
+    },
+    {
+      "source_path": "src/content/companions/ai-research/acceptance-checklist.txt",
+      "local_path": "companions/acceptance-checklist.txt",
+      "source_sha256": "d231a6c8a91bddc6bd7f5893f73432eff8a037190f7a41ba865156cc277dfa3b",
+      "local_sha256": "d231a6c8a91bddc6bd7f5893f73432eff8a037190f7a41ba865156cc277dfa3b",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/evidence-register.csv",
+      "local_path": "companions/evidence-register.csv",
+      "source_sha256": "4ce1da1c5c5c6ceebb881ad7295c5ed0899314652520c604c1cb802291e63aeb",
+      "local_sha256": "4ce1da1c5c5c6ceebb881ad7295c5ed0899314652520c604c1cb802291e63aeb",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/fictional-pilot-log.csv",
+      "local_path": "companions/fictional-pilot-log.csv",
+      "source_sha256": "ebc7c3e50f5a593a65ca6318a716b245ac8df73f3267ff412654ddfd464a42e6",
+      "local_sha256": "ebc7c3e50f5a593a65ca6318a716b245ac8df73f3267ff412654ddfd464a42e6",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/fictional-user-progress-log.csv",
+      "local_path": "companions/fictional-user-progress-log.csv",
+      "source_sha256": "e5938047b109c8352c3ab90c1e281903f21cc4f4ca5a43ca679f35150cc44be4",
+      "local_sha256": "e5938047b109c8352c3ab90c1e281903f21cc4f4ca5a43ca679f35150cc44be4",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/model-service-comparison.csv",
+      "local_path": "companions/model-service-comparison.csv",
+      "source_sha256": "fb020d6ae15ec36aa717ef3059336b745db9ed7067da3bc5d0ab0b464d092bd4",
+      "local_sha256": "fb020d6ae15ec36aa717ef3059336b745db9ed7067da3bc5d0ab0b464d092bd4",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/pilot-log.csv",
+      "local_path": "companions/pilot-log.csv",
+      "source_sha256": "b9b8581f717be8d761c36c712a7b839fea5da4e56dd4c0253600f016e2f33dce",
+      "local_sha256": "b9b8581f717be8d761c36c712a7b839fea5da4e56dd4c0253600f016e2f33dce",
+      "adjustments": []
+    },
+    {
+      "source_path": "src/content/companions/ai-research/user-progress-log.csv",
+      "local_path": "companions/user-progress-log.csv",
+      "source_sha256": "5d068cfd4e7b76a52ab5e964547fa0807b67807e2db1096b62a851046efa76a0",
+      "local_sha256": "5d068cfd4e7b76a52ab5e964547fa0807b67807e2db1096b62a851046efa76a0",
+      "adjustments": []
+    }
+  ]
+}
