@@ -1,6 +1,8 @@
 # Evaluate an AI workflow with observable results
 
-> A proposed test method with synthetic fixtures. No tests in this document have been run in a model, vendor product, connector, MCP server, or production system. Reviewed September 17, 2026.
+> A proposed model/vendor evaluation method with synthetic fixtures. These cases have not been run against a model, vendor product, connector, MCP server, or production system. Original method reviewed September 17, 2026.
+
+For runnable control-layer exercises, use the [offline agent-security lab](../../labs/agent-security/README.md), added September 19, 2026. It uses scripted proposals and mock destinations to inspect application controls. Its observed results do not establish model behavior or complete the model/vendor cases below.
 
 The purpose is to answer a bounded question: does this version of the workflow perform the approved task, respect its boundaries, report failures accurately, and stop when required? A polished answer is not the same as evidence that the system did those things.
 

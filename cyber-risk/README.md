@@ -17,6 +17,7 @@ The pack includes **36 control proposals, four operational checklists, three AI-
 | Evaluate an AI proposal | [AI use-case review](ai/ai-use-case-review.md) |
 | Bound agents, tools, connectors, and skills | [Agent and MCP controls](ai/agent-and-mcp-controls.md) |
 | Test AI behavior and enforced boundaries | [AI evaluation playbook](ai/evaluation-playbook.md) |
+| Run an offline agent-control example | [Agent-security lab](../labs/agent-security/README.md) |
 | Rehearse decisions under pressure | [Four tabletop exercises](scenarios/tabletop-exercises.md) |
 | Ask leadership for a risk decision | [Leadership risk brief](reporting/leadership-risk-brief.md) |
 | Record evidence, exceptions, and test results | [Working templates](templates/README.md) |

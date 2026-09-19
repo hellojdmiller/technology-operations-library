@@ -11,6 +11,7 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'labs/agent-security/README.md': 'Run fictional agent-control exercises for scoped retrieval, approval binding, memory, retries, and stopping actions. Inspect proposed calls, policy decisions, and mock destination effects separately; no model behavior claim.',
   'labs/n8n-runtime/README.md': 'Reproduce 32 isolated CLI import and execution cases across ten workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup.',
   'work-samples/investor-reporting-reconciliation/README.md': 'Run an offline reconciliation of expected deliveries, version approval, recipient entitlements, retries, and completion observations. Includes a fictional fixture, expected reports, and 33 tests.',
   'operations/packs/investor-reporting/README.md': 'Reconcile investor-report distribution using exact versions and recipients, interrupted-batch procedures, a blank decision record, a fictional exercise, and an offline review tool.',
@@ -49,6 +50,7 @@ add('Field guides', markdown('library'), 'Proposed operating guidance');
 add('IT operations', [...markdown('operations'), ...markdown('operations/succession'), ...markdown('operations/sops'), 'operations/templates/README.md', 'operations/checklists/README.md', ...folders('operations/packs', 'README.md')], 'Adapted or proposed guidance; operational exercises not run');
 add('n8n workflows', folders('n8n', 'README.md'), 'n8n 2.39.8 CLI import/execution checked; real integrations untested');
 add('Runtime labs', ['labs/n8n-runtime/README.md'], 'Pinned n8n CLI runtime checked with fictional inputs; production integrations untested');
+add('Runtime labs', ['labs/agent-security/README.md'], 'Offline mock-tool controls; actual model behavior and live integrations untested');
 add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md'], 'Local assessment checked; tenant configuration not applied');
 add('Cyber risk', ['cyber-risk/operating-model.md', 'cyber-risk/controls/README.md', ...markdown('cyber-risk/checklists'), ...markdown('cyber-risk/ai'), ...markdown('cyber-risk/scenarios'), ...markdown('cyber-risk/reporting')], 'Proposed controls and exercises; real-world effectiveness unverified');
 add('AI prompting', markdown('prompting'), 'Provider-neutral guidance and synthetic exercises; model trials pending');
