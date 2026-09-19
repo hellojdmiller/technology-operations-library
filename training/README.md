@@ -27,13 +27,14 @@ Use them before or alongside the full modules. Record what was watched or read, 
 
 ## Operating exercises
 
-The three operating packs add facilitated scenarios and answer keys. Use them after the relevant platform lesson or as a team discussion with your provider. They are fictional paper exercises and authorize no system changes.
+The three operating packs add facilitated scenarios and answer keys; a separate incident-readiness workshop provides a shorter cyber-response rehearsal. Use them after the relevant platform lesson or as a team discussion with your provider. They are fictional paper exercises and authorize no system changes.
 
 | Exercise | Practice |
 |---|---|
 | [Change management](../operations/packs/change-management/exercise.md) | Model mismatch, partial execution, and emergency authority |
 | [Asset lifecycle](../operations/packs/asset-lifecycle/exercise.md) | Custody, evidence conflicts, holds, and disposition boundaries |
 | [Patching and remediation](../operations/packs/patching/exercise.md) | Applicability, deployment failure, and expiring exceptions |
+| [45-minute incident readiness](../cyber-risk/workshops/incident-readiness/README.md) | Decision authority, uncertain recovery points, access checks and owned follow-up gaps |
 
 Use each exercise's own answer key and scoring rules; do not translate a tabletop score into a claim of production capability.
 
