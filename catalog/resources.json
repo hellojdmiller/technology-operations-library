@@ -187,6 +187,13 @@
       "description": "I would treat this as a set of connected operating decisions: who can administer the firm, how staff and guests get access, where information can travel, and how we recover when a control or service fails. A long list of green settings is less…"
     },
     {
+      "title": "A 45-minute incident-readiness workshop",
+      "collection": "Cyber risk",
+      "path": "cyber-risk/workshops/incident-readiness/README.md",
+      "readiness": "Original 45-minute facilitation pack; workshop and technical recovery unexecuted",
+      "description": "Run a 45-minute decision rehearsal using the existing destructive-outage scenario. Includes facilitator and participant sheets, decision log, observer rubric, holding update and improvement plan; no live incident actions."
+    },
+    {
       "title": "A leadership brief that leads to a risk decision",
       "collection": "Cyber risk",
       "path": "cyber-risk/reporting/leadership-risk-brief.md",

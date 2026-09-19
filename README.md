@@ -31,7 +31,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [IT operations and service desk](operations/README.md) | 22 guides and procedures; 4 operating packs; 17 CSV aids | Change management, assets, patching, investor reporting, service desk, and succession |
 | [n8n workflows](n8n/README.md) | 10 workflow exports with sample data and local tests | Change readiness, asset reconciliation, patch exceptions, access, renewals, lifecycle, recovery, licenses, results, and briefs |
 | [Google and Microsoft baselines](baselines/README.md) | 40 control assertions across 2 platforms | Desired-state catalogs, evidence worksheets, fictional observations, and a local assessment tool |
-| [Cyber-risk operating pack](cyber-risk/README.md) | 11 guides and packs; 36 control proposals | Four checklists, AI risk and agent controls, tabletop exercises, leadership reporting, and evidence records |
+| [Cyber-risk operating pack](cyber-risk/README.md) | 12 guides and packs; 36 control proposals | Four checklists, AI controls, tabletop scenarios, a 45-minute workshop, leadership reporting, and evidence records |
 | [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
 | [Portable skills](skills/README.md) | 4 self-contained skills | Build/buy review, notes to runbook, risk review, and document sanitization |
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |

@@ -11,6 +11,7 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'cyber-risk/workshops/incident-readiness/README.md': 'Run a 45-minute decision rehearsal using the existing destructive-outage scenario. Includes facilitator and participant sheets, decision log, observer rubric, holding update and improvement plan; no live incident actions.',
   'labs/agent-security/README.md': 'Run fictional agent-control exercises for scoped retrieval, approval binding, memory, retries, and stopping actions. Inspect proposed calls, policy decisions, and mock destination effects separately; no model behavior claim.',
   'labs/n8n-runtime/README.md': 'Reproduce 32 isolated CLI import and execution cases across ten workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup.',
   'work-samples/investor-reporting-reconciliation/README.md': 'Run an offline reconciliation of expected deliveries, version approval, recipient entitlements, retries, and completion observations. Includes a fictional fixture, expected reports, and 33 tests.',
@@ -53,6 +54,7 @@ add('Runtime labs', ['labs/n8n-runtime/README.md'], 'Pinned n8n CLI runtime chec
 add('Runtime labs', ['labs/agent-security/README.md'], 'Offline mock-tool controls; actual model behavior and live integrations untested');
 add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md'], 'Local assessment checked; tenant configuration not applied');
 add('Cyber risk', ['cyber-risk/operating-model.md', 'cyber-risk/controls/README.md', ...markdown('cyber-risk/checklists'), ...markdown('cyber-risk/ai'), ...markdown('cyber-risk/scenarios'), ...markdown('cyber-risk/reporting')], 'Proposed controls and exercises; real-world effectiveness unverified');
+add('Cyber risk', ['cyber-risk/workshops/incident-readiness/README.md'], 'Original 45-minute facilitation pack; workshop and technical recovery unexecuted');
 add('AI prompting', markdown('prompting'), 'Provider-neutral guidance and synthetic exercises; model trials pending');
 add('Portable skills', folders('skills', 'SKILL.md'), 'Instructions reviewed; cross-client trials pending');
 add('Documentation', ['documentation/build-buy-decision-example.md', 'documentation/recovery-exercise-example.md', 'documentation/automation-handover-template.md', ...markdown('documentation/policies'), ...markdown('documentation/procedures'), ...markdown('documentation/continuity'), ...markdown('documentation/cyber-risk')], 'Fictional or adapted example; requires internal adoption');

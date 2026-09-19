@@ -18,9 +18,12 @@ The pack includes **36 control proposals, four operational checklists, three AI-
 | Bound agents, tools, connectors, and skills | [Agent and MCP controls](ai/agent-and-mcp-controls.md) |
 | Test AI behavior and enforced boundaries | [AI evaluation playbook](ai/evaluation-playbook.md) |
 | Run an offline agent-control example | [Agent-security lab](../labs/agent-security/README.md) |
+| Facilitate a short team exercise | [45-minute incident-readiness workshop](workshops/incident-readiness/README.md) |
 | Rehearse decisions under pressure | [Four tabletop exercises](scenarios/tabletop-exercises.md) |
 | Ask leadership for a risk decision | [Leadership risk brief](reporting/leadership-risk-brief.md) |
 | Record evidence, exceptions, and test results | [Working templates](templates/README.md) |
+
+The [September 19 workshop addition](workshops/incident-readiness/README.md) packages one existing scenario with editable facilitation and follow-up records. Its current source review and unexecuted status are documented separately.
 
 ## A first working session
 

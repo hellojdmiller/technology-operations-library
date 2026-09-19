@@ -6,6 +6,8 @@ The practical question is whether the right person can make and verify the next 
 
 Use this with the [incident response record](../../documentation/cyber-risk/incident-response-record.md), [BCP](../../documentation/continuity/business-continuity-plan.md), [recovery playbook](../../documentation/continuity/disaster-recovery-playbook.md), and [tabletop exercises](../scenarios/tabletop-exercises.md).
 
+For a bounded team discussion, use the [45-minute workshop](../workshops/incident-readiness/README.md). It maps selected checklist items to the existing outage scenario and retains technical checks as untested.
+
 ## How to record a result
 
 For each row record **status, accountable owner and alternate, evidence reference, observation date, scope, gap, escalation owner, and next action**. The roles below are suggested assignments, not named staff. A policy statement is design evidence; a scoped observation or rehearsal establishes something different.

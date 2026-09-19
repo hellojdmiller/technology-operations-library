@@ -4,6 +4,8 @@
 
 A useful tabletop exposes the decision that becomes difficult when the normal process stops working. These exercises focus on the boundaries between investment operations, IT, external providers, and leadership. They are facilitated discussions using printed or local synthetic inject cards; they are not penetration tests or live incident simulations.
 
+For a shorter first session, the [45-minute workshop pack](../workshops/incident-readiness/README.md) wraps Exercise 3 below with a timed agenda, participant worksheet, observer record and improvement plan. It narrows the discussion; it does not shorten the fictional incident timeline or establish recovery performance.
+
 ## Run the exercise
 
 Allow about 60–90 minutes for one scenario, including debrief. This is a suggested workshop duration, not a response target. Choose a facilitator, a scribe, an observer, and one person for each decision role. In a small team, one participant may cover several roles, but record which authority they are exercising.
