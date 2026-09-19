@@ -11,6 +11,7 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'training/delivery/README.md': 'Deliver a proposed 60-minute vendor task-card session, then plan 30-day follow-up with a coach rubric, blank learner log and fictional example. Keep assisted practice, independent reasoning and work authority separate.',
   'cyber-risk/workshops/incident-readiness/README.md': 'Run a 45-minute decision rehearsal using the existing destructive-outage scenario. Includes facilitator and participant sheets, decision log, observer rubric, holding update and improvement plan; no live incident actions.',
   'labs/agent-security/README.md': 'Run fictional agent-control exercises for scoped retrieval, approval binding, memory, retries, and stopping actions. Inspect proposed calls, policy decisions, and mock destination effects separately; no model behavior claim.',
   'labs/n8n-runtime/README.md': 'Reproduce 32 isolated CLI import and execution cases across ten workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup.',
@@ -60,6 +61,7 @@ add('Portable skills', folders('skills', 'SKILL.md'), 'Instructions reviewed; cr
 add('Documentation', ['documentation/build-buy-decision-example.md', 'documentation/recovery-exercise-example.md', 'documentation/automation-handover-template.md', ...markdown('documentation/policies'), ...markdown('documentation/procedures'), ...markdown('documentation/continuity'), ...markdown('documentation/cyber-risk')], 'Fictional or adapted example; requires internal adoption');
 add('Training', markdown('training'), 'Practice module; labs not executed');
 add('Training', markdown('training/vendor-walkthroughs'), 'Official video and reading paths with original exercises; participant practice unexecuted');
+add('Training', ['training/delivery/README.md'], 'Proposed session and follow-up plan; no learner sessions or measured outcomes');
 add('Work samples', folders('work-samples', 'README.md'), 'See sample validation and deployment limits');
 add('AI research', [
   'research/beyond-the-model-frontier.md',

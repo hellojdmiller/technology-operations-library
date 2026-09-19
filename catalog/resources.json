@@ -747,6 +747,13 @@
       "description": "The official manage-users webinar is listed as 31:50. Use it for user-management orientation, not as an exact 2SV procedure. The official hub embeds video ID PGvxTmolKGc; the hub was updated September 18, 2026, but the video's publication date…"
     },
     {
+      "title": "Deliver one useful training session, then check what carries forward",
+      "collection": "Training",
+      "path": "training/delivery/README.md",
+      "readiness": "Proposed session and follow-up plan; no learner sessions or measured outcomes",
+      "description": "Deliver a proposed 60-minute vendor task-card session, then plan 30-day follow-up with a coach rubric, blank learner log and fictional example. Keep assisted practice, independent reasoning and work authority separate."
+    },
+    {
       "title": "Explain an Entra Conditional Access decision",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/entra-access-decision.md",
