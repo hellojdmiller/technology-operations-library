@@ -19,6 +19,12 @@ Start with ownership, then choose your identity platform and device platform. Fi
 
 Time estimates exclude purchasing, creating, and enrolling a lab environment. Use the [training record](training-record-template.md) to capture evidence, unresolved questions, and a reviewer’s decision.
 
+## Task-focused vendor walkthroughs
+
+The [eight vendor walkthroughs](vendor-walkthroughs/README.md) connect official Microsoft, Google Workspace, Jamf and n8n learning material to short, original practice tasks. Each includes a fictional fixture, answer guidance and a changed-scenario question. Sources were reviewed September 19, 2026; publication dates, access requirements and unverified playback/caption details remain visible on the cards.
+
+Use them before or alongside the full modules. Record what was watched or read, any separately verified vendor course completion, and demonstrated task evidence independently in the [training record](training-record-template.md). Completing a video is not evidence that a tenant change or recovery worked.
+
 ## Operating exercises
 
 The three operating packs add facilitated scenarios and answer keys. Use them after the relevant platform lesson or as a team discussion with your provider. They are fictional paper exercises and authorize no system changes.

@@ -57,6 +57,7 @@ add('AI prompting', markdown('prompting'), 'Provider-neutral guidance and synthe
 add('Portable skills', folders('skills', 'SKILL.md'), 'Instructions reviewed; cross-client trials pending');
 add('Documentation', ['documentation/build-buy-decision-example.md', 'documentation/recovery-exercise-example.md', 'documentation/automation-handover-template.md', ...markdown('documentation/policies'), ...markdown('documentation/procedures'), ...markdown('documentation/continuity'), ...markdown('documentation/cyber-risk')], 'Fictional or adapted example; requires internal adoption');
 add('Training', markdown('training'), 'Practice module; labs not executed');
+add('Training', markdown('training/vendor-walkthroughs'), 'Official video and reading paths with original exercises; participant practice unexecuted');
 add('Work samples', folders('work-samples', 'README.md'), 'See sample validation and deployment limits');
 add('AI research', [
   'research/beyond-the-model-frontier.md',
@@ -69,6 +70,8 @@ add('Showcase', [
   'showcase/mcp-service-catalog.md',
   'showcase/control-evidence-review.md',
   'showcase/change-readiness-review.md',
+  'showcase/n8n-editor-trial.md',
+  'showcase/host-trials/README.md',
 ], 'Guided local example; see measured checks and remaining limits');
 entries.sort((a, b) => a.collection.localeCompare(b.collection) || a.title.localeCompare(b.title));
 const catalog = { version: 1, reviewed_on: '2026-09-19', repository: 'https://github.com/hellojdmiller/technology-operations-library', visibility: 'Public resource collection', entries };

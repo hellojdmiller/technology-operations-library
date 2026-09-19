@@ -6,6 +6,8 @@
 
 **Source review:** September 17, 2026, against Jamf Pro documentation labeled 11.32.0. This lesson has not been executed.
 
+Use [Prove a Jamf inventory result](vendor-walkthroughs/jamf-inventory-policy.md) to connect the official Jamf 100 videos and written lessons to a short scope/execution/freshness exercise before the full lab below.
+
 ## What you will learn
 
 - Read a policy as content, trigger, frequency, and scope.

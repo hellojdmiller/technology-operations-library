@@ -705,11 +705,25 @@
       "description": "An assistant needs a useful view of a service inventory without gaining general file, shell, or change access. This example is for an IT operator or developer learning how to give a local assistant a narrow lookup capability."
     },
     {
+      "title": "Import and inspect the change-review workflow in n8n",
+      "collection": "Showcase",
+      "path": "showcase/n8n-editor-trial.md",
+      "readiness": "Guided local example; see measured checks and remaining limits",
+      "description": "A green execution indicator tells me the graph ran. I still need to read the output to know whether the change packet is ready for a human decision. This walkthrough keeps those two checks separate."
+    },
+    {
       "title": "Review a change packet before scheduling work",
       "collection": "Showcase",
       "path": "showcase/change-readiness-review.md",
       "readiness": "Guided local example; see measured checks and remaining limits",
       "description": "A coordinator needs to see which change requests have missing evidence or require a decision. A completed checklist cannot approve a deployment on its own. This example is for IT operators and automation builders connecting intake data to a…"
+    },
+    {
+      "title": "Try the catalog and a portable skill in a real assistant",
+      "collection": "Showcase",
+      "path": "showcase/host-trials/README.md",
+      "readiness": "Guided local example; see measured checks and remaining limits",
+      "description": "The synthetic catalog now has one observed Claude Code trial. A separate run applied the notes-to-runbook instruction body in Claude Code and produced a useful draft that still needs revision. The attempted Codex run was blocked before a model…"
     },
     {
       "title": "Turn control evidence into a review queue",
@@ -719,6 +733,20 @@
       "description": "A control register can record that a setting exists and still lack evidence that it works. This example helps an IT or cyber-risk operator inspect those differences before presenting a control assessment."
     },
     {
+      "title": "Check Google Workspace user scope before changing access",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/google-user-scope.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "The official manage-users webinar is listed as 31:50. Use it for user-management orientation, not as an exact 2SV procedure. The official hub embeds video ID PGvxTmolKGc; the hub was updated September 18, 2026, but the video's publication date…"
+    },
+    {
+      "title": "Explain an Entra Conditional Access decision",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/entra-access-decision.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "Microsoft's device and Conditional Access demonstration, published March 10, 2025, lists chapters at 12:40 for Conditional Access and 15:40 for emergency access. These are verified chapter labels; end-to-end playback and captions were not…"
+    },
+    {
       "title": "Google Workspace operator: scope, verify, and recover",
       "collection": "Training",
       "path": "training/google-workspace-operator.md",
@@ -726,11 +754,25 @@
       "description": "Practice settings inheritance, test populations, authentication evidence, and recovery in Google Workspace."
     },
     {
+      "title": "Import an n8n example and explain its actual result",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/n8n-import-and-result.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "Start at the official n8n education portal and N8N101 Essentials, 2026H2. The public outline covers canvas, nodes, execution and data flow. It was inspected; enrolled lessons, video playback, captions and transcripts were not. Publication date…"
+    },
+    {
       "title": "Intune device operations: understand a compliance result",
       "collection": "Training",
       "path": "training/intune-device-operations.md",
       "readiness": "Practice module; labs not executed",
       "description": "Distinguish enrollment, assignment, compliance evaluation, and access outcomes using a bounded device exercise."
+    },
+    {
+      "title": "Investigate an Intune compliance result",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/intune-compliance-evidence.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "Microsoft's device and Conditional Access demonstration, March 10, 2025, lists a compliance-policy chapter at 03:58 and access-policy chapter at 12:40. The chapter list was inspected; playback, captions and a full transcript were not verified."
     },
     {
       "title": "Jamf device operations: prove scope and execution",
@@ -754,11 +796,39 @@
       "description": "Import an example, compare expected records, distinguish business exceptions from execution failures, and record recovery."
     },
     {
+      "title": "Prove a Jamf inventory policy reached the intended Mac",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/jamf-inventory-policy.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "Use the public Jamf 100 lessons: 17 — Device Scope, 22 — Deploy a Policy, and 23 — Policies and Jamf Self Service. Each page has video plus written key points, review and practice material. Use the written material as the reading alternative;…"
+    },
+    {
+      "title": "Recover an n8n example without confusing failure states",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/n8n-failure-and-recovery.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "Use the official N8N102 Integrations and N8N103 In Practice outlines, edition 2026H2, for error handling, debugging and maintenance topics. Their publication dates were not displayed. The public outlines were reviewed; enrolled lessons, videos,…"
+    },
+    {
+      "title": "Route a Microsoft 365 request to the right owner",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/microsoft-admin-routing.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "Use Microsoft's admin-center overview, updated February 2, 2026. The page contains videos for simplified and dashboard views with accompanying explanatory text. Read that text if video is unavailable; it is not identified here as a verified…"
+    },
+    {
       "title": "SaaS ownership and handover: can someone else operate it?",
       "collection": "Training",
       "path": "training/saas-ownership-and-handover.md",
       "readiness": "Practice module; labs not executed",
       "description": "Rehearse service ownership, administrator transfer, billing, integrations, vendor dependencies, and handover acceptance."
+    },
+    {
+      "title": "Verify access to a Google shared drive",
+      "collection": "Training",
+      "path": "training/vendor-walkthroughs/google-shared-drive-access.md",
+      "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
+      "description": "The official shared-drives webinar is listed as 20:44 and covers drive creation, membership, access levels and files. The hub's observed embed ID is HXkFgMUkjaI. Its September 18, 2026 page update is not the video's publication date, which…"
     },
     {
       "title": "Azure Container Apps deployment pattern",

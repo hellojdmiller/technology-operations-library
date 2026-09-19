@@ -6,6 +6,8 @@
 
 **Source review:** September 17, 2026. The lesson has not been executed in an n8n runtime.
 
+The task cards [Import an n8n example](vendor-walkthroughs/n8n-import-and-result.md) and [Recover an n8n example](vendor-walkthroughs/n8n-failure-and-recovery.md) connect current vendor learning to the synthetic examples below. Keep their study and practice records separate from the repository's existing CLI runtime evidence.
+
 ## What you will learn
 
 - Inspect an imported workflow before running it.

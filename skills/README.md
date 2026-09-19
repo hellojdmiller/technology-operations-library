@@ -26,3 +26,7 @@ For native loaders, copy the complete chosen skill folder into the host’s docu
 The [full prompting guide](../prompting/README.md) explains task design, context, research, writing, coding, agents, and evaluation, with 16 copyable patterns and guided exercises.
 
 Use the fictional prompts and scoring rubric in [evaluation-cases.md](evaluation-cases.md) before relying on a skill. Record the host, model, delivery method, repository revision, output, and result. Frontmatter validation establishes file structure only; it does not establish cross-platform behavior, reliable redaction, or a sound recommendation.
+
+## Observed host trial
+
+The [September 19 assistant trial](../showcase/host-trials/README.md) records one Claude notes-to-runbook trial using pasted instructions, its review findings, and a Codex attempt blocked before model output. This is limited behavioral evidence; native loading and the broader cross-host suite remain untested.

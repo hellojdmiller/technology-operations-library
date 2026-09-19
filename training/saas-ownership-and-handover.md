@@ -6,6 +6,8 @@
 
 **Source review:** September 17, 2026. No ownership transfer or account removal is performed by this lesson.
 
+For a short vendor-guided warm-up, use [Route a Microsoft 365 request](vendor-walkthroughs/microsoft-admin-routing.md). Its fictional queue practices the distinction between technical access, business authority and evidence before completing the broader service record below.
+
 ## What you will learn
 
 - Separate business ownership, administrative access, data ownership, billing, and integration dependencies.

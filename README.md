@@ -15,6 +15,8 @@ The library is organized around reusable operating work across industries and te
 | Learn with AI | [Prompting guide](prompting/README.md) and [portable skills](skills/README.md) | Task framing, context, review, and fictional practice exercises |
 
 
+The [vendor video task cards](training/vendor-walkthroughs/README.md) pair official lessons with original practice, evidence checks, and teach-back prompts.
+
 The [showcase walkthroughs](showcase/README.md) connect three operating problems to runnable examples: a read-only MCP service catalog, a control-evidence review, and a change-readiness workflow. Each explains the input, expected output, checks, and remaining limitations. Start there to understand how I approach the work, then use the collections below for related procedures and templates.
 
 For the AI research, start with [Beyond the model frontier and its companions](research/README.md). Follow the argument from chips, models, context, and learning to a practical pilot, acceptance review, and user-development plan. This is a pinned copy of a published website revision; the research directory records its source and sync process.
@@ -33,17 +35,17 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
 | [Portable skills](skills/README.md) | 4 self-contained skills | Build/buy review, notes to runbook, risk review, and document sanitization |
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
-| [Vendor training](training/README.md) | 6 vendor modules, 3 operating exercises, and a training-record template | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
+| [Vendor training](training/README.md) | 6 modules, 8 video-based task cards, 3 operating exercises, and a training record | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 6 sample collections | MCP design and server, Azure Bicep, configuration scripts, control-evidence review, and investor-reporting reconciliation |
 | Verification labs | [n8n runtime](labs/n8n-runtime/README.md) and [agent security](labs/agent-security/README.md) | Reproduce n8n cases and inspect offline agent-control decisions with fictional inputs |
 | [AI research and companions](research/README.md) | Research paper, three companion readings, and 17 working files | Chips, model progress, context, human learning, accepted productivity, and user progression |
-| [Showcase walkthroughs](showcase/README.md) | 3 guided examples and a proposed profile introduction | Run a sample, inspect its evidence, and understand what it establishes |
+| [Showcase walkthroughs](showcase/README.md) | 3 guided examples, an editor walkthrough, and observed assistant trials | Run a sample, inspect its evidence, and understand what it establishes |
 
 For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the public repository. Its machine-readable index is [resources.json](catalog/resources.json).
 
 ## What is ready to use
 
-The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 32 isolated CLI cases on its pinned version. Cloud deployment, real-tenant checks, vendor training exercises, and cross-client skill trials remain pending.
+The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 32 isolated CLI cases on its pinned version. A bounded [Claude MCP and pasted-skill trial](showcase/host-trials/README.md) now adds host observations and review findings. Cloud deployment, real-tenant checks, vendor training exercises, native skill loading, and wider cross-client trials remain pending.
 
 The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
 

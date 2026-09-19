@@ -1,6 +1,6 @@
 # Start with something you can run
 
-**Public walkthroughs · September 19, 2026.** These walkthroughs make three existing examples easier to inspect. The dated validation results and limits below are unchanged.
+**Public walkthroughs · September 19, 2026.** These walkthroughs make three existing examples easier to inspect. The original demonstration results are retained below; new host observations are dated separately.
 
 I want operational tooling to answer a few practical questions: what do we know, what is still missing, who needs to decide, and how will we verify the result? These examples show that approach using fictional data and small, inspectable programs.
 
@@ -14,6 +14,12 @@ The quickest starting point is the evidence review: one command produces a reada
 
 All commands assume a checkout of this repository and start at its root. The walkthroughs link to canonical source, fixtures, and tests rather than maintaining a second implementation. Keep the example inputs fictional. Each page distinguishes observed local results from work still to be tested in a host or platform.
 
+## Continue in a tool or vendor lesson
+
+- [n8n editor walkthrough](n8n-editor-trial.md): import, predict, run, and inspect three failure variants. The observed startup reached owner setup; editor import remains untested.
+- [Assistant host trials](host-trials/README.md): actual bounded Claude MCP and pasted-skill observations, including review findings and a blocked Codex attempt.
+- [Vendor video task cards](../training/vendor-walkthroughs/README.md): eight official study paths paired with original exercises and answer guidance.
+
 ## What has been checked
 
 Checks were rerun on September 18, 2026, using Node.js **v26.7.0**, against canonical sample code at commit **24bffafa731d59bb652f3a7c5283851406254f28**:
@@ -22,7 +28,7 @@ Checks were rerun on September 18, 2026, using Node.js **v26.7.0**, against cano
 - Evidence review: all 26 tests passed; the fictional fixture returned 8 assessments, 6 requiring review, and 28 review items.
 - n8n examples: all 67 local evaluator/export tests passed; the change fixture returned 3 changes, 2 needing attention, and no approved decisions.
 
-These checks establish the listed local behavior. A later [September 19 runtime lab](../labs/n8n-runtime/README.md) additionally verified CLI import and execution in n8n 2.39.8. These checks do not establish assistant-host compatibility, editor/UI import, the quality of a model's answers, or control effectiveness in a real environment. See the [repository validation record](../VALIDATION.md) for the wider collection.
+These checks establish the listed local behavior. A later [September 19 runtime lab](../labs/n8n-runtime/README.md) additionally verified CLI import and execution in n8n 2.39.8. These historical checks do not establish assistant-host compatibility, editor/UI import, the quality of a model's answers, or control effectiveness in a real environment. The subsequent [host-trial record](host-trials/README.md) adds only its specifically observed results. See the [repository validation record](../VALIDATION.md) for the wider collection.
 
 ## Proposed public presentation
 

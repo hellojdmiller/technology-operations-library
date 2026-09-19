@@ -1,0 +1,23 @@
+{
+  "reviewed_on": "2026-09-19",
+  "status": "blocked_at_owner_setup",
+  "n8n_version": "2.39.8",
+  "image": "docker.n8n.io/n8nio/n8n@sha256:b73045abaddb40cb4024e86eea1b1f69093501a7339f685a4cd486b7743d23ae",
+  "workflow_candidate": "n8n/change-readiness-review/workflow.json",
+  "workflow_sha256": "8d2cbfcb25f76036ae08d95fc6cf5965e62f442316b74efea975882e47f79b93",
+  "observed": [
+    "Disposable container started with loopback-only published port and in-memory n8n user directory.",
+    "Browser reached /setup and displayed owner account form.",
+    "No owner credentials were entered.",
+    "Named disposable container stopped and absence verified after automatic removal."
+  ],
+  "ui_import": "not_attempted",
+  "ui_execution": "not_attempted",
+  "production_or_external_integration": "not_attempted",
+  "cleanup": "verified_removed",
+  "limitations": [
+    "This is an editor-startup observation, not an import or workflow execution result.",
+    "Network egress isolation was not tested.",
+    "Independent CLI execution evidence is recorded in labs/n8n-runtime/validation-2026-09-19.json."
+  ]
+}

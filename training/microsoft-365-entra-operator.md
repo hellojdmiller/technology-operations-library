@@ -6,6 +6,8 @@
 
 **Source review:** September 17, 2026. No tenant exercise has been performed as part of writing this lesson.
 
+Use [Explain an Entra access decision](vendor-walkthroughs/entra-access-decision.md) for selected official learning material and a short evidence exercise. [Route a Microsoft 365 request](vendor-walkthroughs/microsoft-admin-routing.md) adds practice choosing the right owner and administration surface.
+
 ## What you will learn
 
 - Translate a business request into an explicit user and application scope.
