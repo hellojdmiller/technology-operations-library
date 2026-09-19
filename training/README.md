@@ -1,4 +1,4 @@
-# VC IT operator training
+# Technology operations training
 
 Practical lessons for the person who has to explain a decision, make a bounded change, and prove the result. The setting is a fictional investment firm: a small internal team, outside specialists, sensitive deal material, and people who need access while traveling.
 

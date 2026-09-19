@@ -1,4 +1,4 @@
-# A practical AI prompting guide for VC IT
+# A practical AI prompting guide for technology operations
 
 The goal is useful work that someone can review, repeat, and improve. I start by defining the result, giving the relevant context, and deciding what evidence would make the result trustworthy. The wording matters, but so do the source material, available tools, permissions, and the way the output is checked.
 
@@ -44,4 +44,4 @@ Use the [prompt card](templates/prompt-card.md) to version a reusable prompt and
 
 ## Primary reading
 
-The guide's workflows and VC IT examples are original proposals. Official sources support the general principles and product-specific distinctions: [OpenAI prompting](https://developers.openai.com/api/docs/guides/prompt-engineering), [Claude prompting overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview), and [Google prompt design](https://ai.google.dev/gemini-api/docs/prompting-strategies). Use each provider's current model guidance for settings or behavior that do not transfer across tools.
+The guide's workflows and technology operations examples are original proposals. Official sources support the general principles and product-specific distinctions: [OpenAI prompting](https://developers.openai.com/api/docs/guides/prompt-engineering), [Claude prompting overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview), and [Google prompt design](https://ai.google.dev/gemini-api/docs/prompting-strategies). Use each provider's current model guidance for settings or behavior that do not transfer across tools.

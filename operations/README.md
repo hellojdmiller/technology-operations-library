@@ -1,6 +1,6 @@
 # IT operations and service desk
 
-Practical procedures for running a VC or PE firm's service desk, managing employee and software requests, and handing the IT function to another operator. Start with the situation you need to handle, then use the linked working records.
+Practical procedures for running an organization's service desk, managing employee and software requests, and handing the IT function to another operator. Start with the situation you need to handle, then use the linked working records.
 
 These are newly written generic derivatives of authorized operating material, supplemented by original guidance and current vendor references. They use fictional circumstances. They are proposed resources for private review, not approved policies, completed exercises, or statements about a particular organization.
 
@@ -73,7 +73,7 @@ Keep a procedure separate from the changing contact, inventory, and authority re
 
 The collection contains 22 standalone guides and procedures, four complete operating packs, and 17 CSV working aids across those packs and the service-desk/succession records, plus the investor-reporting Markdown decision record. Sample service targets require local staffing and agreement; they are not contractual promises.
 
-The [vendor training modules](../training/README.md), [VC IT field guide](../library/README.md), [cyber-risk pack](../cyber-risk/README.md), and [prompting guide](../prompting/README.md) provide supporting paths. Drafting help from an assistant does not supply missing approval or operational evidence.
+The [vendor training modules](../training/README.md), [Technology operations field guide](../library/README.md), [cyber-risk pack](../cyber-risk/README.md), and [prompting guide](../prompting/README.md) provide supporting paths. Drafting help from an assistant does not supply missing approval or operational evidence.
 
 ## Adaptation and review boundaries
 

@@ -1,4 +1,4 @@
-# The first 90 days of a VC IT review
+# The first 90 days of a technology operations review
 
 This is an illustrative sequence for an incoming IT owner or a firm improving its operating model. Adjust it to urgent risks, staffing, and business deadlines. Calendar milestones are planning aids, not permission to defer a known serious issue.
 

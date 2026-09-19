@@ -19,7 +19,7 @@ for (const [slug, title] of [
   const sample = JSON.parse(readFileSync(join(folder, 'sample-input.json'), 'utf8'));
   const code = readFileSync(join(folder, 'evaluate.js'), 'utf8');
   const workflow = {
-    name: `VCPEIT — ${title} (fictional example)`,
+    name: `Technology Operations Library — ${title} (fictional example)`,
     nodes: [
       { parameters: {}, id: 'manual-trigger', name: 'Run example', type: 'n8n-nodes-base.manualTrigger', typeVersion: 1, position: [0, 0] },
       { parameters: { mode: 'runOnceForAllItems', language: 'javaScript', jsCode: `return ${JSON.stringify(sample, null, 2)}.map(json => ({ json }));` }, id: 'sample-data', name: 'Fictional sample data', type: 'n8n-nodes-base.code', typeVersion: 2, position: [250, 0], notesInFlow: true, notes: 'Fictional local input. Replace only after checking the input contract in the resource README.' },

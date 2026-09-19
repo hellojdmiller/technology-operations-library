@@ -1,4 +1,4 @@
-# Running the VC IT function
+# Running the technology operations function
 
 The first job is to make ownership visible. A small firm may outsource support, security monitoring, fund administration, and application delivery to different providers. Someone inside the firm still needs to decide priorities, accept risk, and verify that the work meets the business need.
 

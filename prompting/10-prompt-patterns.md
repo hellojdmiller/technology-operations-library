@@ -1,4 +1,4 @@
-# Copyable prompt patterns for VC IT
+# Copyable prompt patterns for technology operations
 
 Replace bracketed placeholders with approved information. These patterns are drafts to evaluate, not installed skills or guarantees of a correct result. Use synthetic material while learning. None of the prompts grants permission to change a production system, send a message, or upload private data.
 
@@ -41,7 +41,7 @@ Review: citations support the decision-driving claims and version/date limits re
 ## 4. Draft an article as a thought process
 
 ```text
-Write a first-person article for technology leaders in VC/PE about [question].
+Write a first-person article for technology leaders in [audience or operating context] about [question].
 Use my approved voice examples and the verified source packet below.
 Develop the question, tradeoffs, evidence I would want, and a proposed solution.
 Do not invent personal achievements, metrics, deployments, or client stories.

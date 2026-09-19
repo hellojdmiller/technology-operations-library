@@ -1,7 +1,7 @@
 {
   "version": 1,
   "reviewed_on": "2026-09-19",
-  "repository": "https://github.com/hellojdmiller/VCPEIT",
+  "repository": "https://github.com/hellojdmiller/technology-operations-library",
   "visibility": "Private development collection",
   "entries": [
     {
@@ -12,7 +12,7 @@
       "description": "Supply the material that changes the answer. A large collection of unrelated files can hide the one paragraph that defines the task. The goal is enough relevant context to support the work, with clear source boundaries and a visible record of…"
     },
     {
-      "title": "Copyable prompt patterns for VC IT",
+      "title": "Copyable prompt patterns for technology operations",
       "collection": "AI prompting",
       "path": "prompting/10-prompt-patterns.md",
       "readiness": "Provider-neutral guidance and synthetic exercises; model trials pending",
@@ -173,14 +173,14 @@
       "description": "I would begin with the work someone intends to rely on. A fast answer, a convincing explanation, and a completed task are different observations. An acceptance decision needs to connect them to evidence, authority, and an outcome that can be…"
     },
     {
-      "title": "Google Workspace: a baseline for VC operations",
+      "title": "Google Workspace: a baseline for technology operations",
       "collection": "Cloud baselines",
       "path": "baselines/google-workspace/README.md",
       "readiness": "Local assessment checked; tenant configuration not applied",
       "description": "I would start with the work the firm cannot afford to lose: identity access, investment material, investor communications, finance approvals, and the evidence needed to understand an incident. A useful baseline protects those paths while…"
     },
     {
-      "title": "Microsoft 365: a baseline for VC operations",
+      "title": "Microsoft 365: a baseline for technology operations",
       "collection": "Cloud baselines",
       "path": "baselines/microsoft-365/README.md",
       "readiness": "Local assessment checked; tenant configuration not applied",
@@ -243,7 +243,7 @@
       "description": "A useful tabletop exposes the decision that becomes difficult when the normal process stops working. These exercises focus on the boundaries between investment operations, IT, external providers, and leadership. They are facilitated discussions…"
     },
     {
-      "title": "Incident-readiness checklist for VC IT",
+      "title": "Incident-readiness checklist for technology operations",
       "collection": "Cyber risk",
       "path": "cyber-risk/checklists/incident-readiness.md",
       "readiness": "Proposed controls and exercises; real-world effectiveness unverified",
@@ -369,7 +369,7 @@
       "description": "A vendor review should answer whether the service fits the intended work, what the firm will depend on, and how it can leave. Keep those questions alive after purchase."
     },
     {
-      "title": "Running the VC IT function",
+      "title": "Running the technology operations function",
       "collection": "Field guides",
       "path": "library/operating-model.md",
       "readiness": "Proposed operating guidance",
@@ -383,14 +383,14 @@
       "description": "The useful starting point is the workflow between people and systems. A correct application configuration does not by itself ensure that the right investor receives the right document or that a changed payment instruction is independently…"
     },
     {
-      "title": "The first 90 days of a VC IT review",
+      "title": "The first 90 days of a technology operations review",
       "collection": "Field guides",
       "path": "library/first-90-days.md",
       "readiness": "Proposed operating guidance",
       "description": "This is an illustrative sequence for an incoming IT owner or a firm improving its operating model. Adjust it to urgent risks, staffing, and business deadlines. Calendar milestones are planning aids, not permission to defer a known serious issue."
     },
     {
-      "title": "A working cadence for VC IT",
+      "title": "A working cadence for technology operations",
       "collection": "IT operations",
       "path": "operations/operating-cadence.md",
       "readiness": "Adapted or proposed guidance; operational exercises not run",
@@ -513,7 +513,7 @@
       "collection": "IT operations",
       "path": "operations/service-desk-quality-review.md",
       "readiness": "Adapted or proposed guidance; operational exercises not run",
-      "description": "A fast ticket response is useful when it leads to owned work and a verified outcome. Review speed alongside accuracy, communication, access boundaries, and recurring failure. This guide proposes a small review a VC or PE IT lead can run with an…"
+      "description": "A fast ticket response is useful when it leads to owned work and a verified outcome. Review speed alongside accuracy, communication, access boundaries, and recurring failure. This guide proposes a small review an IT lead can run with an…"
     },
     {
       "title": "Security alert triage",

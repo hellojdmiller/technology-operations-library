@@ -5,7 +5,7 @@ Give the assistant both a point of view and factual boundaries. “Write in my v
 ## Use a compact voice brief
 
 ```text
-Write for technology leaders and operators in VC/PE. Use clear, direct prose
+Write for technology leaders and operators in [audience or operating context]. Use clear, direct prose
 and practical operating examples. Frame the piece as how I think through a
 problem: the question, the tradeoff, the evidence I would want, and a proposed
 way forward. Use first person for the viewpoint, not for invented history.

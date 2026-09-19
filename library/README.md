@@ -1,4 +1,4 @@
-# VC IT field guide
+# Technology operations field guide
 
 Start with the business capability and its owner, then choose the policy, procedure, configuration review, or automation that supports it. These guides describe proposed operating practices and fictional examples, not a particular firm's environment.
 

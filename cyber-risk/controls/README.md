@@ -2,7 +2,7 @@
 
 Start with the business failure: a payment is redirected, a former collaborator can still open diligence materials, a critical SaaS service cannot be recovered, or an AI workflow acts outside its authority. Then decide what should prevent or limit that failure and what evidence would show that the protection works.
 
-This library contains **36 original control proposals** for VC/PE technology operations. They are starting points for a scoped operating program, not a complete security standard, audit opinion, certification, or claim of regulatory compliance. The scenarios and test procedures are authored examples; the primary references provide supporting context rather than prescribing every implementation detail.
+This library contains **36 original control proposals** for technology operations. They are starting points for a scoped operating program, not a complete security standard, audit opinion, certification, or claim of regulatory compliance. The scenarios and test procedures are authored examples; the primary references provide supporting context rather than prescribing every implementation detail.
 
 ## Files
 

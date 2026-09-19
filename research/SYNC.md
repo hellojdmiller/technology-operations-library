@@ -35,7 +35,7 @@ The collection README, this sync note, manifest, and local verifier are addition
 
 ## Verify without network access
 
-From the VCPEIT repository root:
+From the Technology Operations Library repository root:
 
 ```sh
 python3 research/verify_sync.py

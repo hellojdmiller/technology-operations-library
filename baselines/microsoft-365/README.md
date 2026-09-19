@@ -1,4 +1,4 @@
-# Microsoft 365: a baseline for VC operations
+# Microsoft 365: a baseline for technology operations
 
 I would treat this as a set of connected operating decisions: who can administer the firm, how staff and guests get access, where information can travel, and how we recover when a control or service fails. A long list of green settings is less useful than evidence that those paths work as intended.
 

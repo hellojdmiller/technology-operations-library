@@ -60,7 +60,7 @@ Choose a host that supports launching a local stdio MCP subprocess. Its connecti
 ```json
 {
   "command": "/absolute/path/to/node",
-  "args": ["/absolute/path/to/VCPEIT/work-samples/mcp-service-catalog/src/server.mjs"]
+  "args": ["/absolute/path/to/technology-operations-library/work-samples/mcp-service-catalog/src/server.mjs"]
 }
 ```
 
