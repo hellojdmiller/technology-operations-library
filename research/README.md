@@ -33,7 +33,7 @@ The paper is a conceptual review, not a systematic review or a validated product
 
 The examples are fictional and the worksheets propose practices to test. Missing, stale, conflicting, partial, and inaccessible evidence remains visible. Unknown numeric values are not zero. Learning progress does not grant production authority; recommendation, approval, execution, verification, and final acceptance remain distinct.
 
-Keep real employee observations, client or portfolio data, credentials, tenant exports, private contracts, completed assessments, and operational evidence outside this repository in an approved system. Use synthetic or explicitly approved material for exercises. Agree on access, purpose, and retention before collecting learning observations. Publication of any specific resource remains a separate decision.
+Keep real employee observations, client or portfolio data, credentials, tenant exports, private contracts, completed assessments, and operational evidence outside this repository in an approved system. Use synthetic or explicitly approved material for exercises. Agree on access, purpose, and retention before collecting learning observations. Review new material for public disclosure before adding it to this collection.
 
 ## Verify this copy
 

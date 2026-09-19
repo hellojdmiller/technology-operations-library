@@ -2,7 +2,7 @@
 
 Practical resources for technology leaders and operators across organizations.
 
-This is the private working companion to [hellojdmiller.com](https://hellojdmiller.com). I’m collecting the guidance, workflows, reusable AI instructions, and implementation examples that help turn an operating idea into something another person can use and verify.
+This is the public resource companion to [hellojdmiller.com](https://hellojdmiller.com). I’m collecting the guidance, workflows, reusable AI instructions, and implementation examples that help turn an operating idea into something another person can use and verify.
 
 The library is organized around reusable operating work across industries and team structures. Some fictional examples use investment operations; adapt their business roles, data boundaries, and obligations to the intended setting.
 
@@ -30,13 +30,13 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [Implementation work samples](work-samples/README.md) | 6 sample collections | MCP design and server, Azure Bicep, configuration scripts, control-evidence review, and investor-reporting reconciliation |
 | [Runtime labs](labs/n8n-runtime/README.md) | 32 isolated n8n CLI cases | Import and execute all ten workflows in a pinned container with fictional inputs |
 | [AI research and companions](research/README.md) | Research paper, three companion readings, and 17 working files | Chips, model progress, context, human learning, accepted productivity, and user progression |
-| [Showcase walkthroughs](showcase/README.md) | 3 guided examples and a private profile draft | Run a sample, inspect its evidence, and understand what it establishes |
+| [Showcase walkthroughs](showcase/README.md) | 3 guided examples and a proposed profile introduction | Run a sample, inspect its evidence, and understand what it establishes |
 
-For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the private repository and requires access to open resources. Its machine-readable index is [resources.json](catalog/resources.json).
+For search and collection filters, open [catalog/index.html](catalog/index.html) locally after downloading or cloning this repository. GitHub displays its source rather than hosting the page. The catalog links back to the public repository. Its machine-readable index is [resources.json](catalog/resources.json).
 
 ## What is ready to use
 
-The guidance and examples are ready for private review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 32 isolated CLI cases on its pinned version. Cloud deployment, real-tenant checks, vendor training exercises, and cross-client skill trials remain pending.
+The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 32 isolated CLI cases on its pinned version. Cloud deployment, real-tenant checks, vendor training exercises, and cross-client skill trials remain pending.
 
 The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
 
@@ -58,13 +58,13 @@ With Python 3.9 or later, `python3 research/verify_sync.py` checks the research 
 
 The [GitHub Actions workflow](.github/workflows/validate.yml) runs these checks on pushes to `main` and pull requests, checks for generated-file drift, and separately installs the locked MCP sample dependencies to run its protocol tests and deterministic answer keys. It uses no tenant credentials and performs no deployment. This automation covers local examples; the environment-specific trials in [VALIDATION.md](VALIDATION.md) remain separate.
 
-## Developing privately
+## Contributing
 
 Every addition begins with current research. Follow the [contribution guidelines](CONTRIBUTING.md) to connect sources to the operating problem, proposed approach, testable behavior, and remaining limits.
 
-Keep this repository private while resources are tried and refined. The adapted documents use fictional circumstances and omit original identities, architecture, incident history, and source containers. Read the [adaptation guide](documentation/ADAPTATION.md).
+This public collection contains reusable examples, not organization-specific operating records. The adapted documents use fictional circumstances and omit original identities, architecture, incident history, and source containers. Read the [adaptation guide](documentation/ADAPTATION.md).
 
-Keep credentials, original work documents, actual tenant exports, completed assessments, private deployment parameters, and operational evidence outside this repository. Public release is a separate decision about specific resources and their rights, disclosure risk, and validation.
+Keep credentials, original work documents, actual tenant exports, completed assessments, private deployment parameters, and operational evidence outside this repository. Review additions for rights, disclosure risk, and accurate validation claims before committing them.
 
 ## Naming and compatibility
 

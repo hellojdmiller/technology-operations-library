@@ -59,6 +59,6 @@ The verifier uses `git show` for the pinned commit. It does not depend on the so
 4. Rewrite links against the repository layout, preserving all external research citations. Keep fictional examples separate from blank templates. Never add actual participant observations, credentials, tenant exports, private contracts, or completed operational assessments to make an example look realistic.
 5. Regenerate each manifest entry from the pinned upstream bytes and adapted local bytes using SHA-256. Record the full source commit, real sync date, evidence-review date, actual publication state, and adjustments. A hash update alone does not approve a content change.
 6. Run both verifier modes, inspect the content diff, and review fictional labels, unknown/pending observations, and approval boundaries. Report unavailable upstream or external-source checks explicitly. Update the root resource catalog through its normal process.
-7. Keep the repository private. A new source commit or preview does not itself authorize a production deployment or public release.
+7. Review the copied material for this public repository before committing. A new source commit or preview does not itself authorize a website production deployment or disclosure of private source material.
 
 Any deployment, empirical pilot, learning outcome, or external source availability remains unverified by this sync unless separately recorded with evidence.

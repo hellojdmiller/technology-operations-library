@@ -1,6 +1,6 @@
 # Explore service dependencies through two MCP tools
 
-**Private review · runnable local sample · fictional data.** [Canonical sample](../work-samples/mcp-service-catalog/README.md) · [Source](../work-samples/mcp-service-catalog/src/server.mjs) · [Fixture](../work-samples/mcp-service-catalog/fixtures/services.json)
+**Walkthrough · runnable local sample · fictional data.** [Canonical sample](../work-samples/mcp-service-catalog/README.md) · [Source](../work-samples/mcp-service-catalog/src/server.mjs) · [Fixture](../work-samples/mcp-service-catalog/fixtures/services.json)
 
 ## The problem and the intended user
 

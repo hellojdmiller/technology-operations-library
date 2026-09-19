@@ -1,6 +1,6 @@
 # Proposed profile and showcase copy
 
-**Private editorial draft · September 18, 2026.** The following copy is for review. It has not been added to a public profile or repository. The linked examples are private today; publication, repository naming, visibility, and pinning remain separate decisions.
+**Proposed profile copy · September 19, 2026.** The following introduction is available for review alongside the public examples. It has not been applied to a GitHub profile or pinned there.
 
 ## Profile introduction
 
@@ -20,7 +20,7 @@ A local MCP service catalog with two read-only tools, strict schemas, pagination
 
 **Evidence:** 12 local protocol integration tests and 10 deterministic answer keys passed. Assistant-host and model behavior still need their own trial.
 
-[Private walkthrough](mcp-service-catalog.md)
+[Walkthrough](mcp-service-catalog.md)
 
 ### Evidence that keeps the unanswered questions visible
 
@@ -28,7 +28,7 @@ An offline control-evidence reviewer that separates configuration from observed 
 
 **Evidence:** 26 local tests passed against synthetic metadata. The tool does not inspect a tenant or verify underlying evidence.
 
-[Private walkthrough](control-evidence-review.md)
+[Walkthrough](control-evidence-review.md)
 
 ### A change packet that knows when a person needs to decide
 
@@ -36,10 +36,10 @@ A small n8n example that checks supplied change metadata and exposes missing evi
 
 **Evidence:** Its evaluator and export are covered by the collection's 67 passing local tests. Its three CLI import/execution cases also passed in the pinned n8n 2.39.8 lab; live integrations remain untested.
 
-[Private walkthrough](change-readiness-review.md)
+[Walkthrough](change-readiness-review.md)
 
 ## Editorial notes before sharing
 
 Use a small showcase page with one clear path into each example. Keep the current validation limits next to the demo rather than asking readers to infer readiness from a test badge. Add actual screenshots or recordings only after the selected host or platform has been exercised; these drafts do not stand in for those trials.
 
-If individual examples are later published separately, preserve the applicable license, dependencies, attribution, tests, fixtures, and canonical context. Replace private links with verified public destinations only after that release decision. This draft makes no claim about client outcomes, production deployments, upstream contributions, or measured business impact.
+If individual examples are later published separately, preserve the applicable license, dependencies, attribution, tests, fixtures, and canonical context. Verify links against the destination of any separate release. This draft makes no claim about client outcomes, production deployments, upstream contributions, or measured business impact.

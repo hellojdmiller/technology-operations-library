@@ -2,7 +2,7 @@
   "version": 1,
   "reviewed_on": "2026-09-19",
   "repository": "https://github.com/hellojdmiller/technology-operations-library",
-  "visibility": "Private development collection",
+  "visibility": "Public resource collection",
   "entries": [
     {
       "title": "Build a context packet the assistant can use",
