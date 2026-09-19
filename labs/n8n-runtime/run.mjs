@@ -1,5 +1,5 @@
 import { spawn, spawnSync } from 'node:child_process';
-import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { chmodSync, copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,6 +39,10 @@ const bundle = {
 writeFileSync(join(input, 'cases.json'), JSON.stringify(bundle));
 writeFileSync(join(input, 'workflows.json'), JSON.stringify(cases.map(item => item.workflow)));
 for (const file of ['container-runner.mjs', 'validate.mjs', 'cases.mjs']) copyFileSync(join(lab, file), join(input, file));
+// Linux bind mounts retain host ownership; the image's node user may have a different UID.
+// Only fictional inputs and lab code are staged, and the container mount stays read-only.
+for (const file of ['cases.json', 'workflows.json', 'container-runner.mjs', 'validate.mjs', 'cases.mjs']) chmodSync(join(input, file), 0o444);
+chmodSync(input, 0o755);
 const args = [
   'run', '--rm', '--init', '--name', container,
   '--network', 'none', '--read-only', '--cap-drop', 'ALL',
@@ -98,6 +102,7 @@ try {
   console.log(`PASS: ${report.results.length} cases, ${sources.length} source workflows, n8n ${report.n8n_version}.`);
 } catch (error) {
   console.error(error.message);
+  if (errors.trim()) console.error(errors.trim());
   process.exitCode = 1;
 } finally {
   cleanup();
