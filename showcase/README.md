@@ -1,6 +1,6 @@
 # Start with something you can run
 
-**Private review edition · September 18, 2026.** These walkthroughs make three existing examples easier to inspect. They do not publish the repository or authorize a change in visibility.
+**Public walkthroughs · September 19, 2026.** These walkthroughs make three existing examples easier to inspect. The dated validation results and limits below are unchanged.
 
 I want operational tooling to answer a few practical questions: what do we know, what is still missing, who needs to decide, and how will we verify the result? These examples show that approach using fictional data and small, inspectable programs.
 
@@ -12,7 +12,7 @@ I want operational tooling to answer a few practical questions: what do we know,
 
 The quickest starting point is the evidence review: one command produces a readable report. Choose the MCP example to inspect a working protocol boundary, or the change review to follow the reasoning from a supplied packet to a decision queue.
 
-All commands assume a checkout of this private repository and start at its root. The walkthroughs link to canonical source, fixtures, and tests rather than maintaining a second implementation. Keep the example inputs fictional. Each page distinguishes observed local results from work still to be tested in a host or platform.
+All commands assume a checkout of this repository and start at its root. The walkthroughs link to canonical source, fixtures, and tests rather than maintaining a second implementation. Keep the example inputs fictional. Each page distinguishes observed local results from work still to be tested in a host or platform.
 
 ## What has been checked
 
@@ -26,6 +26,6 @@ These checks establish the listed local behavior. A later [September 19 runtime 
 
 ## Proposed public presentation
 
-[Profile and showcase copy](profile-draft.md) is a private editorial draft. It describes the work in first person and proposes a small set of examples to feature. No public profile, repository, pin, or visibility setting has been changed by this packaging work.
+[Profile and showcase copy](profile-draft.md) is a proposed introduction. It describes the work in first person and suggests examples to feature. The copy has not been applied to a GitHub profile or pinned there.
 
 Return to the [resource library](../README.md), [work samples](../work-samples/README.md), or [n8n collection](../n8n/README.md).

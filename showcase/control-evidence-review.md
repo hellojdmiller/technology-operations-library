@@ -1,6 +1,6 @@
 # Turn control evidence into a review queue
 
-**Private review · offline CLI · fictional data.** [Canonical sample](../work-samples/control-evidence-review/README.md) · [Source](../work-samples/control-evidence-review/review.mjs) · [Fixture](../work-samples/control-evidence-review/inventory.example.json)
+**Walkthrough · offline CLI · fictional data.** [Canonical sample](../work-samples/control-evidence-review/README.md) · [Source](../work-samples/control-evidence-review/review.mjs) · [Fixture](../work-samples/control-evidence-review/inventory.example.json)
 
 ## The problem and the intended user
 

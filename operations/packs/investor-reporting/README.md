@@ -2,7 +2,7 @@
 
 Help an operator answer a narrow question: did the approved report version reach the intended recipients for the correct fund and entity, and what remains unresolved?
 
-**Status:** Proposed operating resources for private review. Exercises are fictional. No report has been distributed, investor contacted, entitlement changed, or payment authorized by this pack. Actual investor information, completed records, and evidence belong in protected operational systems outside this repository.
+**Status:** Proposed operating resources for review and adaptation. Exercises are fictional. No report has been distributed, investor contacted, entitlement changed, or payment authorized by this pack. Actual investor information, completed records, and evidence belong in protected operational systems outside this repository.
 
 This expands the [fund and investor operations guide](../../../library/fund-and-investor-operations.md). It addresses distribution metadata and operational decisions. Finance, fund administration, and the designated reviewers retain ownership of financial accuracy, investor entitlements, release approval, and applicable obligations.
 

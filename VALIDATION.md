@@ -48,6 +48,8 @@ Record the intended environment, versions and editions, authorized scope, input 
 
 For n8n, record the imported workflow version, fixture result, failure-case result, and execution reference. For a skill, record the host/model, delivery method, skill revision, fixture, output, and rubric result. For a cloud baseline, distinguish a desired-state assertion from evidence observed in a tenant.
 
-## Before public release
+## Publishing changes
 
-Choose the specific resources and versions to share. Review disclosure risk and rights, confirm source references and validation claims, and retain material limitations. Publishing a resource or changing repository visibility is a separate decision. This work keeps the collection private.
+This is a public collection. Review additions for disclosure risk and rights, confirm source references and validation claims, and retain material limitations. Public availability does not complete the pending platform trials listed above.
+
+Git history and Actions logs are public with the repository; review both when preparing a release. [GitHub visibility guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility), reviewed September 19, 2026.

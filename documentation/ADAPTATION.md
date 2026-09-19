@@ -26,4 +26,4 @@ Review direct identifiers and combinations that could identify an organization: 
 
 Check headings, tables, links, filenames, sample outputs, source code, comments, and commit content. Keep actual source files and the redaction/provenance record outside Git history. A search scan helps locate mistakes but cannot by itself prove anonymity.
 
-This collection remains private for review. Public release requires a separate decision about the specific material, its rights, and its remaining disclosure risk.
+This collection is public. Complete the adaptation and disclosure review before committing new material; keep original sources and sensitive provenance records in their approved private location.

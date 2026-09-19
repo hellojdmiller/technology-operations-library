@@ -1,6 +1,6 @@
 # Review a change packet before scheduling work
 
-**Private review · local evaluator and pinned n8n CLI runtime verified.** [Canonical workflow](../n8n/change-readiness-review/README.md) · [Evaluator](../n8n/change-readiness-review/evaluate.js) · [Import file](../n8n/change-readiness-review/workflow.json)
+**Walkthrough · local evaluator and pinned n8n CLI runtime verified.** [Canonical workflow](../n8n/change-readiness-review/README.md) · [Evaluator](../n8n/change-readiness-review/evaluate.js) · [Import file](../n8n/change-readiness-review/workflow.json)
 
 ## The problem and the intended user
 

@@ -2,7 +2,7 @@
 
 Practical procedures for running an organization's service desk, managing employee and software requests, and handing the IT function to another operator. Start with the situation you need to handle, then use the linked working records.
 
-These are newly written generic derivatives of authorized operating material, supplemented by original guidance and current vendor references. They use fictional circumstances. They are proposed resources for private review, not approved policies, completed exercises, or statements about a particular organization.
+These are newly written generic derivatives of authorized operating material, supplemented by original guidance and current vendor references. They use fictional circumstances. They are proposed resources for review and adaptation, not approved policies, completed exercises, or statements about a particular organization.
 
 ## Choose an entry point
 
@@ -79,4 +79,4 @@ The [vendor training modules](../training/README.md), [Technology operations fie
 
 Original documents, comments, embedded objects, extracted source text, source locations, and the private source mapping are excluded from this repository. The derivatives omit employer and personal identities, real contact routes, infrastructure inventories, incident narratives, commercial terms, and historical approval claims. Read the [adaptation guide](../documentation/ADAPTATION.md) before creating an internal copy or considering external publication.
 
-Content review and local file checks do not demonstrate live control effectiveness. No exercise in this collection has been run against a real environment. The repository remains private.
+Content review and local file checks do not demonstrate live control effectiveness. No exercise in this collection has been run against a real environment. Public availability does not change those validation limits.

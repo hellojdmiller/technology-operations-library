@@ -1,6 +1,6 @@
 # Four cyber incident tabletop exercises for an investment firm
 
-> Original fictional exercises for private review. Version 0.1; researched 2026-09-17. No incident, test result, bank action, notification, containment, or recovery described below has occurred. All entities, records, service names, and timelines are invented.
+> Original fictional exercises for review and adaptation. Version 0.1; researched 2026-09-17. No incident, test result, bank action, notification, containment, or recovery described below has occurred. All entities, records, service names, and timelines are invented.
 
 A useful tabletop exposes the decision that becomes difficult when the normal process stops working. These exercises focus on the boundaries between investment operations, IT, external providers, and leadership. They are facilitated discussions using printed or local synthetic inject cards; they are not penetration tests or live incident simulations.
 
