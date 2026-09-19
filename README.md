@@ -31,7 +31,7 @@ For search and collection filters, open [catalog/index.html](catalog/index.html)
 
 ## What is ready to use
 
-The guidance and examples are ready for private review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). n8n runtime trials, cloud deployment, real-tenant checks, vendor labs, and cross-client skill trials have not been completed.
+The guidance and examples are ready for private review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 32 isolated CLI cases on its pinned version. Cloud deployment, real-tenant checks, vendor training exercises, and cross-client skill trials remain pending.
 
 The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
 

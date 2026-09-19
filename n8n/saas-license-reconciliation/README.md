@@ -47,4 +47,8 @@ Collect read-only billing/subscription, application assignment, authoritative wo
 
 Check reporting lag, excluded applications, users with recent leave, service dependencies, retention/hold requirements, and reassignment rules before deciding. Confirm whether the agreement allows quantity reductions and when they take effect. Keep detailed source exports outside the repository and restrict n8n execution access. A later removal step requires a separate authorized change and an independent post-change check.
 
-Implementation reference: [n8n data structure](https://docs.n8n.io/build/work-with-data/understand-n8ns-data-structure), checked 2026-09-17. Local tests cover the evaluator; n8n import and runtime execution are not yet verified.
+Implementation reference: [n8n data structure](https://docs.n8n.io/build/work-with-data/understand-n8ns-data-structure), checked 2026-09-17. Local evaluator tests and the pinned runtime lab cover this example.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.

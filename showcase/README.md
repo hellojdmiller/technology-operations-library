@@ -22,7 +22,7 @@ Checks were rerun on September 18, 2026, using Node.js **v26.7.0**, against cano
 - Evidence review: all 26 tests passed; the fictional fixture returned 8 assessments, 6 requiring review, and 28 review items.
 - n8n examples: all 67 local evaluator/export tests passed; the change fixture returned 3 changes, 2 needing attention, and no approved decisions.
 
-These checks establish the listed local behavior. They do not establish assistant-host compatibility, an n8n import result, the quality of a model's answers, or control effectiveness in a real environment. See the [repository validation record](../VALIDATION.md) for the wider collection.
+These checks establish the listed local behavior. A later [September 19 runtime lab](../labs/n8n-runtime/README.md) additionally verified CLI import and execution in n8n 2.39.8. These checks do not establish assistant-host compatibility, editor/UI import, the quality of a model's answers, or control effectiveness in a real environment. See the [repository validation record](../VALIDATION.md) for the wider collection.
 
 ## Proposed public presentation
 

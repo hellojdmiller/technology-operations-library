@@ -34,7 +34,7 @@ An offline control-evidence reviewer that separates configuration from observed 
 
 A small n8n example that checks supplied change metadata and exposes missing evidence, expired standard models, and emergency review routes. A complete packet stays separate from approval to execute.
 
-**Evidence:** Its evaluator and export are covered by the collection's 67 passing local tests. The n8n import and execution trial remains pending.
+**Evidence:** Its evaluator and export are covered by the collection's 67 passing local tests. Its three CLI import/execution cases also passed in the pinned n8n 2.39.8 lab; live integrations remain untested.
 
 [Private walkthrough](change-readiness-review.md)
 

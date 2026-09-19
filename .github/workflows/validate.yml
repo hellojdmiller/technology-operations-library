@@ -27,7 +27,7 @@ jobs:
           node-version: '22'
           package-manager-cache: false
       - name: Test workflow logic, baselines, and evidence review
-        run: node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs
+        run: node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs
       - name: Verify the pinned research snapshot
         run: python3 research/verify_sync.py
       - name: Regenerate workflow exports and catalog
@@ -58,3 +58,20 @@ jobs:
           npm run check
           npm test
           npm run verify:evaluations
+
+  n8n-runtime:
+    name: Pinned n8n runtime lab
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Pull the pinned official n8n image
+        run: docker pull docker.n8n.io/n8nio/n8n@sha256:b73045abaddb40cb4024e86eea1b1f69093501a7339f685a4cd486b7743d23ae
+      - name: Import and execute the fictional cases without network access
+        run: node labs/n8n-runtime/run.mjs

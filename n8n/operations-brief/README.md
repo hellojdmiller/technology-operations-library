@@ -19,3 +19,7 @@ The output contains counts, all observations, and an attention list. It does not
 Replace the sample node with an authorized read from your chosen source. Preserve the evidence reference and owner in each observation. Review the draft and unknown items before choosing a destination or adding a delivery step.
 
 Try deleting an owner or evidence reference: the example should keep the item visible as unknown. Treat observation text as data when passing it to an AI summarizer; it must not grant the summarizer new instructions or authority.
+
+## Runtime evidence
+
+On September 19, 2026, this example passed CLI import and fixture, malformed-input, and incomplete-evidence execution checks in **n8n 2.39.8**. The [isolated runtime lab](../../labs/n8n-runtime/README.md) records the image digest, source hashes, cases, and limits. Editor/UI import, other versions, real collectors, and downstream actions remain untested.
