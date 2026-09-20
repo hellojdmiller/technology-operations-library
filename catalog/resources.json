@@ -740,6 +740,13 @@
       "description": "A control register can record that a setting exists and still lack evidence that it works. This example helps an IT or cyber-risk operator inspect those differences before presenting a control assessment."
     },
     {
+      "title": "100 training sites for people at work",
+      "collection": "Training",
+      "path": "training/free-training-directory/README.md",
+      "readiness": "Official sources reviewed; enrollment, playback, customer entitlement and learner outcomes untested",
+      "description": "Find 100 learning sites for staff, operators, developers and managers. Includes free scope, customer/account conditions, official evidence, proposed starter tasks and a CSV for an internal training catalog."
+    },
+    {
       "title": "Check Google Workspace user scope before changing access",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/google-user-scope.md",

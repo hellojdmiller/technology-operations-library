@@ -15,7 +15,7 @@ The library is organized around reusable operating work across industries and te
 | Learn with AI | [Prompting guide](prompting/README.md) and [portable skills](skills/README.md) | Task framing, context, review, and fictional practice exercises |
 
 
-The [vendor video task cards](training/vendor-walkthroughs/README.md) pair official lessons with original practice, evidence checks, and teach-back prompts. Use the [training delivery pack](training/delivery/README.md) to run a proposed 60-minute first session and plan follow-up checks over 30 days.
+The [100-site training directory](training/free-training-directory/README.md) helps teams find public, free-account and customer-included learning, with access limits, official sources and a CSV for an internal catalog. The [vendor video task cards](training/vendor-walkthroughs/README.md) pair official lessons with original practice, evidence checks, and teach-back prompts. Use the [training delivery pack](training/delivery/README.md) to run a proposed 60-minute first session and plan follow-up checks over 30 days.
 
 The [showcase walkthroughs](showcase/README.md) connect three operating problems to runnable examples: a read-only MCP service catalog, a control-evidence review, and a change-readiness workflow. Each explains the input, expected output, checks, and remaining limitations. Start there to understand how I approach the work, then use the collections below for related procedures and templates.
 
@@ -35,7 +35,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
 | [Portable skills](skills/README.md) | 4 self-contained skills | Build/buy review, notes to runbook, risk review, and document sanitization |
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
-| [Vendor training](training/README.md) | 6 modules, 8 video-based task cards, 3 operating exercises, and a session delivery pack with learning records | Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
+| [Vendor training](training/README.md) | 100-site learning directory, 6 modules, 8 video-based task cards, 3 operating exercises, and a session delivery pack | Free learning discovery, Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 6 sample collections | MCP design and server, Azure Bicep, configuration scripts, control-evidence review, and investor-reporting reconciliation |
 | Verification labs | [n8n runtime](labs/n8n-runtime/README.md) and [agent security](labs/agent-security/README.md) | Reproduce n8n cases and inspect offline agent-control decisions with fictional inputs |
 | [AI research and companions](research/README.md) | Research paper, three companion readings, and 17 working files | Chips, model progress, context, human learning, accepted productivity, and user progression |
@@ -59,6 +59,7 @@ With Node.js 22 or later, no package installation is needed for the JavaScript c
 node scripts/build-workflows.mjs
 node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs work-samples/investor-reporting-reconciliation/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs labs/agent-security/tests/*.test.mjs
 node scripts/build-catalog.mjs
+node training/free-training-directory/build.mjs --check
 ```
 
 The workflow build regenerates exports from readable JavaScript and sample inputs. Keep both together. The catalog build indexes the reviewed resource collections. The separate [runtime lab](labs/n8n-runtime/README.md) requires Docker and the pinned n8n image.
