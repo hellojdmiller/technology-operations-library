@@ -9,7 +9,7 @@ export const slugs = [
   'saas-license-reconciliation', 'change-readiness-review',
   'asset-reconciliation-review', 'patch-exception-review',
 ];
-export const failureMessage = 'VCPEIT_EXPECTED_TECHNICAL_FAILURE';
+export const failureMessage = 'TOL_EXPECTED_TECHNICAL_FAILURE';
 const sampleCode = inputs => `return ${JSON.stringify(inputs, null, 2)}.map(json => ({ json }));`;
 export const sha256 = value => createHash('sha256').update(value).digest('hex');
 
@@ -46,8 +46,8 @@ export function buildCases(root) {
     if (slug === slugs[0]) variants.push(['zero-items', [], null], ['technical-failure', inputs, null]);
     for (const [kind, input, status] of variants) {
       const copy = structuredClone(workflow);
-      copy.id = `VCPEITLab${String(cases.length + 1).padStart(7, '0')}`;
-      copy.name = `VCPEIT lab: ${slug} / ${kind}`;
+      copy.id = `TOLLab${String(cases.length + 1).padStart(10, '0')}`;
+      copy.name = `TOL lab: ${slug} / ${kind}`;
       copy.nodes[1].parameters.jsCode = sampleCode(input);
       if (kind === 'technical-failure') copy.nodes[2].parameters.jsCode = `throw new Error('${failureMessage}');`;
       cases.push({ id: copy.id, slug, kind, expectedStatus: status, input, workflow: copy, finalNode: copy.nodes[2].name });

@@ -27,7 +27,7 @@ def plan(host, case, binary, trial, node):
     if host == 'claude':
         args = [binary, '-p', '--restricted', '--tools', '', '--strict-mcp-config', '--mcp-config', str(config), '--setting-sources', '', '--settings', '{"disableAllHooks":true,"enabledPlugins":{}}', '--disable-slash-commands', '--no-chrome', '--no-session-persistence', '--permission-mode', 'dontAsk', '--permission-prompts', 'none', '--model', 'sonnet', '--effort', 'low', '--max-turns', '8' if case == 'mcp' else '2', '--max-budget-usd', '1.50', '--output-format', 'stream-json', '--verbose', '--system-prompt', SYSTEM]
         if case == 'mcp':
-            args += ['--allowedTools', 'mcp__catalog__vcpeit_list_services', 'mcp__catalog__vcpeit_get_service']
+            args += ['--allowedTools', 'mcp__catalog__tol_list_services', 'mcp__catalog__tol_get_service']
     else:
         args = [binary, 'exec', '--ignore-user-config', '--ephemeral', '--skip-git-repo-check', '--sandbox', 'read-only', '--json', '--color', 'never', '--model', 'gpt-5.6-sol']
         for item in ['model_reasoning_effort="low"', 'web_search="disabled"', 'features.shell_tool=false', 'features.unified_exec=false', 'features.apps=false', 'features.plugins=false', 'features.multi_agent=false', 'features.skip_host_skill_discovery=true', 'features.skill_mcp_dependency_install=false', 'memories.use_memories=false', 'mcp_servers={}', 'project_doc_max_bytes=0']:

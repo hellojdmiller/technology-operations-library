@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "id": "vcpeit-microsoft-365",
+  "id": "tol-microsoft-365",
   "version": "1.0.0",
   "title": "Microsoft 365 proposed operating baseline",
   "status": "review_template_not_vendor_configuration",

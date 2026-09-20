@@ -10,7 +10,7 @@ import { StdioClientTransport } from '@modelcontextprotocol/client/stdio';
 const fixtureUrl = new URL('../fixtures/services.json', import.meta.url);
 const digest = () => createHash('sha256').update(readFileSync(fixtureUrl)).digest('hex');
 const originalDigest = digest();
-const client = new Client({ name: 'vcpeit-catalog-test-client', version: '0.1.0' });
+const client = new Client({ name: 'tol-catalog-test-client', version: '0.1.0' });
 const transport = new StdioClientTransport({
   command: process.execPath,
   args: [fileURLToPath(new URL('../src/server.mjs', import.meta.url))],
@@ -25,8 +25,8 @@ after(async () => {
 });
 
 const call = (name, args = {}) => client.callTool({ name, arguments: args });
-const list = args => call('vcpeit_list_services', args);
-const get = args => call('vcpeit_get_service', args);
+const list = args => call('tol_list_services', args);
+const get = args => call('tol_get_service', args);
 const data = result => {
   assert.notEqual(result.isError, true, JSON.stringify(result.content));
   assert.equal(result.structuredContent.demo, true);
@@ -36,7 +36,7 @@ const data = result => {
 
 test('real stdio tool discovery advertises only the two read-only catalog tools', async () => {
   const result = await client.listTools();
-  assert.deepEqual(result.tools.map(tool => tool.name).sort(), ['vcpeit_get_service', 'vcpeit_list_services']);
+  assert.deepEqual(result.tools.map(tool => tool.name).sort(), ['tol_get_service', 'tol_list_services']);
   for (const tool of result.tools) {
     assert.equal(tool.inputSchema.additionalProperties, false);
     assert.equal(tool.annotations.readOnlyHint, true);
@@ -96,7 +96,7 @@ test('get exposes the expected fictional dependencies and targets with no live-s
 });
 
 test('JSON and Markdown text formats retain the same structured meaning', async () => {
-  for (const [name, args] of [['vcpeit_list_services', { category: 'identity' }], ['vcpeit_get_service', { service_id: 'svc-identity' }]]) {
+  for (const [name, args] of [['tol_list_services', { category: 'identity' }], ['tol_get_service', { service_id: 'svc-identity' }]]) {
     const markdown = await call(name, { ...args, response_format: 'markdown' });
     const json = await call(name, { ...args, response_format: 'json' });
     assert.deepEqual(data(markdown), data(json));
@@ -109,7 +109,7 @@ test('unknown well-formed service ID gives an actionable tool error, not another
   assert.equal(result.isError, true);
   assert.equal(result.structuredContent, undefined);
   assert.match(result.content[0].text, /SERVICE_NOT_FOUND/);
-  assert.match(result.content[0].text, /vcpeit_list_services/);
+  assert.match(result.content[0].text, /tol_list_services/);
 });
 
 test('get rejects paths, URLs, wrong case, whitespace, long IDs, wrong types, and missing input', async () => {
@@ -136,7 +136,7 @@ test('list rejects unbounded, fractional, coerced, and unknown filter values', a
 });
 
 test('unknown tools cannot provide write or arbitrary-file capabilities', async () => {
-  await assert.rejects(call('vcpeit_delete_service', { service_id: 'svc-identity' }));
+  await assert.rejects(call('tol_delete_service', { service_id: 'svc-identity' }));
   await assert.rejects(call('read_file', { path: '/etc/passwd' }));
   const stillPresent = data(await get({ service_id: 'svc-identity' }));
   assert.equal(stillPresent.service.serviceId, 'svc-identity');

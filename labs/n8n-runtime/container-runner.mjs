@@ -70,6 +70,6 @@ try {
 } finally {
   report.warnings = [...new Set(report.warnings)];
   report.finished_at = new Date().toISOString();
-  console.log('VCPEIT_REPORT ' + JSON.stringify(report));
+  console.log('TOL_REPORT ' + JSON.stringify(report));
   process.exitCode = report.status === 'passed' ? 0 : 1;
 }

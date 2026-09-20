@@ -41,8 +41,8 @@
       "model_reported_by_host": "claude-sonnet-5",
       "delivery": "Native stdio MCP connection to the local synthetic catalog",
       "observed_tools": [
-        "mcp__catalog__vcpeit_get_service",
-        "mcp__catalog__vcpeit_list_services"
+        "mcp__catalog__tol_get_service",
+        "mcp__catalog__tol_list_services"
       ],
       "mcp_connections": [
         {
@@ -56,7 +56,7 @@
       "host_turns": 7,
       "tool_calls": [
         {
-          "tool": "mcp__catalog__vcpeit_list_services",
+          "tool": "mcp__catalog__tol_list_services",
           "arguments": {
             "criticality": "tier-1",
             "limit": 2,
@@ -64,7 +64,7 @@
           }
         },
         {
-          "tool": "mcp__catalog__vcpeit_list_services",
+          "tool": "mcp__catalog__tol_list_services",
           "arguments": {
             "criticality": "tier-1",
             "limit": 2,
@@ -72,25 +72,25 @@
           }
         },
         {
-          "tool": "mcp__catalog__vcpeit_get_service",
+          "tool": "mcp__catalog__tol_get_service",
           "arguments": {
             "service_id": "svc-collaboration"
           }
         },
         {
-          "tool": "mcp__catalog__vcpeit_get_service",
+          "tool": "mcp__catalog__tol_get_service",
           "arguments": {
             "service_id": "svc-fund-operations"
           }
         },
         {
-          "tool": "mcp__catalog__vcpeit_get_service",
+          "tool": "mcp__catalog__tol_get_service",
           "arguments": {
             "service_id": "svc-identity"
           }
         },
         {
-          "tool": "mcp__catalog__vcpeit_get_service",
+          "tool": "mcp__catalog__tol_get_service",
           "arguments": {
             "service_id": "svc-recovery"
           }
