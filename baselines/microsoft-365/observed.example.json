@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "baseline_id": "tol-microsoft-365",
-  "baseline_version": "1.0.0",
+  "baseline_version": "1.1.0",
   "fictional": true,
   "environment": {
     "scope": "Fictional assessment training environment; not a real organization",

@@ -16,14 +16,37 @@ function fixture() {
   return [b, o, o.observations[0]];
 }
 
-test('both catalogs produce the intended mixed fictional result', () => {
-  for (const provider of ['google-workspace', 'microsoft-365']) {
+// Each fictional example yields the same mixed picture: 7 aligned, 3 gaps, 1 scoped not-applicable, and the rest unknown.
+// The refreshed Google and Microsoft catalogs added controls without example observations, so their unknown count grows by that number.
+const CATALOGS = [
+  { provider: 'google-workspace', controls: 24, unknown: 13, asOf: '2026-09-17' },
+  { provider: 'microsoft-365', controls: 25, unknown: 14, asOf: '2026-09-17' },
+  { provider: 'cloudflare', controls: 20, unknown: 9, asOf: '2026-09-20' },
+  { provider: 'aws', controls: 20, unknown: 9, asOf: '2026-09-20' },
+  { provider: 'github', controls: 20, unknown: 9, asOf: '2026-09-20' },
+];
+test('every catalog produces the intended mixed fictional result', () => {
+  for (const { provider, controls, unknown, asOf } of CATALOGS) {
     const b = load(`../${provider}/desired-state.json`);
     const o = load(`../${provider}/observed.example.json`);
-    const result = run(b, o);
-    assert.deepEqual(result.counts, { aligned: 7, gap: 3, unknown: 9, not_applicable: 1 });
-    assert.equal(result.results.length, 20);
+    const result = run(b, o, asOf);
+    assert.deepEqual(result.counts, { aligned: 7, gap: 3, unknown, not_applicable: 1 });
+    assert.equal(result.results.length, controls);
     assert.equal(result.fictional, true);
+  }
+});
+test('every catalog ships a matching worksheet and a risk-assessment template', () => {
+  const csv = name => readFileSync(new URL(name, import.meta.url), 'utf8').trim().split('\n');
+  for (const { provider, controls } of CATALOGS) {
+    const worksheet = csv(`../${provider}/evidence-worksheet.csv`);
+    assert.equal(worksheet[0], csv('../google-workspace/evidence-worksheet.csv')[0], `${provider}: worksheet header`);
+    const ids = new Set(load(`../${provider}/desired-state.json`).controls.map(c => c.id));
+    const worksheetIds = worksheet.slice(1).map(line => line.split(',')[0]);
+    assert.deepEqual(new Set(worksheetIds), ids, `${provider}: worksheet ids`);
+    assert.equal(worksheetIds.length, controls);
+    const risks = csv(`../${provider}/risk-assessment.csv`);
+    assert.equal(risks[0], 'risk_id,scenario,threat_source,affected_assets,related_controls,inherent_likelihood,inherent_impact,inherent_rating,residual_likelihood,residual_impact,residual_rating,status,owner_role,treatment,target_date,verification_evidence,acceptance_authority,review_date', `${provider}: risk header`);
+    assert.ok(risks.length >= 11, `${provider}: at least ten risk scenarios`);
   }
 });
 

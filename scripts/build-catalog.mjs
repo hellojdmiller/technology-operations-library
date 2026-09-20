@@ -55,7 +55,7 @@ add('IT operations', [...markdown('operations'), ...markdown('operations/success
 add('n8n workflows', folders('n8n', 'README.md'), 'n8n 2.39.8 CLI import/execution checked; real integrations untested');
 add('Runtime labs', ['labs/n8n-runtime/README.md'], 'Pinned n8n CLI runtime checked with fictional inputs; production integrations untested');
 add('Runtime labs', ['labs/agent-security/README.md'], 'Offline mock-tool controls; actual model behavior and live integrations untested');
-add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md'], 'Local assessment checked; tenant configuration not applied');
+add('Cloud baselines', ['baselines/google-workspace/README.md', 'baselines/microsoft-365/README.md', 'baselines/cloudflare/README.md', 'baselines/aws/README.md', 'baselines/github/README.md'], 'Local assessment checked; tenant configuration not applied');
 add('Cyber risk', ['cyber-risk/operating-model.md', 'cyber-risk/controls/README.md', ...markdown('cyber-risk/checklists'), ...markdown('cyber-risk/ai'), ...markdown('cyber-risk/scenarios'), ...markdown('cyber-risk/reporting')], 'Proposed controls and exercises; real-world effectiveness unverified');
 add('Cyber risk', ['cyber-risk/workshops/incident-readiness/README.md'], 'Original 45-minute facilitation pack; workshop and technical recovery unexecuted');
 add('AI prompting', markdown('prompting'), 'Provider-neutral guidance and synthetic exercises; model trials pending');

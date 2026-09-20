@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-aws",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment; not a real organization, account, or workload",
+    "regions": "Synthetic two-Region example, not a coherent deployed footprint"
+  },
+  "observations": [
+    {
+      "id": "AWS-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-01",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-02",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-02",
+      "notes": "Only the workloads OU was checked; the sandbox OU and the effective policy view remain unreviewed."
+    },
+    {
+      "id": "AWS-03",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-03",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-04",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-04",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-05",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-05",
+      "notes": "Synthetic training record; no account evidence exists.",
+      "exception": {
+        "owner": "Fictional cloud platform owner",
+        "reason": "One fictional reporting tool cannot use IAM Identity Center and still holds an access key.",
+        "compensating_control": "Key limited to a single read-only role assumption, rotated monthly, and alarmed on use outside business hours.",
+        "expires_on": "2026-10-20"
+      }
+    },
+    {
+      "id": "AWS-06",
+      "applicable": true,
+      "value": true,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-06",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "AWS-07",
+      "applicable": true,
+      "value": null,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-07",
+      "notes": "Emergency access is designed but the exercise has not been run; value stays unknown."
+    },
+    {
+      "id": "AWS-08",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-08",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-09",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-09",
+      "notes": "Fictional alarms exist but deliver to an unmonitored mailbox; the response test failed."
+    },
+    {
+      "id": "AWS-10",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-10",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-11",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-11",
+      "notes": "Security Hub CSPM is not enabled or paid for in this fictional environment; retain as unknown and review the gap."
+    },
+    {
+      "id": "AWS-12",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-12",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-13",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": null,
+      "notes": "Reviewer asserted alignment but supplied no evidence reference."
+    },
+    {
+      "id": "AWS-15",
+      "applicable": true,
+      "value": true,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-15",
+      "notes": "Synthetic training record; no account evidence exists."
+    },
+    {
+      "id": "AWS-16",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-16",
+      "notes": "One fictional database instance is still publicly accessible."
+    },
+    {
+      "id": "AWS-17",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AWS-17",
+      "notes": "Synthetic inventory evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional inventory confirms no EC2 instances in any enabled Region; a first EC2 launch triggers reassessment."
+    }
+  ]
+}

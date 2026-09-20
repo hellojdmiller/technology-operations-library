@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "id": "tol-aws",
+  "version": "1.0.0",
+  "title": "AWS proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-20",
+  "environment_specific": {
+    "organization_scope": "[Define privately: organization, accounts, and OUs]",
+    "regions_in_use": "[List enabled Regions and the home Region]",
+    "identity_provider": "[Name the external identity provider and SCIM status]",
+    "in_scope_workloads": "[List workloads, accounts, and data classes]",
+    "enabled_paid_services": "[Confirm GuardDuty, Security Hub CSPM, AWS Config, Access Analyzer, and restore testing per account]",
+    "pilot_population": "[Define users, roles, and accounts]",
+    "recovery_objectives": "[Approve per workload]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "AWS-01",
+      "category": "account",
+      "title": "Isolated management account",
+      "assertion": "All accounts belong to one AWS Organization with all features enabled; the management account holds no workloads or firm data, and access to it is limited to named administrators whose access is reviewed at least quarterly.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Organization settings showing all features enabled, account and OU inventory, management-account resource inventory, and the dated access review.",
+      "review_gate": "SCPs never restrict the management account, so anything deployed there sits outside the guardrails; plan a migration path before moving resources out.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Best practices for the management account",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "The management account, trusted access, and delegated administrators",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/management-account.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "SEC01-BP01 Separate workloads using accounts",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_multi_accounts.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-02",
+      "category": "account",
+      "title": "Tested service control policy guardrails",
+      "assertion": "Service control policies attached above every member account deny leaving the organization, closing accounts, disabling CloudTrail, GuardDuty, Security Hub CSPM, or AWS Config, and using unapproved Regions; each policy was piloted in a test OU before broad attachment.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Attached SCP documents with their target OUs, the effective policy view for a sample account, and the pilot test record.",
+      "review_gate": "SCPs require all features enabled and grant nothing on their own; keep FullAWSAccess or a reviewed replacement, and remember that service-linked roles and the management account are not restricted.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Service control policies (SCPs)",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Service control policy examples",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-03",
+      "category": "identity",
+      "title": "Protected root users",
+      "assertion": "Every account's root user has MFA registered (a hardware or FIDO device for the management account), holds no access keys, uses a group mailbox and a reviewed recovery phone number, and member-account root credentials are centrally managed or removed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Root credential status per account, MFA device inventory, custodian record for mailbox and phone, and a root sign-in alert test.",
+      "review_gate": "Removing member-account root credentials changes recovery paths; rehearse the privileged-task flow before deleting them, and note that MFA compliance rules read removed credentials as not applicable.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Root user best practices for your AWS account",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Centralize root access for member accounts",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-04",
+      "category": "identity",
+      "title": "Federated human access with enforced MFA",
+      "assertion": "All human console and CLI access uses IAM Identity Center connected to the firm's external identity provider with SCIM provisioning, and MFA is enforced at that provider for every user assigned to AWS.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Identity source configuration, SCIM synchronization status, the provider's MFA policy for the AWS application, and a sign-in test by a representative user.",
+      "review_gate": "IAM Identity Center MFA settings do not apply when an external identity provider is the identity source; the provider's policy is the enforcement point and must be evidenced there.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "External identity providers",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-idp.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "MFA for Identity Center directory users",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/enable-mfa.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "SEC02-BP04 Rely on a centralized identity provider",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_identity_provider.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-05",
+      "category": "identity",
+      "title": "No long-lived human credentials",
+      "assertion": "No IAM user holds a console password or access key for human use; every remaining IAM user access key has a documented workload owner, last-use review, rotation date, and removal plan.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "IAM credential report from each account, IAM user inventory with owners, and the access-key rotation and removal record.",
+      "review_gate": "Third-party tools that cannot use IAM Identity Center are the usual holdout; record them as exceptions with an expiry, and note the credential report lists only the first two keys per user.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Security best practices in IAM",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Generate credential reports for your AWS account",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "SEC02-BP02 Use temporary credentials",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_unique.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-06",
+      "category": "identity",
+      "title": "Least-privilege permission sets",
+      "assertion": "Permission sets map to job functions, administrative sets are assigned only to named operators, session durations are set deliberately, and unused permissions surfaced by IAM Access Analyzer are reviewed at least quarterly.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Permission set inventory with assignments and session durations, and the dated Access Analyzer unused-access review with decisions.",
+      "review_gate": "Unused access analyzers are billed per role and user analyzed; agree the analyzer scope and budget before relying on them for evidence.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage AWS accounts with permission sets",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Using AWS Identity and Access Management Access Analyzer",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Security best practices in IAM",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-07",
+      "category": "recovery",
+      "title": "Tested emergency access",
+      "assertion": "A documented emergency access path exists for an identity provider or IAM Identity Center outage, uses named accounts with MFA and no access keys, raises an alert when used, and was exercised within the review window.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Emergency access design, custodian list, CloudTrail alert configuration for the emergency roles, and the dated exercise record.",
+      "review_gate": "Build and test emergency access before an outage; it cannot be created once the access needed to create it is also unavailable, and the direct-federation pattern still depends on the external provider.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up emergency access to the AWS Management Console",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/emergency-access.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "SEC10-BP05 Pre-provision access",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_pre_provision_access.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-08",
+      "category": "logging",
+      "title": "Organization trail with protected storage",
+      "assertion": "A multi-Region organization trail logs management events for every account to a bucket in a dedicated log account, with log file validation enabled, KMS encryption, and read access restricted to named roles.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Trail configuration, log bucket policy and encryption settings, log file validation status, and a sample validation run.",
+      "review_gate": "Organization trails cover enabled Regions only; opt-in Regions and other partitions need separate attention, and data events are a separate cost decision.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Creating a trail for an organization",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Validating CloudTrail log file integrity",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Security OU: Log Archive account",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/log-archive.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-09",
+      "category": "logging",
+      "title": "Alarms for privileged activity",
+      "assertion": "CloudWatch metric filters and alarms on the organization trail cover root sign-in, console sign-in failures, IAM policy changes, security group changes, and changes to CloudTrail or GuardDuty, and each alarm delivers to an owned channel with a tested response.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Metric filter and alarm inventory, SNS topic subscriptions, and a dated delivery-and-response test.",
+      "review_gate": "Alarms depend on the trail delivering to CloudWatch Logs; confirm every SNS subscription is confirmed and reachable outside the account under review.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Creating CloudWatch alarms for CloudTrail events: examples",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudwatch-alarms-for-cloudtrail.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Root user best practices for your AWS account",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-10",
+      "category": "detection",
+      "title": "GuardDuty across accounts and Regions",
+      "assertion": "GuardDuty is enabled through a delegated administrator for every account with auto-enable for new accounts, in every enabled Region, and every finding of medium severity or above has a named owner and a response record.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Delegated administrator and auto-enable settings per Region, member coverage list, and the finding triage log.",
+      "review_gate": "GuardDuty is Regional and billed per data source; enable it in every Region, including unused ones, and agree which protection plans are in scope.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managing GuardDuty accounts with AWS Organizations",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Amazon GuardDuty Regions and endpoints",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-11",
+      "category": "detection",
+      "title": "Posture standard with Config recording",
+      "assertion": "Security Hub CSPM is enabled through a delegated administrator using central configuration, the AWS Foundational Security Best Practices standard is enabled in every in-scope account and Region, AWS Config records the required resource types, and failed controls are triaged with owners.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Central configuration policy, standard enablement status, Config recorder status per Region, and the dated failed-control review.",
+      "review_gate": "Security Hub CSPM and AWS Config are Regional paid services; Config recording must exist in each Region for accurate findings, and AWS now distinguishes Security Hub CSPM from a separate Security Hub, so record which one is enabled.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "AWS Foundational Security Best Practices standard in Security Hub CSPM",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/fsbp-standard.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Enabling and configuring AWS Config for Security Hub CSPM",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-setup-prereqs.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Managing administrator and member accounts in Security Hub CSPM",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "What Is AWS Config?",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-12",
+      "category": "data",
+      "title": "Account-level S3 Block Public Access",
+      "assertion": "All four S3 Block Public Access settings are enabled at the account level for every account or enforced by an organization policy, and any bucket that must serve public content is documented with an owner and reviewed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Account-level Block Public Access status per account, the organization policy if used, the public-bucket exception list, and an IAM Access Analyzer for S3 review.",
+      "review_gate": "Block Public Access does not rewrite existing policies; removing it re-exposes previously public buckets, so review bucket policies before and after any change.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Blocking public access to your Amazon S3 storage",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configuring block public access settings for your account",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-block-public-access-account.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-13",
+      "category": "data",
+      "title": "Encryption by default for storage",
+      "assertion": "Every in-scope account has EBS encryption by default enabled in each used Region, buckets holding confidential material use SSE-KMS with a firm-owned key, and no unencrypted volume or snapshot holds firm data.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "EBS encryption-by-default status per Region, bucket default encryption inventory, and a volume and snapshot encryption report.",
+      "review_gate": "Encryption by default is a Regional setting and does not encrypt existing volumes or objects; plan snapshot copies and re-uploads for legacy data.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Enable Amazon EBS encryption by default",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/encryption-by-default.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configuring default encryption",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-bucket-encryption.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-14",
+      "category": "data",
+      "title": "Owned and rotated KMS keys",
+      "assertion": "Customer managed KMS keys protecting confidential data have a documented owner, a reviewed key policy that separates administrators from users, automatic rotation enabled, and deletion restricted through policy or SCP.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Key inventory with owners, key policy review, rotation status per key, and the deny on key deletion.",
+      "review_gate": "Key policies are Regional and every key must have one; a deleted or inaccessible key makes backups and logs unreadable, so treat key changes as recovery changes.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Key policies in AWS KMS",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Rotate AWS KMS keys",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-15",
+      "category": "data",
+      "title": "Secrets outside code and configuration",
+      "assertion": "Application, database, and integration credentials are stored in AWS Secrets Manager or an approved equivalent with access restricted to the consuming roles, rotation configured where the target supports it, and repositories scanned for embedded secrets.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Secret inventory with owners and rotation status, resource policy review, and the dated repository scan result.",
+      "review_gate": "Rotation by Lambda function adds cost and a dependency and managed rotation covers only supported services; AWS credentials belong in IAM roles rather than in secrets.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "What is AWS Secrets Manager?",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Rotate AWS Secrets Manager secrets",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "SEC02-BP03 Store and use secrets securely",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_secrets.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-16",
+      "category": "network",
+      "title": "Reviewed network exposure",
+      "assertion": "No security group allows unrestricted inbound access to administrative or database ports, no database instance is publicly accessible, default security groups allow no traffic, and each internet-facing entry point has an owner and review date.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Security group rule export per Region, RDS public-access attribute per instance, default security group status, and the exposure register.",
+      "review_gate": "Security groups are allow-only and aggregate across attachments; test the business path after tightening rules and repeat the export for every used Region.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Security group rules",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Working with a DB instance in a VPC",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-17",
+      "category": "network",
+      "title": "IMDSv2 required",
+      "assertion": "Every EC2 instance requires IMDSv2, the account-level default in each used Region sets IMDSv2 as required with enforcement enabled, and launch templates and AMIs do not override it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Instance metadata options per instance, account-level IMDS defaults per Region, and a launch template and AMI review.",
+      "review_gate": "Account defaults do not change existing instances; agents or containers that rely on IMDSv1 or a hop limit of 1 will break, so test before enforcing.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure the Instance Metadata Service options",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configure instance metadata options for new instances",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-18",
+      "category": "recovery",
+      "title": "Protected and tested backups",
+      "assertion": "Every in-scope data store is assigned to an AWS Backup plan with agreed retention, recovery points are copied to a separate account or held in a vault-locked vault, and a restore test within the review window confirmed content and access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Backup plan and resource assignments, copy or vault lock configuration, and the dated restore test result including who verified access.",
+      "review_gate": "Cross-account backup needs AWS Organizations and cannot use the default vault; compliance-mode vault lock is irreversible after its grace period, and restore testing is billed per test.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Backup plans",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/about-backup-plans.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "AWS Backup Vault Lock",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Creating backup copies across AWS accounts",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/create-cross-account-backup.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Restore testing",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-19",
+      "category": "cost",
+      "title": "Spend guardrails as an abuse signal",
+      "assertion": "Each account has a cost budget with actual and forecasted alerts to an owned channel, AWS Cost Anomaly Detection monitors are active, and anomaly alerts are triaged as potential security events.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Budget and alert configuration, anomaly monitor and subscription settings, and a dated alert triage record.",
+      "review_gate": "Billing data lags by hours to a day and new monitors need time to establish a baseline; do not treat a quiet budget as proof that no abuse occurred.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managing your costs with AWS Budgets",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Detecting unusual spend with AWS Cost Anomaly Detection",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "AWS-20",
+      "category": "change",
+      "title": "Reviewed infrastructure as code with ownership tags",
+      "assertion": "Production resources are defined in version-controlled templates, changes are previewed with change sets or an equivalent plan and approved by a second person before execution, and every resource carries owner and environment tags enforced by a tag policy.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Repository and pipeline evidence, a sample change set review, tag policy and compliance report, and an untagged-resource check.",
+      "review_gate": "Change sets do not guarantee success and console changes bypass review; tag policies need all features enabled and evaluate only the tags they define.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "What is CloudFormation?",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Update CloudFormation stacks using change sets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "What is Tag Editor?",
+          "url": "https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Tag policies",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    }
+  ]
+}

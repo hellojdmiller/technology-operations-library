@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-github",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment for a GitHub organization; not a real organization",
+    "edition": "Mixed synthetic plan and product examples, not a coherent purchased bundle"
+  },
+  "observations": [
+    {
+      "id": "GH-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-01",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GH-02",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-02",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GH-03",
+      "applicable": true,
+      "value": false,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-03",
+      "notes": "Fictional review found one former contractor still listed as an outside collaborator with write access."
+    },
+    {
+      "id": "GH-04",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-04",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GH-05",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-05",
+      "notes": "Fictional Team plan; SAML SSO and SCIM are not available in this licensing scenario. Retain as unknown and review the gap."
+    },
+    {
+      "id": "GH-06",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-06",
+      "notes": "Fictional legacy automation still authenticates with a personal access token (classic).",
+      "exception": {
+        "owner": "Fictional service owner",
+        "reason": "One fictional legacy automation cannot yet use a GitHub App or fine-grained token.",
+        "compensating_control": "Token limited to one repository, rotated monthly, and audit log reviewed weekly by the fictional owner.",
+        "expires_on": "2026-10-20"
+      }
+    },
+    {
+      "id": "GH-07",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-07",
+      "notes": "Fictional Team plan; SSH certificate authorities are not available in this licensing scenario."
+    },
+    {
+      "id": "GH-08",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-08",
+      "notes": "Fictional agent service account can push directly to the default branch of one production repository."
+    },
+    {
+      "id": "GH-09",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-09",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "GH-10",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-10",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GH-11",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": null,
+      "observed_at": null,
+      "evidence_ref": null,
+      "notes": "Evidence not collected."
+    },
+    {
+      "id": "GH-12",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-12",
+      "notes": "Only two pilot repositories were checked."
+    },
+    {
+      "id": "GH-13",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-13",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GH-14",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-14",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GH-15",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-15",
+      "notes": "Fictional cloud trust policy was not available to the reviewer; subject claim conditions remain unverified."
+    },
+    {
+      "id": "GH-16",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-16",
+      "notes": "Synthetic absence-of-mechanism evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional inventory confirms no self-hosted runners are registered; all jobs use GitHub-hosted runners, and registering a runner triggers reassessment."
+    },
+    {
+      "id": "GH-19",
+      "applicable": true,
+      "value": true,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-19T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GH-19",
+      "notes": "Synthetic monthly export and retrieval exercise."
+    }
+  ]
+}

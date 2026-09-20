@@ -173,6 +173,27 @@
       "description": "I would begin with the work someone intends to rely on. A fast answer, a convincing explanation, and a completed task are different observations. An acceptance decision needs to connect them to evidence, authority, and an outcome that can be…"
     },
     {
+      "title": "AWS: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/aws/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would start with the blast radius. A small firm that runs a handful of workloads on AWS usually has one or two people who can reach everything, a few long-lived credentials nobody remembers creating, and backups that have never been restored.…"
+    },
+    {
+      "title": "Cloudflare: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/cloudflare/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would treat Cloudflare as the place where the firm's name on the internet is decided: which registrar holds the domain, which DNS records answer, which certificate visitors see, who can reach an internal tool, and which member or token can…"
+    },
+    {
+      "title": "GitHub: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/github/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would start with the two paths a small firm cannot afford to lose control of: who can change what runs in production, and which credentials can act without a person watching. In a GitHub organization used for internal tooling, automations,…"
+    },
+    {
       "title": "Google Workspace: a baseline for technology operations",
       "collection": "Cloud baselines",
       "path": "baselines/google-workspace/README.md",

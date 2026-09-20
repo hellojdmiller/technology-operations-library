@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "id": "tol-github",
+  "version": "1.0.0",
+  "title": "GitHub organization proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-20",
+  "environment_specific": {
+    "organization_scope": "[Define privately]",
+    "plan_and_products": "[Verify per feature: Free, Team, Enterprise Cloud, Secret Protection, Code Security, Copilot plan]",
+    "in_scope_repositories": "[List production, internal tooling, automation, and agent repositories]",
+    "pilot_population": "[Define members, automations, and agents]",
+    "identity_provider": "[Record the provider and whether SAML and SCIM are available]",
+    "recovery_objectives": "[Approve per repository class]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "GH-01",
+      "category": "identity",
+      "title": "Accountable organization owners",
+      "assertion": "The organization has at least two individually accountable owners and no more than the approved number, each named in a private roster with a deputy, and no shared or service account holds the owner role.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Owner roster from the People page compared with the approved list, plus the dated succession record naming each owner's deputy.",
+      "review_gate": "Custom organization roles are documented for Enterprise Cloud only; on Team, delegate through repository and team roles rather than adding owners.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Roles in an organization",
+          "url": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Maintaining ownership continuity for your organization",
+          "url": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/maintaining-ownership-continuity-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-02",
+      "category": "identity",
+      "title": "Restrictive member privileges",
+      "assertion": "Member base permission is No permission or Read, members cannot create public repositories, only owners can change repository visibility, and repository access is granted through teams.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Member privileges settings page, the base-permission value, and a synthetic member test that cannot open an unrelated private repository or change visibility.",
+      "review_gate": "Base permissions do not apply to outside collaborators; private-only creation is documented for Enterprise Cloud, and creation limits do not change the visibility of existing repositories.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Setting base permissions for an organization",
+          "url": "https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Restricting repository creation in your organization",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/restricting-repository-creation-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Restricting repository visibility changes in your organization",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/restricting-repository-visibility-changes-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-03",
+      "category": "identity",
+      "title": "Outside collaborator governance",
+      "assertion": "Every outside collaborator has a named sponsor, business purpose, minimum repository set, and end date; a dated review has removed ended engagements; and adding collaborators is limited to owners where the plan allows.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Outside collaborator list per repository, the sponsor register, and a removal test showing access ended.",
+      "review_gate": "Owner-only invitation of outside collaborators is documented for Enterprise Cloud; removal deletes private forks but not local clones and does not reduce the paid seat count automatically.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Setting permissions for adding outside collaborators",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/setting-permissions-for-adding-outside-collaborators",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Removing an outside collaborator from an organization repository",
+          "url": "https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-outside-collaborators/removing-an-outside-collaborator-from-an-organization-repository",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-04",
+      "category": "authentication",
+      "title": "Organization-wide two-factor requirement",
+      "assertion": "The organization requires two-factor authentication for all members, outside collaborators, and billing managers, restricts methods to secure ones where approved, and the enforcement did not remove an unreviewed account.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Authentication security settings, the member export showing 2FA status for every account, and the pre-enforcement notice record.",
+      "review_gate": "Enabling the requirement removes outside collaborators without 2FA and blocks members until they enroll; every owner must enroll first, and a sole owner cannot disable personal 2FA while the requirement stands.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Requiring two-factor authentication in your organization",
+          "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Exporting member information for your organization",
+          "url": "https://docs.github.com/en/organizations/managing-membership-in-your-organization/exporting-member-information-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-05",
+      "category": "authentication",
+      "title": "Enforced SAML SSO with SCIM",
+      "assertion": "On a plan that supports it, SAML single sign-on is enforced for the organization and SCIM deprovisions members when their identity provider account is disabled, proven with a synthetic leaver.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SAML settings showing enforcement, SCIM connector status, and a synthetic deprovisioning test with timestamps.",
+      "review_gate": "SAML SSO and SCIM are documented for Enterprise Cloud only; enforcement removes members who have not authenticated through the identity provider, so test with enforcement off first.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Enforcing SAML single sign-on for your organization",
+          "url": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/enforcing-saml-single-sign-on-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About SCIM for organizations",
+          "url": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-scim-for-organizations",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-06",
+      "category": "authentication",
+      "title": "Personal access token policy",
+      "assertion": "Fine-grained personal access tokens require owner approval and a maximum lifetime at or below the approved limit, personal access tokens (classic) are restricted from organization resources, and active tokens are reviewed and revoked on a schedule.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Personal access token policy page, the active fine-grained token list with approval dates, and the dated review record.",
+      "review_gate": "Only fine-grained tokens are listed for review; classic tokens cannot be enumerated in the organization UI, and changing the policy does not revoke tokens already issued, so inventory automations before restricting.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Setting a personal access token policy for your organization",
+          "url": "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Reviewing and revoking personal access tokens in your organization",
+          "url": "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-and-revoking-personal-access-tokens-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-07",
+      "category": "authentication",
+      "title": "SSH certificate authority for Git access",
+      "assertion": "On a plan that supports it, Git access over SSH uses short-lived certificates issued by a registered organization SSH certificate authority, and unsigned SSH keys are rejected for organization repositories.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Authentication security settings showing the CA and the Require SSH Certificates option, a certificate lifetime sample, and a rejected unsigned-key test.",
+      "review_gate": "SSH certificate authorities are documented for Enterprise Cloud only; requiring certificates also blocks HTTPS authentication to organization repositories, issued certificates cannot be revoked, and deleting a CA invalidates unexpired certificates.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About SSH certificate authorities",
+          "url": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-git-access-to-your-organizations-repositories/about-ssh-certificate-authorities",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Managing your organization's SSH certificate authorities",
+          "url": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-git-access-to-your-organizations-repositories/managing-your-organizations-ssh-certificate-authorities",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-08",
+      "category": "repositories",
+      "title": "Reviewed changes on protected branches",
+      "assertion": "Every production or internal-tooling repository has an active ruleset on its default branch that requires a pull request with at least one approving review, dismisses stale approvals, requires status checks, and lists only reviewed bypass actors.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Ruleset export or screenshots per targeted repository, the bypass actor list, and a denied direct-push test by a synthetic writer.",
+      "review_gate": "Rulesets are documented for Team and Enterprise plans; the overview describes organization-level targeting for Enterprise, so verify on the actual plan whether one ruleset can target many repositories or each repository needs its own.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Creating rulesets for repositories in your organization",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/creating-rulesets-for-repositories-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Available rules for rulesets",
+          "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About rulesets",
+          "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-09",
+      "category": "repositories",
+      "title": "Blocked destructive and unsigned pushes",
+      "assertion": "Protected branches block force pushes and deletions, require signed commits where the approved signing model covers people, automations, and agents, and bypass activity is reviewed through rule insights or the audit log.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Ruleset rules for block force pushes, restrict deletions, and require signed commits, plus the signing key inventory and a rejected unsigned or force-push test.",
+      "review_gate": "Commits made through the web interface are signed by GitHub, but automations and agents pushing from a runner need their own verified signing route before the rule is enforced.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Available rules for rulesets",
+          "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About commit signature verification",
+          "url": "https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Managing rulesets for repositories in your organization",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-10",
+      "category": "code_security",
+      "title": "Secret scanning with push protection",
+      "assertion": "Secret scanning and push protection are enabled through a security configuration on every in-scope repository, new repositories inherit it, bypass privileges are limited to named actors, and open alerts have an owner.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Security configuration showing enablement status per repository, the push protection bypass list, and a synthetic blocked-push test with a test pattern.",
+      "review_gate": "Public repositories are scanned at no charge; private and internal repositories need GitHub Secret Protection on Team or Enterprise Cloud, and by default anyone with write access can bypass push protection with a stated reason.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About secret scanning",
+          "url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About push protection",
+          "url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About enabling security features at scale",
+          "url": "https://docs.github.com/en/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/about-enabling-security-features-at-scale",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-11",
+      "category": "code_security",
+      "title": "Dependabot alerts and security updates",
+      "assertion": "Dependency graph, Dependabot alerts, and Dependabot security updates are enabled for every in-scope repository, each alert has an accountable owner, and alerts older than the approved triage window are explained.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Organization enablement status for all eligible repositories, the open alert list with owners, and a sample security update pull request.",
+      "review_gate": "Alerts and security updates depend on the dependency graph; grouped updates and private registry access have their own prerequisites, and features labelled premium depend on GitHub Code Security.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About Dependabot alerts",
+          "url": "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configuring Dependabot alerts",
+          "url": "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/configuring-dependabot-alerts",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configuring Dependabot security updates",
+          "url": "https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-12",
+      "category": "code_security",
+      "title": "Code scanning on in-scope repositories",
+      "assertion": "Code scanning default setup runs on every repository that ships to production or handles firm data, results are triaged by a named owner, and merges to protected branches require passing code scanning results where the plan allows.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Code scanning enablement per repository, recent analysis runs, and the ruleset rule requiring code scanning results.",
+      "review_gate": "Code scanning on private repositories requires a GitHub Code Security license; default setup consumes Actions minutes and supports a fixed language list, so agree scope before enabling at scale.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About code scanning",
+          "url": "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configuring default setup for code scanning",
+          "url": "https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Available rules for rulesets",
+          "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-13",
+      "category": "actions",
+      "title": "Organization Actions policy",
+      "assertion": "Organization Actions settings allow only GitHub-owned, verified-creator, or explicitly listed actions and reusable workflows pinned to full commit SHAs, require approval for fork pull request workflows from all external contributors, default the GITHUB_TOKEN to read-only, and prevent Actions from creating or approving pull requests.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Organization Actions general settings page, the allow list, and a sample workflow run showing read-only token permissions.",
+      "review_gate": "Repository settings can be stricter but the organization policy sets the ceiling; pull_request_target workflows are not gated by fork approval, and pinning by tag is mutable.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Disabling or limiting GitHub Actions for your organization",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Secure use reference for GitHub Actions",
+          "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-14",
+      "category": "actions",
+      "title": "Protected deployment environments and secrets",
+      "assertion": "Production deployments run through environments with required reviewers who cannot self-approve, deployment branch or tag restrictions, and environment-scoped secrets, and organization secrets are limited to selected repositories.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Environment protection rules per production environment, the organization secret access policy, and a deployment run showing the approval step.",
+      "review_gate": "Environments on private repositories are documented for Team and Pro and above; converting a repository to private disables configured protection until the plan supports it, and secrets are not passed to workflows triggered from forks.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managing environments for deployment",
+          "url": "https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Using secrets in GitHub Actions",
+          "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-15",
+      "category": "actions",
+      "title": "Federated cloud credentials through OIDC",
+      "assertion": "Workflows that deploy to or read from cloud providers authenticate with OpenID Connect tokens whose trust conditions are limited to the repository, environment, and branch, and no long-lived cloud credential is stored as an Actions secret.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Cloud provider trust policy showing the subject claim conditions, the workflow permissions block requesting id-token, and the secret inventory with no cloud keys.",
+      "review_gate": "The cloud side must validate the subject claim; a trust policy that accepts any repository in the organization defeats the purpose, and legacy credentials must be revoked after migration.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About security hardening with OpenID Connect",
+          "url": "https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Secure use reference for GitHub Actions",
+          "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-16",
+      "category": "actions",
+      "title": "Self-hosted runner isolation",
+      "assertion": "Every self-hosted runner is ephemeral or rebuilt between jobs, belongs to a runner group limited to named private repositories, never serves public repositories or fork pull requests, and has a documented owner and patch route.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Runner group membership and repository access settings, the runner registration mode, and the runner host ownership record.",
+      "review_gate": "GitHub-hosted runners provide a new virtual machine per job and a persistent self-hosted runner does not, so treat it as production infrastructure with network limits; additional runner groups are documented for Team and above.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secure use reference for GitHub Actions",
+          "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Managing access to self-hosted runners using groups",
+          "url": "https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/managing-access-to-self-hosted-runners-using-groups",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About GitHub-hosted runners",
+          "url": "https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-17",
+      "category": "integrations",
+      "title": "GitHub App and OAuth app governance",
+      "assertion": "OAuth app access restrictions are enabled, every approved OAuth app and installed GitHub App has an owner, purpose, minimum permission set, and repository scope, and unreviewed apps are suspended or removed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Third-party access settings, the installed GitHub Apps list with permissions and repository access, and the dated review record.",
+      "review_gate": "Enabling OAuth restrictions revokes existing OAuth authorizations and SSH keys for the organization; GitHub Apps are reviewed separately and are preferred for automations because of fine-grained permissions and short-lived tokens.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About OAuth app access restrictions",
+          "url": "https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/about-oauth-app-access-restrictions",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Enabling OAuth app access restrictions for your organization",
+          "url": "https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/enabling-oauth-app-access-restrictions-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Reviewing GitHub Apps installed in your organization",
+          "url": "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-github-apps-installed-in-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Differences between GitHub Apps and OAuth apps",
+          "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-18",
+      "category": "ai",
+      "title": "Copilot and AI feature policies",
+      "assertion": "Organization Copilot policies record an explicit enforcement choice for every feature including cloud agent, third-party agents, MCP servers, and preview features; agent use is limited to selected repositories; content exclusions cover confidential paths; and seat assignments are reviewed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Copilot policies page, the cloud agent repository selection, content exclusion settings, and the seat and usage review record.",
+      "review_gate": "Policies require Copilot Business or Copilot Enterprise; enterprise settings override organization settings, agent mode in IDE chat does not honor content exclusion, and the cloud agent works in an Actions environment so Actions controls still apply.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managing policies and features for GitHub Copilot in your organization",
+          "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Adding GitHub Copilot cloud agent to your organization",
+          "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/add-copilot-cloud-agent",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About GitHub Copilot cloud agent",
+          "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Excluding content from GitHub Copilot",
+          "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Managing access to GitHub Copilot in your organization",
+          "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-access",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-19",
+      "category": "monitoring",
+      "title": "Audit log review, retention, and streaming",
+      "assertion": "Owners review the organization audit log for privileged events on a schedule, export or stream events before the native 180-day window expires when the approved retention is longer, and have retrieved a synthetic event end to end.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Dated review record, the export or streaming configuration, and the retrieval test of a synthetic event.",
+      "review_gate": "The organization audit log retains 180 days and only owners can read it; API access and audit log streaming are documented for Enterprise Cloud, so a Team organization needs a scheduled export.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Reviewing the audit log for your organization",
+          "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Streaming the audit log for your enterprise",
+          "url": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GH-20",
+      "category": "continuity",
+      "title": "Repository and organization continuity",
+      "assertion": "Critical repositories are backed up outside the organization on an approved schedule with a tested restore, and membership, settings, and ownership succession are exported and documented so a departing owner does not interrupt operations.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Backup job record with a restore test of a sample repository, the member export, and the ownership transfer runbook.",
+      "review_gate": "Mirror clones capture Git data only; issues, pull requests, wikis, LFS objects, and settings need separate exports, and removing a departing owner does not update billing details.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Backing up a repository",
+          "url": "https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Exporting member information for your organization",
+          "url": "https://docs.github.com/en/organizations/managing-membership-in-your-organization/exporting-member-information-for-your-organization",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Transferring organization ownership",
+          "url": "https://docs.github.com/en/organizations/managing-organization-settings/transferring-organization-ownership",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    }
+  ]
+}
