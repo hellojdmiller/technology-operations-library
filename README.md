@@ -13,6 +13,7 @@ The library is organized around reusable operating work across industries and te
 | Run an automation | [Change-readiness walkthrough](showcase/change-readiness-review.md) | A fictional change packet, its review result, and the checks behind it |
 | Review your controls | [Control-evidence walkthrough](showcase/control-evidence-review.md) | A local report that keeps missing, stale, and conflicting evidence visible |
 | Learn with AI | [AI at Work](training/ai-at-work/README.md), [prompting guide](prompting/README.md), and [portable skills](skills/README.md) | Three everyday employee lessons, followed by deeper prompting and reusable instructions |
+| Assess a platform | [Platform security baselines](baselines/README.md) | Control catalogs and risk-assessment templates for Google Workspace, Microsoft 365, Cloudflare, AWS, and GitHub, with a local comparison tool and fictional examples |
 
 
 The [100-site training directory](training/free-training-directory/README.md) helps teams find public, free-account and customer-included learning, with access limits, official sources and a CSV for an internal catalog. The [vendor video task cards](training/vendor-walkthroughs/README.md) pair official lessons with original practice, evidence checks, and teach-back prompts. Use the [training delivery pack](training/delivery/README.md) to run a proposed 60-minute first session and plan follow-up checks over 30 days.
