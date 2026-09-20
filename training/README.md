@@ -1,4 +1,12 @@
-# Technology operations training
+# Workplace and technology training
+
+## AI at Work: start with everyday tasks
+
+[AI at Work](ai-at-work/README.md) is a three-lesson course for employees across departments. Practice giving a clear assignment, choosing the right context, and checking a draft before sharing it. One fictional workshop packet connects the lessons; no AI account or technical background is needed. Includes examples, hints, answer guidance, a blank worksheet, and a facilitator guide.
+
+[Take the lessons on hellojdmiller.com](https://hellojdmiller.com/learn/ai), or use the editable files here. Sources were reviewed September 19, 2026; the course has not yet been tested with learners.
+
+## Technology operations path
 
 Practical lessons for the person who has to explain a decision, make a bounded change, and prove the result. The setting is a fictional investment firm: a small internal team, outside specialists, sensitive deal material, and people who need access while traveling.
 
