@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "id": "tol-microsoft-365",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "Microsoft 365 proposed operating baseline",
   "status": "review_template_not_vendor_configuration",
-  "reviewed_on": "2026-09-17",
+  "reviewed_on": "2026-09-20",
   "environment_specific": {
     "tenant_scope": "[Define privately]",
     "edition_and_licenses": "[Verify per feature and population]",
@@ -34,7 +34,7 @@
         {
           "title": "Conditional Access licensing",
           "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -55,7 +55,7 @@
         {
           "title": "Security defaults",
           "url": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -76,7 +76,7 @@
         {
           "title": "Phishing-resistant MFA for admins",
           "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -98,7 +98,7 @@
         {
           "title": "Emergency access accounts",
           "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -120,7 +120,7 @@
         {
           "title": "Secure identity infrastructure",
           "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -141,7 +141,7 @@
         {
           "title": "Block legacy authentication",
           "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-legacy-authentication",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -160,9 +160,9 @@
       "max_evidence_age_days": 90,
       "sources": [
         {
-          "title": "Require device compliance",
-          "url": "https://learn.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune",
-          "reviewed_on": "2026-09-17"
+          "title": "Require device compliance with Conditional Access",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance",
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -183,7 +183,7 @@
         {
           "title": "Intune compliance policies",
           "url": "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -204,12 +204,12 @@
         {
           "title": "SharePoint and OneDrive sharing",
           "url": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         },
         {
           "title": "Site sharing settings",
           "url": "https://learn.microsoft.com/en-us/sharepoint/change-external-sharing-site",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -231,7 +231,7 @@
         {
           "title": "Access reviews and licensing",
           "url": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -252,7 +252,7 @@
         {
           "title": "Configure user consent",
           "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -274,7 +274,7 @@
         {
           "title": "Review application permissions",
           "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/manage-application-permissions",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -295,7 +295,7 @@
         {
           "title": "Configure SPF",
           "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -316,7 +316,7 @@
         {
           "title": "Configure DKIM",
           "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -337,7 +337,7 @@
         {
           "title": "Configure DMARC",
           "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -359,7 +359,7 @@
         {
           "title": "Entra log retention",
           "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-reports-data-retention",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -381,7 +381,7 @@
         {
           "title": "Purview Audit search and retention",
           "url": "https://learn.microsoft.com/en-us/purview/audit-search",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -403,7 +403,7 @@
         {
           "title": "Purview retention policies and labels",
           "url": "https://learn.microsoft.com/en-us/purview/retention",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -425,7 +425,7 @@
         {
           "title": "Microsoft 365 Backup",
           "url": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -447,7 +447,148 @@
         {
           "title": "Plan Conditional Access",
           "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "M365-21",
+      "category": "email",
+      "title": "Preset threat-protection coverage",
+      "assertion": "In-scope mailboxes are covered by the Standard or Strict preset security policy, or by a documented custom equivalent, and Safe Links and Safe Attachments protection is confirmed for the Defender for Office 365 licensed population.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Preset assignment rules with recipient conditions and exceptions, licensed-population map, and a synthetic malicious-URL click test in email and Teams.",
+      "review_gate": "Presets are not editable; a recipient who needs different behavior gets a custom policy with higher priority. Built-in protection, Safe Links and Safe Attachments require Defender for Office 365 licenses; an Exchange Online Protection-only tenant receives the anti-spam, anti-malware and anti-phishing parts only.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Preset security policies",
+          "url": "https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Safe Links overview",
+          "url": "https://learn.microsoft.com/en-us/defender-office-365/safe-links-about",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "M365-22",
+      "category": "identity",
+      "title": "Risk-based access response",
+      "assertion": "Sign-in risk and user risk are handled by separate Conditional Access policies that require multifactor authentication for medium and high sign-in risk and risk remediation for high user risk, validated in report-only mode before enforcement.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Both risk policies with assignments and exclusions, report-only results, one remediated risky-user record, and confirmation that no legacy ID Protection risk policy remains enabled.",
+      "review_gate": "Requires Entra ID P2 or Entra Suite; users must be registered for multifactor authentication before enforcement or they are blocked rather than remediated. Legacy ID Protection risk policies retire on 2026-10-01. A missing license records a gap, not an absent risk.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure risk policies",
+          "url": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "M365-23",
+      "category": "identity",
+      "title": "Just-in-time privileged roles",
+      "assertion": "Highly privileged Entra roles are eligible rather than permanently active for named administrators, activation requires strong authentication and a justification, the most privileged roles require approval, and only emergency access accounts hold permanent active Global Administrator.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "PIM role settings per privileged role, eligible versus active assignment export, named approver list, one activation with its approval and notification, and audit history.",
+      "review_gate": "Requires Entra ID P2 or Entra ID Governance for eligible users and approvers. Name at least two specific approvers: if every Global Administrator and Privileged Role Administrator is eligible, approval is required and no approver is configured, the tenant is locked out. License expiry removes eligible assignments.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Privileged Identity Management overview",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "PIM role settings and approval",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "M365-24",
+      "category": "classification",
+      "title": "Labeled and policy-protected confidential content",
+      "assertion": "Confidential data classes have published sensitivity labels with protection settings, container labels govern sensitive Teams and sites, and DLP policies for those classes completed simulation mode before enforcement on the in-scope locations.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Label taxonomy and policy assignments, container-label settings for sensitive sites, DLP policy scope and simulation results, and a synthetic test showing a labeled file blocked from an external share while an approved internal share succeeds.",
+      "review_gate": "Purview capabilities and locations differ by license; verify each location. Do not make an encrypting label the default for all documents, because external recipients may be unable to open them. Enforce DLP only after simulation results are reviewed with the business process owners.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Learn about sensitivity labels",
+          "url": "https://learn.microsoft.com/en-us/purview/sensitivity-labels",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Learn about data loss prevention",
+          "url": "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "M365-25",
+      "category": "ai",
+      "title": "Copilot grounding scope reviewed",
+      "assertion": "Before Copilot or agents grounded on work data are enabled for a population, overshared sites are identified and remediated, labels the records owner designates are excluded from Copilot processing, agents are admin-approved, and a synthetic prompt confirms excluded content is not surfaced.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Data access governance or site-permission report with remediation decisions, Copilot DLP policy and label conditions, approved-agent list from the admin center, and the synthetic prompt result against a deliberately excluded document.",
+      "review_gate": "Copilot returns only content the user can already open, so permission hygiene is the control and a Copilot switch is not. Restricted SharePoint Search is retiring, with new enablement blocked from 2026-07-31; use Restricted Content Discovery as the interim measure. SharePoint Advanced Management reports need its license, which is included with Copilot licenses; E5 without Copilot gets limited reports.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Copilot data, privacy, and security",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Configure a secure and governed foundation for Copilot",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "DLP for Copilot",
+          "url": "https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Data access governance reports",
+          "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Restricted Content Discovery",
+          "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+          "reviewed_on": "2026-09-20"
         }
       ]
     }

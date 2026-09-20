@@ -1,0 +1,606 @@
+{
+  "schema_version": 1,
+  "id": "tol-cloudflare",
+  "version": "1.0.0",
+  "title": "Cloudflare proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-20",
+  "environment_specific": {
+    "account_scope": "[Define privately]",
+    "plan_and_add_ons": "[Verify per zone and per Zero Trust seat]",
+    "in_scope_zones": "[List zones, hostnames, and origins]",
+    "zero_trust_population": "[Define users, devices, and applications]",
+    "recovery_objectives": "[Approve per hostname and workload]",
+    "records_schedule": "[Obtain records-owner decision for logs]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "CF-01",
+      "category": "registrar",
+      "title": "Registrar lock and renewal ownership",
+      "assertion": "Every firm domain registered through Cloudflare Registrar is locked against transfer, auto-renews with a monitored payment method, carries current registrant contacts, and unlock or authorization-code retrieval is limited to named super administrators.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Domain inventory with lock, expiry, auto-renew, and contact status; member roster showing who can unlock; dated review record.",
+      "review_gate": "Anyone with super-admin or admin permission for a zone can manage its registration; a transfer auto-approves on the fifth day if nobody acts; registry lock through Custom Domain Protection is an Enterprise service.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Transfer domain out from Cloudflare",
+          "url": "https://developers.cloudflare.com/registrar/account-options/transfer-out-from-cloudflare/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Domain management",
+          "url": "https://developers.cloudflare.com/registrar/account-options/domain-management/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-02",
+      "category": "dns",
+      "title": "DNSSEC signed and delegated",
+      "assertion": "Every firm zone hosted on Cloudflare DNS has DNSSEC enabled with a matching DS record published at the registrar, and validation was confirmed with an external resolver check.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "DNSSEC status per zone, registrar DS record, and a dated resolver validation result.",
+      "review_gate": "Cloudflare Registrar publishes the DS automatically over one to two days; at another registrar the DS must be added by hand; a provider migration without a multi-signer plan breaks resolution.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "DNSSEC",
+          "url": "https://developers.cloudflare.com/dns/dnssec/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Enable DNSSEC at Cloudflare Registrar",
+          "url": "https://developers.cloudflare.com/registrar/get-started/enable-dnssec/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-03",
+      "category": "dns",
+      "title": "DNS record change control",
+      "assertion": "Every record in a firm zone has a documented owner and purpose, changes are made by identifiable members and reviewed in the audit log, and a current zone export is stored outside Cloudflare.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Record inventory with comments or tags, audit log extract for recent DNS changes, and the dated zone export location.",
+      "review_gate": "Comments are available on all plans and tags need Pro or above; zone holds that stop another account from adding your zone are Enterprise only; an export is a file, not a tested restore.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "DNS record comments and tags",
+          "url": "https://developers.cloudflare.com/dns/manage-dns-records/reference/record-attributes/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Import and export DNS records",
+          "url": "https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Zone holds",
+          "url": "https://developers.cloudflare.com/fundamentals/account/account-security/zone-holds/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-04",
+      "category": "email",
+      "title": "Sender authentication records in DNS",
+      "assertion": "Every firm domain in Cloudflare DNS, including domains that never send mail, publishes the SPF, DKIM, and DMARC records its mail provider documents, and DMARC reports are reviewed by a named owner.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Per-domain record listing, mail-provider setup reference, and a dated DMARC Management or report review.",
+      "review_gate": "Record values come from the mail provider, not from Cloudflare examples; DMARC Management needs Cloudflare DNS; Cloudflare Email Security is a separate Zero Trust product and is not required by this control.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Email records",
+          "url": "https://developers.cloudflare.com/dns/manage-dns-records/how-to/email-records/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "DMARC Management",
+          "url": "https://developers.cloudflare.com/dmarc-management/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-05",
+      "category": "identity",
+      "title": "Least-privilege account membership",
+      "assertion": "Every account member is an identifiable person holding the narrowest role and scope that fits their task, the Super Administrator role is held only by named operators, and membership is reviewed with leavers revoked.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Member roster with roles and scopes, task-to-role review, and the dated removal record for the last leaver.",
+      "review_gate": "Only Super Administrators can invite, edit, or revoke members; domain-scoped roles narrow access to selected zones and resource-scoped roles are in beta; test a delegated task before removing a broad role.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Account member roles",
+          "url": "https://developers.cloudflare.com/fundamentals/manage-members/roles/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Manage account members",
+          "url": "https://developers.cloudflare.com/fundamentals/manage-members/manage/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-06",
+      "category": "identity",
+      "title": "Enforced two-factor authentication",
+      "assertion": "Two-factor authentication is enforced for every account member, administrators use a security key or authenticator app rather than email codes, and each administrator has tested backup codes stored privately.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Account 2FA enforcement setting, per-member method review, and a dated administrator sign-in and backup-code test.",
+      "review_gate": "A Super Administrator turns on 2FA Enforcement; dashboard SSO is free on all plans but needs a Zero Trust organization with an identity provider; complete recovery testing before tightening methods.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Two-factor authentication",
+          "url": "https://developers.cloudflare.com/fundamentals/user-profiles/2fa/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Dashboard SSO",
+          "url": "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-07",
+      "category": "integrations",
+      "title": "Least-privilege API tokens",
+      "assertion": "Every API token has an owner, a documented purpose, the minimum permissions and zone scope, an expiry date, and a client IP restriction where the caller is fixed; durable automations use account-owned tokens; no automation uses the Global API Key.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Token inventory from each member profile and the account, permission and expiry review, and confirmation that Global API Key use is absent.",
+      "review_gate": "Tokens never expire unless an end date is set; the Global API Key carries the user's full permissions and cannot be scoped; account-owned tokens need a Super Administrator and do not cover every product, including Registrar.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create API token",
+          "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Restrict API tokens",
+          "url": "https://developers.cloudflare.com/fundamentals/api/how-to/restrict-tokens/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "API keys",
+          "url": "https://developers.cloudflare.com/fundamentals/api/get-started/keys/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Account-owned API tokens",
+          "url": "https://developers.cloudflare.com/fundamentals/api/get-started/account-owned-tokens/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-08",
+      "category": "monitoring",
+      "title": "Audit log review and retention",
+      "assertion": "Account audit logs are reviewed on an agreed cadence for member, token, DNS, and security changes, the retention window meets the approved need or logs are exported before expiry, and a synthetic change was located in the log.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Review cadence record, a dated retrieval of a synthetic change, and the retention or export decision.",
+      "review_gate": "Logs are kept for 18 months; the version 2 dashboard shows 90 days and the API returns the full window; Logpush for audit logs is Enterprise and version 1 and 2 need separate jobs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Audit Logs version 2",
+          "url": "https://developers.cloudflare.com/fundamentals/account/account-security/audit-logs/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Review audit logs version 1",
+          "url": "https://developers.cloudflare.com/fundamentals/account/account-security/review-audit-logs/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-09",
+      "category": "waf",
+      "title": "Managed WAF rulesets in blocking mode",
+      "assertion": "Every proxied firm hostname is covered by the WAF managed rulesets available on its plan, deployed with blocking actions after a logged evaluation period, with any exceptions documented and owned.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Managed ruleset deployment per zone, the evaluation-period event review, and the exception list.",
+      "review_gate": "The Free plan receives only the Free Managed Ruleset; the Cloudflare Managed and OWASP rulesets need Pro or above; DNS-only records bypass the WAF entirely.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "WAF Managed Rules",
+          "url": "https://developers.cloudflare.com/waf/managed-rules/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-10",
+      "category": "waf",
+      "title": "Administrative paths restricted",
+      "assertion": "Administrative and management paths on proxied hostnames are reachable only from approved sources or identities, enforced with Zone Lockdown, custom rules, or Access, and a request from an unapproved source was tested and denied.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Path inventory, the enforcing rule or Access application, and a dated denied-request test.",
+      "review_gate": "Zone Lockdown needs Pro or above with 3, 10, or 200 rules by plan; an IP allowlist fails for travelling staff, so pair it with Access or the WARP egress; test the legitimate administrator path before enforcing.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Zone Lockdown",
+          "url": "https://developers.cloudflare.com/waf/tools/zone-lockdown/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Self-hosted Access applications",
+          "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-11",
+      "category": "waf",
+      "title": "Automated abuse controls",
+      "assertion": "The bot protection available on the zone's plan is enabled, rate limiting rules protect login, form, and API endpoints with thresholds agreed with the application owner, and both were tested against legitimate clients and integrations.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Bot protection setting, rate limiting rule list with thresholds, and a dated test covering legitimate API clients and a triggered mitigation.",
+      "review_gate": "Bot Fight Mode on Free applies to all traffic and cannot exclude clients; Super Bot Fight Mode needs Pro or Business and Bot Management is an Enterprise add-on; rate limiting allows 1, 2, 5, or 100 rules by plan and counters lag by seconds.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Bot protection plans",
+          "url": "https://developers.cloudflare.com/bots/plans/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Bot Fight Mode (Free)",
+          "url": "https://developers.cloudflare.com/bots/plans/free/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Super Bot Fight Mode (Pro)",
+          "url": "https://developers.cloudflare.com/bots/plans/pro/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Rate limiting rules",
+          "url": "https://developers.cloudflare.com/waf/rate-limiting-rules/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-12",
+      "category": "tls",
+      "title": "Minimum TLS and HSTS",
+      "assertion": "Every proxied firm hostname rejects TLS versions below 1.2, and HSTS is enabled with an approved max-age after confirming that every subdomain in scope serves HTTPS.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Minimum TLS setting per zone, HSTS header capture, and the subdomain HTTPS inventory.",
+      "review_gate": "Check legacy client dependencies before raising the minimum; HSTS turns a later return to HTTP into an outage for the max-age period and preload needs 12 months and is hard to reverse; per-hostname minimum TLS needs Advanced Certificate Manager.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Minimum TLS Version",
+          "url": "https://developers.cloudflare.com/ssl/edge-certificates/additional-options/minimum-tls/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "HTTP Strict Transport Security",
+          "url": "https://developers.cloudflare.com/ssl/edge-certificates/additional-options/http-strict-transport-security/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-13",
+      "category": "tls",
+      "title": "Validated origin encryption",
+      "assertion": "Every proxied zone uses Full (strict) encryption, each origin presents an unexpired certificate from a public CA or Cloudflare Origin CA matching its hostname, and origin certificate expiry dates are tracked by an owner.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Encryption mode per zone, origin certificate inventory with expiry dates, and a dated 526-error check after the last change.",
+      "review_gate": "Origin CA certificates are trusted only by Cloudflare and receive no expiry notifications; a mismatched or expired origin certificate produces 526 errors; test one hostname before switching modes.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Full (strict) encryption mode",
+          "url": "https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Origin CA certificates",
+          "url": "https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-14",
+      "category": "origin",
+      "title": "Origin unreachable except through Cloudflare",
+      "assertion": "Every origin behind a proxied hostname either has no inbound listener because it connects through Cloudflare Tunnel, or accepts only connections that present the authenticated origin pull certificate and arrive from Cloudflare IP ranges, and a direct-to-origin request was tested and refused.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Origin inventory with connection method, firewall or Tunnel configuration, and a dated direct-to-origin test result.",
+      "review_gate": "Authenticated Origin Pulls does not work with Tunnel; the global certificate proves only that a request came from Cloudflare, not from your account; rotate origin IPs after onboarding because historical DNS is public.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloudflare Tunnel",
+          "url": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Authenticated Origin Pulls",
+          "url": "https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Protect your origin server",
+          "url": "https://developers.cloudflare.com/fundamentals/security/protect-your-origin-server/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-15",
+      "category": "access",
+      "title": "Access in front of internal applications",
+      "assertion": "Every self-hosted internal application and management interface is published through Cloudflare Access with deny-by-default Allow policies scoped to named groups, Bypass is absent except for documented cases, and the origin validates the Access token.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Access application list with policies, policy tester result for a leaver and an authorized user, and the origin token validation check.",
+      "review_gate": "Bypass disables Access controls and logging for matching requests; reusable policies apply to several applications, so review the full list before editing one; each authenticating user consumes a Zero Trust seat.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Access policies",
+          "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/policies/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Access policy management",
+          "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/policies/policy-management/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Self-hosted Access applications",
+          "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-16",
+      "category": "access",
+      "title": "Zero Trust identity provider and user lifecycle",
+      "assertion": "Zero Trust logins for staff use the firm's identity provider, One-time PIN and social logins are not enabled for staff applications, and leavers lose Access within the agreed time with their seat released.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Identity provider configuration, login method list, and a dated leaver test showing denied access and a released seat.",
+      "review_gate": "Cloudflare supports generic SAML and OIDC providers and several at once; One-time PIN is no longer added automatically but can coexist with an IdP; a removed user shows as inactive and reclaims a seat if they authenticate again.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Identity provider integration",
+          "url": "https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "One-time PIN login",
+          "url": "https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/one-time-pin/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Seat management",
+          "url": "https://developers.cloudflare.com/cloudflare-one/team-and-resources/users/seat-management/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-17",
+      "category": "devices",
+      "title": "Device posture with WARP",
+      "assertion": "Access to internal applications requires a device running the firm's WARP client with the approved posture checks, such as disk encryption, operating system version, and firewall, and a non-compliant device was tested and denied.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Client deployment coverage, posture check list, Access or Gateway policies that require posture, and a dated denied-device test.",
+      "review_gate": "Checks only run on devices with the client deployed; results are cached and Gateway can take up to 15 minutes to enforce a change; an active Gateway session is not terminated by a failed check.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Device posture",
+          "url": "https://developers.cloudflare.com/cloudflare-one/reusable-components/posture-checks/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Client posture checks",
+          "url": "https://developers.cloudflare.com/cloudflare-one/reusable-components/posture-checks/client-checks/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-18",
+      "category": "gateway",
+      "title": "Gateway DNS and HTTP filtering",
+      "assertion": "Staff devices resolve DNS through Gateway with security categories blocked, HTTP filtering with TLS decryption is enabled where the firm has approved inspection, and a synthetic blocked lookup was tested.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "DNS and HTTP policy list, client certificate deployment status, and a dated blocked-lookup test.",
+      "review_gate": "HTTP policies need the Cloudflare root or a custom certificate installed on devices; third-party VPNs and hard-coded fallback resolvers bypass filtering; client block notifications need Enterprise.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Gateway DNS policies",
+          "url": "https://developers.cloudflare.com/cloudflare-one/traffic-policies/dns-policies/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Gateway HTTP policies",
+          "url": "https://developers.cloudflare.com/cloudflare-one/traffic-policies/http-policies/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-19",
+      "category": "monitoring",
+      "title": "Notifications and log export",
+      "assertion": "Certificate, security event, DDoS, and Access token notifications route to a monitored shared destination with an owner, a delivery test was completed, and request or Zero Trust logs are exported where the firm's plan and approved need require it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Notification list with destinations, dated delivery test, and the log export decision or Logpush job list.",
+      "review_gate": "Free plans get email only, webhooks need Pro and PagerDuty needs Business; Security Events alerts need Business or Enterprise; Logpush for zone and Zero Trust logs is Enterprise and cannot backfill.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloudflare Notifications",
+          "url": "https://developers.cloudflare.com/notifications/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Available notifications",
+          "url": "https://developers.cloudflare.com/notifications/notification-available/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Logpush",
+          "url": "https://developers.cloudflare.com/logs/logpush/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Logpush for Zero Trust logs",
+          "url": "https://developers.cloudflare.com/cloudflare-one/insights/logs/logpush/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "CF-20",
+      "category": "recovery",
+      "title": "Configuration export and account recovery",
+      "assertion": "Zone files and Cloudflare configuration are exported to a private store on an agreed cadence, at least two separately accountable super administrators hold tested backup codes, and a compromise-response and lockout rehearsal has been completed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Export location and date, super administrator custody record, and the dated rehearsal result including session revocation and token rolling.",
+      "review_gate": "Account recovery without a device or backup codes takes days and cannot be expedited; a zone export does not capture WAF, Access, or TLS settings, so use cf-terraforming or documented screenshots; never store backup codes in the assessment.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Import and export DNS records",
+          "url": "https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Import Cloudflare resources to Terraform",
+          "url": "https://developers.cloudflare.com/terraform/advanced-topics/import-cloudflare-resources/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Account recovery",
+          "url": "https://developers.cloudflare.com/fundamentals/user-profiles/account-recovery/",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Secure a compromised account",
+          "url": "https://developers.cloudflare.com/fundamentals/account/account-security/secure-a-compromised-account/",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    }
+  ]
+}

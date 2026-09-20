@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
 const DAY = 86400000;
+// Official vendor documentation hosts accepted as control sources. Marketing, blog, and community hosts are deliberately excluded.
+export const OFFICIAL_DOC_HOSTS = ['knowledge.workspace.google.com', 'support.google.com', 'cloud.google.com', 'docs.cloud.google.com', 'learn.microsoft.com', 'developers.cloudflare.com', 'docs.aws.amazon.com', 'docs.github.com'];
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const boolOrNull = value => typeof value === 'boolean' || value === null;
@@ -39,7 +41,7 @@ export function validateInputs(baseline, observed) {
     for (const source of control.sources) {
       requireThat(object(source) && text(source.title) && text(source.url), `${control.id}: invalid source`);
       const url = new URL(source.url);
-      requireThat(url.protocol === 'https:' && ['knowledge.workspace.google.com', 'support.google.com', 'learn.microsoft.com'].includes(url.hostname), `${control.id}: source must be an official vendor HTTPS reference`);
+      requireThat(url.protocol === 'https:' && OFFICIAL_DOC_HOSTS.includes(url.hostname), `${control.id}: source must be an official vendor HTTPS reference`);
       dateOnly(source.reviewed_on, `${control.id}: source reviewed_on`);
     }
   }

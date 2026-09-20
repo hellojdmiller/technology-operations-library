@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "id": "tol-google-workspace",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "Google Workspace proposed operating baseline",
   "status": "review_template_not_vendor_configuration",
-  "reviewed_on": "2026-09-17",
+  "reviewed_on": "2026-09-20",
   "environment_specific": {
     "tenant_scope": "[Define privately]",
     "edition_and_licenses": "[Verify per feature and population]",
@@ -34,7 +34,7 @@
         {
           "title": "Administrator account security",
           "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -55,12 +55,12 @@
         {
           "title": "Administrator account security",
           "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         },
         {
           "title": "Deploy 2-Step Verification",
           "url": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -82,7 +82,7 @@
         {
           "title": "Administrator account security",
           "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -103,7 +103,7 @@
         {
           "title": "Deploy 2-Step Verification",
           "url": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -124,7 +124,7 @@
         {
           "title": "Manage external sharing",
           "url": "https://knowledge.workspace.google.com/admin/drive/manage-external-sharing-for-your-organization",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "title": "Shared drive access",
           "url": "https://support.google.com/a/users/answer/12380484?hl=en",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -168,7 +168,7 @@
         {
           "title": "Control app access",
           "url": "https://knowledge.workspace.google.com/admin/apps/control-which-apps-access-google-workspace-data",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -190,7 +190,7 @@
         {
           "title": "Domain-wide delegation best practices",
           "url": "https://knowledge.workspace.google.com/admin/apps/domain-wide-delegation-best-practices",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -212,7 +212,7 @@
         {
           "title": "Google endpoint management",
           "url": "https://knowledge.workspace.google.com/admin/devices/overview-manage-devices-with-google-endpoint-management",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -233,7 +233,7 @@
         {
           "title": "Context-Aware Access",
           "url": "https://knowledge.workspace.google.com/admin/security/protect-your-business-with-context-aware-access",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -253,8 +253,13 @@
       "sources": [
         {
           "title": "Set up SPF",
-          "url": "https://support.google.com/a/answer/33786?hl=en",
-          "reviewed_on": "2026-09-17"
+          "url": "https://knowledge.workspace.google.com/admin/security/set-up-spf",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Troubleshoot SPF issues",
+          "url": "https://knowledge.workspace.google.com/admin/security/troubleshoot-spf-issues",
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -275,7 +280,7 @@
         {
           "title": "Set up DKIM",
           "url": "https://knowledge.workspace.google.com/admin/security/set-up-dkim",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -296,7 +301,7 @@
         {
           "title": "Set up DMARC",
           "url": "https://knowledge.workspace.google.com/admin/security/set-up-dmarc",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -318,7 +323,7 @@
         {
           "title": "Data retention and lag times",
           "url": "https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -340,7 +345,7 @@
         {
           "title": "Administrator account security",
           "url": "https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -362,7 +367,7 @@
         {
           "title": "Vault overview",
           "url": "https://knowledge.workspace.google.com/vault/getting-started/vault-overview",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -384,7 +389,7 @@
         {
           "title": "Recover deleted Drive data",
           "url": "https://knowledge.workspace.google.com/admin/drive/recover-deleted-files-and-folders-for-drive-users",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -406,7 +411,7 @@
         {
           "title": "Deploy 2-Step Verification",
           "url": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -428,7 +433,7 @@
         {
           "title": "Shared drive access",
           "url": "https://support.google.com/a/users/answer/12380484?hl=en",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         }
       ]
     },
@@ -450,12 +455,139 @@
         {
           "title": "Suspend a user",
           "url": "https://knowledge.workspace.google.com/admin/users/suspend-a-user-temporarily",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
         },
         {
           "title": "Vault overview",
           "url": "https://knowledge.workspace.google.com/vault/getting-started/vault-overview",
-          "reviewed_on": "2026-09-17"
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GWS-21",
+      "category": "ai",
+      "title": "Generative AI access and data boundaries",
+      "assertion": "Gemini app and Gemini features in Workspace services are enabled only for approved populations, Gemini access to Workspace data is a recorded decision, and retention coverage for Gemini app conversations is confirmed or a documented alternative exists.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Effective OU/group service status for the Gemini app and per-service Gemini features, the Workspace-data access decision, the conversation-history setting, and a Vault rule or hold review for Gemini app data.",
+      "review_gate": "Turning Gemini off in one service does not stop Gemini in another service from reading that data; decide the data boundary before the feature rollout.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Turn the Gemini app on or off",
+          "url": "https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/turn-the-gemini-app-on-or-off",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Manage access to Gemini features in Workspace services",
+          "url": "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/manage-access-to-gemini-features-in-workspace-services",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Control Gemini app access to Workspace services",
+          "url": "https://knowledge.workspace.google.com/admin/gemini/turn-google-apps-in-gemini-on-or-off",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Retain Gemini app messages with Vault",
+          "url": "https://knowledge.workspace.google.com/vault/retention/retain-gemini-app-messages-with-vault",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GWS-22",
+      "category": "sharing",
+      "title": "Sensitive-content rules for Drive and Chat",
+      "assertion": "In-scope Drive and Chat content is covered by tested DLP rules for the approved sensitive data categories, with an agreed audit-only, warn, or block action and a reviewed rule log.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Rule inventory with detectors, triggers, and actions; supported-edition confirmation by population; synthetic-content trigger test and the resulting rule log event.",
+      "review_gate": "DLP for Drive and Chat is edition-limited; start in audit-only mode and review rule log events before enabling warn or block.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About DLP",
+          "url": "https://knowledge.workspace.google.com/admin/security/about-dlp",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Create DLP for Drive rules and custom content detectors",
+          "url": "https://knowledge.workspace.google.com/admin/security/create-dlp-for-drive-rules-and-custom-content-detectors",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "About DLP for Chat",
+          "url": "https://knowledge.workspace.google.com/admin/security/prevent-data-leaks-from-chat-messages-and-attachments",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GWS-23",
+      "category": "devices",
+      "title": "Managed browser policy",
+      "assertion": "Chrome used for Workspace runs under user-level or enrolled-browser policies covering extension control, sign-in restrictions, and security settings, with enrollment coverage evidenced and unmanaged browsers recorded as exceptions.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Chrome policy export by OU, managed-browser or signed-in-profile coverage report, extension allow/block list, and a denied-extension test.",
+      "review_gate": "User policies follow the signed-in managed profile and enrolled-browser policies follow the device; decide which applies to personal devices before enforcement.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Chrome Enterprise Core",
+          "url": "https://support.google.com/chrome/a/answer/9116814?hl=en",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Set Chrome policies for users or browsers",
+          "url": "https://support.google.com/chrome/a/answer/2657289?hl=en",
+          "reviewed_on": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": "GWS-24",
+      "category": "integrations",
+      "title": "Script and low-code governance",
+      "assertion": "Apps Script and AppSheet availability and external-sharing settings are recorded decisions, internal scripts and apps with broad scopes appear in the app-access inventory, and external connections are allowlisted where the edition supports it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Apps Script and AppSheet service status by OU, internal-app entries in API controls, the external-URL allowlist or a documented gap, and an owner for each production script.",
+      "review_gate": "AppSheet Core settings apply organization-wide and turning Apps Script off blocks execution; inventory installed triggers and shared apps before restricting.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Turn Apps Script on or off for users",
+          "url": "https://knowledge.workspace.google.com/admin/users/access/turn-apps-script-on-or-off-for-users",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Allow only certain external connections for Apps Script and Sheets",
+          "url": "https://knowledge.workspace.google.com/admin/drive/allow-only-certain-external-connections-for-apps-script-and-sheets",
+          "reviewed_on": "2026-09-20"
+        },
+        {
+          "title": "Control access to AppSheet features",
+          "url": "https://knowledge.workspace.google.com/admin/appsheet/control-access-to-appsheet-features",
+          "reviewed_on": "2026-09-20"
         }
       ]
     }
