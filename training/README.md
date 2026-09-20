@@ -4,6 +4,10 @@ Practical lessons for the person who has to explain a decision, make a bounded c
 
 These are independent practice resources. They are not vendor courses, certifications, or records of training already completed. Product references were checked on **September 17, 2026**; record the version and edition used when you run a lab.
 
+## Find free learning for your team
+
+The [100-site training directory](free-training-directory/README.md) covers workplace tools, security, cloud, AI and transferable digital skills. Each entry identifies its free scope, account or customer requirements, official evidence and a proposed starter task. Use the CSV to curate an organization-specific list; product licenses, paid exams and team reporting remain separate. Sources were reviewed September 19, 2026.
+
 ## Learning path
 
 Start with ownership, then choose your identity platform and device platform. Finish with workflow operations. A firm using both ecosystems can complete all six modules.

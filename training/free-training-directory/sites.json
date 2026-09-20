@@ -1,0 +1,2662 @@
+[
+  {
+    "id": "microsoft-365-training",
+    "name": "Microsoft 365 basics video training",
+    "publisher": "Microsoft",
+    "url": "https://support.microsoft.com/en-us/office/microsoft-365-basics-video-training-396b8d9e-e118-42d0-8a0d-87d1f2f055fb",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Team leads",
+      "Help desk staff"
+    ],
+    "access_model": "public",
+    "free_scope": "Public Microsoft 365 quick-start lessons covering creating and saving, sharing, Teams, and working from different locations.",
+    "access_notes": "This is Microsoft Support training, separate from Microsoft Learn. Reading the lessons does not provide Microsoft 365 software or an organizational license. Video playback and tenant exercises were not tested.",
+    "starter_task": "Use a fictional project document to draft a sharing plan: who edits, who only reads, where the approved copy lives, and how a departing collaborator loses access.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Microsoft 365 basics video training",
+        "url": "https://support.microsoft.com/en-us/office/microsoft-365-basics-video-training-396b8d9e-e118-42d0-8a0d-87d1f2f055fb",
+        "support": "Public training index offers quick starts and lessons on saving, sharing, Teams, collaboration, and remote work.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace-learning-center",
+    "name": "Google Workspace Learning Center",
+    "publisher": "Google",
+    "url": "https://support.google.com/a/users",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Executive assistants",
+      "Team leads",
+      "Help desk staff"
+    ],
+    "access_model": "public",
+    "free_scope": "Public product quick starts, business tutorials, and learning organized by role and industry.",
+    "access_notes": "Training pages are publicly readable. Practicing Workspace features requires a suitable Google account and the relevant organizational permissions and edition; the learning center does not supply those entitlements.",
+    "starter_task": "Plan a fictional new hire's first week using a shared document, calendar, and Drive folder. Explain the purpose and proposed permission scope of each item before creating anything.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Google Workspace Learning Center",
+        "url": "https://support.google.com/a/users",
+        "support": "Public learning center includes product guides, role-based learning, hybrid work, and business tutorials.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "slack-tutorials",
+    "name": "Slack tutorials and videos",
+    "publisher": "Slack",
+    "url": "https://slack.com/help/categories/360000049063",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Team leads",
+      "Collaboration administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Public tutorials on channels, conversations, search, standups, meetings, and working with external partners, plus a video index.",
+    "access_notes": "The Slack 101 address redirects to this help-center training destination. Workspace access is separate; tutorials may describe features that depend on the organization's Slack plan. Playback was not tested.",
+    "starter_task": "Design a fictional project channel with a clear purpose, naming rule, update pattern, and escalation route. Draft one searchable status update that a teammate could understand asynchronously.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Slack tutorials and videos",
+        "url": "https://slack.com/help/categories/360000049063",
+        "support": "Public tutorial collection covers common employee collaboration tasks and links supporting videos.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "zoom-learning-center",
+    "name": "Zoom Learning Center",
+    "publisher": "Zoom",
+    "url": "https://learning.zoom.us/learn",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Meeting hosts",
+      "Collaboration administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free on-demand courses and short videos for new and existing Zoom users across account types and user roles.",
+    "access_notes": "Zoom's official support page explicitly says learning is free regardless of account type. Enrollment and saved learning use the learning center; no login or playback was tested. Product licenses and permissions for administrator or Zoom Phone practice remain separate.",
+    "starter_task": "Write a meeting-host checklist for a fictional team meeting, including participant entry, screen sharing, accessibility arrangements, and a fallback if someone cannot join.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Using the Zoom Learning Center",
+        "url": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060166",
+        "support": "Describes free on-demand courses and short videos for all new and existing users, regardless of account type or role.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "webex-academy",
+    "name": "Webex Academy",
+    "publisher": "Cisco",
+    "url": "https://www.webex.com/us/en/adopt/academy.html",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Meeting hosts",
+      "Collaboration administrators",
+      "IT support staff"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free Webex learning, including the administrator and Cisco video-device courses listed with unlimited access in the official administration learning page.",
+    "access_notes": "The listed free courses are the verified scope, not every Cisco course or certification. Enrollment is required; account login and course playback were not tested. Webex product and device access are separate.",
+    "starter_task": "For a fictional meeting room, list the support information needed to diagnose an audio issue and identify which checks an employee can perform versus which need an administrator.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Webex administration help and learning",
+        "url": "https://help.webex.com/en-us/administration",
+        "support": "Lists Collaboration Control Hub Admin Professional and Designing and Deploying Cisco Video-Enabled Devices with unlimited access and free enrollment.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Webex Academy",
+        "url": "https://www.webex.com/us/en/adopt/academy.html",
+        "support": "Official Academy destination for Webex courses and tutorials; its title identifies free courses.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "notion-academy",
+    "name": "Notion Academy",
+    "publisher": "Notion",
+    "url": "https://academy.notion.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Knowledge managers",
+      "Workspace administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced courses and the Essentials, Workflows, and Advanced learning badges described by Notion.",
+    "access_notes": "Sign in with a Notion account. Free badges are different from paid certification exams; the Certified Admin path includes paid exam purchase requirements, and partner certifications have partner eligibility rules. The academy front door blocked automated reading, so the official help page establishes scope.",
+    "starter_task": "Draft a fictional team knowledge page with an owner, review date, source links, and an intake process. Explain how a reader finds the approved procedure rather than an obsolete draft.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Badges and certifications",
+        "url": "https://www.notion.com/en-gb/help/badges-and-certifications",
+        "support": "Distinguishes free Academy courses and badges from paid certification exams and describes account sign-in and partner restrictions.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "monday-academy",
+    "name": "monday academy",
+    "publisher": "monday.com",
+    "url": "https://monday.com/academy",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Project coordinators",
+      "Operations staff",
+      "Workspace administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Free lessons, learning paths, certifications, and training advertised in monday.com's official resource guide.",
+    "access_notes": "Public resource guidance establishes the free learning scope. Course enrollment, sign-in, and playback were not tested; any account requirement should be checked on the selected course. Product features used in an exercise follow the organization's monday.com plan.",
+    "starter_task": "Outline a fictional request board with owner, status, due date, approval, and evidence columns. Define what each status means and when a request must be escalated.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "What resources are available for me to use?",
+        "url": "https://support.monday.com/hc/en-us/articles/360020068040-What-resources-are-available-for-me-to-use",
+        "support": "Describes monday academy as a learning hub with free lessons, paths, certifications, and training.",
+        "published_or_updated": "2026-02-16"
+      }
+    ]
+  },
+  {
+    "id": "atlassian-learning",
+    "name": "Atlassian Learning",
+    "publisher": "Atlassian",
+    "url": "https://community.atlassian.com/learning",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Project teams",
+      "Service desk staff",
+      "Knowledge managers",
+      "Workspace administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Free courses and learning paths across Jira, Confluence, Jira Service Management, Trello, Loom, and other Atlassian tools.",
+    "access_notes": "The former Atlassian University address redirects to this destination. The public hub identifies free courses; sign-in may be requested for enrollment or progress. Do not assume live team training or formal certification exams are included. Product access remains separate.",
+    "starter_task": "Map a fictional support issue from intake to resolution, then draft a short linked knowledge article that records the cause, fix, owner, and review date.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Atlassian Learning",
+        "url": "https://community.atlassian.com/learning",
+        "support": "Public learning hub explicitly offers free courses and product learning paths.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "miro-getting-started",
+    "name": "Miro getting-started tutorials",
+    "publisher": "Miro",
+    "url": "https://miro.com/how-to-use-miro/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Workshop facilitators",
+      "Project teams",
+      "Business analysts"
+    ],
+    "access_model": "public",
+    "free_scope": "Public step-by-step board and collaboration tutorial with links to Miro's official video and learning resources.",
+    "access_notes": "This entry covers the public tutorial, not a verified entitlement to every Academy or partner course. A Miro account is needed to practice; the guide mentions a free plan, while advanced collaboration and AI features can have different plan limits.",
+    "starter_task": "Sketch a fictional retrospective board with prompts, an area for grouping ideas, and an action list. Define who will own each action and how participants can contribute asynchronously.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "How to use Miro",
+        "url": "https://miro.com/how-to-use-miro/",
+        "support": "Public guide explains account setup, board creation, collaboration, and further official learning resources; mentions a free product plan without making every feature free.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "clickup-university",
+    "name": "ClickUp University",
+    "publisher": "ClickUp",
+    "url": "https://university.clickup.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Project coordinators",
+      "Workspace administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free courses, certifications, and tutorials covering ClickUp use and configuration.",
+    "access_notes": "ClickUp's current FAQ describes University courses as free. Official help says courses and certificates are available to all ClickUp users and use SSO through a ClickUp workspace. Paid product or expanded AI capabilities are separate; enrollment was not performed.",
+    "starter_task": "Define a fictional team's task statuses and write a short operating rule for ownership, due dates, blocked work, and completion evidence. Identify one automation that would require separate approval before activation.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "ClickUp FAQs",
+        "url": "https://clickup.com/faqs",
+        "support": "Explicitly describes free University courses, certifications, and detailed tutorials.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Intro to ClickUp University",
+        "url": "https://help.clickup.com/hc/en-us/articles/9865266661655-Intro-to-ClickUp-University",
+        "support": "Says courses, use cases, training, and certificates are available to all users and explains workspace SSO.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "airtable-academy",
+    "name": "Airtable Academy",
+    "publisher": "Airtable",
+    "url": "https://academy.airtable.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Operations staff",
+      "App builders",
+      "Workspace administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced training and certification access for Airtable users on Free, Team, Business, and Enterprise Scale plans.",
+    "access_notes": "The official announcement explicitly removes plan-based Academy restrictions. The academy front door returned 403 to the research tool; enrollment and playback were not tested. Learning access does not remove limits on automations, integrations, or other product features.",
+    "starter_task": "Design a fictional software inventory with separate application, owner, and renewal records. Explain the record relationships and demonstrate how an unknown renewal date stays unknown rather than becoming zero.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Airtable Academy: Now Open for All Customers, No Matter Your Plan!",
+        "url": "https://community.airtable.com/announcements-6/airtable-academy-now-open-for-all-customers-no-matter-your-plan-1564",
+        "support": "Official employee announcement says Academy is free for all plans, including Free, and covers courses and certification.",
+        "published_or_updated": "2024-10-08"
+      }
+    ]
+  },
+  {
+    "id": "lucid-training-labs",
+    "name": "Lucid Training Labs",
+    "publisher": "Lucid",
+    "url": "https://training.lucid.co/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Business analysts",
+      "Project teams",
+      "Process owners"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced Lucidchart and Lucidspark training, including fundamentals learning and badges highlighted by Lucid.",
+    "access_notes": "Lucid's plan table includes Training Labs on its Free plan as well as paid plans. The portal returned 403 to this tool, so registration, course playback, and badge completion were not tested. Product features and AI usage remain subject to the account's plan.",
+    "starter_task": "Draw a fictional onboarding process with decision points, responsible roles, and a clear end state. Ask a colleague to locate the approval and exception paths without verbal explanation.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Lucid's best of 2025",
+        "url": "https://lucid.co/blog/best-of-2025",
+        "support": "Identifies Training Labs as free self-paced courses and links fundamentals badge courses.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Learning Campus Hub",
+        "url": "https://lucid.co/learning-campus",
+        "support": "Official learning hub links Training Labs, product quick starts, and supporting help resources.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Lucid Plans",
+        "url": "https://help.lucid.co/hc/en-us/articles/360056903132-Lucid-Plans",
+        "support": "Current plan comparison marks Lucid Training Labs available on Free and paid plans, separately from tailored paid training.",
+        "published_or_updated": "2026-08-14"
+      }
+    ]
+  },
+  {
+    "id": "canva-design-school",
+    "name": "Canva Design School",
+    "publisher": "Canva",
+    "url": "https://www.canva.com/design-school/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Communications staff",
+      "Marketing staff",
+      "Team leads"
+    ],
+    "access_model": "public",
+    "free_scope": "Public tutorials, guides, and course discovery, including the explicitly free Canva AI certification course highlighted on the site.",
+    "access_notes": "The free scope is selected learning identified by Design School, not every Canva asset or product feature. Course progress and certification may require an account; enrollment and playback were not tested. Pro features and content licenses remain separate.",
+    "starter_task": "Create a brief for a fictional internal announcement: audience, essential message, accessible text hierarchy, and one call to action. Review the draft for readable contrast and unsupported AI-generated claims.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Canva Design School",
+        "url": "https://www.canva.com/design-school/",
+        "support": "Public learning destination offers design and communication tutorials and identifies a free Canva AI certification course.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "adobe-learn",
+    "name": "Adobe Learn",
+    "publisher": "Adobe",
+    "url": "https://www.adobe.com/learn",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Communications staff",
+      "Marketing staff",
+      "Document owners"
+    ],
+    "access_model": "public",
+    "free_scope": "Free Adobe tutorials and courses spanning design, photography, video, and document work.",
+    "access_notes": "Adobe Learn publicly advertises free learning. Sign-in supports a saved learning journey; paid Adobe applications or premium features are not supplied by the tutorials. A software trial is not counted as free training entitlement.",
+    "starter_task": "Using a fictional PDF, write a redaction verification checklist that checks visible content, search results, and copied text. Practice only in an authorized app with the required features, or review the steps on paper.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Adobe Learn",
+        "url": "https://www.adobe.com/learn",
+        "support": "Explicitly offers thousands of free tutorials and courses and includes PDF redaction, protection, and editing topics.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "figma-learn",
+    "name": "Figma Learn",
+    "publisher": "Figma",
+    "url": "https://help.figma.com/hc/en-us/categories/360002042553-Figma-design",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Designers",
+      "Product teams",
+      "Communications staff"
+    ],
+    "access_model": "public",
+    "free_scope": "Public Figma design learning, including courses, projects, video tutorials, prototyping, components, and collaboration guidance.",
+    "access_notes": "Reading the learning material is public. Hands-on practice requires a Figma account and the appropriate feature permissions or plan. No certification, paid product entitlement, or video playback is claimed.",
+    "starter_task": "Draft a two-screen fictional employee-help prototype. Add a clear next step, one error state, and a handoff note explaining what a developer should verify rather than assume.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Figma design learning",
+        "url": "https://help.figma.com/hc/en-us/categories/360002042553-Figma-design",
+        "support": "Public learning collection links courses, projects, tutorials, and guidance on design and collaboration tasks.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "dropbox-learn",
+    "name": "Dropbox Learn",
+    "publisher": "Dropbox",
+    "url": "https://learn.dropbox.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Team leads",
+      "Collaboration administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Public self-guided learning and short videos, with fundamentals and business user or administrator learning paths.",
+    "access_notes": "The fundamentals course is publicly listed for Basic, Plus, Family, and Professional accounts; business training requires corresponding product access to practice. Course launch and playback were not tested. The site's displayed zero-minute duration is not treated as reliable timing data.",
+    "starter_task": "Plan a fictional team's shared folder and external-review process. Explain ownership, intended recipient access, how to avoid conflicting copies, and how access should end.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Dropbox Learn",
+        "url": "https://learn.dropbox.com/",
+        "support": "Public learning hub lists self-guided fundamentals and business learning paths plus short videos.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Dropbox fundamentals course",
+        "url": "https://learn.dropbox.com/self-guided-learning/dropbox-fundamentals-course",
+        "support": "Public course overview covers storage, upload, download, and sharing for named personal account types.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "box-university",
+    "name": "Box University",
+    "publisher": "Box",
+    "url": "https://training.box.com/catalog",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Employees",
+      "Content owners",
+      "Collaboration administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced admin and Intelligent Content Management learning with the associated certification exam described in Box's FAQ.",
+    "access_notes": "The certification FAQ permits a free Box University account or a Box product account. Its associated self-paced courses and exam are free. This does not include every instructor-led offering or paid product features used for practice.",
+    "starter_task": "For a fictional policy folder, outline document ownership, review approval, version handling, and access rules. Identify how evidence of approval differs from someone merely opening the document.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Get certified for free as an Intelligent Content Expert",
+        "url": "https://community.box.com/general-15/get-certified-for-free-as-an-intelligent-content-expert-now-live-31714?sort=mostRecentFirst",
+        "support": "Official Box announcement describes the Intelligent Content Management program and its certification exam as free.",
+        "published_or_updated": "2025-06-23"
+      },
+      {
+        "title": "Box user support",
+        "url": "https://www.box.com/en-in/resources/user-support",
+        "support": "Directs users to log into Box University with their Box account and links training resources.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Box Certified Admin FAQs",
+        "url": "https://support.box.com/hc/en-us/articles/42153466746771-Box-Certified-Admin-FAQs",
+        "support": "Permits a free Box University account as an alternative to a product account; states associated self-paced courses and exam are free.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "docusign-university",
+    "name": "Docusign University",
+    "publisher": "Docusign",
+    "url": "https://dsucustomers.docusign.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Operations staff",
+      "Agreement coordinators",
+      "Contract administrators"
+    ],
+    "access_model": "customer-included",
+    "free_scope": "Selected free IAM courses and videos, plus complimentary eSignature webinars identified in official Docusign learning guidance.",
+    "access_notes": "This entry targets existing Docusign customers. The customer learning portal blocked automated access, so enrollment was not tested. Campus Pass instructor-led deep dives are a separate subscription. Free community registration is not treated as proof of learning-portal or product entitlement.",
+    "starter_task": "Draw a fictional agreement workflow with a preparer, reviewer, signer, and final record owner. Identify the approval needed before sending and the evidence required before declaring the agreement complete.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Begin your IAM Journey with Docusign University",
+        "url": "https://community.docusign.com/tips-from-docusign-155/begin-your-iam-journey-with-docusign-university-24389",
+        "support": "Official employee post identifies free IAM webinars, self-paced courses, and video playlists.",
+        "published_or_updated": "2025-06-09"
+      },
+      {
+        "title": "Quick Start eSignature User Learning Roadmap",
+        "url": "https://community.docusign.com/tips-from-docusign-155/quick-start-esignature-user-learning-roadmap-22880",
+        "support": "Separates complimentary webinars from Campus Pass subscription deep dives and links learning paths.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "salesforce-trailhead",
+    "name": "Salesforce Trailhead",
+    "publisher": "Salesforce",
+    "url": "https://trailhead.salesforce.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Sales staff",
+      "Service teams",
+      "Business analysts",
+      "Administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free modules, learning paths, and hands-on training in supplied Salesforce learning environments.",
+    "access_notes": "A Trailhead account is used for progress and hands-on learning. Do not assume instructor-led Trailhead Academy training or formal Salesforce certification exams are included. No course or assessment was completed during research.",
+    "starter_task": "Use a fictional customer-support scenario to explain the record fields, owner, and next action needed for a clean handoff. Follow an introductory module in its training environment rather than a live customer account.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Trailhead",
+        "url": "https://trailhead.salesforce.com/",
+        "support": "Official portal explicitly advertises free learning and free hands-on practice in Salesforce environments.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "hubspot-academy",
+    "name": "HubSpot Academy",
+    "publisher": "HubSpot",
+    "url": "https://academy.hubspot.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Marketing staff",
+      "Sales staff",
+      "Customer service staff",
+      "Operations staff"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free online courses and certifications across marketing, sales, service, and HubSpot software topics.",
+    "access_notes": "A free Academy account provides learning access. Some software certifications require paid Professional or Enterprise product access for mandatory practical exercises; free courses do not supply that access. Educational partner entitlements are a separate program. Enrollment and credential completion were not tested.",
+    "starter_task": "Draft a fictional lead-to-service handoff with agreed qualification fields, a receiving owner, and a response expectation. Review whether the proposed message makes any unsupported promises.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "HubSpot Academy",
+        "url": "https://academy.hubspot.com/",
+        "support": "Official academy states its online learning is free and offers courses and certifications across business functions.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "HubSpot certifications: practical exercise and product access requirements",
+        "url": "https://academy.hubspot.com/education-partner-program/epp-certifications-professors",
+        "support": "Separates certifications without paid-product practical exercises from software certifications requiring paid product capabilities; educational partner access is a distinct entitlement.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "fin-academy",
+    "name": "Fin Academy (formerly Intercom Academy)",
+    "publisher": "Intercom",
+    "url": "https://academy.fin.ai/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Customer service staff",
+      "Support operations staff",
+      "Knowledge managers"
+    ],
+    "access_model": "customer-included",
+    "free_scope": "Academy courses for existing Intercom users, including product and support-operations learning.",
+    "access_notes": "Current official signup guidance requires an Intercom account and links the renamed Fin Academy. Older published Academy terms describe free learning accounts and say course quizzes do not require workspace use. This entry conservatively covers existing customers, not acquisition of an Intercom product trial or any claim that Fin usage is free.",
+    "starter_task": "Draft a fictional support knowledge article and define when an AI support answer must escalate to a person. Write two test questions: one clearly covered by the article and one requiring information it does not contain.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Signing up for Fin Academy",
+        "url": "https://www.intercom.com/help/en/articles/4322438-signing-up-for-fin-academy",
+        "support": "Current help names academy.fin.ai and explains Intercom-account sign-in for course access.",
+        "published_or_updated": "2026-05-18"
+      },
+      {
+        "title": "Academy Terms",
+        "url": "https://www.intercom.com/legal/academy-terms",
+        "support": "Published terms describe free Academy accounts and distinguish course quizzes from recommended workspace practice.",
+        "published_or_updated": "2019-10-10"
+      }
+    ]
+  },
+  {
+    "id": "servicenow-university",
+    "name": "ServiceNow University",
+    "publisher": "ServiceNow",
+    "url": "https://learning.servicenow.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Service desk staff",
+      "Process owners",
+      "Administrators",
+      "Business analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free on-demand learning within a mixed free and paid ServiceNow training catalog.",
+    "access_notes": "Creating a profile and browsing is free. Official FAQs distinguish free on-demand learning from priced instructor-led or private training; inspect each course's price before enrollment. Certification exams, lab entitlements, company benefits, and learning credits are not assumed included. No live instance work was performed.",
+    "starter_task": "Describe a fictional incident record with impact, urgency, assigned owner, escalation trigger, and closure evidence. Explain how it differs from a routine service request before selecting the relevant introductory lesson.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Training FAQs",
+        "url": "https://learning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012229",
+        "support": "Official knowledge article says profiles are free, catalog contains free and paid options, and identifies on-demand learning as free in its training comparison.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "workato-academy",
+    "name": "Workato Academy",
+    "publisher": "Workato",
+    "url": "https://academy.ifr.workato.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Operations staff",
+      "Automation builders",
+      "Integration administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced enterprise automation courses and certifications, including foundations and role-oriented learning.",
+    "access_notes": "The official Academy page labels its learning free and marks courses as requiring login. Product workspace access, live bootcamps, and private training are not assumed included. No automation was connected to a real business system.",
+    "starter_task": "Map a fictional access-request automation with required inputs, a named approver, success evidence, and a failure route. Identify the point at which a human decision must precede any account change.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Workato Academy: Free Enterprise Automation Courses and Certifications",
+        "url": "https://academy.ifr.workato.com/",
+        "support": "Official academy landing page advertises free courses and certifications and labels course access as requiring login.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "make-academy",
+    "name": "Make Academy",
+    "publisher": "Make",
+    "url": "https://academy.make.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Operations staff",
+      "Automation builders",
+      "Business analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced automation courses and badges with a free Academy profile.",
+    "access_notes": "Make says the Academy is free without subscriptions. Each course enrollment lasts six months, but learners can re-enroll at any time with progress saved; this is renewable free learning, not a paid product trial. Make operations, connected apps, and external AI services have separate usage limits and costs.",
+    "starter_task": "On paper, map a fictional request from intake to a validation step and a review queue. Specify what happens when a required field is missing and how a retry avoids a duplicate action.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Make Academy",
+        "url": "https://academy.make.com/",
+        "support": "Official FAQ states the Academy is free, explains account signup, and permits re-enrollment after the six-month course access period with progress retained.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "zapier-academy",
+    "name": "Zapier Academy",
+    "publisher": "Zapier",
+    "url": "https://learn.zapier.com/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Operations staff",
+      "Automation builders",
+      "Team leads"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free Academy learning with a Zapier account, including the verified AI Builder Path and basic-to-intermediate Zap concepts.",
+    "access_notes": "The AI Builder Path explicitly says it is free with a Zapier account. This does not include every paid Zapier capability, connected application, or AI-service charge. Enrollment and live automation execution were not tested.",
+    "starter_task": "Specify a fictional request-routing Zap with its trigger, field mapping, and expected output. Include a missing-data case and a duplicate-input case, and state how a reviewer would verify the proposed behavior before enabling it.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "AI Builder Path — Zapier Academy",
+        "url": "https://learn.zapier.com/courses/c8a7d45c-ecf1-480f-ba21-d10f6fed4b39/sections/9d862b0e-9d34-4a8b-bae2-2f41ea87c0c3/blocks/d0216a4a-8bbe-4111-b1c2-195130dfe0f8",
+        "support": "Public path description says learning is free with a Zapier account and lists foundational and intermediate automation topics.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "cisco-networking-academy",
+    "name": "Cisco Networking Academy",
+    "publisher": "Cisco",
+    "url": "https://www.netacad.com/",
+    "category": "Security and IT operations",
+    "audience": [
+      "IT support staff",
+      "network administrators",
+      "security analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Selected free, self-paced networking, cybersecurity, and digital-skills courses, including introductory cybersecurity and networking.",
+    "access_notes": "Create a learner account for enrollment and progress. This entry covers the free self-paced catalog, not every instructor-led academy offering or certification exam. Skills for All is not counted separately.",
+    "starter_task": "After an introductory networking lesson, draw the path from a fictional employee laptop to a business application and label three places where an outage could occur.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Cisco Networking Academy",
+        "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/netacad/index.html",
+        "support": "Cisco explicitly describes free self-paced online courses and links the Networking Academy learning catalog.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "fortinet-training-institute",
+    "name": "Fortinet Training Institute: self-paced lessons",
+    "publisher": "Fortinet",
+    "url": "https://training.fortinet.com/",
+    "category": "Security and IT operations",
+    "audience": [
+      "security analysts",
+      "network administrators",
+      "IT support staff"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Self-paced online lessons in the Training Institute library; the registration FAQ states that these lessons are free.",
+    "access_notes": "Portal login and course enrollment are required. On-demand labs are excluded from free lessons and are purchased separately. Do not assume certification exams or instructor-led training are included.",
+    "starter_task": "Use a fictional remote-access request to explain the identity, device, network, and logging checks you would require before recommending access.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "How do I register for the free online self-paced training?",
+        "url": "https://helpdesk.training.fortinet.com/support/solutions/articles/73000524102-how-do-i-register-for-the-free-online-self-paced-training-",
+        "support": "The FAQ identifies free self-paced lessons, the login/enrollment process, and the separately purchased on-demand labs. The visible modification label did not include a year.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "palo-alto-learning-center",
+    "name": "Palo Alto Networks Learning Center: digital learning",
+    "publisher": "Palo Alto Networks",
+    "url": "https://learn.paloaltonetworks.com/",
+    "category": "Security and IT operations",
+    "audience": [
+      "security analysts",
+      "network administrators",
+      "cloud administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "The free digital-learning module library described by Education Services, covering Palo Alto Networks security topics and products.",
+    "access_notes": "Use the Learning Center enrollment/account route. Free digital modules do not imply a product subscription, instructor-led training, hands-on lab entitlement, or certification exam. Beacon is not a separate directory entry.",
+    "starter_task": "After a relevant security module, draft a fictional firewall-change review with an allowed flow, a denied flow, the required evidence, and a rollback condition.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Education Services, Training and Certification",
+        "url": "https://www.paloaltonetworks.com/services/education",
+        "support": "The Digital Learning section explicitly identifies a free module library and links the current Learning Center; instructor-led training and certification are separate offerings.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "check-point-jump-start",
+    "name": "Check Point Jump Start eLearning",
+    "publisher": "Check Point Software",
+    "url": "https://www.checkpoint.com/elearning/",
+    "category": "Security and IT operations",
+    "audience": [
+      "network administrators",
+      "security analysts",
+      "IT support staff"
+    ],
+    "access_model": "free-account",
+    "free_scope": "The free Jump Start training series identified on the official eLearning page.",
+    "access_notes": "The official landing page routes to learning platforms; registration and playback requirements depend on the selected platform. Free scope is Jump Start, not the entire MIND catalog, product licenses, advanced training, or certification exams. Enrollment was not attempted.",
+    "starter_task": "Use a fictional branch-office diagram to explain which traffic a gateway policy should allow, what should be denied, and which log would help verify the decision.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Cyber Security Free eLearning",
+        "url": "https://www.checkpoint.com/elearning/",
+        "support": "The current official page explicitly labels Jump Start as a free training series offered through learning platforms. It does not establish that every Check Point training product is free.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "sailpoint-identity-university",
+    "name": "SailPoint Identity University: introductory training",
+    "publisher": "SailPoint",
+    "url": "https://www.sailpoint.com/university",
+    "category": "Security and IT operations",
+    "audience": [
+      "identity administrators",
+      "security analysts",
+      "IT managers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Introductory identity-security courses made available at no cost to public learners, including learners outside customer and partner organizations.",
+    "access_notes": "An Identity University account is required. The public free subset is introductory training; comprehensive on-demand subscriptions, advanced courses, and certification exams are not implied. Verify the selected course remains in the free subset before assigning it.",
+    "starter_task": "Create an access-review worksheet for a fictional employee changing departments: current access, proposed access, approver, expiry, and evidence that removal actually occurred.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "SailPoint opens up Identity University to the public",
+        "url": "https://www.sailpoint.com/press-releases/sailpoint-opens-up-identity-university-to-the-public",
+        "support": "The official announcement explicitly allows anyone to register for introductory training at no cost and separates this from the full paid subscription.",
+        "published_or_updated": "2023-10-10"
+      },
+      {
+        "title": "Identity University: training and certification",
+        "url": "https://www.sailpoint.com/university",
+        "support": "Current FAQ and Start Learning section describe a free open portfolio of foundational courses, alongside paid training offerings.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "jamf-100",
+    "name": "Jamf 100 Course",
+    "publisher": "Jamf",
+    "url": "https://www.jamf.com/training/100-course/",
+    "category": "Security and IT operations",
+    "audience": [
+      "Mac administrators",
+      "IT support staff",
+      "endpoint administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "The free Jamf 100 video and text lessons, knowledge checks, interactive simulations, and practice-exam preparation.",
+    "access_notes": "Public course materials have no listed prerequisite. The optional certification exam is a separate purchase. Free lessons do not provide a Jamf Pro tenant or Apple hardware. Viewing lessons is separate from demonstrating skill.",
+    "starter_task": "Using fictional device records, propose the scope of a software policy and list which evidence would distinguish membership, policy execution, and a successful installation.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Jamf 100 Course",
+        "url": "https://www.jamf.com/training/100-course/",
+        "support": "The official course page identifies 25 free video/text lessons, quizzes, simulations, a practice exam, and no course prerequisites; the exam is a separate option.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "ninjaone-academy",
+    "name": "NinjaOne Academy",
+    "publisher": "NinjaOne",
+    "url": "https://www.ninjaone.com/ninjaone-academy/",
+    "category": "Security and IT operations",
+    "audience": [
+      "IT support staff",
+      "endpoint administrators",
+      "managed service technicians"
+    ],
+    "access_model": "customer-included",
+    "free_scope": "Academy training is free of additional charge for NinjaOne customers.",
+    "access_notes": "Only NinjaOne customers are eligible. Access starts in the NinjaOne application Help menu; an account representative may need to enable the Academy link. This is not a free product subscription or a public enrollment offer.",
+    "starter_task": "Use three fictional endpoint alerts to draft a triage decision, an escalation owner, and the evidence needed before closing each ticket.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "NinjaOne Academy",
+        "url": "https://www.ninjaone.com/ninjaone-academy/",
+        "support": "The FAQ states that the program is free of charge, only NinjaOne customers can enroll, and access is through the application Help menu.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "khan-academy",
+    "name": "Khan Academy",
+    "publisher": "Khan Academy",
+    "url": "https://www.khanacademy.org/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Analysts",
+      "Employees building digital confidence"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free foundational mathematics, statistics, economics and computing learning.",
+    "access_notes": "Public material can be browsed; an account supports learning progress. This entry covers the core free platform, not every tutoring, district or AI add-on.",
+    "starter_task": "Explain a percentage change and probability statement using a fictional service-performance report.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Khan Academy — official access and learning information",
+        "url": "https://www.khanacademy.org/about",
+        "support": "Describes a free platform for anyone and identifies mathematics, economics, computing and other subject areas.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "cloudflare-learning-center",
+    "name": "Cloudflare Learning Center",
+    "publisher": "Cloudflare",
+    "url": "https://www.cloudflare.com/learning/",
+    "category": "Security and IT operations",
+    "audience": [
+      "IT support staff",
+      "network administrators",
+      "business technology owners"
+    ],
+    "access_model": "public",
+    "free_scope": "Public explanatory articles on DNS, TLS, DDoS, network security, email security, and related Internet concepts.",
+    "access_notes": "This is an openly readable learning library, not a tracked course or certification program. Cloudflare product subscriptions and deployment access are separate from reading the articles.",
+    "starter_task": "Build a one-page fictional website troubleshooting map distinguishing DNS resolution, TLS negotiation, application availability, and the evidence needed at each boundary.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Learning Center",
+        "url": "https://www.cloudflare.com/learning/",
+        "support": "The public page provides topic collections and direct articles for DNS, TLS, DDoS, network-layer, and email-security learning.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "apple-it-training",
+    "name": "Apple Professional Training: IT courses",
+    "publisher": "Apple",
+    "url": "https://training.apple.com/it",
+    "category": "Security and IT operations",
+    "audience": [
+      "IT support staff",
+      "Mac administrators",
+      "endpoint administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Self-paced Apple Device Support and Apple Deployment and Management course materials, with related IT-training resources.",
+    "access_notes": "Course viewing is separate from paid certification exams and any hardware, MDM, or service subscription used for practice. The current course pages require JavaScript; lessons were not played or completed. No limited-time exam-retake promotion is included.",
+    "starter_task": "Using a fictional Mac support ticket, write an intake checklist that separates the reported symptom, device and OS facts, diagnostic evidence, and escalation trigger.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "IT Training",
+        "url": "https://training.apple.com/it",
+        "support": "The current catalog links device-support and deployment courses and separates course study from exam registration.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Apple introduces new professional training to support growing IT workforce",
+        "url": "https://www.apple.com/newsroom/2022/05/apple-introduces-new-professional-training-to-support-growing-it-workforce/",
+        "support": "Apple explicitly states that the self-paced courses are freely available while certification exams are paid; historical prices are not carried forward here.",
+        "published_or_updated": "2022-05-18"
+      }
+    ]
+  },
+  {
+    "id": "1password-academy",
+    "name": "1Password Academy",
+    "publisher": "1Password",
+    "url": "https://www.1password.academy/",
+    "category": "Security and IT operations",
+    "audience": [
+      "employees",
+      "IT support staff",
+      "identity administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced learning for 1Password administrators and end users, including business-administration learning.",
+    "access_notes": "Create an Academy learner account to enroll. Product features still depend on a 1Password subscription and permissions. Course enrollment or a badge is not evidence that an employee can safely administer a production account.",
+    "starter_task": "Create a fictional vault-and-group access matrix for an employee, help-desk analyst, and administrator; explain one request each role should escalate.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Roll out 1Password with confidence: Start learning on 1Password Academy",
+        "url": "https://1password.com/blog/1password-academy-free-learning-platform-launch",
+        "support": "The launch article identifies the Academy as a free platform for admins and end users and describes structured self-paced learning. It links the current Academy, replacing the older University name.",
+        "published_or_updated": "2026-02-20"
+      }
+    ]
+  },
+  {
+    "id": "keeper-101",
+    "name": "Keeper 101 videos and user guides",
+    "publisher": "Keeper Security",
+    "url": "https://www.keepersecurity.com/support.html",
+    "category": "Security and IT operations",
+    "audience": [
+      "employees",
+      "IT support staff",
+      "password-manager administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Public Keeper 101 walkthrough videos and linked user-guide material for core password-manager tasks.",
+    "access_notes": "Public support and tutorial material is the verified free subset. Keeper product plans, enterprise administration, and any separate Keeper University entitlement are not included. Actual vault access is unnecessary for a fictional practice exercise.",
+    "starter_task": "Write a short fictional handoff explaining how a team should request access to a shared credential, identify its owner, and confirm appropriate sharing without including any real password.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Keeper Support",
+        "url": "https://www.keepersecurity.com/support.html",
+        "support": "The public support page provides Keeper 101 video resources and user guides alongside separate support and learning offerings.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "bitwarden-courses",
+    "name": "Bitwarden Courses",
+    "publisher": "Bitwarden",
+    "url": "https://bitwarden.com/help/courses/",
+    "category": "Security and IT operations",
+    "audience": [
+      "employees",
+      "IT support staff",
+      "password-manager administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Public courses organized for personal users, business users, help desks, and administrators, plus introductory Secrets Manager material.",
+    "access_notes": "Reading the courses does not require buying a business product. Practice involving Teams, Enterprise, or Secrets Manager features may require the relevant product plan and permissions; no business license or certification is implied.",
+    "starter_task": "For a fictional three-person team, draft collection membership and permissions, then explain how a reviewer would verify that an offboarded user no longer has access.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Bitwarden Courses",
+        "url": "https://bitwarden.com/help/courses/",
+        "support": "The public course catalog separates business end-user, help-desk, administrator, and other learning tracks.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Password Manager Business Overview",
+        "url": "https://bitwarden.com/help/courses/password-manager-business-overview/",
+        "support": "The course introduction publicly describes business-user and administrator topics including managing users and sharing credentials.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "okta-learning",
+    "name": "Okta Learning: no-cost on-demand resources",
+    "publisher": "Okta",
+    "url": "https://learning.okta.com/",
+    "category": "Security and IT operations",
+    "audience": [
+      "identity administrators",
+      "IT support staff",
+      "security analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "The public no-cost on-demand foundational learning subset described in the official Okta Learning catalog.",
+    "access_notes": "A learning account is used for enrollment. The Expert Learning Pass, advanced instructor-led offerings, certification exams, and an Okta production tenant are separate. Do not interpret the whole catalog as free.",
+    "starter_task": "Draft a fictional SSO support handoff that distinguishes an authentication failure, an application-assignment issue, and an authorization failure, with one evidence request for each.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Okta Learning Catalog",
+        "url": "https://www.okta.com/sites/default/files/2023-01/Education-Services-Catalog-2022.pdf",
+        "support": "The retrieved PDF identifies itself as the 2025 catalog despite its older URL. It describes public no-cost on-demand resources separately from the paid Expert Learning Pass; no exact publication date was stated.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "portswigger-web-security-academy",
+    "name": "Web Security Academy",
+    "publisher": "PortSwigger",
+    "url": "https://portswigger.net/web-security",
+    "category": "Security and IT operations",
+    "audience": [
+      "application developers",
+      "security analysts",
+      "application security engineers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free web-security learning content and interactive practice labs, with learner progress tracking.",
+    "access_notes": "Create a free account for lab access and tracking. Some exercises use Burp Suite; the free Community Edition is available, while paid professional products and separate certification are outside this listing. Practice only in the supplied authorized labs.",
+    "starter_task": "Complete one provided access-control lab, then write the observed failure, the minimum corrective control, and a retest plan using only the lab scenario.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Web Security Academy",
+        "url": "https://portswigger.net/web-security",
+        "support": "The Academy states that its learning content and labs are free, explains account-based progress, and distinguishes its own learning environment from other products.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "owasp-webgoat",
+    "name": "OWASP WebGoat",
+    "publisher": "OWASP Foundation",
+    "url": "https://owasp.org/projects/webgoat",
+    "category": "Security and IT operations",
+    "audience": [
+      "application developers",
+      "application security engineers",
+      "security analysts"
+    ],
+    "access_model": "public",
+    "free_scope": "Open-source interactive web-application security lessons in a deliberately vulnerable teaching application.",
+    "access_notes": "Learners supply an isolated local environment and required runtime or container tooling. This is downloadable learning software, not a managed LMS or a production-safe application. Keep it isolated and follow the project setup warnings.",
+    "starter_task": "In a local isolated WebGoat lesson, record an input-validation weakness, explain why it works, and describe a defensive change; do not test a real service.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "OWASP WebGoat",
+        "url": "https://owasp.org/projects/webgoat",
+        "support": "The project provides free open resources, interactive lessons, installation links, and explicit warnings about running its deliberately vulnerable application.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "sans-security-resources",
+    "name": "SANS free security resources and webcasts",
+    "publisher": "SANS Institute",
+    "url": "https://www.sans.org/security-resources",
+    "category": "Security and IT operations",
+    "audience": [
+      "security analysts",
+      "incident responders",
+      "IT managers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free community resources such as webcasts, summit presentations, operational cheat sheets, and selected training tools.",
+    "access_notes": "Some resources are public and others require a free community membership or event registration. This is not free access to the full SANS course catalog, GIAC exams, or an awareness-training subscription. Time-limited trials are excluded.",
+    "starter_task": "After a relevant incident-response webcast or guide, write a fictional first-20-minutes triage checklist with an evidence owner, an escalation trigger, and an unresolved question.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Cyber Security Resources",
+        "url": "https://www.sans.org/security-resources",
+        "support": "The current official resource hub advertises free community membership, webinars, presentations, and practical security resources; the former /free route redirects here.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "ncsc-top-tips-for-staff",
+    "name": "Top Tips for Staff",
+    "publisher": "UK National Cyber Security Centre",
+    "url": "https://www.ncsc.gov.uk/information/top-tips-for-staff",
+    "category": "Security and IT operations",
+    "audience": [
+      "employees",
+      "people managers",
+      "security awareness coordinators"
+    ],
+    "access_model": "public",
+    "free_scope": "Free staff-awareness eLearning with a quiz and downloadable SCORM packages for organizational delivery.",
+    "access_notes": "The public online course requires no login. The publisher offers SCORM packages for an organization's own LMS; LMS hosting and local reporting remain the organization's responsibility. Content uses UK guidance and examples and should be adapted to local reporting procedures.",
+    "starter_task": "Have a learner classify a fictional suspicious message, explain the warning signs, and identify the organization's intended reporting route without sending any message.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Top Tips for Staff",
+        "url": "https://www.ncsc.gov.uk/information/top-tips-for-staff",
+        "support": "NCSC explicitly describes free training for organizations of any size or sector, no-login online access, and downloadable SCORM versions.",
+        "published_or_updated": "2025-05-19"
+      }
+    ]
+  },
+  {
+    "id": "apnic-academy",
+    "name": "APNIC Academy online courses",
+    "publisher": "APNIC",
+    "url": "https://academy.apnic.net/en/online-courses",
+    "category": "Security and IT operations",
+    "audience": [
+      "network administrators",
+      "IT support staff",
+      "security analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "The catalog of free online courses, including cybersecurity fundamentals, IPv6, BGP, and routing-related topics.",
+    "access_notes": "Use an APNIC Login to enroll and retain progress. Free online study does not imply that travel, scheduled instructor-led events, Internet resources, or a production lab are provided.",
+    "starter_task": "Prepare an IPv6 address plan for a fictional two-office organization and document prefix allocation, ownership, and two facts that need verification before implementation.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Online Courses",
+        "url": "https://academy.apnic.net/en/online-courses",
+        "support": "The official online course catalog labels the listed courses Free and provides enrollment/login links.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "internet-society-learning",
+    "name": "Internet Society Learning",
+    "publisher": "Internet Society",
+    "url": "https://www.internetsociety.org/learning/",
+    "category": "Security and IT operations",
+    "audience": [
+      "network administrators",
+      "IT managers",
+      "policy and governance staff"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free online courses on Internet operations, policy, security, and related foundational concepts.",
+    "access_notes": "Free guest registration is available; paid membership is not required. Course language, prerequisites, and bandwidth formats vary. This listing covers online learning, not a guarantee of instructor support, an external credential, or implementation access.",
+    "starter_task": "Create a fictional organization's Internet-dependency map, identify one resilience risk, and list the evidence needed to distinguish a local outage from an upstream provider failure.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Learning Frequently Asked Questions",
+        "url": "https://www.internetsociety.org/learning/faqs/",
+        "support": "The FAQ states that courses are free and explains guest/member registration, course prerequisites, and available bandwidth formats.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "ripe-ncc-academy",
+    "name": "RIPE NCC Academy",
+    "publisher": "RIPE NCC",
+    "url": "https://academy.ripe.net/",
+    "category": "Security and IT operations",
+    "audience": [
+      "network administrators",
+      "network engineers",
+      "IT infrastructure staff"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free online Academy courses and associated online learning available to members and non-members.",
+    "access_notes": "Use a learner account for enrollment and progress. RIPE NCC in-person training benefits and member exam vouchers are separate from the public free online offering; do not assume a free certification exam.",
+    "starter_task": "Using a fictional routing-change proposal, identify the intended announcement, an RPKI validation question, a rollback trigger, and evidence needed from the operator.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Training",
+        "url": "https://www.ripe.net/training/",
+        "support": "RIPE NCC explicitly states that Academy eLearning and webinars are free to members and non-members while describing member-only training and exam benefits separately.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "qualys-training",
+    "name": "Qualys Certification and Training Center",
+    "publisher": "Qualys",
+    "url": "https://www.qualys.com/training",
+    "category": "Security and IT operations",
+    "audience": [
+      "security analysts",
+      "vulnerability-management staff",
+      "IT administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "The official free course catalog, including self-paced training and hands-on learning for Qualys topics.",
+    "access_notes": "Create a training account and check the chosen course prerequisites and delivery dates. Free course/lab access is not a Qualys production subscription; scheduled sessions remain subject to availability. Do not run scans on organizational systems as an unapproved learning exercise.",
+    "starter_task": "After vulnerability-management foundations, rank five fictional findings using asset importance, exposure, and evidence quality; record what remains unknown before recommending remediation.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Qualys Certification and Training Center",
+        "url": "https://www.qualys.com/training",
+        "support": "The official training page advertises free courses with hands-on labs, self-paced and scheduled delivery, and training-account creation.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "hpe-networking-open-learning",
+    "name": "HPE Networking Open Learning",
+    "publisher": "HPE Networking",
+    "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=11478",
+    "category": "Security and IT operations",
+    "audience": [
+      "network administrators",
+      "network engineers",
+      "security analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free Open Learning courses on the Juniper learning portal, including foundational networking and security tracks.",
+    "access_notes": "Guest-user registration is available for learning access. Certification exams and any discounted exam vouchers are separate; no exam discount or limited-time offer is counted as free training. Hardware and production access are not included.",
+    "starter_task": "Use a fictional network outage to explain the expected packet path, identify the first diagnostic observation you would request, and distinguish a routing issue from a policy block.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Get Started with Free HPE Networking Training",
+        "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=11478",
+        "support": "The current portal explicitly offers free Open Learning and guest registration; its examination information concerns separate discounted exams, not free exams.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "mitre-attack-cti-training",
+    "name": "MITRE ATT&CK for Cyber Threat Intelligence training",
+    "publisher": "MITRE",
+    "url": "https://attack.mitre.org/resources/learn-more-about-attack/training/cti/",
+    "category": "Security and IT operations",
+    "audience": [
+      "security analysts",
+      "threat-intelligence analysts",
+      "incident responders"
+    ],
+    "access_model": "public",
+    "free_scope": "Five public video-and-exercise modules with slides, guided and unguided exercises, and answer guidance for ATT&CK-based CTI analysis.",
+    "access_notes": "Prior familiarity with ATT&CK is recommended. The supplied exercises use ATT&CK v8; use that version to reproduce the published answers and separately check current techniques for operational work. Video playback and accessibility settings were not tested.",
+    "starter_task": "Map two behaviors from a fictional incident narrative to ATT&CK techniques, retain an unmapped behavior as uncertain, and propose one defensive evidence request for each mapping.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "CTI Training",
+        "url": "https://attack.mitre.org/resources/learn-more-about-attack/training/cti/",
+        "support": "The public page links all five video/exercise modules and explains prerequisite knowledge, solo/team use, and the ATT&CK v8 limitation.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "attackiq-academy",
+    "name": "AttackIQ Academy",
+    "publisher": "AttackIQ",
+    "url": "https://academy.attackiq.com/",
+    "category": "Security and IT operations",
+    "audience": [
+      "security analysts",
+      "detection engineers",
+      "security program managers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "No-cost Academy courses on threat-informed defense, ATT&CK, detection, purple teaming, and related security concepts.",
+    "access_notes": "Create an Academy learner account. The Academy courses are separate from the optional Champions advocacy program and from an AttackIQ product subscription. Course access does not authorize adversary emulation in a real environment.",
+    "starter_task": "Using a fictional threat behavior, draft a detection-coverage worksheet with expected telemetry, a validation question, a control owner, and a clearly labeled evidence gap.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Build Your Cybersecurity Profile: Introducing the AttackIQ Champions Program",
+        "url": "https://www.attackiq.com/2026/05/20/attackiq-champions-program/",
+        "support": "The article's Academy section and FAQ explicitly state that Academy courses are offered at no cost and identify the learning topics. Champions participation is a separate program.",
+        "published_or_updated": "2026-05-20"
+      }
+    ]
+  },
+  {
+    "id": "microsoft-learn",
+    "name": "Microsoft Learn",
+    "publisher": "Microsoft",
+    "url": "https://learn.microsoft.com/training/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "IT administrators",
+      "Developers",
+      "Data analysts"
+    ],
+    "access_model": "public",
+    "free_scope": "Self-paced product and role learning paths, modules and knowledge checks.",
+    "access_notes": "Reading does not require a profile; a free profile tracks progress. The FAQ says Learn sandboxes are no longer available: Azure exercises require an Azure subscription and may incur charges. Certification exams are separate from free module completion.",
+    "starter_task": "Complete a cloud identity module, then explain the access boundaries of a fictional application to a colleague.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Microsoft Learn frequently asked questions",
+        "url": "https://learn.microsoft.com/en-us/training/support/faq",
+        "support": "Training is free, profile optional; the current sandbox section requires a separate Azure subscription for exercises.",
+        "published_or_updated": "2025-10-27"
+      }
+    ]
+  },
+  {
+    "id": "aws-skill-builder",
+    "name": "AWS Skill Builder — free digital training",
+    "publisher": "Amazon Web Services",
+    "url": "https://aws.amazon.com/training/digital/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Cloud administrators",
+      "Developers",
+      "Technology leaders"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced digital courses and selected learning resources.",
+    "access_notes": "Use the free learner account and select free content. The full immersive lab and exam-preparation suite requires an Individual or Team subscription; Digital Classrooms require annual Individual or Team access. AWS service accounts and certification exams are separate.",
+    "starter_task": "Use foundational cloud training to draw a fictional application's responsibility split between the organization and AWS.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "AWS Skill Builder",
+        "url": "https://aws.amazon.com/training/digital/",
+        "support": "Separates free self-paced courses from paid subscriptions, immersive experiences and Digital Classrooms.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "aws-educate",
+    "name": "AWS Educate",
+    "publisher": "Amazon Web Services",
+    "url": "https://aws.amazon.com/education/awseducate/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Cloud beginners",
+      "Service desk staff",
+      "Career changers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Beginner cloud courses, included hands-on labs and digital badges.",
+    "access_notes": "Open to individuals regardless of education or career stage; registration accepts learners aged 13+ with an email address and no credit card. The learning labs are distinct from operating a production AWS account.",
+    "starter_task": "Use the cost-estimation lab to explain which resources a fictional departmental service would consume.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "AWS Educate",
+        "url": "https://aws.amazon.com/education/awseducate/",
+        "support": "Explicitly free courses and hands-on labs, open enrollment, email registration and no credit-card requirement.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "google-skills-cloud",
+    "name": "Google Skills — Cloud Starter learning",
+    "publisher": "Google",
+    "url": "https://www.skills.google/subscriptions",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Cloud administrators",
+      "Developers",
+      "Data analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Starter access with 35 no-cost credits each month for limited hands-on labs and skill badges.",
+    "access_notes": "Requires a Google Account and Developer Profile. The monthly credits limit free lab use; unlimited labs are in the paid Pro plan. Excludes the advertised seven-day subscription trial and Google Cloud production credits.",
+    "starter_task": "Choose a lab within the monthly allowance and write a cleanup checklist for a fictional cloud workload.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Google Skills subscriptions",
+        "url": "https://www.skills.google/subscriptions",
+        "support": "Starter is no cost with 35 monthly credits, limited labs, and account/profile requirements; Pro is paid.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "ibm-skillsbuild",
+    "name": "IBM SkillsBuild for Adult Learners",
+    "publisher": "IBM",
+    "url": "https://skillsbuild.org/adult-learners",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Technology beginners",
+      "Business users",
+      "Career changers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Online career and technology learning with digital credentials in the adult-learner offering.",
+    "access_notes": "Sign up for the adult learner platform. The publisher labels this offering 100% free; it is not a license for IBM enterprise software or every IBM professional training program.",
+    "starter_task": "Take a foundational technology module and write a plain-language glossary for a fictional team's onboarding pack.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "IBM SkillsBuild for Adult Learners",
+        "url": "https://skillsbuild.org/adult-learners",
+        "support": "Adult learner offering is described as 100% free and online, with sign-up and learning catalog links.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "cognitive-class",
+    "name": "Cognitive Class",
+    "publisher": "Cognitive Class",
+    "url": "https://cognitiveclass.ai/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Data analysts",
+      "Developers",
+      "Technical beginners"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Courses, guided projects and learning paths in data science and emerging technologies.",
+    "access_notes": "Registration and email activation are required for the learning account. The FAQ says courses and guided projects are free. Excludes the separate IBM Bob 30-day trial advertised on the site.",
+    "starter_task": "Complete a data analysis exercise with synthetic records, then explain one missing-data limitation in the result.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Cognitive Class FAQ",
+        "url": "https://cognitiveclass.ai/faq",
+        "support": "Confirms courses and guided projects are free and explains registration/email activation.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Cognitive Class learning catalog",
+        "url": "https://cognitiveclass.ai/",
+        "support": "Describes courses, paths and interactive projects; separately advertises a time-limited product trial.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "oracle-mylearn-foundations",
+    "name": "Oracle MyLearn — free Foundations",
+    "publisher": "Oracle University",
+    "url": "https://www.oracle.com/education/training/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Cloud administrators",
+      "Application owners",
+      "Technology beginners"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Designated Foundations training and certifications across Oracle Cloud Infrastructure, Fusion Applications and AI.",
+    "access_notes": "Use an Oracle account and the free Foundations collection. Broader role training, hands-on labs, live classes and exam attempts are offered through paid learning subscriptions; do not treat all MyLearn content as free.",
+    "starter_task": "Use an OCI Foundations module to annotate the identity, network and cost owners for a fictional deployment.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Oracle Training and Certification",
+        "url": "https://www.oracle.com/education/training/",
+        "support": "Explicitly distinguishes free Foundations training/certifications from Oracle Unlimited Learning Subscription features.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "red-hat-free-courses",
+    "name": "Red Hat — no-cost technical overviews",
+    "publisher": "Red Hat",
+    "url": "https://www.redhat.com/en/services/training-and-certification",
+    "category": "Cloud, development and data",
+    "audience": [
+      "IT administrators",
+      "Platform engineers",
+      "IT leaders"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Designated introductory video courses such as RH 024, DO 007 and DO 080.",
+    "access_notes": "Select courses in the Free courses section; learner registration may be required by the delivery route. Full Learning Subscription, certification and instructor-led offerings are outside this free scope. The subscription trial is not the entry. RH024 currently covers RHEL 10.",
+    "starter_task": "Watch the Linux overview, then document the role of users, groups and file permissions in a fictional support procedure.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Red Hat Training and Certification",
+        "url": "https://www.redhat.com/en/services/training-and-certification",
+        "support": "Lists the specific free technical overview courses separately from subscriptions and other training.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "RH024 course description",
+        "url": "https://www.redhat.com/en/services/training/rh024-red-hat-linux-technical-overview",
+        "support": "RH 024 is a no-cost on-demand video course based on RHEL 10 with no prerequisites.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "linux-foundation-free-courses",
+    "name": "Linux Foundation — free courses",
+    "publisher": "Linux Foundation Education",
+    "url": "https://training.linuxfoundation.org/resources/?_sft_content_type=free-course",
+    "category": "Cloud, development and data",
+    "audience": [
+      "IT administrators",
+      "Developers",
+      "Platform engineers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Courses explicitly listed in the free-course collection across Linux, cloud, networking and open source.",
+    "access_notes": "Enroll through the learning platform specified by each course. The full catalog also contains paid courses, subscriptions, exams and bundles; select the free offering rather than a paid credential bundle.",
+    "starter_task": "Use an introductory Linux course to create a fictional server handoff checklist covering files, processes and service ownership.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Linux Foundation free resources",
+        "url": "https://training.linuxfoundation.org/resources/?_sft_content_type=free-course",
+        "support": "Official resource collection identifies free courses and supported subject areas.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Linux Foundation full catalog",
+        "url": "https://training.linuxfoundation.org/full-catalog/",
+        "support": "Catalog separates free e-learning from paid training, certifications and subscriptions.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "github-skills",
+    "name": "GitHub Skills",
+    "publisher": "GitHub",
+    "url": "https://github.com/skills",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Developers",
+      "Documentation maintainers",
+      "Technical project leads"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Interactive repository-based courses with automated feedback, including branches, commits and pull requests.",
+    "access_notes": "A GitHub account is needed to create the exercise repository. Public course instructions are readable without enrollment; execution depends on repository and Actions policies. Paid certifications and Expert Services training are separate. The former skills.github.com landing page redirects to GitHub Learn.",
+    "starter_task": "Create a fictional onboarding README in an exercise repository, propose a change in a branch, and have a colleague review the pull request.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Git and GitHub learning resources",
+        "url": "https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources",
+        "support": "Identifies GitHub Skills as free interactive courses and GitHub Learn as the unified hub.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Introduction to GitHub exercise",
+        "url": "https://github.com/skills/introduction-to-github",
+        "support": "Public official exercise teaches repositories, branches, commits and pull requests using a README.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "gitlab-university",
+    "name": "GitLab University",
+    "publisher": "GitLab",
+    "url": "https://university.gitlab.com/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Developers",
+      "Platform engineers",
+      "Project leads"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Public self-paced courses, learning paths and selected events covering DevSecOps.",
+    "access_notes": "Anyone can register with an email address. Certifications and public instructor-led classes are paid. A dedicated Enterprise learning portal is included only with Signature Success; it is not required for the free public courses.",
+    "starter_task": "Use Git essentials to outline a merge-request review procedure for a fictional application team.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "GitLab University handbook",
+        "url": "https://handbook.gitlab.com/handbook/customer-success/gitlab-university/",
+        "support": "Public courses are free; explains email registration, paid exams/classes and customer portal entitlement.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "docker-get-started",
+    "name": "Docker Get Started",
+    "publisher": "Docker",
+    "url": "https://docs.docker.com/get-started/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Developers",
+      "IT administrators",
+      "Platform engineers"
+    ],
+    "access_model": "public",
+    "free_scope": "Public installation guidance and tutorials on containers, images and application stacks.",
+    "access_notes": "Reading is free. Docker Desktop professional use requires payment in larger organizations and government; the small-business exception requires fewer than 250 employees AND under $10 million annual revenue. Docker Engine open-source terms are separate; registry or cloud services may have limits.",
+    "starter_task": "On an appropriately licensed local environment, containerize a fictional status page and document how to start, inspect and remove it.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Get started with Docker",
+        "url": "https://docs.docker.com/get-started/",
+        "support": "Public tutorial entry covers installation, containerized applications and administrator onboarding.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Docker Desktop license agreement",
+        "url": "https://docs.docker.com/subscription-billing/desktop-license/",
+        "support": "Specifies Desktop's free-use categories, organization-size thresholds and paid-use requirements.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "kubernetes-basics",
+    "name": "Kubernetes official tutorials",
+    "publisher": "Kubernetes project",
+    "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Platform engineers",
+      "Developers",
+      "IT administrators"
+    ],
+    "access_model": "public",
+    "free_scope": "Public modules for deploying, inspecting, scaling, updating and debugging applications.",
+    "access_notes": "No learning account is required to read the tutorials. Exercises require a practice cluster; local learning environments and hosted services have their own prerequisites and resource costs. The tutorials do not include a certification exam.",
+    "starter_task": "Use a disposable local cluster to deploy a fictional service, change its version and explain how you would observe a failed rollout.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Learn Kubernetes Basics",
+        "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+        "support": "Defines tutorial objectives and modules and links practice-cluster guidance.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "hashicorp-developer",
+    "name": "HashiCorp Developer tutorials",
+    "publisher": "HashiCorp",
+    "url": "https://developer.hashicorp.com/tutorials",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Platform engineers",
+      "Cloud administrators",
+      "Developers"
+    ],
+    "access_model": "public",
+    "free_scope": "Public Terraform, Vault and other infrastructure tutorials and learning paths.",
+    "access_notes": "Reading does not require a subscription. Cloud-based exercises require the named provider accounts and can create billable infrastructure; paid HCP services and certification exams are outside this free reading scope. Terraform is included here, not counted again.",
+    "starter_task": "Read a Terraform starter path, then review a fictional plan for unintended resource changes and list the cleanup steps before running anything.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "HashiCorp Developer tutorials",
+        "url": "https://developer.hashicorp.com/tutorials",
+        "support": "Lists step-by-step Terraform paths for AWS/Azure/Google Cloud and Vault foundations, separately linking certification.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "mongodb-university",
+    "name": "MongoDB University",
+    "publisher": "MongoDB",
+    "url": "https://learn.mongodb.com/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Developers",
+      "Database administrators",
+      "Data engineers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Self-paced skills and badges in document modeling, CRUD, aggregation and related MongoDB topics.",
+    "access_notes": "Sign in to enroll and record progress. Use catalog items labeled Free; instructor-led offerings are explicitly Paid and certification exams are separate. Product accounts or deployment resources are governed independently.",
+    "starter_task": "Model a fictional equipment inventory as documents, then explain which queries require an index and how you would validate the schema.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "MongoDB University",
+        "url": "https://learn.mongodb.com/",
+        "support": "Current catalog marks skills Free, instructor-led training Paid, and links sign-in and separate certification.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "snowflake-university",
+    "name": "Snowflake University — free on-demand learning",
+    "publisher": "Snowflake",
+    "url": "https://learn.snowflake.com/en/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Data analysts",
+      "Data engineers",
+      "Database administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free Level Up concept modules and on-demand courses explicitly marked Free.",
+    "access_notes": "Enroll through the training portal. The free learning designation does not make a personal Snowflake warehouse free indefinitely: hands-on badge courses and product usage have separate environment prerequisites. Instructor-led classes and SnowPro certification are separate.",
+    "starter_task": "Complete First Concepts and Resource Monitors, then draft a cost-and-access checklist for a fictional analytics workspace.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Snowflake learning catalog",
+        "url": "https://learn.snowflake.com/en/",
+        "support": "Separates Free OnDemand modules and badge workshops from instructor-led training and certification.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Level Up: First Concepts",
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-101/",
+        "support": "Marked Free with an enrollment link; describes architecture and related account/resource-management modules.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "databricks-academy",
+    "name": "Databricks Academy — self-paced learning",
+    "publisher": "Databricks",
+    "url": "https://www.databricks.com/learn/training/home",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Data engineers",
+      "Data analysts",
+      "Application developers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced training and fundamentals badges; use courses marked Free.",
+    "access_notes": "A learner account is required for course enrollment and progress. Instructor-led courses, Academy Pro and dedicated lab access are separate offerings. Free learning does not imply unlimited product compute or a production Databricks license.",
+    "starter_task": "After fundamentals training, map a fictional report's ingestion, transformation, governance and serving stages and identify one acceptance check per stage.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Databricks Training and Certification",
+        "url": "https://www.databricks.com/learn/training/home",
+        "support": "Current page identifies free on-demand fundamentals and role-based training.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Introducing Databricks Free Edition",
+        "url": "https://community.databricks.com/t5/announcements/introducing-databricks-free-edition/m-p/122853",
+        "support": "Official employee announcement says all self-paced Academy courses are free to all users, superseding older customer-only descriptions.",
+        "published_or_updated": "2025-06-25"
+      }
+    ]
+  },
+  {
+    "id": "elastic-free-training",
+    "name": "Elastic — free self-paced training",
+    "publisher": "Elastic",
+    "url": "https://www.elastic.co/training",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Search developers",
+      "IT operations staff",
+      "Security analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Designated no-cost expert-designed modules across search, observability, security and platform topics.",
+    "access_notes": "Elastic Cloud account and email verification are required for the learning portal. Choose no-cost modules; instructor-led courses, comprehensive subscriptions and paid certifications are separate. Cloud deployment costs are separate from learning access.",
+    "starter_task": "Use a foundational search module to describe a fictional document search test, including a missing result and an irrelevant match.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Elastic Training",
+        "url": "https://www.elastic.co/training",
+        "support": "Explicitly offers self-paced modules at no cost alongside instructor-led training.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Elastic Training FAQ",
+        "url": "https://www.elastic.co/training/faq",
+        "support": "Requires Elastic Cloud identity and email verification; distinguishes paid purchases/subscriptions and lab time.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "confluent-developer",
+    "name": "Confluent Developer courses",
+    "publisher": "Confluent",
+    "url": "https://developer.confluent.io/courses/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Data engineers",
+      "Developers",
+      "Platform engineers"
+    ],
+    "access_model": "public",
+    "free_scope": "Public Kafka and Flink video lessons, transcripts and course instructions.",
+    "access_notes": "Lessons can be read without enrollment. Some hands-on steps use Confluent Cloud and advertise limited promotional credits; those credits and production services are not an unlimited free lab entitlement. Certification and commercial training are outside this entry.",
+    "starter_task": "From Kafka 101, diagram fictional ticket events and explain producer, topic, consumer and duplicate-message handling.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Confluent Developer courses",
+        "url": "https://developer.confluent.io/courses/",
+        "support": "Public course collection organizes Kafka/Flink learning by role and level.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Apache Kafka101 introduction",
+        "url": "https://developer.confluent.io/courses/apache-kafka/events/",
+        "support": "Provides public lesson text/modules and separately advertises limited Confluent Cloud promotional credit.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "postman-learning-hub",
+    "name": "Postman Learning Hub and Academy",
+    "publisher": "Postman",
+    "url": "https://www.postman.com/learn/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Developers",
+      "Integration owners",
+      "Technical support staff"
+    ],
+    "access_model": "public",
+    "free_scope": "Free API documentation, tutorials, videos and linked on-demand learning resources.",
+    "access_notes": "Public reading is available without enrollment; hands-on collections and Academy tracking may require a free account. Instructor-led Academy workshops can be paid or entitlement-based: the Enterprise trial advertises a limited complimentary workshop benefit, excluded here. Product team/AI features have separate plan limits.",
+    "starter_task": "Use fictional API responses to design a collection that checks a success case, an authorization failure and a missing required field.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Postman Learning Hub",
+        "url": "https://www.postman.com/learn/",
+        "support": "Describes free learning resources and links docs, Academy, videos and developer tools.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Postman Enterprise Trial FAQ",
+        "url": "https://learning.postman.com/docs/getting-started/postman-trials/enterprise-trial-faq",
+        "support": "Describes trial-only complimentary Academy workshops, so instructor-led access must not be described as universally free.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "grafana-tutorials",
+    "name": "Grafana Labs tutorials",
+    "publisher": "Grafana Labs",
+    "url": "https://grafana.com/tutorials/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "IT operations staff",
+      "Platform engineers",
+      "Developers"
+    ],
+    "access_model": "public",
+    "free_scope": "Public procedural guides, explanatory articles and tutorial videos for dashboards and observability.",
+    "access_notes": "Written tutorials are publicly readable. Some webinars require registration and some exercises require Grafana Cloud or another deployment; service quotas, licensing and infrastructure charges are separate from the tutorial text.",
+    "starter_task": "Sketch a dashboard for a fictional service with latency, errors and traffic, then specify what would make one alert actionable.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Grafana tutorials",
+        "url": "https://grafana.com/tutorials/",
+        "support": "Provides public procedural, article and video learning types, including dashboards, alerting, metrics, logs and traces.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "splunk-free-training",
+    "name": "Splunk free training",
+    "publisher": "Splunk",
+    "url": "https://www.splunk.com/en_us/training/free-courses/overview.html",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Security analysts",
+      "IT operations staff",
+      "Data analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Designated free courses on searches, fields, dashboards, architecture and platform basics.",
+    "access_notes": "Register for the selected course through Splunk Education. Only the free collection is included; paid courses, certification and software licensing are separate. Any course-specific lab access must be checked on its enrollment page.",
+    "starter_task": "Use synthetic service events to explain a search, a useful field and a dashboard measure that would help triage an outage.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Splunk Free Training Courses",
+        "url": "https://www.splunk.com/en_us/training/free-courses/overview.html",
+        "support": "Explicit free-learning catalog with individual course registration links and topic descriptions.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "datadog-learning-center",
+    "name": "Datadog Learning Center",
+    "publisher": "Datadog",
+    "url": "https://learn.datadoghq.com/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "IT operations staff",
+      "Developers",
+      "Platform engineers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free on-demand courses with interactive Datadog labs.",
+    "access_notes": "A Learning Center account is separate from a production Datadog account. Labs require cookies and WebSockets and can be affected by organization browser/network policies. Product subscriptions and certification are separate; do not connect production telemetry for a basic learning exercise.",
+    "starter_task": "In a supplied training lab, investigate a fictional service symptom and record which metric, log or trace supports the diagnosis.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Datadog Academy learning options",
+        "url": "https://learn.datadoghq.com/pages/sda-datadog-academy",
+        "support": "States Learning Center courses and interactive labs are free; distinguishes certification.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Datadog Learning Center FAQ",
+        "url": "https://learn.datadoghq.com/pages/faq",
+        "support": "Explains the separate learning identity and browser/network requirements for interactive labs.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "alteryx-academy",
+    "name": "Alteryx Academy — free learning pathways",
+    "publisher": "Alteryx",
+    "url": "https://academy.alteryx.com/",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Data analysts",
+      "Finance operations staff",
+      "Business analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free learning pathways and the entry-level Alteryx Essentials certificate.",
+    "access_notes": "A free MyAlteryx account provides Academy access. Premium hands-on courses and learning bundles are paid or included only for entitled customers; software licensing remains separate. Essentials is a completion certificate, not the full professional certification.",
+    "starter_task": "Using a fictional vendor list, outline a workflow to standardize names, identify duplicates and preserve uncertain matches for review.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Alteryx instructor-led training FAQ",
+        "url": "https://community.alteryx.com/discussion/960613/instructor-led-training-faq",
+        "support": "Identifies Academy's free learning pathways alongside instructor-led training.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Discover the New Alteryx Academy",
+        "url": "https://community.alteryx.com/discussion/1428835/discover-the-new-alteryx-academy",
+        "support": "Explains free MyAlteryx registration, free Essentials, and premium paid/customer-entitled learning.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "tableau-free-training",
+    "name": "Tableau free training videos",
+    "publisher": "Tableau / Salesforce",
+    "url": "https://www.tableau.com/learn/training",
+    "category": "Cloud, development and data",
+    "audience": [
+      "Data analysts",
+      "Business users",
+      "Reporting owners"
+    ],
+    "access_model": "public",
+    "free_scope": "Public short videos for Tableau Desktop, Cloud/Server and Prep basics.",
+    "access_notes": "The free video collection is separate from structured eLearning, instructor-led training and certification. Following product exercises requires an appropriate Tableau environment/license; this entry does not promise a free organizational deployment.",
+    "starter_task": "Watch the dashboard lessons, then use fictional ticket data to propose a dashboard with one decision, one filter and a clearly defined denominator.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Tableau Free Training Videos",
+        "url": "https://www.tableau.com/learn/training",
+        "support": "Current free-video list covers connecting data, calculations, dashboards, Cloud/Server and Prep, with separate links to other training.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "openai-academy",
+    "name": "OpenAI Academy",
+    "publisher": "OpenAI",
+    "url": "https://academy.openai.com/",
+    "category": "AI and automation",
+    "audience": [
+      "All employees",
+      "AI champions"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Self-paced AI-at-work, builder and adoption courses.",
+    "access_notes": "A ChatGPT account saves enrollment and progress; no paid plan or organization membership is required for courses. Product features and API usage used in practice have separate access and cost conditions.",
+    "starter_task": "Rewrite a fictional meeting-summary prompt and explain how you would check the output.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "OpenAI Academy — official access and learning information",
+        "url": "https://help.openai.com/en/articles/20001270-openai-academy-courses",
+        "support": "States courses are free globally for anyone with a ChatGPT account, and explains enrollment and progress.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "claude-academy",
+    "name": "Claude Academy",
+    "publisher": "Anthropic",
+    "url": "https://academy.claude.com/",
+    "category": "AI and automation",
+    "audience": [
+      "All employees",
+      "Developers",
+      "AI champions"
+    ],
+    "access_model": "free-account",
+    "free_scope": "AI fluency, Claude use, agent and builder courses; course completion badges.",
+    "access_notes": "Browse without signing in; a free Claude account saves progress and enables badges. No paid plan required for Academy. Paid proctored certifications are a separate partner-only program; product or API practice can have separate costs.",
+    "starter_task": "Give an assistant a fictional software-request brief, then identify missing evidence before using its answer.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Claude Academy — official access and learning information",
+        "url": "https://academy.claude.com/help/faq",
+        "support": "FAQ separates free courses and badges from paid partner certification exams and explains personal versus organization-linked accounts.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "hugging-face-learn",
+    "name": "Hugging Face Learn",
+    "publisher": "Hugging Face",
+    "url": "https://huggingface.co/learn",
+    "category": "AI and automation",
+    "audience": [
+      "Developers",
+      "AI engineers"
+    ],
+    "access_model": "public",
+    "free_scope": "Open courses on language models, agents, context, audio and other machine-learning topics.",
+    "access_notes": "Course reading is public. Some exercises, course communities and credentials need a free Hugging Face account; model/API hosting and compute have separate quotas or charges.",
+    "starter_task": "Read an agents or context lesson and draw the tools and permissions for a fictional read-only assistant.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Hugging Face Learn — official access and learning information",
+        "url": "https://huggingface.co/learn/context-course/unit0/introduction",
+        "support": "Public course includes a syllabus, prerequisites, account requirement and code-agent setup choices; learning material does not supply every required tool subscription.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "google-ml-crash-course",
+    "name": "Google Machine Learning Crash Course",
+    "publisher": "Google",
+    "url": "https://developers.google.com/machine-learning/crash-course",
+    "category": "AI and automation",
+    "audience": [
+      "Analysts",
+      "Developers",
+      "Technical managers"
+    ],
+    "access_model": "public",
+    "free_scope": "Public videos, visualizations and exercises covering ML models, data, evaluation and responsible engineering.",
+    "access_notes": "Reading is open; exercises have their own browser, Python or notebook prerequisites. Separate cloud services are not included simply by reading the course.",
+    "starter_task": "Use a fictional ticket classifier to explain false positives, false negatives and the cost of a wrong classification.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Google Machine Learning Crash Course — official access and learning information",
+        "url": "https://developers.google.com/machine-learning/crash-course",
+        "support": "Public course page lists standalone modules, videos, visualizations and hands-on exercises.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "fast-ai",
+    "name": "Practical Deep Learning for Coders",
+    "publisher": "fast.ai",
+    "url": "https://course.fast.ai/",
+    "category": "AI and automation",
+    "audience": [
+      "Developers",
+      "Data practitioners"
+    ],
+    "access_model": "public",
+    "free_scope": "Free recorded practical deep-learning course, lesson notes and online book.",
+    "access_notes": "Assumes some coding experience. The page identifies the core recording as 2022; validate package versions and current compute terms before labs. Optional hosting, GPUs and printed books are not promised free.",
+    "starter_task": "Train a tiny classifier on an approved public sample and explain one failure case before considering real use.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Practical Deep Learning for Coders — official access and learning information",
+        "url": "https://course.fast.ai/",
+        "support": "States the course and online book are free, names prerequisites and dates the core course recording.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "full-stack-deep-learning",
+    "name": "The Full Stack — open courses",
+    "publisher": "The Full Stack",
+    "url": "https://fullstackdeeplearning.com/",
+    "category": "AI and automation",
+    "audience": [
+      "Developers",
+      "AI product teams"
+    ],
+    "access_model": "public",
+    "free_scope": "Public AI application lectures and labs, including the 2022 deep-learning course and 2023 LLM bootcamp.",
+    "access_notes": "Archived teaching is open; product APIs, GPU resources and hosted deployments used in labs may cost money. Recheck older tool examples before running them.",
+    "starter_task": "Draft an evaluation-and-monitoring plan for a fictional internal question-answering tool.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "The Full Stack — open courses — official access and learning information",
+        "url": "https://fullstackdeeplearning.com/",
+        "support": "The course site identifies its 2022/2023 materials, AI-product lifecycle coverage and free course availability.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "nvidia-free-training",
+    "name": "NVIDIA self-paced free courses",
+    "publisher": "NVIDIA",
+    "url": "https://www.nvidia.com/en-us/training/self-paced-courses/?section=free-courses",
+    "category": "AI and automation",
+    "audience": [
+      "Developers",
+      "Infrastructure engineers",
+      "AI engineers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "The catalog's explicitly marked Free Courses subset for AI and accelerated computing.",
+    "access_notes": "Choose a course marked free and verify its enrollment prerequisites. The whole catalog, certification exams, instructor-led workshops and enterprise packages are not free. Temporary event vouchers are not the basis for inclusion.",
+    "starter_task": "Compare CPU, GPU and hosted-API requirements for a small fictional inference task.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "NVIDIA self-paced free courses — official access and learning information",
+        "url": "https://www.nvidia.com/en-us/training/self-paced-courses/?section=free-courses",
+        "support": "Maintains a distinct Free Courses section and separate workshops, certifications and enterprise offerings.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "mit-opencourseware",
+    "name": "MIT OpenCourseWare",
+    "publisher": "Massachusetts Institute of Technology",
+    "url": "https://ocw.mit.edu/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Analysts",
+      "Developers",
+      "Managers"
+    ],
+    "access_model": "public",
+    "free_scope": "Open university course materials, including computing, statistics and management.",
+    "access_notes": "No enrollment or account required. OCW does not award MIT credit or certification; external books and tools may have separate costs. Follow each resource's reuse license before copying it into an internal LMS.",
+    "starter_task": "Choose a statistics lesson and explain why an average alone can hide service-response outliers.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "MIT OpenCourseWare — official access and learning information",
+        "url": "https://ocw.mit.edu/about/",
+        "support": "States open free materials, no registration, and no credit or certification.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "harvard-cs50",
+    "name": "Harvard CS50 OpenCourseWare",
+    "publisher": "Harvard University",
+    "url": "https://cs50.harvard.edu/x/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers",
+      "IT operators"
+    ],
+    "access_model": "public",
+    "free_scope": "Free computer-science lectures, problem sets and project guidance.",
+    "access_notes": "Public material is open to non-Harvard learners. Submission and feedback services have account requirements; verified certificates and academic credit are separate options.",
+    "starter_task": "Build a small program using fictional inventory records and explain its input-validation rules.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Harvard CS50 OpenCourseWare — official access and learning information",
+        "url": "https://cs50.harvard.edu/x/",
+        "support": "2026 course page explicitly permits free OpenCourseWare study and distinguishes submission accounts, verified certificates and academic-credit routes.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "freecodecamp",
+    "name": "freeCodeCamp",
+    "publisher": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers",
+      "IT operators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Coding curriculum, exercises and project-based learning.",
+    "access_notes": "Public lessons are available; a free account is used to save curriculum progress. Donations are optional; employer-managed learning reporting is not established by this directory.",
+    "starter_task": "Build an accessible fictional help-desk request page and test the keyboard flow.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "freeCodeCamp — official access and learning information",
+        "url": "https://www.freecodecamp.org/news/about/",
+        "support": "Official FAQ describes the free coding curriculum and nonprofit learning model.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "the-odin-project",
+    "name": "The Odin Project",
+    "publisher": "The Odin Project",
+    "url": "https://www.theodinproject.com/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers",
+      "IT operators"
+    ],
+    "access_model": "public",
+    "free_scope": "Free open-source full-stack curriculum and projects.",
+    "access_notes": "Read without purchasing a course. Local tools and a development environment are needed for projects; optional hosted deployment services have their own terms.",
+    "starter_task": "Create a fictional team knowledge page, keep it in Git and document a change.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "The Odin Project — official access and learning information",
+        "url": "https://www.theodinproject.com/about",
+        "support": "Describes a free comprehensive open-source curriculum with practical projects.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "mdn-learn",
+    "name": "MDN Learn Web Development",
+    "publisher": "MDN / Mozilla",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers",
+      "Web content owners"
+    ],
+    "access_model": "public",
+    "free_scope": "Public web-development modules, code examples and challenges.",
+    "access_notes": "The linked MDN material is public; paid partner courses or premium services are separate. Use a local editor/browser for exercises.",
+    "starter_task": "Audit a fictional request form for labels, keyboard operation and helpful validation errors.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "MDN Learn Web Development — official access and learning information",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+        "support": "Public learning area provides core modules, challenges and downloadable examples; separately links partner offerings.",
+        "published_or_updated": "2025-10-29"
+      }
+    ]
+  },
+  {
+    "id": "w3schools",
+    "name": "W3Schools tutorials",
+    "publisher": "W3Schools",
+    "url": "https://www.w3schools.com/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers",
+      "Analysts",
+      "IT operators"
+    ],
+    "access_model": "public",
+    "free_scope": "Free tutorials, references, browser examples and exercises across web, SQL and programming basics.",
+    "access_notes": "Tutorial access is free; certificates, PLUS features, additional hosting and organization products are separate paid offerings. An account can track progress.",
+    "starter_task": "Write a SQL query against fictional software requests and explain how missing values change the result.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "W3Schools tutorials — official access and learning information",
+        "url": "https://www.w3schools.com/about/",
+        "support": "Official about page labels tutorials free and separates upgrades, certification and organization services.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "freshworks-university",
+    "name": "Freshworks University",
+    "publisher": "Freshworks",
+    "url": "https://www.freshworks.com/university/courses/",
+    "category": "Workplace and business tools",
+    "audience": [
+      "Customer service staff",
+      "Service desk staff",
+      "Administrators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free university courses covering Freshdesk and Freshservice agent or administrator fundamentals and customer-service skills.",
+    "access_notes": "The official catalog identifies these as free courses. The Freshdesk Agent Fundamentals page requires creating a university account to take the course. Enrollment, playback, and any paid Freshworks product features were not tested; a product trial is not the learning entitlement.",
+    "starter_task": "Write a fictional ticket handoff with a clear issue summary, customer impact, attempted steps, next owner, and expected update. Draft a knowledge article only after separating a verified resolution from a proposed fix.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Explore Free Courses | Freshworks University Online Learning",
+        "url": "https://www.freshworks.com/university/courses/",
+        "support": "Official free-course catalog lists Freshdesk and Freshservice fundamentals plus customer-service learning.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Freshdesk Agent Fundamentals",
+        "url": "https://www.freshworks.com/university/courses/freshdesk-agent-fundamentals/",
+        "support": "Describes ticket handling and knowledge-base topics and instructs learners to create a university account to take the course.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "openlearn",
+    "name": "OpenLearn",
+    "publisher": "The Open University",
+    "url": "https://www.open.edu/openlearn/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "All employees",
+      "Managers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free courses and learning resources in digital skills, business, study skills and other subjects.",
+    "access_notes": "Read resources publicly; a free profile enables enrollment, progress and eligible badges or statements. These are distinct from a paid Open University qualification.",
+    "starter_task": "Take a work-skills lesson and produce a short teach-back explaining one improved team practice.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "OpenLearn — official access and learning information",
+        "url": "https://www.open.edu/openlearn/",
+        "support": "Lists free courses, free profile/enrollment/progress and badges or participation statements on most courses.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "hp-life",
+    "name": "HP LIFE",
+    "publisher": "HP Foundation",
+    "url": "https://www.life-global.org/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "All employees",
+      "Small-team managers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free business, communication, digital and AI skills courses with completion certificates.",
+    "access_notes": "The free learning program is separate from HP hardware or business subscriptions. Enroll through the program to keep a completion record.",
+    "starter_task": "Create a one-page fictional service improvement proposal that states the customer problem and expected benefit.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "HP LIFE — official access and learning information",
+        "url": "https://www.life-global.org/",
+        "support": "States courses and completion certificates are free and identifies business/digital topics.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "learnfree",
+    "name": "LearnFree",
+    "publisher": "LearnFree",
+    "url": "https://www.learnfree.org/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "All employees"
+    ],
+    "access_model": "public",
+    "free_scope": "Free lessons in computer basics, Office and Google tools, workplace communication and numeracy.",
+    "access_notes": "Some product tutorials cover older versions; choose the edition your organization uses. Optional product software and internal learning reporting are separate.",
+    "starter_task": "Explain sharing and file-version basics using a fictional team document.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "LearnFree — official learning information",
+        "url": "https://www.learnfree.org/",
+        "support": "Free practical skills portal lists workplace, computer, Office and Google topics, including version-specific courses.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "openhpi",
+    "name": "openHPI",
+    "publisher": "Hasso Plattner Institute",
+    "url": "https://open.hpi.de/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "IT operators",
+      "Developers",
+      "Managers"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced courses on IT, cybersecurity, AI and innovation.",
+    "access_notes": "Use an account for interactive courses. Check current course availability, language, prerequisites and certificate rules; older offerings can be retired.",
+    "starter_task": "Explain one emerging technology to a fictional management team and state a useful evaluation question.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "openHPI — official learning information",
+        "url": "https://open.hpi.de/",
+        "support": "States free IT and innovation learning, course levels and subject areas.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "full-stack-open",
+    "name": "Full Stack Open",
+    "publisher": "University of Helsinki",
+    "url": "https://fullstackopen.com/en/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers"
+    ],
+    "access_model": "public",
+    "free_scope": "Free full-stack web-development course material and exercises; completion certificates under course rules.",
+    "access_notes": "Submission uses GitHub and the course system; assumes prior programming and Git knowledge. Academic credit has additional registration and exam requirements. Hosting costs and commercial redistribution permissions are separate.",
+    "starter_task": "Build a local fictional software-request service and explain how its API validates input.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Full Stack Open — official learning information",
+        "url": "https://fullstackopen.com/en/part0/general_info/",
+        "support": "States free course and certificate, prerequisites, exercise submissions and separate academic-credit requirements.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "semrush-academy",
+    "name": "Semrush Academy",
+    "publisher": "Semrush",
+    "url": "https://www.semrush.com/academy/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Marketing",
+      "Web content owners"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free digital-marketing courses and learning resources.",
+    "access_notes": "A Semrush account is used for enrollment. The product's trial and paid analytics features are separate from Academy course access.",
+    "starter_task": "Draft a keyword-and-content brief for a fictional service page and explain what evidence would change it.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Semrush Academy — official learning information",
+        "url": "https://www.semrush.com/academy/faq/",
+        "support": "FAQ explicitly states free courses and account enrollment; the separate product trial is not the training entitlement.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "google-skillshop",
+    "name": "Google Skillshop",
+    "publisher": "Google",
+    "url": "https://skillshop.withgoogle.com/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Marketing",
+      "Analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free Google Ads and Google Analytics e-learning; foundational certifications where specified.",
+    "access_notes": "Use the applicable Skillshop account flow. Professional proctored certifications and advertising spend are separate; this does not promise that every Google training product is free.",
+    "starter_task": "Define an event and conversion for a fictional website, then explain what the metric cannot prove.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Google Skillshop — official learning information",
+        "url": "https://skillshop.withgoogle.com/googleads/",
+        "support": "Official program page explicitly identifies free Google Ads training.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Google Analytics Academy",
+        "url": "https://support.google.com/analytics/answer/15440208?hl=en",
+        "support": "Identifies free Analytics e-learning on Skillshop.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "Professional certifications for Skillshop",
+        "url": "https://support.google.com/skillshop/answer/14746215?hl=en",
+        "support": "Distinguishes professional certification requirements from free foundational certifications.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "exercism",
+    "name": "Exercism",
+    "publisher": "Exercism",
+    "url": "https://exercism.org/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Developers",
+      "IT operators"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free programming exercises, automated feedback and community mentoring.",
+    "access_notes": "Use a free learner account and browser editor or local tools. Mentor availability is not a support SLA; separate team offerings are not established as free here.",
+    "starter_task": "Solve a small parsing exercise, then explain how you would handle a missing or malformed fictional asset record.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Exercism — official learning information",
+        "url": "https://exercism.org/",
+        "support": "Official site states free practice and mentoring and describes browser and local exercise routes.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "saylor",
+    "name": "Saylor University — skill development",
+    "publisher": "Saylor University",
+    "url": "https://learn.saylor.org/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "All employees",
+      "Managers",
+      "Analysts"
+    ],
+    "access_model": "free-account",
+    "free_scope": "Free self-paced skill-development courses in business, computing and professional development.",
+    "access_notes": "This entry covers the learning catalog. Enrollment uses an account; credit transfer, proctoring and degree pathways have separate requirements and can involve third-party fees.",
+    "starter_task": "Use a business communication lesson to rewrite a fictional escalation so its requested decision and next step are clear.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "Saylor University — skill development — official learning information",
+        "url": "https://learn.saylor.org/",
+        "support": "The official learning portal identifies free courses, self-paced access and subject areas.",
+        "published_or_updated": "unknown"
+      },
+      {
+        "title": "FAQ – Saylor Direct Credit",
+        "url": "https://support.saylor.org/hc/en-us/articles/23597374410900-FAQ-Saylor-Direct-Credit",
+        "support": "Distinguishes free course and certificate learning from a separately proctored credit exam with third-party fees and institution-specific transfer acceptance.",
+        "published_or_updated": "2026-05-28"
+      }
+    ]
+  },
+  {
+    "id": "n8n-learning",
+    "name": "n8n learning documentation",
+    "publisher": "n8n",
+    "url": "https://docs.n8n.io/build-your-first-workflow",
+    "category": "AI and automation",
+    "audience": [
+      "IT operators",
+      "Automation builders"
+    ],
+    "access_model": "public",
+    "free_scope": "Public workflow-building tutorials and concept explanations.",
+    "access_notes": "Reading is free. Running examples requires an n8n instance and any external services; n8n Cloud's trial is not ongoing free access. Self-hosting has infrastructure and license conditions. Academy enrollment is a separate path.",
+    "starter_task": "Sketch a manual-trigger workflow that classifies fictional requests and identify what evidence would show the intended result.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "n8n learning documentation — official learning information",
+        "url": "https://docs.n8n.io/build-your-first-workflow",
+        "support": "Public tutorial explains workflow triggers, credentials, data and branching; execution requires a cloud or self-hosted instance.",
+        "published_or_updated": "unknown"
+      }
+    ]
+  },
+  {
+    "id": "w3c-wai-tutorials",
+    "name": "W3C WAI accessibility tutorials",
+    "publisher": "W3C Web Accessibility Initiative",
+    "url": "https://www.w3.org/WAI/tutorials/",
+    "category": "Digital and professional foundations",
+    "audience": [
+      "Web content owners",
+      "Developers",
+      "Designers"
+    ],
+    "access_model": "public",
+    "free_scope": "Public practical tutorials for accessible images, tables, forms and page structure.",
+    "access_notes": "Tutorial reading is open. Applying a technique is not a complete accessibility audit or conformance claim; test with the relevant tools and users.",
+    "starter_task": "Review a fictional training page for text alternatives, headings and form labels; explain one remaining accessibility question.",
+    "reviewed_on": "2026-09-19",
+    "evidence": [
+      {
+        "title": "W3C WAI accessibility tutorials — official learning information",
+        "url": "https://www.w3.org/WAI/tutorials/",
+        "support": "Official tutorials connect common web tasks to accessibility techniques and examples.",
+        "published_or_updated": "2026-08-26"
+      }
+    ]
+  }
+]

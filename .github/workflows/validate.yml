@@ -30,6 +30,8 @@ jobs:
         run: node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evidence-review/tests/*.test.mjs work-samples/investor-reporting-reconciliation/tests/*.test.mjs labs/n8n-runtime/tests/*.test.mjs labs/agent-security/tests/*.test.mjs
       - name: Verify the pinned research snapshot
         run: python3 research/verify_sync.py
+      - name: Check the training directory and generated exports
+        run: node training/free-training-directory/build.mjs --check
       - name: Regenerate workflow exports and catalog
         run: |
           node scripts/build-workflows.mjs
