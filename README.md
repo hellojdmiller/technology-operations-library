@@ -79,7 +79,7 @@ Keep credentials, original work documents, actual tenant exports, completed asse
 
 ## Naming and compatibility
 
-The repository's current name is **Technology Operations Library**, with the slug `technology-operations-library`. Existing `tol_*` MCP tool names, baseline identifiers, lab identifiers, and package names remain stable so existing clients, fixtures, and recorded results still agree. Dated validation reports and pinned research provenance retain their original bytes. A new local clone may use the new slug; an existing checkout does not need to move.
+The repository's current name is **Technology Operations Library**, with the slug `technology-operations-library`. MCP tool names, baseline identifiers, lab identifiers, and package names use the `tol_*` and `tol-*` prefixes, and clients, fixtures, and recorded results agree on them. Pinned research provenance retains its original bytes. A new local clone may use the new slug; an existing checkout does not need to move.
 
 GitHub redirects repository web and Git operations after a rename, but recommends updating local remotes. GitHub Pages project URLs and calls to a published action have separate limitations. Do not reuse the previous repository name, because doing so breaks its redirect. [GitHub's repository rename guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository), reviewed September 19, 2026.
 

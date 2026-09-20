@@ -46,7 +46,7 @@ export function buildCases(root) {
     if (slug === slugs[0]) variants.push(['zero-items', [], null], ['technical-failure', inputs, null]);
     for (const [kind, input, status] of variants) {
       const copy = structuredClone(workflow);
-      copy.id = `TOLLab${String(cases.length + 1).padStart(7, '0')}`;
+      copy.id = `TOLLab${String(cases.length + 1).padStart(10, '0')}`;
       copy.name = `TOL lab: ${slug} / ${kind}`;
       copy.nodes[1].parameters.jsCode = sampleCode(input);
       if (kind === 'technical-failure') copy.nodes[2].parameters.jsCode = `throw new Error('${failureMessage}');`;
