@@ -747,6 +747,13 @@
       "description": "Find 100 learning sites for staff, operators, developers and managers. Includes free scope, customer/account conditions, official evidence, proposed starter tasks and a CSV for an internal training catalog."
     },
     {
+      "title": "AI at Work",
+      "collection": "Training",
+      "path": "training/ai-at-work/README.md",
+      "readiness": "Research and fictional exercises reviewed; no learner trials or measured outcomes",
+      "description": "Three free lessons for everyday employees: frame a task, supply useful context, and review an AI draft. Includes a fictional workshop packet, examples, answer guidance, a worksheet, and facilitator notes; no AI account required."
+    },
+    {
       "title": "Check Google Workspace user scope before changing access",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/google-user-scope.md",

@@ -1,0 +1,306 @@
+{
+  "version": "1.0.0",
+  "slug": "ai-at-work",
+  "title": "AI at Work",
+  "description": "Three practical lessons for turning everyday information into a useful draft—and knowing what still needs checking.",
+  "introduction": [
+    "AI can help with an email, a meeting summary, a first draft, or an action list. I want the person using it to stay able to explain the result: what it says, where the details came from, and what remains undecided.",
+    "This first course follows one familiar task: prepare an internal update about a hybrid team workshop. You will frame the request, organize a small set of sources, and repair a convincing but inaccurate draft.",
+    "No AI account is required. Work in a document or on paper, try the task, then compare your answer with the example. If you choose to try a prompt in an organization-approved AI tool, use only this fictional packet. The examples and feedback are written learning material, not a live AI assessment.",
+    "The suggested 15–20 minutes per lesson is a starting estimate. Take more time, use written or spoken answers, and keep the packet open. Try the practice task before opening its answer, then explain what you would change."
+  ],
+  "reviewedOn": "2026-09-19",
+  "scenario": {
+    "title": "A workshop update with a few moving parts",
+    "description": "You are helping prepare an internal team update and action list for Noor, the workshop organizer. Everyone and everything in this packet is fictional. The exercise reference date is 19 September 2026. Use D1–D3 as sources. D4 is a deliberately flawed draft to review, not evidence of what happened.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Early planning meeting notes",
+        "date": "2026-09-14",
+        "kind": "Planning notes — provisional details",
+        "body": [
+          "The team wants a hybrid workshop on Thursday 8 October 2026 to agree three ways to make team projects easier to coordinate.",
+          "The initial suggestion is 10:00–11:00 Pacific time in the Cedar room. These are proposed arrangements, not a final booking.",
+          "Plan for 12 people onsite and 8 joining remotely: 20 people in total. These are planning numbers, not a confirmed attendance record.",
+          "Noor is organizing the workshop. Eli will prepare the agenda. Sam will collect accessibility requests. No deadline has been agreed for Eli's agenda or Sam's collection of requests.",
+          "Refreshments have been requested. No spending decision or quote is recorded."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Organizer's confirmed update",
+        "date": "2026-09-17",
+        "kind": "Email from Noor — current arrangements and open items",
+        "body": [
+          "I have confirmed the workshop for Thursday 8 October 2026, 14:00–15:00 Pacific time, in the Maple room for onsite participants. This replaces the earlier suggested time and room.",
+          "We are still planning for 12 people onsite and 8 remotely. The workshop purpose and the assignments to Eli and Sam are unchanged.",
+          "The remote joining link is not available yet. I will add it by Tuesday 6 October 2026 at 16:00 Pacific time.",
+          "The agenda deadline has not been agreed. Refreshments are still awaiting the budget owner's written approval; I will ask for that decision. No deadline for that decision has been set.",
+          "Please prepare the team update and action list as a draft for me to review. I have not approved the final message for distribution. Do not send it yet."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Short team communications policy",
+        "date": "2026-09-01",
+        "kind": "Fictional policy — review and approval rules",
+        "body": [
+          "For workshop logistics, the organizer's latest written confirmation replaces earlier proposed times and rooms. A later draft or an unattributed suggestion does not replace that confirmation.",
+          "Spending on refreshments requires the budget owner's written approval. A request, a pending decision, or a request to make an announcement is not that approval.",
+          "The organizer must review and approve the final team update before it is sent.",
+          "A hybrid-workshop update must include remote joining information or clearly state that the link is pending and identify who will provide it.",
+          "If a deadline has not been agreed, write 'not yet agreed' and ask the responsible person to confirm it. Do not choose a date and present it as a commitment."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "A convincing draft that needs review",
+        "date": "2026-09-18",
+        "kind": "Deliberately flawed example — not an observed AI response",
+        "body": [
+          "Subject: Team workshop — everything is ready",
+          "Our team workshop is confirmed for Thursday 8 October, 10:00–11:00 Pacific, in the Cedar room. All 20 people will attend onsite.",
+          "Refreshments have been approved. Eli will finish the agenda by Friday 25 September.",
+          "This update has been approved and sent, so there is nothing else to follow up."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "frame-the-task",
+      "number": 1,
+      "title": "Give AI a useful job",
+      "summary": "Turn a vague request into a short assignment you can check.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a clear request for a team update and action list, including the audience, sources, open questions, and draft-only boundary.",
+      "explanation": [
+        "I start with the job, not a clever prompt. Who needs the result, and what should they do with it? Colleagues need the workshop arrangements and next actions. Noor needs a draft that makes undecided details visible.",
+        "'Make this sound good' leaves important choices open. 'Draft an internal update and an owner/action/deadline list using D1–D3' gives you something specific to review.",
+        "You do not need a long formula. Microsoft starts with a clear goal; Google suggests relevant context and format. These are starting points, not accuracy guarantees. [S1, S2]",
+        "Keep writing separate from action. A draft does not book a room, approve refreshments, or send an invitation. Noor has asked to review it first."
+      ],
+      "workedExample": {
+        "title": "From a vague request to a checkable assignment",
+        "before": "Make a friendly workshop announcement. Fill in anything missing so it sounds ready.",
+        "after": "Draft a short internal workshop update and a separate action list for Noor to review. Use only D1–D3. Follow Noor's current arrangements, preserve details that are still pending, and use an owner/action/deadline format. Do not invent dates or approvals, send messages, or make bookings.",
+        "why": "The revised request defines the reader, result, evidence, and boundary. It makes accuracy more important than sounding finished."
+      },
+      "task": {
+        "prompt": "Read D1–D3. Write your own assignment in 60–90 words. Make it useful to a colleague or an assistant without copying the example word for word.",
+        "deliverable": "A short task brief that would produce a readable update and an action list.",
+        "checklist": [
+          "Name the audience and the two outputs.",
+          "Identify D1–D3 as the sources and D2 as the current logistics update.",
+          "Keep missing dates, the joining link, and refreshments approval visible.",
+          "Request a draft for Noor's review; do not authorize sending."
+        ]
+      },
+      "hint": "Imagine a new colleague receives only your task brief and the packet. Which choices would they still have to guess?",
+      "modelAnswer": [
+        "Prepare a concise internal update about the hybrid workshop, followed by an action list with owner, action, and deadline. It is a draft for Noor, not a message to send.",
+        "Use D1–D3, with Noor's 17 September confirmation for current logistics. Show pending information, including the remote link, refreshments approval, and unagreed deadlines. Preserve the onsite/remote distinction and list follow-up work. Use friendly, plain language without making the plan sound complete."
+      ],
+      "reflection": "Which phrase in your assignment makes the biggest difference to what the writer should produce? Explain its purpose.",
+      "transfer": {
+        "prompt": "A colleague adds, 'Can you also prepare calendar-invitation wording?' Nothing else in D1–D3 changes. What can you add to the assignment?",
+        "answer": "Add draft invitation wording using D2's current arrangements and a clear pending-link note. Preparing wording is still drafting. Do not create or send an invitation: Noor's final-message approval is absent, and the packet supplies no recipient list."
+      },
+      "check": {
+        "question": "Which instruction best fits the request and the packet?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Write a confident announcement and choose sensible dates for the open tasks.",
+            "feedback": "Choosing dates would turn unknowns into commitments. D3 says unagreed deadlines must stay explicit."
+          },
+          {
+            "id": "b",
+            "label": "Draft the update and action list from D1–D3, keep open items visible, and leave sending to Noor's approval.",
+            "feedback": "This fits the requested work and the review rule. It gives a result to check without inventing decisions."
+          },
+          {
+            "id": "c",
+            "label": "Summarize every sentence in date order, including D4 as the latest source.",
+            "feedback": "The job is a usable update, not a chronological transcript. D4 is a flawed draft, not a new confirmation."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "build-the-context",
+      "number": 2,
+      "title": "Give the right information",
+      "summary": "Help the writer see what is current, what is background, and what is still unknown.",
+      "duration": "15–20 minutes",
+      "outcome": "Build a small source-backed context note that resolves the old time and room while preserving genuine open questions.",
+      "explanation": [
+        "I want the writer to see which information answers the task and why it can be used. Keep source labels and dates so you can check details later.",
+        "D1 is early planning, D2 is Noor's confirmation, and D3 sets the approval rules. D4 is later in date but still only a draft. 'Use the newest document' would select the wrong source.",
+        "D2 changes the time and room while keeping the purpose, numbers, and assignments. Compare actual statements instead of discarding everything older.",
+        "Microsoft and Google recommend relevant context and clear expectations. I would apply that guidance with a short fact list, separate open items, and source labels. This exercise does not measure model context capacity or compare prompts. [S1, S2]"
+      ],
+      "workedExample": {
+        "title": "A later date is not the whole answer",
+        "before": "The newest item is D4, so use its 10:00 start, Cedar room, and approved refreshments.",
+        "after": "Current logistics: 8 October, 14:00–15:00 Pacific, Maple room, from Noor's confirmation in D2. D1's earlier time and room are replaced. Refreshments remain pending under D2 and D3. D4 is a draft to correct, not a source of confirmation.",
+        "why": "The source's purpose and authority matter alongside its date. A draft cannot approve its own claims."
+      },
+      "task": {
+        "prompt": "Make a context note with three headings: Current facts, Still open, and Source rules. Label the source of each material detail.",
+        "deliverable": "A concise context note that another person can use without treating the flawed draft as evidence.",
+        "checklist": [
+          "Preserve the current date, time zone, time, room, purpose, and 12 onsite / 8 remote plan.",
+          "Record who will provide the remote link and its stated deadline.",
+          "Leave refreshments approval and unagreed deadlines unresolved.",
+          "Explain why D4 cannot override D2 or approve anything."
+        ]
+      },
+      "hint": "For each detail, ask: who said it, what kind of document is it, and exactly what does it replace?",
+      "modelAnswer": [
+        "Current facts: workshop on 8 October 2026, 14:00–15:00 Pacific, Maple room (D2). Purpose: agree three ways to coordinate team projects (D1, unchanged by D2). Plan: 12 onsite and 8 remote, not confirmed attendance (D1–D2). Eli prepares the agenda; Sam collects accessibility requests (D1–D2).",
+        "Still open: joining link; Noor will add it by 6 October at 16:00 Pacific (D2). Agenda and accessibility-request deadlines are not yet agreed (D1–D2). Refreshments need the budget owner's written approval; Noor will ask, with no agreed decision deadline (D2–D3). Final-message approval is absent (D2–D3).",
+        "Source rules: use D2 for revised logistics, retain unchanged D1 details, and apply D3's review rules. D4 supplies no new confirmation."
+      ],
+      "reflection": "Which missing item can you accurately describe now, and which detail would require another person's decision?",
+      "transfer": {
+        "prompt": "Suppose a new 18 September chat says, 'I heard it might be in Cedar after all,' without naming who confirmed it. Does your context note change?",
+        "answer": "Keep Maple as the confirmed room from D2. Record the chat as an unconfirmed suggestion and ask Noor to clarify. Under D3, that message is not a replacement confirmation merely because its date is later."
+      },
+      "check": {
+        "question": "Which statement is supported by the packet?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Use D4 because the latest document always wins.",
+            "feedback": "D3 distinguishes confirmation from a draft. D4's later date does not make its claims authoritative."
+          },
+          {
+            "id": "b",
+            "label": "Use D2's time and room, retain unchanged planning details, and label unresolved items.",
+            "feedback": "This follows the change while preserving details D2 leaves in place."
+          },
+          {
+            "id": "c",
+            "label": "Keep both room names and let each attendee choose.",
+            "feedback": "The packet resolves this conflict: Noor confirmed Maple in D2. Reporting both as valid would create avoidable confusion."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "review-the-answer",
+      "number": 3,
+      "title": "Check it before you share it",
+      "summary": "Repair a plausible draft and explain the corrections.",
+      "duration": "15–20 minutes",
+      "outcome": "Prepare an update and action list; distinguish drafting, approval, and sending.",
+      "explanation": [
+        "A smooth draft can be wrong. I check details that change what someone does: arrival time, room, remote access, and commitments. Tone comes after accuracy.",
+        "Check D4 against D1–D3, not its confidence or another assistant's agreement. Use the relevant notes, message, or policy. [S1]",
+        "I ask for an explanation before showing the answer. Studies involving coding and school mathematics distinguish task completion from understanding. They did not test this course. Our approach is to try first, compare the answer, and explain one correction in your own words. [S3, S4]"
+      ],
+      "workedExample": {
+        "title": "Correct the claim, not just the wording",
+        "before": "Refreshments are approved, so everything is ready.",
+        "after": "Refreshments are awaiting the budget owner's written approval. Noor will request the decision; no decision deadline has been agreed.",
+        "why": "This preserves the open decision and follow-up owner without inventing a deadline."
+      },
+      "task": {
+        "prompt": "Review D4. Mark the misleading claims, then write a corrected update and action list. Check missing information as well as incorrect sentences.",
+        "deliverable": "A draft for Noor's review, with source labels in your working notes and an explanation of one correction.",
+        "checklist": [
+          "Correct the time, room, and onsite/remote planning numbers.",
+          "Remove invented approval, deadline, and sent-message claims.",
+          "Include the pending remote link, its owner, and its stated due date.",
+          "Keep all remaining actions visible without inventing deadlines."
+        ]
+      },
+      "hint": "Your update should explain attendance and open decisions. Check every word that implies completion.",
+      "modelAnswer": [
+        "Draft for Noor's review: Our hybrid team workshop is on Thursday 8 October, 14:00–15:00 Pacific, in the Maple room for onsite participants. We are planning for 12 people onsite and 8 remotely. We will agree three ways to make team projects easier to coordinate. The joining link is pending; Noor will add it by 6 October at 16:00 Pacific. Refreshments await the budget owner's written approval. Eli is preparing the agenda; its deadline is not yet agreed.",
+        "Actions: Noor—add the joining link by 6 October, 16:00 Pacific; ask the budget owner for a refreshments decision, deadline not yet agreed; review and approve the final update before sending. Eli—prepare the agenda and confirm its deadline. Sam—collect accessibility requests and confirm the deadline. No deadline is supplied for Noor's final review or for Eli and Sam's work.",
+        "Why D4 needs repair: it uses the replaced time and room, turns a 12/8 plan into 20 confirmed onsite attendees, invents refreshments approval and Eli's 25 September deadline, omits remote joining information, and falsely claims approval, sending, and no remaining work. D1–D3 support the corrected version. Nothing has been sent in this exercise."
+      ],
+      "reflection": "Explain one correction without reading the model answer. Which source settles it, and what would go wrong if it stayed unchanged?",
+      "transfer": {
+        "prompt": "Now suppose the budget owner sends a written refreshments approval. No new deadline, joining link, or message approval is supplied. What changes?",
+        "answer": "Change only the refreshments status and close Noor's request-for-decision action. Keep the pending remote link and its due date, unagreed agenda/accessibility deadlines, and Noor's final-message review and approval. Refreshments approval does not approve or send the team update."
+      },
+      "check": {
+        "question": "The corrected draft includes the pending-link note. What is its status under D2–D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Ready to send automatically because the factual errors were fixed.",
+            "feedback": "Accurate wording does not replace Noor's required final-message approval."
+          },
+          {
+            "id": "b",
+            "label": "Unusable until every open item is complete.",
+            "feedback": "D3 permits a pending-link note. A useful draft can identify decisions that remain open."
+          },
+          {
+            "id": "c",
+            "label": "Ready for Noor's review; distribution still requires Noor's approval.",
+            "feedback": "This separates a corrected draft from approval and sending. The pending-link note is allowed by D3."
+          }
+        ],
+        "answerId": "c"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Get started writing prompts in Microsoft Copilot",
+      "publisher": "Microsoft",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-writing-prompts-in-microsoft-365-copilot",
+      "publishedOrUpdated": "2026-02 (month only)",
+      "reviewedOn": "2026-09-19",
+      "support": "Start with a clear goal, add useful context, expectations and sources, iterate, and verify responses against trusted material.",
+      "application": "Lessons 1–3 use a bounded assignment, a labeled source packet, and claim-by-claim review.",
+      "limits": "Product guidance, not measured proof of productivity or this teaching method. The course needs no Copilot account; access to organizational work data in Copilot depends on the product entitlement.",
+      "revisit": "Recheck when the guidance, intended tool, or organization's permitted data use changes."
+    },
+    {
+      "id": "S2",
+      "title": "Learn about prompts for Gemini in Docs, Sheets, Slides, Vids & Forms",
+      "publisher": "Google",
+      "url": "https://support.google.com/docs/answer/15013615?hl=en",
+      "publishedOrUpdated": "unknown",
+      "reviewedOn": "2026-09-19",
+      "support": "Use natural language, a specific task, relevant context and an appropriate format; review and refine. Not every suggested prompt component is mandatory.",
+      "application": "Lessons 1–2 use ordinary wording and a compact context note rather than a required prompt formula.",
+      "limits": "Vendor recommendations for Google features, not evidence that one format works best everywhere. Product eligibility is separate; no Gemini account is required for the exercises.",
+      "revisit": "Recheck if Google revises the guidance or if a lesson starts depending on a specific product feature."
+    },
+    {
+      "id": "S3",
+      "title": "How AI assistance impacts the formation of coding skills",
+      "publisher": "Anthropic — Judy Hanwen Shen and Alex Tamkin",
+      "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
+      "publishedOrUpdated": "2026-01-29",
+      "reviewedOn": "2026-09-19",
+      "support": "In a randomized study of 52 mostly junior Python developers learning Trio, the AI group averaged 50% on an immediate quiz versus 67% without AI; the completion-time difference was not statistically significant.",
+      "application": "Ask learners to make an attempt, explain a correction, and distinguish task output from understanding.",
+      "limits": "Small coding study with an immediate assessment. Interaction patterns were qualitative associations, not randomized teaching methods. It does not establish lasting skill loss, results for everyday writing, or effectiveness of this course.",
+      "revisit": "Revisit after relevant replications, longer follow-up, or evidence from comparable employee writing tasks."
+    },
+    {
+      "id": "S4",
+      "title": "Generative AI without guardrails can harm learning: Evidence from high school mathematics",
+      "publisher": "Bastani and colleagues — Proceedings of the National Academy of Sciences",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/",
+      "publishedOrUpdated": "2025-06-25 (online publication)",
+      "reviewedOn": "2026-09-19",
+      "support": "Assisted practice improved in both AI conditions. Ordinary answer-oriented assistance harmed later unassisted exam performance; the teacher-informed tutor largely avoided that harm without showing an unassisted advantage over the control.",
+      "application": "Offer a first attempt, an optional hint, an answer explanation, and a changed-case question; keep assisted and independent observations distinct.",
+      "limits": "One high school in Turkey, mathematics, a Fall 2023 deployment, and short-term outcomes. This was not employee training or a test of static feedback. It does not demonstrate this course's learning effect.",
+      "revisit": "Revisit when studies test comparable workplace tasks, longer-term outcomes, or different assistance designs."
+    }
+  ]
+}

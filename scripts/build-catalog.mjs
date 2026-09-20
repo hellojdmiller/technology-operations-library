@@ -11,6 +11,7 @@ const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { with
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
 const descriptions = {
+  'training/ai-at-work/README.md': 'Three free lessons for everyday employees: frame a task, supply useful context, and review an AI draft. Includes a fictional workshop packet, examples, answer guidance, a worksheet, and facilitator notes; no AI account required.',
   'training/free-training-directory/README.md': 'Find 100 learning sites for staff, operators, developers and managers. Includes free scope, customer/account conditions, official evidence, proposed starter tasks and a CSV for an internal training catalog.',
   'training/delivery/README.md': 'Deliver a proposed 60-minute vendor task-card session, then plan 30-day follow-up with a coach rubric, blank learner log and fictional example. Keep assisted practice, independent reasoning and work authority separate.',
   'cyber-risk/workshops/incident-readiness/README.md': 'Run a 45-minute decision rehearsal using the existing destructive-outage scenario. Includes facilitator and participant sheets, decision log, observer rubric, holding update and improvement plan; no live incident actions.',
@@ -64,6 +65,7 @@ add('Training', markdown('training'), 'Practice module; labs not executed');
 add('Training', markdown('training/vendor-walkthroughs'), 'Official video and reading paths with original exercises; participant practice unexecuted');
 add('Training', ['training/delivery/README.md'], 'Proposed session and follow-up plan; no learner sessions or measured outcomes');
 add('Training', ['training/free-training-directory/README.md'], 'Official sources reviewed; enrollment, playback, customer entitlement and learner outcomes untested');
+add('Training', ['training/ai-at-work/README.md'], 'Research and fictional exercises reviewed; no learner trials or measured outcomes');
 add('Work samples', folders('work-samples', 'README.md'), 'See sample validation and deployment limits');
 add('AI research', [
   'research/beyond-the-model-frontier.md',
