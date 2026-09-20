@@ -30,7 +30,7 @@ The installation uses the checked-in lockfile and downloads packages. The demo a
 The beginning of the observed demo output was:
 
 ```text
-Available tools: vcpeit_list_services, vcpeit_get_service
+Available tools: tol_list_services, tol_get_service
 ```
 
 The first result carries `demo: true` and `catalogVersion: "synthetic-v1"`. It lists two tier-1 services with `total: 4`, `count: 2`, `hasMore: true`, and `nextOffset: 2`. Four is the filtered total, not the six-service fixture's full size.

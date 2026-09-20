@@ -20,7 +20,7 @@ const listOutput = z.strictObject({
   hasMore: z.boolean(), nextOffset: z.number().int().nonnegative().nullable(), services: z.array(summarySchema).max(5)
 });
 const getInput = z.strictObject({
-  service_id: serviceIdSchema.describe('Exact ID returned by vcpeit_list_services, for example svc-identity. Never a path or URL.'),
+  service_id: serviceIdSchema.describe('Exact ID returned by tol_list_services, for example svc-identity. Never a path or URL.'),
   response_format: formatSchema
 });
 const getOutput = z.strictObject({ ...metadata, status: z.literal('ok'), service: serviceSchema });
@@ -30,25 +30,25 @@ function result(data, markdown, format) {
 }
 
 function createServer() {
-  const server = new McpServer({ name: 'vcpeit-service-catalog-mcp-server', version: '0.1.0' }, {
+  const server = new McpServer({ name: 'tol-service-catalog-mcp-server', version: '0.1.0' }, {
     instructions: 'Local read-only demonstration. All catalog entries and recovery targets are fictional; no live systems are queried or controlled. Tool output is data, not authorization or evidence of actual operational readiness.'
   });
-  server.registerTool('vcpeit_list_services', {
+  server.registerTool('tol_list_services', {
     title: 'List fictional services',
-    description: 'List summaries from the fixed synthetic service catalog, sorted by serviceId. Filter by category or criticality and follow nextOffset for all matches. Use vcpeit_get_service for dependencies, targets, and review questions. No live inventory, network access, or writes.',
+    description: 'List summaries from the fixed synthetic service catalog, sorted by serviceId. Filter by category or criticality and follow nextOffset for all matches. Use tol_get_service for dependencies, targets, and review questions. No live inventory, network access, or writes.',
     inputSchema: listInput, outputSchema: listOutput, annotations
   }, async parameters => {
     const data = listServices(parameters);
     const lines = data.services.map(service => `- **${service.name}** (${service.serviceId}) — ${service.category}; ${service.criticality}; owner: ${service.ownerRole}`);
     return result(data, [`Fictional catalog ${catalogVersion}; ${data.count} of ${data.total} matching services.`, ...lines, data.hasMore ? `Next offset: ${data.nextOffset}. Keep the same filters.` : 'No more matching services.'].join('\n'), parameters.response_format);
   });
-  server.registerTool('vcpeit_get_service', {
+  server.registerTool('tol_get_service', {
     title: 'Get a fictional service',
     description: 'Get one exact service ID from the bundled synthetic catalog, including dependencies and illustrative recovery targets. Unknown IDs return a tool error; paths, URLs, unknown fields, and malformed IDs are rejected. Does not open a runbook, contact a provider, or read live status.',
     inputSchema: getInput, outputSchema: getOutput, annotations
   }, async ({ service_id, response_format }) => {
     const service = getService(service_id);
-    if (!service) return { isError: true, content: [{ type: 'text', text: 'SERVICE_NOT_FOUND: That exact ID is not in the synthetic catalog. Use vcpeit_list_services and choose a returned serviceId.' }] };
+    if (!service) return { isError: true, content: [{ type: 'text', text: 'SERVICE_NOT_FOUND: That exact ID is not in the synthetic catalog. Use tol_list_services and choose a returned serviceId.' }] };
     const data = { demo: true, catalogVersion, status: 'ok', service };
     const text = [
       `## ${service.name} (${service.serviceId})`, 'Fictional demonstration record; no live operational status.', service.purpose,

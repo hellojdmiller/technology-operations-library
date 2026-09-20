@@ -26,8 +26,8 @@ The demo client launches the server over stdio, discovers the two tools, request
 
 | Tool | Inputs | Result |
 |---|---|---|
-| `vcpeit_list_services` | Optional exact `category`, `criticality`; `limit` 1–5 (default 3); `offset` 0–100 (default 0); `response_format` | Bounded summaries sorted by service ID, matching total, current count, `hasMore`, and `nextOffset` |
-| `vcpeit_get_service` | Exact `service_id`; optional `response_format` | One fictional service's owner, purpose, dependencies, illustrative recovery targets, review status, questions, and generic support route |
+| `tol_list_services` | Optional exact `category`, `criticality`; `limit` 1–5 (default 3); `offset` 0–100 (default 0); `response_format` | Bounded summaries sorted by service ID, matching total, current count, `hasMore`, and `nextOffset` |
+| `tol_get_service` | Exact `service_id`; optional `response_format` | One fictional service's owner, purpose, dependencies, illustrative recovery targets, review status, questions, and generic support route |
 
 Categories: `identity`, `collaboration`, `research`, `fund-operations`, `recovery`, `automation`. Criticality: `tier-1`, `tier-2`, `tier-3`. Keep the same filters while following `nextOffset`; `null` means the last page. An offset after the final row returns an empty page with the matching total intact.
 

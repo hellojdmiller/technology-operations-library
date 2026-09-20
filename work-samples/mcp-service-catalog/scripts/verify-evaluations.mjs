@@ -8,7 +8,7 @@ import { StdioClientTransport } from '@modelcontextprotocol/client/stdio';
 const xml = readFileSync(new URL('../evaluations/queries.xml', import.meta.url), 'utf8');
 const answers = new Map([...xml.matchAll(/<qa_pair id="(Q\d+)">[\s\S]*?<answer>([^<]+)<\/answer>[\s\S]*?<\/qa_pair>/g)].map(match => [match[1], match[2]]));
 assert.equal(answers.size, 10, 'Expected ten fixed evaluation answer keys.');
-const client = new Client({ name: 'vcpeit-catalog-evaluation-client', version: '0.1.0' });
+const client = new Client({ name: 'tol-catalog-evaluation-client', version: '0.1.0' });
 const transport = new StdioClientTransport({ command: process.execPath, args: [fileURLToPath(new URL('../src/server.mjs', import.meta.url))], stderr: 'pipe' });
 
 async function tool(name, arguments_) {
@@ -23,8 +23,8 @@ try {
   const services = [];
   let offset = 0;
   do {
-    const page = await tool('vcpeit_list_services', { offset, limit: 2 });
-    for (const summary of page.services) services.push((await tool('vcpeit_get_service', { service_id: summary.serviceId })).service);
+    const page = await tool('tol_list_services', { offset, limit: 2 });
+    for (const summary of page.services) services.push((await tool('tol_get_service', { service_id: summary.serviceId })).service);
     offset = page.nextOffset;
   } while (offset !== null);
   const byId = new Map(services.map(service => [service.serviceId, service]));

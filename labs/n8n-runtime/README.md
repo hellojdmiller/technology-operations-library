@@ -23,7 +23,7 @@ The command prints each case result and writes a dated directory under ignored `
 - `runner.log`: the lab's diagnostic output, including the structured report.
 - `cleanup.json`: whether the named lab container and staged input were removed.
 
-A failed assertion, missing report, incomplete run, or unverified cleanup exits nonzero. The runner attempts cleanup on completion, failure, and interruption. If Docker is unavailable during cleanup, it reports the exact container name and retains staged input for investigation. After an abrupt host crash, inspect containers named `vcpeit-n8n-lab-*`; do not remove unrelated containers.
+A failed assertion, missing report, incomplete run, or unverified cleanup exits nonzero. The runner attempts cleanup on completion, failure, and interruption. If Docker is unavailable during cleanup, it reports the exact container name and retains staged input for investigation. After an abrupt host crash, inspect containers named `tol-n8n-lab-*`; do not remove unrelated containers.
 
 ## What the 32 cases establish
 

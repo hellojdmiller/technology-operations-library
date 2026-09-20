@@ -81,36 +81,36 @@ Test-Case 'script contains only the three scoped Exchange getter commands' {
 }
 
 # Stub the external command boundary. These tests never load or contact Exchange.
-$global:vcpeitGetterCalls = 0
-$global:vcpeitTestTenant = '00000000-0000-4000-8000-000000000001'
+$global:tolGetterCalls = 0
+$global:tolTestTenant = '00000000-0000-4000-8000-000000000001'
 function Get-ConnectionInformation {
     [CmdletBinding()]param()
-    [pscustomobject]@{ State = 'Connected'; TenantID = $global:vcpeitTestTenant; IsEopSession = $false; ModulePrefix = '' }
+    [pscustomobject]@{ State = 'Connected'; TenantID = $global:tolTestTenant; IsEopSession = $false; ModulePrefix = '' }
 }
 function Get-EXOMailbox {
     [CmdletBinding()]param([string]$PrimarySmtpAddress, [string[]]$Properties)
-    $global:vcpeitGetterCalls++
+    $global:tolGetterCalls++
     [pscustomobject]@{ PrimarySmtpAddress = $PrimarySmtpAddress; RecipientTypeDetails = 'RoomMailbox'; Guid = '00000000-0000-4000-8000-000000000002' }
 }
 function Get-CalendarProcessing {
     [CmdletBinding()]param([string]$Identity, [int]$ResultSize)
-    $global:vcpeitGetterCalls++
+    $global:tolGetterCalls++
     [pscustomobject]@{ AutomateProcessing = 'AutoAccept'; BookingWindowInDays = 180; MaximumDurationInMinutes = 120; AllowRecurringMeetings = $true; AllBookInPolicy = $true; ProcessExternalMeetingMessages = $false; DeleteSubject = $true; AddOrganizerToSubject = $true; DeleteComments = $true; RemovePrivateProperty = $false }
 }
 Test-Case 'wrong tenant fails before resource getters' {
     Test-Fails {
         & $scriptPath -UseExistingConnection -RoomIdentity 'cedar@example.invalid','oak@example.invalid' -ExpectedTenantId '00000000-0000-4000-8000-000000000009' -ReferenceRoom 'cedar@example.invalid'
     } 'expected'
-    Assert-That ($global:vcpeitGetterCalls -eq 0) 'Wrong tenant allowed a query.'
+    Assert-That ($global:tolGetterCalls -eq 0) 'Wrong tenant allowed a query.'
 }
 Test-Case 'connected mode queries only explicit resources through mocked getters' {
-    $r = & $scriptPath -UseExistingConnection -RoomIdentity 'cedar@example.invalid','oak@example.invalid' -ExpectedTenantId $global:vcpeitTestTenant -ReferenceRoom 'cedar@example.invalid'
-    Assert-That ($global:vcpeitGetterCalls -eq 4) 'Unexpected getter count.'
+    $r = & $scriptPath -UseExistingConnection -RoomIdentity 'cedar@example.invalid','oak@example.invalid' -ExpectedTenantId $global:tolTestTenant -ReferenceRoom 'cedar@example.invalid'
+    Assert-That ($global:tolGetterCalls -eq 4) 'Unexpected getter count.'
     Assert-That ($r.counts.matches_reference -eq 10 -and $r.counts.unknown -eq 0 -and -not $r.fictional) 'Unexpected mock comparison.'
 }
 Test-Case 'offline mode never invokes the available mocked getters' {
-    $before = $global:vcpeitGetterCalls
+    $before = $global:tolGetterCalls
     $null = & $scriptPath -ReferenceRoom 'cedar@example.invalid'
-    Assert-That ($before -eq $global:vcpeitGetterCalls) 'Offline mode made a getter call.'
+    Assert-That ($before -eq $global:tolGetterCalls) 'Offline mode made a getter call.'
 }
 Write-Host "$script:passed checks passed. No tenant connection was made."

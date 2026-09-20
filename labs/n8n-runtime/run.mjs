@@ -24,9 +24,9 @@ if (inspection.error || inspection.status !== 0) {
 const { cases, sources } = buildCases(root);
 const revision = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' });
 const dirty = spawnSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' });
-const input = mkdtempSync(join(tmpdir(), 'vcpeit-n8n-input-'));
+const input = mkdtempSync(join(tmpdir(), 'tol-n8n-input-'));
 if (input.includes(',')) throw new Error('Docker mount path cannot contain a comma');
-const container = 'vcpeit-n8n-lab-' + randomUUID();
+const container = 'tol-n8n-lab-' + randomUUID();
 const runId = new Date().toISOString().replaceAll(':', '-') + '-' + randomUUID().slice(0, 8);
 const destination = join(root, 'local-results/n8n-runtime', runId);
 mkdirSync(destination, { recursive: true });
@@ -92,9 +92,9 @@ try {
     child.on('close', code => { clearTimeout(timer); clearTimeout(killTimer); resolveExit(code); });
   });
   writeFileSync(join(destination, 'runner.log'), output + '\n' + errors);
-  const lines = output.split('\n').filter(line => line.startsWith('VCPEIT_REPORT '));
+  const lines = output.split('\n').filter(line => line.startsWith('TOL_REPORT '));
   if (lines.length !== 1) throw new Error('Container did not return one complete report; inspect runner.log');
-  const report = JSON.parse(lines[0].slice('VCPEIT_REPORT '.length));
+  const report = JSON.parse(lines[0].slice('TOL_REPORT '.length));
   report.docker_image_id = JSON.parse(inspection.stdout)[0].Id;
   writeFileSync(join(destination, 'report.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(`Report: ${join(destination, 'report.json')}`);

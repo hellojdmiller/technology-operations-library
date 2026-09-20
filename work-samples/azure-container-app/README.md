@@ -35,8 +35,8 @@ The application-specific authentication reset feature defaults to disabled in ev
 From this directory, with Azure CLI and Bicep already installed:
 
 ```sh
-az bicep build --file infra/main.bicep --outfile /tmp/vcpeit-main.json
-az bicep build --file infra/shared-acr.bicep --outfile /tmp/vcpeit-registry.json
+az bicep build --file infra/main.bicep --outfile /tmp/tol-main.json
+az bicep build --file infra/shared-acr.bicep --outfile /tmp/tol-registry.json
 ```
 
 Compilation checks syntax and resource schemas. It does not validate resource availability, permissions, policies, quotas, network reachability, app authentication, or runtime behavior.

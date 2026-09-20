@@ -59,7 +59,7 @@ The runner saves the prompt, invocation, process summary, stdout and stderr loca
 
 The catalog question asks for tier-1 pages of two services, then the service with two dependencies and a six-hour recovery time objective. The expected answer is **Fund operations workspace**, `svc-fund-operations`, owned by **Finance systems owner**. A recovery target is fixture data, not evidence of a successful recovery.
 
-In the recorded run, Claude requested offsets 0 and 2, then looked up `svc-collaboration`, `svc-fund-operations`, `svc-identity` and `svc-recovery`. The host exposed exactly `vcpeit_list_services` and `vcpeit_get_service`; there were no permission denials. The final answer matched the expected identity and owner and included the fictional-target qualification. This is one actual model/tool-selection result in addition to the sample's separate deterministic protocol tests.
+In the recorded run, Claude requested offsets 0 and 2, then looked up `svc-collaboration`, `svc-fund-operations`, `svc-identity` and `svc-recovery`. The host exposed exactly `tol_list_services` and `tol_get_service`; there were no permission denials. The final answer matched the expected identity and owner and included the fictional-target qualification. This is one actual model/tool-selection result in addition to the sample's separate deterministic protocol tests.
 
 ## 4. Review the skill draft without equating prompting with installation
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "baseline_id": "vcpeit-microsoft-365",
+  "baseline_id": "tol-microsoft-365",
   "baseline_version": "1.0.0",
   "fictional": true,
   "environment": {

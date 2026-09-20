@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "id": "vcpeit-google-workspace",
+  "id": "tol-google-workspace",
   "version": "1.0.0",
   "title": "Google Workspace proposed operating baseline",
   "status": "review_template_not_vendor_configuration",
