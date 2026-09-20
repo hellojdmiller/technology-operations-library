@@ -7,6 +7,10 @@ Reusable instructions for recurring technology operating tasks. Each folder cont
 - [Risk review](risk-review/SKILL.md): turn a proposed change or service into evidence-based risk scenarios, treatment choices, and a reviewable decision.
 - [Document sanitization](document-sanitization/SKILL.md): adapt an authorized source document into a reusable example while removing identifying and operationally sensitive detail.
 
+## Related workflow system for Claude Code
+
+- [Aloha](https://github.com/hellojdmiller/aloha): a spec-driven development workflow for Claude Code with `/aloha:*` commands that keep a project plan in `.planning/` and run it through roadmap, plan, execute, and verify steps with sub-agents. It is not a portable skill: it is Claude Code only, needs Node.js and git, installs into `~/.claude` with its own `install.sh`, and is maintained in its own repository (MIT, forked from Get Shit Done).
+
 ## Choose how to use them
 
 Use the [platform guide](platform-guide.md) for Claude Code, Claude chat, ChatGPT, Codex, and Cursor. Native skill loading and ordinary chat instructions are different delivery methods. Host permissions, model behavior, available tools, and account features still apply.
