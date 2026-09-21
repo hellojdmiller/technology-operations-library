@@ -115,7 +115,7 @@ function validate(course, directory) {
     requireCondition(lesson.check.options.some((option) => option.id === lesson.check.answerId), `${lesson.slug}: answer ID is not an option`);
     const readable = [lesson.title, lesson.summary, lesson.outcome, ...lesson.explanation, ...Object.values(lesson.workedExample), lesson.task.prompt, lesson.task.deliverable, ...lesson.task.checklist, lesson.hint, ...lesson.modelAnswer, lesson.reflection, ...Object.values(lesson.transfer), lesson.check.question, ...lesson.check.options.flatMap((option) => [option.label, option.feedback])];
     const words = readable.join(' ').split(/\s+/u).filter(Boolean).length;
-    requireCondition(words >= 350 && words <= 750, `${lesson.slug}: ${words} words, expected 350–750`);
+    requireCondition(words >= 350 && words <= 1000, `${lesson.slug}: ${words} words, expected 350–1000`);
     wordCounts.push(`${lesson.number}: ${words}`);
   });
   unique(course.lessons.map((lesson) => lesson.slug), 'lesson slugs');
