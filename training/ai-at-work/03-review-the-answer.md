@@ -53,7 +53,7 @@ Your update should explain attendance and open decisions. Check every word that 
 
 Draft for Noor's review: Our hybrid team workshop is on Thursday 8 October, 14:00–15:00 Pacific, in the Maple room for onsite participants. We are planning for 12 people onsite and 8 remotely. We will agree three ways to make team projects easier to coordinate. The joining link is pending; Noor will add it by 6 October at 16:00 Pacific. Refreshments await the budget owner's written approval. Eli is preparing the agenda; its deadline is not yet agreed.
 
-Actions: Noor—add the joining link by 6 October, 16:00 Pacific; ask the budget owner for a refreshments decision, deadline not yet agreed; review and approve the final update before sending. Eli—prepare the agenda and confirm its deadline. Sam—collect accessibility requests and confirm the deadline. No deadline is supplied for Noor's final review or for Eli and Sam's work.
+Actions: Noor: add the joining link by 6 October, 16:00 Pacific; ask the budget owner for a refreshments decision, deadline not yet agreed; review and approve the final update before sending. Eli: prepare the agenda and confirm its deadline. Sam: collect accessibility requests and confirm the deadline. No deadline is supplied for Noor's final review or for Eli and Sam's work.
 
 Why D4 needs repair: it uses the replaced time and room, turns a 12/8 plan into 20 confirmed onsite attendees, invents refreshments approval and Eli's 25 September deadline, omits remote joining information, and falsely claims approval, sending, and no remaining work. D1–D3 support the corrected version. Nothing has been sent in this exercise.
 

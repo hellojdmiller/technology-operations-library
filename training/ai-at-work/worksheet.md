@@ -1,4 +1,4 @@
-# AI at Work — blank practice worksheet
+# AI at Work: blank practice worksheet
 
 Use a separate copy for each learner. Keep real names and completed observations in your agreed private location. Leave the fields below blank until there is an actual answer or observation.
 

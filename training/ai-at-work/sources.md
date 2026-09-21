@@ -44,7 +44,7 @@ Reviewed: 2026-09-19
 
 **[How AI assistance impacts the formation of coding skills](https://www.anthropic.com/research/AI-assistance-coding-skills)**
 
-Publisher: Anthropic — Judy Hanwen Shen and Alex Tamkin
+Publisher: Anthropic (Judy Hanwen Shen and Alex Tamkin)
 
 Published or updated: 2026-01-29
 
@@ -62,7 +62,7 @@ Reviewed: 2026-09-19
 
 **[Generative AI without guardrails can harm learning: Evidence from high school mathematics](https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/)**
 
-Publisher: Bastani and colleagues — Proceedings of the National Academy of Sciences
+Publisher: Bastani and colleagues, Proceedings of the National Academy of Sciences
 
 Published or updated: 2025-06-25 (online publication)
 

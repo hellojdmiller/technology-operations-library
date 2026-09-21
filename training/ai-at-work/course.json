@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "slug": "ai-at-work",
   "title": "AI at Work",
-  "description": "Three practical lessons for turning everyday information into a useful draft—and knowing what still needs checking.",
+  "description": "Three practical lessons for turning everyday information into a useful draft, and knowing what still needs checking.",
   "introduction": [
     "AI can help with an email, a meeting summary, a first draft, or an action list. I want the person using it to stay able to explain the result: what it says, where the details came from, and what remains undecided.",
     "This first course follows one familiar task: prepare an internal update about a hybrid team workshop. You will frame the request, organize a small set of sources, and repair a convincing but inaccurate draft.",
@@ -18,7 +18,7 @@
         "id": "D1",
         "title": "Early planning meeting notes",
         "date": "2026-09-14",
-        "kind": "Planning notes — provisional details",
+        "kind": "Planning notes: provisional details",
         "body": [
           "The team wants a hybrid workshop on Thursday 8 October 2026 to agree three ways to make team projects easier to coordinate.",
           "The initial suggestion is 10:00–11:00 Pacific time in the Cedar room. These are proposed arrangements, not a final booking.",
@@ -31,7 +31,7 @@
         "id": "D2",
         "title": "Organizer's confirmed update",
         "date": "2026-09-17",
-        "kind": "Email from Noor — current arrangements and open items",
+        "kind": "Email from Noor: current arrangements and open items",
         "body": [
           "I have confirmed the workshop for Thursday 8 October 2026, 14:00–15:00 Pacific time, in the Maple room for onsite participants. This replaces the earlier suggested time and room.",
           "We are still planning for 12 people onsite and 8 remotely. The workshop purpose and the assignments to Eli and Sam are unchanged.",
@@ -44,7 +44,7 @@
         "id": "D3",
         "title": "Short team communications policy",
         "date": "2026-09-01",
-        "kind": "Fictional policy — review and approval rules",
+        "kind": "Fictional policy: review and approval rules",
         "body": [
           "For workshop logistics, the organizer's latest written confirmation replaces earlier proposed times and rooms. A later draft or an unattributed suggestion does not replace that confirmation.",
           "Spending on refreshments requires the budget owner's written approval. A request, a pending decision, or a request to make an announcement is not that approval.",
@@ -57,9 +57,9 @@
         "id": "D4",
         "title": "A convincing draft that needs review",
         "date": "2026-09-18",
-        "kind": "Deliberately flawed example — not an observed AI response",
+        "kind": "Deliberately flawed example: not an observed AI response",
         "body": [
-          "Subject: Team workshop — everything is ready",
+          "Subject: Team workshop: everything is ready",
           "Our team workshop is confirmed for Thursday 8 October, 10:00–11:00 Pacific, in the Cedar room. All 20 people will attend onsite.",
           "Refreshments have been approved. Eli will finish the agenda by Friday 25 September.",
           "This update has been approved and sent, so there is nothing else to follow up."
@@ -222,7 +222,7 @@
       "hint": "Your update should explain attendance and open decisions. Check every word that implies completion.",
       "modelAnswer": [
         "Draft for Noor's review: Our hybrid team workshop is on Thursday 8 October, 14:00–15:00 Pacific, in the Maple room for onsite participants. We are planning for 12 people onsite and 8 remotely. We will agree three ways to make team projects easier to coordinate. The joining link is pending; Noor will add it by 6 October at 16:00 Pacific. Refreshments await the budget owner's written approval. Eli is preparing the agenda; its deadline is not yet agreed.",
-        "Actions: Noor—add the joining link by 6 October, 16:00 Pacific; ask the budget owner for a refreshments decision, deadline not yet agreed; review and approve the final update before sending. Eli—prepare the agenda and confirm its deadline. Sam—collect accessibility requests and confirm the deadline. No deadline is supplied for Noor's final review or for Eli and Sam's work.",
+        "Actions: Noor: add the joining link by 6 October, 16:00 Pacific; ask the budget owner for a refreshments decision, deadline not yet agreed; review and approve the final update before sending. Eli: prepare the agenda and confirm its deadline. Sam: collect accessibility requests and confirm the deadline. No deadline is supplied for Noor's final review or for Eli and Sam's work.",
         "Why D4 needs repair: it uses the replaced time and room, turns a 12/8 plan into 20 confirmed onsite attendees, invents refreshments approval and Eli's 25 September deadline, omits remote joining information, and falsely claims approval, sending, and no remaining work. D1–D3 support the corrected version. Nothing has been sent in this exercise."
       ],
       "reflection": "Explain one correction without reading the model answer. Which source settles it, and what would go wrong if it stayed unchanged?",
@@ -281,7 +281,7 @@
     {
       "id": "S3",
       "title": "How AI assistance impacts the formation of coding skills",
-      "publisher": "Anthropic — Judy Hanwen Shen and Alex Tamkin",
+      "publisher": "Anthropic (Judy Hanwen Shen and Alex Tamkin)",
       "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
       "publishedOrUpdated": "2026-01-29",
       "reviewedOn": "2026-09-19",
@@ -293,7 +293,7 @@
     {
       "id": "S4",
       "title": "Generative AI without guardrails can harm learning: Evidence from high school mathematics",
-      "publisher": "Bastani and colleagues — Proceedings of the National Academy of Sciences",
+      "publisher": "Bastani and colleagues, Proceedings of the National Academy of Sciences",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/",
       "publishedOrUpdated": "2025-06-25 (online publication)",
       "reviewedOn": "2026-09-19",
