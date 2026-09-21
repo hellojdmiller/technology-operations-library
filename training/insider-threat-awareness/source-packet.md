@@ -2,13 +2,13 @@
 
 # A leaver, a lingering account, and a checklist
 
-You are Maya Lindqvist, an analyst at Wrenfield Partners, a small fictional firm of about twenty-five people. Everyone and everything in this packet is fictional, including the firm, its domains, its staff, and the agencies named in the access report. The exercise reference date is Monday 21 September 2026. D1 is a favour asked by a colleague; it is not evidence of wrongdoing. D2 is an extract from a routine report. D3 is the firm's own checklist.
+You are Maya Lindqvist, an analyst at Wrenfield Partners, a small fictional firm of about twenty-five people. Everyone and everything in this packet is fictional, including the firm, its domains, its staff, and the agencies named in the access report. The exercise reference date is Monday 21 September 2026. D1 is a favor asked by a colleague; it is not evidence of wrongdoing. D2 is an extract from a routine report. D3 is the firm's own checklist.
 
 ## D1: Chat from Dev, who leaves on Friday
 
-Date: 2026-09-21 · Internal chat message: a departing colleague asks a favour
+Date: 2026-09-21 · Internal chat message: a departing colleague asks a favor
 
-17:42 Dev Kapoor: Maya, quick favour. IT has already switched off sync on my laptop ahead of Friday, and I still need my stuff from the Deals shared drive: my templates, the models I built, and my contacts sheet.
+17:42 Dev Kapoor: Maya, quick favor. IT has already switched off sync on my laptop ahead of Friday, and I still need my stuff from the Deals shared drive: my templates, the models I built, and my contacts sheet.
 
 17:43 Dev Kapoor: Could you zip up the folder called 'Dev working' and drop it into this personal cloud link? It is my own work anyway; I just want it for my portfolio. Link: share.example.net/dk-files
 

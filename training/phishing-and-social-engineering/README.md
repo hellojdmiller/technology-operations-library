@@ -6,13 +6,13 @@ Three practical lessons on reading a message for the pressure it carries, verify
 
 Most of the messages that cause real damage at small firms are not clever. They are ordinary requests, sent at a busy moment, from someone who appears to have the right to ask. This course is about noticing the pressure inside a message before you act on the request it carries.
 
-You will work from one fictional packet: a shared-document notice, a text message claiming to be the managing partner, a genuine security notice, and the firm's own one-page reporting instructions. Two of the four are malicious. The point is not to guess which; it is to practise habits that make guessing unnecessary.
+You will work from one fictional packet: a shared-document notice, a text message claiming to be the managing partner, a genuine security notice, and the firm's own one-page reporting instructions. Two of the four are malicious. The point is not to guess which; it is to practice habits that make guessing unnecessary.
 
 No technical background is needed and no tool account is required. Work on paper or in a document. Try each task before opening the example answer, then explain your choice in your own words. The examples are comparisons to learn from, not scripts to memorise or wording to reuse.
 
 Nobody spots every message, and the guidance I lean on says so plainly. What protects a firm is that people report quickly, verify through a channel the message did not supply, and say so without fear when they have clicked. Those three habits are the three lessons that follow.
 
-**Track:** Security awareness · **For:** Everyone at a small, high-trust firm: administration, finance, investment, and operations colleagues with no technical background.
+**Format:** Course · **Track:** Security awareness · **For:** Everyone at a small, high-trust firm: administration, finance, investment, and operations colleagues with no technical background.
 
 ## Start here
 

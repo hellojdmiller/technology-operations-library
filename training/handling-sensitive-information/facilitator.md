@@ -29,7 +29,7 @@ A colleague can run this course as one session of about 60–85 minutes, or as 3
 <details>
 <summary>Changed-case answer</summary>
 
-No. A list of who invested in Fund III still identifies people and organisations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder.
+No. A list of who invested in Fund III still identifies people and organizations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder.
 
 </details>
 
@@ -94,7 +94,7 @@ Step one is the same and faster: the technology team can remove the link in minu
 <details>
 <summary>Why the other options fall short</summary>
 
-**A:** Recall needs both people in one organisation and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]
+**A:** Recall needs both people in one organization and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]
 
 **C:** D3 wants the report within the hour, before details are certain. Whatever Marcus does later, the investors' names and Lena's figure have already left the firm; delay only stops Lena acting today.
 

@@ -6,7 +6,7 @@
   "track": "security-awareness",
   "audience": "Everyone who handles names, contact details, identifiers, or financial details of people: clients, investors, employees, or candidates.",
   "prerequisites": [],
-  "description": "One short lesson on recognising personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell.",
+  "description": "One short lesson on recognizing personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell.",
   "introduction": [
     "I handle other people's details every week: an investor's mobile number, a candidate's home address, a colleague's bank account for payroll. None of it is mine. This short module is about noticing when a piece of information points to a person, and treating it with that in mind.",
     "The rule I use is simple. If someone could be picked out from the information, alone or combined with something else we hold, it is personal information. Names, email addresses, identifiers, financial details, and notes about health or family all count. So does a list of any of these.",
@@ -139,7 +139,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Personal data is information relating to an identified or identifiable individual. Identifiers include names, identification numbers, location data, and online identifiers; a combination of identifiers may be needed, and indirect identification through information reasonably likely to be combined still counts. Pseudonymised data is still personal data. Special category data attracts stricter rules.",
       "application": "The lesson's definition of personal information and its treatment of combinations, partial identifiers, and the Notes column.",
-      "limits": "UK GDPR guidance; definitions and duties differ elsewhere. The page gives no worked examples, so the packet's examples are mine. The ICO's separate small-organisations page on this topic returned not found on the review date, so this general guide is cited instead.",
+      "limits": "UK GDPR guidance; definitions and duties differ elsewhere. The page gives no worked examples, so the packet's examples are mine. The ICO's separate small-organizations page on this topic returned not found on the review date, so this general guide is cited instead.",
       "revisit": "If the ICO updates the guide or UK data protection law changes."
     },
     {
@@ -149,7 +149,7 @@
       "url": "https://csrc.nist.gov/pubs/sp/800/122/final",
       "publishedOrUpdated": "April 2010 (Final)",
       "reviewedOn": "2026-09-21",
-      "support": "Defines PII as information that can distinguish or trace an individual or is linked or linkable to one, with examples including name, identification numbers, email address, phone numbers, and financial, medical, and employment information; partial identifiers are often PII. Impact factors include quantity of records, data field sensitivity, and access from devices or systems outside the organisation's direct control. Recommends the 'minimum necessary' principle and regular review and destruction of PII with no current purpose.",
+      "support": "Defines PII as information that can distinguish or trace an individual or is linked or linkable to one, with examples including name, identification numbers, email address, phone numbers, and financial, medical, and employment information; partial identifiers are often PII. Impact factors include quantity of records, data field sensitivity, and access from devices or systems outside the organization's direct control. Recommends the 'minimum necessary' principle and regular review and destruction of PII with no current purpose.",
       "application": "The list of what counts, the 'a list is more sensitive' paragraph, the location paragraph, and the 'Old' sheet question.",
       "limits": "Written for US federal agencies in 2010 and not revised since. Its impact-level scheme is a federal framework, not a rule for private firms. The landing page shows the abstract; the cited sections are in the linked PDF.",
       "revisit": "If NIST withdraws or supersedes SP 800-122, or if the NIST Privacy Framework changes the definitions."
@@ -163,7 +163,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Large stores of personal data are 'very tempting targets for attackers of all kinds'. Fifteen good-practice measures grouped by knowing what you are protecting, restricting access to those with a real need, and sound design and operation.",
       "application": "The 'a list weighs more than one record' paragraph and the checklist item on limiting the extract to what the task needs.",
-      "limits": "Written for organisations running large data systems, not for one spreadsheet, and last reviewed in 2018. It does not define personal data or address legal duties.",
+      "limits": "Written for organizations running large data systems, not for one spreadsheet, and last reviewed in 2018. It does not define personal data or address legal duties.",
       "revisit": "If the NCSC replaces the collection or the firm starts holding materially larger data sets."
     },
     {
@@ -173,7 +173,7 @@
       "url": "https://ico.org.uk/for-organisations/report-a-breach/personal-data-breach/personal-data-breaches-a-guide/",
       "publishedOrUpdated": "Updated 20 August 2025",
       "reviewedOn": "2026-09-21",
-      "support": "A breach includes sending personal data to the wrong recipient, lost or stolen devices, and unauthorised access. Organisations must assess risk, record every breach, notify the ICO within 72 hours where required, and tell individuals where risk is high. Recommends allocating breach handling to a dedicated person or team and making sure staff know how to escalate.",
+      "support": "A breach includes sending personal data to the wrong recipient, lost or stolen devices, and unauthorized access. Organizations must assess risk, record every breach, notify the ICO within 72 hours where required, and tell individuals where risk is high. Recommends allocating breach handling to a dedicated person or team and making sure staff know how to escalate.",
       "application": "The 'report the same day to the named person, do not investigate alone' guidance and the D3 exposure rule.",
       "limits": "UK GDPR duties. Thresholds and deadlines differ in other jurisdictions; the lesson deliberately leaves that to the firm's privacy lead.",
       "revisit": "If the ICO revises the guide or the firm's jurisdictions change."

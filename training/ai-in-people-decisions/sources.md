@@ -14,7 +14,7 @@ Published or updated: 2024-11-06
 
 Reviewed: 2026-09-21
 
-**Supports:** The landing page and the linked November 2024 report summarize consensual audits of AI recruitment tool providers. The report found some tools let recruiters filter out candidates with certain protected characteristics, and others estimated or inferred gender, ethnicity, and other characteristics from applications or names rather than asking; some collected far more personal information than needed. The ICO made almost 300 recommendations, all accepted, covering fairness, transparency, data minimisation, DPIAs, and human review.
+**Supports:** The landing page and the linked November 2024 report summarize consensual audits of AI recruitment tool providers. The report found some tools let recruiters filter out candidates with certain protected characteristics, and others estimated or inferred gender, ethnicity, and other characteristics from applications or names rather than asking; some collected far more personal information than needed. The ICO made almost 300 recommendations, all accepted, covering fairness, transparency, data minimization, DPIAs, and human review.
 
 **Our application:** Supports the lesson's line between drafting and deciding, the point that inferring characteristics from text is a decision about a person, and the note that filtering and ranking features carry discrimination risk.
 

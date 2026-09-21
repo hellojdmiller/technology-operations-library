@@ -36,7 +36,7 @@ Reviewed: 2026-09-21
 
 **Our application:** The lesson's definition of personal information and its treatment of combinations, partial identifiers, and the Notes column.
 
-**Limits:** UK GDPR guidance; definitions and duties differ elsewhere. The page gives no worked examples, so the packet's examples are mine. The ICO's separate small-organisations page on this topic returned not found on the review date, so this general guide is cited instead.
+**Limits:** UK GDPR guidance; definitions and duties differ elsewhere. The page gives no worked examples, so the packet's examples are mine. The ICO's separate small-organizations page on this topic returned not found on the review date, so this general guide is cited instead.
 
 **Revisit when:** If the ICO updates the guide or UK data protection law changes.
 
@@ -50,7 +50,7 @@ Published or updated: April 2010 (Final)
 
 Reviewed: 2026-09-21
 
-**Supports:** Defines PII as information that can distinguish or trace an individual or is linked or linkable to one, with examples including name, identification numbers, email address, phone numbers, and financial, medical, and employment information; partial identifiers are often PII. Impact factors include quantity of records, data field sensitivity, and access from devices or systems outside the organisation's direct control. Recommends the 'minimum necessary' principle and regular review and destruction of PII with no current purpose.
+**Supports:** Defines PII as information that can distinguish or trace an individual or is linked or linkable to one, with examples including name, identification numbers, email address, phone numbers, and financial, medical, and employment information; partial identifiers are often PII. Impact factors include quantity of records, data field sensitivity, and access from devices or systems outside the organization's direct control. Recommends the 'minimum necessary' principle and regular review and destruction of PII with no current purpose.
 
 **Our application:** The list of what counts, the 'a list is more sensitive' paragraph, the location paragraph, and the 'Old' sheet question.
 
@@ -72,7 +72,7 @@ Reviewed: 2026-09-21
 
 **Our application:** The 'a list weighs more than one record' paragraph and the checklist item on limiting the extract to what the task needs.
 
-**Limits:** Written for organisations running large data systems, not for one spreadsheet, and last reviewed in 2018. It does not define personal data or address legal duties.
+**Limits:** Written for organizations running large data systems, not for one spreadsheet, and last reviewed in 2018. It does not define personal data or address legal duties.
 
 **Revisit when:** If the NCSC replaces the collection or the firm starts holding materially larger data sets.
 
@@ -86,7 +86,7 @@ Published or updated: Updated 20 August 2025
 
 Reviewed: 2026-09-21
 
-**Supports:** A breach includes sending personal data to the wrong recipient, lost or stolen devices, and unauthorised access. Organisations must assess risk, record every breach, notify the ICO within 72 hours where required, and tell individuals where risk is high. Recommends allocating breach handling to a dedicated person or team and making sure staff know how to escalate.
+**Supports:** A breach includes sending personal data to the wrong recipient, lost or stolen devices, and unauthorized access. Organizations must assess risk, record every breach, notify the ICO within 72 hours where required, and tell individuals where risk is high. Recommends allocating breach handling to a dedicated person or team and making sure staff know how to escalate.
 
 **Our application:** The 'report the same day to the named person, do not investigate alone' guidance and the D3 exposure rule.
 

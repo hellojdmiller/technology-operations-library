@@ -2,13 +2,13 @@
 
 # Email Habits That Hold
 
-One short lesson that turns six everyday email habits into a personal checklist, practised on one suspicious message and one quietly compromised mailbox.
+One short lesson that turns six everyday email habits into a personal checklist, practiced on one suspicious message and one quietly compromised mailbox.
 
 Email is where most of my working day arrives, and it is where most attempts on a small firm arrive too. I do not think the answer is suspicion of everything. It is a handful of habits that run without effort, so the one message that matters gets noticed.
 
-This module names six habits and practises each on a fictional packet: a message wearing a colleague's name, a mailbox with a rule its owner never made, and the firm's own email guidance. You will leave with a checklist in your words, with one packet example under each line.
+This module names six habits and practices each on a fictional packet: a message wearing a colleague's name, a mailbox with a rule its owner never made, and the firm's own email guidance. You will leave with a checklist in your words, with one packet example under each line.
 
-Nothing here requires a particular mail product. Where Outlook or Gmail behave in a specific way, I say so and cite the vendor page, because you need the actual behaviour. You decide and report in this exercise; you do not open, click, or change any setting.
+Nothing here requires a particular mail product. Where Outlook or Gmail behave in a specific way, I say so and cite the vendor page, because you need the actual behavior. You decide and report in this exercise; you do not open, click, or change any setting.
 
 **Format:** Short module · **Track:** Security awareness · **For:** Everyone who uses a work mailbox.
 

@@ -50,11 +50,11 @@ Published or updated: 2024-02-13 (version 2.0; first published 2018-02-05)
 
 Reviewed: 2026-09-21
 
-**Supports:** Sets out four layers of defence: make it difficult for attackers to reach users, help users identify and report suspected phishing, protect the organisation from the effects of undetected phishing, and respond quickly to incidents. States that no training package, including phishing simulations, can teach users to spot every phishing attempt; advises against reprimanding users who struggle to recognise phishing because users who fear reprisals will not report mistakes promptly; and asks for a culture where users can report phishing emails, including ones they have clicked on.
+**Supports:** Sets out four layers of defense: make it difficult for attackers to reach users, help users identify and report suspected phishing, protect the organization from the effects of undetected phishing, and respond quickly to incidents. States that no training package, including phishing simulations, can teach users to spot every phishing attempt; advises against reprimanding users who struggle to recognize phishing because users who fear reprisals will not report mistakes promptly; and asks for a culture where users can report phishing emails, including ones they have clicked on.
 
-**Our application:** The introduction's framing that spotting is one layer, not the whole defence. Lesson 3's no-blame rule and its insistence that a late report is what makes a click worse.
+**Our application:** The introduction's framing that spotting is one layer, not the whole defense. Lesson 3's no-blame rule and its insistence that a late report is what makes a click worse.
 
-**Limits:** Written for technology, operations or security staff at medium and large organisations. It does not specify the first steps an individual should take after a click, and it does not evaluate exercises like the ones in this course.
+**Limits:** Written for technology, operations or security staff at medium and large organizations. It does not specify the first steps an individual should take after a click, and it does not evaluate exercises like the ones in this course.
 
 **Revisit when:** When the NCSC publishes a new version of the guidance.
 
@@ -68,11 +68,11 @@ Published or updated: undated
 
 Reviewed: 2026-09-21
 
-**Supports:** Lists signs of phishing: an urgent call to action or threats; first-time, infrequent, or External-marked senders; spelling and bad grammar; generic greetings; mismatched email domains including look-alike domains such as micros0ft.com; and suspicious links or attachments to check by hovering rather than clicking. Says Report, then Report phishing in Outlook is the fastest way to report, and to contact the organisation through official channels. If phished: document the details, change passwords on affected accounts, enable multifactor authentication, and notify IT support for a work account.
+**Supports:** Lists signs of phishing: an urgent call to action or threats; first-time, infrequent, or External-marked senders; spelling and bad grammar; generic greetings; mismatched email domains including look-alike domains such as micros0ft.com; and suspicious links or attachments to check by hovering rather than clicking. Says Report, then Report phishing in Outlook is the fastest way to report, and to contact the organization through official channels. If phished: document the details, change passwords on affected accounts, enable multifactor authentication, and notify IT support for a work account.
 
 **Our application:** Lesson 1 uses the display-name and look-alike-domain signs. Lesson 2 uses the in-client report button as the first step. Lesson 3 uses the advice to document details and notify the technology team.
 
-**Limits:** Vendor help for one mail client. The course does not require Outlook; the firm's route is D4. The page does not say which device to change a password from or what an administrator checks afterwards; those sequences are my practice, not Microsoft's text.
+**Limits:** Vendor help for one mail client. The course does not require Outlook; the firm's route is D4. The page does not say which device to change a password from or what an administrator checks afterward; those sequences are my practice, not Microsoft's text.
 
 **Revisit when:** When Microsoft changes the Report menu or revises the page.
 

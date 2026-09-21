@@ -9,13 +9,13 @@
   "introduction": [
     "Most leaks I have dealt with were not attacks. They were a folder link that never expired, a spreadsheet forwarded to be helpful, or autocomplete picking the wrong Marcus. Small firms run on trust and speed, and both make it easy to share one step further than anyone intended.",
     "This course follows one deal week at a fictional firm. You will classify what sits in a diligence folder, answer a counterparty who wants all of it through one open link, and write the correction note for an email that reached the wrong person.",
-    "No tool account is needed. Work on paper or in a document, try each task before opening the example answer, then explain your choice in your own words. Where I name a product setting, it is because the setting's behaviour matters, not because I am selling it.",
+    "No tool account is needed. Work on paper or in a document, try each task before opening the example answer, then explain your choice in your own words. Where I name a product setting, it is because the setting's behavior matters, not because I am selling it.",
     "Fifteen to twenty minutes per lesson is a starting estimate. If your firm has its own data handling standard, keep it beside the fictional one in the packet and note where they differ. Those differences are worth raising with whoever owns your standard."
   ],
   "reviewedOn": "2026-09-21",
   "scenario": {
     "title": "One deal week, four ways to over-share",
-    "description": "You work at Fennimore Ridge Partners, a small investment firm in the last week of diligence on Cobalt Meadow Robotics. Every person, firm, domain, and figure in this packet is fictional. The exercise reference date is 21 September 2026. D1 is a realistic request that should not be followed as written. D2 describes a folder link that is set up badly. D3 is the firm's standard and is the rule you apply. D4 is an email that went to the wrong person; treat it as the mistake to correct, not as a model.",
+    "description": "You work at Fennimore Ridge Partners, a small investment firm in the last week of diligence on Cobalt Meadow Robotics. Every person, firm, domain, and figure in this packet is fictional. The exercise reference date is 21 September 2026. D1 is a realiztic request that should not be followed as written. D2 describes a folder link that is set up badly. D3 is the firm's standard and is the rule you apply. D4 is an email that went to the wrong person; treat it as the mistake to correct, not as a model.",
     "documents": [
       {
         "id": "D1",
@@ -68,7 +68,7 @@
           "Sent 21 September 2026, 08:42. From: Tamsin Reyes (t.reyes@fennimoreridge.example.com). To: Marcus Hale (m.hale@brightwell.example.net). Intended recipient: Marcus Hale, Brightwater Growth Advisors (m.hale@brightwater.example.org). Subject: RE: RE: Cobalt Meadow: closing checklist. Attachment: Closing checklist v4.",
           "Marcus, as discussed, the updated closing checklist is attached, and the LP side letter summary is further down this thread so you have the context. Shout if anything is missing. Tamsin.",
           "Quoted below, 19 September 2026, 17:20, from Lena Okonkwo, Partner, to Tamsin (internal): 'Hold Brightwater at 13.8 million. We can stretch to 14.5 if we must, but that number does not leave this building. Also, the three LPs in the side letter summary have asked not to be named to the counterparty.'",
-          "Quoted below, 16 September 2026, 11:05, from Tamsin to Lena (internal): 'Side letter summary: Halvorsen Family Office (reduced management fee), Pell Street Endowment (co-investment right), Marisol Trust (excused from defence investments). Full terms are in the LP folder.'",
+          "Quoted below, 16 September 2026, 11:05, from Tamsin to Lena (internal): 'Side letter summary: Halvorsen Family Office (reduced management fee), Pell Street Endowment (co-investment right), Marisol Trust (excused from defense investments). Full terms are in the LP folder.'",
           "Reply received 09:05 from m.hale@brightwell.example.net: 'Hi Tamsin, I think this reached me by mistake. I am at Brightwell Freight; we handled your office move in 2024. I have not opened the attachment, but I did read the email. Tell me what you would like me to do.'"
         ]
       }
@@ -113,7 +113,7 @@
       "reflection": "Which item did you first place too low, and what in the harm question moved it? Explain without the level names.",
       "transfer": {
         "prompt": "Suppose the LP spreadsheet is edited to remove amounts and email addresses, leaving only investor names. Does its level change?",
-        "answer": "No. A list of who invested in Fund III still identifies people and organisations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder."
+        "answer": "No. A list of who invested in Fund III still identifies people and organizations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder."
       },
       "check": {
         "question": "How should the LP spreadsheet in D2 be classified?",
@@ -204,7 +204,7 @@
       "duration": "15–20 minutes",
       "outcome": "Write a three-step correction note for the misdirected email in D4 that a colleague could act on today.",
       "explanation": [
-        "The first hour after a mis-share is worth more than the first week, and recall will not buy it back. Microsoft says recall works only within one organisation and while the message is unread. For the external recipient in D4, who has read the email, it changes nothing. [S4]",
+        "The first hour after a mis-share is worth more than the first week, and recall will not buy it back. Microsoft says recall works only within one organization and while the message is unread. For the external recipient in D4, who has read the email, it changes nothing. [S4]",
         "Read the whole thread: quoted history travels with the message. The technology team can revoke links, remove guests, and pull access records for signed-in shares; for 'anyone' links Microsoft says no record of who opened them exists. Only the sender can tell the recipient and ask for deletion. [S3]",
         "The UK regulator lists a wrong-recipient email as a personal data breach, notifiable within 72 hours where the duty applies, and expects the facts, effects, and remedial action recorded regardless. Whether or not that law binds you, tell people in minutes and write it down. [S2]"
       ],
@@ -240,7 +240,7 @@
           {
             "id": "a",
             "label": "Use recall and wait for its confirmation before doing anything else.",
-            "feedback": "Recall needs both people in one organisation and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]"
+            "feedback": "Recall needs both people in one organization and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]"
           },
           {
             "id": "b",
@@ -277,7 +277,7 @@
       "url": "https://ico.org.uk/for-organisations/report-a-breach/personal-data-breach/personal-data-breaches-a-guide/",
       "publishedOrUpdated": "20 August 2025 (as stated on the page)",
       "reviewedOn": "2026-09-21",
-      "support": "Defines a personal data breach as a security breach leading to accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data; lists sending personal data to the wrong recipient as an example; requires notifiable breaches to be reported to the ICO within 72 hours of awareness; and requires the facts, effects, and remedial action to be documented for every breach, notifiable or not.",
+      "support": "Defines a personal data breach as a security breach leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data; lists sending personal data to the wrong recipient as an example; requires notifiable breaches to be reported to the ICO within 72 hours of awareness; and requires the facts, effects, and remedial action to be documented for every breach, notifiable or not.",
       "application": "Lesson 1 uses the definition to show that a list of names is personal data whose disclosure counts. Lesson 3 uses the wrong-recipient example, the 72-hour clock, and the recording duty to justify reporting in minutes and writing the facts down.",
       "limits": "UK GDPR guidance. Whether the 72-hour duty applies depends on the firm's jurisdiction and the data involved; the course borrows the timing and recording habits, not the legal conclusion. It does not cover non-personal deal information such as a negotiating position.",
       "revisit": "Recheck when the ICO updates the guide or when the firm's applicable data protection regime changes."
@@ -289,7 +289,7 @@
       "url": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
       "publishedOrUpdated": "2026-06-30 (article date)",
       "reviewedOn": "2026-09-21",
-      "support": "Describes the external sharing levels (Anyone, New and existing guests, Existing guests, Only people in your organization). 'Anyone' links open without authenticating, forwarded links work internally or externally, and the organisation cannot track who has access or who has accessed the item. Administrators can require Anyone links to expire within a set number of days and restrict them to view permission. 'Specific people' is described as the most restrictive link option. When sharing is restricted or turned off, guests typically lose access within one hour.",
+      "support": "Describes the external sharing levels (Anyone, New and existing guests, Existing guests, Only people in your organization). 'Anyone' links open without authenticating, forwarded links work internally or externally, and the organization cannot track who has access or who has accessed the item. Administrators can require Anyone links to expire within a set number of days and restrict them to view permission. 'Specific people' is described as the most restrictive link option. When sharing is restricted or turned off, guests typically lose access within one hour.",
       "application": "Lesson 2 uses the description of Anyone links to explain why D2's link is a problem and why named recipients, view only, and expiry are the default. Lesson 3 uses the absence of access records for Anyone links to explain what the technology team cannot tell you after an over-share.",
       "limits": "Administrator documentation for one platform. Menus differ by tenant configuration and change often, and a firm's defaults may already restrict some options. It says nothing about email or other platforms; Google's controls are covered in S5.",
       "revisit": "Recheck when the article date changes or when the firm changes its sharing platform or tenant settings."
@@ -301,7 +301,7 @@
       "url": "https://support.microsoft.com/en-us/office/recall-or-replace-a-sent-email-35027f88-d655-4554-b4f8-6c0729a723a0",
       "publishedOrUpdated": "undated",
       "reviewedOn": "2026-09-21",
-      "support": "Recall works only when both sender and recipient have Microsoft 365 work or school accounts in the same organisation and the recipient has not yet opened the message. It is not available for recipients outside the organisation or for personal accounts, and it cannot retrieve a message that has been read.",
+      "support": "Recall works only when both sender and recipient have Microsoft 365 work or school accounts in the same organization and the recipient has not yet opened the message. It is not available for recipients outside the organization or for personal accounts, and it cannot retrieve a message that has been read.",
       "application": "Lesson 3 uses these conditions to show that recall does nothing for the external, already-read email in D4, and that it should not be counted as a correction step.",
       "limits": "Describes one email product. Other clients have different or no recall features, and none can retrieve a message an external recipient has already read. The page shows no publication date, so its currency has to be judged by rechecking it.",
       "revisit": "Recheck if the firm changes email platform or if Microsoft revises the recall conditions."

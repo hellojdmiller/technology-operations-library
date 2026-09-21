@@ -30,7 +30,7 @@ From: +1 555 013 4471 (not in Sam's contacts)
 
 Hi Sam, Priya here. New number, my phone died this morning and I am on a loaner. I am in back-to-back sessions on the Ridgeway closing and cannot take calls.
 
-I need a favour handled quietly today. A 48,500 payment has to reach a new counterparty account before 4pm or we lose the slot. Please confirm you are at your desk and I will send the account details.
+I need a favor handled quietly today. A 48,500 payment has to reach a new counterparty account before 4pm or we lose the slot. Please confirm you are at your desk and I will send the account details.
 
 Do not copy Dana on this yet, the terms are not announced. I will explain in person tomorrow. Thank you, I appreciate you handling it.
 
@@ -46,7 +46,7 @@ Subject: A new sign-in method was added to your account
 
 On Monday 21 September 2026 at 09:12, an authenticator app on a device named 'Sam mobile' was added as a sign-in method for your account. The change was made from the office network with the technology team.
 
-If you recognise this change, no action is needed. If you do not, contact the technology team at techhelp@harbourline.example.com, on extension 220, or in person. Do not reply to this message.
+If you recognize this change, no action is needed. If you do not, contact the technology team at techhelp@harbourline.example.com, on extension 220, or in person. Do not reply to this message.
 
 This notice contains no links. Harbourline security notices never ask you to sign in, enter a password, or download anything.
 
@@ -60,7 +60,7 @@ Never reply, never click, never open the attachment, and never call a number the
 
 Verify through a channel the message did not supply: the internal directory, a colleague in person, or a website you type yourself. Our only email domain is harbourline.example.com. Look at the address after the @ sign and the registered domain in any link, not the display name.
 
-Payments and account changes: any new or changed payee, urgent payment, or request to keep a payment quiet is confirmed by voice with the requester on a directory number and approved by Dana Whitfield. A text or an email never authorises a payment, whoever it appears to come from.
+Payments and account changes: any new or changed payee, urgent payment, or request to keep a payment quiet is confirmed by voice with the requester on a directory number and approved by Dana Whitfield. A text or an email never authorizes a payment, whoever it appears to come from.
 
 Shared-document notices and calendar invites: open documents from the portal you type yourself, not from the notice. Do not accept or decline an unexpected invite; report it and we will remove it.
 

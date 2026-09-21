@@ -10,9 +10,9 @@ Suggested time: 15–20 minutes. Work on paper or in a document.
 
 Read the [shared fictional packet](source-packet.md). Keep it available throughout the lesson.
 
-D1 lets a personal phone run the firm's mail and chat apps if enrolled, so the technology team can remove firm data without touching personal photos or messages. Work stays in the enrolled apps and personal life outside them, never one account for both.
+D1 lets a personal phone run the firm's mail and chat apps if enrollled, so the technology team can remove firm data without touching personal photos or messages. Work stays in the enrollled apps and personal life outside them, never one account for both.
 
-The NCSC is blunt that the challenges of bring-your-own-device should not be played down: the firm owns the data but cannot fully control the device. It also warns that heavy-handed controls push people towards shadow IT, so my answer to a request is rarely a bare no. [S5](sources.md#s5)
+The NCSC is blunt that the challenges of bring-your-own-device should not be played down: the firm owns the data but cannot fully control the device. It also warns that heavy-handed controls push people toward shadow IT, so my answer to a request is rarely a bare no. [S5](sources.md#s5)
 
 An unapproved notes app matters because the notes, and in D3 the recording, leave the firm's control once they sync to the app's cloud; we cannot retain, search, or delete them. Requests go through D1's form, and my answer says what the standard requires, why here, and what to use today.
 
@@ -24,7 +24,7 @@ Sorry Marcus, Notewren isn't on the approved list, so no.
 
 **After**
 
-Marcus, I can't approve Notewren for client meetings: it records into its own cloud under your personal account, outside our retention and deletion. For next week, use the notes app on your enrolled phone. Submit the D1 form if you want Notewren reviewed. Please delete the Okafor recording and confirm.
+Marcus, I can't approve Notewren for client meetings: it records into its own cloud under your personal account, outside our retention and deletion. For next week, use the notes app on your enrollled phone. Submit the D1 form if you want Notewren reviewed. Please delete the Okafor recording and confirm.
 
 **Why:** It names the harm, offers something usable before Friday, gives the route, and handles the existing recording. The before version protects the standard, not the client.
 
@@ -52,7 +52,7 @@ Where is the Okafor recording now, who can read it, and how would the firm delet
 
 Marcus, not approved for client meetings. Notewren records the conversation and stores the transcript in its cloud under your personal account. The firm cannot retain, search, or delete those notes, and a free tier's terms may let the vendor use them: client information outside our control. [S5](sources.md#s5)
 
-For next week, type notes in the notes app on your enrolled phone and file them in the client folder as usual. If Notewren is worth it, submit the D1 request form today; the team answers within five days. Please delete the Okafor recording and confirm.
+For next week, type notes in the notes app on your enrollled phone and file them in the client folder as usual. If Notewren is worth it, submit the D1 request form today; the team answers within five days. Please delete the Okafor recording and confirm.
 
 </details>
 
@@ -67,7 +67,7 @@ Marcus comes back: no recording, just typed notes in Notewren on his personal ph
 <details>
 <summary>Changed-case answer</summary>
 
-The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrolled notes app now and submit the request for a proper review.
+The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrollled notes app now and submit the request for a proper review.
 
 </details>
 

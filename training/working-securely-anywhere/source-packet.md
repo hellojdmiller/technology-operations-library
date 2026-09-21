@@ -16,7 +16,7 @@ Lock and unlock. Devices lock automatically after no more than five minutes idle
 
 Encryption. Full disk encryption is on: FileVault on Mac, Device Encryption or BitLocker on Windows, and the built-in encryption that comes with a passcode on a modern phone. For managed devices the technology team holds the recovery key.
 
-Managed and personal devices. Firm files and client documents live only on firm-managed laptops. A personal phone may run the firm's mail and chat apps if it is enrolled in the firm's app management, which lets the team remove firm data without touching personal photos, messages, or apps.
+Managed and personal devices. Firm files and client documents live only on firm-managed laptops. A personal phone may run the firm's mail and chat apps if it is enrollled in the firm's app management, which lets the team remove firm data without touching personal photos, messages, or apps.
 
 Approved apps. Anything that stores firm or client information must be on the approved app list kept by the technology team. Request a new tool through the tool request form; the team answers within five working days and will suggest an approved alternative if the answer is no.
 
@@ -40,13 +40,13 @@ Subject: Can I use Notewren for client meetings?
 
 I've started using Notewren on my personal phone for meeting notes and it's brilliant. It records the meeting, transcribes it, writes a summary, and syncs across all my devices. I'd like to use it for client meetings starting next week.
 
-It's the free tier, so there's no budget to approve. The notes and recordings sync to Notewren's cloud under my personal account, and I paste the summary into the client folder afterwards. I tried it once already on the Okafor call on Monday and the summary was excellent.
+It's the free tier, so there's no budget to approve. The notes and recordings sync to Notewren's cloud under my personal account, and I paste the summary into the client folder afterward. I tried it once already on the Okafor call on Monday and the summary was excellent.
 
 Can you say yes by Friday? I've got three client meetings next week and I'd rather not go back to typing.
 
 ## D4: Hotel Wi-Fi sign-in page and network list
 
-Date: 2026-09-19 · Plain-text description: what a traveller sees on arrival at the Corrigan Hotel
+Date: 2026-09-19 · Plain-text description: what a traveler sees on arrival at the Corrigan Hotel
 
 Networks shown on the laptop: Corrigan_Guest (no lock icon, strongest signal), Corrigan Guest Free (no lock icon, slightly weaker), Corrigan_Staff (lock icon), and three phone hotspots that belong to other guests.
 
@@ -54,6 +54,6 @@ The card on the desk reads: Network: Corrigan_Guest. Sign in with your room numb
 
 After joining Corrigan_Guest, a page opens by itself titled Welcome to the Corrigan. It asks for room number and last name, has a checkbox to accept terms, and offers an optional field: Add your email for offers. Below that is a link: Sign in with your work email for faster Wi-Fi.
 
-After joining Corrigan Guest Free instead, a similar page opens with the same colours. It asks for full name, email address, and email password, to verify your identity. The hotel logo is slightly blurry and there is no terms checkbox.
+After joining Corrigan Guest Free instead, a similar page opens with the same colors. It asks for full name, email address, and email password, to verify your identity. The hotel logo is slightly blurry and there is no terms checkbox.
 
 [Back to the course](README.md)

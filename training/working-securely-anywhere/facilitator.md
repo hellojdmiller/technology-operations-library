@@ -24,7 +24,7 @@ A colleague can run this course as one session of about 60–85 minutes, or as 3
 
 **Discussion prompt:** Which point was hardest to verify on a real device, and what would the technology team need to give you?
 
-**Changed case:** Same laptop, but now firm-managed and enrolled, with the local account replaced by a work account. Which lines change?
+**Changed case:** Same laptop, but now firm-managed and enrollled, with the local account replaced by a work account. Which lines change?
 
 <details>
 <summary>Changed-case answer</summary>
@@ -85,7 +85,7 @@ The VPN goes on before mail or files open, on either network. The rest stays: jo
 <details>
 <summary>Changed-case answer</summary>
 
-The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrolled notes app now and submit the request for a proper review.
+The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrollled notes app now and submit the request for a proper review.
 
 </details>
 

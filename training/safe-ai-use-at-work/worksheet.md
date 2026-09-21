@@ -12,12 +12,12 @@ Keep your first attempt separate from any revision, and write down what you woul
 
 **Outcome:** Rewrite one request so it carries no sensitive data and still gets the job done.
 
-**Task:** Read D1, D2 and D4. Write the request you would give the firm assistant to summarise D1 for Ines, list what you removed or replaced and why, and add one sentence on the personal-account case.
+**Task:** Read D1, D2 and D4. Write the request you would give the firm assistant to summarize D1 for Ines, list what you removed or replaced and why, and add one sentence on the personal-account case.
 
 **Deliverable:** A rewritten request, a redaction list, and the personal-account sentence.
 
 - [ ] Delete the sort code, account number, and passport number; no hinting placeholders.
-- [ ] Replace client, contact, counsel, codename, and price with labelled placeholders.
+- [ ] Replace client, contact, counsel, codename, and price with labeled placeholders.
 - [ ] Keep the decision status, counsel's view, call request, and secure-scan question.
 - [ ] Name the D4 tool; personal account means no firm information.
 

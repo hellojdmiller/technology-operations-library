@@ -38,7 +38,7 @@ The address check passes; nothing else does. The link still resolves to docs-vie
 <details>
 <summary>Why the other options fall short</summary>
 
-**A:** Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorises a payment.
+**A:** Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorizes a payment.
 
 **C:** Replying tells the sender the number is live and opens the channel for the account details; the payment ask is already in the message. D4 says never reply.
 
@@ -52,7 +52,7 @@ The address check passes; nothing else does. The link still resolves to docs-vie
 
 **Discussion prompt:** Why does reporting come before verifying, when verifying might show the message was genuine after all?
 
-**Changed case:** A calendar invite titled 'Q3 investor call' arrives from an organiser you do not recognise, with a join link and a note that attendance is mandatory. Your plan?
+**Changed case:** A calendar invite titled 'Q3 investor call' arrives from an organizer you do not recognize, with a join link and a note that attendance is mandatory. Your plan?
 
 <details>
 <summary>Changed-case answer</summary>

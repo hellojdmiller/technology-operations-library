@@ -24,7 +24,7 @@ The sponsored result says Official PDF Editor Pro and carries the vendor's logo.
 
 **After**
 
-The address is pdfeditor-pro-download.example.net; the vendor's site, one result down, is pdfeditorpro.example.com. The installer is 3 MB against the vendor's 180 MB. I close the tab and open the firm's catalogue, which has a PDF editor.
+The address is pdfeditor-pro-download.example.net; the vendor's site, one result down, is pdfeditorpro.example.com. The installer is 3 MB against the vendor's 180 MB. I close the tab and open the firm's catalog, which has a PDF editor.
 
 **Why:** The logo and the word official cost nothing to copy. The domain, the file size, and the approved route do not.
 
@@ -51,7 +51,7 @@ Ask each time: who put this here, where does the address really go, and what doe
 <details>
 <summary>Compare with an example answer after your attempt</summary>
 
-D1: report. The top result is an advert on a lookalike domain with a 3 MB installer that does not match the vendor's; the catalogue already has a PDF editor. D2: report and close the tab. A news site is not the browser vendor, and D4 says updates never arrive through a web page.
+D1: report. The top result is an advert on a lookalike domain with a 3 MB installer that does not match the vendor's; the catalog already has a PDF editor. D2: report and close the tab. A news site is not the browser vendor, and D4 says updates never arrive through a web page.
 
 D3: ask first. Jonas is real and the extension may be fine, but it wants all site data, which D4 sends for review. Reply: 'Looks useful, I'd like it too. All-site-data extensions need the tech team's two-day review first. Send them the link and I'll add my name.'
 

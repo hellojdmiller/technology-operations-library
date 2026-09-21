@@ -2,7 +2,7 @@
 
 # Personal Information in Plain Words
 
-One short lesson on recognising personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell.
+One short lesson on recognizing personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell.
 
 I handle other people's details every week: an investor's mobile number, a candidate's home address, a colleague's bank account for payroll. None of it is mine. This short module is about noticing when a piece of information points to a person, and treating it with that in mind.
 

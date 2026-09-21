@@ -24,7 +24,7 @@ My laptop is fine. It's fairly new, I have a password, and I install updates whe
 
 **After**
 
-Personal MacBook, 2022. Updates: six weeks ago, automatic off; fails D1's seven days. Lock: five minutes, password plus Touch ID; passes. Encryption: FileVault confirmed on; passes. Ownership: personal, unmanaged; enrolled mail and chat only. Apps: a personal cloud drive syncs Downloads; move firm attachments out today.
+Personal MacBook, 2022. Updates: six weeks ago, automatic off; fails D1's seven days. Lock: five minutes, password plus Touch ID; passes. Encryption: FileVault confirmed on; passes. Ownership: personal, unmanaged; enrollled mail and chat only. Apps: a personal cloud drive syncs Downloads; move firm attachments out today.
 
 **Why:** It names the device, tests each point against D1's numbers, and ends with the first change. 'Fairly new' cannot be checked by anyone, including the owner.
 
@@ -53,7 +53,7 @@ For the Windows example, check the account type first. S3 says what a local acco
 
 Windows laptop, personal, local account. Updates: deferred a month, fails D1's seven days; turn automatic updates on today. Lock: locks on idle, but a four-digit PIN is below D1's six digits; lengthen it. Encryption: unknown, and not automatic with a local account, so open Settings and confirm. [S3](sources.md#s3)
 
-Ownership: personal and unmanaged, so enrolled mail and chat only, never client files. Apps: only the browser touches firm information. First change: install the updates and confirm encryption, because an unpatched, possibly unencrypted laptop reading firm mail is the firm's exposure, not only mine.
+Ownership: personal and unmanaged, so enrollled mail and chat only, never client files. Apps: only the browser touches firm information. First change: install the updates and confirm encryption, because an unpatched, possibly unencrypted laptop reading firm mail is the firm's exposure, not only mine.
 
 </details>
 
@@ -63,7 +63,7 @@ Which point was hardest to verify on a real device, and what would the technolog
 
 ## Try a changed case
 
-Same laptop, but now firm-managed and enrolled, with the local account replaced by a work account. Which lines change?
+Same laptop, but now firm-managed and enrollled, with the local account replaced by a work account. Which lines change?
 
 <details>
 <summary>Changed-case answer</summary>

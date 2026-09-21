@@ -14,7 +14,7 @@
   "reviewedOn": "2026-09-21",
   "scenario": {
     "title": "One reused password, three days later",
-    "description": "You work at Harrowvale Advisory, a small fictional firm. Everyone and everything in this packet is fictional, including the firm, the people, the services, and the domains. The exercise reference date is 21 September 2026. D1, D2, and D3 are the evidence. D4 is an impersonation attempt: the sender is not the technology team, whatever the display name says. Use the packet to practise deciding; do not change any real account during the exercise.",
+    "description": "You work at Harrowvale Advisory, a small fictional firm. Everyone and everything in this packet is fictional, including the firm, the people, the services, and the domains. The exercise reference date is 21 September 2026. D1, D2, and D3 are the evidence. D4 is an impersonation attempt: the sender is not the technology team, whatever the display name says. Use the packet to practice deciding; do not change any real account during the exercise.",
     "documents": [
       {
         "id": "D1",
@@ -25,7 +25,7 @@
           "Forwarded by Priya Raman (praman@harrowvale.example.com) to Lena Okafor, technology lead, on 16 September 2026 at 07:52.",
           "Lena, I got this on my personal email last night. I am fairly sure the Pantry Box password is the same one I use for my work email and for the file-sharing site. I have not changed anything yet. What should I do first? Priya",
           "From: Pantry Box Security (security@pantrybox.example.com). To: priya.r@mail.example.com. Sent: 15 September 2026, 22:14. Subject: Important notice about your Pantry Box account.",
-          "We are writing to tell you about a security incident that affects your account. On 11 September 2026 we found that an unauthorised party had accessed a database containing customer names, email addresses, delivery postcodes, and hashed passwords. We have no evidence that payment card details were affected.",
+          "We are writing to tell you about a security incident that affects your account. On 11 September 2026 we found that an unauthorized party had accessed a database containing customer names, email addresses, delivery postcodes, and hashed passwords. We have no evidence that payment card details were affected.",
           "As a precaution we have signed out all sessions on your account. We recommend that you change your Pantry Box password now, and that you also change the password on any other account where you used the same or a similar password.",
           "Please be alert to emails or calls that claim to be from Pantry Box and ask for your password, a code, or payment details. We will never ask for these. We are sorry for the concern this may cause."
         ]
@@ -96,7 +96,7 @@
       "explanation": [
         "The password that hurts you is usually not the weak one. It is the good one you used twice. When a personal service is breached, the leaked email and password pairs are tried against work sign-in pages within days.",
         "Guidance has moved on from symbols and forced changes. NIST says verifiers should not require periodic password changes, should check new passwords against lists of known compromised ones, and should force a change on evidence of compromise. [S1] A breach notice for a reused password is that evidence.",
-        "A password manager makes this realistic. It generates, stores, and fills a long random password, so you never type or remember it. You memorise one long passphrase for the manager and protect it with your strongest second factor. D3 3.1 makes the firm's manager mandatory.",
+        "A password manager makes this realiztic. It generates, stores, and fills a long random password, so you never type or remember it. You memorise one long passphrase for the manager and protect it with your strongest second factor. D3 3.1 makes the firm's manager mandatory.",
         "Hashed passwords can be cracked, and the notice date is not the breach date. Order your moves by reach: work email first, because it resets everything else, then money or client files, then the breached service. The FBI gives the same advice: unique passwords. [S5]"
       ],
       "workedExample": {
@@ -278,7 +278,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Verifiers shall not require periodic password changes but shall force a change when there is evidence of compromise; shall compare new passwords against a blocklist of known compromised passwords; shall not impose composition rules; single-factor passwords need at least 15 characters. Out-of-band delivery over the telephone network is a restricted authenticator. Manually entered one-time codes are not considered phishing-resistant.",
       "application": "Lesson 1 uses the evidence-of-compromise rule and the end of forced rotation. Lesson 2 uses the restricted status of text-message delivery and the rule that typed codes are not phishing-resistant.",
-      "limits": "Written for organisations that run sign-in systems, not for individual staff. It does not tell a person which factor to pick for a given account and does not measure how often reuse leads to takeover.",
+      "limits": "Written for organizations that run sign-in systems, not for individual staff. It does not tell a person which factor to pick for a given account and does not measure how often reuse leads to takeover.",
       "revisit": "When NIST publishes a new revision, or changes the restricted status of telephone-based delivery, which the document says it may do as the threat landscape evolves."
     },
     {
@@ -315,7 +315,7 @@
       "support": "Number matching is enabled for all Authenticator push notifications: the user sees a number on the sign-in screen and must enter it in the app to approve. Users cannot opt out. When the sign-in starts on the same device that runs Authenticator, Microsoft mobile apps may show a Yes/No prompt instead, because the prompt only appears on the device that initiated the sign-in.",
       "application": "Lesson 2 uses it to explain why an unexpected prompt cannot be approved without the number shown on the sign-in screen, which is why the D4 impersonator had to talk Priya into approving rather than simply sending more prompts.",
       "limits": "Describes one vendor's product. Other authenticator apps behave differently, and number matching does not protect against a fake sign-in page that relays the number to the victim.",
-      "revisit": "When Microsoft changes the article or Authenticator's behaviour. The page carried an article date of November 2025 on review."
+      "revisit": "When Microsoft changes the article or Authenticator's behavior. The page carried an article date of November 2025 on review."
     },
     {
       "id": "S5",

@@ -18,7 +18,7 @@ Reviewed: 2026-09-21
 
 **Our application:** The lesson borrows the term, the explanation that fluency comes from prediction rather than lookup, and the point that a confident justification or citation can itself be fabricated.
 
-**Limits:** A voluntary risk-management profile written for organizations deploying generative AI. It catalogues risks and suggested actions; it does not measure how often fabrication occurs or test the three checks taught here.
+**Limits:** A voluntary risk-management profile written for organizations deploying generative AI. It catalogs risks and suggested actions; it does not measure how often fabrication occurs or test the three checks taught here.
 
 **Revisit when:** When NIST revises the profile or the AI RMF, or when the organization adopts a different risk framework.
 

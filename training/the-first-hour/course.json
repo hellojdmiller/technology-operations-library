@@ -10,12 +10,12 @@
     "The first hour of an incident is decided before it starts. When an alert lands at 07:42 on a Monday, the questions are simple: who is in charge, who can pause an account, who calls the bank. If those answers live in a committee charter, the hour goes to finding people instead of acting.",
     "This course follows one fictional morning at a small firm: a phished password, an unfamiliar sign-in, and a forwarding rule quietly copying mail outside. You will fill a one-page plan from a flawed one, write a triage record for the alert, and plan who hears what, and when.",
     "Nothing here needs a tool account. Work on paper or in a document, and do not touch a live system as part of the exercise. Deciding is the practice; doing happens later, with the right authority. The example answers are comparisons, not scripts, and I want you to argue with them.",
-    "Each lesson takes about 20–25 minutes. When you finish, the 45-minute incident-readiness workshop in this library's cyber-risk section is the rehearsal that makes the plan a habit. Run it with the same people who appear in your skeleton, and update the plan afterwards."
+    "Each lesson takes about 20–25 minutes. When you finish, the 45-minute incident-readiness workshop in this library's cyber-risk section is the rehearsal that makes the plan a habit. Run it with the same people who appear in your skeleton, and update the plan afterward."
   ],
   "reviewedOn": "2026-09-21",
   "scenario": {
     "title": "A Monday morning at Tarrow Lane Partners",
-    "description": "You are helping the team at Tarrow Lane Partners, a fictional 28-person investment advisory firm, through the first hour after a phished password. Everyone and everything in this packet is fictional: the firm, its people, the bank, the insurer, the law firm, and the provider. The exercise reference date is Monday 21 September 2026; times are the firm's local time. The people: Dana Okafor, Director of Technology (the firm has no Chief Technology Officer); Marcus Ellery, Chief Operating Officer; Ingrid Solano, Managing Partner; Theo Baptiste, office manager, who answers the main line and the help channel; Rowan Whitlock, associate, travelling today. D1 is a system alert and D2 a colleague's message. D3 is the firm's current plan and is deliberately incomplete; you will mark its gaps in Lesson 1. D4 is a blank template. Nothing in this exercise is sent, reset, or disabled; you draft the decisions.",
+    "description": "You are helping the team at Tarrow Lane Partners, a fictional 28-person investment advisory firm, through the first hour after a phished password. Everyone and everything in this packet is fictional: the firm, its people, the bank, the insurer, the law firm, and the provider. The exercise reference date is Monday 21 September 2026; times are the firm's local time. The people: Dana Okafor, Director of Technology (the firm has no Chief Technology Officer); Marcus Ellery, Chief Operating Officer; Ingrid Solano, Managing Partner; Theo Baptiste, office manager, who answers the main line and the help channel; Rowan Whitlock, associate, traveling today. D1 is a system alert and D2 a colleague's message. D3 is the firm's current plan and is deliberately incomplete; you will mark its gaps in Lesson 1. D4 is a blank template. Nothing in this exercise is sent, reset, or disabled; you draft the decisions.",
     "documents": [
       {
         "id": "D1",
@@ -154,7 +154,7 @@
         "prompt": "Using D4, write the triage record for 07:42 to 08:42: what is known, what is assumed, what is affected, whether it is still happening. Then list each containment decision with owner, authority, what it pauses, and how you will know it worked.",
         "deliverable": "A triage record with a status line, four or more owned decisions, and evidence captured before removal.",
         "checklist": [
-          "Facts and assumptions are labelled; 'the attacker read the wire emails' is an assumption until a log shows it.",
+          "Facts and assumptions are labeled; 'the attacker read the wire emails' is an assumption until a log shows it.",
           "Sessions are revoked before the password is reset, and the rule is captured before it is removed.",
           "Rowan is reached by phone; the 15:00 bank call is flagged."
         ]

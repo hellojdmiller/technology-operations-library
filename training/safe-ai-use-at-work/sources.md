@@ -14,7 +14,7 @@ Published or updated: undated (page carries the 2025 list edition in its title)
 
 Reviewed: 2026-09-21
 
-**Supports:** Defines prompt injection as user prompts or processed content altering the model's behaviour in unintended ways, and separates direct injection (in the user's own input) from indirect injection (hidden instructions in websites, files, or other external sources the model reads). Its attack scenarios include hidden instructions that cause data exfiltration. Mitigations include constraining model behaviour, least-privilege access, human approval for high-risk actions, and segregating untrusted external content; the page says fool-proof prevention is unclear given how generative models work.
+**Supports:** Defines prompt injection as user prompts or processed content altering the model's behavior in unintended ways, and separates direct injection (in the user's own input) from indirect injection (hidden instructions in websites, files, or other external sources the model reads). Its attack scenarios include hidden instructions that cause data exfiltration. Mitigations include constraining model behavior, least-privilege access, human approval for high-risk actions, and segregating untrusted external content; the page says fool-proof prevention is unclear given how generative models work.
 
 **Our application:** Lesson 2 uses the direct/indirect distinction, the exfiltration example, and the emphasis on limiting what the system may do and keeping human approval for high-risk actions.
 
@@ -54,7 +54,7 @@ Reviewed: 2026-09-21
 
 **Our application:** Lesson 3 uses the confabulation definition, the warning about confabulated citations, and the two verification actions. Lesson 2 uses the direct and indirect prompt injection description.
 
-**Limits:** A voluntary framework profile written for organisations deploying generative AI, not a user manual and not a measurement of error rates in office tasks. Its suggested actions are addressed to organisations; the lessons apply them at the level of one person checking one draft. NIST has since indicated that the AI RMF is under revision.
+**Limits:** A voluntary framework profile written for organizations deploying generative AI, not a user manual and not a measurement of error rates in office tasks. Its suggested actions are addressed to organizations; the lessons apply them at the level of one person checking one draft. NIST has since indicated that the AI RMF is under revision.
 
 **Revisit when:** Recheck when NIST publishes a revised AI RMF or an updated generative AI profile.
 
@@ -68,13 +68,13 @@ Published or updated: 2026-07-09 (article date)
 
 Reviewed: 2026-09-21
 
-**Supports:** States that prompts, responses, and data accessed through Microsoft Graph are not used to train foundation models; that Copilot surfaces only organisational data the individual user has at least view permission to; that responses are not guaranteed to be factual and users should use their judgment when reviewing output before sending it to others; that classifiers to block prompt injection exist but may not be available in all scenarios; and that agents connected to Copilot carry their own privacy statements and terms.
+**Supports:** States that prompts, responses, and data accessed through Microsoft Graph are not used to train foundation models; that Copilot surfaces only organizational data the individual user has at least view permission to; that responses are not guaranteed to be factual and users should use their judgment when reviewing output before sending it to others; that classifiers to block prompt injection exist but may not be available in all scenarios; and that agents connected to Copilot carry their own privacy statements and terms.
 
-**Our application:** Lesson 1 uses the training and permissions statements to explain what an approved organisational tool changes. Lesson 2 uses the permissions model to explain acting on the user's behalf. Lesson 3 uses the review-before-sending statement.
+**Our application:** Lesson 1 uses the training and permissions statements to explain what an approved organizational tool changes. Lesson 2 uses the permissions model to explain acting on the user's behalf. Lesson 3 uses the review-before-sending statement.
 
-**Limits:** Vendor documentation describing one product's commitments to commercial customers. It does not cover consumer Copilot, other vendors, or the fictional tools in the packet, and the statements depend on the organisation's licence and configuration. It is not independent evidence that the protections work.
+**Limits:** Vendor documentation describing one product's commitments to commercial customers. It does not cover consumer Copilot, other vendors, or the fictional tools in the packet, and the statements depend on the organization's license and configuration. It is not independent evidence that the protections work.
 
-**Revisit when:** Recheck when the article date changes, when the product is renamed again, or when the firm's actual tool or licence changes.
+**Revisit when:** Recheck when the article date changes, when the product is renamed again, or when the firm's actual tool or license changes.
 
 ## S5
 
@@ -88,10 +88,10 @@ Reviewed: 2026-09-21
 
 **Supports:** States that user prompts are customer data under the Cloud Data Processing Addendum, that Workspace does not use customer data to train models without the customer's prior permission, that content is not human-reviewed or used for model training outside the customer's domain without permission, that Gemini retrieves only Workspace content the user already has access to, and that existing data loss prevention and rights management controls apply. It distinguishes the Workspace product from the consumer Gemini app, which runs under different terms.
 
-**Our application:** Lesson 1 uses it alongside S4 to show that the organisational product and the personal account are different arrangements, and that the assistant sees only what the user can already open.
+**Our application:** Lesson 1 uses it alongside S4 to show that the organizational product and the personal account are different arrangements, and that the assistant sees only what the user can already open.
 
 **Limits:** Vendor documentation for one product family, subject to the customer's agreement and admin settings. It is not independent evidence, does not describe other vendors, and does not cover the fictional tools in the packet. The page was reached by a redirect from an older support.google.com address.
 
-**Revisit when:** Recheck when the page's last-updated date changes or when the firm's actual tool or licence changes.
+**Revisit when:** Recheck when the page's last-updated date changes or when the firm's actual tool or license changes.
 
 [Back to the course](README.md)

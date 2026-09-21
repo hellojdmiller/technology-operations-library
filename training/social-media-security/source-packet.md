@@ -8,9 +8,9 @@ You work at Larkspur Ridge Partners, a small fictional investment firm. Everyone
 
 Date: 2026-09-18 · Public posts: described in text, as anyone on the platform would see them
 
-Post one, from the personal account of Maren Solberg, partner, dated 12 September: 'Off to the Harbourfront Growth Summit in Lisbon, 22 to 25 September. Happy to meet anyone attending. Back at my desk the following Monday.' The photo shows an airport lounge; her conference badge is on the table, readable, with her name and the firm's name.
+Post one, from the personal account of Maren Solberg, partner, dated 12 September: 'Off to the Harborfront Growth Summit in Lisbon, 22 to 25 September. Happy to meet anyone attending. Back at my desk the following Monday.' The photo shows an airport lounge; her conference badge is on the table, readable, with her name and the firm's name.
 
-Post two, from the firm's account, dated 16 September: 'Great first week working with the team at Ledgerline as we move our expense and payments reporting onto their platform. Thanks to Tomas Reyes in finance for leading the rollout.' The photo shows two laptops on a desk. One screen shows the Ledgerline sign-in page; the other shows a spreadsheet with a tab labelled 'Q3 wire schedule'.
+Post two, from the firm's account, dated 16 September: 'Great first week working with the team at Ledgerline as we move our expense and payments reporting onto their platform. Thanks to Tomas Reyes in finance for leading the rollout.' The photo shows two laptops on a desk. One screen shows the Ledgerline sign-in page; the other shows a spreadsheet with a tab labeled 'Q3 wire schedule'.
 
 Post three, from the firm's account, dated 18 September: 'Thrilled to welcome Dana Okafor to our finance team as Accounts Payable Associate. Dana starts Monday 21 September and will be working closely with Tomas on supplier payments.' The photo shows Dana holding a welcome card in front of the office door, with the badge reader and the suite number in frame.
 
@@ -30,7 +30,7 @@ You are welcome to say where you work and what you do in general terms. Do not p
 
 New joiners are announced by the firm's account after the person has completed their first week. The announcement names the team, not the person's specific duties or the colleagues they work with.
 
-Personal accounts that name the firm must use a unique password and two-step verification. Review who can see your posts at least once a year, and remove connections you do not recognise.
+Personal accounts that name the firm must use a unique password and two-step verification. Review who can see your posts at least once a year, and remove connections you do not recognize.
 
 If you see an account pretending to be a colleague or the firm, do not engage with it. Take a screenshot, report it to the platform using its impersonation report, and tell the technology team the same day. If you have already replied or shared something, say so. Nobody is in trouble for reporting.
 

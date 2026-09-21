@@ -32,11 +32,11 @@ Published or updated: Published 5 February 2018, updated 13 February 2024
 
 Reviewed: 2026-09-21
 
-**Supports:** A four-layer defence: make it hard for messages to arrive, help users identify and report, protect against the effects of undetected messages, respond quickly. Calls for a simple reporting process and a culture where people report without fear of reprimand, and cautions against punitive phishing simulations.
+**Supports:** A four-layer defense: make it hard for messages to arrive, help users identify and report, protect against the effects of undetected messages, respond quickly. Calls for a simple reporting process and a culture where people report without fear of reprimand, and cautions against punitive phishing simulations.
 
 **Our application:** Habit five's 'report, not delete' and the tone of the whole lesson: habits, not blame.
 
-**Limits:** Written for security staff in medium and large organisations; smaller firms are pointed to other NCSC material. It does not describe client buttons or personal-account rules.
+**Limits:** Written for security staff in medium and large organizations; smaller firms are pointed to other NCSC material. It does not describe client buttons or personal-account rules.
 
 **Revisit when:** If the NCSC updates the guidance or replaces the layered model.
 
@@ -50,7 +50,7 @@ Published or updated: Published 26 November 2021, last reviewed 5 September 2022
 
 Reviewed: 2026-09-21
 
-**Supports:** Five signs: authority, urgency, emotion, scarcity, and current events. Advises against using the numbers or address in the message and for using details from the official website instead; genuine organisations do not ask for personal information by email.
+**Supports:** Five signs: authority, urgency, emotion, scarcity, and current events. Advises against using the numbers or address in the message and for using details from the official website instead; genuine organizations do not ask for personal information by email.
 
 **Our application:** The 'pressure is not proof' point and the directory-number call in the worked example.
 
@@ -68,13 +68,13 @@ Published or updated: Page dated 3 July 2026
 
 Reviewed: 2026-09-21
 
-**Supports:** Users report junk or phishing with the built-in Report button in current Outlook for Windows, Mac, iOS, Android, the new Outlook, and Outlook on the web, when the organisation has user reporting turned on. Messages reported as phishing are deleted; reported junk moves to Junk Email and blocks the sender; reports go to a reporting mailbox, to Microsoft, or both.
+**Supports:** Users report junk or phishing with the built-in Report button in current Outlook for Windows, Mac, iOS, Android, the new Outlook, and Outlook on the web, when the organization has user reporting turned on. Messages reported as phishing are deleted; reported junk moves to Junk Email and blocks the sender; reports go to a reporting mailbox, to Microsoft, or both.
 
 **Our application:** Habit five: what the button does and why it beats deleting.
 
 **Limits:** Describes Microsoft 365 with Exchange Online mailboxes. Availability depends on admin settings and client version; a firm without the button needs another reporting route, which D3 leaves to IT.
 
-**Revisit when:** If Microsoft changes the Report button's behaviour or supported versions.
+**Revisit when:** If Microsoft changes the Report button's behavior or supported versions.
 
 ## S5
 
@@ -126,7 +126,7 @@ Reviewed: 2026-09-21
 
 **Our application:** Habits one, two, three, and five for Gmail users.
 
-**Limits:** Consumer Gmail help. Google Workspace organisations may have different reporting routes and admin settings.
+**Limits:** Consumer Gmail help. Google Workspace organizations may have different reporting routes and admin settings.
 
 **Revisit when:** If Google changes the reporting menu or the page.
 

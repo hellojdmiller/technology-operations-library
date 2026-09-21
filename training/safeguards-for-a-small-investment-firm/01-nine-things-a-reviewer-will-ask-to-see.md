@@ -35,7 +35,7 @@ Using D1 to D3, build a nine-row gap list for Quillon Ridge: for each component,
 **Deliverable:** Nine rows, each written as exists; missing; owner.
 
 - [ ] Each row names one owner by title from D3, not the IT provider.
-- [ ] Evidence is a dated artefact, not a policy sentence.
+- [ ] Evidence is a dated artifact, not a policy sentence.
 - [ ] The incident row names who decides on notification and the notice period.
 - [ ] Empty rows say 'none', not 'in progress'.
 

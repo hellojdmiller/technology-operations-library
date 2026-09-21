@@ -12,7 +12,7 @@ No technical background is needed. Work on paper or in a document, try each task
 
 The suggested 15–20 minutes per lesson is a starting estimate. Take longer if you want, answer aloud or in writing, and bring your own firm's procedure alongside D4. The example answers are comparisons, not scripts.
 
-**Track:** Security awareness · **For:** Anyone who requests, approves, or processes payments or vendor changes at a small firm: finance, operations, executive assistants, and partners. No technical background is needed.
+**Format:** Course · **Track:** Security awareness · **For:** Anyone who requests, approves, or processes payments or vendor changes at a small firm: finance, operations, executive assistants, and partners. No technical background is needed.
 
 ## Start here
 
@@ -20,7 +20,7 @@ Read the [shared fictional packet](source-packet.md), then work through the less
 
 | Lesson | What you will make | Suggested time |
 | --- | --- | --- |
-| [1. Recognise business email compromise](01-recognise-business-email-compromise.md) | Mark up two payment-related messages with what is being changed and what is creating the pressure. | 15–20 minutes |
+| [1. Recognize business email compromise](01-recognize-business-email-compromise.md) | Mark up two payment-related messages with what is being changed and what is creating the pressure. | 15–20 minutes |
 | [2. Verify through a second channel](02-verify-through-a-second-channel.md) | Write a verification plan for one change request that names the channel, the person, and the record kept. | 15–20 minutes |
 | [3. Design the procedure and the response](03-design-the-procedure-and-the-response.md) | Draft a one-page payment-change procedure and first-hour response that a small firm could adopt. | 15–20 minutes |
 

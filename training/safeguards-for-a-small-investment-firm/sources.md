@@ -50,11 +50,11 @@ Published or updated: February 2024
 
 Reviewed: 2026-09-21
 
-**Supports:** A supplement to CSF 2.0 for small and medium businesses with modest or no cybersecurity plans, organised by the six Functions: Govern, Identify, Protect, Detect, Respond, and Recover. Its actions include understanding legal, regulatory, and contractual requirements and who is responsible for the strategy (Govern); keeping an inventory of hardware, software, systems, and services (Identify); requiring multi-factor authentication on all accounts that offer it and restricting sensitive information to those who need it (Protect); monitoring logs and alerts or engaging a provider to do so (Detect); and a basic incident response plan naming a champion, who to call, and what, when, and how to report (Respond).
+**Supports:** A supplement to CSF 2.0 for small and medium businesses with modest or no cybersecurity plans, organized by the six Functions: Govern, Identify, Protect, Detect, Respond, and Recover. Its actions include understanding legal, regulatory, and contractual requirements and who is responsible for the strategy (Govern); keeping an inventory of hardware, software, systems, and services (Identify); requiring multi-factor authentication on all accounts that offer it and restricting sensitive information to those who need it (Protect); monitoring logs and alerts or engaging a provider to do so (Detect); and a basic incident response plan naming a champion, who to call, and what, when, and how to report (Respond).
 
 **Our application:** Shows that a small firm covers the nine components with people it already has; the model answer's owner and incident response rows follow its advice to name a responsible person and keep a contact list.
 
-**Limits:** Voluntary guidance, not a regulatory requirement, and written for any small organisation rather than for investment firms. It does not tell a firm which rules bind it or what a specific reviewer will accept.
+**Limits:** Voluntary guidance, not a regulatory requirement, and written for any small organization rather than for investment firms. It does not tell a firm which rules bind it or what a specific reviewer will accept.
 
 **Revisit when:** When NIST revises CSF 2.0 or the quick-start guide, or when the firm grows past the point where a quick-start guide fits.
 

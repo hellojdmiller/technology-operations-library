@@ -18,7 +18,7 @@ Read the [shared fictional packet](source-packet.md), then work through the less
 
 | Lesson | What you will make | Suggested time |
 | --- | --- | --- |
-| [1. Plausible is not the same as true](01-plausible-is-not-true.md) | A review of D1 with each claim labelled verified, corrected, or removed, and the source used for each label. | 9–12 minutes |
+| [1. Plausible is not the same as true](01-plausible-is-not-true.md) | A review of D1 with each claim labeled verified, corrected, or removed, and the source used for each label. | 9–12 minutes |
 
 Use the [blank worksheet](worksheet.md) to keep a first attempt separate from any revision. The example answers are comparisons, not wording to memorize. The [facilitator guide](facilitator.md) helps a colleague run the course as a session.
 

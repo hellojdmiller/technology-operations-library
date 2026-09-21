@@ -42,7 +42,7 @@
           "7.2 Describe your most recent information security risk assessment: its date, who performed it, and how findings were tracked to closure.",
           "7.3 Describe access controls over investor and portfolio information, including multi-factor authentication coverage and how access is reviewed and removed when staff leave.",
           "7.4 Describe how investor information is encrypted at rest and in transit, naming the systems that hold it.",
-          "7.5 Describe how you assess third-party service providers before engagement and monitor them afterwards, including your fund administrator and IT provider.",
+          "7.5 Describe how you assess third-party service providers before engagement and monitor them afterward, including your fund administrator and IT provider.",
           "7.6 Provide your incident response plan. State how, and within what period, you would notify us of an incident affecting our information.",
           "7.7 Describe security training for staff, its frequency, and how attendance is recorded.",
           "7.8 Describe how the program is monitored and tested, and give the date and scope of the most recent test.",
@@ -51,7 +51,7 @@
       },
       {
         "id": "D3",
-        "title": "Organisation chart excerpt: roles by title",
+        "title": "Organization chart excerpt: roles by title",
         "date": "2026-09-01",
         "kind": "Extract from the firm's internal directory",
         "body": [
@@ -88,7 +88,7 @@
         "deliverable": "Nine rows, each written as exists; missing; owner.",
         "checklist": [
           "Each row names one owner by title from D3, not the IT provider.",
-          "Evidence is a dated artefact, not a policy sentence.",
+          "Evidence is a dated artifact, not a policy sentence.",
           "The incident row names who decides on notification and the notice period.",
           "Empty rows say 'none', not 'in progress'."
         ]
@@ -159,9 +159,9 @@
       "url": "https://csrc.nist.gov/pubs/sp/1300/final",
       "publishedOrUpdated": "February 2024",
       "reviewedOn": "2026-09-21",
-      "support": "A supplement to CSF 2.0 for small and medium businesses with modest or no cybersecurity plans, organised by the six Functions: Govern, Identify, Protect, Detect, Respond, and Recover. Its actions include understanding legal, regulatory, and contractual requirements and who is responsible for the strategy (Govern); keeping an inventory of hardware, software, systems, and services (Identify); requiring multi-factor authentication on all accounts that offer it and restricting sensitive information to those who need it (Protect); monitoring logs and alerts or engaging a provider to do so (Detect); and a basic incident response plan naming a champion, who to call, and what, when, and how to report (Respond).",
+      "support": "A supplement to CSF 2.0 for small and medium businesses with modest or no cybersecurity plans, organized by the six Functions: Govern, Identify, Protect, Detect, Respond, and Recover. Its actions include understanding legal, regulatory, and contractual requirements and who is responsible for the strategy (Govern); keeping an inventory of hardware, software, systems, and services (Identify); requiring multi-factor authentication on all accounts that offer it and restricting sensitive information to those who need it (Protect); monitoring logs and alerts or engaging a provider to do so (Detect); and a basic incident response plan naming a champion, who to call, and what, when, and how to report (Respond).",
       "application": "Shows that a small firm covers the nine components with people it already has; the model answer's owner and incident response rows follow its advice to name a responsible person and keep a contact list.",
-      "limits": "Voluntary guidance, not a regulatory requirement, and written for any small organisation rather than for investment firms. It does not tell a firm which rules bind it or what a specific reviewer will accept.",
+      "limits": "Voluntary guidance, not a regulatory requirement, and written for any small organization rather than for investment firms. It does not tell a firm which rules bind it or what a specific reviewer will accept.",
       "revisit": "When NIST revises CSF 2.0 or the quick-start guide, or when the firm grows past the point where a quick-start guide fits."
     }
   ]

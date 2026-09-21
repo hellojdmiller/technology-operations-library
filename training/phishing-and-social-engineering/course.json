@@ -8,7 +8,7 @@
   "description": "Three practical lessons on reading a message for the pressure it carries, verifying it through a channel it did not supply, and reporting a click without fear.",
   "introduction": [
     "Most of the messages that cause real damage at small firms are not clever. They are ordinary requests, sent at a busy moment, from someone who appears to have the right to ask. This course is about noticing the pressure inside a message before you act on the request it carries.",
-    "You will work from one fictional packet: a shared-document notice, a text message claiming to be the managing partner, a genuine security notice, and the firm's own one-page reporting instructions. Two of the four are malicious. The point is not to guess which; it is to practise habits that make guessing unnecessary.",
+    "You will work from one fictional packet: a shared-document notice, a text message claiming to be the managing partner, a genuine security notice, and the firm's own one-page reporting instructions. Two of the four are malicious. The point is not to guess which; it is to practice habits that make guessing unnecessary.",
     "No technical background is needed and no tool account is required. Work on paper or in a document. Try each task before opening the example answer, then explain your choice in your own words. The examples are comparisons to learn from, not scripts to memorise or wording to reuse.",
     "Nobody spots every message, and the guidance I lean on says so plainly. What protects a firm is that people report quickly, verify through a channel the message did not supply, and say so without fear when they have clicked. Those three habits are the three lessons that follow."
   ],
@@ -40,7 +40,7 @@
         "body": [
           "From: +1 555 013 4471 (not in Sam's contacts)",
           "Hi Sam, Priya here. New number, my phone died this morning and I am on a loaner. I am in back-to-back sessions on the Ridgeway closing and cannot take calls.",
-          "I need a favour handled quietly today. A 48,500 payment has to reach a new counterparty account before 4pm or we lose the slot. Please confirm you are at your desk and I will send the account details.",
+          "I need a favor handled quietly today. A 48,500 payment has to reach a new counterparty account before 4pm or we lose the slot. Please confirm you are at your desk and I will send the account details.",
           "Do not copy Dana on this yet, the terms are not announced. I will explain in person tomorrow. Thank you, I appreciate you handling it."
         ]
       },
@@ -54,7 +54,7 @@
           "To: sam.okafor@harbourline.example.com",
           "Subject: A new sign-in method was added to your account",
           "On Monday 21 September 2026 at 09:12, an authenticator app on a device named 'Sam mobile' was added as a sign-in method for your account. The change was made from the office network with the technology team.",
-          "If you recognise this change, no action is needed. If you do not, contact the technology team at techhelp@harbourline.example.com, on extension 220, or in person. Do not reply to this message.",
+          "If you recognize this change, no action is needed. If you do not, contact the technology team at techhelp@harbourline.example.com, on extension 220, or in person. Do not reply to this message.",
           "This notice contains no links. Harbourline security notices never ask you to sign in, enter a password, or download anything."
         ]
       },
@@ -67,7 +67,7 @@
           "Report first, ask second. In your mail client, select the message and choose Report, then Report phishing. If the button is missing, forward the message to phishing@harbourline.example.com. For a text or a call, send a screenshot or a short description to the same address. Reporting takes ten seconds and lets us check every other inbox.",
           "Never reply, never click, never open the attachment, and never call a number the message gives you. That includes unsubscribe links and 'verify your account' buttons.",
           "Verify through a channel the message did not supply: the internal directory, a colleague in person, or a website you type yourself. Our only email domain is harbourline.example.com. Look at the address after the @ sign and the registered domain in any link, not the display name.",
-          "Payments and account changes: any new or changed payee, urgent payment, or request to keep a payment quiet is confirmed by voice with the requester on a directory number and approved by Dana Whitfield. A text or an email never authorises a payment, whoever it appears to come from.",
+          "Payments and account changes: any new or changed payee, urgent payment, or request to keep a payment quiet is confirmed by voice with the requester on a directory number and approved by Dana Whitfield. A text or an email never authorizes a payment, whoever it appears to come from.",
           "Shared-document notices and calendar invites: open documents from the portal you type yourself, not from the notice. Do not accept or decline an unexpected invite; report it and we will remove it.",
           "If you clicked, opened, replied, or entered a password: tell the technology team immediately at techhelp@harbourline.example.com, on extension 220, or Leo Marsh in person. Out of hours, call the Technology on-call number in the directory. Do not delete the message. Do not shut down, wipe, or unplug anything. Do not change your password until we tell you which device to use. If you cannot reach anyone within 30 minutes out of hours, change your password from a different trusted device and tell us what you did.",
           "No blame. Nobody spots every message; a late report is the only thing that makes an incident worse. We will never penalise a report, including a report of your own click.",
@@ -107,7 +107,7 @@
       },
       "hint": "Read only the sender line and the ask first. Then read the body and count the reasons not to check.",
       "modelAnswer": [
-        "D1. Ask: sign in with my work password to view a document. Pressure: a 24-hour expiry and the managing partner's name on the share. Identity: display name Harbourline Partners, address share@harbourline-docs.example.net, link domain docs-view.example.net. Neither is harbourline.example.com, the only domain D4 recognises.",
+        "D1. Ask: sign in with my work password to view a document. Pressure: a 24-hour expiry and the managing partner's name on the share. Identity: display name Harbourline Partners, address share@harbourline-docs.example.net, link domain docs-view.example.net. Neither is harbourline.example.com, the only domain D4 recognizes.",
         "D2. Ask: confirm I am at my desk so account details can follow, then pay 48,500 to a new account by 4pm. Pressure: the deadline, the managing partner's authority, keeping Dana out, and a dead-phone story excusing the unknown number. Identity: a claimed name, nothing more.",
         "D3. It asks nothing through itself: no link, no reply, no password, no deadline. It describes a change I made with the technology team that morning and points to contacts I know from D4. That is why the signals are absent."
       ],
@@ -122,7 +122,7 @@
           {
             "id": "a",
             "label": "It is genuinely from Priya, because it knows about the Ridgeway closing and Dana's role; the payment simply needs Dana's approval.",
-            "feedback": "Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorises a payment."
+            "feedback": "Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorizes a payment."
           },
           {
             "id": "b",
@@ -174,7 +174,7 @@
       ],
       "reflection": "Why does reporting come before verifying, when verifying might show the message was genuine after all?",
       "transfer": {
-        "prompt": "A calendar invite titled 'Q3 investor call' arrives from an organiser you do not recognise, with a join link and a note that attendance is mandatory. Your plan?",
+        "prompt": "A calendar invite titled 'Q3 investor call' arrives from an organizer you do not recognize, with a join link and a note that attendance is mandatory. Your plan?",
         "answer": "Do not accept, decline, or click join: accepting and declining both reply, and the link is the ask. Report it by the D4 route. Ask whoever normally arranges investor calls, in person or by extension. Leave the invite for the technology team to remove."
       },
       "check": {
@@ -292,9 +292,9 @@
       "url": "https://www.ncsc.gov.uk/guidance/phishing",
       "publishedOrUpdated": "2024-02-13 (version 2.0; first published 2018-02-05)",
       "reviewedOn": "2026-09-21",
-      "support": "Sets out four layers of defence: make it difficult for attackers to reach users, help users identify and report suspected phishing, protect the organisation from the effects of undetected phishing, and respond quickly to incidents. States that no training package, including phishing simulations, can teach users to spot every phishing attempt; advises against reprimanding users who struggle to recognise phishing because users who fear reprisals will not report mistakes promptly; and asks for a culture where users can report phishing emails, including ones they have clicked on.",
-      "application": "The introduction's framing that spotting is one layer, not the whole defence. Lesson 3's no-blame rule and its insistence that a late report is what makes a click worse.",
-      "limits": "Written for technology, operations or security staff at medium and large organisations. It does not specify the first steps an individual should take after a click, and it does not evaluate exercises like the ones in this course.",
+      "support": "Sets out four layers of defense: make it difficult for attackers to reach users, help users identify and report suspected phishing, protect the organization from the effects of undetected phishing, and respond quickly to incidents. States that no training package, including phishing simulations, can teach users to spot every phishing attempt; advises against reprimanding users who struggle to recognize phishing because users who fear reprisals will not report mistakes promptly; and asks for a culture where users can report phishing emails, including ones they have clicked on.",
+      "application": "The introduction's framing that spotting is one layer, not the whole defense. Lesson 3's no-blame rule and its insistence that a late report is what makes a click worse.",
+      "limits": "Written for technology, operations or security staff at medium and large organizations. It does not specify the first steps an individual should take after a click, and it does not evaluate exercises like the ones in this course.",
       "revisit": "When the NCSC publishes a new version of the guidance."
     },
     {
@@ -304,9 +304,9 @@
       "url": "https://support.microsoft.com/en-us/windows/protect-yourself-from-phishing-0c7ea947-ba98-3bd9-7184-430e1f860a44",
       "publishedOrUpdated": "undated",
       "reviewedOn": "2026-09-21",
-      "support": "Lists signs of phishing: an urgent call to action or threats; first-time, infrequent, or External-marked senders; spelling and bad grammar; generic greetings; mismatched email domains including look-alike domains such as micros0ft.com; and suspicious links or attachments to check by hovering rather than clicking. Says Report, then Report phishing in Outlook is the fastest way to report, and to contact the organisation through official channels. If phished: document the details, change passwords on affected accounts, enable multifactor authentication, and notify IT support for a work account.",
+      "support": "Lists signs of phishing: an urgent call to action or threats; first-time, infrequent, or External-marked senders; spelling and bad grammar; generic greetings; mismatched email domains including look-alike domains such as micros0ft.com; and suspicious links or attachments to check by hovering rather than clicking. Says Report, then Report phishing in Outlook is the fastest way to report, and to contact the organization through official channels. If phished: document the details, change passwords on affected accounts, enable multifactor authentication, and notify IT support for a work account.",
       "application": "Lesson 1 uses the display-name and look-alike-domain signs. Lesson 2 uses the in-client report button as the first step. Lesson 3 uses the advice to document details and notify the technology team.",
-      "limits": "Vendor help for one mail client. The course does not require Outlook; the firm's route is D4. The page does not say which device to change a password from or what an administrator checks afterwards; those sequences are my practice, not Microsoft's text.",
+      "limits": "Vendor help for one mail client. The course does not require Outlook; the firm's route is D4. The page does not say which device to change a password from or what an administrator checks afterward; those sequences are my practice, not Microsoft's text.",
       "revisit": "When Microsoft changes the Report menu or revises the page."
     },
     {

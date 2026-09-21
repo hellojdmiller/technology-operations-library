@@ -65,7 +65,7 @@ Why does reporting come before verifying, when verifying might show the message 
 
 ## Try a changed case
 
-A calendar invite titled 'Q3 investor call' arrives from an organiser you do not recognise, with a join link and a note that attendance is mandatory. Your plan?
+A calendar invite titled 'Q3 investor call' arrives from an organizer you do not recognize, with a join link and a note that attendance is mandatory. Your plan?
 
 <details>
 <summary>Changed-case answer</summary>

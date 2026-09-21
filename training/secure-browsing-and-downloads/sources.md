@@ -14,7 +14,7 @@ Published or updated: August 2023 revision (per the file name; the pages themsel
 
 Reviewed: 2026-09-21
 
-**Supports:** Defines malvertising as malicious or hijacked adverts that spread malware, says it 'can compromise a network even if you do not click on an ad' and can force redirects, names outdated browsers and unaware users as the main openings, and recommends standardised browsers, ad blocking, protective DNS, and browser isolation. It warns that ad-blocking extensions run with high privilege and see all traffic.
+**Supports:** Defines malvertising as malicious or hijacked adverts that spread malware, says it 'can compromise a network even if you do not click on an ad' and can force redirects, names outdated browsers and unaware users as the main openings, and recommends standardized browsers, ad blocking, protective DNS, and browser isolation. It warns that ad-blocking extensions run with high privilege and see all traffic.
 
 **Our application:** The 'ordinary route' and 'harm without a click' points, and the approved-extension idea behind D4, follow this guide.
 
@@ -72,7 +72,7 @@ Reviewed: 2026-09-21
 
 **Our application:** The fake-update and 'computer is infected' points, the changed case, and the after-a-bad-install advice on passwords follow this page.
 
-**Limits:** Consumer-facing and US-centred; it addresses money and remote-access scams rather than workplace devices, and its reporting route is US-specific.
+**Limits:** Consumer-facing and US-centerd; it addresses money and remote-access scams rather than workplace devices, and its reporting route is US-specific.
 
 **Revisit when:** Recheck when the FTC updates the article or changes the reporting route.
 

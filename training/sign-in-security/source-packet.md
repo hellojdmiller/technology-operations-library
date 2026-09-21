@@ -2,7 +2,7 @@
 
 # One reused password, three days later
 
-You work at Harrowvale Advisory, a small fictional firm. Everyone and everything in this packet is fictional, including the firm, the people, the services, and the domains. The exercise reference date is 21 September 2026. D1, D2, and D3 are the evidence. D4 is an impersonation attempt: the sender is not the technology team, whatever the display name says. Use the packet to practise deciding; do not change any real account during the exercise.
+You work at Harrowvale Advisory, a small fictional firm. Everyone and everything in this packet is fictional, including the firm, the people, the services, and the domains. The exercise reference date is 21 September 2026. D1, D2, and D3 are the evidence. D4 is an impersonation attempt: the sender is not the technology team, whatever the display name says. Use the packet to practice deciding; do not change any real account during the exercise.
 
 ## D1: Breach notification from a personal service, forwarded to the technology team
 
@@ -14,7 +14,7 @@ Lena, I got this on my personal email last night. I am fairly sure the Pantry Bo
 
 From: Pantry Box Security (security@pantrybox.example.com). To: priya.r@mail.example.com. Sent: 15 September 2026, 22:14. Subject: Important notice about your Pantry Box account.
 
-We are writing to tell you about a security incident that affects your account. On 11 September 2026 we found that an unauthorised party had accessed a database containing customer names, email addresses, delivery postcodes, and hashed passwords. We have no evidence that payment card details were affected.
+We are writing to tell you about a security incident that affects your account. On 11 September 2026 we found that an unauthorized party had accessed a database containing customer names, email addresses, delivery postcodes, and hashed passwords. We have no evidence that payment card details were affected.
 
 As a precaution we have signed out all sessions on your account. We recommend that you change your Pantry Box password now, and that you also change the password on any other account where you used the same or a similar password.
 

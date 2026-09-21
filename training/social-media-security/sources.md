@@ -20,7 +20,7 @@ Reviewed: 2026-09-21
 
 **Limits:** A one-page consumer awareness sheet from 2019. It does not cover workplace impersonation or firm accounts, and it cites usage statistics that are now out of date.
 
-**Revisit when:** Recheck if CISA replaces the sheet or publishes newer social media guidance for organisations.
+**Revisit when:** Recheck if CISA replaces the sheet or publishes newer social media guidance for organizations.
 
 ## S2
 
@@ -54,7 +54,7 @@ Reviewed: 2026-09-21
 
 **Our application:** The account-security paragraph, the tells of a fake profile, and the verify-by-another-channel advice come from here.
 
-**Limits:** Personal-use guidance that links out to platform settings pages which change often. It does not address firm policy or who inside an organisation should be told.
+**Limits:** Personal-use guidance that links out to platform settings pages which change often. It does not address firm policy or who inside an organization should be told.
 
 **Revisit when:** Recheck at the NCSC's next review of the page or if the platform links break.
 
@@ -68,11 +68,11 @@ Published or updated: undated
 
 Reviewed: 2026-09-21
 
-**Supports:** Describes scammers pretending to be businesses, government agencies, or people you know, using faked caller ID, real employee names, and urgency; advises not to click links or call numbers in unexpected messages, to verify the story by contacting the organisation through a phone number, website, or email you know is real, and to report at ReportFraud.ftc.gov.
+**Supports:** Describes scammers pretending to be businesses, government agencies, or people you know, using faked caller ID, real employee names, and urgency; advises not to click links or call numbers in unexpected messages, to verify the story by contacting the organization through a phone number, website, or email you know is real, and to report at ReportFraud.ftc.gov.
 
 **Our application:** The lesson's rule to verify through a channel you already have, and its treatment of urgency and secrecy as signals, follow this guidance.
 
-**Limits:** Consumer-facing and US-centred. It focuses on money and personal information rather than on workplace documents, and its reporting route is US-specific.
+**Limits:** Consumer-facing and US-centerd. It focuses on money and personal information rather than on workplace documents, and its reporting route is US-specific.
 
 **Revisit when:** Recheck if the FTC restructures its imposter-scam pages or changes the reporting route.
 

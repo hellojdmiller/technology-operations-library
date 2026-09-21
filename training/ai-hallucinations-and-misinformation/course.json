@@ -52,7 +52,7 @@
         "kind": "Fictional policy excerpt",
         "body": [
           "Any text prepared with an AI assistant is checked claim by claim before it leaves the firm. A claim is any number, date, named report, quotation, or attribution. The person sending the text is responsible for the check, whoever ran the tool.",
-          "Each claim is labelled verified (found in the primary source, with matching wording and context), corrected (the source says something different, and the text now matches the source), or removed (no primary source could be found). A link, a footnote, or the assistant's own assurance is not verification.",
+          "Each claim is labeled verified (found in the primary source, with matching wording and context), corrected (the source says something different, and the text now matches the source), or removed (no primary source could be found). A link, a footnote, or the assistant's own assurance is not verification.",
           "A quotation is used only when the exact words appear in the source, attributed to the person who said them, in the context they said them. If the source is a paraphrase or a summary, the text says so.",
           "Keep the review notes with the draft. Do not paste client data or unpublished material into tools the firm has not approved."
         ]
@@ -66,7 +66,7 @@
       "title": "Plausible is not the same as true",
       "summary": "Trace every number, title, date, and quote to its primary source, and label what you find.",
       "duration": "9–12 minutes",
-      "outcome": "A review of D1 with each claim labelled verified, corrected, or removed, and the source used for each label.",
+      "outcome": "A review of D1 with each claim labeled verified, corrected, or removed, and the source used for each label.",
       "explanation": [
         "A fabricated answer rarely looks fabricated. It arrives as a named report, a precise percentage, a confident date, and a quotation with a name attached. NIST calls this confabulation: confidently stated but false content, produced by predicting likely text rather than looking anything up. [S1]",
         "Fluency is not evidence. In one study, 55% of one model's citations did not exist; a newer model still fabricated 18%, with errors in many real ones. Vendors say the same in plain words: responses are not guaranteed factual, so check before sending. [S2, S4, S5]",
@@ -132,7 +132,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Defines confabulation as generative AI systems generating and confidently presenting erroneous or false content, colloquially called hallucinations or fabrications; explains it as a natural result of models approximating the statistical distribution of their training data; notes that outputs may include confabulated logic or citations that purport to justify an answer, and that the risk arises when users believe false content because of the confident tone.",
       "application": "The lesson borrows the term, the explanation that fluency comes from prediction rather than lookup, and the point that a confident justification or citation can itself be fabricated.",
-      "limits": "A voluntary risk-management profile written for organizations deploying generative AI. It catalogues risks and suggested actions; it does not measure how often fabrication occurs or test the three checks taught here.",
+      "limits": "A voluntary risk-management profile written for organizations deploying generative AI. It catalogs risks and suggested actions; it does not measure how often fabrication occurs or test the three checks taught here.",
       "revisit": "When NIST revises the profile or the AI RMF, or when the organization adopts a different risk framework."
     },
     {

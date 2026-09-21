@@ -72,7 +72,7 @@ Suppose the LP spreadsheet is edited to remove amounts and email addresses, leav
 <details>
 <summary>Changed-case answer</summary>
 
-No. A list of who invested in Fund III still identifies people and organisations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder.
+No. A list of who invested in Fund III still identifies people and organizations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder.
 
 </details>
 

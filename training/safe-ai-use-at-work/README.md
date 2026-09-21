@@ -8,11 +8,11 @@ The first course in this track was about getting useful work out of an assistant
 
 I wrote it for colleagues at a small, high-trust firm, where one leaked email or one wrong number in a client note does real damage. No technical background is needed. You will work from one fictional packet: a client email, a policy excerpt, a flawed draft, and a list of approved tools.
 
-No AI account is required. Work on paper or in a document, try each task before opening the example answer, and explain your choice in your own words. If you do try a prompt in an organisation-approved tool, use only this fictional packet; nothing in it is real.
+No AI account is required. Work on paper or in a document, try each task before opening the example answer, and explain your choice in your own words. If you do try a prompt in an organization-approved tool, use only this fictional packet; nothing in it is real.
 
 The 15–20 minutes per lesson is a starting estimate. Take longer if you need it, and keep the packet open. The example answers are comparisons, not scripts. What matters is that you can say why each line was cut, flagged, or corrected, and who decides what happens next.
 
-**Track:** AI at work · **For:** Everyone at a small, high-trust firm who uses an AI assistant for writing, summarising, or analysis; no technical background is needed. · **Before this course:** AI at Work
+**Format:** Course · **Track:** AI at work · **For:** Everyone at a small, high-trust firm who uses an AI assistant for writing, summarizing, or analysis; no technical background is needed. · **Before this course:** AI at Work
 
 ## Start here
 

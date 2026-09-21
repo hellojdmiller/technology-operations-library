@@ -10,7 +10,7 @@ This course follows one fictional firm through one ordinary week: a laptop left 
 
 No technical background is needed and no tool account is required. Work on paper or in a document, try each task before opening the example answer, then explain your reasoning in your own words. The suggested 15–20 minutes per lesson is a starting estimate, not a limit.
 
-**Track:** Security awareness · **For:** Everyone at a small, high-trust firm who works from home, travels, or uses more than one device, with no technical background assumed.
+**Format:** Course · **Track:** Security awareness · **For:** Everyone at a small, high-trust firm who works from home, travels, or uses more than one device, with no technical background assumed.
 
 ## Start here
 

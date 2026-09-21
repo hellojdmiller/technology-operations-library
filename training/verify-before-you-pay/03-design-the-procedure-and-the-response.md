@@ -67,7 +67,7 @@ The firm has three people. The finance lead is also a partner and today the only
 <details>
 <summary>Changed-case answer</summary>
 
-Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorisation feature can be the second control.
+Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorization feature can be the second control.
 
 </details>
 

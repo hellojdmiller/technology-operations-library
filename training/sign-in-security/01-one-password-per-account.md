@@ -14,7 +14,7 @@ The password that hurts you is usually not the weak one. It is the good one you 
 
 Guidance has moved on from symbols and forced changes. NIST says verifiers should not require periodic password changes, should check new passwords against lists of known compromised ones, and should force a change on evidence of compromise. [S1](sources.md#s1) A breach notice for a reused password is that evidence.
 
-A password manager makes this realistic. It generates, stores, and fills a long random password, so you never type or remember it. You memorise one long passphrase for the manager and protect it with your strongest second factor. D3 3.1 makes the firm's manager mandatory.
+A password manager makes this realiztic. It generates, stores, and fills a long random password, so you never type or remember it. You memorise one long passphrase for the manager and protect it with your strongest second factor. D3 3.1 makes the firm's manager mandatory.
 
 Hashed passwords can be cracked, and the notice date is not the breach date. Order your moves by reach: work email first, because it resets everything else, then money or client files, then the breached service. The FBI gives the same advice: unique passwords. [S5](sources.md#s5)
 

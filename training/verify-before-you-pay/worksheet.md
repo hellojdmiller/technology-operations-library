@@ -8,7 +8,7 @@ Keep your first attempt separate from any revision, and write down what you woul
 
 **Date:** 
 
-## Lesson 1: Recognise business email compromise
+## Lesson 1: Recognize business email compromise
 
 **Outcome:** Mark up two payment-related messages with what is being changed and what is creating the pressure.
 

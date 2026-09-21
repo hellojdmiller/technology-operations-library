@@ -20,11 +20,11 @@ A personal account that names the firm is part of the firm's surface. Use a uniq
 
 **Before**
 
-Off to the Harbourfront Growth Summit in Lisbon, 22 to 25 September, back the following Monday. Photo: the airport lounge, my badge showing my name and the firm's.
+Off to the Harborfront Growth Summit in Lisbon, 22 to 25 September, back the following Monday. Photo: the airport lounge, my badge showing my name and the firm's.
 
 **After**
 
-Three good days at the Harbourfront Growth Summit, mostly talking about founder resilience. Photo: the conference hall, no badge, posted after I was home.
+Three good days at the Harborfront Growth Summit, mostly talking about founder resilience. Photo: the conference hall, no badge, posted after I was home.
 
 **Why:** It keeps the professional value and drops the dates, the reachability gap, and the badge. Nobody can time a request or borrow the firm's name from it.
 

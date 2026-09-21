@@ -72,7 +72,7 @@ Reviewed: 2026-09-21
 
 **Our application:** Lesson 1 uses the point that spotting every attempt is unrealistic; Lesson 2 uses the second-type-of-communication rule; Lesson 3 uses the no-blame reporting position.
 
-**Limits:** General phishing guidance for organisations, not a payment-fraud procedure; it sets no thresholds, cooling periods, or approval roles. Reporting routes it points to are for the United Kingdom.
+**Limits:** General phishing guidance for organizations, not a payment-fraud procedure; it sets no thresholds, cooling periods, or approval roles. Reporting routes it points to are for the United Kingdom.
 
 **Revisit when:** At the NCSC's next stated review of the page, or if the NCSC publishes dedicated business email compromise guidance.
 
@@ -86,7 +86,7 @@ Published or updated: 2023-10-18 (page); document marked October 2023
 
 Reviewed: 2026-09-21
 
-**Supports:** Describes attackers who impersonate supervisors, trusted colleagues, or IT personnel in targeted emails. Recommends user training on social engineering and on reporting suspicious messages, and DMARC with SPF and DKIM so mail systems can check the sending server and reject spoofed domains. Includes a section for small and medium-sized organisations that prioritises awareness training.
+**Supports:** Describes attackers who impersonate supervisors, trusted colleagues, or IT personnel in targeted emails. Recommends user training on social engineering and on reporting suspicious messages, and DMARC with SPF and DKIM so mail systems can check the sending server and reject spoofed domains. Includes a section for small and medium-sized organizations that prioritizes awareness training.
 
 **Our application:** Lesson 1 uses the impersonation point and the observation that authentication checks the sending server, which is why a compromised genuine account passes; Lesson 3 gives the technology team's role in checking the mailbox.
 

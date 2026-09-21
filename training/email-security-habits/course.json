@@ -6,11 +6,11 @@
   "track": "security-awareness",
   "audience": "Everyone who uses a work mailbox.",
   "prerequisites": [],
-  "description": "One short lesson that turns six everyday email habits into a personal checklist, practised on one suspicious message and one quietly compromised mailbox.",
+  "description": "One short lesson that turns six everyday email habits into a personal checklist, practiced on one suspicious message and one quietly compromised mailbox.",
   "introduction": [
     "Email is where most of my working day arrives, and it is where most attempts on a small firm arrive too. I do not think the answer is suspicion of everything. It is a handful of habits that run without effort, so the one message that matters gets noticed.",
-    "This module names six habits and practises each on a fictional packet: a message wearing a colleague's name, a mailbox with a rule its owner never made, and the firm's own email guidance. You will leave with a checklist in your words, with one packet example under each line.",
-    "Nothing here requires a particular mail product. Where Outlook or Gmail behave in a specific way, I say so and cite the vendor page, because you need the actual behaviour. You decide and report in this exercise; you do not open, click, or change any setting."
+    "This module names six habits and practices each on a fictional packet: a message wearing a colleague's name, a mailbox with a rule its owner never made, and the firm's own email guidance. You will leave with a checklist in your words, with one packet example under each line.",
+    "Nothing here requires a particular mail product. Where Outlook or Gmail behave in a specific way, I say so and cite the vendor page, because you need the actual behavior. You decide and report in this exercise; you do not open, click, or change any setting."
   ],
   "reviewedOn": "2026-09-21",
   "scenario": {
@@ -137,9 +137,9 @@
       "url": "https://www.ncsc.gov.uk/guidance/phishing",
       "publishedOrUpdated": "Published 5 February 2018, updated 13 February 2024",
       "reviewedOn": "2026-09-21",
-      "support": "A four-layer defence: make it hard for messages to arrive, help users identify and report, protect against the effects of undetected messages, respond quickly. Calls for a simple reporting process and a culture where people report without fear of reprimand, and cautions against punitive phishing simulations.",
+      "support": "A four-layer defense: make it hard for messages to arrive, help users identify and report, protect against the effects of undetected messages, respond quickly. Calls for a simple reporting process and a culture where people report without fear of reprimand, and cautions against punitive phishing simulations.",
       "application": "Habit five's 'report, not delete' and the tone of the whole lesson: habits, not blame.",
-      "limits": "Written for security staff in medium and large organisations; smaller firms are pointed to other NCSC material. It does not describe client buttons or personal-account rules.",
+      "limits": "Written for security staff in medium and large organizations; smaller firms are pointed to other NCSC material. It does not describe client buttons or personal-account rules.",
       "revisit": "If the NCSC updates the guidance or replaces the layered model."
     },
     {
@@ -149,7 +149,7 @@
       "url": "https://www.ncsc.gov.uk/collection/phishing-scams/spot-scams",
       "publishedOrUpdated": "Published 26 November 2021, last reviewed 5 September 2022",
       "reviewedOn": "2026-09-21",
-      "support": "Five signs: authority, urgency, emotion, scarcity, and current events. Advises against using the numbers or address in the message and for using details from the official website instead; genuine organisations do not ask for personal information by email.",
+      "support": "Five signs: authority, urgency, emotion, scarcity, and current events. Advises against using the numbers or address in the message and for using details from the official website instead; genuine organizations do not ask for personal information by email.",
       "application": "The 'pressure is not proof' point and the directory-number call in the worked example.",
       "limits": "Aimed at individuals and consumer scams; it does not cover workplace reporting tools or mailbox rules.",
       "revisit": "If the NCSC revises the collection."
@@ -161,10 +161,10 @@
       "url": "https://learn.microsoft.com/en-us/defender-office-365/submissions-outlook-report-messages",
       "publishedOrUpdated": "Page dated 3 July 2026",
       "reviewedOn": "2026-09-21",
-      "support": "Users report junk or phishing with the built-in Report button in current Outlook for Windows, Mac, iOS, Android, the new Outlook, and Outlook on the web, when the organisation has user reporting turned on. Messages reported as phishing are deleted; reported junk moves to Junk Email and blocks the sender; reports go to a reporting mailbox, to Microsoft, or both.",
+      "support": "Users report junk or phishing with the built-in Report button in current Outlook for Windows, Mac, iOS, Android, the new Outlook, and Outlook on the web, when the organization has user reporting turned on. Messages reported as phishing are deleted; reported junk moves to Junk Email and blocks the sender; reports go to a reporting mailbox, to Microsoft, or both.",
       "application": "Habit five: what the button does and why it beats deleting.",
       "limits": "Describes Microsoft 365 with Exchange Online mailboxes. Availability depends on admin settings and client version; a firm without the button needs another reporting route, which D3 leaves to IT.",
-      "revisit": "If Microsoft changes the Report button's behaviour or supported versions."
+      "revisit": "If Microsoft changes the Report button's behavior or supported versions."
     },
     {
       "id": "S5",
@@ -199,7 +199,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Report phishing from the More menu next to Reply on a computer. Warns about urgent-sounding messages, advises checking that the email address matches the sender name and that the message is authenticated, and hovering over links to see whether the destination matches; do not click links or download files from untrustworthy sources even without a warning.",
       "application": "Habits one, two, three, and five for Gmail users.",
-      "limits": "Consumer Gmail help. Google Workspace organisations may have different reporting routes and admin settings.",
+      "limits": "Consumer Gmail help. Google Workspace organizations may have different reporting routes and admin settings.",
       "revisit": "If Google changes the reporting menu or the page."
     },
     {

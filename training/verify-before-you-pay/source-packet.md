@@ -2,7 +2,7 @@
 
 # A week of payment requests at Kestrel Row Partners
 
-You are Dana Okonkwo, the operations associate who prepares payments at Kestrel Row Partners, a fictional twelve-person investment firm. Every person, firm, bank, domain, and amount in this packet is fictional. The exercise reference date is Monday 21 September 2026. D1 and D2 are fraudulent requests constructed for the exercise, and the call summarised in D3 was not made by the person it sounded like. D4 is the firm's genuine current procedure and contains at least one gap you should find. Nothing in the packet has been paid.
+You are Dana Okonkwo, the operations associate who prepares payments at Kestrel Row Partners, a fictional twelve-person investment firm. Every person, firm, bank, domain, and amount in this packet is fictional. The exercise reference date is Monday 21 September 2026. D1 and D2 are fraudulent requests constructed for the exercise, and the call summarized in D3 was not made by the person it sounded like. D4 is the firm's genuine current procedure and contains at least one gap you should find. Nothing in the packet has been paid.
 
 ## D1: Vendor email: new bank details for the next invoice
 
@@ -22,7 +22,7 @@ If anything is unclear, reply here or call me on my mobile, 555 0142 7716. Thank
 
 Date: 2026-09-18 · Email thread, subject 'Re: Q3 close: outstanding items', shown newest first
 
-From Marcus Halden (marcus.halden@kestrelrow.example.com) to Dana Okonkwo only, 18 September 2026, 16:52: Dana, adding this to the close thread so it stays with the other items. We are finalising a co-investment side letter with Bramblewood Holdings and they need a $240,000.00 deposit to land before their 5 pm cutoff tomorrow. Priya is travelling and I have cleared it with her by phone.
+From Marcus Halden (marcus.halden@kestrelrow.example.com) to Dana Okonkwo only, 18 September 2026, 16:52: Dana, adding this to the close thread so it stays with the other items. We are finalising a co-investment side letter with Bramblewood Holdings and they need a $240,000.00 deposit to land before their 5 pm cutoff tomorrow. Priya is traveling and I have cleared it with her by phone.
 
 This is not announced yet, so please keep it between us until Monday. Details: Bramblewood Holdings Escrow, account 88 2201 5567, routing 031 447 890, reference KRP-BW-Deposit. I am in meetings until late and email is the best way to reach me. Send me the confirmation when it is done. M.
 

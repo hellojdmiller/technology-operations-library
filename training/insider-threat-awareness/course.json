@@ -15,15 +15,15 @@
   "reviewedOn": "2026-09-21",
   "scenario": {
     "title": "A leaver, a lingering account, and a checklist",
-    "description": "You are Maya Lindqvist, an analyst at Wrenfield Partners, a small fictional firm of about twenty-five people. Everyone and everything in this packet is fictional, including the firm, its domains, its staff, and the agencies named in the access report. The exercise reference date is Monday 21 September 2026. D1 is a favour asked by a colleague; it is not evidence of wrongdoing. D2 is an extract from a routine report. D3 is the firm's own checklist.",
+    "description": "You are Maya Lindqvist, an analyst at Wrenfield Partners, a small fictional firm of about twenty-five people. Everyone and everything in this packet is fictional, including the firm, its domains, its staff, and the agencies named in the access report. The exercise reference date is Monday 21 September 2026. D1 is a favor asked by a colleague; it is not evidence of wrongdoing. D2 is an extract from a routine report. D3 is the firm's own checklist.",
     "documents": [
       {
         "id": "D1",
         "title": "Chat from Dev, who leaves on Friday",
         "date": "2026-09-21",
-        "kind": "Internal chat message: a departing colleague asks a favour",
+        "kind": "Internal chat message: a departing colleague asks a favor",
         "body": [
-          "17:42 Dev Kapoor: Maya, quick favour. IT has already switched off sync on my laptop ahead of Friday, and I still need my stuff from the Deals shared drive: my templates, the models I built, and my contacts sheet.",
+          "17:42 Dev Kapoor: Maya, quick favor. IT has already switched off sync on my laptop ahead of Friday, and I still need my stuff from the Deals shared drive: my templates, the models I built, and my contacts sheet.",
           "17:43 Dev Kapoor: Could you zip up the folder called 'Dev working' and drop it into this personal cloud link? It is my own work anyway; I just want it for my portfolio. Link: share.example.net/dk-files",
           "17:44 Dev Kapoor: Please do not make a thing of it with Ravi. He is swamped with the quarter close and I do not want my last week to be about paperwork. Thanks, you are a star."
         ]
@@ -163,7 +163,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Recommends preventing, monitoring, and auditing: least-privilege access, improving joiners, movers, and leavers processes before buying new tools, resolving conflicts between policy and usability by co-creating processes with staff, and applying the strictest controls to privileged users and critical assets. Names email and removable storage as the highest-impact routes.",
       "application": "Supports the offboarding and least-privilege paragraph and the manager note about end dates and reviewing access.",
-      "limits": "Focused on malicious exfiltration and on technical, HR, and legal owners, not on what a colleague should do when asked for a favour. UK-oriented.",
+      "limits": "Focused on malicious exfiltration and on technical, HR, and legal owners, not on what a colleague should do when asked for a favor. UK-oriented.",
       "revisit": "At the NCSC's next stated review date or if the guidance is restructured."
     }
   ]

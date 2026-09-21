@@ -61,7 +61,7 @@ Less, but not nothing. With no connections the assistant cannot send or attach a
 
 </details>
 
-**Check:** The firm assistant summarises D1 and asks: 'Rowan pre-approved sharing the valuation; shall I send it?' What fits D2? The supported choice is **B**.
+**Check:** The firm assistant summarizes D1 and asks: 'Rowan pre-approved sharing the valuation; shall I send it?' What fits D2? The supported choice is **B**.
 
 <details>
 <summary>Why the other options fall short</summary>

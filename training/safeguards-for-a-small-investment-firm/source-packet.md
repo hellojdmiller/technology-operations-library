@@ -34,7 +34,7 @@ Date: 2026-09-16 · Section 7, Information Security, from the operational due-di
 
 7.4 Describe how investor information is encrypted at rest and in transit, naming the systems that hold it.
 
-7.5 Describe how you assess third-party service providers before engagement and monitor them afterwards, including your fund administrator and IT provider.
+7.5 Describe how you assess third-party service providers before engagement and monitor them afterward, including your fund administrator and IT provider.
 
 7.6 Provide your incident response plan. State how, and within what period, you would notify us of an incident affecting our information.
 
@@ -44,7 +44,7 @@ Date: 2026-09-16 · Section 7, Information Security, from the operational due-di
 
 7.9 State when the program was last reviewed, by whom, and what changed. Responses are due 16 October 2026.
 
-## D3: Organisation chart excerpt: roles by title
+## D3: Organization chart excerpt: roles by title
 
 Date: 2026-09-01 · Extract from the firm's internal directory
 

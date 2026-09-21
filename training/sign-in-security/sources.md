@@ -18,7 +18,7 @@ Reviewed: 2026-09-21
 
 **Our application:** Lesson 1 uses the evidence-of-compromise rule and the end of forced rotation. Lesson 2 uses the restricted status of text-message delivery and the rule that typed codes are not phishing-resistant.
 
-**Limits:** Written for organisations that run sign-in systems, not for individual staff. It does not tell a person which factor to pick for a given account and does not measure how often reuse leads to takeover.
+**Limits:** Written for organizations that run sign-in systems, not for individual staff. It does not tell a person which factor to pick for a given account and does not measure how often reuse leads to takeover.
 
 **Revisit when:** When NIST publishes a new revision, or changes the restricted status of telephone-based delivery, which the document says it may do as the threat landscape evolves.
 
@@ -74,7 +74,7 @@ Reviewed: 2026-09-21
 
 **Limits:** Describes one vendor's product. Other authenticator apps behave differently, and number matching does not protect against a fake sign-in page that relays the number to the victim.
 
-**Revisit when:** When Microsoft changes the article or Authenticator's behaviour. The page carried an article date of November 2025 on review.
+**Revisit when:** When Microsoft changes the article or Authenticator's behavior. The page carried an article date of November 2025 on review.
 
 ## S5
 

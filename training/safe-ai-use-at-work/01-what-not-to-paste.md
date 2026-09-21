@@ -20,22 +20,22 @@ Microsoft and Google state that prompts and content in workplace products are no
 
 **Before**
 
-Summarise this email from Rowan Ashby at Wexford Mill Holdings for Ines. [Full text of D1 pasted, bank and passport details included.]
+Summarize this email from Rowan Ashby at Wexford Mill Holdings for Ines. [Full text of D1 pasted, bank and passport details included.]
 
 **After**
 
-Summarise this client email in four bullets for a partner: decision status, open points, what they asked us for, and the proposed call. [CLIENT], [CONTACT], and [PRICE] are placeholders; bank and identity details are removed.
+Summarize this client email in four bullets for a partner: decision status, open points, what they asked us for, and the proposed call. [CLIENT], [CONTACT], and [PRICE] are placeholders; bank and identity details are removed.
 
 **Why:** The partner needs the shape of the message, not the account number. Everything removed can be added back by hand from the original. Saying what the placeholders stand for means the assistant does not guess.
 
 ## Your turn
 
-Read D1, D2 and D4. Write the request you would give the firm assistant to summarise D1 for Ines, list what you removed or replaced and why, and add one sentence on the personal-account case.
+Read D1, D2 and D4. Write the request you would give the firm assistant to summarize D1 for Ines, list what you removed or replaced and why, and add one sentence on the personal-account case.
 
 **Deliverable:** A rewritten request, a redaction list, and the personal-account sentence.
 
 - [ ] Delete the sort code, account number, and passport number; no hinting placeholders.
-- [ ] Replace client, contact, counsel, codename, and price with labelled placeholders.
+- [ ] Replace client, contact, counsel, codename, and price with labeled placeholders.
 - [ ] Keep the decision status, counsel's view, call request, and secure-scan question.
 - [ ] Name the D4 tool; personal account means no firm information.
 
@@ -51,7 +51,7 @@ For each line of D1, ask who would be harmed if it turned up in a stranger's inb
 <details>
 <summary>Compare with an example answer after your attempt</summary>
 
-Request, for Quillstone's firm tenant (D4): 'Summarise the client email below in four bullets for a partner: where the counterparty's decision stands, what their counsel said and what remains open, what they asked us to provide, and the proposed call. Do not add facts that are not in the text.'
+Request, for Quillstone's firm tenant (D4): 'Summarize the client email below in four bullets for a partner: where the counterparty's decision stands, what their counsel said and what remains open, what they asked us to provide, and the proposed call. Do not add facts that are not in the text.'
 
 Redactions: the firm, contact, and counsel to [CLIENT], [CONTACT], [COUNSEL]; Project Heron to [PROJECT]; 4.1 million to [PRICE]; sort code, account, and passport number deleted. D4 lets the firm tenant hold names and prices, so this goes further than required. On a personal account, nothing from D1 goes in at all.
 
@@ -77,7 +77,7 @@ The picture is the data. A photo of the letter carries the account and passport 
 Mara has only her personal free chat account open. What fits D2 and D4?
 
 - **A.** Paste D1 minus the bank details and passport number; the rest is ordinary correspondence.
-- **B.** Paste nothing from D1; switch to the firm tenant or summarise by hand.
+- **B.** Paste nothing from D1; switch to the firm tenant or summarize by hand.
 - **C.** Paste D1 in full; the client sent it to the firm, so it is already shared.
 
 <details>

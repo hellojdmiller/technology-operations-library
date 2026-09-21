@@ -12,7 +12,7 @@ The practice comes from three pieces I published on deploying an agent safely, o
 
 No agent, account, or tool is required. Work on paper or in a document, try each task before opening the example answer, then explain your choice. The suggested 20–25 minutes per lesson is a starting point. Nothing in the exercise deploys, approves, or changes a real system.
 
-**Track:** Technology operations · **For:** The technology operator or small IT team at a high-trust firm asked to deploy an AI agent that can act (read files, send messages, run tools), and the manager who approves it. · **Before this course:** AI at Work; Using AI Without Leaking
+**Format:** Course · **Track:** Technology operations · **For:** The technology operator or small IT team at a high-trust firm asked to deploy an AI agent that can act (read files, send messages, run tools), and the manager who approves it. · **Before this course:** AI at Work; Using AI Without Leaking
 
 ## Start here
 

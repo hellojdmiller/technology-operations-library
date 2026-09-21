@@ -18,7 +18,7 @@ A colleague can run this course as one session of about 24–37 minutes, or as 1
 
 ## Lesson 1: Plausible is not the same as true (9–12 minutes)
 
-**Outcome:** A review of D1 with each claim labelled verified, corrected, or removed, and the source used for each label.
+**Outcome:** A review of D1 with each claim labeled verified, corrected, or removed, and the source used for each label.
 
 **Run it:** read the explanation together or ask participants to read it, walk through the worked example, then give the task. Allow most of the time for the task and the comparison.
 

@@ -14,7 +14,7 @@ Published or updated: Published 13 February 2024; page states it was reviewed 31
 
 Reviewed: 2026-09-21
 
-**Supports:** Written for non-technical managers and executives across large organisations, the public sector, and small and medium businesses. Says AI tools can get things wrong and present incorrect statements as facts, can be biased and gullible when asked leading questions, and are exposed to prompt injection (an input crafted to make the model behave in an unintended way, including revealing confidential information) and data poisoning. Warns that risk grows as these tools pass data to third-party applications, and asks leaders to treat security as a business priority, plan for incidents, and address data governance.
+**Supports:** Written for non-technical managers and executives across large organizations, the public sector, and small and medium businesses. Says AI tools can get things wrong and present incorrect statements as facts, can be biased and gullible when asked leading questions, and are exposed to prompt injection (an input crafted to make the model behave in an unintended way, including revealing confidential information) and data poisoning. Warns that risk grows as these tools pass data to third-party applications, and asks leaders to treat security as a business priority, plan for incidents, and address data governance.
 
 **Our application:** Grounds the verification duty (check every claim about the environment against the environment) and the point that a tool reading an alert or email can be steered by text inside it.
 
@@ -50,11 +50,11 @@ Published or updated: AI RMF 1.0 released 26 January 2023; Generative AI Profile
 
 Reviewed: 2026-09-21
 
-**Supports:** Describes a voluntary framework for managing risks in the design, development, use, and evaluation of AI systems, organised around Govern, Map, Measure, and Manage. Says the Generative AI Profile helps organisations identify unique risks posed by generative AI and proposes actions for managing them, and notes that AI RMF 1.0 is being revised as part of the White House AI Action Plan.
+**Supports:** Describes a voluntary framework for managing risks in the design, development, use, and evaluation of AI systems, organized around Govern, Map, Measure, and Manage. Says the Generative AI Profile helps organizations identify unique risks posed by generative AI and proposes actions for managing them, and notes that AI RMF 1.0 is being revised as part of the White House AI Action Plan.
 
 **Our application:** Named as a reference for the point where an assistant gains tools that act, when the firm's questions become governance questions rather than a single setting.
 
-**Limits:** A landing page for a voluntary framework, not a control checklist, and it is written for organisations of every size and sector. It does not evaluate assistants on security tasks or tell a small firm what to do on Monday.
+**Limits:** A landing page for a voluntary framework, not a control checklist, and it is written for organizations of every size and sector. It does not evaluate assistants on security tasks or tell a small firm what to do on Monday.
 
 **Revisit when:** When NIST publishes the revised AI RMF or updates the Generative AI Profile.
 
@@ -68,13 +68,13 @@ Published or updated: 2024-04-15
 
 Reviewed: 2026-09-21
 
-**Supports:** Announces guidance from NSA's AI Security Center with CISA, the FBI, and partner agencies in Australia, Canada, New Zealand, and the United Kingdom, for organisations deploying and operating externally developed AI systems. It aims to improve the confidentiality, integrity, and availability of AI systems, ensure known vulnerabilities are mitigated, and provide methodologies and controls to protect, detect, and respond to malicious activity against AI systems and related data and services.
+**Supports:** Announces guidance from NSA's AI Security Center with CISA, the FBI, and partner agencies in Australia, Canada, New Zealand, and the United Kingdom, for organizations deploying and operating externally developed AI systems. It aims to improve the confidentiality, integrity, and availability of AI systems, ensure known vulnerabilities are mitigated, and provide methodologies and controls to protect, detect, and respond to malicious activity against AI systems and related data and services.
 
 **Our application:** Named alongside the NIST framework as a reference for the step where an assistant is connected to tools that act on firm systems.
 
-**Limits:** An alert page that summarises and links the full guidance; the full PDF is hosted elsewhere and was not the page reviewed. Written for deployers of AI systems generally rather than for small security teams using a hosted assistant.
+**Limits:** An alert page that summarizes and links the full guidance; the full PDF is hosted elsewhere and was not the page reviewed. Written for deployers of AI systems generally rather than for small security teams using a hosted assistant.
 
-**Revisit when:** When the agencies update the guidance or CISA publishes AI security guidance aimed at small organisations.
+**Revisit when:** When the agencies update the guidance or CISA publishes AI security guidance aimed at small organizations.
 
 ## S5
 

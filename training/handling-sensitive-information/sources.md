@@ -32,7 +32,7 @@ Published or updated: 20 August 2025 (as stated on the page)
 
 Reviewed: 2026-09-21
 
-**Supports:** Defines a personal data breach as a security breach leading to accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data; lists sending personal data to the wrong recipient as an example; requires notifiable breaches to be reported to the ICO within 72 hours of awareness; and requires the facts, effects, and remedial action to be documented for every breach, notifiable or not.
+**Supports:** Defines a personal data breach as a security breach leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data; lists sending personal data to the wrong recipient as an example; requires notifiable breaches to be reported to the ICO within 72 hours of awareness; and requires the facts, effects, and remedial action to be documented for every breach, notifiable or not.
 
 **Our application:** Lesson 1 uses the definition to show that a list of names is personal data whose disclosure counts. Lesson 3 uses the wrong-recipient example, the 72-hour clock, and the recording duty to justify reporting in minutes and writing the facts down.
 
@@ -50,7 +50,7 @@ Published or updated: 2026-06-30 (article date)
 
 Reviewed: 2026-09-21
 
-**Supports:** Describes the external sharing levels (Anyone, New and existing guests, Existing guests, Only people in your organization). 'Anyone' links open without authenticating, forwarded links work internally or externally, and the organisation cannot track who has access or who has accessed the item. Administrators can require Anyone links to expire within a set number of days and restrict them to view permission. 'Specific people' is described as the most restrictive link option. When sharing is restricted or turned off, guests typically lose access within one hour.
+**Supports:** Describes the external sharing levels (Anyone, New and existing guests, Existing guests, Only people in your organization). 'Anyone' links open without authenticating, forwarded links work internally or externally, and the organization cannot track who has access or who has accessed the item. Administrators can require Anyone links to expire within a set number of days and restrict them to view permission. 'Specific people' is described as the most restrictive link option. When sharing is restricted or turned off, guests typically lose access within one hour.
 
 **Our application:** Lesson 2 uses the description of Anyone links to explain why D2's link is a problem and why named recipients, view only, and expiry are the default. Lesson 3 uses the absence of access records for Anyone links to explain what the technology team cannot tell you after an over-share.
 
@@ -68,7 +68,7 @@ Published or updated: undated
 
 Reviewed: 2026-09-21
 
-**Supports:** Recall works only when both sender and recipient have Microsoft 365 work or school accounts in the same organisation and the recipient has not yet opened the message. It is not available for recipients outside the organisation or for personal accounts, and it cannot retrieve a message that has been read.
+**Supports:** Recall works only when both sender and recipient have Microsoft 365 work or school accounts in the same organization and the recipient has not yet opened the message. It is not available for recipients outside the organization or for personal accounts, and it cannot retrieve a message that has been read.
 
 **Our application:** Lesson 3 uses these conditions to show that recall does nothing for the external, already-read email in D4, and that it should not be counted as a correction step.
 

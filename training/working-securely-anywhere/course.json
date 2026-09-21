@@ -26,7 +26,7 @@
           "Updates. Operating system and browser updates are installed within seven days of release, and automatic updates are turned on. A device its maker no longer supports with updates is not used for firm information.",
           "Lock and unlock. Devices lock automatically after no more than five minutes idle. Phones use a passcode of at least six digits; laptops use a strong password or passphrase. Fingerprint or face unlock is welcome as a convenience on top, never as the only unlock.",
           "Encryption. Full disk encryption is on: FileVault on Mac, Device Encryption or BitLocker on Windows, and the built-in encryption that comes with a passcode on a modern phone. For managed devices the technology team holds the recovery key.",
-          "Managed and personal devices. Firm files and client documents live only on firm-managed laptops. A personal phone may run the firm's mail and chat apps if it is enrolled in the firm's app management, which lets the team remove firm data without touching personal photos, messages, or apps.",
+          "Managed and personal devices. Firm files and client documents live only on firm-managed laptops. A personal phone may run the firm's mail and chat apps if it is enrollled in the firm's app management, which lets the team remove firm data without touching personal photos, messages, or apps.",
           "Approved apps. Anything that stores firm or client information must be on the approved app list kept by the technology team. Request a new tool through the tool request form; the team answers within five working days and will suggest an approved alternative if the answer is no.",
           "Lost or stolen devices. Report to the technology team immediately, at any hour, by phone or chat, before anything else. The team will remotely lock or wipe the device. Do not attempt to recover the device yourself."
         ]
@@ -50,7 +50,7 @@
         "body": [
           "Subject: Can I use Notewren for client meetings?",
           "I've started using Notewren on my personal phone for meeting notes and it's brilliant. It records the meeting, transcribes it, writes a summary, and syncs across all my devices. I'd like to use it for client meetings starting next week.",
-          "It's the free tier, so there's no budget to approve. The notes and recordings sync to Notewren's cloud under my personal account, and I paste the summary into the client folder afterwards. I tried it once already on the Okafor call on Monday and the summary was excellent.",
+          "It's the free tier, so there's no budget to approve. The notes and recordings sync to Notewren's cloud under my personal account, and I paste the summary into the client folder afterward. I tried it once already on the Okafor call on Monday and the summary was excellent.",
           "Can you say yes by Friday? I've got three client meetings next week and I'd rather not go back to typing."
         ]
       },
@@ -58,12 +58,12 @@
         "id": "D4",
         "title": "Hotel Wi-Fi sign-in page and network list",
         "date": "2026-09-19",
-        "kind": "Plain-text description: what a traveller sees on arrival at the Corrigan Hotel",
+        "kind": "Plain-text description: what a traveler sees on arrival at the Corrigan Hotel",
         "body": [
           "Networks shown on the laptop: Corrigan_Guest (no lock icon, strongest signal), Corrigan Guest Free (no lock icon, slightly weaker), Corrigan_Staff (lock icon), and three phone hotspots that belong to other guests.",
           "The card on the desk reads: Network: Corrigan_Guest. Sign in with your room number and last name. No password needed. For help call reception on 0.",
           "After joining Corrigan_Guest, a page opens by itself titled Welcome to the Corrigan. It asks for room number and last name, has a checkbox to accept terms, and offers an optional field: Add your email for offers. Below that is a link: Sign in with your work email for faster Wi-Fi.",
-          "After joining Corrigan Guest Free instead, a similar page opens with the same colours. It asks for full name, email address, and email password, to verify your identity. The hotel logo is slightly blurry and there is no terms checkbox."
+          "After joining Corrigan Guest Free instead, a similar page opens with the same colors. It asks for full name, email address, and email password, to verify your identity. The hotel logo is slightly blurry and there is no terms checkbox."
         ]
       }
     ]
@@ -84,7 +84,7 @@
       "workedExample": {
         "title": "A self-check that says what to fix",
         "before": "My laptop is fine. It's fairly new, I have a password, and I install updates when I get round to it.",
-        "after": "Personal MacBook, 2022. Updates: six weeks ago, automatic off; fails D1's seven days. Lock: five minutes, password plus Touch ID; passes. Encryption: FileVault confirmed on; passes. Ownership: personal, unmanaged; enrolled mail and chat only. Apps: a personal cloud drive syncs Downloads; move firm attachments out today.",
+        "after": "Personal MacBook, 2022. Updates: six weeks ago, automatic off; fails D1's seven days. Lock: five minutes, password plus Touch ID; passes. Encryption: FileVault confirmed on; passes. Ownership: personal, unmanaged; enrollled mail and chat only. Apps: a personal cloud drive syncs Downloads; move firm attachments out today.",
         "why": "It names the device, tests each point against D1's numbers, and ends with the first change. 'Fairly new' cannot be checked by anyone, including the owner."
       },
       "task": {
@@ -100,11 +100,11 @@
       "hint": "For the Windows example, check the account type first. S3 says what a local account means for Device Encryption.",
       "modelAnswer": [
         "Windows laptop, personal, local account. Updates: deferred a month, fails D1's seven days; turn automatic updates on today. Lock: locks on idle, but a four-digit PIN is below D1's six digits; lengthen it. Encryption: unknown, and not automatic with a local account, so open Settings and confirm. [S3]",
-        "Ownership: personal and unmanaged, so enrolled mail and chat only, never client files. Apps: only the browser touches firm information. First change: install the updates and confirm encryption, because an unpatched, possibly unencrypted laptop reading firm mail is the firm's exposure, not only mine."
+        "Ownership: personal and unmanaged, so enrollled mail and chat only, never client files. Apps: only the browser touches firm information. First change: install the updates and confirm encryption, because an unpatched, possibly unencrypted laptop reading firm mail is the firm's exposure, not only mine."
       ],
       "reflection": "Which point was hardest to verify on a real device, and what would the technology team need to give you?",
       "transfer": {
-        "prompt": "Same laptop, but now firm-managed and enrolled, with the local account replaced by a work account. Which lines change?",
+        "prompt": "Same laptop, but now firm-managed and enrollled, with the local account replaced by a work account. Which lines change?",
         "answer": "Encryption very likely passes: a work account turns Device Encryption on and attaches the recovery key to it, though I would still confirm in Settings. Management passes, so client files are allowed. The missed updates and four-digit PIN still fail until fixed. [S3]"
       },
       "check": {
@@ -196,14 +196,14 @@
       "duration": "15–20 minutes",
       "outcome": "Write a decision on Marcus's request in D3, with the reason, the alternative, and the proper request route.",
       "explanation": [
-        "D1 lets a personal phone run the firm's mail and chat apps if enrolled, so the technology team can remove firm data without touching personal photos or messages. Work stays in the enrolled apps and personal life outside them, never one account for both.",
-        "The NCSC is blunt that the challenges of bring-your-own-device should not be played down: the firm owns the data but cannot fully control the device. It also warns that heavy-handed controls push people towards shadow IT, so my answer to a request is rarely a bare no. [S5]",
+        "D1 lets a personal phone run the firm's mail and chat apps if enrollled, so the technology team can remove firm data without touching personal photos or messages. Work stays in the enrollled apps and personal life outside them, never one account for both.",
+        "The NCSC is blunt that the challenges of bring-your-own-device should not be played down: the firm owns the data but cannot fully control the device. It also warns that heavy-handed controls push people toward shadow IT, so my answer to a request is rarely a bare no. [S5]",
         "An unapproved notes app matters because the notes, and in D3 the recording, leave the firm's control once they sync to the app's cloud; we cannot retain, search, or delete them. Requests go through D1's form, and my answer says what the standard requires, why here, and what to use today."
       ],
       "workedExample": {
         "title": "A no that comes with a yes",
         "before": "Sorry Marcus, Notewren isn't on the approved list, so no.",
-        "after": "Marcus, I can't approve Notewren for client meetings: it records into its own cloud under your personal account, outside our retention and deletion. For next week, use the notes app on your enrolled phone. Submit the D1 form if you want Notewren reviewed. Please delete the Okafor recording and confirm.",
+        "after": "Marcus, I can't approve Notewren for client meetings: it records into its own cloud under your personal account, outside our retention and deletion. For next week, use the notes app on your enrollled phone. Submit the D1 form if you want Notewren reviewed. Please delete the Okafor recording and confirm.",
         "why": "It names the harm, offers something usable before Friday, gives the route, and handles the existing recording. The before version protects the standard, not the client."
       },
       "task": {
@@ -218,12 +218,12 @@
       "hint": "Where is the Okafor recording now, who can read it, and how would the firm delete it if the client asked? Not knowing is the reason.",
       "modelAnswer": [
         "Marcus, not approved for client meetings. Notewren records the conversation and stores the transcript in its cloud under your personal account. The firm cannot retain, search, or delete those notes, and a free tier's terms may let the vendor use them: client information outside our control. [S5]",
-        "For next week, type notes in the notes app on your enrolled phone and file them in the client folder as usual. If Notewren is worth it, submit the D1 request form today; the team answers within five days. Please delete the Okafor recording and confirm."
+        "For next week, type notes in the notes app on your enrollled phone and file them in the client folder as usual. If Notewren is worth it, submit the D1 request form today; the team answers within five days. Please delete the Okafor recording and confirm."
       ],
       "reflection": "Which part of your decision would persuade Marcus, and which part only satisfies the standard?",
       "transfer": {
         "prompt": "Marcus comes back: no recording, just typed notes in Notewren on his personal phone, syncing to its cloud. Does your decision change?",
-        "answer": "The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrolled notes app now and submit the request for a proper review."
+        "answer": "The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrollled notes app now and submit the request for a proper review."
       },
       "check": {
         "question": "Marcus says the filed summary is all the firm needs, so the Notewren recording does not matter. What is the right reading under D1?",
@@ -256,9 +256,9 @@
       "url": "https://www.ncsc.gov.uk/collection/device-security-guidance/managing-deployed-devices/keeping-devices-and-software-up-to-date",
       "publishedOrUpdated": "Published 2021-06-29; reviewed 2025-05-13 (version 2.1)",
       "reviewedOn": "2026-09-21",
-      "support": "Patches fix known flaws that attackers use to compromise devices. Install updates promptly when notified, ideally within a few days, and turn on automatic updates for all software where possible. Where staff use their own devices, restrict access to corporate data from devices that are not kept current, since the organisation may not be able to force updates. Replace out-of-support devices as soon as you are able.",
+      "support": "Patches fix known flaws that attackers use to compromise devices. Install updates promptly when notified, ideally within a few days, and turn on automatic updates for all software where possible. Where staff use their own devices, restrict access to corporate data from devices that are not kept current, since the organization may not be able to force updates. Replace out-of-support devices as soon as you are able.",
       "application": "Lesson 1 sets D1's seven-day rule against this guidance and uses the personal-device point to explain why an unpatched personal laptop that reads firm mail is the firm's problem, not only the owner's.",
-      "limits": "Guidance for organisations managing devices, not a measurement of how quickly attacks follow a patch. 'Within a few days' is advice rather than a legal or contractual standard; D1's seven days is the fictional firm's own choice.",
+      "limits": "Guidance for organizations managing devices, not a measurement of how quickly attacks follow a patch. 'Within a few days' is advice rather than a legal or contractual standard; D1's seven days is the fictional firm's own choice.",
       "revisit": "Recheck when the NCSC issues a new version of the Device Security Guidance or when the firm changes its update window."
     },
     {
@@ -293,7 +293,7 @@
       "publishedOrUpdated": "2023-02 (month only)",
       "reviewedOn": "2026-09-21",
       "support": "Most websites now use encryption, so connecting through a public Wi-Fi network is usually safe; look for a lock symbol or https in the address bar. Scammers also build encrypted fake sites, so encryption in transit does not protect you from the site's operator. General advice on strong passwords, two-factor authentication, and recognising phishing.",
-      "application": "Lesson 2 uses this to move the worry away from the network itself and towards the sign-in portal, lookalike network names, and shoulder surfing.",
+      "application": "Lesson 2 uses this to move the worry away from the network itself and toward the sign-in portal, lookalike network names, and shoulder surfing.",
       "limits": "Consumer guidance. It does not discuss VPNs, phone hotspots, captive portals, or lookalike network names; those points in the lesson are the author's operating practice, not FTC claims.",
       "revisit": "Recheck if the FTC revises the article or if browsers change how they signal an encrypted connection."
     },
@@ -304,9 +304,9 @@
       "url": "https://www.ncsc.gov.uk/collection/device-security-guidance/bring-your-own-device",
       "publishedOrUpdated": "Reviewed 2025-05-13 (version 2.1); no separate published date shown",
       "reviewedOn": "2026-09-21",
-      "support": "The security challenges of BYOD should not be played down. The organisation owns the corporate data on a personal device but cannot fully control the device; protection depends on how much management the owner allows. Overly restrictive controls can lead staff to find other ways to do their job using shadow IT, which is likely to increase risk. Start by determining objectives and risk appetite.",
+      "support": "The security challenges of BYOD should not be played down. The organization owns the corporate data on a personal device but cannot fully control the device; protection depends on how much management the owner allows. Overly restrictive controls can lead staff to find other ways to do their job using shadow IT, which is likely to increase risk. Start by determining objectives and risk appetite.",
       "application": "Lesson 3 uses the ownership-without-control point to explain why an unapproved notes app matters, and the shadow IT warning to insist that a refusal comes with an alternative and a request route.",
-      "limits": "Guidance for organisations designing a BYOD approach, not a rule about any particular app. It does not evaluate note-taking tools, set retention requirements, or define what counts as client information.",
+      "limits": "Guidance for organizations designing a BYOD approach, not a rule about any particular app. It does not evaluate note-taking tools, set retention requirements, or define what counts as client information.",
       "revisit": "Recheck when the NCSC updates the Device Security Guidance or the firm changes what personal devices may carry."
     }
   ]

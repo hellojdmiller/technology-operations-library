@@ -51,7 +51,7 @@ Read only the sender line and the ask first. Then read the body and count the re
 <details>
 <summary>Compare with an example answer after your attempt</summary>
 
-D1. Ask: sign in with my work password to view a document. Pressure: a 24-hour expiry and the managing partner's name on the share. Identity: display name Harbourline Partners, address share@harbourline-docs.example.net, link domain docs-view.example.net. Neither is harbourline.example.com, the only domain D4 recognises.
+D1. Ask: sign in with my work password to view a document. Pressure: a 24-hour expiry and the managing partner's name on the share. Identity: display name Harbourline Partners, address share@harbourline-docs.example.net, link domain docs-view.example.net. Neither is harbourline.example.com, the only domain D4 recognizes.
 
 D2. Ask: confirm I am at my desk so account details can follow, then pay 48,500 to a new account by 4pm. Pressure: the deadline, the managing partner's authority, keeping Dana out, and a dead-phone story excusing the unknown number. Identity: a claimed name, nothing more.
 
@@ -87,7 +87,7 @@ Which reading of D2 is best supported by the packet?
 
 The supported choice is **B**.
 
-**A:** Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorises a payment.
+**A:** Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorizes a payment.
 
 **B:** This names the ask and each pressure signal and treats the claimed name as unverified. What to do next is Lesson 2.
 

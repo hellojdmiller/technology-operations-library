@@ -23,8 +23,8 @@
         "date": "2026-09-18",
         "kind": "Public posts: described in text, as anyone on the platform would see them",
         "body": [
-          "Post one, from the personal account of Maren Solberg, partner, dated 12 September: 'Off to the Harbourfront Growth Summit in Lisbon, 22 to 25 September. Happy to meet anyone attending. Back at my desk the following Monday.' The photo shows an airport lounge; her conference badge is on the table, readable, with her name and the firm's name.",
-          "Post two, from the firm's account, dated 16 September: 'Great first week working with the team at Ledgerline as we move our expense and payments reporting onto their platform. Thanks to Tomas Reyes in finance for leading the rollout.' The photo shows two laptops on a desk. One screen shows the Ledgerline sign-in page; the other shows a spreadsheet with a tab labelled 'Q3 wire schedule'.",
+          "Post one, from the personal account of Maren Solberg, partner, dated 12 September: 'Off to the Harborfront Growth Summit in Lisbon, 22 to 25 September. Happy to meet anyone attending. Back at my desk the following Monday.' The photo shows an airport lounge; her conference badge is on the table, readable, with her name and the firm's name.",
+          "Post two, from the firm's account, dated 16 September: 'Great first week working with the team at Ledgerline as we move our expense and payments reporting onto their platform. Thanks to Tomas Reyes in finance for leading the rollout.' The photo shows two laptops on a desk. One screen shows the Ledgerline sign-in page; the other shows a spreadsheet with a tab labeled 'Q3 wire schedule'.",
           "Post three, from the firm's account, dated 18 September: 'Thrilled to welcome Dana Okafor to our finance team as Accounts Payable Associate. Dana starts Monday 21 September and will be working closely with Tomas on supplier payments.' The photo shows Dana holding a welcome card in front of the office door, with the badge reader and the suite number in frame."
         ]
       },
@@ -46,7 +46,7 @@
         "body": [
           "You are welcome to say where you work and what you do in general terms. Do not post travel dates in advance, client or portfolio company names, vendor names during a rollout, internal system names, or photos that show screens, badges, documents, or whiteboards. Post about a trip after you are back.",
           "New joiners are announced by the firm's account after the person has completed their first week. The announcement names the team, not the person's specific duties or the colleagues they work with.",
-          "Personal accounts that name the firm must use a unique password and two-step verification. Review who can see your posts at least once a year, and remove connections you do not recognise.",
+          "Personal accounts that name the firm must use a unique password and two-step verification. Review who can see your posts at least once a year, and remove connections you do not recognize.",
           "If you see an account pretending to be a colleague or the firm, do not engage with it. Take a screenshot, report it to the platform using its impersonation report, and tell the technology team the same day. If you have already replied or shared something, say so. Nobody is in trouble for reporting.",
           "Requests for payment details, schedules, or documents never come through social media messages. Verify any such request by calling the person on a number from the firm directory, not a number in the message."
         ]
@@ -68,8 +68,8 @@
       ],
       "workedExample": {
         "title": "The same trip, posted two ways",
-        "before": "Off to the Harbourfront Growth Summit in Lisbon, 22 to 25 September, back the following Monday. Photo: the airport lounge, my badge showing my name and the firm's.",
-        "after": "Three good days at the Harbourfront Growth Summit, mostly talking about founder resilience. Photo: the conference hall, no badge, posted after I was home.",
+        "before": "Off to the Harborfront Growth Summit in Lisbon, 22 to 25 September, back the following Monday. Photo: the airport lounge, my badge showing my name and the firm's.",
+        "after": "Three good days at the Harborfront Growth Summit, mostly talking about founder resilience. Photo: the conference hall, no badge, posted after I was home.",
         "why": "It keeps the professional value and drops the dates, the reachability gap, and the badge. Nobody can time a request or borrow the firm's name from it."
       },
       "task": {
@@ -126,7 +126,7 @@
       "support": "Says there is no delete button on the internet, to set privacy settings and disable geotagging, to connect only with people you know and trust, to limit what you post (it names addresses, birthdays, and vacation plans as details criminals use to target you), and to report suspicious activity to the platform.",
       "application": "The lesson's list of what posts reveal, the trusted-connections point, and the report-to-the-platform step follow this sheet.",
       "limits": "A one-page consumer awareness sheet from 2019. It does not cover workplace impersonation or firm accounts, and it cites usage statistics that are now out of date.",
-      "revisit": "Recheck if CISA replaces the sheet or publishes newer social media guidance for organisations."
+      "revisit": "Recheck if CISA replaces the sheet or publishes newer social media guidance for organizations."
     },
     {
       "id": "S2",
@@ -149,7 +149,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Advises thinking about what followers need to know versus what is unnecessary but useful to criminals, using each platform's privacy settings, turning on two-step verification so a known password alone is not enough, spotting fake accounts (recently created, odd names, unusual activity from a known contact), checking with a friend by another method if their account looks compromised, and using platform reporting tools.",
       "application": "The account-security paragraph, the tells of a fake profile, and the verify-by-another-channel advice come from here.",
-      "limits": "Personal-use guidance that links out to platform settings pages which change often. It does not address firm policy or who inside an organisation should be told.",
+      "limits": "Personal-use guidance that links out to platform settings pages which change often. It does not address firm policy or who inside an organization should be told.",
       "revisit": "Recheck at the NCSC's next review of the page or if the platform links break."
     },
     {
@@ -159,9 +159,9 @@
       "url": "https://consumer.ftc.gov/features/how-avoid-imposter-scams",
       "publishedOrUpdated": "undated",
       "reviewedOn": "2026-09-21",
-      "support": "Describes scammers pretending to be businesses, government agencies, or people you know, using faked caller ID, real employee names, and urgency; advises not to click links or call numbers in unexpected messages, to verify the story by contacting the organisation through a phone number, website, or email you know is real, and to report at ReportFraud.ftc.gov.",
+      "support": "Describes scammers pretending to be businesses, government agencies, or people you know, using faked caller ID, real employee names, and urgency; advises not to click links or call numbers in unexpected messages, to verify the story by contacting the organization through a phone number, website, or email you know is real, and to report at ReportFraud.ftc.gov.",
       "application": "The lesson's rule to verify through a channel you already have, and its treatment of urgency and secrecy as signals, follow this guidance.",
-      "limits": "Consumer-facing and US-centred. It focuses on money and personal information rather than on workplace documents, and its reporting route is US-specific.",
+      "limits": "Consumer-facing and US-centerd. It focuses on money and personal information rather than on workplace documents, and its reporting route is US-specific.",
       "revisit": "Recheck if the FTC restructures its imposter-scam pages or changes the reporting route."
     },
     {

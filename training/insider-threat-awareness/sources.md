@@ -72,7 +72,7 @@ Reviewed: 2026-09-21
 
 **Our application:** Supports the offboarding and least-privilege paragraph and the manager note about end dates and reviewing access.
 
-**Limits:** Focused on malicious exfiltration and on technical, HR, and legal owners, not on what a colleague should do when asked for a favour. UK-oriented.
+**Limits:** Focused on malicious exfiltration and on technical, HR, and legal owners, not on what a colleague should do when asked for a favor. UK-oriented.
 
 **Revisit when:** At the NCSC's next stated review date or if the guidance is restructured.
 

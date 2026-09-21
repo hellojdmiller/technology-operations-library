@@ -10,7 +10,7 @@ You do not need a technical background. The three lessons follow one colleague, 
 
 Each lesson names one habit, shows it once, then asks you to apply it to the packet and compare your answer with an example. The examples are comparisons, not scripts. Take the time you need, keep the packet open, and try each task before you read its answer.
 
-**Track:** Security awareness · **For:** Everyone at a small, high-trust firm, with no technical background assumed.
+**Format:** Course · **Track:** Security awareness · **For:** Everyone at a small, high-trust firm, with no technical background assumed.
 
 ## Start here
 

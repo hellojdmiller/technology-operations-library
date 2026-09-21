@@ -16,7 +16,7 @@ A colleague can run this course as one session of about 60–85 minutes, or as 3
 - Explaining a choice matters more than matching the wording.
 - A first attempt with honest gaps is more useful than a polished copy of the example.
 
-## Lesson 1: Recognise business email compromise (15–20 minutes)
+## Lesson 1: Recognize business email compromise (15–20 minutes)
 
 **Outcome:** Mark up two payment-related messages with what is being changed and what is creating the pressure.
 
@@ -85,7 +85,7 @@ A video call arranged through the same thread is the same channel wearing a head
 <details>
 <summary>Changed-case answer</summary>
 
-Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorisation feature can be the second control.
+Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorization feature can be the second control.
 
 </details>
 

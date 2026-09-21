@@ -6,7 +6,7 @@ Trace every number, title, date, and quote to its primary source, and label what
 
 Suggested time: 9–12 minutes. Work on paper or in a document.
 
-**Outcome:** A review of D1 with each claim labelled verified, corrected, or removed, and the source used for each label.
+**Outcome:** A review of D1 with each claim labeled verified, corrected, or removed, and the source used for each label.
 
 Read the [shared fictional packet](source-packet.md). Keep it available throughout the lesson.
 

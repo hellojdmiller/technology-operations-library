@@ -32,7 +32,7 @@ Published or updated: 2025 (list edition; the page states no day)
 
 Reviewed: 2026-09-21
 
-**Supports:** Excessive agency is damaging action taken in response to unexpected, ambiguous, or manipulated LLM output, with three root causes: excessive functionality, excessive permissions, and excessive autonomy. Mitigations include minimising extensions and their functionality and permissions, avoiding open-ended extensions, executing in the user's context, requiring user approval, complete mediation, and logging and rate limiting to limit rather than prevent damage.
+**Supports:** Excessive agency is damaging action taken in response to unexpected, ambiguous, or manipulated LLM output, with three root causes: excessive functionality, excessive permissions, and excessive autonomy. Mitigations include minimizing extensions and their functionality and permissions, avoiding open-ended extensions, executing in the user's context, requiring user approval, complete mediation, and logging and rate limiting to limit rather than prevent damage.
 
 **Our application:** Lesson 1 builds the authority statement around the three root causes and the read, write, and delete categories. Lesson 3 uses logging and limits as damage limiters, not preventers.
 
@@ -50,11 +50,11 @@ Published or updated: 2025 (list edition; the page states no day)
 
 Reviewed: 2026-09-21
 
-**Supports:** A prompt injection vulnerability occurs when prompts alter the LLM's behaviour or output in unintended ways, including through content the model processes. Mitigations include constraining model behaviour, privilege control and least privilege, human approval for high-risk actions, segregating and identifying external content, and adversarial testing.
+**Supports:** A prompt injection vulnerability occurs when prompts alter the LLM's behavior or output in unintended ways, including through content the model processes. Mitigations include constraining model behavior, privilege control and least privilege, human approval for high-risk actions, segregating and identifying external content, and adversarial testing.
 
 **Our application:** Lesson 1 treats an invoice PDF as untrusted content that must not become an instruction. Lesson 2 justifies least privilege and testing from inside the sandbox.
 
-**Limits:** It catalogues a risk class and mitigations; it does not claim any mitigation makes injection impossible, and neither does this course.
+**Limits:** It catalogs a risk class and mitigations; it does not claim any mitigation makes injection impossible, and neither does this course.
 
 **Revisit when:** Recheck at the next OWASP list edition.
 

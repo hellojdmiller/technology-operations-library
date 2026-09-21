@@ -2,7 +2,7 @@
 
 # One deal week, four ways to over-share
 
-You work at Fennimore Ridge Partners, a small investment firm in the last week of diligence on Cobalt Meadow Robotics. Every person, firm, domain, and figure in this packet is fictional. The exercise reference date is 21 September 2026. D1 is a realistic request that should not be followed as written. D2 describes a folder link that is set up badly. D3 is the firm's standard and is the rule you apply. D4 is an email that went to the wrong person; treat it as the mistake to correct, not as a model.
+You work at Fennimore Ridge Partners, a small investment firm in the last week of diligence on Cobalt Meadow Robotics. Every person, firm, domain, and figure in this packet is fictional. The exercise reference date is 21 September 2026. D1 is a realiztic request that should not be followed as written. D2 describes a folder link that is set up badly. D3 is the firm's standard and is the rule you apply. D4 is an email that went to the wrong person; treat it as the mistake to correct, not as a model.
 
 ## D1: Request to share the whole diligence folder
 
@@ -62,7 +62,7 @@ Marcus, as discussed, the updated closing checklist is attached, and the LP side
 
 Quoted below, 19 September 2026, 17:20, from Lena Okonkwo, Partner, to Tamsin (internal): 'Hold Brightwater at 13.8 million. We can stretch to 14.5 if we must, but that number does not leave this building. Also, the three LPs in the side letter summary have asked not to be named to the counterparty.'
 
-Quoted below, 16 September 2026, 11:05, from Tamsin to Lena (internal): 'Side letter summary: Halvorsen Family Office (reduced management fee), Pell Street Endowment (co-investment right), Marisol Trust (excused from defence investments). Full terms are in the LP folder.'
+Quoted below, 16 September 2026, 11:05, from Tamsin to Lena (internal): 'Side letter summary: Halvorsen Family Office (reduced management fee), Pell Street Endowment (co-investment right), Marisol Trust (excused from defense investments). Full terms are in the LP folder.'
 
 Reply received 09:05 from m.hale@brightwell.example.net: 'Hi Tamsin, I think this reached me by mistake. I am at Brightwell Freight; we handled your office move in 2024. I have not opened the attachment, but I did read the email. Tell me what you would like me to do.'
 

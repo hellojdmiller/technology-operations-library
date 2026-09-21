@@ -38,7 +38,7 @@ Date: 2026-07-01 · Fictional policy excerpt
 
 Any text prepared with an AI assistant is checked claim by claim before it leaves the firm. A claim is any number, date, named report, quotation, or attribution. The person sending the text is responsible for the check, whoever ran the tool.
 
-Each claim is labelled verified (found in the primary source, with matching wording and context), corrected (the source says something different, and the text now matches the source), or removed (no primary source could be found). A link, a footnote, or the assistant's own assurance is not verification.
+Each claim is labeled verified (found in the primary source, with matching wording and context), corrected (the source says something different, and the text now matches the source), or removed (no primary source could be found). A link, a footnote, or the assistant's own assurance is not verification.
 
 A quotation is used only when the exact words appear in the source, attributed to the person who said them, in the context they said them. If the source is a paraphrase or a summary, the text says so.
 

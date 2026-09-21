@@ -14,11 +14,11 @@ Published or updated: Published 2021-06-29; reviewed 2025-05-13 (version 2.1)
 
 Reviewed: 2026-09-21
 
-**Supports:** Patches fix known flaws that attackers use to compromise devices. Install updates promptly when notified, ideally within a few days, and turn on automatic updates for all software where possible. Where staff use their own devices, restrict access to corporate data from devices that are not kept current, since the organisation may not be able to force updates. Replace out-of-support devices as soon as you are able.
+**Supports:** Patches fix known flaws that attackers use to compromise devices. Install updates promptly when notified, ideally within a few days, and turn on automatic updates for all software where possible. Where staff use their own devices, restrict access to corporate data from devices that are not kept current, since the organization may not be able to force updates. Replace out-of-support devices as soon as you are able.
 
 **Our application:** Lesson 1 sets D1's seven-day rule against this guidance and uses the personal-device point to explain why an unpatched personal laptop that reads firm mail is the firm's problem, not only the owner's.
 
-**Limits:** Guidance for organisations managing devices, not a measurement of how quickly attacks follow a patch. 'Within a few days' is advice rather than a legal or contractual standard; D1's seven days is the fictional firm's own choice.
+**Limits:** Guidance for organizations managing devices, not a measurement of how quickly attacks follow a patch. 'Within a few days' is advice rather than a legal or contractual standard; D1's seven days is the fictional firm's own choice.
 
 **Revisit when:** Recheck when the NCSC issues a new version of the Device Security Guidance or when the firm changes its update window.
 
@@ -70,7 +70,7 @@ Reviewed: 2026-09-21
 
 **Supports:** Most websites now use encryption, so connecting through a public Wi-Fi network is usually safe; look for a lock symbol or https in the address bar. Scammers also build encrypted fake sites, so encryption in transit does not protect you from the site's operator. General advice on strong passwords, two-factor authentication, and recognising phishing.
 
-**Our application:** Lesson 2 uses this to move the worry away from the network itself and towards the sign-in portal, lookalike network names, and shoulder surfing.
+**Our application:** Lesson 2 uses this to move the worry away from the network itself and toward the sign-in portal, lookalike network names, and shoulder surfing.
 
 **Limits:** Consumer guidance. It does not discuss VPNs, phone hotspots, captive portals, or lookalike network names; those points in the lesson are the author's operating practice, not FTC claims.
 
@@ -86,11 +86,11 @@ Published or updated: Reviewed 2025-05-13 (version 2.1); no separate published d
 
 Reviewed: 2026-09-21
 
-**Supports:** The security challenges of BYOD should not be played down. The organisation owns the corporate data on a personal device but cannot fully control the device; protection depends on how much management the owner allows. Overly restrictive controls can lead staff to find other ways to do their job using shadow IT, which is likely to increase risk. Start by determining objectives and risk appetite.
+**Supports:** The security challenges of BYOD should not be played down. The organization owns the corporate data on a personal device but cannot fully control the device; protection depends on how much management the owner allows. Overly restrictive controls can lead staff to find other ways to do their job using shadow IT, which is likely to increase risk. Start by determining objectives and risk appetite.
 
 **Our application:** Lesson 3 uses the ownership-without-control point to explain why an unapproved notes app matters, and the shadow IT warning to insist that a refusal comes with an alternative and a request route.
 
-**Limits:** Guidance for organisations designing a BYOD approach, not a rule about any particular app. It does not evaluate note-taking tools, set retention requirements, or define what counts as client information.
+**Limits:** Guidance for organizations designing a BYOD approach, not a rule about any particular app. It does not evaluate note-taking tools, set retention requirements, or define what counts as client information.
 
 **Revisit when:** Recheck when the NCSC updates the Device Security Guidance or the firm changes what personal devices may carry.
 

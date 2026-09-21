@@ -8,11 +8,11 @@ Most leaks I have dealt with were not attacks. They were a folder link that neve
 
 This course follows one deal week at a fictional firm. You will classify what sits in a diligence folder, answer a counterparty who wants all of it through one open link, and write the correction note for an email that reached the wrong person.
 
-No tool account is needed. Work on paper or in a document, try each task before opening the example answer, then explain your choice in your own words. Where I name a product setting, it is because the setting's behaviour matters, not because I am selling it.
+No tool account is needed. Work on paper or in a document, try each task before opening the example answer, then explain your choice in your own words. Where I name a product setting, it is because the setting's behavior matters, not because I am selling it.
 
 Fifteen to twenty minutes per lesson is a starting estimate. If your firm has its own data handling standard, keep it beside the fictional one in the packet and note where they differ. Those differences are worth raising with whoever owns your standard.
 
-**Track:** Security awareness · **For:** Everyone at a small, high-trust firm that handles client, investor, deal, and personal information; no technical background is needed.
+**Format:** Course · **Track:** Security awareness · **For:** Everyone at a small, high-trust firm that handles client, investor, deal, and personal information; no technical background is needed.
 
 ## Start here
 

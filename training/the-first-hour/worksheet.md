@@ -43,7 +43,7 @@ Keep your first attempt separate from any revision, and write down what you woul
 
 **Deliverable:** A triage record with a status line, four or more owned decisions, and evidence captured before removal.
 
-- [ ] Facts and assumptions are labelled; 'the attacker read the wire emails' is an assumption until a log shows it.
+- [ ] Facts and assumptions are labeled; 'the attacker read the wire emails' is an assumption until a log shows it.
 - [ ] Sessions are revoked before the password is reset, and the rule is captured before it is removed.
 - [ ] Rowan is reached by phone; the 15:00 bank call is flagged.
 

@@ -10,7 +10,7 @@ Suggested time: 12–15 minutes. Work on paper or in a document.
 
 Read the [shared fictional packet](source-packet.md). Keep it available throughout the lesson.
 
-An assistant is good at the reading and writing parts of security work: summarising an alert, drafting a policy from a standard, turning a vendor questionnaire into a checklist, explaining an unfamiliar log line, giving a first opinion on a phishing report.
+An assistant is good at the reading and writing parts of security work: summarizing an alert, drafting a policy from a standard, turning a vendor questionnaire into a checklist, explaining an unfamiliar log line, giving a first opinion on a phishing report.
 
 It is not the decider. Declaring an alert a false positive, closing an incident, or granting access are decisions a person answers for. It can be steered by text inside what it reads and can state error as fact; OWASP lists prompt injection, excessive agency, and misinformation as top-ten risks. [S2](sources.md#s2)
 
@@ -18,17 +18,17 @@ Credentials never enter any tool. Logs with client identifiers, and incident mat
 
 The line moves again when an assistant gets tools that act on systems; CISA's deployment guidance and NIST's AI risk framework cover that step. I wrote about agents working around controls after one incident report: detection has to live where the agent cannot reach. [S3](sources.md#s3), [S4](sources.md#s4), [S5](sources.md#s5)
 
-## Worked example: Summarise the alert, do not close it
+## Worked example: Summarize the alert, do not close it
 
 **Before**
 
-Assistant: routine sign-in by a travelling user, MFA satisfied. Safe to dismiss.
+Assistant: routine sign-in by a traveling user, MFA satisfied. Safe to dismiss.
 
 **After**
 
 Summary: medium-risk sign-in for r.castellanos from an unfamiliar country on an unmanaged device, MFA by SMS, not blocked. Verify: travel calendar, phone the user, device record, sign-in log. Decision: Ines Marchetti.
 
-**Why:** 'Travelling user' was invented; D2 says nothing about travel. 'Safe to dismiss' is a decision D3 reserves for a person.
+**Why:** 'Traveling user' was invented; D2 says nothing about travel. 'Safe to dismiss' is a decision D3 reserves for a person.
 
 ## Your turn
 

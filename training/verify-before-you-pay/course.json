@@ -15,7 +15,7 @@
   "reviewedOn": "2026-09-21",
   "scenario": {
     "title": "A week of payment requests at Kestrel Row Partners",
-    "description": "You are Dana Okonkwo, the operations associate who prepares payments at Kestrel Row Partners, a fictional twelve-person investment firm. Every person, firm, bank, domain, and amount in this packet is fictional. The exercise reference date is Monday 21 September 2026. D1 and D2 are fraudulent requests constructed for the exercise, and the call summarised in D3 was not made by the person it sounded like. D4 is the firm's genuine current procedure and contains at least one gap you should find. Nothing in the packet has been paid.",
+    "description": "You are Dana Okonkwo, the operations associate who prepares payments at Kestrel Row Partners, a fictional twelve-person investment firm. Every person, firm, bank, domain, and amount in this packet is fictional. The exercise reference date is Monday 21 September 2026. D1 and D2 are fraudulent requests constructed for the exercise, and the call summarized in D3 was not made by the person it sounded like. D4 is the firm's genuine current procedure and contains at least one gap you should find. Nothing in the packet has been paid.",
     "documents": [
       {
         "id": "D1",
@@ -36,7 +36,7 @@
         "date": "2026-09-18",
         "kind": "Email thread, subject 'Re: Q3 close: outstanding items', shown newest first",
         "body": [
-          "From Marcus Halden (marcus.halden@kestrelrow.example.com) to Dana Okonkwo only, 18 September 2026, 16:52: Dana, adding this to the close thread so it stays with the other items. We are finalising a co-investment side letter with Bramblewood Holdings and they need a $240,000.00 deposit to land before their 5 pm cutoff tomorrow. Priya is travelling and I have cleared it with her by phone.",
+          "From Marcus Halden (marcus.halden@kestrelrow.example.com) to Dana Okonkwo only, 18 September 2026, 16:52: Dana, adding this to the close thread so it stays with the other items. We are finalising a co-investment side letter with Bramblewood Holdings and they need a $240,000.00 deposit to land before their 5 pm cutoff tomorrow. Priya is traveling and I have cleared it with her by phone.",
           "This is not announced yet, so please keep it between us until Monday. Details: Bramblewood Holdings Escrow, account 88 2201 5567, routing 031 447 890, reference KRP-BW-Deposit. I am in meetings until late and email is the best way to reach me. Send me the confirmation when it is done. M.",
           "From Marcus Halden to Priya Raman and Dana Okonkwo, 10 September 2026, 11:02: Thanks Priya. I will sign the engagement letter this week. Northfield can wait for the installation date. Nothing else from me.",
           "From Priya Raman to Marcus Halden and Dana Okonkwo, 10 September 2026, 09:14: Three items still open for the Q3 close: the Northfield boardroom invoice, the audit engagement letter, and the September management fee calculation. Dana, can you list what is still waiting on signatures?"
@@ -70,9 +70,9 @@
   },
   "lessons": [
     {
-      "slug": "recognise-business-email-compromise",
+      "slug": "recognize-business-email-compromise",
       "number": 1,
-      "title": "Recognise business email compromise",
+      "title": "Recognize business email compromise",
       "summary": "One pattern sits behind most payment fraud: change the destination, keep everything else normal.",
       "duration": "15–20 minutes",
       "outcome": "Mark up two payment-related messages with what is being changed and what is creating the pressure.",
@@ -160,7 +160,7 @@
       "hint": "For each line ask: if the person behind this request controlled this channel too, would my plan still catch them?",
       "modelAnswer": [
         "Plan for D3. Channel: a call I place to Priya's mobile as listed in the firm directory, not the number that called me; if no answer, Marcus on his directory number. Question: 'Did you call me at 17:08 about Northfield?' She tells me what she asked for.",
-        "Second approver: Marcus or the other partner, only after Priya confirms or denies the call on her own number. Wait: NAV-2291 stays on the old details until the Northfield callback completes and two business days pass. Record: date, time, number dialled, who answered, what they said."
+        "Second approver: Marcus or the other partner, only after Priya confirms or denies the call on her own number. Wait: NAV-2291 stays on the old details until the Northfield callback completes and two business days pass. Record: date, time, number dialed, who answered, what they said."
       ],
       "reflection": "Which line of your plan would fail if the attacker also controlled Priya's mailbox, and what would you change?",
       "transfer": {
@@ -224,7 +224,7 @@
       "reflection": "Which step would the busiest partner most want to skip, and what will you say when they ask?",
       "transfer": {
         "prompt": "The firm has three people. The finance lead is also a partner and today the only approver. What changes?",
-        "answer": "Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorisation feature can be the second control."
+        "answer": "Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorization feature can be the second control."
       },
       "check": {
         "question": "On Monday at 10:40 Dana learns Friday's $240,000 wire from D2 went to an unverified account. What comes first?",
@@ -295,7 +295,7 @@
       "reviewedOn": "2026-09-21",
       "support": "Recommends making processes more resistant to phishing by verifying all important email requests with a second type of communication (SMS, a phone call, logging into an account, or confirmation by post or in person). States that no training package can teach users to spot every phishing attempt, that blaming users for clicking does not work, and that users who fear reprisals will not report mistakes promptly, if at all.",
       "application": "Lesson 1 uses the point that spotting every attempt is unrealistic; Lesson 2 uses the second-type-of-communication rule; Lesson 3 uses the no-blame reporting position.",
-      "limits": "General phishing guidance for organisations, not a payment-fraud procedure; it sets no thresholds, cooling periods, or approval roles. Reporting routes it points to are for the United Kingdom.",
+      "limits": "General phishing guidance for organizations, not a payment-fraud procedure; it sets no thresholds, cooling periods, or approval roles. Reporting routes it points to are for the United Kingdom.",
       "revisit": "At the NCSC's next stated review of the page, or if the NCSC publishes dedicated business email compromise guidance."
     },
     {
@@ -305,7 +305,7 @@
       "url": "https://www.cisa.gov/resources-tools/resources/phishing-guidance-stopping-attack-cycle-phase-one",
       "publishedOrUpdated": "2023-10-18 (page); document marked October 2023",
       "reviewedOn": "2026-09-21",
-      "support": "Describes attackers who impersonate supervisors, trusted colleagues, or IT personnel in targeted emails. Recommends user training on social engineering and on reporting suspicious messages, and DMARC with SPF and DKIM so mail systems can check the sending server and reject spoofed domains. Includes a section for small and medium-sized organisations that prioritises awareness training.",
+      "support": "Describes attackers who impersonate supervisors, trusted colleagues, or IT personnel in targeted emails. Recommends user training on social engineering and on reporting suspicious messages, and DMARC with SPF and DKIM so mail systems can check the sending server and reject spoofed domains. Includes a section for small and medium-sized organizations that prioritizes awareness training.",
       "application": "Lesson 1 uses the impersonation point and the observation that authentication checks the sending server, which is why a compromised genuine account passes; Lesson 3 gives the technology team's role in checking the mailbox.",
       "limits": "Focused on credential and malware phishing rather than payment fraud; it does not name business email compromise, callbacks, dual approval, or recall steps. Technical controls in it are for the technology team, not the payment approver.",
       "revisit": "When CISA updates the guidance or publishes a companion document on payment fraud."

@@ -4,7 +4,7 @@
 
 One short lesson on which security tasks an assistant does well, which decisions stay with a person, what never enters a tool without a data agreement, and how every claim gets verified.
 
-A two-person security function has more alerts, questionnaires, and log lines than hours. An assistant genuinely helps with the reading and writing parts of that work. It summarises, drafts, explains, and gives a first opinion faster than I can, and I use it for exactly those things.
+A two-person security function has more alerts, questionnaires, and log lines than hours. An assistant genuinely helps with the reading and writing parts of that work. It summarizes, drafts, explains, and gives a first opinion faster than I can, and I use it for exactly those things.
 
 What it must not do is decide. Declaring an alert a false positive, closing an incident, or granting access are decisions someone is accountable for, and the tool can be confidently wrong or steered by the text it is reading. This module draws that line on a fictional packet, use by use.
 

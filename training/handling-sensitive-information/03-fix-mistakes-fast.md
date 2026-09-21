@@ -10,7 +10,7 @@ Suggested time: 15–20 minutes. Work on paper or in a document.
 
 Read the [shared fictional packet](source-packet.md). Keep it available throughout the lesson.
 
-The first hour after a mis-share is worth more than the first week, and recall will not buy it back. Microsoft says recall works only within one organisation and while the message is unread. For the external recipient in D4, who has read the email, it changes nothing. [S4](sources.md#s4)
+The first hour after a mis-share is worth more than the first week, and recall will not buy it back. Microsoft says recall works only within one organization and while the message is unread. For the external recipient in D4, who has read the email, it changes nothing. [S4](sources.md#s4)
 
 Read the whole thread: quoted history travels with the message. The technology team can revoke links, remove guests, and pull access records for signed-in shares; for 'anyone' links Microsoft says no record of who opened them exists. Only the sender can tell the recipient and ask for deletion. [S3](sources.md#s3)
 
@@ -86,7 +86,7 @@ Tamsin has just read Marcus's 09:05 reply. What is the right first move?
 
 The supported choice is **B**.
 
-**A:** Recall needs both people in one organisation and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]
+**A:** Recall needs both people in one organization and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]
 
 **B:** The first minutes go on what changes the outcome: those who can preserve and advise know at once, and the one person who can ask the recipient does so.
 

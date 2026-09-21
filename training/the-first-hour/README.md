@@ -10,9 +10,9 @@ This course follows one fictional morning at a small firm: a phished password, a
 
 Nothing here needs a tool account. Work on paper or in a document, and do not touch a live system as part of the exercise. Deciding is the practice; doing happens later, with the right authority. The example answers are comparisons, not scripts, and I want you to argue with them.
 
-Each lesson takes about 20–25 minutes. When you finish, the 45-minute incident-readiness workshop in this library's cyber-risk section is the rehearsal that makes the plan a habit. Run it with the same people who appear in your skeleton, and update the plan afterwards.
+Each lesson takes about 20–25 minutes. When you finish, the 45-minute incident-readiness workshop in this library's cyber-risk section is the rehearsal that makes the plan a habit. Run it with the same people who appear in your skeleton, and update the plan afterward.
 
-**Track:** Technology operations · **For:** The people who would be in the room when something goes wrong at a small, high-trust firm: the technology lead, the operations or finance lead, a partner or executive, and whoever answers the phone.
+**Format:** Course · **Track:** Technology operations · **For:** The people who would be in the room when something goes wrong at a small, high-trust firm: the technology lead, the operations or finance lead, a partner or executive, and whoever answers the phone.
 
 ## Start here
 

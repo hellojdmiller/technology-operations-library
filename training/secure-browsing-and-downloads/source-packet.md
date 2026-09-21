@@ -18,7 +18,7 @@ Opening the sponsored result would show a page with the vendor's logo, a large g
 
 Date: 2026-09-21 · Browser update pop-up: text described
 
-A full-window overlay appears over the article, carrying the browser's logo and this text: 'Your browser is out of date. Critical security update required. Version 128 detected; version 131 available. Update now to keep your data safe.' A blue button reads 'Update now'. Small grey text below it reads 'Update will download automatically (Browser_Update_v131.exe)'.
+A full-window overlay appears over the article, carrying the browser's logo and this text: 'Your browser is out of date. Critical security update required. Version 128 detected; version 131 available. Update now to keep your data safe.' A blue button reads 'Update now'. Small gray text below it reads 'Update will download automatically (Browser_Update_v131.exe)'.
 
 The address bar still shows news-daily-reader.example.org/article/..., not a browser vendor's domain. The overlay has no close button; the only ways out are the blue button or closing the tab.
 
@@ -26,7 +26,7 @@ The address bar still shows news-daily-reader.example.org/article/..., not a bro
 
 Date: 2026-09-21 · Internal chat message: a genuine request from a real colleague
 
-From Jonas Petrov (investment team), 14:12: 'Hey, have you tried PageGist? It's a browser extension that summarises any page in one click, brilliant for long filings. Install it from the extension store, takes ten seconds. It asks to read and change all your data on all websites, but I think that's just how summarisers work. Would be great if the whole team had it before Thursday's pipeline review.'
+From Jonas Petrov (investment team), 14:12: 'Hey, have you tried PageGist? It's a browser extension that summarizes any page in one click, brilliant for long filings. Install it from the extension store, takes ten seconds. It asks to read and change all your data on all websites, but I think that's just how summarizers work. Would be great if the whole team had it before Thursday's pipeline review.'
 
 The extension store listing shows 4.6 stars from 1,900 reviews, a developer named 'PG Labs', an update three weeks ago, and the permission line 'Read and change all your data on all websites'. The privacy policy link opens a one-page site with no company name or address.
 
@@ -34,7 +34,7 @@ The extension store listing shows 4.6 stars from 1,900 reviews, a developer name
 
 Date: 2026-05-12 · Fictional policy excerpt: approved list and request route
 
-Software and browser extensions are installed from the firm's self-service catalogue or by the technology team. The catalogue includes a PDF editor, the password manager, the meeting tools, and two approved browser extensions: the password manager and the ad and tracker blocker.
+Software and browser extensions are installed from the firm's self-service catalog or by the technology team. The catalog includes a PDF editor, the password manager, the meeting tools, and two approved browser extensions: the password manager and the ad and tracker blocker.
 
 To request anything else, send the technology team the name, the link, and what you need it for. Most requests get an answer within two working days. Extensions that ask to read all site data are reviewed before approval, because they can see everything you see, including email and internal systems.
 

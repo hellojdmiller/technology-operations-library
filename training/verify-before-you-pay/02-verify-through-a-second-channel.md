@@ -53,7 +53,7 @@ For each line ask: if the person behind this request controlled this channel too
 
 Plan for D3. Channel: a call I place to Priya's mobile as listed in the firm directory, not the number that called me; if no answer, Marcus on his directory number. Question: 'Did you call me at 17:08 about Northfield?' She tells me what she asked for.
 
-Second approver: Marcus or the other partner, only after Priya confirms or denies the call on her own number. Wait: NAV-2291 stays on the old details until the Northfield callback completes and two business days pass. Record: date, time, number dialled, who answered, what they said.
+Second approver: Marcus or the other partner, only after Priya confirms or denies the call on her own number. Wait: NAV-2291 stays on the old details until the Northfield callback completes and two business days pass. Record: date, time, number dialed, who answered, what they said.
 
 </details>
 
@@ -95,4 +95,4 @@ The supported choice is **C**.
 
 Feedback is authored for this exercise. It is not an assessment of the reader or evidence of retained skill.
 
-[Previous: Recognise business email compromise](01-recognise-business-email-compromise.md) · [Next: Design the procedure and the response](03-design-the-procedure-and-the-response.md) · [Research and limits](sources.md)
+[Previous: Recognize business email compromise](01-recognize-business-email-compromise.md) · [Next: Design the procedure and the response](03-design-the-procedure-and-the-response.md) · [Research and limits](sources.md)
