@@ -1,0 +1,37 @@
+[
+  {
+    "id": "everyone-first-month",
+    "title": "Everyone: the first month",
+    "audience": "Every new joiner, and everyone else once a year",
+    "description": "One module a week for the first month. Each one is a habit that stops a common incident: the message that wants something, the password used twice, the folder shared too widely, the laptop left in a lounge.",
+    "steps": ["phishing-and-social-engineering", "sign-in-security", "handling-sensitive-information", "working-securely-anywhere", "email-security-habits", "voice-phishing", "qr-code-scams"]
+  },
+  {
+    "id": "finance-and-payments",
+    "title": "Finance and payments",
+    "audience": "Anyone who requests, verifies, approves, or processes a payment or a vendor change",
+    "description": "The fraud that costs small firms the most is a payment sent to the wrong place on the strength of a convincing message or call. This journey builds the verification habit and the procedure around it.",
+    "steps": ["verify-before-you-pay", "voice-phishing", "phishing-and-social-engineering", "understanding-personal-information", "the-first-hour"]
+  },
+  {
+    "id": "working-with-ai",
+    "title": "Working with AI",
+    "audience": "Everyone who uses an AI assistant for writing, summarising, research, or analysis",
+    "description": "Start with framing, context, and checking. Then learn what not to paste, how material can carry hidden instructions, why a fluent answer is not evidence, and where a human must own the decision.",
+    "steps": ["ai-at-work", "safe-ai-use-at-work", "ai-hallucinations-and-misinformation", "ai-in-people-decisions"]
+  },
+  {
+    "id": "managers-and-leads",
+    "title": "Managers and team leads",
+    "audience": "Anyone who approves access, hires, offboards, or would be called when something goes wrong",
+    "description": "The manager's part of security is small and specific: access that matches the job, a clean exit, decisions about people that a human can explain, and knowing who decides in the first hour.",
+    "steps": ["insider-threat-awareness", "ai-in-people-decisions", "social-media-security", "the-first-hour"]
+  },
+  {
+    "id": "technology-operators",
+    "title": "Technology operators",
+    "audience": "The technology lead or small IT and security team at a high-trust firm",
+    "description": "The operator's path: what a safeguards program has to contain, how to put an agent to work without handing it the firm, where an assistant helps the security work, and how the first hour of an incident runs.",
+    "steps": ["safeguards-for-a-small-investment-firm", "putting-an-ai-agent-to-work-safely", "ai-in-the-security-program", "ransomware-awareness", "secure-browsing-and-downloads", "the-first-hour"]
+  }
+]
