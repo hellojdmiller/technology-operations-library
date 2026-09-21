@@ -16,6 +16,7 @@ const raw = await readFile(join(root, 'landscape.json'), 'utf8');
 const landscape = JSON.parse(raw);
 
 // ---------- validation ----------
+const EM_DASH = String.fromCharCode(8212);
 function requireCondition(condition, message) { if (!condition) throw new Error(message); }
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const SEGMENTS = ['enterprise', 'smb', 'personal'];
@@ -35,7 +36,7 @@ shape(landscape, ['version', 'generatedOn', 'license', 'layers', 'categories', '
 requireCondition(landscape.version === '1.0.0', 'Unexpected version');
 requireCondition(/^\d{4}-\d{2}-\d{2}$/u.test(landscape.generatedOn) && new Date(`${landscape.generatedOn}T00:00:00Z`).toISOString().startsWith(landscape.generatedOn), 'generatedOn: expected ISO date');
 text(landscape.license, 'license');
-requireCondition(!raw.includes('—'), 'landscape.json must not contain em dashes');
+requireCondition(!raw.includes(EM_DASH), 'landscape.json must not contain em dashes');
 for (const layer of landscape.layers) { shape(layer, ['id', 'name'], 'layer'); requireCondition(KEBAB.test(layer.id), `layer id ${layer.id}`); text(layer.name, `layer ${layer.id} name`); }
 unique(landscape.layers.map((l) => l.id), 'layer ids');
 const layerIds = new Set(landscape.layers.map((l) => l.id));
@@ -199,7 +200,7 @@ notes.set('README.md', [
 ].join('\n'));
 const palette = [0xc0392b, 0x2980b9, 0x27ae60, 0x8e44ad, 0xd35400, 0x16a085, 0x7f8c8d, 0xf39c12, 0x2c3e50];
 notes.set('.obsidian/graph.json', JSON.stringify({ 'collapse-filter': false, search: '', showTags: false, showAttachments: false, hideUnresolved: true, showOrphans: true, 'collapse-color-groups': false, colorGroups: [...landscape.layers.map((l, i) => ({ query: `tag:#${l.id}`, color: { a: 1, rgb: palette[i % palette.length] } })), { query: 'path:Categories', color: { a: 1, rgb: 0x111111 } }], 'collapse-display': true, showArrow: true, textFadeMultiplier: 0, nodeSizeMultiplier: 1, lineSizeMultiplier: 1, 'collapse-forces': true, centerStrength: 0.5, repelStrength: 10, linkStrength: 1, linkDistance: 250, scale: 1, close: true }, null, 2) + '\n');
-for (const [, content] of notes) requireCondition(!content.includes('—'), 'Generated notes must not contain em dashes');
+for (const [, content] of notes) requireCondition(!content.includes(EM_DASH), 'Generated notes must not contain em dashes');
 
 // ---------- write or check ----------
 async function listFiles(dir, base = dir) {

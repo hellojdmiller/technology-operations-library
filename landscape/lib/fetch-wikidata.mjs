@@ -56,7 +56,7 @@ const host = (url) => { try { return new URL(url).hostname.replace(/^www\./u, ''
 async function search(name) {
   if (!cache.searches[name]) {
     const data = await request(`${API}?action=wbsearchentities&search=${encodeURIComponent(name)}&language=en&type=item&limit=7&format=json`, 'application/json');
-    cache.searches[name] = data.search.map((hit) => ({ id: hit.id, label: hit.label ?? '', description: hit.description ?? '' }));
+    cache.searches[name] = data.search.map((hit) => ({ id: hit.id, label: (hit.label ?? '').replace(/\u2014/gu, '-') }));
   }
   return cache.searches[name];
 }
@@ -114,7 +114,7 @@ for (const vendor of landscape.vendors) {
   const byHost = candidates.find((c) => cache.entities[c.id].P856.some((site) => host(site) === vendorHost));
   if (byHost) { resolved.set(vendor.id, { id: byHost.id, by: 'website' }); continue; }
   const byLabel = candidates.find((c) => c.label.toLowerCase() === vendor.name.toLowerCase() && cache.entities[c.id].P856.some((site) => domain(site) && domain(site) === domain(vendor.website)) && [...cache.entities[c.id].P31, ...cache.entities[c.id].P1454].some((cls) => BUSINESS_CLASSES.has(cls)));
-  if (byLabel) { resolved.set(vendor.id, { id: byLabel.id, by: 'label' }); review.push(`${vendor.id} -> ${byLabel.id} (${byLabel.description})`); }
+  if (byLabel) { resolved.set(vendor.id, { id: byLabel.id, by: 'label' }); review.push(`${vendor.id} -> ${byLabel.id} (${byLabel.label})`); }
 }
 await loadEntities([...resolved.values()].map((r) => r.id));
 // Developers and parents of resolved items, for product business types and relations.
