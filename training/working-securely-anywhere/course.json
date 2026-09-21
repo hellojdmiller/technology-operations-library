@@ -1,0 +1,313 @@
+{
+  "version": "1.0.0",
+  "slug": "working-securely-anywhere",
+  "title": "Working Securely Anywhere",
+  "track": "security-awareness",
+  "audience": "Everyone at a small, high-trust firm who works from home, travels, or uses more than one device, with no technical background assumed.",
+  "prerequisites": [],
+  "description": "Three practical lessons on keeping a laptop or phone trustworthy, working on someone else's network without fear, and handling personal devices and unapproved apps.",
+  "introduction": [
+    "Most of us now work from a kitchen table, a train, a hotel desk, or a phone in a queue. That is normal and it is fine. I want the device in your hand to be trustworthy wherever it is, and I want you to know the first call to make when it is not.",
+    "This course follows one fictional firm through one ordinary week: a laptop left in an airport lounge, a colleague who wants a personal note-taking app for client meetings, and a hotel Wi-Fi page that asks for a little too much. You will check a device, plan a trip, and answer a request.",
+    "No technical background is needed and no tool account is required. Work on paper or in a document, try each task before opening the example answer, then explain your reasoning in your own words. The suggested 15–20 minutes per lesson is a starting estimate, not a limit."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "One week away from the desk at Bramblewood Advisory",
+    "description": "You work at Bramblewood Advisory, a small fictional firm. Everyone and everything in this packet is fictional: the firm, its clients, the Corrigan Hotel, the Notewren app, and every person named. The exercise reference date is 21 September 2026. D1 is the standard you apply. D2 and D3 are genuine messages from colleagues that need an answer. D4 describes one network the hotel actually runs and one lookalike it does not; the lookalike's sign-in page is a credential trap, not a hotel service.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Device standard, excerpt",
+        "date": "2026-06-01",
+        "kind": "Fictional policy excerpt: what any device that touches firm information must meet",
+        "body": [
+          "Scope. This standard applies to any device that opens firm mail, chat, files, or client information, whether the firm or the person owns it. The technology team (contact: Wen) maintains it and answers questions about it.",
+          "Updates. Operating system and browser updates are installed within seven days of release, and automatic updates are turned on. A device its maker no longer supports with updates is not used for firm information.",
+          "Lock and unlock. Devices lock automatically after no more than five minutes idle. Phones use a passcode of at least six digits; laptops use a strong password or passphrase. Fingerprint or face unlock is welcome as a convenience on top, never as the only unlock.",
+          "Encryption. Full disk encryption is on: FileVault on Mac, Device Encryption or BitLocker on Windows, and the built-in encryption that comes with a passcode on a modern phone. For managed devices the technology team holds the recovery key.",
+          "Managed and personal devices. Firm files and client documents live only on firm-managed laptops. A personal phone may run the firm's mail and chat apps if it is enrolled in the firm's app management, which lets the team remove firm data without touching personal photos, messages, or apps.",
+          "Approved apps. Anything that stores firm or client information must be on the approved app list kept by the technology team. Request a new tool through the tool request form; the team answers within five working days and will suggest an approved alternative if the answer is no.",
+          "Lost or stolen devices. Report to the technology team immediately, at any hour, by phone or chat, before anything else. The team will remotely lock or wipe the device. Do not attempt to recover the device yourself."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Chat message from Ines",
+        "date": "2026-09-18",
+        "kind": "Chat message: a colleague has left a laptop in an airport lounge",
+        "body": [
+          "Hey. I'm at the gate and I think I left my laptop in the lounge in Concourse B, maybe around 14:10. It's my firm MacBook. The lid was closed so it was probably locked. I've asked the lounge desk to look for it. Boarding is in 20 minutes.",
+          "I had the Hartwell client folder open and my mail. Should I wait to see whether the lounge finds it before I bother Wen? I don't want to make a fuss if it turns up in ten minutes.",
+          "Also my phone is at 8 percent, so if I go quiet, that's why."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Tool request from Marcus",
+        "date": "2026-09-16",
+        "kind": "Email: a colleague asks to use a personal note-taking app for client meeting notes",
+        "body": [
+          "Subject: Can I use Notewren for client meetings?",
+          "I've started using Notewren on my personal phone for meeting notes and it's brilliant. It records the meeting, transcribes it, writes a summary, and syncs across all my devices. I'd like to use it for client meetings starting next week.",
+          "It's the free tier, so there's no budget to approve. The notes and recordings sync to Notewren's cloud under my personal account, and I paste the summary into the client folder afterwards. I tried it once already on the Okafor call on Monday and the summary was excellent.",
+          "Can you say yes by Friday? I've got three client meetings next week and I'd rather not go back to typing."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Hotel Wi-Fi sign-in page and network list",
+        "date": "2026-09-19",
+        "kind": "Plain-text description: what a traveller sees on arrival at the Corrigan Hotel",
+        "body": [
+          "Networks shown on the laptop: Corrigan_Guest (no lock icon, strongest signal), Corrigan Guest Free (no lock icon, slightly weaker), Corrigan_Staff (lock icon), and three phone hotspots that belong to other guests.",
+          "The card on the desk reads: Network: Corrigan_Guest. Sign in with your room number and last name. No password needed. For help call reception on 0.",
+          "After joining Corrigan_Guest, a page opens by itself titled Welcome to the Corrigan. It asks for room number and last name, has a checkbox to accept terms, and offers an optional field: Add your email for offers. Below that is a link: Sign in with your work email for faster Wi-Fi.",
+          "After joining Corrigan Guest Free instead, a similar page opens with the same colours. It asks for full name, email address, and email password, to verify your identity. The hotel logo is slightly blurry and there is no terms checkbox."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "keep-the-device-trustworthy",
+      "number": 1,
+      "title": "Keep the device trustworthy",
+      "summary": "Check the five things that make a laptop or phone safe to hold firm information.",
+      "duration": "15–20 minutes",
+      "outcome": "Complete a five-point self-check for one described device and name what must change first.",
+      "explanation": [
+        "I call a device trustworthy when five things are true: updates current, automatic lock, strong unlock, encrypted disk, and only approved apps holding firm information. None of this needs technical skill, only a few minutes and the habit of checking rather than assuming.",
+        "Updates come first because they close holes attackers know about. The NCSC advises installing them promptly, ideally within a few days, with automatic updates on and unsupported devices replaced. It also advises keeping corporate data off devices that are not current: an unpatched personal laptop reading firm mail is the firm's exposure. [S1]",
+        "Encryption turns a lost laptop into a lost asset instead of a breach. FileVault keeps anyone from reading a Mac's disk without the login password. On Windows, Device Encryption switches on with a Microsoft or work account but not with a local account, so check rather than assume. [S2, S3]"
+      ],
+      "workedExample": {
+        "title": "A self-check that says what to fix",
+        "before": "My laptop is fine. It's fairly new, I have a password, and I install updates when I get round to it.",
+        "after": "Personal MacBook, 2022. Updates: six weeks ago, automatic off; fails D1's seven days. Lock: five minutes, password plus Touch ID; passes. Encryption: FileVault confirmed on; passes. Ownership: personal, unmanaged; enrolled mail and chat only. Apps: a personal cloud drive syncs Downloads; move firm attachments out today.",
+        "why": "It names the device, tests each point against D1's numbers, and ends with the first change. 'Fairly new' cannot be checked by anyone, including the owner."
+      },
+      "task": {
+        "prompt": "Use your own device, or this one: a year-old Windows laptop, local account, firm mail in a browser, four-digit PIN, updates on 'remind me later' for a month. Write the five-point self-check against D1.",
+        "deliverable": "Five pass-or-fail lines against D1, plus one sentence on the first change and who makes it.",
+        "checklist": [
+          "Compare each point to D1's numbers, not to a feeling.",
+          "Say whether encryption is confirmed on or only assumed.",
+          "State managed or personal, and what D1 lets the device carry.",
+          "End with the first change and who does it."
+        ]
+      },
+      "hint": "For the Windows example, check the account type first. S3 says what a local account means for Device Encryption.",
+      "modelAnswer": [
+        "Windows laptop, personal, local account. Updates: deferred a month, fails D1's seven days; turn automatic updates on today. Lock: locks on idle, but a four-digit PIN is below D1's six digits; lengthen it. Encryption: unknown, and not automatic with a local account, so open Settings and confirm. [S3]",
+        "Ownership: personal and unmanaged, so enrolled mail and chat only, never client files. Apps: only the browser touches firm information. First change: install the updates and confirm encryption, because an unpatched, possibly unencrypted laptop reading firm mail is the firm's exposure, not only mine."
+      ],
+      "reflection": "Which point was hardest to verify on a real device, and what would the technology team need to give you?",
+      "transfer": {
+        "prompt": "Same laptop, but now firm-managed and enrolled, with the local account replaced by a work account. Which lines change?",
+        "answer": "Encryption very likely passes: a work account turns Device Encryption on and attaches the recovery key to it, though I would still confirm in Settings. Management passes, so client files are allowed. The missed updates and four-digit PIN still fail until fixed. [S3]"
+      },
+      "check": {
+        "question": "A colleague's personal laptop, two months behind on updates, only opens firm mail in a browser. Under D1, what is the right reading?",
+        "options": [
+          {
+            "id": "a",
+            "label": "It is fine; browser-only mail puts no firm information on the device.",
+            "feedback": "Mail is firm information and D1 covers any device that opens it. Two months is far past seven days, and the NCSC advises keeping corporate data off devices that are not current. [S1]"
+          },
+          {
+            "id": "b",
+            "label": "It fails; updates go on before it opens firm mail again, and if it cannot update, ask the technology team.",
+            "feedback": "This applies D1 as written. Two months fails the seven-day rule, and a device that cannot update may be out of support, which D1 excludes from firm information entirely."
+          },
+          {
+            "id": "c",
+            "label": "It fails, so the colleague should wipe the laptop today and buy a replacement.",
+            "feedback": "D1 asks for updates within seven days, or removal from firm information if unsupported; it never asks for a wipe or a purchase. Install the updates, then re-check the other four points."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "work-away-from-the-office",
+      "number": 2,
+      "title": "Work away from the office",
+      "summary": "Use someone else's network without fear, and know the first call when a device goes missing.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a travel plan for one trip and a lost-device message that puts the report first.",
+      "explanation": [
+        "Public Wi-Fi is less dangerous than it used to be. The FTC notes that most websites now encrypt traffic, so connecting through a public network is usually safe; look for the lock or https in the address bar. Our mail, files, and chat use it too. [S4]",
+        "Remaining risks are quieter: a portal asking for more than it needs, a lookalike network copying the hotel's name, and someone reading your screen. I prefer my hotspot or the firm's VPN, give a portal only what the desk card says, and never type a password into a page that popped up.",
+        "Also: back to a wall, print nothing. Border officers may lawfully inspect devices, so I carry only what the trip needs and keep files in the firm's cloud rather than on the disk. If a device goes missing, I report first; lock and wipe only start once the team knows."
+      ],
+      "workedExample": {
+        "title": "Report first, then look",
+        "before": "I'll wait for the lounge desk before I tell Wen. It's probably fine and I don't want to make a fuss.",
+        "after": "To Wen, from the gate: 'Firm MacBook left in the Concourse B lounge around 14:10, lid closed, probably locked, Hartwell folder and mail open. Please lock or wipe it. Lounge desk is looking; will update.'",
+        "why": "One message, easily reversed if the laptop turns up; waiting cannot be reversed. The team gets time, place, what was open, and permission to act before the phone dies."
+      },
+      "task": {
+        "prompt": "Read D2 and D4. Write a travel plan for two nights at the Corrigan (network or hotspot, what you give the portal, screens and printing), then the lost-device message you would send as Ines.",
+        "deliverable": "A five-line travel plan and a three-sentence lost-device message.",
+        "checklist": [
+          "Name the D4 network you would join, what you would type into its portal, and what you would refuse.",
+          "Put the report to the technology team before any search or waiting.",
+          "Include what was open, the time, the place, and whether the disk was encrypted."
+        ]
+      },
+      "hint": "Compare the desk card with each D4 page. 'No password needed' rules out any page asking for your email password.",
+      "modelAnswer": [
+        "Travel plan: join Corrigan_Guest, from the desk card; Corrigan Guest Free is not listed and asks for an email password, which no hotel needs. Enter room number and last name only; skip the offers field and work-email link. Client documents over my hotspot; back to a wall, print nothing.",
+        "Message: 'Wen, firm MacBook left in the Concourse B lounge about 14:10, lid closed; FileVault is on. Hartwell folder and mail were open. Please lock or wipe it. I board in 20 minutes; phone nearly dead.' FileVault makes it a lost asset, not a breach, but only the report starts the wipe. [S2]"
+      ],
+      "reflection": "In D2, what makes waiting feel reasonable to Ines, and which sentence in D1 answers it?",
+      "transfer": {
+        "prompt": "Same trip, but the firm has issued a VPN and says to use it on any network. What changes, and what stays?",
+        "answer": "The VPN goes on before mail or files open, on either network. The rest stays: join only Corrigan_Guest, give the portal only room and name, refuse the email-password page. A VPN protects the connection, not a password typed into a fake portal or a screen read over your shoulder."
+      },
+      "check": {
+        "question": "Ines has 20 minutes until boarding and the lounge desk is searching. What is the right next step under D1?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Wait until boarding to see if the lounge finds it, then report if not.",
+            "feedback": "D1 puts the report before anything else. The Hartwell folder and mail were open, and at 8 percent battery a delayed report may not happen for hours; no wipe can start until it does."
+          },
+          {
+            "id": "b",
+            "label": "Report to Wen now with time, place, and what was open, then keep asking the lounge desk.",
+            "feedback": "This follows D1's order: report first, then search. It can be sent from the gate, gives the team what it needs, and is easily reversed if the laptop turns up."
+          },
+          {
+            "id": "c",
+            "label": "Use Find My to locate the laptop and go back to recover it herself.",
+            "feedback": "D1 says not to attempt recovery yourself and puts the report first. Chasing the laptop on a dying phone risks the flight and leaves the team unaware; finding a device does not protect its data."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "personal-devices-and-unsanctioned-apps",
+      "number": 3,
+      "title": "Personal devices and unsanctioned apps",
+      "summary": "Decide what a personal device may carry, and answer a tool request with a reason and an alternative.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a decision on Marcus's request in D3, with the reason, the alternative, and the proper request route.",
+      "explanation": [
+        "D1 lets a personal phone run the firm's mail and chat apps if enrolled, so the technology team can remove firm data without touching personal photos or messages. Work stays in the enrolled apps and personal life outside them, never one account for both.",
+        "The NCSC is blunt that the challenges of bring-your-own-device should not be played down: the firm owns the data but cannot fully control the device. It also warns that heavy-handed controls push people towards shadow IT, so my answer to a request is rarely a bare no. [S5]",
+        "An unapproved notes app matters because the notes, and in D3 the recording, leave the firm's control once they sync to the app's cloud; we cannot retain, search, or delete them. Requests go through D1's form, and my answer says what the standard requires, why here, and what to use today."
+      ],
+      "workedExample": {
+        "title": "A no that comes with a yes",
+        "before": "Sorry Marcus, Notewren isn't on the approved list, so no.",
+        "after": "Marcus, I can't approve Notewren for client meetings: it records into its own cloud under your personal account, outside our retention and deletion. For next week, use the notes app on your enrolled phone. Submit the D1 form if you want Notewren reviewed. Please delete the Okafor recording and confirm.",
+        "why": "It names the harm, offers something usable before Friday, gives the route, and handles the existing recording. The before version protects the standard, not the client."
+      },
+      "task": {
+        "prompt": "Read D3 against D1. Write your decision to Marcus in 60 to 100 words: the answer, the reason tied to where the notes go, the alternative for next week, the request route, and the fate of the existing recording.",
+        "deliverable": "A decision with reason, alternative, request route, and one action on the existing recording.",
+        "checklist": [
+          "Tie the reason to where the recording and transcript go, not to 'policy'.",
+          "Offer something Marcus can use for next week's three meetings.",
+          "Address the Okafor recording that already exists."
+        ]
+      },
+      "hint": "Where is the Okafor recording now, who can read it, and how would the firm delete it if the client asked? Not knowing is the reason.",
+      "modelAnswer": [
+        "Marcus, not approved for client meetings. Notewren records the conversation and stores the transcript in its cloud under your personal account. The firm cannot retain, search, or delete those notes, and a free tier's terms may let the vendor use them: client information outside our control. [S5]",
+        "For next week, type notes in the notes app on your enrolled phone and file them in the client folder as usual. If Notewren is worth it, submit the D1 request form today; the team answers within five days. Please delete the Okafor recording and confirm."
+      ],
+      "reflection": "Which part of your decision would persuade Marcus, and which part only satisfies the standard?",
+      "transfer": {
+        "prompt": "Marcus comes back: no recording, just typed notes in Notewren on his personal phone, syncing to its cloud. Does your decision change?",
+        "answer": "The recording problem is gone but the core one remains: typed client notes still sync to a vendor cloud under a personal account, outside the firm's retention and deletion. Same answer, warmer tone: use the enrolled notes app now and submit the request for a proper review."
+      },
+      "check": {
+        "question": "Marcus says the filed summary is all the firm needs, so the Notewren recording does not matter. What is the right reading under D1?",
+        "options": [
+          {
+            "id": "a",
+            "label": "He is right; the firm holds the summary and the recording is his personal record.",
+            "feedback": "Under D1 a recorded client conversation is firm information wherever it sits. In a vendor's cloud under a personal account the firm cannot retain or delete it; a filed summary does not bring it back."
+          },
+          {
+            "id": "b",
+            "label": "The recording is firm information in an unapproved place; the decision stands and it must be removed.",
+            "feedback": "This matches D1's approved-list rule for anything storing client information, and the NCSC's point that the firm owns the data even when it cannot control the device. [S5]"
+          },
+          {
+            "id": "c",
+            "label": "Approve it for now since a summary is filed; review if a client complains.",
+            "feedback": "D1's request form and five-day answer are the review route; there is no 'approve now, review later'. A complaint would reveal the retention failure after the fact, with three more recordings by then."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Keeping devices and software up to date",
+      "publisher": "UK National Cyber Security Centre (NCSC), Device Security Guidance",
+      "url": "https://www.ncsc.gov.uk/collection/device-security-guidance/managing-deployed-devices/keeping-devices-and-software-up-to-date",
+      "publishedOrUpdated": "Published 2021-06-29; reviewed 2025-05-13 (version 2.1)",
+      "reviewedOn": "2026-09-21",
+      "support": "Patches fix known flaws that attackers use to compromise devices. Install updates promptly when notified, ideally within a few days, and turn on automatic updates for all software where possible. Where staff use their own devices, restrict access to corporate data from devices that are not kept current, since the organisation may not be able to force updates. Replace out-of-support devices as soon as you are able.",
+      "application": "Lesson 1 sets D1's seven-day rule against this guidance and uses the personal-device point to explain why an unpatched personal laptop that reads firm mail is the firm's problem, not only the owner's.",
+      "limits": "Guidance for organisations managing devices, not a measurement of how quickly attacks follow a patch. 'Within a few days' is advice rather than a legal or contractual standard; D1's seven days is the fictional firm's own choice.",
+      "revisit": "Recheck when the NCSC issues a new version of the Device Security Guidance or when the firm changes its update window."
+    },
+    {
+      "id": "S2",
+      "title": "Protect data on your Mac with FileVault",
+      "publisher": "Apple, macOS User Guide",
+      "url": "https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "FileVault encrypts the startup disk so that no one can decrypt or access the data without the login password. On Macs with Apple silicon or the T2 chip the data is encrypted automatically; on older models FileVault must be turned on. Setup needs an administrator account and either an iCloud account or a recovery key kept away from the Mac. Forgetting both the password and the recovery key means the files are lost.",
+      "application": "Lessons 1 and 2 use FileVault as the reason a lost, locked MacBook is a lost asset rather than a data breach, and the self-check asks whether it is confirmed on rather than assumed.",
+      "limits": "Product documentation for one platform. It does not cover phones or Windows, does not address a Mac left unlocked, and says nothing about how quickly a thief could act on an unencrypted disk.",
+      "revisit": "Recheck when Apple revises the guide for a new macOS version."
+    },
+    {
+      "id": "S3",
+      "title": "Device Encryption in Windows",
+      "publisher": "Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Device Encryption enables BitLocker encryption automatically for the operating system drive and fixed drives. It turns on, with a recovery key attached to the account, when a device is set up with a Microsoft account or a work or school account; with a local account it is not turned on automatically. Status is checked under Settings, Privacy and security, Device encryption. It may be unavailable without a TPM, Secure Boot, or a configured recovery environment.",
+      "application": "Lesson 1's self-check and changed case turn on the local-account detail: a personal Windows laptop can be unencrypted even though the feature exists, so the learner checks rather than assumes.",
+      "limits": "Windows-only product documentation. Availability depends on hardware, and BitLocker Drive Encryption on Pro, Enterprise, or Education editions has management options this course does not cover.",
+      "revisit": "Recheck when Microsoft changes Device Encryption defaults or the settings path."
+    },
+    {
+      "id": "S4",
+      "title": "Are Public Wi-Fi Networks Safe? What You Need To Know",
+      "publisher": "US Federal Trade Commission, Consumer Advice",
+      "url": "https://consumer.ftc.gov/articles/are-public-wi-fi-networks-safe-what-you-need-know",
+      "publishedOrUpdated": "2023-02 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Most websites now use encryption, so connecting through a public Wi-Fi network is usually safe; look for a lock symbol or https in the address bar. Scammers also build encrypted fake sites, so encryption in transit does not protect you from the site's operator. General advice on strong passwords, two-factor authentication, and recognising phishing.",
+      "application": "Lesson 2 uses this to move the worry away from the network itself and towards the sign-in portal, lookalike network names, and shoulder surfing.",
+      "limits": "Consumer guidance. It does not discuss VPNs, phone hotspots, captive portals, or lookalike network names; those points in the lesson are the author's operating practice, not FTC claims.",
+      "revisit": "Recheck if the FTC revises the article or if browsers change how they signal an encrypted connection."
+    },
+    {
+      "id": "S5",
+      "title": "Bring your own device (BYOD)",
+      "publisher": "UK National Cyber Security Centre (NCSC), Device Security Guidance",
+      "url": "https://www.ncsc.gov.uk/collection/device-security-guidance/bring-your-own-device",
+      "publishedOrUpdated": "Reviewed 2025-05-13 (version 2.1); no separate published date shown",
+      "reviewedOn": "2026-09-21",
+      "support": "The security challenges of BYOD should not be played down. The organisation owns the corporate data on a personal device but cannot fully control the device; protection depends on how much management the owner allows. Overly restrictive controls can lead staff to find other ways to do their job using shadow IT, which is likely to increase risk. Start by determining objectives and risk appetite.",
+      "application": "Lesson 3 uses the ownership-without-control point to explain why an unapproved notes app matters, and the shadow IT warning to insist that a refusal comes with an alternative and a request route.",
+      "limits": "Guidance for organisations designing a BYOD approach, not a rule about any particular app. It does not evaluate note-taking tools, set retention requirements, or define what counts as client information.",
+      "revisit": "Recheck when the NCSC updates the Device Security Guidance or the firm changes what personal devices may carry."
+    }
+  ]
+}
