@@ -6,7 +6,7 @@ You are helping prepare an internal team update and action list for Noor, the wo
 
 ## D1: Early planning meeting notes
 
-Date: 2026-09-14 · Planning notes — provisional details
+Date: 2026-09-14 · Planning notes: provisional details
 
 The team wants a hybrid workshop on Thursday 8 October 2026 to agree three ways to make team projects easier to coordinate.
 
@@ -20,7 +20,7 @@ Refreshments have been requested. No spending decision or quote is recorded.
 
 ## D2: Organizer's confirmed update
 
-Date: 2026-09-17 · Email from Noor — current arrangements and open items
+Date: 2026-09-17 · Email from Noor: current arrangements and open items
 
 I have confirmed the workshop for Thursday 8 October 2026, 14:00–15:00 Pacific time, in the Maple room for onsite participants. This replaces the earlier suggested time and room.
 
@@ -34,7 +34,7 @@ Please prepare the team update and action list as a draft for me to review. I ha
 
 ## D3: Short team communications policy
 
-Date: 2026-09-01 · Fictional policy — review and approval rules
+Date: 2026-09-01 · Fictional policy: review and approval rules
 
 For workshop logistics, the organizer's latest written confirmation replaces earlier proposed times and rooms. A later draft or an unattributed suggestion does not replace that confirmation.
 
@@ -48,9 +48,9 @@ If a deadline has not been agreed, write 'not yet agreed' and ask the responsibl
 
 ## D4: A convincing draft that needs review
 
-Date: 2026-09-18 · Deliberately flawed example — not an observed AI response
+Date: 2026-09-18 · Deliberately flawed example: not an observed AI response
 
-Subject: Team workshop — everything is ready
+Subject: Team workshop: everything is ready
 
 Our team workshop is confirmed for Thursday 8 October, 10:00–11:00 Pacific, in the Cedar room. All 20 people will attend onsite.
 

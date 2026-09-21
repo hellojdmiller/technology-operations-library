@@ -1,6 +1,6 @@
 # AI at Work
 
-Three practical lessons for turning everyday information into a useful draft—and knowing what still needs checking.
+Three practical lessons for turning everyday information into a useful draft, and knowing what still needs checking.
 
 I would start with a task people already recognize: take meeting notes, a follow-up email, and a short policy, then prepare a clear team update. The useful skill is knowing what to ask for, which details to trust, and how to repair an answer before sharing it.
 
