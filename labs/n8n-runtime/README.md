@@ -45,6 +45,8 @@ The reference comparison runs the same evaluator outside n8n, **inside the isola
 
 The September 19, 2026 local run completed **32/32 cases across ten source workflows**, using n8n 2.39.8 on Linux arm64 in Docker. See the [dated machine-readable result](validation-2026-09-19.json) and [repository validation record](../../VALIDATION.md). The result identifies source hashes and the exact harness used; it does not imply that every later revision has been tested.
 
+The September 20, 2026 local run, after the five security-operations examples were added, completed **47/47 cases across fifteen source workflows** on the same pinned image (n8n 2.39.8, Linux arm64), with container and staged-input cleanup verified. The [dated result](validation-2026-09-20.json) records the committed source revision, source and harness hashes, and the same two warnings as the earlier run. The September 19 file is retained as historical evidence for the ten-workflow edition.
+
 The image reported Node.js v26.7.0. Its unavailable Python runner and experimental localStorage warning were recorded. Every workflow in this collection uses JavaScript Code nodes, and those cases passed. Python nodes are not covered.
 
 This lab uses the **internal JavaScript task runner for a disposable test**. It is not a production n8n deployment template. It does not test editor/UI import, n8n Cloud, other versions, external task runners, real collectors, authorization, pagination, retries against providers, credential storage, production retention, or downstream actions. The repository's mocked incomplete-input cases do not establish that a real collector will detect incompleteness.
