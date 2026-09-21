@@ -1,0 +1,254 @@
+[
+  {
+    "json": {
+      "reviewId": "tol-mfa-coverage-2026-09-20",
+      "asOf": "2026-09-20",
+      "status": "needs_review",
+      "issues": [],
+      "counts": {
+        "identityUsers": 8,
+        "rosterMembers": 8,
+        "privilegedAssignments": 4,
+        "enrolledPhishingResistant": 1,
+        "enrolledAcceptable": 4,
+        "weakOnly": 1,
+        "notEnrolled": 2,
+        "enrollmentUnknown": 0,
+        "privilegedWithoutPhishingResistant": 1,
+        "activeNoRosterMatch": 1,
+        "rosterNoAccount": 1,
+        "dormant": 1,
+        "unknown": 2
+      },
+      "coverage": {
+        "privileged": {
+          "inScope": 3,
+          "phishingResistant": 1,
+          "unknown": 1,
+          "note": "Counts, not a percentage; unknown accounts are listed, not excluded."
+        },
+        "allEnabledMembers": {
+          "inScope": 7,
+          "enrolledAnyRecognizedMethod": 6,
+          "notEnrolled": 1,
+          "unknown": 0
+        }
+      },
+      "queue": [
+        {
+          "userId": "tol-usr-001",
+          "employeeId": "tol-emp-1002",
+          "userPrincipalName": "identity.admin@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "member",
+          "queues": [
+            "privileged_without_phishing_resistant"
+          ],
+          "findings": [
+            "privileged_without_phishing_resistant"
+          ],
+          "enrollment": "acceptable",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [
+            "tol-role-global-admin",
+            "tol-role-security-admin"
+          ],
+          "rosterMatch": "matched",
+          "rosterStatus": "active",
+          "lastSignInAt": "2026-09-19T14:02:00Z",
+          "daysSinceSignIn": 1,
+          "dormant": false,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-007",
+          "employeeId": "tol-emp-1005",
+          "userPrincipalName": "former.controller@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "member",
+          "queues": [
+            "active_account_terminated_in_roster",
+            "dormant_enabled_account"
+          ],
+          "findings": [
+            "active_account_terminated_in_roster",
+            "dormant_enabled_account"
+          ],
+          "enrollment": "acceptable",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [],
+          "rosterMatch": "matched",
+          "rosterStatus": "terminated",
+          "lastSignInAt": "2026-07-22T07:45:00Z",
+          "daysSinceSignIn": 60,
+          "dormant": true,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-006",
+          "employeeId": "tol-emp-2044",
+          "userPrincipalName": "research.fellow@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "member",
+          "queues": [
+            "active_account_no_roster_match"
+          ],
+          "findings": [
+            "active_account_no_roster_match"
+          ],
+          "enrollment": "acceptable",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [],
+          "rosterMatch": "no_roster_match",
+          "rosterStatus": null,
+          "lastSignInAt": "2026-09-19T17:20:00Z",
+          "daysSinceSignIn": 1,
+          "dormant": false,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-003",
+          "employeeId": "tol-emp-1003",
+          "userPrincipalName": "ops.analyst@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "member",
+          "queues": [
+            "not_enrolled"
+          ],
+          "findings": [
+            "not_enrolled"
+          ],
+          "enrollment": "not_enrolled",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [],
+          "rosterMatch": "matched",
+          "rosterStatus": "active",
+          "lastSignInAt": "2026-09-17T11:05:00Z",
+          "daysSinceSignIn": 3,
+          "dormant": false,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-004",
+          "employeeId": "tol-emp-1004",
+          "userPrincipalName": "finance.associate@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "member",
+          "queues": [
+            "not_enrolled"
+          ],
+          "findings": [
+            "weak_methods_only"
+          ],
+          "enrollment": "weak_only",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [],
+          "rosterMatch": "matched",
+          "rosterStatus": "active",
+          "lastSignInAt": "2026-09-19T08:12:00Z",
+          "daysSinceSignIn": 1,
+          "dormant": false,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-005",
+          "employeeId": null,
+          "userPrincipalName": "service.desk@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "member",
+          "queues": [
+            "unknown"
+          ],
+          "findings": [
+            "employee_id_missing",
+            "method_unrecognized"
+          ],
+          "enrollment": "acceptable",
+          "unrecognizedMethods": [
+            "legacyHardwareToken"
+          ],
+          "privilegedRoles": [],
+          "rosterMatch": "employee_id_missing",
+          "rosterStatus": null,
+          "lastSignInAt": "2026-09-16T15:45:00Z",
+          "daysSinceSignIn": 4,
+          "dormant": false,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-990",
+          "employeeId": null,
+          "userPrincipalName": null,
+          "accountEnabled": null,
+          "userType": null,
+          "queues": [
+            "unknown"
+          ],
+          "findings": [
+            "privileged_member_not_found"
+          ],
+          "enrollment": "unknown",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [
+            "tol-role-global-admin"
+          ],
+          "rosterMatch": null,
+          "rosterStatus": null,
+          "lastSignInAt": null,
+          "daysSinceSignIn": null,
+          "dormant": null,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": null,
+          "employeeId": "tol-emp-1006",
+          "userPrincipalName": null,
+          "accountEnabled": null,
+          "userType": null,
+          "queues": [
+            "roster_member_no_account"
+          ],
+          "findings": [
+            "roster_member_no_account"
+          ],
+          "enrollment": null,
+          "unrecognizedMethods": [],
+          "privilegedRoles": [],
+          "rosterMatch": "no_account",
+          "rosterStatus": "active",
+          "lastSignInAt": null,
+          "daysSinceSignIn": null,
+          "dormant": null,
+          "decision": "pending_human_review"
+        },
+        {
+          "userId": "tol-usr-008",
+          "employeeId": null,
+          "userPrincipalName": "guest.auditor@northwind-ledger.example",
+          "accountEnabled": true,
+          "userType": "guest",
+          "queues": [
+            "non_member_account_review"
+          ],
+          "findings": [
+            "non_member_account"
+          ],
+          "enrollment": "not_enrolled",
+          "unrecognizedMethods": [],
+          "privilegedRoles": [],
+          "rosterMatch": "employee_id_missing",
+          "rosterStatus": null,
+          "lastSignInAt": "2026-09-15T10:00:00Z",
+          "daysSinceSignIn": 5,
+          "dormant": false,
+          "decision": "pending_human_review"
+        }
+      ],
+      "evidenceRef": "fixture://identity-registration-export-2026-09-20",
+      "limitation": "Compares the supplied identity export, HR roster, and privileged-role list only. Registration is not enforcement: a registered method does not prove that a Conditional Access or equivalent policy requires it, and no policy is read here. Method names are matched exactly against the packet methodPolicy; anything outside it stays unknown. Roster matching uses employeeId only. Sign-in recency uses whole UTC calendar days. Every row still needs a human decision. No account, method, role, or policy is changed."
+    },
+    "pairedItem": {
+      "item": 0
+    }
+  }
+]

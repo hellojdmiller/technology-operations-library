@@ -81,7 +81,7 @@ test('an explicitly unknown observation or empty batch is not healthy', () => {
   assert.equal(empty.counts.healthy, 0);
 });
 
-for (const slug of ['automation-result-review', 'operations-brief', 'access-review-preparation', 'vendor-renewal-triage', 'joiner-mover-leaver-review', 'backup-evidence-review', 'saas-license-reconciliation', 'change-readiness-review', 'asset-reconciliation-review', 'patch-exception-review']) {
+for (const slug of ['automation-result-review', 'operations-brief', 'access-review-preparation', 'vendor-renewal-triage', 'joiner-mover-leaver-review', 'backup-evidence-review', 'saas-license-reconciliation', 'change-readiness-review', 'asset-reconciliation-review', 'patch-exception-review', 'security-signal-brief', 'secret-exposure-response', 'baseline-evidence-freshness', 'phishing-report-triage', 'mfa-coverage-reconciliation']) {
   test(`${slug}: export contains the tested code, connected graph, and runnable sample`, () => {
     const workflow = JSON.parse(file(`n8n/${slug}/workflow.json`));
     assert.equal(workflow.active, false);

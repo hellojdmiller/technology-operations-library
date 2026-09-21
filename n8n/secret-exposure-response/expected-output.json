@@ -1,0 +1,618 @@
+[
+  {
+    "json": {
+      "reviewId": "tol-secret-exposure-review",
+      "asOf": "2026-09-20",
+      "status": "needs_review",
+      "issues": [],
+      "counts": {
+        "total": 5,
+        "open": 3,
+        "overdue": 1,
+        "due": 1,
+        "revokedWithinTarget": 1,
+        "revokedAfterTarget": 0,
+        "unknown": 2,
+        "ownerUnknown": 1
+      },
+      "rows": [
+        {
+          "alertNumber": 7,
+          "repository": "northwind-ledger/ledger-api",
+          "htmlUrl": "https://github.example/northwind-ledger/ledger-api/security/secret-scanning/7",
+          "secretType": "aws_access_key_id",
+          "secretTypeDisplayName": "Cloud Access Key ID",
+          "class": "cloud_credential",
+          "state": "open",
+          "resolution": null,
+          "validity": "active",
+          "pushProtectionBypassed": true,
+          "createdAt": "2026-09-19T08:00:00Z",
+          "resolvedAt": null,
+          "ageHours": 39,
+          "revokeWithinHours": 4,
+          "revokeDeadline": "2026-09-19T12:00:00Z",
+          "timeToRevokeStatus": "overdue",
+          "service": "Ledger API",
+          "ownerRole": "Platform lead",
+          "escalationRole": "Security lead",
+          "environment": "production",
+          "rotationRunbookRef": "fixture://runbooks/ledger-api-rotation",
+          "rotationSteps": [
+            "Create a replacement access key for the same principal",
+            "Update the deployment secret store and redeploy",
+            "Deactivate then delete the exposed key",
+            "Review cloud audit logs from createdAt onward"
+          ],
+          "locationCount": 2,
+          "locationTypes": [
+            "commit",
+            "pull_request"
+          ],
+          "findings": [
+            "revocation_overdue"
+          ],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "2 location(s): commit, pull_request. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed cloud credential; deadline 2026-09-19T12:00:00Z (4h policy).",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "Policy rotation steps: Create a replacement access key for the same principal; Update the deployment secret store and redeploy; Deactivate then delete the exposed key; Review cloud audit logs from createdAt onward.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-19T08:00:00Z; Platform lead signs off.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[Critical] Exposed cloud credential in northwind-ledger/ledger-api",
+            "body": "Alert: northwind-ledger/ledger-api #7 (https://github.example/northwind-ledger/ledger-api/security/secret-scanning/7)\nSecret type: aws_access_key_id (Cloud Access Key ID); class: cloud_credential\nValidity: active\nPush protection bypassed: yes\nExposure locations (2): commit:deploy/config/aws.env, pull_request:https://github.example/northwind-ledger/ledger-api/pull/118\nOwner: Platform lead (Ledger API, production)\nRevoke deadline: 2026-09-19T12:00:00Z; time-to-revoke status: overdue\nAlert state: open\nChecklist:\n- [pending] confirm_exposure_scope: 2 location(s): commit, pull_request. Confirm forks, clones, CI logs, and other copies are covered.\n- [pending] revoke_or_disable: Revoke or disable the exposed cloud credential; deadline 2026-09-19T12:00:00Z (4h policy).\n- [pending] rotate_and_redeploy: Policy rotation steps: Create a replacement access key for the same principal; Update the deployment secret store and redeploy; Deactivate then delete the exposed key; Review cloud audit logs from createdAt onward.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-19T08:00:00Z; Platform lead signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": "Platform lead",
+            "priority": "p1"
+          }
+        },
+        {
+          "alertNumber": 3,
+          "repository": "northwind-ledger/ledger-api",
+          "htmlUrl": "https://github.example/northwind-ledger/ledger-api/security/secret-scanning/3",
+          "secretType": "github_personal_access_token",
+          "secretTypeDisplayName": "Source Control Personal Access Token",
+          "class": "source_control_token",
+          "state": "resolved",
+          "resolution": "revoked",
+          "validity": "inactive",
+          "pushProtectionBypassed": false,
+          "createdAt": "2026-09-18T10:00:00Z",
+          "resolvedAt": "2026-09-18T12:30:00Z",
+          "ageHours": 61,
+          "revokeWithinHours": 24,
+          "revokeDeadline": "2026-09-19T10:00:00Z",
+          "timeToRevokeStatus": "revoked_within_target",
+          "service": "Ledger API",
+          "ownerRole": "Platform lead",
+          "escalationRole": "Security lead",
+          "environment": "production",
+          "rotationRunbookRef": "fixture://runbooks/ledger-api-rotation",
+          "rotationSteps": [
+            "Delete the exposed token in the owner's account settings",
+            "Issue a fine-grained replacement with the minimum scopes",
+            "Update the consuming automation and rerun its checks"
+          ],
+          "locationCount": 1,
+          "locationTypes": [
+            "commit"
+          ],
+          "findings": [],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "1 location(s): commit. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed source control token; deadline 2026-09-19T10:00:00Z (24h policy).",
+              "owner": "Platform lead",
+              "state": "complete",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "Policy rotation steps: Delete the exposed token in the owner's account settings; Issue a fine-grained replacement with the minimum scopes; Update the consuming automation and rerun its checks.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-18T10:00:00Z; Platform lead signs off.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[Low] Exposed source control token in northwind-ledger/ledger-api",
+            "body": "Alert: northwind-ledger/ledger-api #3 (https://github.example/northwind-ledger/ledger-api/security/secret-scanning/3)\nSecret type: github_personal_access_token (Source Control Personal Access Token); class: source_control_token\nValidity: inactive\nPush protection bypassed: no\nExposure locations (1): commit:scripts/release.sh\nOwner: Platform lead (Ledger API, production)\nRevoke deadline: 2026-09-19T10:00:00Z; time-to-revoke status: revoked_within_target\nAlert state: resolved (revoked)\nChecklist:\n- [pending] confirm_exposure_scope: 1 location(s): commit. Confirm forks, clones, CI logs, and other copies are covered.\n- [complete] revoke_or_disable: Revoke or disable the exposed source control token; deadline 2026-09-19T10:00:00Z (24h policy).\n- [pending] rotate_and_redeploy: Policy rotation steps: Delete the exposed token in the owner's account settings; Issue a fine-grained replacement with the minimum scopes; Update the consuming automation and rerun its checks.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-18T10:00:00Z; Platform lead signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": "Platform lead",
+            "priority": "p3"
+          }
+        },
+        {
+          "alertNumber": 2,
+          "repository": "northwind-ledger/intranet-scripts",
+          "htmlUrl": "https://github.example/northwind-ledger/intranet-scripts/security/secret-scanning/2",
+          "secretType": "slack_webhook_url",
+          "secretTypeDisplayName": "Messaging Incoming Webhook URL",
+          "class": "messaging_webhook",
+          "state": "open",
+          "resolution": null,
+          "validity": "unknown",
+          "pushProtectionBypassed": null,
+          "createdAt": "2026-09-20T06:15:00Z",
+          "resolvedAt": null,
+          "ageHours": 17,
+          "revokeWithinHours": 24,
+          "revokeDeadline": "2026-09-21T06:15:00Z",
+          "timeToRevokeStatus": "due",
+          "service": null,
+          "ownerRole": null,
+          "escalationRole": null,
+          "environment": null,
+          "rotationRunbookRef": null,
+          "rotationSteps": [
+            "Regenerate the incoming webhook in the messaging workspace",
+            "Update every sender that posts to it",
+            "Confirm the old URL returns an error"
+          ],
+          "locationCount": 1,
+          "locationTypes": [
+            "wiki"
+          ],
+          "findings": [
+            "owner_unknown"
+          ],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "1 location(s): wiki. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed messaging webhook; deadline 2026-09-21T06:15:00Z (24h policy).",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "Policy rotation steps: Regenerate the incoming webhook in the messaging workspace; Update every sender that posts to it; Confirm the old URL returns an error.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-20T06:15:00Z; UNASSIGNED: owner unknown signs off.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[High] Exposed messaging webhook in northwind-ledger/intranet-scripts",
+            "body": "Alert: northwind-ledger/intranet-scripts #2 (https://github.example/northwind-ledger/intranet-scripts/security/secret-scanning/2)\nSecret type: slack_webhook_url (Messaging Incoming Webhook URL); class: messaging_webhook\nValidity: unknown\nPush protection bypassed: unknown\nExposure locations (1): wiki:Notification-setup\nOwner: UNASSIGNED: owner unknown\nRevoke deadline: 2026-09-21T06:15:00Z; time-to-revoke status: due\nAlert state: open\nChecklist:\n- [pending] confirm_exposure_scope: 1 location(s): wiki. Confirm forks, clones, CI logs, and other copies are covered.\n- [pending] revoke_or_disable: Revoke or disable the exposed messaging webhook; deadline 2026-09-21T06:15:00Z (24h policy).\n- [pending] rotate_and_redeploy: Policy rotation steps: Regenerate the incoming webhook in the messaging workspace; Update every sender that posts to it; Confirm the old URL returns an error.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-20T06:15:00Z; UNASSIGNED: owner unknown signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": null,
+            "priority": "p2"
+          }
+        },
+        {
+          "alertNumber": 5,
+          "repository": "northwind-ledger/ledger-api",
+          "htmlUrl": "https://github.example/northwind-ledger/ledger-api/security/secret-scanning/5",
+          "secretType": "generic_private_key",
+          "secretTypeDisplayName": "Private Key",
+          "class": "private_key",
+          "state": "resolved",
+          "resolution": "false_positive",
+          "validity": "active",
+          "pushProtectionBypassed": false,
+          "createdAt": "2026-09-17T15:00:00Z",
+          "resolvedAt": "2026-09-17T15:20:00Z",
+          "ageHours": 80,
+          "revokeWithinHours": 8,
+          "revokeDeadline": "2026-09-17T23:00:00Z",
+          "timeToRevokeStatus": "not_applicable_resolution",
+          "service": "Ledger API",
+          "ownerRole": "Platform lead",
+          "escalationRole": "Security lead",
+          "environment": "production",
+          "rotationRunbookRef": "fixture://runbooks/ledger-api-rotation",
+          "rotationSteps": [
+            "Generate a new key pair",
+            "Replace the public key on every host or service that trusts it",
+            "Remove the exposed public key from authorized lists",
+            "Review access logs for the exposed key"
+          ],
+          "locationCount": 1,
+          "locationTypes": [
+            "commit"
+          ],
+          "findings": [
+            "non_revocation_resolution_needs_review",
+            "active_secret_not_revoked"
+          ],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "1 location(s): commit. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed private key; deadline 2026-09-17T23:00:00Z (8h policy).",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "Policy rotation steps: Generate a new key pair; Replace the public key on every host or service that trusts it; Remove the exposed public key from authorized lists; Review access logs for the exposed key.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-17T15:00:00Z; Platform lead signs off.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": "Platform lead",
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[Critical] Exposed private key in northwind-ledger/ledger-api",
+            "body": "Alert: northwind-ledger/ledger-api #5 (https://github.example/northwind-ledger/ledger-api/security/secret-scanning/5)\nSecret type: generic_private_key (Private Key); class: private_key\nValidity: active\nPush protection bypassed: no\nExposure locations (1): commit:infra/keys/legacy_id_rsa\nOwner: Platform lead (Ledger API, production)\nRevoke deadline: 2026-09-17T23:00:00Z; time-to-revoke status: not_applicable_resolution\nAlert state: resolved (false_positive)\nChecklist:\n- [pending] confirm_exposure_scope: 1 location(s): commit. Confirm forks, clones, CI logs, and other copies are covered.\n- [pending] revoke_or_disable: Revoke or disable the exposed private key; deadline 2026-09-17T23:00:00Z (8h policy).\n- [pending] rotate_and_redeploy: Policy rotation steps: Generate a new key pair; Replace the public key on every host or service that trusts it; Remove the exposed public key from authorized lists; Review access logs for the exposed key.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-17T15:00:00Z; Platform lead signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": "Platform lead",
+            "priority": "p1"
+          }
+        },
+        {
+          "alertNumber": 11,
+          "repository": "northwind-ledger/billing-sync",
+          "htmlUrl": "https://github.example/northwind-ledger/billing-sync/security/secret-scanning/11",
+          "secretType": "acme_billing_api_token",
+          "secretTypeDisplayName": "Acme Billing API Token",
+          "class": null,
+          "state": "open",
+          "resolution": null,
+          "validity": "unknown",
+          "pushProtectionBypassed": false,
+          "createdAt": "2026-09-19T21:40:00Z",
+          "resolvedAt": null,
+          "ageHours": 26,
+          "revokeWithinHours": null,
+          "revokeDeadline": null,
+          "timeToRevokeStatus": "unknown",
+          "service": "Billing Sync",
+          "ownerRole": "Finance systems lead",
+          "escalationRole": "Platform lead",
+          "environment": "production",
+          "rotationRunbookRef": null,
+          "rotationSteps": null,
+          "locationCount": 1,
+          "locationTypes": [
+            "issue"
+          ],
+          "findings": [
+            "secret_type_unclassified"
+          ],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "1 location(s): issue. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed unclassified secret; deadline unknown (secret type unclassified).",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "No policy row for this secret type; rotation steps unknown.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-19T21:40:00Z; Finance systems lead signs off.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[Unclassified] Exposed unclassified secret in northwind-ledger/billing-sync",
+            "body": "Alert: northwind-ledger/billing-sync #11 (https://github.example/northwind-ledger/billing-sync/security/secret-scanning/11)\nSecret type: acme_billing_api_token (Acme Billing API Token); class: unclassified\nValidity: unknown\nPush protection bypassed: no\nExposure locations (1): issue:https://github.example/northwind-ledger/billing-sync/issues/9\nOwner: Finance systems lead (Billing Sync, production)\nRevoke deadline: unknown; time-to-revoke status: unknown\nAlert state: open\nChecklist:\n- [pending] confirm_exposure_scope: 1 location(s): issue. Confirm forks, clones, CI logs, and other copies are covered.\n- [pending] revoke_or_disable: Revoke or disable the exposed unclassified secret; deadline unknown (secret type unclassified).\n- [pending] rotate_and_redeploy: No policy row for this secret type; rotation steps unknown.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-19T21:40:00Z; Finance systems lead signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": "Finance systems lead",
+            "priority": null
+          }
+        }
+      ],
+      "unknownRows": [
+        {
+          "alertNumber": 2,
+          "repository": "northwind-ledger/intranet-scripts",
+          "htmlUrl": "https://github.example/northwind-ledger/intranet-scripts/security/secret-scanning/2",
+          "secretType": "slack_webhook_url",
+          "secretTypeDisplayName": "Messaging Incoming Webhook URL",
+          "class": "messaging_webhook",
+          "state": "open",
+          "resolution": null,
+          "validity": "unknown",
+          "pushProtectionBypassed": null,
+          "createdAt": "2026-09-20T06:15:00Z",
+          "resolvedAt": null,
+          "ageHours": 17,
+          "revokeWithinHours": 24,
+          "revokeDeadline": "2026-09-21T06:15:00Z",
+          "timeToRevokeStatus": "due",
+          "service": null,
+          "ownerRole": null,
+          "escalationRole": null,
+          "environment": null,
+          "rotationRunbookRef": null,
+          "rotationSteps": [
+            "Regenerate the incoming webhook in the messaging workspace",
+            "Update every sender that posts to it",
+            "Confirm the old URL returns an error"
+          ],
+          "locationCount": 1,
+          "locationTypes": [
+            "wiki"
+          ],
+          "findings": [
+            "owner_unknown"
+          ],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "1 location(s): wiki. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed messaging webhook; deadline 2026-09-21T06:15:00Z (24h policy).",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "Policy rotation steps: Regenerate the incoming webhook in the messaging workspace; Update every sender that posts to it; Confirm the old URL returns an error.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-20T06:15:00Z; UNASSIGNED: owner unknown signs off.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": null,
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[High] Exposed messaging webhook in northwind-ledger/intranet-scripts",
+            "body": "Alert: northwind-ledger/intranet-scripts #2 (https://github.example/northwind-ledger/intranet-scripts/security/secret-scanning/2)\nSecret type: slack_webhook_url (Messaging Incoming Webhook URL); class: messaging_webhook\nValidity: unknown\nPush protection bypassed: unknown\nExposure locations (1): wiki:Notification-setup\nOwner: UNASSIGNED: owner unknown\nRevoke deadline: 2026-09-21T06:15:00Z; time-to-revoke status: due\nAlert state: open\nChecklist:\n- [pending] confirm_exposure_scope: 1 location(s): wiki. Confirm forks, clones, CI logs, and other copies are covered.\n- [pending] revoke_or_disable: Revoke or disable the exposed messaging webhook; deadline 2026-09-21T06:15:00Z (24h policy).\n- [pending] rotate_and_redeploy: Policy rotation steps: Regenerate the incoming webhook in the messaging workspace; Update every sender that posts to it; Confirm the old URL returns an error.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-20T06:15:00Z; UNASSIGNED: owner unknown signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": null,
+            "priority": "p2"
+          }
+        },
+        {
+          "alertNumber": 11,
+          "repository": "northwind-ledger/billing-sync",
+          "htmlUrl": "https://github.example/northwind-ledger/billing-sync/security/secret-scanning/11",
+          "secretType": "acme_billing_api_token",
+          "secretTypeDisplayName": "Acme Billing API Token",
+          "class": null,
+          "state": "open",
+          "resolution": null,
+          "validity": "unknown",
+          "pushProtectionBypassed": false,
+          "createdAt": "2026-09-19T21:40:00Z",
+          "resolvedAt": null,
+          "ageHours": 26,
+          "revokeWithinHours": null,
+          "revokeDeadline": null,
+          "timeToRevokeStatus": "unknown",
+          "service": "Billing Sync",
+          "ownerRole": "Finance systems lead",
+          "escalationRole": "Platform lead",
+          "environment": "production",
+          "rotationRunbookRef": null,
+          "rotationSteps": null,
+          "locationCount": 1,
+          "locationTypes": [
+            "issue"
+          ],
+          "findings": [
+            "secret_type_unclassified"
+          ],
+          "checklist": [
+            {
+              "step": "confirm_exposure_scope",
+              "detail": "1 location(s): issue. Confirm forks, clones, CI logs, and other copies are covered.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "revoke_or_disable",
+              "detail": "Revoke or disable the exposed unclassified secret; deadline unknown (secret type unclassified).",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "rotate_and_redeploy",
+              "detail": "No policy row for this secret type; rotation steps unknown.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "purge_from_history_or_accept",
+              "detail": "Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "verify_no_use_after_exposure",
+              "detail": "Review provider and application logs for use after 2026-09-19T21:40:00Z; Finance systems lead signs off.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            },
+            {
+              "step": "close_alert_with_resolution_revoked",
+              "detail": "Close the alert with resolution revoked only after the previous steps have evidence.",
+              "owner": "Finance systems lead",
+              "state": "pending",
+              "evidenceRef": null
+            }
+          ],
+          "ticket": {
+            "title": "[Unclassified] Exposed unclassified secret in northwind-ledger/billing-sync",
+            "body": "Alert: northwind-ledger/billing-sync #11 (https://github.example/northwind-ledger/billing-sync/security/secret-scanning/11)\nSecret type: acme_billing_api_token (Acme Billing API Token); class: unclassified\nValidity: unknown\nPush protection bypassed: no\nExposure locations (1): issue:https://github.example/northwind-ledger/billing-sync/issues/9\nOwner: Finance systems lead (Billing Sync, production)\nRevoke deadline: unknown; time-to-revoke status: unknown\nAlert state: open\nChecklist:\n- [pending] confirm_exposure_scope: 1 location(s): issue. Confirm forks, clones, CI logs, and other copies are covered.\n- [pending] revoke_or_disable: Revoke or disable the exposed unclassified secret; deadline unknown (secret type unclassified).\n- [pending] rotate_and_redeploy: No policy row for this secret type; rotation steps unknown.\n- [pending] purge_from_history_or_accept: Decide whether to rewrite history or accept the exposed content as compromised; record the decision. Not automated.\n- [pending] verify_no_use_after_exposure: Review provider and application logs for use after 2026-09-19T21:40:00Z; Finance systems lead signs off.\n- [pending] close_alert_with_resolution_revoked: Close the alert with resolution revoked only after the previous steps have evidence.",
+            "assignee": "Finance systems lead",
+            "priority": null
+          }
+        }
+      ],
+      "evidenceRef": "fixture://secret-scanning-alert-export",
+      "limitation": "Classifies alerts against the supplied policy and catalog only. It cannot confirm secret validity, verify revocation or rotation in any provider, inspect repositories or forks, or purge history. Deadlines use the supplied timestamps with whole hours to the end of the asOf day. The workflow neither revokes nor rotates anything and never reads or echoes a secret value."
+    },
+    "pairedItem": {
+      "item": 0
+    }
+  }
+]

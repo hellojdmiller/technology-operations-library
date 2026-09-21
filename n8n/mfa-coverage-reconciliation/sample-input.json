@@ -1,0 +1,39 @@
+[
+  {
+    "reviewId": "tol-mfa-coverage-2026-09-20",
+    "asOf": "2026-09-20",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://identity-registration-export-2026-09-20",
+    "dormantAfterDays": 45,
+    "matching": { "key": "employeeId" },
+    "methodPolicy": {
+      "phishingResistant": ["fido2SecurityKey", "passkeyDeviceBound", "windowsHelloForBusiness", "certificateBasedAuth"],
+      "acceptable": ["microsoftAuthenticatorPush", "softwareOath", "temporaryAccessPass"],
+      "weak": ["sms", "voice", "email"]
+    },
+    "identityUsers": [
+      { "userId": "tol-usr-001", "userPrincipalName": "identity.admin@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-09-19T14:02:00Z", "registeredMethods": ["microsoftAuthenticatorPush"], "mfaCapable": true, "employeeId": "tol-emp-1002" },
+      { "userId": "tol-usr-002", "userPrincipalName": "platform.lead@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-09-18T09:30:00Z", "registeredMethods": ["fido2SecurityKey", "microsoftAuthenticatorPush"], "mfaCapable": true, "employeeId": "tol-emp-1001" },
+      { "userId": "tol-usr-003", "userPrincipalName": "ops.analyst@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-09-17T11:05:00Z", "registeredMethods": [], "mfaCapable": false, "employeeId": "tol-emp-1003" },
+      { "userId": "tol-usr-004", "userPrincipalName": "finance.associate@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-09-19T08:12:00Z", "registeredMethods": ["sms"], "mfaCapable": true, "employeeId": "tol-emp-1004" },
+      { "userId": "tol-usr-005", "userPrincipalName": "service.desk@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-09-16T15:45:00Z", "registeredMethods": ["softwareOath", "legacyHardwareToken"], "mfaCapable": true, "employeeId": "" },
+      { "userId": "tol-usr-006", "userPrincipalName": "research.fellow@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-09-19T17:20:00Z", "registeredMethods": ["microsoftAuthenticatorPush"], "mfaCapable": true, "employeeId": "tol-emp-2044" },
+      { "userId": "tol-usr-007", "userPrincipalName": "former.controller@northwind-ledger.example", "accountEnabled": true, "userType": "member", "lastSignInAt": "2026-07-22T07:45:00Z", "registeredMethods": ["softwareOath"], "mfaCapable": true, "employeeId": "tol-emp-1005" },
+      { "userId": "tol-usr-008", "userPrincipalName": "guest.auditor@northwind-ledger.example", "accountEnabled": true, "userType": "guest", "lastSignInAt": "2026-09-15T10:00:00Z", "registeredMethods": [], "mfaCapable": false, "employeeId": "" }
+    ],
+    "hrRoster": [
+      { "employeeId": "tol-emp-1001", "workerStatus": "active", "managerRole": "Technology director", "department": "Platform" },
+      { "employeeId": "tol-emp-1002", "workerStatus": "active", "managerRole": "Technology director", "department": "Identity" },
+      { "employeeId": "tol-emp-1003", "workerStatus": "active", "managerRole": "Operations lead", "department": "Operations" },
+      { "employeeId": "tol-emp-1004", "workerStatus": "active", "managerRole": "Finance lead", "department": "Finance" },
+      { "employeeId": "tol-emp-1005", "workerStatus": "terminated", "managerRole": "Finance lead", "department": "Finance" },
+      { "employeeId": "tol-emp-1006", "workerStatus": "active", "managerRole": "Operations lead", "department": "Operations" },
+      { "employeeId": "tol-emp-1007", "workerStatus": "leave", "managerRole": "", "department": "Research" },
+      { "employeeId": "tol-emp-1008", "workerStatus": "terminated", "managerRole": "Technology director", "department": "Platform" }
+    ],
+    "privilegedRoles": [
+      { "roleId": "tol-role-global-admin", "roleName": "Global administrator (fictional)", "memberUserIds": ["tol-usr-001", "tol-usr-002", "tol-usr-990"] },
+      { "roleId": "tol-role-security-admin", "roleName": "Security administrator (fictional)", "memberUserIds": ["tol-usr-001"] }
+    ]
+  }
+]

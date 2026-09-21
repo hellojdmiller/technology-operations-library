@@ -1,0 +1,436 @@
+[
+  {
+    "reviewId": "tol-baseline-evidence-freshness-2026-09-20",
+    "asOf": "2026-09-20",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://northwind-ledger/baselines/cloudflare/observed-2026-09-20",
+    "exceptionWarningDays": 30,
+    "baseline": {
+      "id": "tol-cloudflare",
+      "version": "1.0.0",
+      "controls": [
+        {
+          "id": "CF-01",
+          "title": "Registrar lock and renewal ownership",
+          "category": "registrar",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-02",
+          "title": "DNSSEC signed and delegated",
+          "category": "dns",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-03",
+          "title": "DNS record change control",
+          "category": "dns",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-04",
+          "title": "Sender authentication records in DNS",
+          "category": "email",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-05",
+          "title": "Least-privilege account membership",
+          "category": "identity",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-06",
+          "title": "Enforced two-factor authentication",
+          "category": "identity",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-07",
+          "title": "Least-privilege API tokens",
+          "category": "integrations",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-08",
+          "title": "Audit log review and retention",
+          "category": "monitoring",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-09",
+          "title": "Managed WAF rulesets in blocking mode",
+          "category": "waf",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-10",
+          "title": "Administrative paths restricted",
+          "category": "waf",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-11",
+          "title": "Automated abuse controls",
+          "category": "waf",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-12",
+          "title": "Minimum TLS and HSTS",
+          "category": "tls",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-13",
+          "title": "Validated origin encryption",
+          "category": "tls",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-14",
+          "title": "Origin unreachable except through Cloudflare",
+          "category": "origin",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-15",
+          "title": "Access in front of internal applications",
+          "category": "access",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-16",
+          "title": "Zero Trust identity provider and user lifecycle",
+          "category": "access",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-17",
+          "title": "Device posture with WARP",
+          "category": "devices",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-18",
+          "title": "Gateway DNS and HTTP filtering",
+          "category": "gateway",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-19",
+          "title": "Notifications and log export",
+          "category": "monitoring",
+          "max_evidence_age_days": 90
+        },
+        {
+          "id": "CF-20",
+          "title": "Configuration export and account recovery",
+          "category": "recovery",
+          "max_evidence_age_days": 90
+        }
+      ]
+    },
+    "controlOwners": [
+      {
+        "controlId": "CF-01",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-02",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-03",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-04",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-05",
+        "ownerRole": "Identity owner"
+      },
+      {
+        "controlId": "CF-06",
+        "ownerRole": "Identity owner"
+      },
+      {
+        "controlId": "CF-07",
+        "ownerRole": "Identity owner"
+      },
+      {
+        "controlId": "CF-09",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-10",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-11",
+        "ownerRole": "Platform lead"
+      },
+      {
+        "controlId": "CF-12",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-13",
+        "ownerRole": "Edge and DNS owner"
+      },
+      {
+        "controlId": "CF-14",
+        "ownerRole": "Platform lead"
+      },
+      {
+        "controlId": "CF-15",
+        "ownerRole": "Identity owner"
+      },
+      {
+        "controlId": "CF-19",
+        "ownerRole": "Records owner"
+      }
+    ],
+    "observations": {
+      "schema_version": 1,
+      "baseline_id": "tol-cloudflare",
+      "baseline_version": "1.0.0",
+      "fictional": true,
+      "environment": {
+        "scope": "Fictional assessment training environment; not a real organization, account, zone, or domain",
+        "plan": "Mixed synthetic capability examples, not a coherent purchased plan or seat count"
+      },
+      "observations": [
+        {
+          "id": "CF-01",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-01",
+          "notes": "Synthetic training record; no account evidence exists."
+        },
+        {
+          "id": "CF-02",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-02",
+          "notes": "Synthetic training record; no account evidence exists."
+        },
+        {
+          "id": "CF-03",
+          "applicable": true,
+          "value": false,
+          "implementation": "manual",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-03",
+          "notes": "Fictional zone has records without owners and no export outside the account."
+        },
+        {
+          "id": "CF-04",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": false,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-04",
+          "notes": "Only the fictional primary domain was checked; parked domains were not."
+        },
+        {
+          "id": "CF-05",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-05",
+          "notes": "Synthetic training record; no account evidence exists."
+        },
+        {
+          "id": "CF-06",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-06",
+          "notes": "Synthetic enforcement setting and backup-code exercise."
+        },
+        {
+          "id": "CF-07",
+          "applicable": true,
+          "value": false,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-07",
+          "notes": "Synthetic training record; no account evidence exists.",
+          "exception": {
+            "owner": "Fictional service owner",
+            "reason": "One fictional automation still uses a permanent token while its vendor adds support for rotating credentials.",
+            "compensating_control": "Token restricted to one fixed client IP and reviewed weekly in the audit log.",
+            "expires_on": "2026-10-20"
+          }
+        },
+        {
+          "id": "CF-08",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-03-01T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-08",
+          "notes": "Deliberately stale evidence."
+        },
+        {
+          "id": "CF-09",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": null,
+          "notes": "Deliberately missing evidence reference; the assertion cannot be accepted without it."
+        },
+        {
+          "id": "CF-10",
+          "applicable": true,
+          "value": false,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-10",
+          "notes": "Fictional administrative path answered a request from an unapproved source."
+        },
+        {
+          "id": "CF-11",
+          "applicable": true,
+          "value": null,
+          "implementation": "unsupported",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-11",
+          "notes": "Desired native feature is not available in this fictional plan scenario; retain as unknown and review the gap."
+        },
+        {
+          "id": "CF-12",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-12",
+          "notes": "Synthetic training record; no account evidence exists."
+        },
+        {
+          "id": "CF-13",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-13",
+          "notes": "Synthetic training record; no account evidence exists."
+        },
+        {
+          "id": "CF-14",
+          "applicable": true,
+          "value": null,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-14",
+          "notes": "Direct-to-origin test not yet run in the fictional exercise."
+        },
+        {
+          "id": "CF-15",
+          "applicable": false,
+          "value": null,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-15",
+          "notes": "Synthetic absence-of-workload evidence supports this scoped exclusion.",
+          "not_applicable_reason": "Fictional application inventory confirms no self-hosted internal applications or management interfaces are published; the first self-hosted application triggers reassessment."
+        },
+        {
+          "id": "CF-16",
+          "applicable": null,
+          "value": null,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-16",
+          "notes": "Applicability not yet established; the fictional firm has not decided whether staff will use Zero Trust logins."
+        },
+        {
+          "id": "CF-17",
+          "applicable": true,
+          "value": null,
+          "implementation": "unknown",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-17",
+          "notes": "Client deployment coverage is unknown in the fictional scenario."
+        },
+        {
+          "id": "CF-18",
+          "applicable": true,
+          "value": null,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": null,
+          "observed_at": null,
+          "evidence_ref": null,
+          "notes": "Evidence not collected."
+        },
+        {
+          "id": "CF-19",
+          "applicable": true,
+          "value": true,
+          "implementation": "native",
+          "scope_complete": true,
+          "reviewer": "Fictional assessor",
+          "observed_at": "2026-09-19T12:00:00Z",
+          "evidence_ref": "fictional:exercise/CF-19",
+          "notes": "Synthetic notification delivery exercise."
+        },
+        {
+          "id": "CF-20",
+          "applicable": true,
+          "value": null,
+          "implementation": "manual",
+          "scope_complete": true,
+          "reviewer": null,
+          "observed_at": null,
+          "evidence_ref": null,
+          "notes": "Evidence not collected; the fictional lockout rehearsal has not been scheduled."
+        }
+      ]
+    }
+  }
+]

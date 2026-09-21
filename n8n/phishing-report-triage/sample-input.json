@@ -1,0 +1,65 @@
+[
+  {
+    "reviewId": "tol-phishing-triage-fixture",
+    "asOf": "2026-09-20",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://phishing-report-mailbox-export",
+    "organizationDomains": ["northwind-ledger.example"],
+    "allowlistedSenderDomains": ["payroll-portal.example", "northwind-ledger.example"],
+    "knownUrlShorteners": ["short.example", "go.example"],
+    "routing": { "malicious": "Security owner", "other": "Service desk" },
+    "reports": [
+      {
+        "reportId": "tol-phish-001",
+        "reportedAt": "2026-09-20T08:12:00Z",
+        "reporterRole": "Finance analyst",
+        "subject": "Urgent: payroll portal verification required",
+        "fromHeader": "Northwind Ledger IT <it-security@northwind-ledger-secure.example>",
+        "replyTo": "",
+        "returnPath": "bounce@northwind-ledger-secure.example",
+        "authenticationResultsHeader": "mx.northwind-ledger.example; spf=pass smtp.mailfrom=northwind-ledger-secure.example; dkim=pass header.d=northwind-ledger-secure.example; dmarc=fail header.from=northwind-ledger-secure.example",
+        "urls": [
+          "hxxps://short[.]example/a1b2",
+          "https://go.example/r?u=https%3A%2F%2Fnorthwlnd-ledger.example%2Flogin"
+        ],
+        "attachments": []
+      },
+      {
+        "reportId": "tol-phish-002",
+        "reportedAt": "2026-09-20T09:03:00Z",
+        "reporterRole": "Operations associate",
+        "subject": "Your September statement is available",
+        "fromHeader": "Payroll Team <notices@payroll-portal.example>",
+        "replyTo": "",
+        "returnPath": "notices@payroll-portal.example",
+        "authenticationResultsHeader": "mx.northwind-ledger.example; spf=pass smtp.mailfrom=payroll-portal.example; dkim=pass header.d=payroll-portal.example; dmarc=pass header.from=payroll-portal.example",
+        "urls": ["https://payroll-portal.example/statements/2026-09"],
+        "attachments": []
+      },
+      {
+        "reportId": "tol-phish-003",
+        "reportedAt": "2026-09-20T10:41:00Z",
+        "reporterRole": "Accounts payable clerk",
+        "subject": "Invoice 4471 attached for review",
+        "fromHeader": "Supplier Billing <invoices@supplier-billing.example>",
+        "replyTo": "accounts@freemail-provider.example",
+        "returnPath": "invoices@supplier-billing.example",
+        "authenticationResultsHeader": "mx.northwind-ledger.example; spf=pass smtp.mailfrom=supplier-billing.example; dkim=none; dmarc=none header.from=supplier-billing.example",
+        "urls": ["https://supplier-billing.example/view?doc=aHR0cHM6Ly9ldmlsLmV4YW1wbGUvbG9naW4="],
+        "attachments": [{ "name": "invoice-4471.zip", "extension": "zip" }]
+      },
+      {
+        "reportId": "tol-phish-004",
+        "reportedAt": "2026-09-20T11:20:00Z",
+        "reporterRole": "",
+        "subject": "Password expiry notice",
+        "fromHeader": "IT Support <helpdesk@northwind-ledger.example>",
+        "replyTo": "",
+        "returnPath": "",
+        "authenticationResultsHeader": "",
+        "urls": [],
+        "attachments": []
+      }
+    ]
+  }
+]

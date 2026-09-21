@@ -14,6 +14,11 @@ for (const [slug, title] of [
   ['change-readiness-review', 'Change readiness review'],
   ['asset-reconciliation-review', 'Asset reconciliation review'],
   ['patch-exception-review', 'Patch exception review'],
+  ['security-signal-brief', 'Security signal brief'],
+  ['secret-exposure-response', 'Secret exposure response'],
+  ['baseline-evidence-freshness', 'Baseline evidence freshness'],
+  ['phishing-report-triage', 'Phishing report triage'],
+  ['mfa-coverage-reconciliation', 'MFA coverage reconciliation'],
 ]) {
   const folder = join(root, 'n8n', slug);
   const sample = JSON.parse(readFileSync(join(folder, 'sample-input.json'), 'utf8'));

@@ -1,0 +1,54 @@
+[
+  {
+    "reviewId": "tol-secret-exposure-review",
+    "asOf": "2026-09-20",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://secret-scanning-alert-export",
+    "alerts": [
+      {
+        "alertNumber": 7, "repository": "northwind-ledger/ledger-api", "secretType": "aws_access_key_id", "secretTypeDisplayName": "Cloud Access Key ID",
+        "state": "open", "resolution": null, "createdAt": "2026-09-19T08:00:00Z", "resolvedAt": null, "pushProtectionBypassed": true, "validity": "active",
+        "locations": [
+          { "type": "commit", "ref": "deploy/config/aws.env" },
+          { "type": "pull_request", "ref": "https://github.example/northwind-ledger/ledger-api/pull/118" }
+        ],
+        "htmlUrl": "https://github.example/northwind-ledger/ledger-api/security/secret-scanning/7"
+      },
+      {
+        "alertNumber": 3, "repository": "northwind-ledger/ledger-api", "secretType": "github_personal_access_token", "secretTypeDisplayName": "Source Control Personal Access Token",
+        "state": "resolved", "resolution": "revoked", "createdAt": "2026-09-18T10:00:00Z", "resolvedAt": "2026-09-18T12:30:00Z", "pushProtectionBypassed": false, "validity": "inactive",
+        "locations": [{ "type": "commit", "ref": "scripts/release.sh" }],
+        "htmlUrl": "https://github.example/northwind-ledger/ledger-api/security/secret-scanning/3"
+      },
+      {
+        "alertNumber": 2, "repository": "northwind-ledger/intranet-scripts", "secretType": "slack_webhook_url", "secretTypeDisplayName": "Messaging Incoming Webhook URL",
+        "state": "open", "resolution": null, "createdAt": "2026-09-20T06:15:00Z", "resolvedAt": null, "pushProtectionBypassed": null, "validity": "unknown",
+        "locations": [{ "type": "wiki", "ref": "Notification-setup" }],
+        "htmlUrl": "https://github.example/northwind-ledger/intranet-scripts/security/secret-scanning/2"
+      },
+      {
+        "alertNumber": 5, "repository": "northwind-ledger/ledger-api", "secretType": "generic_private_key", "secretTypeDisplayName": "Private Key",
+        "state": "resolved", "resolution": "false_positive", "createdAt": "2026-09-17T15:00:00Z", "resolvedAt": "2026-09-17T15:20:00Z", "pushProtectionBypassed": false, "validity": "active",
+        "locations": [{ "type": "commit", "ref": "infra/keys/legacy_id_rsa" }],
+        "htmlUrl": "https://github.example/northwind-ledger/ledger-api/security/secret-scanning/5"
+      },
+      {
+        "alertNumber": 11, "repository": "northwind-ledger/billing-sync", "secretType": "acme_billing_api_token", "secretTypeDisplayName": "Acme Billing API Token",
+        "state": "open", "resolution": null, "createdAt": "2026-09-19T21:40:00Z", "resolvedAt": null, "pushProtectionBypassed": false, "validity": "unknown",
+        "locations": [{ "type": "issue", "ref": "https://github.example/northwind-ledger/billing-sync/issues/9" }],
+        "htmlUrl": "https://github.example/northwind-ledger/billing-sync/security/secret-scanning/11"
+      }
+    ],
+    "serviceCatalog": [
+      { "repository": "northwind-ledger/ledger-api", "service": "Ledger API", "ownerRole": "Platform lead", "escalationRole": "Security lead", "environment": "production", "rotationRunbookRef": "fixture://runbooks/ledger-api-rotation" },
+      { "repository": "northwind-ledger/billing-sync", "service": "Billing Sync", "ownerRole": "Finance systems lead", "escalationRole": "Platform lead", "environment": "production", "rotationRunbookRef": "" },
+      { "repository": "northwind-ledger/reporting-web", "service": "Reporting Web", "ownerRole": "Web lead", "escalationRole": "Security lead", "environment": "staging", "rotationRunbookRef": "fixture://runbooks/reporting-web-rotation" }
+    ],
+    "secretTypePolicy": [
+      { "secretType": "aws_access_key_id", "class": "cloud_credential", "revokeWithinHours": 4, "rotationSteps": ["Create a replacement access key for the same principal", "Update the deployment secret store and redeploy", "Deactivate then delete the exposed key", "Review cloud audit logs from createdAt onward"] },
+      { "secretType": "github_personal_access_token", "class": "source_control_token", "revokeWithinHours": 24, "rotationSteps": ["Delete the exposed token in the owner's account settings", "Issue a fine-grained replacement with the minimum scopes", "Update the consuming automation and rerun its checks"] },
+      { "secretType": "slack_webhook_url", "class": "messaging_webhook", "revokeWithinHours": 24, "rotationSteps": ["Regenerate the incoming webhook in the messaging workspace", "Update every sender that posts to it", "Confirm the old URL returns an error"] },
+      { "secretType": "generic_private_key", "class": "private_key", "revokeWithinHours": 8, "rotationSteps": ["Generate a new key pair", "Replace the public key on every host or service that trusts it", "Remove the exposed public key from authorized lists", "Review access logs for the exposed key"] }
+    ]
+  }
+]

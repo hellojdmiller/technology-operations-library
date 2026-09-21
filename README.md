@@ -30,7 +30,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 |---|---|---|
 | [Technology operations field guide](library/README.md) | 6 guides and working-record CSVs | Operating model, first 90 days, employee lifecycle, fund operations, portfolio support, vendors |
 | [IT operations and service desk](operations/README.md) | 22 guides and procedures; 4 operating packs; 17 CSV aids | Change management, assets, patching, investor reporting, service desk, and succession |
-| [n8n workflows](n8n/README.md) | 10 workflow exports with sample data and local tests | Change readiness, asset reconciliation, patch exceptions, access, renewals, lifecycle, recovery, licenses, results, and briefs |
+| [n8n workflows](n8n/README.md) | 15 workflow exports with sample data, expected-output fixtures, and local tests | Change readiness, asset reconciliation, patch exceptions, access, renewals, lifecycle, recovery, licenses, results, briefs, and five security-operations reviews: signal brief, secret exposure, evidence freshness, phishing triage, and MFA coverage |
 | [Platform security baselines](baselines/README.md) | 109 control assertions and 5 risk-assessment templates across Google Workspace, Microsoft 365, Cloudflare, AWS, and GitHub | Desired-state catalogs built from current vendor documentation, evidence worksheets, risk scenarios, fictional observations, and a local assessment tool |
 | [Cyber-risk operating pack](cyber-risk/README.md) | 12 guides and packs; 36 control proposals | Four checklists, AI controls, tabletop scenarios, a 45-minute workshop, leadership reporting, and evidence records |
 | [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
@@ -46,7 +46,7 @@ For search and collection filters, open [catalog/index.html](catalog/index.html)
 
 ## What is ready to use
 
-The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 32 isolated CLI cases on its pinned version. A bounded [Claude MCP and pasted-skill trial](showcase/host-trials/README.md) now adds host observations and review findings. Cloud deployment, real-tenant checks, vendor training exercises, native skill loading, and wider cross-client trials remain pending.
+The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 47 isolated CLI cases across fifteen workflows on its pinned version. A bounded [Claude MCP and pasted-skill trial](showcase/host-trials/README.md) now adds host observations and review findings. Cloud deployment, real-tenant checks, vendor training exercises, native skill loading, and wider cross-client trials remain pending.
 
 The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
 

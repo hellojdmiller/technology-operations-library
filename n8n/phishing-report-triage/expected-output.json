@@ -1,0 +1,331 @@
+[
+  {
+    "json": {
+      "reviewId": "tol-phishing-triage-fixture",
+      "asOf": "2026-09-20",
+      "status": "needs_review",
+      "issues": [],
+      "counts": {
+        "reports": 4,
+        "maliciousLikely": 1,
+        "suspicious": 1,
+        "undetermined": 1,
+        "likelyLegitimate": 1,
+        "urlsChecked": 4,
+        "urlsSuspicious": 3
+      },
+      "rows": [
+        {
+          "reportId": "tol-phish-001",
+          "reportedAt": "2026-09-20T08:12:00Z",
+          "reporterRole": "Finance analyst",
+          "subject": "Urgent: payroll portal verification required",
+          "sender": {
+            "displayName": "Northwind Ledger IT",
+            "address": "it-security@northwind-ledger-secure.example",
+            "domain": "northwind-ledger-secure.example",
+            "replyToDomain": null,
+            "returnPathDomain": "northwind-ledger-secure.example",
+            "orgDomain": false,
+            "allowlisted": false,
+            "lookalikeMatches": [
+              {
+                "reference": "northwind-ledger.example",
+                "rule": "added_hyphenated_word"
+              }
+            ]
+          },
+          "authentication": {
+            "present": true,
+            "authservId": "mx.northwind-ledger.example",
+            "spf": "pass",
+            "dkim": "pass",
+            "dmarc": "fail",
+            "spfDomain": "northwind-ledger-secure.example",
+            "dkimDomain": "northwind-ledger-secure.example",
+            "headerFrom": "northwind-ledger-secure.example",
+            "dkimAligned": true
+          },
+          "findings": [
+            "sender_not_allowlisted",
+            "display_name_impersonates_internal",
+            "dmarc_fail",
+            "lookalike_domain",
+            "url_shortener",
+            "url_redirect_parameter",
+            "url_lookalike_host"
+          ],
+          "urls": [
+            {
+              "raw": "hxxps://short[.]example/a1b2",
+              "normalized": "https://short.example/a1b2",
+              "scheme": "https",
+              "host": "short.example",
+              "path": "/a1b2",
+              "query": [],
+              "findings": [
+                "url_shortener"
+              ],
+              "lookalikeMatches": [],
+              "redirectTarget": null,
+              "base64Decoded": null,
+              "classification": "suspicious"
+            },
+            {
+              "raw": "https://go.example/r?u=https%3A%2F%2Fnorthwlnd-ledger.example%2Flogin",
+              "normalized": "https://go.example/r?u=https%3A%2F%2Fnorthwlnd-ledger.example%2Flogin",
+              "scheme": "https",
+              "host": "go.example",
+              "path": "/r",
+              "query": [
+                {
+                  "key": "u",
+                  "value": "https%3A%2F%2Fnorthwlnd-ledger.example%2Flogin",
+                  "decodedValue": "https://northwlnd-ledger.example/login",
+                  "decodeRounds": 1
+                }
+              ],
+              "findings": [
+                "url_shortener",
+                "url_redirect_parameter",
+                "url_lookalike_host"
+              ],
+              "lookalikeMatches": [],
+              "redirectTarget": {
+                "raw": "https://northwlnd-ledger.example/login",
+                "normalized": "https://northwlnd-ledger.example/login",
+                "scheme": "https",
+                "host": "northwlnd-ledger.example",
+                "path": "/login",
+                "query": [],
+                "findings": [
+                  "url_lookalike_host"
+                ],
+                "lookalikeMatches": [
+                  {
+                    "reference": "northwind-ledger.example",
+                    "rule": "edit_distance_1_or_2"
+                  }
+                ],
+                "redirectTarget": null,
+                "base64Decoded": null,
+                "classification": "suspicious"
+              },
+              "base64Decoded": null,
+              "classification": "suspicious"
+            }
+          ],
+          "attachments": [],
+          "verdict": "malicious_likely",
+          "verdictBasis": [
+            "dmarc_fail",
+            "lookalike_domain",
+            "url_lookalike_host"
+          ],
+          "confidence": "rule_based",
+          "ownerRole": "Security owner",
+          "recommendedActions": [
+            "block_sender_domain",
+            "purge_similar_messages",
+            "reset_credentials_if_entered",
+            "escalate_to_security_owner"
+          ],
+          "responseToReporter": "To the reporter (Finance analyst):\n\nThank you for reporting the message \"Urgent: payroll portal verification required\" from it-security@northwind-ledger-secure.example.\nOur rule-based triage rates this message as likely malicious.\nWhat happens next: the Security owner will block the sender, remove similar messages, and confirm the outcome with you.\nWhat you should do: do not click any link or open any attachment from this message. If you entered a password or other credentials, contact the service desk now so they can be reset.\n\nThis verdict is a triage aid for a human reviewer, not a final determination."
+        },
+        {
+          "reportId": "tol-phish-002",
+          "reportedAt": "2026-09-20T09:03:00Z",
+          "reporterRole": "Operations associate",
+          "subject": "Your September statement is available",
+          "sender": {
+            "displayName": "Payroll Team",
+            "address": "notices@payroll-portal.example",
+            "domain": "payroll-portal.example",
+            "replyToDomain": null,
+            "returnPathDomain": "payroll-portal.example",
+            "orgDomain": false,
+            "allowlisted": true,
+            "lookalikeMatches": []
+          },
+          "authentication": {
+            "present": true,
+            "authservId": "mx.northwind-ledger.example",
+            "spf": "pass",
+            "dkim": "pass",
+            "dmarc": "pass",
+            "spfDomain": "payroll-portal.example",
+            "dkimDomain": "payroll-portal.example",
+            "headerFrom": "payroll-portal.example",
+            "dkimAligned": true
+          },
+          "findings": [
+            "sender_allowlisted"
+          ],
+          "urls": [
+            {
+              "raw": "https://payroll-portal.example/statements/2026-09",
+              "normalized": "https://payroll-portal.example/statements/2026-09",
+              "scheme": "https",
+              "host": "payroll-portal.example",
+              "path": "/statements/2026-09",
+              "query": [],
+              "findings": [],
+              "lookalikeMatches": [],
+              "redirectTarget": null,
+              "base64Decoded": null,
+              "classification": "allowlisted"
+            }
+          ],
+          "attachments": [],
+          "verdict": "likely_legitimate",
+          "verdictBasis": [
+            "sender_allowlisted",
+            "dmarc_pass",
+            "dkim_aligned",
+            "no_url_findings",
+            "reply_to_consistent"
+          ],
+          "confidence": "rule_based",
+          "ownerRole": "Service desk",
+          "recommendedActions": [
+            "no_action"
+          ],
+          "responseToReporter": "To the reporter (Operations associate):\n\nThank you for reporting the message \"Your September statement is available\" from notices@payroll-portal.example.\nThe message appears legitimate based on the checks we can run.\nWhat happens next: no further action is planned.\nWhat you should do: still verify any unexpected payment or banking change request by phone, using a number you already have.\n\nThis verdict is a triage aid for a human reviewer, not a final determination."
+        },
+        {
+          "reportId": "tol-phish-003",
+          "reportedAt": "2026-09-20T10:41:00Z",
+          "reporterRole": "Accounts payable clerk",
+          "subject": "Invoice 4471 attached for review",
+          "sender": {
+            "displayName": "Supplier Billing",
+            "address": "invoices@supplier-billing.example",
+            "domain": "supplier-billing.example",
+            "replyToDomain": "freemail-provider.example",
+            "returnPathDomain": "supplier-billing.example",
+            "orgDomain": false,
+            "allowlisted": false,
+            "lookalikeMatches": []
+          },
+          "authentication": {
+            "present": true,
+            "authservId": "mx.northwind-ledger.example",
+            "spf": "pass",
+            "dkim": "none",
+            "dmarc": "none",
+            "spfDomain": "supplier-billing.example",
+            "dkimDomain": null,
+            "headerFrom": "supplier-billing.example",
+            "dkimAligned": false
+          },
+          "findings": [
+            "sender_not_allowlisted",
+            "reply_to_domain_differs",
+            "dmarc_not_pass",
+            "dkim_not_pass",
+            "url_base64_parameter",
+            "attachment_archive"
+          ],
+          "urls": [
+            {
+              "raw": "https://supplier-billing.example/view?doc=aHR0cHM6Ly9ldmlsLmV4YW1wbGUvbG9naW4=",
+              "normalized": "https://supplier-billing.example/view?doc=aHR0cHM6Ly9ldmlsLmV4YW1wbGUvbG9naW4=",
+              "scheme": "https",
+              "host": "supplier-billing.example",
+              "path": "/view",
+              "query": [
+                {
+                  "key": "doc",
+                  "value": "aHR0cHM6Ly9ldmlsLmV4YW1wbGUvbG9naW4=",
+                  "decodedValue": "aHR0cHM6Ly9ldmlsLmV4YW1wbGUvbG9naW4=",
+                  "decodeRounds": 0
+                }
+              ],
+              "findings": [
+                "url_base64_parameter"
+              ],
+              "lookalikeMatches": [],
+              "redirectTarget": null,
+              "base64Decoded": "https://evil.example/login",
+              "classification": "suspicious"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "invoice-4471.zip",
+              "extension": "zip",
+              "findings": [
+                "attachment_archive"
+              ]
+            }
+          ],
+          "verdict": "suspicious",
+          "verdictBasis": [
+            "reply_to_domain_differs",
+            "dkim_not_pass",
+            "url_base64_parameter",
+            "attachment_archive"
+          ],
+          "confidence": "rule_based",
+          "ownerRole": "Service desk",
+          "recommendedActions": [
+            "hold_for_analyst_review",
+            "reset_credentials_if_entered"
+          ],
+          "responseToReporter": "To the reporter (Accounts payable clerk):\n\nThank you for reporting the message \"Invoice 4471 attached for review\" from invoices@supplier-billing.example.\nOur rule-based triage rates this message as suspicious. It has indicators that need a human check.\nWhat happens next: the Service desk will review the message and confirm the outcome with you.\nWhat you should do: do not click links or open attachments until you hear back. If you already entered credentials, contact the service desk now.\n\nThis verdict is a triage aid for a human reviewer, not a final determination."
+        },
+        {
+          "reportId": "tol-phish-004",
+          "reportedAt": "2026-09-20T11:20:00Z",
+          "reporterRole": null,
+          "subject": "Password expiry notice",
+          "sender": {
+            "displayName": "IT Support",
+            "address": "helpdesk@northwind-ledger.example",
+            "domain": "northwind-ledger.example",
+            "replyToDomain": null,
+            "returnPathDomain": null,
+            "orgDomain": true,
+            "allowlisted": true,
+            "lookalikeMatches": []
+          },
+          "authentication": {
+            "present": false,
+            "authservId": null,
+            "spf": "unknown",
+            "dkim": "unknown",
+            "dmarc": "unknown",
+            "spfDomain": null,
+            "dkimDomain": null,
+            "headerFrom": null,
+            "dkimAligned": false
+          },
+          "findings": [
+            "reporter_unknown",
+            "sender_allowlisted",
+            "authentication_results_missing"
+          ],
+          "urls": [],
+          "attachments": [],
+          "verdict": "undetermined",
+          "verdictBasis": [
+            "reporter_unknown",
+            "authentication_results_missing"
+          ],
+          "confidence": "rule_based",
+          "ownerRole": "Service desk",
+          "recommendedActions": [
+            "request_original_message_headers",
+            "hold_for_analyst_review"
+          ],
+          "responseToReporter": "To the reporter (role not recorded):\n\nThank you for reporting the message \"Password expiry notice\" from helpdesk@northwind-ledger.example.\nOur rule-based triage could not determine whether this message is legitimate. Key evidence is missing.\nWhat happens next: the Service desk may ask you for the original message so the full headers can be checked.\nWhat you should do: leave the message unopened until you hear back.\n\nThis verdict is a triage aid for a human reviewer, not a final determination."
+        }
+      ],
+      "evidenceRef": "fixture://phishing-report-mailbox-export",
+      "limitation": "Reads the supplied header text, sender fields, URL strings, and attachment names only. It cannot detect a forged Authentication-Results header added before the organization gateway, never fetches URLs or opens attachments, and applies lookalike heuristics that can miss or over-flag domains. Verdicts are rule-based triage aids for a human reviewer, not a determination."
+    },
+    "pairedItem": {
+      "item": 0
+    }
+  }
+]

@@ -1,0 +1,352 @@
+[
+  {
+    "json": {
+      "reviewId": "tol-security-brief-2026-09-20",
+      "asOf": "2026-09-20",
+      "status": "needs_review",
+      "issues": [],
+      "counts": {
+        "total": 11,
+        "whatChanged": 1,
+        "needsDecision": 3,
+        "unknown": 4,
+        "closed": 3,
+        "bySeverity": {
+          "critical": 2,
+          "high": 2,
+          "medium": 4,
+          "low": 0,
+          "unassigned": 3
+        }
+      },
+      "brief": {
+        "periodAndScope": "As of 2026-09-20. Period 2026-09-18 to 2026-09-20 (oldest supplied record to asOf). 10 records: identityRiskEvents 3, endpointAndMailAlerts 3, githubAlerts 2, cloudflareAuditEvents 2. Prior brief fixture://security-brief-2026-09-19. Snapshot complete true. Decision threshold 3 whole days.",
+        "decisionRequested": [
+          "Identity owner: decide treatment for identityRiskEvents:idr-1001 (critical severity; anomalousToken at high risk; whole UTC days open as of 2026-09-20: 0). Deferral keeps it in needsDecision at the next brief.",
+          "Platform lead: decide treatment for githubAlerts:gh-3001 (critical severity; dependabot critical; whole UTC days open as of 2026-09-20: 1). Deferral keeps it in needsDecision at the next brief.",
+          "Edge and DNS owner: decide treatment for cloudflareAuditEvents:cf-4001 (high severity; waf.rule.disable by edge-admin@northwind-ledger.example on waf_rule via UI; whole UTC days open as of 2026-09-20: 1). Deferral keeps it in needsDecision at the next brief."
+        ],
+        "whatChanged": [
+          {
+            "signalId": "endpointAndMailAlerts:ep-2002",
+            "source": "endpointAndMailAlerts",
+            "id": "ep-2002",
+            "observedAt": "2026-09-20T02:15:00.000Z",
+            "ageDays": 0,
+            "subject": "investor-relations@northwind-ledger.example",
+            "summary": "User reported phishing message, no click recorded (Phishing, informational)",
+            "rawState": "new",
+            "detail": {
+              "title": "User reported phishing message, no click recorded",
+              "severity": "informational",
+              "status": "new",
+              "category": "Phishing"
+            },
+            "severity": "medium",
+            "ownerRole": "Endpoint and mail owner",
+            "routedBy": "r-ep-phishing",
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [],
+            "section": "whatChanged"
+          }
+        ],
+        "needsDecision": [
+          {
+            "signalId": "identityRiskEvents:idr-1001",
+            "source": "identityRiskEvents",
+            "id": "idr-1001",
+            "observedAt": "2026-09-20T06:42:00.000Z",
+            "ageDays": 0,
+            "subject": "treasury-ops@northwind-ledger.example",
+            "summary": "anomalousToken at high risk",
+            "rawState": "confirmedCompromised",
+            "detail": {
+              "riskLevel": "high",
+              "riskState": "confirmedCompromised",
+              "detectionType": "anomalousToken"
+            },
+            "severity": "critical",
+            "ownerRole": "Identity owner",
+            "routedBy": "r-idp-compromised",
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [],
+            "section": "needsDecision"
+          },
+          {
+            "signalId": "githubAlerts:gh-3001",
+            "source": "githubAlerts",
+            "id": "gh-3001",
+            "observedAt": "2026-09-19T17:45:00.000Z",
+            "ageDays": 1,
+            "subject": "northwind-ledger/ledger-api",
+            "summary": "dependabot critical",
+            "rawState": "open",
+            "detail": {
+              "kind": "dependabot",
+              "severity": "critical",
+              "secretType": null,
+              "state": "open"
+            },
+            "severity": "critical",
+            "ownerRole": "Platform lead",
+            "routedBy": "r-gh-dependabot-critical",
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [],
+            "section": "needsDecision"
+          },
+          {
+            "signalId": "cloudflareAuditEvents:cf-4001",
+            "source": "cloudflareAuditEvents",
+            "id": "cf-4001",
+            "observedAt": "2026-09-19T21:03:00.000Z",
+            "ageDays": 1,
+            "subject": "tol-waf-rule-0042",
+            "summary": "waf.rule.disable by edge-admin@northwind-ledger.example on waf_rule via UI",
+            "rawState": null,
+            "detail": {
+              "actorEmail": "edge-admin@northwind-ledger.example",
+              "action": "waf.rule.disable",
+              "resourceType": "waf_rule",
+              "interface": "UI"
+            },
+            "severity": "high",
+            "ownerRole": "Edge and DNS owner",
+            "routedBy": "r-cf-waf-disable",
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [],
+            "section": "needsDecision"
+          }
+        ],
+        "unknown": [
+          {
+            "signalId": "identityRiskEvents:idr-1003",
+            "source": "identityRiskEvents",
+            "id": "idr-1003",
+            "observedAt": "2026-09-19T09:30:00.000Z",
+            "ageDays": 1,
+            "subject": null,
+            "summary": "unfamiliarFeatures at medium risk",
+            "rawState": "atRisk",
+            "detail": {
+              "riskLevel": "medium",
+              "riskState": "atRisk",
+              "detectionType": "unfamiliarFeatures"
+            },
+            "severity": "medium",
+            "ownerRole": "Identity owner",
+            "routedBy": "r-idp-medium",
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [
+              "subject_missing:user"
+            ],
+            "section": "unknown"
+          },
+          {
+            "signalId": "githubAlerts:gh-3002",
+            "source": "githubAlerts",
+            "id": "gh-3002",
+            "observedAt": "2026-09-20T01:10:00.000Z",
+            "ageDays": 0,
+            "subject": "northwind-ledger/ledger-api",
+            "summary": "secret_scanning webhook_signing_secret",
+            "rawState": "open",
+            "detail": {
+              "kind": "secret_scanning",
+              "severity": null,
+              "secretType": "webhook_signing_secret",
+              "state": "open"
+            },
+            "severity": null,
+            "ownerRole": null,
+            "routedBy": null,
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [
+              "owner_unknown"
+            ],
+            "section": "unknown"
+          },
+          {
+            "signalId": "cloudflareAuditEvents:cf-4002",
+            "source": "cloudflareAuditEvents",
+            "id": "cf-4002",
+            "observedAt": "2026-09-20T08:12:00.000Z",
+            "ageDays": 0,
+            "subject": "tol-member-0917",
+            "summary": "account.member.add by ops-admin@northwind-ledger.example on account_member via API",
+            "rawState": null,
+            "detail": {
+              "actorEmail": "ops-admin@northwind-ledger.example",
+              "action": "account.member.add",
+              "resourceType": "account_member",
+              "interface": "API"
+            },
+            "severity": null,
+            "ownerRole": null,
+            "routedBy": null,
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [
+              "owner_unknown"
+            ],
+            "section": "unknown"
+          },
+          {
+            "signalId": "githubAlerts:gh-2999",
+            "source": "githubAlerts",
+            "id": "gh-2999",
+            "observedAt": null,
+            "ageDays": null,
+            "subject": null,
+            "summary": "closedSince entry matches no supplied record.",
+            "rawState": null,
+            "detail": null,
+            "severity": null,
+            "ownerRole": null,
+            "routedBy": null,
+            "relatedTo": [],
+            "closed": false,
+            "closedVia": null,
+            "findings": [
+              "closed_id_not_found"
+            ],
+            "section": "unknown"
+          }
+        ],
+        "closed": [
+          {
+            "signalId": "identityRiskEvents:idr-1002",
+            "source": "identityRiskEvents",
+            "id": "idr-1002",
+            "observedAt": "2026-09-18T14:05:00.000Z",
+            "ageDays": 2,
+            "subject": "fund-admin@northwind-ledger.example",
+            "summary": "unfamiliarFeatures at medium risk",
+            "rawState": "remediated",
+            "detail": {
+              "riskLevel": "medium",
+              "riskState": "remediated",
+              "detectionType": "unfamiliarFeatures"
+            },
+            "severity": "medium",
+            "ownerRole": "Identity owner",
+            "routedBy": "r-idp-medium",
+            "relatedTo": [],
+            "closed": true,
+            "closedVia": "source_state",
+            "findings": [],
+            "section": "closed"
+          },
+          {
+            "signalId": "endpointAndMailAlerts:ep-2001",
+            "source": "endpointAndMailAlerts",
+            "id": "ep-2001",
+            "observedAt": "2026-09-18T11:20:00.000Z",
+            "ageDays": 2,
+            "subject": "NLP-LAPTOP-017",
+            "summary": "Malware detected and quarantined (Malware, high)",
+            "rawState": "resolved",
+            "detail": {
+              "title": "Malware detected and quarantined",
+              "severity": "high",
+              "status": "resolved",
+              "category": "Malware"
+            },
+            "severity": "high",
+            "ownerRole": "Endpoint and mail owner",
+            "routedBy": "r-ep-malware",
+            "relatedTo": [],
+            "closed": true,
+            "closedVia": "source_state",
+            "findings": [],
+            "section": "closed"
+          },
+          {
+            "signalId": "endpointAndMailAlerts:ep-2003",
+            "source": "endpointAndMailAlerts",
+            "id": "ep-2003",
+            "observedAt": "2026-09-19T16:40:00.000Z",
+            "ageDays": 1,
+            "subject": "fund-admin@northwind-ledger.example",
+            "summary": "Unusual sign-in location for mailbox (SuspiciousActivity, medium)",
+            "rawState": "inProgress",
+            "detail": {
+              "title": "Unusual sign-in location for mailbox",
+              "severity": "medium",
+              "status": "inProgress",
+              "category": "SuspiciousActivity"
+            },
+            "severity": "medium",
+            "ownerRole": "Endpoint and mail owner",
+            "routedBy": "r-ep-suspicious",
+            "relatedTo": [],
+            "closed": true,
+            "closedVia": "closedSince",
+            "findings": [],
+            "section": "closed"
+          }
+        ],
+        "counts": {
+          "total": 11,
+          "whatChanged": 1,
+          "needsDecision": 3,
+          "unknown": 4,
+          "closed": 3,
+          "bySeverity": {
+            "critical": 2,
+            "high": 2,
+            "medium": 4,
+            "low": 0,
+            "unassigned": 3
+          }
+        },
+        "sourcesSummary": {
+          "identityRiskEvents": {
+            "recordCount": 3,
+            "oldest": "2026-09-18T14:05:00.000Z",
+            "newest": "2026-09-20T06:42:00.000Z"
+          },
+          "endpointAndMailAlerts": {
+            "recordCount": 3,
+            "oldest": "2026-09-18T11:20:00.000Z",
+            "newest": "2026-09-20T02:15:00.000Z"
+          },
+          "githubAlerts": {
+            "recordCount": 2,
+            "oldest": "2026-09-19T17:45:00.000Z",
+            "newest": "2026-09-20T01:10:00.000Z"
+          },
+          "cloudflareAuditEvents": {
+            "recordCount": 2,
+            "oldest": "2026-09-19T21:03:00.000Z",
+            "newest": "2026-09-20T08:12:00.000Z"
+          }
+        }
+      },
+      "narrativeDraftingAid": {
+        "enabled": false,
+        "status": "disabled",
+        "label": "Drafting aid only. A model may rephrase the deterministic brief for readability; a human reviews the output before it is sent. It must not add, remove, or reprioritize items.",
+        "prompt": null
+      },
+      "evidenceRef": "fixture://security-signal-export-2026-09-20",
+      "previousBriefRef": "fixture://security-brief-2026-09-19",
+      "limitation": "Reads the supplied exports, routing table, and closedSince list only. It cannot confirm that an export is complete or current, that a closedSince entry was verified, or that a routed owner accepted the item. Whether a record is new since the prior brief depends on the collector export window. Ages use whole UTC days. The drafting aid is prompt text for a separate, human-reviewed model step; this node never calls a model."
+    },
+    "pairedItem": {
+      "item": 0
+    }
+  }
+]

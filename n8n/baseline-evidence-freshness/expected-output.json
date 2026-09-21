@@ -1,0 +1,476 @@
+[
+  {
+    "json": {
+      "reviewId": "tol-baseline-evidence-freshness-2026-09-20",
+      "asOf": "2026-09-20",
+      "baselineId": "tol-cloudflare",
+      "baselineVersion": "1.0.0",
+      "fictional": true,
+      "scope": "Fictional assessment training environment; not a real organization, account, zone, or domain",
+      "status": "needs_review",
+      "issues": [],
+      "counts": {
+        "controls": 20,
+        "observed": 20,
+        "fresh": 17,
+        "stale": 1,
+        "missingObservation": 0,
+        "missingObservationDate": 2,
+        "missingEvidenceReference": 3,
+        "futureDated": 0,
+        "scopeIncomplete": 1,
+        "exceptionsActive": 1,
+        "exceptionsExpiringSoon": 1,
+        "exceptionsExpired": 0,
+        "ownerUnassigned": 5,
+        "remindersTotal": 13
+      },
+      "rows": [
+        {
+          "controlId": "CF-01",
+          "title": "Registrar lock and renewal ownership",
+          "category": "registrar",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-01",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-02",
+          "title": "DNSSEC signed and delegated",
+          "category": "dns",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-02",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-03",
+          "title": "DNS record change control",
+          "category": "dns",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-03",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-04",
+          "title": "Sender authentication records in DNS",
+          "category": "email",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-04",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": false,
+          "exception": null,
+          "reminders": [
+            "scope_incomplete"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-05",
+          "title": "Least-privilege account membership",
+          "category": "identity",
+          "ownerRole": "Identity owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-05",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-06",
+          "title": "Enforced two-factor authentication",
+          "category": "identity",
+          "ownerRole": "Identity owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-06",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-07",
+          "title": "Least-privilege API tokens",
+          "category": "integrations",
+          "ownerRole": "Identity owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-07",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": {
+            "owner": "Fictional service owner",
+            "expires_on": "2026-10-20",
+            "state": "active",
+            "daysToExpiry": 30,
+            "expiringSoon": true
+          },
+          "reminders": [
+            "exception_expiring_soon"
+          ],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-08",
+          "title": "Audit log review and retention",
+          "category": "monitoring",
+          "ownerRole": null,
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-03-01T12:00:00Z",
+          "evidenceAgeDays": 202,
+          "evidenceRef": "fictional:exercise/CF-08",
+          "freshness": "stale",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [
+            "evidence_stale",
+            "owner_unassigned"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-09",
+          "title": "Managed WAF rulesets in blocking mode",
+          "category": "waf",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": null,
+          "freshness": "fresh",
+          "evidenceReference": "missing",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [
+            "evidence_reference_missing"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-10",
+          "title": "Administrative paths restricted",
+          "category": "waf",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-10",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-11",
+          "title": "Automated abuse controls",
+          "category": "waf",
+          "ownerRole": "Platform lead",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-11",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-12",
+          "title": "Minimum TLS and HSTS",
+          "category": "tls",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-12",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-13",
+          "title": "Validated origin encryption",
+          "category": "tls",
+          "ownerRole": "Edge and DNS owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-13",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-14",
+          "title": "Origin unreachable except through Cloudflare",
+          "category": "origin",
+          "ownerRole": "Platform lead",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-14",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-15",
+          "title": "Access in front of internal applications",
+          "category": "access",
+          "ownerRole": "Identity owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-15",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-16",
+          "title": "Zero Trust identity provider and user lifecycle",
+          "category": "access",
+          "ownerRole": null,
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-16",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [
+            "owner_unassigned"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-17",
+          "title": "Device posture with WARP",
+          "category": "devices",
+          "ownerRole": null,
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-17",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [
+            "owner_unassigned"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-18",
+          "title": "Gateway DNS and HTTP filtering",
+          "category": "gateway",
+          "ownerRole": null,
+          "maxEvidenceAgeDays": 90,
+          "observedAt": null,
+          "evidenceAgeDays": null,
+          "evidenceRef": null,
+          "freshness": "missing_observation_date",
+          "evidenceReference": "missing",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [
+            "observation_date_missing",
+            "evidence_reference_missing",
+            "owner_unassigned"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        },
+        {
+          "controlId": "CF-19",
+          "title": "Notifications and log export",
+          "category": "monitoring",
+          "ownerRole": "Records owner",
+          "maxEvidenceAgeDays": 90,
+          "observedAt": "2026-09-19T12:00:00Z",
+          "evidenceAgeDays": 0,
+          "evidenceRef": "fictional:exercise/CF-19",
+          "freshness": "fresh",
+          "evidenceReference": "present",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [],
+          "assessStatusHint": "evaluable"
+        },
+        {
+          "controlId": "CF-20",
+          "title": "Configuration export and account recovery",
+          "category": "recovery",
+          "ownerRole": null,
+          "maxEvidenceAgeDays": 90,
+          "observedAt": null,
+          "evidenceAgeDays": null,
+          "evidenceRef": null,
+          "freshness": "missing_observation_date",
+          "evidenceReference": "missing",
+          "scopeComplete": true,
+          "exception": null,
+          "reminders": [
+            "observation_date_missing",
+            "evidence_reference_missing",
+            "owner_unassigned"
+          ],
+          "assessStatusHint": "would_be_unknown"
+        }
+      ],
+      "remindersByOwner": [
+        {
+          "ownerRole": "Edge and DNS owner",
+          "controlCount": 2,
+          "reminderCount": 2,
+          "controls": [
+            {
+              "controlId": "CF-04",
+              "title": "Sender authentication records in DNS",
+              "reminders": [
+                "scope_incomplete"
+              ],
+              "dueBy": "2026-09-20"
+            },
+            {
+              "controlId": "CF-09",
+              "title": "Managed WAF rulesets in blocking mode",
+              "reminders": [
+                "evidence_reference_missing"
+              ],
+              "dueBy": "2026-09-20"
+            }
+          ]
+        },
+        {
+          "ownerRole": "Identity owner",
+          "controlCount": 1,
+          "reminderCount": 1,
+          "controls": [
+            {
+              "controlId": "CF-07",
+              "title": "Least-privilege API tokens",
+              "reminders": [
+                "exception_expiring_soon"
+              ],
+              "dueBy": "2026-10-20"
+            }
+          ]
+        },
+        {
+          "ownerRole": null,
+          "controlCount": 5,
+          "reminderCount": 10,
+          "controls": [
+            {
+              "controlId": "CF-08",
+              "title": "Audit log review and retention",
+              "reminders": [
+                "evidence_stale",
+                "owner_unassigned"
+              ],
+              "dueBy": "2026-09-20"
+            },
+            {
+              "controlId": "CF-16",
+              "title": "Zero Trust identity provider and user lifecycle",
+              "reminders": [
+                "owner_unassigned"
+              ],
+              "dueBy": "2026-09-20"
+            },
+            {
+              "controlId": "CF-17",
+              "title": "Device posture with WARP",
+              "reminders": [
+                "owner_unassigned"
+              ],
+              "dueBy": "2026-09-20"
+            },
+            {
+              "controlId": "CF-18",
+              "title": "Gateway DNS and HTTP filtering",
+              "reminders": [
+                "observation_date_missing",
+                "evidence_reference_missing",
+                "owner_unassigned"
+              ],
+              "dueBy": "2026-09-20"
+            },
+            {
+              "controlId": "CF-20",
+              "title": "Configuration export and account recovery",
+              "reminders": [
+                "observation_date_missing",
+                "evidence_reference_missing",
+                "owner_unassigned"
+              ],
+              "dueBy": "2026-09-20"
+            }
+          ]
+        }
+      ],
+      "evidenceRef": "fixture://northwind-ledger/baselines/cloudflare/observed-2026-09-20",
+      "limitation": "Reports evidence age, missing references, and exception expiry from reviewer-recorded observations only. It does not recompute aligned, gap, or not_applicable results, inspect any tenant, open evidence references, or verify that evidence supports the assertion. Ages use whole UTC days against the asOf date; the evidence window and warning period are local cadence choices, not vendor or regulatory requirements."
+    },
+    "pairedItem": {
+      "item": 0
+    }
+  }
+]
