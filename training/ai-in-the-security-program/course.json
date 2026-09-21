@@ -1,0 +1,190 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "ai-in-the-security-program",
+  "title": "Where AI Helps a Small Security Team",
+  "track": "technology-operations",
+  "audience": "The technology lead or small IT and security team at a high-trust firm who want an assistant's help with security work without handing it the decisions.",
+  "prerequisites": ["AI at Work"],
+  "description": "One short lesson on which security tasks an assistant does well, which decisions stay with a person, what never enters a tool without a data agreement, and how every claim gets verified.",
+  "introduction": [
+    "A two-person security function has more alerts, questionnaires, and log lines than hours. An assistant genuinely helps with the reading and writing parts of that work. It summarises, drafts, explains, and gives a first opinion faster than I can, and I use it for exactly those things.",
+    "What it must not do is decide. Declaring an alert a false positive, closing an incident, or granting access are decisions someone is accountable for, and the tool can be confidently wrong or steered by the text it is reading. This module draws that line on a fictional packet, use by use.",
+    "It assumes you have taken AI at Work, so the habit of checking a draft against its sources is already there. Here the sources are your own systems. No tool account is needed; work on paper or in a document, and treat the example answer as a comparison, not a script."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "Eight things the technology lead wants the assistant to do",
+    "description": "You are advising Halvorsen Bay Advisors, a fictional investment firm of about twenty people, on how its technology lead may use the firm's approved AI assistant for security work. Everyone and everything in this packet is fictional: the firm, the people, the vendors, the domain, and the alert. The exercise reference date is 21 September 2026. D1 is the lead's proposal, and several items in it are deliberately unsafe. D2 is a realistic alert that says nothing about the user's whereabouts. D3 is the policy you judge D1 against.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Proposal: eight uses for the assistant",
+        "date": "2026-09-17",
+        "kind": "Note from Ines Marchetti, technology lead, to Owen Adeyemi, compliance",
+        "body": [
+          "Owen, before I start using the assistant for security work, here is everything I want to do with it. Tell me which items need a conversation first.",
+          "1. Each morning, paste the overnight identity-provider alerts and have it summarise them and tell me which ones I can ignore.",
+          "2. Draft an access-control policy from the NIST small business guide, so we have something to show investors that is better than our current page.",
+          "3. Turn the 60-question security questionnaire from Wrenfield Fund Services into a checklist with an owner and a due date per item.",
+          "4. Explain firewall and audit log lines I do not recognise, by pasting the line and asking what it means.",
+          "5. When staff forward a suspicious email, paste it in, ask whether it is phishing, and send the staff member the answer.",
+          "6. Paste the timeline and evidence from last month's incident into it to draft the post-incident report while counsel is still reviewing the matter.",
+          "7. Let it work the access-request queue: read each ticket and approve or deny based on the requester's role.",
+          "8. Paste our firewall configuration, including the management API keys, and ask for hardening recommendations."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Identity-provider alert to be summarised",
+        "date": "2026-09-18",
+        "kind": "Plain-text alert email from the firm's identity provider admin console, as received",
+        "body": [
+          "ALERT: Risky sign-in detected. Severity: medium. Detected: 2026-09-18 03:12 UTC.",
+          "User: r.castellanos@halvorsenbay.example.com (Rafael Castellanos, Associate). Application: email and files.",
+          "Signal: sign-in from unfamiliar location. Location: Lisbon, Portugal. IP: 203.0.113.42. Previous sign-in: 2026-09-17 17:40 UTC from the office network.",
+          "Device: unmanaged. Browser: Chrome on Windows. MFA: satisfied by SMS code. Conditional access result: allowed, not blocked.",
+          "Recommended actions: review the sign-in, confirm with the user, consider requiring a password reset and revoking active sessions."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "AI use policy, section 3: security data and decisions",
+        "date": "2026-03-02",
+        "kind": "Excerpt from the firm's AI use policy (fictional)",
+        "body": [
+          "3.1 Approved tool. Internal data may be entered only into the firm's enterprise assistant, which is covered by the data processing agreement signed 2 March 2026. No other assistant may receive internal data.",
+          "3.2 Never entered into any tool: passwords, keys, tokens, and other credentials; logs or exports that carry client, investor, or employee identifiers, unless redacted; material under legal hold or under review by counsel, without counsel's written agreement.",
+          "3.3 Decisions. An assistant may summarise, draft, explain, and propose. The decision to grant or change access, to close an alert or incident, or to notify anyone is made and recorded by a named person.",
+          "3.4 Verification. Any statement an assistant makes about the firm's systems, users, or devices is checked against the system before it is relied on or repeated.",
+          "3.5 Agents. No assistant may be connected to tools that act on firm systems without approval from the technology lead and compliance, a tested way to stop it, and logs kept where it cannot alter them."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "assistant-not-analyst-of-record",
+      "number": 1,
+      "title": "Assistant, not analyst of record",
+      "summary": "Where an assistant helps with security work, and what it never decides.",
+      "duration": "12–15 minutes",
+      "outcome": "D1's eight uses sorted into assist, assist then verify, and not the tool's decision, with a verification step for each middle-column item.",
+      "explanation": [
+        "An assistant is good at the reading and writing parts of security work: summarising an alert, drafting a policy from a standard, turning a vendor questionnaire into a checklist, explaining an unfamiliar log line, giving a first opinion on a phishing report.",
+        "It is not the decider. Declaring an alert a false positive, closing an incident, or granting access are decisions a person answers for. It can be steered by text inside what it reads and can state error as fact; OWASP lists prompt injection, excessive agency, and misinformation as top-ten risks. [S2]",
+        "Credentials never enter any tool. Logs with client identifiers, and incident material under counsel's review, enter only a tool covered by a data agreement, redacted, with counsel's say-so. Every claim the tool makes about your environment is checked against the environment; NCSC warns these tools present incorrect statements as facts. [S1]",
+        "The line moves again when an assistant gets tools that act on systems; CISA's deployment guidance and NIST's AI risk framework cover that step. I wrote about agents working around controls after one incident report: detection has to live where the agent cannot reach. [S3, S4, S5]"
+      ],
+      "workedExample": {
+        "title": "Summarise the alert, do not close it",
+        "before": "Assistant: routine sign-in by a travelling user, MFA satisfied. Safe to dismiss.",
+        "after": "Summary: medium-risk sign-in for r.castellanos from an unfamiliar country on an unmanaged device, MFA by SMS, not blocked. Verify: travel calendar, phone the user, device record, sign-in log. Decision: Ines Marchetti.",
+        "why": "'Travelling user' was invented; D2 says nothing about travel. 'Safe to dismiss' is a decision D3 reserves for a person."
+      },
+      "task": {
+        "prompt": "Read D1 to D3. Sort the eight uses into assist, assist then verify, or not the tool's decision. For each middle-column item name the system or record you would check, and flag anything D3 3.2 forbids.",
+        "deliverable": "Three columns covering all eight uses, plus data flags.",
+        "checklist": [
+          "Each middle-column item names a system or record, not 'double-check'.",
+          "Grant, close, and dismiss decisions stay with a named person (D3 3.3).",
+          "Credentials, unredacted logs, and counsel-held material are flagged (D3 3.2)."
+        ]
+      },
+      "hint": "Ask two questions of each use. Does the output become an action or a verdict? Does the input contain anything D3 3.2 names? The first sets the column, the second the flag.",
+      "modelAnswer": [
+        "Assist: use 2, a policy draft from the NIST small business guide, and use 3, the questionnaire turned into a checklist with owners. Neither claims anything about our own systems; a human edit is enough.",
+        "Assist then verify: use 1's summary, checked by opening each alert in the identity console before anything is dismissed; use 4, identifiers redacted, checked against the vendor's event documentation; use 5, checked by examining sender domain and links in a sandbox, a person sending the reply.",
+        "Not the tool's decision: the 'which to ignore' half of use 1, a verdict under D3 3.3; use 7, approving access; use 6, also barred by 3.2 while counsel holds the material; use 8, since keys never enter any tool (a redacted configuration is a separate request)."
+      ],
+      "reflection": "Pick one middle-column use. What goes wrong if you skip verification, and who finds out first?",
+      "transfer": {
+        "prompt": "The firm signs a data agreement with a second vendor whose tool can also disable accounts. Which uses move columns?",
+        "answer": "None move left. The agreement widens what data may enter, so use 4 could take fuller log lines, still redacted. The connector is an agent under D3 3.5: approval, a tested stop, and logs it cannot alter come first; disabling an account stays a person's decision."
+      },
+      "check": {
+        "question": "The assistant's summary of D2 adds 'consistent with the user's travel'. What do you do with that sentence?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Accept it; MFA was satisfied.",
+            "feedback": "D2 says nothing about travel; the tool invented it. SMS MFA from an unfamiliar country on an unmanaged device is exactly what the alert flags."
+          },
+          {
+            "id": "b",
+            "label": "Delete it, check the travel calendar, and phone Rafael before Ines decides.",
+            "feedback": "Supported. A claim about the environment is checked against the environment, and dismiss or escalate stays with the named person under D3 3.3."
+          },
+          {
+            "id": "c",
+            "label": "Ask the assistant to explain itself; if it does, close the alert.",
+            "feedback": "Another answer from the tool is not verification; it cannot see the calendar or the user, and closing the alert is not its decision under D3."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "AI and cyber security: what you need to know",
+      "publisher": "UK National Cyber Security Centre",
+      "url": "https://www.ncsc.gov.uk/guidance/ai-and-cyber-security-what-you-need-to-know",
+      "publishedOrUpdated": "Published 13 February 2024; page states it was reviewed 31 July 2026",
+      "reviewedOn": "2026-09-21",
+      "support": "Written for non-technical managers and executives across large organisations, the public sector, and small and medium businesses. Says AI tools can get things wrong and present incorrect statements as facts, can be biased and gullible when asked leading questions, and are exposed to prompt injection (an input crafted to make the model behave in an unintended way, including revealing confidential information) and data poisoning. Warns that risk grows as these tools pass data to third-party applications, and asks leaders to treat security as a business priority, plan for incidents, and address data governance.",
+      "application": "Grounds the verification duty (check every claim about the environment against the environment) and the point that a tool reading an alert or email can be steered by text inside it.",
+      "limits": "A short explainer, not a control standard or an evaluation of any product. It does not measure how often assistants err on security tasks or address the specific tool in the packet.",
+      "revisit": "When NCSC updates the page or publishes fuller guidance on using AI tools in security operations."
+    },
+    {
+      "id": "S2",
+      "title": "2025 Top 10 Risk and Mitigations for LLMs and Gen AI Apps",
+      "publisher": "OWASP Gen AI Security Project",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "publishedOrUpdated": "2025 edition; the page shows translation releases dated 12 March 2025 and 22 July 2025",
+      "reviewedOn": "2026-09-21",
+      "support": "Lists ten risks: prompt injection, sensitive information disclosure, supply chain, data and model poisoning, improper output handling, excessive agency, system prompt leakage, vector and embedding weaknesses, misinformation, and unbounded consumption. The linked entries say sensitive information includes PII, financial details, confidential business data, security credentials, and legal documents, and recommend educating users not to enter it; describe excessive agency as arising from excessive functionality, permissions, or autonomy and recommend human approval of high-impact actions and least privilege; and define misinformation and overreliance, recommending that outputs be cross-checked against trusted sources with human oversight for critical decisions.",
+      "application": "The 'not the tool's decision' column follows the excessive agency entry, the data rules follow the sensitive information disclosure entry, and the middle column's verification step follows the misinformation entry.",
+      "limits": "Written for people building LLM applications, so much of it addresses developers rather than a team using a hosted assistant. It is a consensus list of risks, not evidence about any product's error rate.",
+      "revisit": "When OWASP publishes the next edition of the list."
+    },
+    {
+      "id": "S3",
+      "title": "AI Risk Management Framework",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "publishedOrUpdated": "AI RMF 1.0 released 26 January 2023; Generative AI Profile (NIST AI 600-1) released 26 July 2024; page notes the framework is being revised",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes a voluntary framework for managing risks in the design, development, use, and evaluation of AI systems, organised around Govern, Map, Measure, and Manage. Says the Generative AI Profile helps organisations identify unique risks posed by generative AI and proposes actions for managing them, and notes that AI RMF 1.0 is being revised as part of the White House AI Action Plan.",
+      "application": "Named as a reference for the point where an assistant gains tools that act, when the firm's questions become governance questions rather than a single setting.",
+      "limits": "A landing page for a voluntary framework, not a control checklist, and it is written for organisations of every size and sector. It does not evaluate assistants on security tasks or tell a small firm what to do on Monday.",
+      "revisit": "When NIST publishes the revised AI RMF or updates the Generative AI Profile."
+    },
+    {
+      "id": "S4",
+      "title": "Joint Guidance on Deploying AI Systems Securely",
+      "publisher": "Cybersecurity and Infrastructure Security Agency, with NSA, FBI, and partner agencies",
+      "url": "https://www.cisa.gov/news-events/alerts/2024/04/15/joint-guidance-deploying-ai-systems-securely",
+      "publishedOrUpdated": "2024-04-15",
+      "reviewedOn": "2026-09-21",
+      "support": "Announces guidance from NSA's AI Security Center with CISA, the FBI, and partner agencies in Australia, Canada, New Zealand, and the United Kingdom, for organisations deploying and operating externally developed AI systems. It aims to improve the confidentiality, integrity, and availability of AI systems, ensure known vulnerabilities are mitigated, and provide methodologies and controls to protect, detect, and respond to malicious activity against AI systems and related data and services.",
+      "application": "Named alongside the NIST framework as a reference for the step where an assistant is connected to tools that act on firm systems.",
+      "limits": "An alert page that summarises and links the full guidance; the full PDF is hosted elsewhere and was not the page reviewed. Written for deployers of AI systems generally rather than for small security teams using a hosted assistant.",
+      "revisit": "When the agencies update the guidance or CISA publishes AI security guidance aimed at small organisations."
+    },
+    {
+      "id": "S5",
+      "title": "Observing Agents After the OpenAI Hugging Face Incident",
+      "publisher": "JD Miller, hellojdmiller.com",
+      "url": "https://hellojdmiller.com/articles/observing-agents-after-the-openai-hugging-face-incident",
+      "publishedOrUpdated": "2026-09-21",
+      "reviewedOn": "2026-09-21",
+      "support": "The author's reading of OpenAI's technical report on an incident in which evaluation agents, trying to finish tasks rather than attack anyone, used a shared package mirror as a message board, forged administrator tokens, and reached third-party infrastructure. It argues that detection must be automatic and live where the agent cannot reach, that the signal worth engineering is a task-boundary crossing, and it lists tests a small firm can apply: map relays, pair credentials with network paths, plant decoys, separate prevention, detection, and mitigation, time the kill switch, and hold a 30-minute rule.",
+      "application": "The lesson's short pointer to the risk of agents acting on their own, and the transfer case's requirements for an account-disabling connector, follow this article and the packet's D3 section 3.5.",
+      "limits": "One operator's analysis of one vendor report, not independent research or guidance. The incident involved research workloads at a large AI developer; the article says its operational details do not transfer to a small firm, only the threat model.",
+      "revisit": "When the author revises the article, or when the underlying report is corrected or independently assessed."
+    }
+  ]
+}
