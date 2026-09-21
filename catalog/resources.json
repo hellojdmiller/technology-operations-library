@@ -642,6 +642,13 @@
       "description": "Compare supplied recovery evidence with each workload's objectives. This separates the time a backup job finished from the age of the data it protects, and separates backup evidence from measured restore performance."
     },
     {
+      "title": "Baseline evidence freshness",
+      "collection": "n8n workflows",
+      "path": "n8n/baseline-evidence-freshness/README.md",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
+      "description": "Read an observations document in the baselines schema, compare each control's observed_at against its max_evidence_age_days, and produce reminders grouped by control owner. The useful question is who needs to collect or refresh evidence before…"
+    },
+    {
       "title": "Change readiness review",
       "collection": "n8n workflows",
       "path": "n8n/change-readiness-review/README.md",
@@ -654,6 +661,13 @@
       "path": "n8n/joiner-mover-leaver-review/README.md",
       "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Check lifecycle cases against a declared task catalog and case-specific additions. The useful question is whether approved scope has corresponding completion evidence, including removal of prior access after a move and handover after a…"
+    },
+    {
+      "title": "MFA coverage reconciliation",
+      "collection": "n8n workflows",
+      "path": "n8n/mfa-coverage-reconciliation/README.md",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
+      "description": "Reconcile a fictional identity export (users, registered MFA methods, last sign-in) against an HR roster and a privileged-role list. The output is a review queue, not a score: accounts with no method or only weak methods, privileged accounts…"
     },
     {
       "title": "Operations brief",
@@ -670,11 +684,32 @@
       "description": "Build a review queue from supplied remediation observations, local deadlines, and exception records. Keep uncertain applicability, stale verification, exploitation concerns, and overdue work visible. An exception is a decision to manage risk…"
     },
     {
+      "title": "Phishing report triage",
+      "collection": "n8n workflows",
+      "path": "n8n/phishing-report-triage/README.md",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
+      "description": "Triage user-reported messages from a supplied summary: a header subset, sender fields, URL strings, and attachment names. The node parses SPF, DKIM, and DMARC results from an Authentication-Results string, checks the sender domain against the…"
+    },
+    {
       "title": "SaaS license reconciliation",
       "collection": "n8n workflows",
       "path": "n8n/saas-license-reconciliation/README.md",
       "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
       "description": "Compare purchased seats, application assignments, workforce status, and usage to prepare a license review. The output separates spare capacity from unused or departed-user candidates and keeps technical accounts out of automatic reclamation."
+    },
+    {
+      "title": "Secret exposure response",
+      "collection": "n8n workflows",
+      "path": "n8n/secret-exposure-response/README.md",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
+      "description": "Turn a batch of secret-scanning alerts into a per-alert rotation checklist, a time-to-revoke status, and a ticket draft. The evaluator classifies each alert with a supplied secret-type policy, finds the owning service in a supplied catalog, and…"
+    },
+    {
+      "title": "Security signal brief",
+      "collection": "n8n workflows",
+      "path": "n8n/security-signal-brief/README.md",
+      "readiness": "n8n 2.39.8 CLI import/execution checked; real integrations untested",
+      "description": "Draft a daily security brief from four collector exports: identity risk events, endpoint and mail alerts, GitHub Dependabot and secret scanning alerts, and Cloudflare audit events. The node normalizes each record, applies a small routing table…"
     },
     {
       "title": "Vendor renewal triage",
@@ -716,7 +751,7 @@
       "collection": "Runtime labs",
       "path": "labs/n8n-runtime/README.md",
       "readiness": "Pinned n8n CLI runtime checked with fictional inputs; production integrations untested",
-      "description": "Reproduce 32 isolated CLI import and execution cases across ten workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup."
+      "description": "Reproduce 47 isolated CLI import and execution cases across fifteen workflows using a pinned n8n image. Check fictional outputs, incomplete evidence, zero-item input, technical failure, and cleanup."
     },
     {
       "title": "Agent security: an offline control lab",

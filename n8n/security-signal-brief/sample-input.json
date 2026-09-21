@@ -1,0 +1,45 @@
+[
+  {
+    "reviewId": "tol-security-brief-2026-09-20",
+    "asOf": "2026-09-20",
+    "snapshotComplete": true,
+    "evidenceRef": "fixture://security-signal-export-2026-09-20",
+    "previousBriefRef": "fixture://security-brief-2026-09-19",
+    "decisionAfterDays": 3,
+    "aiDrafting": { "enabled": false },
+    "sources": {
+      "identityRiskEvents": [
+        { "id": "idr-1001", "detectedAt": "2026-09-20T06:42:00Z", "user": "treasury-ops@northwind-ledger.example", "riskLevel": "high", "riskState": "confirmedCompromised", "detectionType": "anomalousToken" },
+        { "id": "idr-1002", "detectedAt": "2026-09-18T14:05:00Z", "user": "fund-admin@northwind-ledger.example", "riskLevel": "medium", "riskState": "remediated", "detectionType": "unfamiliarFeatures" },
+        { "id": "idr-1003", "detectedAt": "2026-09-19T09:30:00Z", "user": "", "riskLevel": "medium", "riskState": "atRisk", "detectionType": "unfamiliarFeatures" }
+      ],
+      "endpointAndMailAlerts": [
+        { "id": "ep-2001", "createdAt": "2026-09-18T11:20:00Z", "title": "Malware detected and quarantined", "severity": "high", "status": "resolved", "category": "Malware", "assetOrMailbox": "NLP-LAPTOP-017" },
+        { "id": "ep-2002", "createdAt": "2026-09-20T02:15:00Z", "title": "User reported phishing message, no click recorded", "severity": "informational", "status": "new", "category": "Phishing", "assetOrMailbox": "investor-relations@northwind-ledger.example" },
+        { "id": "ep-2003", "createdAt": "2026-09-19T16:40:00Z", "title": "Unusual sign-in location for mailbox", "severity": "medium", "status": "inProgress", "category": "SuspiciousActivity", "assetOrMailbox": "fund-admin@northwind-ledger.example" }
+      ],
+      "githubAlerts": [
+        { "id": "gh-3001", "createdAt": "2026-09-19T17:45:00Z", "kind": "dependabot", "repository": "northwind-ledger/ledger-api", "severity": "critical", "state": "open" },
+        { "id": "gh-3002", "createdAt": "2026-09-20T01:10:00Z", "kind": "secret_scanning", "repository": "northwind-ledger/ledger-api", "secretType": "webhook_signing_secret", "state": "open" }
+      ],
+      "cloudflareAuditEvents": [
+        { "id": "cf-4001", "when": "2026-09-19T21:03:00Z", "actorEmail": "edge-admin@northwind-ledger.example", "action": "waf.rule.disable", "resourceType": "waf_rule", "resourceId": "tol-waf-rule-0042", "interface": "UI" },
+        { "id": "cf-4002", "when": "2026-09-20T08:12:00Z", "actorEmail": "ops-admin@northwind-ledger.example", "action": "account.member.add", "resourceType": "account_member", "resourceId": "tol-member-0917", "interface": "API" }
+      ]
+    },
+    "routing": [
+      { "ruleId": "r-idp-compromised", "source": "identityRiskEvents", "match": { "field": "riskState", "equals": "confirmedCompromised" }, "severity": "critical", "ownerRole": "Identity owner" },
+      { "ruleId": "r-idp-high", "source": "identityRiskEvents", "match": { "field": "riskLevel", "equals": "high" }, "severity": "high", "ownerRole": "Identity owner" },
+      { "ruleId": "r-idp-medium", "source": "identityRiskEvents", "match": { "field": "riskLevel", "equals": "medium" }, "severity": "medium", "ownerRole": "Identity owner" },
+      { "ruleId": "r-ep-malware", "source": "endpointAndMailAlerts", "match": { "field": "category", "equals": "Malware" }, "severity": "high", "ownerRole": "Endpoint and mail owner" },
+      { "ruleId": "r-ep-phishing", "source": "endpointAndMailAlerts", "match": { "field": "category", "equals": "Phishing" }, "severity": "medium", "ownerRole": "Endpoint and mail owner" },
+      { "ruleId": "r-ep-suspicious", "source": "endpointAndMailAlerts", "match": { "field": "category", "equals": "SuspiciousActivity" }, "severity": "medium", "ownerRole": "Endpoint and mail owner" },
+      { "ruleId": "r-gh-dependabot-critical", "source": "githubAlerts", "match": { "field": "severity", "equals": "critical" }, "severity": "critical", "ownerRole": "Platform lead" },
+      { "ruleId": "r-gh-dependabot-high", "source": "githubAlerts", "match": { "field": "severity", "equals": "high" }, "severity": "high", "ownerRole": "Platform lead" },
+      { "ruleId": "r-gh-secret-cloud-key", "source": "githubAlerts", "match": { "field": "secretType", "equals": "cloud_provider_access_key" }, "severity": "critical", "ownerRole": "Platform lead" },
+      { "ruleId": "r-cf-waf-disable", "source": "cloudflareAuditEvents", "match": { "field": "action", "equals": "waf.rule.disable" }, "severity": "high", "ownerRole": "Edge and DNS owner" },
+      { "ruleId": "r-cf-dns-delete", "source": "cloudflareAuditEvents", "match": { "field": "action", "equals": "zone.dns_record.delete" }, "severity": "high", "ownerRole": "Edge and DNS owner" }
+    ],
+    "closedSince": ["endpointAndMailAlerts:ep-2003", "githubAlerts:gh-2999"]
+  }
+]

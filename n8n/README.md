@@ -1,6 +1,6 @@
 # n8n workflows
 
-Ten practical examples to test before connecting a workflow to real systems. They prepare review outputs from supplied evidence and fictional data.
+Fifteen practical examples to test before connecting a workflow to real systems. They prepare review outputs from supplied evidence and fictional data. Ten cover IT operations reviews; five cover security operations.
 
 | Workflow | Input | Output |
 |---|---|---|
@@ -14,8 +14,13 @@ Ten practical examples to test before connecting a workflow to real systems. The
 | [Joiner, mover, and leaver review](joiner-mover-leaver-review/README.md) | Approved task catalog and lifecycle case evidence | Missing tasks, unsupported completion, and unresolved exceptions |
 | [Backup evidence review](backup-evidence-review/README.md) | Workload objectives, recovery points, and restore-test measurements | Stale data protection, missing tests, and RPO/RTO gaps |
 | [SaaS license reconciliation](saas-license-reconciliation/README.md) | Purchased seats, assignments, workforce, and usage | Capacity mismatches and human review candidates |
+| [Security signal brief](security-signal-brief/README.md) | Fictional identity-risk, endpoint/mail, GitHub, and Cloudflare exports with a routing table | A daily brief in the leadership-brief structure: what changed, what needs a decision, what is unknown, what was closed |
+| [Secret exposure response](secret-exposure-response/README.md) | Secret-scanning alerts, a service catalog, and a secret-type policy | Classified alerts, owner lookups, rotation checklists, time-to-revoke tracking, and ticket drafts, with ownerless alerts kept unknown |
+| [Baseline evidence freshness](baseline-evidence-freshness/README.md) | A baselines-schema observations file, control list, and owner map | Stale or missing evidence and expiring exceptions as reminders grouped by control owner |
+| [Phishing report triage](phishing-report-triage/README.md) | User-reported message summaries with header subsets, sender fields, and URLs | Parsed SPF/DKIM/DMARC results, sender and lookalike checks, decoded URLs, a triage verdict, and a reporter response template |
+| [MFA coverage reconciliation](mfa-coverage-reconciliation/README.md) | Identity export, HR roster, privileged roles, and a method policy | A review queue: not enrolled, privileged without a phishing-resistant method, unmatched accounts, and roster members without accounts |
 
-Each folder contains a `workflow.json` import, readable `evaluate.js`, and `sample-input.json`. The JSON includes a manual trigger and a sample-data node, so no credentials are needed to try it.
+Each folder contains a `workflow.json` import, readable `evaluate.js`, and `sample-input.json`. The five security examples also carry an `expected-output.json` fixture that the local tests compare against. The JSON includes a manual trigger and a sample-data node, so no credentials are needed to try it.
 
 ## Import and try
 
@@ -26,11 +31,11 @@ Each folder contains a `workflow.json` import, readable `evaluate.js`, and `samp
 
 These examples use Manual Trigger version 1 and Code version 2, with **Run Once for All Items** selected. They have no schedule, webhook, credentials, or external action. A completed n8n execution only means the nodes ran; inspect the returned review status to understand the result.
 
-Local tests exercise the JavaScript, input handling, and exported graph. The [pinned runtime lab](../labs/n8n-runtime/README.md) additionally passed 32 CLI import/execution cases across all ten examples on n8n 2.39.8. Its report records source hashes and the exact image. Editor/UI import, other n8n versions, real collectors, and production integrations need their own trials. Record those observations separately in [VALIDATION.md](../VALIDATION.md).
+Local tests exercise the JavaScript, input handling, and exported graph. The [pinned runtime lab](../labs/n8n-runtime/README.md) additionally passed 47 CLI import/execution cases across all fifteen examples on n8n 2.39.8. Its report records source hashes and the exact image. Editor/UI import, other n8n versions, real collectors, and production integrations need their own trials. Record those observations separately in [VALIDATION.md](../VALIDATION.md).
 
 ## Review packets and results
 
-The eight operational reviews take one item per review packet, with nested arrays defined in each README. An explicit `asOf` makes results reproducible; the fixture dates are illustrative and do not silently advance to today. Stable IDs are compared exactly. Unknowns must remain unknown rather than becoming success, zero, or an empty source.
+The eight operational reviews and the five security reviews take one item per review packet, with nested arrays defined in each README. An explicit `asOf` makes results reproducible; the fixture dates are illustrative and do not silently advance to today. Stable IDs are compared exactly. Unknowns must remain unknown rather than becoming success, zero, or an empty source.
 
 The sample-data node always emits a packet, including when a nested array is empty. If a real collector emits zero n8n items, the next node may not execute; ensure the mapping step still emits a packet with the expected arrays and `snapshotComplete: false` (or `registerComplete: false`). Do not infer completeness from a successful HTTP response or a successful workflow execution.
 
@@ -54,4 +59,6 @@ node scripts/build-workflows.mjs
 node --test tests/*.test.mjs
 ```
 
-References checked 2026-09-17: [import/export](https://docs.n8n.io/build/manage-workflows/export-and-import), [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/), [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/), [error handling](https://docs.n8n.io/build/flow-logic/handle-errors-gracefully).
+The security examples parse supplied exports and header text only. They make no network calls, fetch no URLs, revoke or rotate nothing, and change no account. The signal brief's optional model drafting aid is disabled by default and is a readability step whose output a person reviews against the deterministic sections; the brief is complete without it.
+
+References checked 2026-09-17 (security examples reviewed 2026-09-20 in their own READMEs): [import/export](https://docs.n8n.io/build/manage-workflows/export-and-import), [Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/), [Manual Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/), [error handling](https://docs.n8n.io/build/flow-logic/handle-errors-gracefully).

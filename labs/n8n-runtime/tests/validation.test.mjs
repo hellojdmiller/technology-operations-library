@@ -17,10 +17,10 @@ function completed() {
     },
   } } };
 }
-test('each of ten exports has normal, malformed, and incomplete coverage; all staged copies stay inactive', () => {
-  assert.equal(bundle.sources.length, 10);
-  assert.equal(bundle.cases.length, 32);
-  assert.equal(new Set(bundle.cases.map(item => item.id)).size, 32);
+test('each of fifteen exports has normal, malformed, and incomplete coverage; all staged copies stay inactive', () => {
+  assert.equal(bundle.sources.length, 15);
+  assert.equal(bundle.cases.length, 47);
+  assert.equal(new Set(bundle.cases.map(item => item.id)).size, 47);
   for (const { slug } of bundle.sources) {
     for (const kind of ['fixture', 'malformed', 'incomplete']) assert.equal(bundle.cases.filter(item => item.slug === slug && item.kind === kind).length, 1);
   }

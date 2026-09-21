@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-09-21T02:37:57.046Z",
+  "status": "passed",
+  "n8n_version": "2.39.8",
+  "image": "docker.n8n.io/n8nio/n8n@sha256:b73045abaddb40cb4024e86eea1b1f69093501a7339f685a4cd486b7743d23ae",
+  "node_version": "v26.7.0",
+  "architecture": "arm64",
+  "execution_mode": "cli",
+  "runner_mode": "internal",
+  "source_revision": "1736704d4687bac391e35569747c03742e0d2eef",
+  "source_tree_dirty": false,
+  "sources": [
+    {
+      "slug": "automation-result-review",
+      "workflow_sha256": "f67b8c5a799971e66e3c4f6d0ef269a667caa472ccd4169f6607c84fd90d6fed",
+      "input_sha256": "52bda3f0e11af64d0ab30e2542b01833b712b4d5a4597906b51e820b59b882a0",
+      "evaluator_sha256": "cffc14e0055c16d83b2ee6dba713bbb112f049d8a7ce13b64a47d4d27a2f2629"
+    },
+    {
+      "slug": "operations-brief",
+      "workflow_sha256": "0b751d6698f36fd5608b98cd6c8b96feaaebc54b1dec615f07fd17722c0081c7",
+      "input_sha256": "72c1eb258810a958584fab0a88fcf009efa5a17247de683cb250cc3951be3701",
+      "evaluator_sha256": "f0dbbc9d222d20faa266a133cc3ae876319182aa166c3891dd1a77d4489f6b6e"
+    },
+    {
+      "slug": "access-review-preparation",
+      "workflow_sha256": "848db36f4a2d6a35aa99b300ebfbc9ffeca8e1239dba989aeecb0a7df78d7a16",
+      "input_sha256": "99bcf6786b484442e52ed3d13562ca0801012ce893a630d3e5c27314b9289a95",
+      "evaluator_sha256": "95e3c21b807fab178353ee79c95a5772963ab963d66537f8d4623dfa548ee132"
+    },
+    {
+      "slug": "vendor-renewal-triage",
+      "workflow_sha256": "d68f06c1ed30fe93b943942da38a928ff7700a5b5c4024a3a3434acdb8442214",
+      "input_sha256": "973b0040ad95c084f8b2e822766cd1da0ab0cef3359123f9125cd89f75a93236",
+      "evaluator_sha256": "6b498fbeeb3089d4bbad6919031a1d6272f449dd268565027db3e3a28d2be2b7"
+    },
+    {
+      "slug": "joiner-mover-leaver-review",
+      "workflow_sha256": "0f565d0377320e3fe5f02d04c62f19380a6269fd2cb7816efd480a1a1d16fec8",
+      "input_sha256": "c0f4751eb1489ec9723fd7f035f4d25a6acc67c286aaea919db7d360c07966eb",
+      "evaluator_sha256": "4a27d8ada53e045379e8f4b182a0643fb79c92be5784ca00855b0012329ffff4"
+    },
+    {
+      "slug": "backup-evidence-review",
+      "workflow_sha256": "fe3072976a1a4b76c558c9b4d40bb9822bd930b4bf294e3eba005707115f1608",
+      "input_sha256": "49ae66b08b40f1528241172c31c35c9433b7446771f78a19152fe6bf6989060d",
+      "evaluator_sha256": "8e76a75cac7e54c3d032f3e0e61b5411be10dc2d30c0450d8417914b3c518a18"
+    },
+    {
+      "slug": "saas-license-reconciliation",
+      "workflow_sha256": "7b230bc909ea60735b765011c2d1dd116adb880a33fd332d502cf6d229f8da05",
+      "input_sha256": "50183655e26223a888d39e69f58e922fbf619eacfe70f777af29004d9a07d783",
+      "evaluator_sha256": "b8efa68bdc7eeba70117e0437de16721acb1bcb1a38560facb0f8ea15c2e2484"
+    },
+    {
+      "slug": "change-readiness-review",
+      "workflow_sha256": "8d2cbfcb25f76036ae08d95fc6cf5965e62f442316b74efea975882e47f79b93",
+      "input_sha256": "9bd04ada7892c441859698f83f11945dc3e2e58fec9718def1aa9edc5a008df2",
+      "evaluator_sha256": "6a3b7634168db1963340eafa24bf82dc31d6f6880d6dc836009031df183b07a7"
+    },
+    {
+      "slug": "asset-reconciliation-review",
+      "workflow_sha256": "93c098ebf3f6aae52bd981dcc5351ec24f60cb3c9a355cf8b4632855c51d71ff",
+      "input_sha256": "61b15736d7d9fdf77de22f78433a64cbda2f75973f53566cce6f4e0ade197f4b",
+      "evaluator_sha256": "25f1b4b5a6b2d4aa6f881e37c682162aeca8028bac62014865cc369a4ade2948"
+    },
+    {
+      "slug": "patch-exception-review",
+      "workflow_sha256": "58b885b14724fe9a1f2933d00349e471ac27222f67da75c85069e6558c049c4b",
+      "input_sha256": "18015dde4a75914670055db5c2b858b524b8e326d89cc967ce3a0d0ab858fdb1",
+      "evaluator_sha256": "eae41abc301bb458d4ec0a15b1be1cc957fdb4f101b7f3c2b7d9729a09604c61"
+    },
+    {
+      "slug": "security-signal-brief",
+      "workflow_sha256": "9137536270ec66a4a0b556a6d4e8d2479276f12782642104e32b72fb12c01160",
+      "input_sha256": "f3e4e4d55783e4bc2827eb4e4606ddda2b8874877a69ae3ced7cb7bba2dd3ddf",
+      "evaluator_sha256": "f836bc3bf9579ff6f7dab096b93f3ad4a41837bfdb17203abda6b0dc7b222ea4"
+    },
+    {
+      "slug": "secret-exposure-response",
+      "workflow_sha256": "b6e5661a1dd1a6444f5227a3e24469635df46a43b743a2c6b8fc1612e9c0191e",
+      "input_sha256": "c7a2b69c5d64c7f1d19fa453967984c99f66da38d74f89aff91de49d584cb6c1",
+      "evaluator_sha256": "f9c9630003ce5a77354d73c5bcc42035949e8fa97e1cd636f5a268c8bf7d3d12"
+    },
+    {
+      "slug": "baseline-evidence-freshness",
+      "workflow_sha256": "b657e82e28763ed1cc345e1224bd9a667e1ee0a3c3363abcfb4ed07f4bb7a7c6",
+      "input_sha256": "5b3e51edcc096ee050ef8946d0780aea4f3a82945a417eb474eb37eb709fd46c",
+      "evaluator_sha256": "7b16350fcdbfa09d71c010458dc2bfb6f8ee28c200ae02722a698b54eff0ce02"
+    },
+    {
+      "slug": "phishing-report-triage",
+      "workflow_sha256": "393ccf57031164059180cd8420e4a4e7114d81347b26c7290c5ab07fc5b1ddf3",
+      "input_sha256": "12ba31c793bc6f5fd55c098e3a533ba54da8e2993b2680cf94efc963a2a0df20",
+      "evaluator_sha256": "7862702e4effb9bd48746492d1d60be4ab1cfaa2fc9fda3564da3acf12525228"
+    },
+    {
+      "slug": "mfa-coverage-reconciliation",
+      "workflow_sha256": "520797d95935c5e4c5658bce1fe97f39fda7914f00f21c8e4b1f5a94afaff063",
+      "input_sha256": "788f92b52df2f481ccf57becd1848246c50a6fd576755d7f989791399a166b2d",
+      "evaluator_sha256": "1e0900cfb4bd3c5f224b671a534eb00f5ee6cec13e73b99c2afeb7d1eb314d75"
+    }
+  ],
+  "harness": {
+    "image.json": "4bdb8e669e561d4697342cee798f33575ec9d48a1e239b7b9704e1b27e5efba0",
+    "cases.mjs": "cf98dd847fc0fe8f895a1d295ca6935fc04edaf211d160dac8361323293c9687",
+    "validate.mjs": "cebf284b2079410dee478cb591d1694cfc21131af6a3a9d3264d4964dc6925a2",
+    "container-runner.mjs": "7368d4f06726694190f624490f39fc133ef73cbd7a15e794d736997a91aa8b54",
+    "run.mjs": "097bb0e355f7d9c4fcf899ae81399d03708b19c4efaf1399048030bf5832f05a"
+  },
+  "imported_inactive_workflows": 47,
+  "results": [
+    {
+      "id": "TOLLab0000000001",
+      "slug": "automation-result-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000002",
+      "slug": "automation-result-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000003",
+      "slug": "automation-result-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000004",
+      "slug": "automation-result-review",
+      "case": "zero-items",
+      "passed": true,
+      "observed": "evaluator_not_executed",
+      "output_items": 0,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000005",
+      "slug": "automation-result-review",
+      "case": "technical-failure",
+      "passed": true,
+      "observed": "expected_technical_failure",
+      "output_items": 0,
+      "execution_status": "error",
+      "cli_exit_code": 1
+    },
+    {
+      "id": "TOLLab0000000006",
+      "slug": "operations-brief",
+      "case": "fixture",
+      "passed": true,
+      "observed": "draft_ready",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000007",
+      "slug": "operations-brief",
+      "case": "malformed",
+      "passed": true,
+      "observed": "needs_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000008",
+      "slug": "operations-brief",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000009",
+      "slug": "access-review-preparation",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000010",
+      "slug": "access-review-preparation",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000011",
+      "slug": "access-review-preparation",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000012",
+      "slug": "vendor-renewal-triage",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000013",
+      "slug": "vendor-renewal-triage",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000014",
+      "slug": "vendor-renewal-triage",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000015",
+      "slug": "joiner-mover-leaver-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000016",
+      "slug": "joiner-mover-leaver-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000017",
+      "slug": "joiner-mover-leaver-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000018",
+      "slug": "backup-evidence-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000019",
+      "slug": "backup-evidence-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000020",
+      "slug": "backup-evidence-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000021",
+      "slug": "saas-license-reconciliation",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000022",
+      "slug": "saas-license-reconciliation",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000023",
+      "slug": "saas-license-reconciliation",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000024",
+      "slug": "change-readiness-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000025",
+      "slug": "change-readiness-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000026",
+      "slug": "change-readiness-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000027",
+      "slug": "asset-reconciliation-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000028",
+      "slug": "asset-reconciliation-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000029",
+      "slug": "asset-reconciliation-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000030",
+      "slug": "patch-exception-review",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000031",
+      "slug": "patch-exception-review",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000032",
+      "slug": "patch-exception-review",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000033",
+      "slug": "security-signal-brief",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000034",
+      "slug": "security-signal-brief",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000035",
+      "slug": "security-signal-brief",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000036",
+      "slug": "secret-exposure-response",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000037",
+      "slug": "secret-exposure-response",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000038",
+      "slug": "secret-exposure-response",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000039",
+      "slug": "baseline-evidence-freshness",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000040",
+      "slug": "baseline-evidence-freshness",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000041",
+      "slug": "baseline-evidence-freshness",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000042",
+      "slug": "phishing-report-triage",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000043",
+      "slug": "phishing-report-triage",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000044",
+      "slug": "phishing-report-triage",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000045",
+      "slug": "mfa-coverage-reconciliation",
+      "case": "fixture",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000046",
+      "slug": "mfa-coverage-reconciliation",
+      "case": "malformed",
+      "passed": true,
+      "observed": "invalid_input",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    },
+    {
+      "id": "TOLLab0000000047",
+      "slug": "mfa-coverage-reconciliation",
+      "case": "incomplete",
+      "passed": true,
+      "observed": "needs_review",
+      "output_items": 1,
+      "execution_status": "success",
+      "cli_exit_code": 0
+    }
+  ],
+  "warnings": [
+    "Python runner unavailable; this lab exercises JavaScript nodes only.",
+    "Node emitted its experimental localStorage warning."
+  ],
+  "finished_at": "2026-09-21T02:39:28.541Z",
+  "docker_image_id": "sha256:b73045abaddb40cb4024e86eea1b1f69093501a7339f685a4cd486b7743d23ae"
+}

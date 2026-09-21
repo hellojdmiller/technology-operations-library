@@ -1,6 +1,6 @@
 # A reproducible n8n runtime lab
 
-Import the library's ten workflow exports into a disposable n8n instance, run their fictional inputs, and inspect both execution state and review output. This closes the gap between testing JavaScript locally and observing the exported graph inside n8n.
+Import the library's fifteen workflow exports into a disposable n8n instance, run their fictional inputs, and inspect both execution state and review output. This closes the gap between testing JavaScript locally and observing the exported graph inside n8n.
 
 The lab pins **n8n 2.39.8 by image digest**, uses CLI import/execution, and leaves every workflow inactive. It publishes no ports, has no external network, mounts only staged fictional workflows and lab code, and stores the database in temporary memory. It never connects to an existing n8n instance or uses tenant credentials.
 
@@ -25,13 +25,13 @@ The command prints each case result and writes a dated directory under ignored `
 
 A failed assertion, missing report, incomplete run, or unverified cleanup exits nonzero. The runner attempts cleanup on completion, failure, and interruption. If Docker is unavailable during cleanup, it reports the exact container name and retains staged input for investigation. After an abrupt host crash, inspect containers named `tol-n8n-lab-*`; do not remove unrelated containers.
 
-## What the 32 cases establish
+## What the 47 cases establish
 
 | Cases | Check |
 |---|---|
-| Ten canonical fixtures | The imported three-node graph executes and its JSON payload matches the local evaluator reference. |
-| Ten malformed inputs | Invalid business input produces the documented review status instead of an invented valid result. |
-| Ten incomplete-evidence inputs | Missing evidence or ownership stays explicit; the eight packet-based reviews also retain incomplete-snapshot findings. |
+| Fifteen canonical fixtures | The imported three-node graph executes and its JSON payload matches the local evaluator reference. |
+| Fifteen malformed inputs | Invalid business input produces the documented review status instead of an invented valid result. |
+| Fifteen incomplete-evidence inputs | Missing evidence or ownership stays explicit; the eight packet-based operations reviews and the five security reviews also retain incomplete-snapshot findings. |
 | One zero-item source | n8n completes the execution without running the review node. This is recorded as `evaluator_not_executed`, with no business review result. |
 | One deliberate technical failure | The final node and execution must report the exact expected error; a CLI exit code alone cannot establish success. |
 
@@ -44,6 +44,8 @@ The reference comparison runs the same evaluator outside n8n, **inside the isola
 ## Observed validation
 
 The September 19, 2026 local run completed **32/32 cases across ten source workflows**, using n8n 2.39.8 on Linux arm64 in Docker. See the [dated machine-readable result](validation-2026-09-19.json) and [repository validation record](../../VALIDATION.md). The result identifies source hashes and the exact harness used; it does not imply that every later revision has been tested.
+
+The September 20, 2026 local run, after the five security-operations examples were added, completed **47/47 cases across fifteen source workflows** on the same pinned image (n8n 2.39.8, Linux arm64), with container and staged-input cleanup verified. The [dated result](validation-2026-09-20.json) records the committed source revision, source and harness hashes, and the same two warnings as the earlier run. The September 19 file is retained as historical evidence for the ten-workflow edition.
 
 The image reported Node.js v26.7.0. Its unavailable Python runner and experimental localStorage warning were recorded. Every workflow in this collection uses JavaScript Code nodes, and those cases passed. Python nodes are not covered.
 

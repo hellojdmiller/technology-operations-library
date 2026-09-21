@@ -8,6 +8,8 @@ export const slugs = [
   'vendor-renewal-triage', 'joiner-mover-leaver-review', 'backup-evidence-review',
   'saas-license-reconciliation', 'change-readiness-review',
   'asset-reconciliation-review', 'patch-exception-review',
+  'security-signal-brief', 'secret-exposure-response', 'baseline-evidence-freshness',
+  'phishing-report-triage', 'mfa-coverage-reconciliation',
 ];
 export const failureMessage = 'TOL_EXPECTED_TECHNICAL_FAILURE';
 const sampleCode = inputs => `return ${JSON.stringify(inputs, null, 2)}.map(json => ({ json }));`;
