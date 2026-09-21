@@ -2,11 +2,11 @@
 id: "doodle"
 name: "Doodle"
 kind: "company"
-wikidata: null
+wikidata: "Q1242413"
 website: "https://doodle.com"
-businessType: null
-hqCountry: null
-founded: null
+businessType: "private-company"
+hqCountry: "CH"
+founded: 2008
 openSource: false
 categories: ["scheduling"]
 segments: ["smb", "personal"]
@@ -20,7 +20,11 @@ tags: ["collaboration-and-content/scheduling", "segment/smb", "segment/personal"
 Doodle provides group polls and booking pages for scheduling.
 
 - Website: <https://doodle.com>
+- Wikidata: [Q1242413](https://www.wikidata.org/wiki/Q1242413)
 - Kind: company
+- Business type: private-company
+- Headquarters country: CH
+- Founded or first released: 2008
 - Open source: no
 
 ## Categories
@@ -38,5 +42,6 @@ Segments: [[SMB]], [[Personal]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://doodle.com>
+- <https://www.wikidata.org/wiki/Q1242413>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

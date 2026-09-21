@@ -2,11 +2,11 @@
 id: "manus"
 name: "Manus"
 kind: "company"
-wikidata: null
+wikidata: "Q133102805"
 website: "https://manus.im"
 businessType: null
 hqCountry: null
-founded: null
+founded: 2025
 openSource: false
 categories: ["ai-agents-and-automation", "consumer-ai"]
 segments: ["smb", "personal"]
@@ -20,7 +20,9 @@ tags: ["data-and-ai/ai-agents-and-automation", "personal/consumer-ai", "segment/
 Manus is a general-purpose autonomous agent product.
 
 - Website: <https://manus.im>
+- Wikidata: [Q133102805](https://www.wikidata.org/wiki/Q133102805)
 - Kind: company
+- Founded or first released: 2025
 - Open source: no
 
 ## Categories
@@ -39,5 +41,6 @@ Segments: [[SMB]], [[Personal]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://manus.im>
+- <https://www.wikidata.org/wiki/Q133102805>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

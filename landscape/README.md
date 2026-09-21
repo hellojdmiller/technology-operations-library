@@ -29,7 +29,7 @@ Only open, citable sources were used. Each vendor's `sources` array lists the UR
 
 Rules that were followed and that contributors should keep:
 
-- A vendor is resolved to a Wikidata item only when the item's official website matches the vendor's website (or its label and registrable domain both match). Vendors without a confident match have `wikidata: null`, and their Wikidata-derived fields stay null rather than being guessed. 465 of 825 vendors currently carry an item.
+- A vendor is resolved to a Wikidata item only when the item's official website matches the vendor's website (or its label and registrable domain both match). Vendors without a confident match have `wikidata: null`, and their Wikidata-derived fields stay null rather than being guessed. 486 of 825 vendors currently carry an item.
 - Every relation URL was fetched by `lib/check-sources.mjs` and kept only if the server returned a page (2xx or 3xx, or a 401, 403, 405, or 429 that shows the page exists behind an automated-client block). Candidates whose URL returned 404 or failed to resolve were dropped.
 - Summaries are one neutral sentence describing what the vendor does. No marketing language, no rankings, no pricing.
 - No licensed datasets. Commercial company-data products appear as vendor nodes because operators use them, but none of them was used as a source; their facts come from Wikidata and their own websites.

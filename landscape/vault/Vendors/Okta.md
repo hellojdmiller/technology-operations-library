@@ -2,11 +2,11 @@
 id: "okta"
 name: "Okta"
 kind: "company"
-wikidata: null
+wikidata: "Q55627388"
 website: "https://www.okta.com"
-businessType: null
-hqCountry: null
-founded: null
+businessType: "public-company"
+hqCountry: "US"
+founded: 2009
 openSource: false
 categories: ["identity-provider", "privileged-access-and-identity-governance"]
 segments: ["enterprise", "smb"]
@@ -20,7 +20,11 @@ tags: ["identity-and-devices/identity-provider", "identity-and-devices/privilege
 Okta provides cloud identity, single sign-on, lifecycle, and identity governance services for workforce and customer applications.
 
 - Website: <https://www.okta.com>
+- Wikidata: [Q55627388](https://www.wikidata.org/wiki/Q55627388)
 - Kind: company
+- Business type: public-company
+- Headquarters country: US
+- Founded or first released: 2009
 - Open source: no
 
 ## Categories
@@ -209,5 +213,6 @@ Segments: [[Enterprise]], [[SMB]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://www.okta.com>
+- <https://www.wikidata.org/wiki/Q55627388>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

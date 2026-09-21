@@ -3415,7 +3415,7 @@
       "id": "box",
       "name": "Box",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q61974703",
       "website": "https://www.box.com",
       "summary": "Box provides cloud content management, governance, and e-signature for enterprises.",
       "categories": [
@@ -3429,12 +3429,13 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
+      "businessType": "private-company",
       "hqCountry": null,
-      "founded": null,
+      "founded": 2005,
       "openSource": false,
       "sources": [
-        "https://www.box.com"
+        "https://www.box.com",
+        "https://www.wikidata.org/wiki/Q61974703"
       ]
     },
     {
@@ -4352,7 +4353,7 @@
       "id": "claude",
       "name": "Claude",
       "kind": "product",
-      "wikidata": null,
+      "wikidata": "Q118876059",
       "website": "https://claude.ai",
       "summary": "Claude is the assistant product of Anthropic available on web, desktop, and mobile.",
       "categories": [
@@ -4367,12 +4368,13 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "private-company",
+      "hqCountry": "US",
+      "founded": 2023,
       "openSource": false,
       "sources": [
-        "https://claude.ai"
+        "https://claude.ai",
+        "https://www.wikidata.org/wiki/Q118876059"
       ]
     },
     {
@@ -4534,7 +4536,7 @@
       "id": "cline",
       "name": "Cline",
       "kind": "open-source-project",
-      "wikidata": null,
+      "wikidata": "Q139387331",
       "website": "https://cline.bot",
       "summary": "Cline is an open-source autonomous coding agent for VS Code.",
       "categories": [
@@ -4553,7 +4555,8 @@
       "founded": null,
       "openSource": true,
       "sources": [
-        "https://cline.bot"
+        "https://cline.bot",
+        "https://www.wikidata.org/wiki/Q139387331"
       ]
     },
     {
@@ -4586,7 +4589,7 @@
       "id": "clockwise",
       "name": "Clockwise",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q115350741",
       "website": "https://www.getclockwise.com",
       "summary": "Clockwise is a calendar optimization and scheduling assistant for teams.",
       "categories": [
@@ -4604,7 +4607,8 @@
       "founded": null,
       "openSource": false,
       "sources": [
-        "https://www.getclockwise.com"
+        "https://www.getclockwise.com",
+        "https://www.wikidata.org/wiki/Q115350741"
       ]
     },
     {
@@ -5460,7 +5464,7 @@
       "id": "dagger",
       "name": "Dagger",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q111654952",
       "website": "https://dagger.io",
       "summary": "Dagger provides a programmable, containerized CI/CD engine with an open-source core.",
       "categories": [
@@ -5478,7 +5482,8 @@
       "founded": null,
       "openSource": true,
       "sources": [
-        "https://dagger.io"
+        "https://dagger.io",
+        "https://www.wikidata.org/wiki/Q111654952"
       ]
     },
     {
@@ -6365,7 +6370,7 @@
       "id": "domo",
       "name": "Domo",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q5291323",
       "website": "https://www.domo.com",
       "summary": "Domo provides a cloud business intelligence and data platform.",
       "categories": [
@@ -6377,19 +6382,20 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "public-company",
+      "hqCountry": "US",
+      "founded": 2010,
       "openSource": false,
       "sources": [
-        "https://www.domo.com"
+        "https://www.domo.com",
+        "https://www.wikidata.org/wiki/Q5291323"
       ]
     },
     {
       "id": "doodle",
       "name": "Doodle",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q1242413",
       "website": "https://doodle.com",
       "summary": "Doodle provides group polls and booking pages for scheduling.",
       "categories": [
@@ -6402,12 +6408,13 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "private-company",
+      "hqCountry": "CH",
+      "founded": 2008,
       "openSource": false,
       "sources": [
-        "https://doodle.com"
+        "https://doodle.com",
+        "https://www.wikidata.org/wiki/Q1242413"
       ]
     },
     {
@@ -7014,7 +7021,7 @@
       "id": "envoy",
       "name": "Envoy",
       "kind": "open-source-project",
-      "wikidata": null,
+      "wikidata": "Q124842894",
       "website": "https://www.envoyproxy.io",
       "summary": "Envoy is an open-source edge and service proxy.",
       "categories": [
@@ -7028,11 +7035,12 @@
       ],
       "businessType": "open-source",
       "hqCountry": null,
-      "founded": null,
+      "founded": 2016,
       "openSource": true,
       "sources": [
         "https://www.envoyproxy.io",
-        "https://github.com/cncf/landscape/blob/master/landscape.yml"
+        "https://github.com/cncf/landscape/blob/master/landscape.yml",
+        "https://www.wikidata.org/wiki/Q124842894"
       ]
     },
     {
@@ -7887,7 +7895,7 @@
       "id": "framework",
       "name": "Framework",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q107661386",
       "website": "https://frame.work",
       "summary": "Framework makes modular, repairable laptops.",
       "categories": [
@@ -7900,12 +7908,13 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "private-company",
+      "hqCountry": "US",
+      "founded": 2019,
       "openSource": false,
       "sources": [
-        "https://frame.work"
+        "https://frame.work",
+        "https://www.wikidata.org/wiki/Q107661386"
       ]
     },
     {
@@ -9276,7 +9285,7 @@
       "id": "harness",
       "name": "Harness",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q140898004",
       "website": "https://www.harness.io",
       "summary": "Harness provides a software delivery platform for CI, CD, and feature flags.",
       "categories": [
@@ -9288,13 +9297,14 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "private-company",
+      "hqCountry": "US",
+      "founded": 2017,
       "openSource": false,
       "sources": [
         "https://www.harness.io",
-        "https://github.com/cncf/landscape/blob/master/landscape.yml"
+        "https://github.com/cncf/landscape/blob/master/landscape.yml",
+        "https://www.wikidata.org/wiki/Q140898004"
       ]
     },
     {
@@ -9707,7 +9717,7 @@
       "id": "honeycomb",
       "name": "Honeycomb",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q113682321",
       "website": "https://www.honeycomb.io",
       "summary": "Honeycomb provides observability built on high-cardinality event data.",
       "categories": [
@@ -9720,13 +9730,14 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "private-company",
+      "hqCountry": "US",
+      "founded": 2016,
       "openSource": false,
       "sources": [
         "https://www.honeycomb.io",
-        "https://github.com/cncf/landscape/blob/master/landscape.yml"
+        "https://github.com/cncf/landscape/blob/master/landscape.yml",
+        "https://www.wikidata.org/wiki/Q113682321"
       ]
     },
     {
@@ -9910,7 +9921,7 @@
       "id": "huntress",
       "name": "Huntress",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q135927706",
       "website": "https://www.huntress.com",
       "summary": "Huntress provides managed endpoint detection, identity threat detection for Microsoft 365, and security awareness training aimed at small and mid-sized businesses.",
       "categories": [
@@ -9924,12 +9935,13 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
+      "businessType": "private-company",
+      "hqCountry": "US",
       "founded": null,
       "openSource": false,
       "sources": [
-        "https://www.huntress.com"
+        "https://www.huntress.com",
+        "https://www.wikidata.org/wiki/Q135927706"
       ]
     },
     {
@@ -10524,7 +10536,7 @@
       "id": "istio",
       "name": "Istio",
       "kind": "open-source-project",
-      "wikidata": null,
+      "wikidata": "Q88464464",
       "website": "https://istio.io",
       "summary": "Istio is an open-source service mesh for Kubernetes.",
       "categories": [
@@ -10542,7 +10554,8 @@
       "openSource": true,
       "sources": [
         "https://istio.io",
-        "https://github.com/cncf/landscape/blob/master/landscape.yml"
+        "https://github.com/cncf/landscape/blob/master/landscape.yml",
+        "https://www.wikidata.org/wiki/Q88464464"
       ]
     },
     {
@@ -12083,7 +12096,7 @@
       "id": "make",
       "name": "Make",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q134866480",
       "website": "https://www.make.com",
       "summary": "Make provides a visual automation platform for connecting applications.",
       "categories": [
@@ -12097,11 +12110,12 @@
         "horizontal"
       ],
       "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "hqCountry": "DE",
+      "founded": 2012,
       "openSource": false,
       "sources": [
-        "https://www.make.com"
+        "https://www.make.com",
+        "https://www.wikidata.org/wiki/Q134866480"
       ]
     },
     {
@@ -12162,7 +12176,7 @@
       "id": "manus",
       "name": "Manus",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q133102805",
       "website": "https://manus.im",
       "summary": "Manus is a general-purpose autonomous agent product.",
       "categories": [
@@ -12178,10 +12192,11 @@
       ],
       "businessType": null,
       "hqCountry": null,
-      "founded": null,
+      "founded": 2025,
       "openSource": false,
       "sources": [
-        "https://manus.im"
+        "https://manus.im",
+        "https://www.wikidata.org/wiki/Q133102805"
       ]
     },
     {
@@ -13079,7 +13094,7 @@
       "id": "milvus",
       "name": "Milvus",
       "kind": "open-source-project",
-      "wikidata": null,
+      "wikidata": "Q113610599",
       "website": "https://milvus.io",
       "summary": "Milvus is an open-source vector database hosted by the LF AI and Data Foundation.",
       "categories": [
@@ -13098,7 +13113,8 @@
       "sources": [
         "https://milvus.io",
         "https://github.com/cncf/landscape/blob/master/landscape.yml",
-        "https://github.com/lfai/lfai-landscape/blob/main/landscape.yml"
+        "https://github.com/lfai/lfai-landscape/blob/main/landscape.yml",
+        "https://www.wikidata.org/wiki/Q113610599"
       ]
     },
     {
@@ -14270,7 +14286,7 @@
       "id": "okta",
       "name": "Okta",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q55627388",
       "website": "https://www.okta.com",
       "summary": "Okta provides cloud identity, single sign-on, lifecycle, and identity governance services for workforce and customer applications.",
       "categories": [
@@ -14284,12 +14300,13 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "public-company",
+      "hqCountry": "US",
+      "founded": 2009,
       "openSource": false,
       "sources": [
-        "https://www.okta.com"
+        "https://www.okta.com",
+        "https://www.wikidata.org/wiki/Q55627388"
       ]
     },
     {
@@ -16760,7 +16777,7 @@
       "id": "rancher",
       "name": "Rancher",
       "kind": "product",
-      "wikidata": null,
+      "wikidata": "Q28454378",
       "website": "https://www.rancher.com",
       "summary": "Rancher is an open-source Kubernetes management platform from SUSE.",
       "categories": [
@@ -16772,13 +16789,14 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "subsidiary",
+      "hqCountry": "US",
+      "founded": 2014,
       "openSource": true,
       "sources": [
         "https://www.rancher.com",
-        "https://github.com/cncf/landscape/blob/master/landscape.yml"
+        "https://github.com/cncf/landscape/blob/master/landscape.yml",
+        "https://www.wikidata.org/wiki/Q28454378"
       ]
     },
     {
@@ -18327,7 +18345,7 @@
       "id": "snowflake",
       "name": "Snowflake",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q22078063",
       "website": "https://www.snowflake.com",
       "summary": "Snowflake provides a cloud data warehouse and data platform running on AWS, Azure, and Google Cloud.",
       "categories": [
@@ -18339,13 +18357,14 @@
       "sectors": [
         "horizontal"
       ],
-      "businessType": null,
-      "hqCountry": null,
-      "founded": null,
+      "businessType": "public-company",
+      "hqCountry": "US",
+      "founded": 2012,
       "openSource": false,
       "sources": [
         "https://www.snowflake.com",
-        "https://github.com/cncf/landscape/blob/master/landscape.yml"
+        "https://github.com/cncf/landscape/blob/master/landscape.yml",
+        "https://www.wikidata.org/wiki/Q22078063"
       ]
     },
     {
@@ -20205,7 +20224,7 @@
       "id": "trino",
       "name": "Trino",
       "kind": "open-source-project",
-      "wikidata": null,
+      "wikidata": "Q110808774",
       "website": "https://trino.io",
       "summary": "Trino is an open-source distributed SQL query engine for federated analytics.",
       "categories": [
@@ -20224,7 +20243,8 @@
       "sources": [
         "https://trino.io",
         "https://github.com/cncf/landscape/blob/master/landscape.yml",
-        "https://github.com/lfai/lfai-landscape/blob/main/landscape.yml"
+        "https://github.com/lfai/lfai-landscape/blob/main/landscape.yml",
+        "https://www.wikidata.org/wiki/Q110808774"
       ]
     },
     {
@@ -21782,7 +21802,7 @@
       "id": "zed",
       "name": "Zed",
       "kind": "company",
-      "wikidata": null,
+      "wikidata": "Q112301707",
       "website": "https://zed.dev",
       "summary": "Zed is an open-source, high-performance code editor with agent features.",
       "categories": [
@@ -21801,7 +21821,8 @@
       "founded": null,
       "openSource": true,
       "sources": [
-        "https://zed.dev"
+        "https://zed.dev",
+        "https://www.wikidata.org/wiki/Q112301707"
       ]
     },
     {

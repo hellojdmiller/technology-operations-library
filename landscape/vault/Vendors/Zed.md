@@ -2,7 +2,7 @@
 id: "zed"
 name: "Zed"
 kind: "company"
-wikidata: null
+wikidata: "Q112301707"
 website: "https://zed.dev"
 businessType: null
 hqCountry: null
@@ -20,6 +20,7 @@ tags: ["developer-and-automation/ai-coding-tools", "segment/enterprise", "segmen
 Zed is an open-source, high-performance code editor with agent features.
 
 - Website: <https://zed.dev>
+- Wikidata: [Q112301707](https://www.wikidata.org/wiki/Q112301707)
 - Kind: company
 - Open source: yes
 
@@ -43,5 +44,6 @@ Segments: [[Enterprise]], [[SMB]], [[Personal]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://zed.dev>
+- <https://www.wikidata.org/wiki/Q112301707>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

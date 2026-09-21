@@ -2,11 +2,11 @@
 id: "domo"
 name: "Domo"
 kind: "company"
-wikidata: null
+wikidata: "Q5291323"
 website: "https://www.domo.com"
-businessType: null
-hqCountry: null
-founded: null
+businessType: "public-company"
+hqCountry: "US"
+founded: 2010
 openSource: false
 categories: ["business-intelligence"]
 segments: ["enterprise"]
@@ -20,7 +20,11 @@ tags: ["data-and-ai/business-intelligence", "segment/enterprise", "sector/horizo
 Domo provides a cloud business intelligence and data platform.
 
 - Website: <https://www.domo.com>
+- Wikidata: [Q5291323](https://www.wikidata.org/wiki/Q5291323)
 - Kind: company
+- Business type: public-company
+- Headquarters country: US
+- Founded or first released: 2010
 - Open source: no
 
 ## Categories
@@ -36,5 +40,6 @@ No sourced relations yet.
 ## Sources
 
 - <https://www.domo.com>
+- <https://www.wikidata.org/wiki/Q5291323>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

@@ -2,7 +2,7 @@
 id: "cline"
 name: "Cline"
 kind: "open-source-project"
-wikidata: null
+wikidata: "Q139387331"
 website: "https://cline.bot"
 businessType: "open-source"
 hqCountry: null
@@ -20,6 +20,7 @@ tags: ["developer-and-automation/ai-coding-tools", "segment/enterprise", "segmen
 Cline is an open-source autonomous coding agent for VS Code.
 
 - Website: <https://cline.bot>
+- Wikidata: [Q139387331](https://www.wikidata.org/wiki/Q139387331)
 - Kind: open-source-project
 - Business type: open-source
 - Open source: yes
@@ -49,5 +50,6 @@ Segments: [[Enterprise]], [[SMB]], [[Personal]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://cline.bot>
+- <https://www.wikidata.org/wiki/Q139387331>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

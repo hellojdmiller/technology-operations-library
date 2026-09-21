@@ -2,10 +2,10 @@
 id: "huntress"
 name: "Huntress"
 kind: "company"
-wikidata: null
+wikidata: "Q135927706"
 website: "https://www.huntress.com"
-businessType: null
-hqCountry: null
+businessType: "private-company"
+hqCountry: "US"
 founded: null
 openSource: false
 categories: ["endpoint-protection", "siem-and-logging", "security-awareness"]
@@ -20,7 +20,10 @@ tags: ["identity-and-devices/endpoint-protection", "security-operations/siem-and
 Huntress provides managed endpoint detection, identity threat detection for Microsoft 365, and security awareness training aimed at small and mid-sized businesses.
 
 - Website: <https://www.huntress.com>
+- Wikidata: [Q135927706](https://www.wikidata.org/wiki/Q135927706)
 - Kind: company
+- Business type: private-company
+- Headquarters country: US
 - Open source: no
 
 ## Categories
@@ -50,5 +53,6 @@ Segments: [[SMB]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://www.huntress.com>
+- <https://www.wikidata.org/wiki/Q135927706>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

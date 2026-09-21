@@ -2,7 +2,7 @@
 id: "milvus"
 name: "Milvus"
 kind: "open-source-project"
-wikidata: null
+wikidata: "Q113610599"
 website: "https://milvus.io"
 businessType: "open-source"
 hqCountry: null
@@ -20,6 +20,7 @@ tags: ["data-and-ai/vector-databases", "segment/enterprise", "sector/horizontal"
 Milvus is an open-source vector database hosted by the LF AI and Data Foundation.
 
 - Website: <https://milvus.io>
+- Wikidata: [Q113610599](https://www.wikidata.org/wiki/Q113610599)
 - Kind: open-source-project
 - Business type: open-source
 - Open source: yes
@@ -42,5 +43,6 @@ Segments: [[Enterprise]]. Sectors: [[Horizontal]].
 - <https://milvus.io>
 - <https://github.com/cncf/landscape/blob/master/landscape.yml>
 - <https://github.com/lfai/lfai-landscape/blob/main/landscape.yml>
+- <https://www.wikidata.org/wiki/Q113610599>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

@@ -2,7 +2,7 @@
 id: "trino"
 name: "Trino"
 kind: "open-source-project"
-wikidata: null
+wikidata: "Q110808774"
 website: "https://trino.io"
 businessType: "open-source"
 hqCountry: null
@@ -20,6 +20,7 @@ tags: ["data-and-ai/data-warehouse", "segment/enterprise", "sector/horizontal", 
 Trino is an open-source distributed SQL query engine for federated analytics.
 
 - Website: <https://trino.io>
+- Wikidata: [Q110808774](https://www.wikidata.org/wiki/Q110808774)
 - Kind: open-source-project
 - Business type: open-source
 - Open source: yes
@@ -41,5 +42,6 @@ Segments: [[Enterprise]]. Sectors: [[Horizontal]].
 - <https://trino.io>
 - <https://github.com/cncf/landscape/blob/master/landscape.yml>
 - <https://github.com/lfai/lfai-landscape/blob/main/landscape.yml>
+- <https://www.wikidata.org/wiki/Q110808774>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

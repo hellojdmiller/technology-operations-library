@@ -2,11 +2,11 @@
 id: "harness"
 name: "Harness"
 kind: "company"
-wikidata: null
+wikidata: "Q140898004"
 website: "https://www.harness.io"
-businessType: null
-hqCountry: null
-founded: null
+businessType: "private-company"
+hqCountry: "US"
+founded: 2017
 openSource: false
 categories: ["ci-cd"]
 segments: ["enterprise"]
@@ -20,7 +20,11 @@ tags: ["developer-and-automation/ci-cd", "segment/enterprise", "sector/horizonta
 Harness provides a software delivery platform for CI, CD, and feature flags.
 
 - Website: <https://www.harness.io>
+- Wikidata: [Q140898004](https://www.wikidata.org/wiki/Q140898004)
 - Kind: company
+- Business type: private-company
+- Headquarters country: US
+- Founded or first released: 2017
 - Open source: no
 
 ## Categories
@@ -40,5 +44,6 @@ Segments: [[Enterprise]]. Sectors: [[Horizontal]].
 
 - <https://www.harness.io>
 - <https://github.com/cncf/landscape/blob/master/landscape.yml>
+- <https://www.wikidata.org/wiki/Q140898004>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

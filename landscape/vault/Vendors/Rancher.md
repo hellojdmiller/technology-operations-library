@@ -2,11 +2,11 @@
 id: "rancher"
 name: "Rancher"
 kind: "product"
-wikidata: null
+wikidata: "Q28454378"
 website: "https://www.rancher.com"
-businessType: null
-hqCountry: null
-founded: null
+businessType: "subsidiary"
+hqCountry: "US"
+founded: 2014
 openSource: true
 categories: ["containers-and-orchestration"]
 segments: ["enterprise"]
@@ -20,7 +20,11 @@ tags: ["infrastructure-and-cloud/containers-and-orchestration", "segment/enterpr
 Rancher is an open-source Kubernetes management platform from SUSE.
 
 - Website: <https://www.rancher.com>
+- Wikidata: [Q28454378](https://www.wikidata.org/wiki/Q28454378)
 - Kind: product
+- Business type: subsidiary
+- Headquarters country: US
+- Founded or first released: 2014
 - Open source: yes
 
 ## Categories
@@ -39,5 +43,6 @@ Segments: [[Enterprise]]. Sectors: [[Horizontal]].
 
 - <https://www.rancher.com>
 - <https://github.com/cncf/landscape/blob/master/landscape.yml>
+- <https://www.wikidata.org/wiki/Q28454378>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

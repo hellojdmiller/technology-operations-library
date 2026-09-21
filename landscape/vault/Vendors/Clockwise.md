@@ -2,7 +2,7 @@
 id: "clockwise"
 name: "Clockwise"
 kind: "company"
-wikidata: null
+wikidata: "Q115350741"
 website: "https://www.getclockwise.com"
 businessType: null
 hqCountry: null
@@ -20,6 +20,7 @@ tags: ["collaboration-and-content/scheduling", "segment/enterprise", "segment/sm
 Clockwise is a calendar optimization and scheduling assistant for teams.
 
 - Website: <https://www.getclockwise.com>
+- Wikidata: [Q115350741](https://www.wikidata.org/wiki/Q115350741)
 - Kind: company
 - Open source: no
 
@@ -38,5 +39,6 @@ Segments: [[Enterprise]], [[SMB]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://www.getclockwise.com>
+- <https://www.wikidata.org/wiki/Q115350741>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

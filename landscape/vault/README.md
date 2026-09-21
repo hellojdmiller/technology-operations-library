@@ -1,6 +1,6 @@
 # Technology landscape vault
 
-An Obsidian vault generated from [landscape.json](../landscape.json): 9 layers, 67 categories, 825 vendors, and 2228 typed relations. 465 vendors carry a Wikidata item. Every vendor note lists the sources behind it.
+An Obsidian vault generated from [landscape.json](../landscape.json): 9 layers, 67 categories, 825 vendors, and 2228 typed relations. 486 vendors carry a Wikidata item. Every vendor note lists the sources behind it.
 
 ## Open it
 

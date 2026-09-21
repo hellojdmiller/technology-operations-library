@@ -2,11 +2,11 @@
 id: "snowflake"
 name: "Snowflake"
 kind: "company"
-wikidata: null
+wikidata: "Q22078063"
 website: "https://www.snowflake.com"
-businessType: null
-hqCountry: null
-founded: null
+businessType: "public-company"
+hqCountry: "US"
+founded: 2012
 openSource: false
 categories: ["data-warehouse"]
 segments: ["enterprise"]
@@ -20,7 +20,11 @@ tags: ["data-and-ai/data-warehouse", "segment/enterprise", "sector/horizontal", 
 Snowflake provides a cloud data warehouse and data platform running on AWS, Azure, and Google Cloud.
 
 - Website: <https://www.snowflake.com>
+- Wikidata: [Q22078063](https://www.wikidata.org/wiki/Q22078063)
 - Kind: company
+- Business type: public-company
+- Headquarters country: US
+- Founded or first released: 2012
 - Open source: no
 
 ## Categories
@@ -70,5 +74,6 @@ Segments: [[Enterprise]]. Sectors: [[Horizontal]].
 
 - <https://www.snowflake.com>
 - <https://github.com/cncf/landscape/blob/master/landscape.yml>
+- <https://www.wikidata.org/wiki/Q22078063>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

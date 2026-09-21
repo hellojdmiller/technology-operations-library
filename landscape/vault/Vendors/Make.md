@@ -2,11 +2,11 @@
 id: "make"
 name: "Make"
 kind: "company"
-wikidata: null
+wikidata: "Q134866480"
 website: "https://www.make.com"
 businessType: null
-hqCountry: null
-founded: null
+hqCountry: "DE"
+founded: 2012
 openSource: false
 categories: ["workflow-automation"]
 segments: ["smb", "personal"]
@@ -20,7 +20,10 @@ tags: ["developer-and-automation/workflow-automation", "segment/smb", "segment/p
 Make provides a visual automation platform for connecting applications.
 
 - Website: <https://www.make.com>
+- Wikidata: [Q134866480](https://www.wikidata.org/wiki/Q134866480)
 - Kind: company
+- Headquarters country: DE
+- Founded or first released: 2012
 - Open source: no
 
 ## Categories
@@ -212,5 +215,6 @@ Segments: [[SMB]], [[Personal]]. Sectors: [[Horizontal]].
 ## Sources
 
 - <https://www.make.com>
+- <https://www.wikidata.org/wiki/Q134866480>
 
 _Generated from landscape.json by lib/build-landscape.mjs on 2026-09-21. Edit the JSON and rebuild._

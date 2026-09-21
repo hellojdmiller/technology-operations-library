@@ -53,12 +53,13 @@ const qid = (uri) => uri.replace(WD, '');
 const domain = (url) => { const h = host(url); return h ? h.split('.').slice(-2).join('.') : null; };
 const host = (url) => { try { return new URL(url).hostname.replace(/^www\./u, '').toLowerCase(); } catch { return null; } };
 
-async function search(name) {
-  if (!cache.searches[name]) {
-    const data = await request(`${API}?action=wbsearchentities&search=${encodeURIComponent(name)}&language=en&type=item&limit=7&format=json`, 'application/json');
-    cache.searches[name] = data.search.map((hit) => ({ id: hit.id, label: (hit.label ?? '').replace(/\u2014/gu, '-') }));
+async function search(name, limit = 7) {
+  const key = limit === 7 ? name : `${name}|${limit}`;
+  if (!cache.searches[key]) {
+    const data = await request(`${API}?action=wbsearchentities&search=${encodeURIComponent(name)}&language=en&type=item&limit=${limit}&format=json`, 'application/json');
+    cache.searches[key] = data.search.map((hit) => ({ id: hit.id, label: (hit.label ?? '').replace(/\u2014/gu, '-') }));
   }
-  return cache.searches[name];
+  return cache.searches[key];
 }
 
 async function loadEntities(ids) {
@@ -115,6 +116,17 @@ for (const vendor of landscape.vendors) {
   if (byHost) { resolved.set(vendor.id, { id: byHost.id, by: 'website' }); continue; }
   const byLabel = candidates.find((c) => c.label.toLowerCase() === vendor.name.toLowerCase() && cache.entities[c.id].P856.some((site) => domain(site) && domain(site) === domain(vendor.website)) && [...cache.entities[c.id].P31, ...cache.entities[c.id].P1454].some((cls) => BUSINESS_CLASSES.has(cls)));
   if (byLabel) { resolved.set(vendor.id, { id: byLabel.id, by: 'label' }); review.push(`${vendor.id} -> ${byLabel.id} (${byLabel.label})`); }
+}
+// Second pass: a wider search for vendors still unresolved, accepted on website host match only.
+const deeper = new Map();
+for (const vendor of landscape.vendors) if (!resolved.has(vendor.id)) deeper.set(vendor.id, await search(vendor.name, 20));
+await writeFile(cachePath, JSON.stringify(cache) + '\n');
+await loadEntities([...deeper.values()].flat().map((c) => c.id));
+for (const vendor of landscape.vendors) {
+  if (resolved.has(vendor.id)) continue;
+  const vendorHost = host(vendor.website);
+  const byHost = deeper.get(vendor.id).find((c) => cache.entities[c.id].P856.some((site) => host(site) === vendorHost));
+  if (byHost) resolved.set(vendor.id, { id: byHost.id, by: 'website-deep' });
 }
 await loadEntities([...resolved.values()].map((r) => r.id));
 // Developers and parents of resolved items, for product business types and relations.
