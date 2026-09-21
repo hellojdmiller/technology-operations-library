@@ -1,0 +1,55 @@
+{
+  "generatedFrom": "training/*/course.json",
+  "tracks": [
+    {
+      "id": "security-awareness",
+      "title": "Security awareness",
+      "description": "For everyone at the firm. Short modules and three-lesson courses on the habits that stop most incidents."
+    },
+    {
+      "id": "ai-at-work",
+      "title": "AI at work",
+      "description": "For everyone who uses an AI assistant. Framing, context, checking, and not leaking."
+    },
+    {
+      "id": "technology-operations",
+      "title": "Technology operations",
+      "description": "For the operator and the people in the room when something goes wrong."
+    }
+  ],
+  "courses": [
+    {
+      "slug": "ai-at-work",
+      "title": "AI at Work",
+      "track": "ai-at-work",
+      "format": "course",
+      "audience": "Employees across administration, finance, marketing, HR, project teams, and other everyday roles.",
+      "prerequisites": [],
+      "description": "Three practical lessons for turning everyday information into a useful draft, and knowing what still needs checking.",
+      "reviewedOn": "2026-09-19",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Give AI a useful job",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Give the right information",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Check it before you share it",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "ai-at-work/README.md"
+    }
+  ],
+  "journeys": []
+}

@@ -6,12 +6,15 @@
 //   node training/lib/build-course.mjs training/<course> --check    fail if exports drift
 //   node training/lib/build-course.mjs --all [--check]              every training/*/course.json that declares a track
 //
+// Two formats share one schema: a "course" has three to five lessons; a "bite" is a short
+// single-topic module with one or two lessons (7 to 15 minutes). `format` defaults to "course".
 // The AI at Work course predates this schema and keeps its own build.mjs.
 import { readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { basename, join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const TRACKS = ['security-awareness', 'ai-at-work', 'technology-operations'];
+const FORMATS = ['course', 'bite'];
 const here = dirname(fileURLToPath(import.meta.url));
 const trainingRoot = resolve(here, '..');
 const args = process.argv.slice(2);
@@ -41,7 +44,11 @@ function date(value, label) {
 const noDashes = (value, label) => requireCondition(!/[—]/u.test(value), `${label}: em dash found; use a comma, colon, or period`);
 
 function validate(course, directory) {
-  shape(course, ['version', 'slug', 'title', 'track', 'audience', 'prerequisites', 'description', 'introduction', 'reviewedOn', 'scenario', 'lessons', 'sources'], 'course');
+  const baseKeys = ['version', 'slug', 'title', 'track', 'audience', 'prerequisites', 'description', 'introduction', 'reviewedOn', 'scenario', 'lessons', 'sources'];
+  shape(course, course.format === undefined ? baseKeys : [...baseKeys, 'format'], 'course');
+  const format = course.format ?? 'course';
+  requireCondition(FORMATS.includes(format), `format: expected one of ${FORMATS.join(', ')}`);
+  const [minLessons, maxLessons, minDocuments] = format === 'bite' ? [1, 2, 2] : [3, 5, 3];
   requireCondition(/^\d+\.\d+\.\d+$/u.test(course.version), 'version: expected semver');
   requireCondition(course.slug === basename(directory), `slug ${course.slug} must match the directory name ${basename(directory)}`);
   requireCondition(/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(course.slug), 'slug: lowercase words joined by hyphens');
@@ -56,7 +63,7 @@ function validate(course, directory) {
   shape(course.scenario, ['title', 'description', 'documents'], 'scenario');
   text(course.scenario.title, 'scenario.title');
   text(course.scenario.description, 'scenario.description');
-  requireCondition(Array.isArray(course.scenario.documents) && course.scenario.documents.length >= 3 && course.scenario.documents.length <= 6, 'scenario.documents: expected three to six documents');
+  requireCondition(Array.isArray(course.scenario.documents) && course.scenario.documents.length >= minDocuments && course.scenario.documents.length <= 6, `scenario.documents: expected ${minDocuments} to 6 documents`);
   course.scenario.documents.forEach((document, index) => {
     shape(document, ['id', 'title', 'date', 'kind', 'body'], `document ${index + 1}`);
     requireCondition(document.id === `D${index + 1}`, `document ${index + 1}: id must be D${index + 1}`);
@@ -78,7 +85,7 @@ function validate(course, directory) {
   for (const match of JSON.stringify(course).matchAll(/\[(S\d+(?:,\s*S\d+)*)\]/gu)) {
     for (const id of match[1].split(/,\s*/u)) requireCondition(sourceIds.has(id), `Unknown source reference ${id}`);
   }
-  requireCondition(Array.isArray(course.lessons) && course.lessons.length >= 3 && course.lessons.length <= 5, 'lessons: expected three to five');
+  requireCondition(Array.isArray(course.lessons) && course.lessons.length >= minLessons && course.lessons.length <= maxLessons, `lessons: a ${format} has ${minLessons} to ${maxLessons} lessons`);
   const wordCounts = [];
   course.lessons.forEach((lesson, index) => {
     shape(lesson, ['slug', 'number', 'title', 'summary', 'duration', 'outcome', 'explanation', 'workedExample', 'task', 'hint', 'modelAnswer', 'reflection', 'transfer', 'check'], `lesson ${index + 1}`);
@@ -123,9 +130,10 @@ function exportsFor(course) {
   const details = (label, content) => `<details>\n<summary>${label}</summary>\n\n${content}\n\n</details>`;
   const lessonFile = (lesson) => `${String(lesson.number).padStart(2, '0')}-${lesson.slug}.md`;
   const trackLabel = { 'security-awareness': 'Security awareness', 'ai-at-work': 'AI at work', 'technology-operations': 'Technology operations' }[course.track];
+  const formatLabel = (course.format ?? 'course') === 'bite' ? 'Short module' : 'Course';
   const out = new Map();
 
-  out.set('README.md', `${generated}\n\n# ${course.title}\n\n${course.description}\n\n${paragraphs(course.introduction)}\n\n**Track:** ${trackLabel} · **For:** ${course.audience}${course.prerequisites.length ? ` · **Before this course:** ${course.prerequisites.join('; ')}` : ''}\n\n## Start here\n\nRead the [shared fictional packet](source-packet.md), then work through the lessons in order. Keep the packet open. Each lesson has a worked example, your own task, an optional hint, an example answer to compare against, a changed case, and one check.\n\n| Lesson | What you will make | Suggested time |\n| --- | --- | --- |\n${course.lessons.map((lesson) => `| [${lesson.number}. ${lesson.title}](${lessonFile(lesson)}) | ${lesson.outcome} | ${lesson.duration} |`).join('\n')}\n\nUse the [blank worksheet](worksheet.md) to keep a first attempt separate from any revision. The example answers are comparisons, not wording to memorize. The [facilitator guide](facilitator.md) helps a colleague run the course as a session.\n\n## Research and status\n\nSources were reviewed **${course.reviewedOn}**. The [research notes](sources.md) list what each source supports, how the course applies it, and its limits. The packet, tasks, hints, answer keys, and timing are original learning proposals. No learner trial has been performed for this course.\n\nEverything in the packet is fictional. Never use real client, investor, employee, or credential data as training material.\n\n## Maintain the content\n\n[course.json](course.json) is the canonical source. Edit it and regenerate:\n\n\`\`\`sh\nnode training/lib/build-course.mjs training/${course.slug}\nnode training/lib/build-course.mjs training/${course.slug} --check\n\`\`\`\n\nThe check validates structure, dates, source references, and export consistency, not factual correctness or learning outcomes.\n\n[All training](../README.md)\n`);
+  out.set('README.md', `${generated}\n\n# ${course.title}\n\n${course.description}\n\n${paragraphs(course.introduction)}\n\n**Format:** ${formatLabel} · **Track:** ${trackLabel} · **For:** ${course.audience}${course.prerequisites.length ? ` · **Before this course:** ${course.prerequisites.join('; ')}` : ''}\n\n## Start here\n\nRead the [shared fictional packet](source-packet.md), then work through ${course.lessons.length === 1 ? 'the lesson' : 'the lessons in order'}. Keep the packet open. Each lesson has a worked example, your own task, an optional hint, an example answer to compare against, a changed case, and one check.\n\n| Lesson | What you will make | Suggested time |\n| --- | --- | --- |\n${course.lessons.map((lesson) => `| [${lesson.number}. ${lesson.title}](${lessonFile(lesson)}) | ${lesson.outcome} | ${lesson.duration} |`).join('\n')}\n\nUse the [blank worksheet](worksheet.md) to keep a first attempt separate from any revision. The example answers are comparisons, not wording to memorize. The [facilitator guide](facilitator.md) helps a colleague run the course as a session.\n\n## Research and status\n\nSources were reviewed **${course.reviewedOn}**. The [research notes](sources.md) list what each source supports, how the course applies it, and its limits. The packet, tasks, hints, answer keys, and timing are original learning proposals. No learner trial has been performed for this course.\n\nEverything in the packet is fictional. Never use real client, investor, employee, or credential data as training material.\n\n## Maintain the content\n\n[course.json](course.json) is the canonical source. Edit it and regenerate:\n\n\`\`\`sh\nnode training/lib/build-course.mjs training/${course.slug}\nnode training/lib/build-course.mjs training/${course.slug} --check\n\`\`\`\n\nThe check validates structure, dates, source references, and export consistency, not factual correctness or learning outcomes.\n\n[All training](../README.md)\n`);
 
   out.set('source-packet.md', `${generated}\n\n# ${course.scenario.title}\n\n${course.scenario.description}\n\n${course.scenario.documents.map((document) => `## ${document.id}: ${document.title}\n\nDate: ${document.date} · ${document.kind}\n\n${paragraphs(document.body)}`).join('\n\n')}\n\n[Back to the course](README.md)\n`);
 
