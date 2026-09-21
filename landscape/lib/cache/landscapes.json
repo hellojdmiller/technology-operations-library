@@ -1,0 +1,1419 @@
+{
+ "fetchedOn": "2026-09-21",
+ "sources": {
+  "cncf": "https://github.com/cncf/landscape/blob/master/landscape.yml",
+  "lfai": "https://github.com/lfai/lfai-landscape/blob/main/landscape.yml"
+ },
+ "matches": {
+  "afi-ai": [
+   {
+    "landscape": "cncf",
+    "name": "Afi.ai",
+    "category": "Runtime",
+    "subcategory": "Cloud Native Storage",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "alibaba-cloud": [
+   {
+    "landscape": "cncf",
+    "name": "Alibaba Cloud Container Registry (ACR)",
+    "category": "Provisioning",
+    "subcategory": "Container Registry",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "ansible": [
+   {
+    "landscape": "cncf",
+    "name": "Ansible",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": null,
+    "repo": "https://github.com/ansible/ansible"
+   }
+  ],
+  "apache-spark": [
+   {
+    "landscape": "cncf",
+    "name": "Apache Spark",
+    "category": "App Definition and Development",
+    "subcategory": "Streaming & Messaging",
+    "project": null,
+    "repo": "https://github.com/apache/spark"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Apache Spark",
+    "category": "Distributed Computing",
+    "subcategory": "Computing & Management",
+    "project": null,
+    "repo": "https://github.com/apache/spark"
+   }
+  ],
+  "aqua-security": [
+   {
+    "landscape": "cncf",
+    "name": "Aqua Security (KCSP)",
+    "category": "Special",
+    "subcategory": "Kubernetes Certified Service Provider",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "atlantis": [
+   {
+    "landscape": "cncf",
+    "name": "Atlantis",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": "sandbox",
+    "repo": "https://github.com/runatlantis/atlantis"
+   }
+  ],
+  "authentik": [
+   {
+    "landscape": "cncf",
+    "name": "authentik",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": "https://github.com/goauthentik/authentik"
+   }
+  ],
+  "browser-use": [
+   {
+    "landscape": "cncf",
+    "name": "Browser Use",
+    "category": "AI Agent",
+    "subcategory": "Agent Tool",
+    "project": null,
+    "repo": "https://github.com/browser-use/browser-use"
+   }
+  ],
+  "buildkite": [
+   {
+    "landscape": "cncf",
+    "name": "Buildkite",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "caddy": [
+   {
+    "landscape": "cncf",
+    "name": "Caddy",
+    "category": "Orchestration & Management",
+    "subcategory": "Service Proxy",
+    "project": null,
+    "repo": "https://github.com/caddyserver/caddy"
+   }
+  ],
+  "check-point": [
+   {
+    "landscape": "cncf",
+    "name": "Check Point",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "checkov": [
+   {
+    "landscape": "cncf",
+    "name": "Checkov",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": "https://github.com/bridgecrewio/checkov"
+   }
+  ],
+  "chronosphere": [
+   {
+    "landscape": "cncf",
+    "name": "Chronosphere",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "cilium": [
+   {
+    "landscape": "cncf",
+    "name": "Cilium",
+    "category": "Runtime",
+    "subcategory": "Cloud Native Network",
+    "project": "graduated",
+    "repo": "https://github.com/cilium/cilium"
+   }
+  ],
+  "circleci": [
+   {
+    "landscape": "cncf",
+    "name": "CircleCI",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "clickhouse": [
+   {
+    "landscape": "cncf",
+    "name": "ClickHouse",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/ClickHouse/ClickHouse"
+   }
+  ],
+  "cloud-custodian": [
+   {
+    "landscape": "cncf",
+    "name": "Cloud Custodian",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": "incubating",
+    "repo": "https://github.com/cloud-custodian/cloud-custodian"
+   }
+  ],
+  "commvault": [
+   {
+    "landscape": "cncf",
+    "name": "Commvault",
+    "category": "Runtime",
+    "subcategory": "Cloud Native Storage",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "composio": [
+   {
+    "landscape": "cncf",
+    "name": "Composio",
+    "category": "AI Agent",
+    "subcategory": "Agent Tool",
+    "project": null,
+    "repo": "https://github.com/ComposioHQ/composio"
+   }
+  ],
+  "containerd": [
+   {
+    "landscape": "cncf",
+    "name": "containerd",
+    "category": "Runtime",
+    "subcategory": "Container Runtime",
+    "project": "graduated",
+    "repo": "https://github.com/containerd/containerd"
+   }
+  ],
+  "couchbase": [
+   {
+    "landscape": "cncf",
+    "name": "Couchbase",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/couchbase/manifest"
+   }
+  ],
+  "crewai": [
+   {
+    "landscape": "cncf",
+    "name": "Crew AI",
+    "category": "AI Agent",
+    "subcategory": "Agent Framework",
+    "project": null,
+    "repo": "https://github.com/crewAIInc/crewAI"
+   }
+  ],
+  "crossplane": [
+   {
+    "landscape": "cncf",
+    "name": "Crossplane",
+    "category": "Orchestration & Management",
+    "subcategory": "Scheduling & Orchestration",
+    "project": "graduated",
+    "repo": "https://github.com/crossplane/crossplane"
+   }
+  ],
+  "datadog": [
+   {
+    "landscape": "cncf",
+    "name": "Datadog",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "dell": [
+   {
+    "landscape": "cncf",
+    "name": "Dell Technologies Consulting (KCSP)",
+    "category": "Special",
+    "subcategory": "Kubernetes Certified Service Provider",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "dify": [
+   {
+    "landscape": "cncf",
+    "name": "Dify",
+    "category": "AI Agent",
+    "subcategory": "Workflow Orchestration",
+    "project": null,
+    "repo": "https://github.com/langgenius/dify"
+   }
+  ],
+  "digitalocean": [
+   {
+    "landscape": "cncf",
+    "name": "DigitalOcean Kubernetes",
+    "category": "Platform",
+    "subcategory": "Certified Kubernetes - Hosted",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "docker": [
+   {
+    "landscape": "cncf",
+    "name": "Docker (Wasm)",
+    "category": "Wasm",
+    "subcategory": "Orchestration & Management",
+    "project": null,
+    "repo": "https://github.com/docker/compose"
+   }
+  ],
+  "dynatrace": [
+   {
+    "landscape": "cncf",
+    "name": "Dynatrace",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "e2b": [
+   {
+    "landscape": "cncf",
+    "name": "e2b",
+    "category": "AI Native Infra",
+    "subcategory": "Workload Runtime",
+    "project": null,
+    "repo": "https://github.com/e2b-dev/infra"
+   }
+  ],
+  "elastic": [
+   {
+    "landscape": "cncf",
+    "name": "Elastic",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/elastic/elasticsearch"
+   }
+  ],
+  "envoy": [
+   {
+    "landscape": "cncf",
+    "name": "Envoy",
+    "category": "Orchestration & Management",
+    "subcategory": "Service Proxy",
+    "project": "graduated",
+    "repo": "https://github.com/envoyproxy/envoy"
+   }
+  ],
+  "f5": [
+   {
+    "landscape": "cncf",
+    "name": "F5",
+    "category": "Orchestration & Management",
+    "subcategory": "Service Proxy",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "fastly": [
+   {
+    "landscape": "cncf",
+    "name": "Fastly Compute@Edge",
+    "category": "Wasm",
+    "subcategory": "Hosted Platforms",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "flux": [
+   {
+    "landscape": "cncf",
+    "name": "Flux",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": "graduated",
+    "repo": "https://github.com/fluxcd/flux2"
+   }
+  ],
+  "gitguardian": [
+   {
+    "landscape": "cncf",
+    "name": "GitGuardian",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "github": [
+   {
+    "landscape": "cncf",
+    "name": "GitHub Actions",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "github-actions": [
+   {
+    "landscape": "cncf",
+    "name": "GitHub Actions",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "gitlab": [
+   {
+    "landscape": "cncf",
+    "name": "GitLab",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": "https://github.com/gitlabhq/gitlabhq"
+   }
+  ],
+  "google-adk": [
+   {
+    "landscape": "cncf",
+    "name": "Agent Development Kit",
+    "category": "AI Agent",
+    "subcategory": "Agent Framework",
+    "project": null,
+    "repo": "https://github.com/google/adk-python"
+   }
+  ],
+  "google-cloud": [
+   {
+    "landscape": "cncf",
+    "name": "Google Cloud Dataflow",
+    "category": "App Definition and Development",
+    "subcategory": "Streaming & Messaging",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "goose": [
+   {
+    "landscape": "cncf",
+    "name": "Goose",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": null,
+    "repo": "https://github.com/block/goose"
+   }
+  ],
+  "graylog": [
+   {
+    "landscape": "cncf",
+    "name": "Graylog",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/Graylog2/graylog2-server"
+   }
+  ],
+  "guardrails-ai": [
+   {
+    "landscape": "cncf",
+    "name": "Guardrails AI",
+    "category": "AI Agent",
+    "subcategory": "Guardrail",
+    "project": null,
+    "repo": "https://github.com/guardrails-ai/guardrails"
+   }
+  ],
+  "harness": [
+   {
+    "landscape": "cncf",
+    "name": "Harness.io",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "haystack": [
+   {
+    "landscape": "cncf",
+    "name": "Haystack",
+    "category": "AI Agent",
+    "subcategory": "RAG",
+    "project": null,
+    "repo": "https://github.com/deepset-ai/haystack"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Haystack",
+    "category": "Natural Language Processing",
+    "subcategory": "Natural Language Processing",
+    "project": null,
+    "repo": "https://github.com/deepset-ai/haystack"
+   }
+  ],
+  "helm": [
+   {
+    "landscape": "cncf",
+    "name": "Helm",
+    "category": "App Definition and Development",
+    "subcategory": "Application Definition & Image Build",
+    "project": "graduated",
+    "repo": "https://github.com/helm/helm"
+   }
+  ],
+  "heroku": [
+   {
+    "landscape": "cncf",
+    "name": "Heroku",
+    "category": "Platform",
+    "subcategory": "PaaS/Container Service",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "honeycomb": [
+   {
+    "landscape": "cncf",
+    "name": "Honeycomb",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "ibm-cloud": [
+   {
+    "landscape": "cncf",
+    "name": "IBM Cloud (KCSP)",
+    "category": "Special",
+    "subcategory": "Kubernetes Certified Service Provider",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "influxdata": [
+   {
+    "landscape": "cncf",
+    "name": "InfluxData",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/influxdata/influxdb"
+   }
+  ],
+  "inngest": [
+   {
+    "landscape": "cncf",
+    "name": "Inngest",
+    "category": "AI Agent",
+    "subcategory": "Workflow Orchestration",
+    "project": null,
+    "repo": "https://github.com/inngest/inngest"
+   }
+  ],
+  "istio": [
+   {
+    "landscape": "cncf",
+    "name": "Istio",
+    "category": "Orchestration & Management",
+    "subcategory": "Service Mesh",
+    "project": "graduated",
+    "repo": "https://github.com/istio/istio"
+   }
+  ],
+  "jaeger": [
+   {
+    "landscape": "cncf",
+    "name": "Jaeger",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": "graduated",
+    "repo": "https://github.com/jaegertracing/jaeger"
+   }
+  ],
+  "jenkins": [
+   {
+    "landscape": "cncf",
+    "name": "Jenkins",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": "https://github.com/jenkinsci/jenkins"
+   }
+  ],
+  "k3s": [
+   {
+    "landscape": "cncf",
+    "name": "k3s",
+    "category": "Platform",
+    "subcategory": "Certified Kubernetes - Distribution",
+    "project": "sandbox",
+    "repo": "https://github.com/k3s-io/k3s"
+   }
+  ],
+  "keycloak": [
+   {
+    "landscape": "cncf",
+    "name": "Keycloak",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": "incubating",
+    "repo": "https://github.com/keycloak/keycloak"
+   }
+  ],
+  "kubernetes": [
+   {
+    "landscape": "cncf",
+    "name": "Kubernetes",
+    "category": "Orchestration & Management",
+    "subcategory": "Scheduling & Orchestration",
+    "project": "graduated",
+    "repo": "https://github.com/kubernetes/kubernetes"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Kubernetes",
+    "category": "Distributed Computing",
+    "subcategory": "Computing & Management",
+    "project": null,
+    "repo": "https://github.com/kubernetes/kubernetes"
+   }
+  ],
+  "lancedb": [
+   {
+    "landscape": "cncf",
+    "name": "LanceDB",
+    "category": "AI Agent",
+    "subcategory": "Vector Database",
+    "project": null,
+    "repo": "https://github.com/lancedb/lancedb"
+   }
+  ],
+  "linkerd": [
+   {
+    "landscape": "cncf",
+    "name": "Linkerd",
+    "category": "Orchestration & Management",
+    "subcategory": "Service Mesh",
+    "project": "graduated",
+    "repo": "https://github.com/linkerd/linkerd2"
+   }
+  ],
+  "llama-cpp": [
+   {
+    "landscape": "cncf",
+    "name": "llama.cpp",
+    "category": "Inference",
+    "subcategory": "Runtime",
+    "project": null,
+    "repo": "https://github.com/ggml-org/llama.cpp"
+   }
+  ],
+  "microsoft": [
+   {
+    "landscape": "cncf",
+    "name": "Microsoft SQL Server",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": null
+   },
+   {
+    "landscape": "lfai",
+    "name": "Microsoft (hosting)",
+    "category": "Hosting Companies",
+    "subcategory": "Hosting Companies",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "microsoft-autogen": [
+   {
+    "landscape": "cncf",
+    "name": "Autogen",
+    "category": "AI Agent",
+    "subcategory": "Agent Framework",
+    "project": null,
+    "repo": "https://github.com/microsoft/autogen"
+   }
+  ],
+  "microsoft-sql-server": [
+   {
+    "landscape": "cncf",
+    "name": "Microsoft SQL Server",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "milvus": [
+   {
+    "landscape": "cncf",
+    "name": "Milvus",
+    "category": "AI Agent",
+    "subcategory": "Vector Database",
+    "project": null,
+    "repo": "https://github.com/milvus-io/milvus"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Milvus",
+    "category": "Data",
+    "subcategory": "Store & Format",
+    "project": "graduated",
+    "repo": "https://github.com/milvus-io/milvus"
+   }
+  ],
+  "mlflow": [
+   {
+    "landscape": "cncf",
+    "name": "Mlflow",
+    "category": "AI Native Infra",
+    "subcategory": "Continuous Integration and Delivery",
+    "project": null,
+    "repo": "https://github.com/mlflow/mlflow"
+   },
+   {
+    "landscape": "lfai",
+    "name": "MLFlow",
+    "category": "Machine Learning",
+    "subcategory": "Platform",
+    "project": null,
+    "repo": "https://github.com/mlflow/mlflow"
+   }
+  ],
+  "model-context-protocol": [
+   {
+    "landscape": "cncf",
+    "name": "Modelcontextprotocol",
+    "category": "AI Agent",
+    "subcategory": "Protocol",
+    "project": null,
+    "repo": "https://github.com/modelcontextprotocol/modelcontextprotocol"
+   }
+  ],
+  "mongodb": [
+   {
+    "landscape": "cncf",
+    "name": "MongoDB",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/mongodb/mongo"
+   }
+  ],
+  "netlify": [
+   {
+    "landscape": "cncf",
+    "name": "Netlify Functions",
+    "category": "Serverless",
+    "subcategory": "Hosted Platform",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "new-relic": [
+   {
+    "landscape": "cncf",
+    "name": "New Relic",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "octopus-deploy": [
+   {
+    "landscape": "cncf",
+    "name": "Octopus Deploy",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "opensearch": [
+   {
+    "landscape": "cncf",
+    "name": "OpenSearch",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/opensearch-project/opensearch"
+   }
+  ],
+  "opentelemetry": [
+   {
+    "landscape": "cncf",
+    "name": "OpenTelemetry",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": "graduated",
+    "repo": "https://github.com/open-telemetry/community"
+   }
+  ],
+  "opentofu": [
+   {
+    "landscape": "cncf",
+    "name": "OpenTofu",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": "sandbox",
+    "repo": "https://github.com/opentofu/opentofu"
+   }
+  ],
+  "oracle": [
+   {
+    "landscape": "cncf",
+    "name": "Oracle AI Database",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "orca-security": [
+   {
+    "landscape": "cncf",
+    "name": "Orca Security",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "ovhcloud": [
+   {
+    "landscape": "cncf",
+    "name": "OVHcloud (KCSP)",
+    "category": "Special",
+    "subcategory": "Kubernetes Certified Service Provider",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "palo-alto-networks": [
+   {
+    "landscape": "cncf",
+    "name": "Prisma Cloud by Palo Alto Networks",
+    "category": "Serverless",
+    "subcategory": "Security",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "pgvector": [
+   {
+    "landscape": "cncf",
+    "name": "pgvector",
+    "category": "AI Agent",
+    "subcategory": "Vector Database",
+    "project": null,
+    "repo": "https://github.com/pgvector/pgvector"
+   }
+  ],
+  "podman": [
+   {
+    "landscape": "cncf",
+    "name": "Podman",
+    "category": "App Definition and Development",
+    "subcategory": "Application Definition & Image Build",
+    "project": null,
+    "repo": "https://github.com/containers/podman"
+   }
+  ],
+  "pomerium": [
+   {
+    "landscape": "cncf",
+    "name": "Pomerium",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": "https://github.com/pomerium/pomerium"
+   }
+  ],
+  "portainer": [
+   {
+    "landscape": "cncf",
+    "name": "Portainer",
+    "category": "Platform",
+    "subcategory": "PaaS/Container Service",
+    "project": null,
+    "repo": "https://github.com/portainer/portainer"
+   }
+  ],
+  "postgresql": [
+   {
+    "landscape": "cncf",
+    "name": "PostgreSQL",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/postgres/postgres"
+   }
+  ],
+  "prometheus": [
+   {
+    "landscape": "cncf",
+    "name": "Prometheus",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": "graduated",
+    "repo": "https://github.com/prometheus/prometheus"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Prometheus",
+    "category": "Data",
+    "subcategory": "Visualization",
+    "project": null,
+    "repo": "https://github.com/prometheus/prometheus"
+   }
+  ],
+  "promptfoo": [
+   {
+    "landscape": "cncf",
+    "name": "Promptfoo",
+    "category": "AI Agent",
+    "subcategory": "Evaluation",
+    "project": null,
+    "repo": "https://github.com/promptfoo/promptfoo"
+   }
+  ],
+  "pulumi": [
+   {
+    "landscape": "cncf",
+    "name": "Pulumi",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": null,
+    "repo": "https://github.com/pulumi/pulumi"
+   }
+  ],
+  "puppet": [
+   {
+    "landscape": "cncf",
+    "name": "Puppet",
+    "category": "Provisioning",
+    "subcategory": "Automation & Configuration",
+    "project": null,
+    "repo": "https://github.com/puppetlabs/puppet"
+   }
+  ],
+  "pydantic-ai": [
+   {
+    "landscape": "cncf",
+    "name": "Pydantic AI",
+    "category": "AI Agent",
+    "subcategory": "Agent Framework",
+    "project": null,
+    "repo": "https://github.com/pydantic/pydantic-ai"
+   }
+  ],
+  "qdrant": [
+   {
+    "landscape": "cncf",
+    "name": "Qdrant",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/qdrant/qdrant"
+   }
+  ],
+  "rancher": [
+   {
+    "landscape": "cncf",
+    "name": "Rancher Kubernetes",
+    "category": "Platform",
+    "subcategory": "Certified Kubernetes - Distribution",
+    "project": null,
+    "repo": "https://github.com/rancher/rancher"
+   }
+  ],
+  "red-hat": [
+   {
+    "landscape": "cncf",
+    "name": "Red Hat Build of Microshift",
+    "category": "Platform",
+    "subcategory": "Certified Kubernetes - Distribution",
+    "project": null,
+    "repo": "https://github.com/openshift/microshift"
+   }
+  ],
+  "redis": [
+   {
+    "landscape": "cncf",
+    "name": "Redis",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/redis/redis"
+   }
+  ],
+  "sap": [
+   {
+    "landscape": "cncf",
+    "name": "SAP (KCSP)",
+    "category": "Special",
+    "subcategory": "Kubernetes Certified Service Provider",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "scaleway": [
+   {
+    "landscape": "cncf",
+    "name": "Scaleway Kubernetes Kapsule",
+    "category": "Platform",
+    "subcategory": "Certified Kubernetes - Hosted",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "semantic-kernel": [
+   {
+    "landscape": "cncf",
+    "name": "Semantic Kernel",
+    "category": "AI Agent",
+    "subcategory": "Agent Framework",
+    "project": null,
+    "repo": "https://github.com/microsoft/semantic-kernel"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Semantic Kernel",
+    "category": "Model",
+    "subcategory": "Format & Interface",
+    "project": null,
+    "repo": "https://github.com/microsoft/semantic-kernel"
+   }
+  ],
+  "sentry": [
+   {
+    "landscape": "cncf",
+    "name": "Sentry",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/getsentry/sentry"
+   }
+  ],
+  "smolagents": [
+   {
+    "landscape": "cncf",
+    "name": "Smolagents",
+    "category": "AI Agent",
+    "subcategory": "Agent Framework",
+    "project": null,
+    "repo": "https://github.com/huggingface/smolagents"
+   }
+  ],
+  "snowflake": [
+   {
+    "landscape": "cncf",
+    "name": "Snowflake",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "snyk": [
+   {
+    "landscape": "cncf",
+    "name": "Snyk",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "spacelift": [
+   {
+    "landscape": "cncf",
+    "name": "Spacelift",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "spinnaker": [
+   {
+    "landscape": "cncf",
+    "name": "Spinnaker",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": "https://github.com/spinnaker/spinnaker"
+   }
+  ],
+  "splunk": [
+   {
+    "landscape": "cncf",
+    "name": "Splunk",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "sumo-logic": [
+   {
+    "landscape": "cncf",
+    "name": "Sumo Logic",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "supabase": [
+   {
+    "landscape": "cncf",
+    "name": "Supabase",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/supabase/supabase"
+   }
+  ],
+  "sysdig": [
+   {
+    "landscape": "cncf",
+    "name": "sysdig",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/draios/sysdig"
+   }
+  ],
+  "tekton": [
+   {
+    "landscape": "cncf",
+    "name": "Tekton",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": "incubating",
+    "repo": "https://github.com/tektoncd/pipeline"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Tekton Pipelines",
+    "category": "Data",
+    "subcategory": "Pipeline Management",
+    "project": null,
+    "repo": "https://github.com/tektoncd/pipeline"
+   }
+  ],
+  "teleport": [
+   {
+    "landscape": "cncf",
+    "name": "Teleport",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": "https://github.com/gravitational/teleport"
+   }
+  ],
+  "temporal": [
+   {
+    "landscape": "cncf",
+    "name": "Temporal",
+    "category": "AI Agent",
+    "subcategory": "Workflow Orchestration",
+    "project": null,
+    "repo": "https://github.com/temporalio/temporal"
+   }
+  ],
+  "traefik": [
+   {
+    "landscape": "cncf",
+    "name": "Traefik",
+    "category": "Orchestration & Management",
+    "subcategory": "API Gateway",
+    "project": null,
+    "repo": "https://github.com/traefik/traefik"
+   }
+  ],
+  "trend-micro": [
+   {
+    "landscape": "cncf",
+    "name": "Trend Micro Cloud One",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "trino": [
+   {
+    "landscape": "cncf",
+    "name": "Trino",
+    "category": "Data",
+    "subcategory": "Data Architecture",
+    "project": null,
+    "repo": "https://github.com/trinodb/trino"
+   },
+   {
+    "landscape": "lfai",
+    "name": "Trino",
+    "category": "Data",
+    "subcategory": "SQL Engine",
+    "project": null,
+    "repo": "https://github.com/trinodb/trino"
+   }
+  ],
+  "trivy": [
+   {
+    "landscape": "cncf",
+    "name": "Trivy",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": "https://github.com/aquasecurity/trivy"
+   }
+  ],
+  "valkey": [
+   {
+    "landscape": "cncf",
+    "name": "Valkey",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/valkey-io/valkey"
+   }
+  ],
+  "vercel": [
+   {
+    "landscape": "cncf",
+    "name": "Vercel",
+    "category": "Serverless",
+    "subcategory": "Hosted Platform",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "victoriametrics": [
+   {
+    "landscape": "cncf",
+    "name": "VictoriaMetrics",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/VictoriaMetrics/VictoriaMetrics"
+   }
+  ],
+  "vllm": [
+   {
+    "landscape": "cncf",
+    "name": "vLLM",
+    "category": "Inference",
+    "subcategory": "Runtime",
+    "project": null,
+    "repo": "https://github.com/vllm-project/vllm"
+   }
+  ],
+  "weaviate": [
+   {
+    "landscape": "cncf",
+    "name": "Weaviate",
+    "category": "App Definition and Development",
+    "subcategory": "Database",
+    "project": null,
+    "repo": "https://github.com/weaviate/weaviate"
+   }
+  ],
+  "woodpecker-ci": [
+   {
+    "landscape": "cncf",
+    "name": "Woodpecker CI",
+    "category": "App Definition and Development",
+    "subcategory": "Continuous Integration & Delivery",
+    "project": null,
+    "repo": "https://github.com/woodpecker-ci/woodpecker"
+   }
+  ],
+  "zabbix": [
+   {
+    "landscape": "cncf",
+    "name": "Zabbix",
+    "category": "Observability and Analysis",
+    "subcategory": "Observability",
+    "project": null,
+    "repo": "https://github.com/zabbix/zabbix"
+   }
+  ],
+  "zitadel": [
+   {
+    "landscape": "cncf",
+    "name": "Zitadel",
+    "category": "Provisioning",
+    "subcategory": "Security & Compliance",
+    "project": null,
+    "repo": "https://github.com/zitadel/zitadel"
+   }
+  ],
+  "amazon": [
+   {
+    "landscape": "lfai",
+    "name": "Amazon (hosting)",
+    "category": "Hosting Companies",
+    "subcategory": "Hosting Companies",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "apache-airflow": [
+   {
+    "landscape": "lfai",
+    "name": "Apache Airflow",
+    "category": "Model",
+    "subcategory": "Workflow",
+    "project": null,
+    "repo": "https://github.com/apache/airflow"
+   }
+  ],
+  "apache-iceberg": [
+   {
+    "landscape": "lfai",
+    "name": "Apache Iceberg",
+    "category": "Data",
+    "subcategory": "Store & Format",
+    "project": null,
+    "repo": "https://github.com/apache/iceberg"
+   }
+  ],
+  "bloomberg": [
+   {
+    "landscape": "lfai",
+    "name": "Bloomberg (hosting)",
+    "category": "Hosting Companies",
+    "subcategory": "Hosting Companies",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "dagster": [
+   {
+    "landscape": "lfai",
+    "name": "DAGSTER",
+    "category": "Data",
+    "subcategory": "Pipeline Management",
+    "project": null,
+    "repo": "https://github.com/dagster-io/dagster"
+   }
+  ],
+  "databricks": [
+   {
+    "landscape": "lfai",
+    "name": "Databricks Inc. (hosting)",
+    "category": "Hosting Companies",
+    "subcategory": "Hosting Companies",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "ibm": [
+   {
+    "landscape": "lfai",
+    "name": "IBM (hosting)",
+    "category": "Hosting Companies",
+    "subcategory": "Hosting Companies",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "langchain": [
+   {
+    "landscape": "lfai",
+    "name": "Langchain",
+    "category": "Generative AI",
+    "subcategory": "Tools",
+    "project": null,
+    "repo": "https://github.com/langchain-ai/langchain"
+   }
+  ],
+  "linkedin": [
+   {
+    "landscape": "lfai",
+    "name": "LinkedIn (hosting)",
+    "category": "Hosting Companies",
+    "subcategory": "Hosting Companies",
+    "project": null,
+    "repo": null
+   }
+  ],
+  "metabase": [
+   {
+    "landscape": "lfai",
+    "name": "Metabase",
+    "category": "Data",
+    "subcategory": "Visualization",
+    "project": null,
+    "repo": "https://github.com/metabase/metabase"
+   }
+  ],
+  "mysql": [
+   {
+    "landscape": "lfai",
+    "name": "MySQL",
+    "category": "Data",
+    "subcategory": "Relational DB",
+    "project": null,
+    "repo": "https://github.com/mysql/mysql-server"
+   }
+  ],
+  "redash": [
+   {
+    "landscape": "lfai",
+    "name": "redash",
+    "category": "Data",
+    "subcategory": "Visualization",
+    "project": null,
+    "repo": "https://github.com/getredash/redash"
+   }
+  ],
+  "vespa": [
+   {
+    "landscape": "lfai",
+    "name": "Vespa",
+    "category": "Data",
+    "subcategory": "Store & Format",
+    "project": null,
+    "repo": "https://github.com/vespa-engine/vespa"
+   }
+  ]
+ }
+}
