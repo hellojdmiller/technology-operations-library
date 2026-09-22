@@ -34,6 +34,10 @@ jobs:
         run: node training/free-training-directory/build.mjs --check
       - name: Check AI at Work lesson structure and exports
         run: node training/ai-at-work/build.mjs --check
+      - name: Check every training course and the catalog
+        run: |
+          node training/lib/build-course.mjs --all --check
+          node training/lib/build-catalog.mjs --check
       - name: Check the technology landscape graph and its Obsidian vault
         run: node landscape/lib/build-landscape.mjs --check
       - name: Regenerate workflow exports and catalog

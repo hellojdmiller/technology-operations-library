@@ -1,0 +1,322 @@
+{
+  "version": "1.0.0",
+  "slug": "handling-sensitive-information",
+  "title": "Sharing Without Leaking",
+  "track": "security-awareness",
+  "audience": "Everyone at a small, high-trust firm that handles client, investor, deal, and personal information; no technical background is needed.",
+  "prerequisites": [],
+  "description": "Three practical lessons for deciding what is sensitive, sharing it on purpose, and correcting a mis-share in the first hour rather than the first week.",
+  "introduction": [
+    "Most leaks I have dealt with were not attacks. They were a folder link that never expired, a spreadsheet forwarded to be helpful, or autocomplete picking the wrong Marcus. Small firms run on trust and speed, and both make it easy to share one step further than anyone intended.",
+    "This course follows one deal week at a fictional firm. You will classify what sits in a diligence folder, answer a counterparty who wants all of it through one open link, and write the correction note for an email that reached the wrong person.",
+    "No tool account is needed. Work on paper or in a document, try each task before opening the example answer, then explain your choice in your own words. Where I name a product setting, it is because the setting's behavior matters, not because I am selling it.",
+    "Fifteen to twenty minutes per lesson is a starting estimate. If your firm has its own data handling standard, keep it beside the fictional one in the packet and note where they differ. Those differences are worth raising with whoever owns your standard."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "One deal week, four ways to over-share",
+    "description": "You work at Fennimore Ridge Partners, a small investment firm in the last week of diligence on Cobalt Meadow Robotics. Every person, firm, domain, and figure in this packet is fictional. The exercise reference date is 21 September 2026. D1 is a realiztic request that should not be followed as written. D2 describes a folder link that is set up badly. D3 is the firm's standard and is the rule you apply. D4 is an email that went to the wrong person; treat it as the mistake to correct, not as a model.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Request to share the whole diligence folder",
+        "date": "2026-09-18",
+        "kind": "External email: a request to evaluate, not to follow as written",
+        "body": [
+          "From: Oskar Lindqvist, Analyst, Brightwater Growth Advisors (o.lindqvist@brightwater.example.org). To: Tamsin Reyes, Associate, Fennimore Ridge Partners (t.reyes@fennimoreridge.example.com). Subject: Cobalt Meadow: access to your diligence folder.",
+          "Hi Tamsin. Thanks for the call yesterday. To keep things moving, could you share the whole Cobalt Meadow diligence folder rather than sending items one at a time? We keep finding we need the document next to the one you sent.",
+          "An 'anyone with the link' link would be easiest. Our team rotates people on and off this deal, and our outside counsel does not have accounts with you, so a general link saves everyone the invitation dance.",
+          "Edit access would help too. We would like to drop our questions and comments straight into your files instead of building a separate list.",
+          "We are aiming to have our questions back to you by Friday 25 September. Appreciate the help. Oskar."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Sharing report for the diligence folder",
+        "date": "2026-09-21",
+        "kind": "Plain-text sharing report: the link's current settings and the folder's contents",
+        "body": [
+          "Folder: Cobalt Meadow Robotics: Diligence 2026. Owner: Tamsin Reyes. Report generated 21 September 2026, 09:10, by the firm's document platform.",
+          "Active link 1. Type: anyone with the link. Sign-in: not required. Permission: edit (recipients can add, change, and delete files). Expiry: none. Password: none. Created 15 September 2026 by Tamsin Reyes. Access history: not available for this link type.",
+          "Folder contents: 214 files. Selected items follow. (1) Cobalt Meadow press kit and public website screenshots. (2) Fennimore Ridge diligence steps checklist, version 3: a blank template with no company or person names.",
+          "(3) Cobalt Meadow customer contracts and revenue by customer, 2024 to 2026. (4) Background check report on the Cobalt Meadow chief executive, including date of birth, home address, and a credit history summary.",
+          "(5) Spreadsheet: LP commitments, Fund III, listing investor names, commitment amounts, and contact email addresses. (6) Note: closing wire instructions for Fennimore Ridge and the administrator password for the external data room."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Data handling standard (excerpt)",
+        "date": "2026-06-01",
+        "kind": "Fictional policy: classification levels, approved sharing methods, prohibited channels, and reporting",
+        "body": [
+          "Classification. Public: published or cleared for publication; no harm if seen by anyone. Internal: everyday working material; mild embarrassment or inconvenience if it leaked, and no individual is harmed. Confidential: information about a company, a deal, or a counterparty that would harm that party or the firm if it leaked.",
+          "Restricted: information that would harm a specific person or investor, or give someone control of our systems or money. This always includes personal data such as dates of birth, home addresses, credit history, and identity documents; investor identities, commitments, and terms; and credentials, wire instructions, and one-time codes.",
+          "The test. Before you share, ask who is harmed if this leaks, and how badly. Answer with a person, a company, or the firm. If the answer is a person or an investor, the item is restricted regardless of how ordinary the file looks. A list of names is data about those people.",
+          "Approved sharing. Internal: the firm's document library. External: a link to named recipients who must sign in, view-only unless editing is the purpose, expiring within 30 days. Share the specific folder or file the recipient needs, never a folder that also holds other parties' material or a higher classification.",
+          "Restricted material leaves the firm only with the information owner's written approval. Attachments are copies the firm cannot take back. Use one only when a link fails for the recipient and the item is confidential or below. 'Anyone with the link' is never used for confidential or restricted material.",
+          "Prohibited. Personal email accounts, personal cloud storage, and unapproved messaging or AI tools may not receive firm information at internal or above. Entering firm information into any tool is a share to that tool's operator; the 'Using AI Without Leaking' course covers approved tools.",
+          "Mistakes. Tell the technology team and the information owner within the hour of noticing a mis-share, before you are sure of the details. Recall is not a fix. Record what went where, when, and what was done.",
+          "The technology team can revoke links, remove guest access, pull access and audit records, and advise on any notification duty. Only the sender can tell the recipient what happened and ask them to delete it."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "A closing checklist sent to the wrong Marcus",
+        "date": "2026-09-21",
+        "kind": "Misdirected email chain: the mistake to correct, with the reply that revealed it",
+        "body": [
+          "Sent 21 September 2026, 08:42. From: Tamsin Reyes (t.reyes@fennimoreridge.example.com). To: Marcus Hale (m.hale@brightwell.example.net). Intended recipient: Marcus Hale, Brightwater Growth Advisors (m.hale@brightwater.example.org). Subject: RE: RE: Cobalt Meadow: closing checklist. Attachment: Closing checklist v4.",
+          "Marcus, as discussed, the updated closing checklist is attached, and the LP side letter summary is further down this thread so you have the context. Shout if anything is missing. Tamsin.",
+          "Quoted below, 19 September 2026, 17:20, from Lena Okonkwo, Partner, to Tamsin (internal): 'Hold Brightwater at 13.8 million. We can stretch to 14.5 if we must, but that number does not leave this building. Also, the three LPs in the side letter summary have asked not to be named to the counterparty.'",
+          "Quoted below, 16 September 2026, 11:05, from Tamsin to Lena (internal): 'Side letter summary: Halvorsen Family Office (reduced management fee), Pell Street Endowment (co-investment right), Marisol Trust (excused from defense investments). Full terms are in the LP folder.'",
+          "Reply received 09:05 from m.hale@brightwell.example.net: 'Hi Tamsin, I think this reached me by mistake. I am at Brightwell Freight; we handled your office move in 2024. I have not opened the attachment, but I did read the email. Tell me what you would like me to do.'"
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "know-what-is-sensitive",
+      "number": 1,
+      "title": "Know what is sensitive",
+      "summary": "Sort information by who gets hurt if it leaks, not by how the file looks.",
+      "duration": "15–20 minutes",
+      "outcome": "Classify six items from the diligence folder into D3's four levels, with one sentence of reasoning each.",
+      "explanation": [
+        "I do not start with the file type or where it sits. I start with one question: who is harmed if this leaks, and how badly? The answer is a person, a company, or the firm, and it sets the level and how the item may travel.",
+        "Four levels are enough. Public can be seen by anyone. Internal is everyday working material. Confidential concerns a company or a deal and would hurt that party or us. Restricted would hurt a specific person or investor, or hand a stranger our money or systems. D3 gives the wording.",
+        "The FTC's small-business guide begins with taking stock of the personal information you hold and keeping only what you need. A diligence folder collects far more than the deal, so read it before you share it. [S1]",
+        "A spreadsheet of names looks harmless because we see names all day. The UK regulator counts disclosing personal data to the wrong person as a breach, and a list tying investors to money and contacts is personal data about each of them. Credentials let a stranger act as us. [S2]"
+      ],
+      "workedExample": {
+        "title": "The list that looked ordinary",
+        "before": "The LP spreadsheet can stay in the folder. Everyone on the deal knows our investors; it is only names and numbers.",
+        "after": "Restricted. It links named investors to commitment amounts and personal email addresses; the harmed parties are those investors and our relationship with them. Under D3 it leaves the firm only with the owner's written approval, never inside a shared folder.",
+        "why": "The harm question points at people, not the deal; the file's plainness stops mattering."
+      },
+      "task": {
+        "prompt": "Read D2 and D3. Classify the six numbered items in D2 into D3's four levels, with one sentence each naming who is harmed if it leaks.",
+        "deliverable": "Six classifications, each with one sentence of reasoning checkable against D3.",
+        "checklist": [
+          "Use only D3's four levels, one per item.",
+          "Name a person, a company, or the firm as the harmed party.",
+          "Treat anything identifying a person or an investor as restricted, however plain.",
+          "Say which items should not be in a shared folder at all."
+        ]
+      },
+      "hint": "Imagine each item printed and left on a train. Whose day gets worse when a stranger reads it? If you cannot name anyone, it is public or internal.",
+      "modelAnswer": [
+        "Item 1, press kit: public; already published, nobody harmed. Item 2, blank checklist: internal; a competitor seeing our steps is mildly awkward and no person is affected. Item 3, customer contracts and revenue by customer: confidential; a leak harms Cobalt Meadow, its customers, and our standing.",
+        "Item 4, background check: restricted; one named person is harmed, and D3 lists these exact data types. Item 5, LP spreadsheet: restricted; it identifies investors, their money, and their contacts. Item 6, wire instructions and password: restricted; a stranger could move our money or enter the data room as us.",
+        "Items 4 to 6 belong in no folder a counterparty sees, and item 6 belongs in the password manager, not a document."
+      ],
+      "reflection": "Which item did you first place too low, and what in the harm question moved it? Explain without the level names.",
+      "transfer": {
+        "prompt": "Suppose the LP spreadsheet is edited to remove amounts and email addresses, leaving only investor names. Does its level change?",
+        "answer": "No. A list of who invested in Fund III still identifies people and organizations who expect discretion, and D3 names investor identities as restricted on their own. Removing amounts shrinks the harm, not the harmed party. It stays restricted and out of the shared folder."
+      },
+      "check": {
+        "question": "How should the LP spreadsheet in D2 be classified?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Internal, because the deal team already knows the investors.",
+            "feedback": "Familiarity inside the firm is not D3's test; the investors named are the harmed party. D2 shows the folder open to anyone with the link, so the deal team is not who can read it."
+          },
+          {
+            "id": "b",
+            "label": "Restricted, because it ties identifiable investors to their money and contact details.",
+            "feedback": "This applies D3's test: specific investors are harmed, and D3 lists investor identities, commitments, and contact data as restricted."
+          },
+          {
+            "id": "c",
+            "label": "Confidential, but only while the amounts column is present.",
+            "feedback": "Names alone identify investors, which D3 places at restricted. Stripping a column does not change who is harmed or make the file safe in the open folder D2 describes."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "share-deliberately",
+      "number": 2,
+      "title": "Share deliberately",
+      "summary": "Choose the recipient, the permission, and the end date before the file.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a sharing decision for the request in D1, with every setting spelled out in words.",
+      "explanation": [
+        "A link to named people who sign in is a door I can lock again: I see who holds it, change what they can do, and set the day it stops working. An attachment is a copy that leaves with no lock. Named link first; an attachment only when a link cannot work.",
+        "Microsoft describes an 'anyone with the link' link as one that opens without signing in, keeps working when forwarded, and leaves no record of who has access or who opened it. Google's controls are the same idea: specific people, restricted general access, no resharing by editors, an expiry on work accounts. [S3, S5]",
+        "Personal email and personal cloud storage are out. The FTC warns against sending sensitive personal data by email, and D3 bars personal accounts above public. When someone asks for a whole folder, build one holding only what they need. Typing into an AI tool is a share too; 'Using AI Without Leaking' covers it. [S1]"
+      ],
+      "workedExample": {
+        "title": "Same request, different answer",
+        "before": "Hi Oskar, here is the folder link. Anyone with the link can edit and it never expires, so your team can get straight in.",
+        "after": "Hi Oskar, the folder with our agreed request list is shared to you and your counsel's named contact by email: sign-in required, view only, expiring 21 October 2026. Send names as people rotate on and I will add them that day. Questions go in the editable tracker beside it.",
+        "why": "Oskar gets what diligence needs and a place for questions; the firm keeps control of who opens the files and for how long."
+      },
+      "task": {
+        "prompt": "Read D1 to D3. Write a sharing decision for Oskar: what you share, with whom, and with which settings written out in words. Say what you refuse and why.",
+        "deliverable": "A sharing decision stating recipients, permission, sign-in, expiry, and scope.",
+        "checklist": [
+          "Name each recipient by role or address; no 'anyone with the link'.",
+          "State view or edit, sign-in, and an expiry within D3's 30 days.",
+          "Exclude the restricted items in D2 and say where questions will live."
+        ]
+      },
+      "hint": "Write the settings as one sentence a new colleague could read aloud: shared to [who], sign-in required, [view or edit], expires [date]. Any empty bracket means unfinished.",
+      "modelAnswer": [
+        "Share: a new folder holding only the agreed request list, items 1 to 3 from D2. Recipients: Oskar by email address, plus one named counsel contact once Oskar supplies it. Settings: sign-in required, view only, expiry 21 October 2026, no 'anyone' link.",
+        "Refuse: the background check, the LP spreadsheet, and the wire instructions and password. They are restricted under D3, they concern a person, our investors, and our money, and none is Brightwater's diligence. Edit on the documents is refused; an editable question tracker replaces it."
+      ],
+      "reflection": "Which setting would be hardest to justify if Oskar pushed back once more, and what would you say, in your own words?",
+      "transfer": {
+        "prompt": "Oskar replies that his counsel's email system blocks sign-in links and asks for attachments instead. What changes?",
+        "answer": "The bar rises: attachments are copies the firm cannot take back. D3 allows one only when a link fails and the item is confidential or below. Send only the documents counsel names, never anything restricted, and ask the technology team first about a guest account or domain-limited link. 'Anyone' is still not the fallback."
+      },
+      "check": {
+        "question": "Oskar wants 'anyone with the link' so colleagues can rotate on without invitations. Which response fits D1 to D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Agree, but make the link view only so nobody can change the files.",
+            "feedback": "View only limits damage, not audience. D3 bars 'anyone' links for confidential material, D2 shows restricted items in this folder, and Microsoft notes a forwarded anyone link works for whoever holds it, unrecorded. [S3]"
+          },
+          {
+            "id": "b",
+            "label": "Share to named people who sign in, view only, with expiry, adding new colleagues by name.",
+            "feedback": "This meets Oskar's need and D3's rule: every reader is known, access can be removed per person, and the expiry ends exposure with the deal."
+          },
+          {
+            "id": "c",
+            "label": "Send the files as email attachments so link settings stop mattering.",
+            "feedback": "An attachment drops every control: no expiry, no revocation, no forwarding record. D3 allows one only when a link fails, which Oskar has not said, and D2's restricted items cannot be attached at all."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "fix-mistakes-fast",
+      "number": 3,
+      "title": "Fix mistakes fast",
+      "summary": "Report in minutes, tell the recipient yourself, and write down what went where.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a three-step correction note for the misdirected email in D4 that a colleague could act on today.",
+      "explanation": [
+        "The first hour after a mis-share is worth more than the first week, and recall will not buy it back. Microsoft says recall works only within one organization and while the message is unread. For the external recipient in D4, who has read the email, it changes nothing. [S4]",
+        "Read the whole thread: quoted history travels with the message. The technology team can revoke links, remove guests, and pull access records for signed-in shares; for 'anyone' links Microsoft says no record of who opened them exists. Only the sender can tell the recipient and ask for deletion. [S3]",
+        "The UK regulator lists a wrong-recipient email as a personal data breach, notifiable within 72 hours where the duty applies, and expects the facts, effects, and remedial action recorded regardless. Whether or not that law binds you, tell people in minutes and write it down. [S2]"
+      ],
+      "workedExample": {
+        "title": "From recall to a correction that works",
+        "before": "I hit recall and it says pending, so it should be fine. I will mention it at Thursday's team meeting.",
+        "after": "09:10: told Ravi (technology) and Lena (information owner): wrong recipient, thread holds a negotiating figure and three LP names, email read, attachment unopened. 09:14: asked Marcus to delete without forwarding and confirm. Recall impossible: external recipient. Logged times, recipient, contents, actions.",
+        "why": "Each step changes the outcome: helpers know in minutes, the recipient hears from the one person who can ask him, and the record exists."
+      },
+      "task": {
+        "prompt": "Read D3 and D4. It is 09:10 on 21 September 2026 and you are Tamsin. Write a three-step correction note: the next five minutes, the message to Marcus, and the record. Say what recall cannot do.",
+        "deliverable": "A three-step correction note with who acts, what they do, and by when.",
+        "checklist": [
+          "Step one reaches the technology team and information owner before every detail is certain.",
+          "Step two asks Marcus plainly to delete without forwarding and to confirm.",
+          "Step three records time, recipient, the whole thread including quoted history, and each action."
+        ]
+      },
+      "hint": "Read D4 from the bottom up. List every fact a stranger now knows, then ask: who can undo this, and who needs to know?",
+      "modelAnswer": [
+        "Step one, now: message Ravi (technology) and Lena (information owner). 'Misdirected email at 08:42 to m.hale@brightwell.example.net. Thread includes Lena's 13.8 and 14.5 figures and three LP names. Recipient read it, attachment unopened. Recall impossible: external, already read.'",
+        "Step two, by 09:20: reply to Marcus. 'Thank you for flagging this. It was sent in error and is confidential. Please delete the email and attachment without forwarding or copying, and reply to confirm.' Say nothing more about the contents.",
+        "Step three, before 10:00: record sent time, both recipients, attachment name, every item in the quoted history, and Marcus's replies. Lena decides how to handle the figure and whether the investors are told; the technology team advises on notification."
+      ],
+      "reflection": "Which step would you have skipped or delayed a month ago, and what does the packet show about the cost?",
+      "transfer": {
+        "prompt": "Suppose the mistake is D2's link instead, pasted into an external group chat. How does the note change?",
+        "answer": "Step one is the same and faster: the technology team can remove the link in minutes. Step two has no single recipient to ask, and no record shows who opened an 'anyone' link, so assume everyone in that chat did. Step three lists the restricted items as exposed; Lena decides what follows. [S3]"
+      },
+      "check": {
+        "question": "Tamsin has just read Marcus's 09:05 reply. What is the right first move?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Use recall and wait for its confirmation before doing anything else.",
+            "feedback": "Recall needs both people in one organization and an unread message. Marcus is at another firm and has read the email, so recall does nothing, and waiting on it spends the hour that matters. [S4]"
+          },
+          {
+            "id": "b",
+            "label": "Tell the technology team and Lena now, then ask Marcus to delete and confirm.",
+            "feedback": "The first minutes go on what changes the outcome: those who can preserve and advise know at once, and the one person who can ask the recipient does so."
+          },
+          {
+            "id": "c",
+            "label": "Wait until end of day to see whether Marcus forwards it.",
+            "feedback": "D3 wants the report within the hour, before details are certain. Whatever Marcus does later, the investors' names and Lena's figure have already left the firm; delay only stops Lena acting today."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Protecting Personal Information: A Guide for Business",
+      "publisher": "Federal Trade Commission (United States)",
+      "url": "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business",
+      "publishedOrUpdated": "October 2016 (as stated on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Five principles for businesses: take stock of the personal information you hold, scale down to what you need, lock what you keep, dispose of the rest properly, and plan ahead for incidents. It advises against sending sensitive personal data by email, recommends least-privilege access, and asks for a written response plan.",
+      "application": "Lesson 1 uses take stock and scale down to justify reading a diligence folder before sharing it. Lesson 2 uses the email warning to support D3's ban on personal accounts and casual attachments. Lesson 3 borrows plan ahead for the correction note.",
+      "limits": "US consumer-protection guidance for general small businesses, dated 2016. It does not address investment firms, cloud sharing links, or any specific platform, and it is not a legal analysis of any jurisdiction's duties.",
+      "revisit": "Recheck if the FTC revises or replaces the guide, or if the firm's regulatory obligations change."
+    },
+    {
+      "id": "S2",
+      "title": "Personal data breaches: a guide",
+      "publisher": "Information Commissioner's Office (United Kingdom)",
+      "url": "https://ico.org.uk/for-organisations/report-a-breach/personal-data-breach/personal-data-breaches-a-guide/",
+      "publishedOrUpdated": "20 August 2025 (as stated on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines a personal data breach as a security breach leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data; lists sending personal data to the wrong recipient as an example; requires notifiable breaches to be reported to the ICO within 72 hours of awareness; and requires the facts, effects, and remedial action to be documented for every breach, notifiable or not.",
+      "application": "Lesson 1 uses the definition to show that a list of names is personal data whose disclosure counts. Lesson 3 uses the wrong-recipient example, the 72-hour clock, and the recording duty to justify reporting in minutes and writing the facts down.",
+      "limits": "UK GDPR guidance. Whether the 72-hour duty applies depends on the firm's jurisdiction and the data involved; the course borrows the timing and recording habits, not the legal conclusion. It does not cover non-personal deal information such as a negotiating position.",
+      "revisit": "Recheck when the ICO updates the guide or when the firm's applicable data protection regime changes."
+    },
+    {
+      "id": "S3",
+      "title": "Manage sharing settings for SharePoint and OneDrive in Microsoft 365",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
+      "publishedOrUpdated": "2026-06-30 (article date)",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes the external sharing levels (Anyone, New and existing guests, Existing guests, Only people in your organization). 'Anyone' links open without authenticating, forwarded links work internally or externally, and the organization cannot track who has access or who has accessed the item. Administrators can require Anyone links to expire within a set number of days and restrict them to view permission. 'Specific people' is described as the most restrictive link option. When sharing is restricted or turned off, guests typically lose access within one hour.",
+      "application": "Lesson 2 uses the description of Anyone links to explain why D2's link is a problem and why named recipients, view only, and expiry are the default. Lesson 3 uses the absence of access records for Anyone links to explain what the technology team cannot tell you after an over-share.",
+      "limits": "Administrator documentation for one platform. Menus differ by tenant configuration and change often, and a firm's defaults may already restrict some options. It says nothing about email or other platforms; Google's controls are covered in S5.",
+      "revisit": "Recheck when the article date changes or when the firm changes its sharing platform or tenant settings."
+    },
+    {
+      "id": "S4",
+      "title": "Recall or replace a sent email in Outlook",
+      "publisher": "Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/office/recall-or-replace-a-sent-email-35027f88-d655-4554-b4f8-6c0729a723a0",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Recall works only when both sender and recipient have Microsoft 365 work or school accounts in the same organization and the recipient has not yet opened the message. It is not available for recipients outside the organization or for personal accounts, and it cannot retrieve a message that has been read.",
+      "application": "Lesson 3 uses these conditions to show that recall does nothing for the external, already-read email in D4, and that it should not be counted as a correction step.",
+      "limits": "Describes one email product. Other clients have different or no recall features, and none can retrieve a message an external recipient has already read. The page shows no publication date, so its currency has to be judged by rechecking it.",
+      "revisit": "Recheck if the firm changes email platform or if Microsoft revises the recall conditions."
+    },
+    {
+      "id": "S5",
+      "title": "Stop, limit, or change sharing",
+      "publisher": "Google Drive Help",
+      "url": "https://support.google.com/drive/answer/2494893",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Explains how to remove a person's access, change General access from 'Anyone with the link' to 'Restricted' so only people with access can open the file, stop editors from changing permissions and resharing, prevent viewers and commenters from downloading, printing, and copying, and add an expiration date on access for work or school Google accounts. It notes that files in a shared folder inherit the folder's sharing.",
+      "application": "Lesson 2 uses these controls to show that the settings the course asks for exist on Google's platform as well as Microsoft's, and that folder-level sharing overrides file-level care.",
+      "limits": "End-user help for one platform; some options depend on account type and administrator settings. The page is undated, so it may lag the product. It does not address email or classification.",
+      "revisit": "Recheck when the firm's platform changes or when Google changes the sharing dialog."
+    }
+  ]
+}

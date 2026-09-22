@@ -1,0 +1,653 @@
+{
+  "generatedFrom": "training/*/course.json",
+  "tracks": [
+    {
+      "id": "security-awareness",
+      "title": "Security awareness",
+      "description": "For everyone at the firm. Short modules and three-lesson courses on the habits that stop most incidents."
+    },
+    {
+      "id": "ai-at-work",
+      "title": "AI at work",
+      "description": "For everyone who uses an AI assistant. Framing, context, checking, and not leaking."
+    },
+    {
+      "id": "technology-operations",
+      "title": "Technology operations",
+      "description": "For the operator and the people in the room when something goes wrong."
+    }
+  ],
+  "courses": [
+    {
+      "slug": "ai-at-work",
+      "title": "AI at Work",
+      "track": "ai-at-work",
+      "format": "course",
+      "audience": "Employees across administration, finance, marketing, HR, project teams, and other everyday roles.",
+      "prerequisites": [],
+      "description": "Three practical lessons for turning everyday information into a useful draft, and knowing what still needs checking.",
+      "reviewedOn": "2026-09-19",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Give AI a useful job",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Give the right information",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Check it before you share it",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "ai-at-work/README.md"
+    },
+    {
+      "slug": "ai-hallucinations-and-misinformation",
+      "title": "When the Assistant Is Confidently Wrong",
+      "track": "ai-at-work",
+      "format": "bite",
+      "audience": "Everyone who uses an AI assistant for research, summaries, or drafting.",
+      "prerequisites": [
+        "AI at Work"
+      ],
+      "description": "A short module on spotting fabricated statistics, report titles, dates, and quotes in AI-assisted text, and tracing each claim to its primary source before it leaves the firm.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Plausible is not the same as true",
+          "duration": "9–12 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 9,
+        "max": 12
+      },
+      "path": "ai-hallucinations-and-misinformation/README.md"
+    },
+    {
+      "slug": "ai-in-people-decisions",
+      "title": "AI in People Decisions",
+      "track": "ai-at-work",
+      "format": "bite",
+      "audience": "Managers, HR, and anyone who hires, reviews, or promotes.",
+      "prerequisites": [
+        "AI at Work"
+      ],
+      "description": "A short module on using an assistant to draft in people work while keeping screening, ranking, scoring, and the decision itself with a named human who can explain it.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Draft with it, decide without it",
+          "duration": "9–12 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 9,
+        "max": 12
+      },
+      "path": "ai-in-people-decisions/README.md"
+    },
+    {
+      "slug": "ai-in-the-security-program",
+      "title": "Where AI Helps a Small Security Team",
+      "track": "technology-operations",
+      "format": "bite",
+      "audience": "The technology lead or small IT and security team at a high-trust firm who want an assistant's help with security work without handing it the decisions.",
+      "prerequisites": [
+        "AI at Work"
+      ],
+      "description": "One short lesson on which security tasks an assistant does well, which decisions stay with a person, what never enters a tool without a data agreement, and how every claim gets verified.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Assistant, not analyst of record",
+          "duration": "12–15 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 12,
+        "max": 15
+      },
+      "path": "ai-in-the-security-program/README.md"
+    },
+    {
+      "slug": "email-security-habits",
+      "title": "Email Habits That Hold",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone who uses a work mailbox.",
+      "prerequisites": [],
+      "description": "One short lesson that turns six everyday email habits into a personal checklist, practiced on one suspicious message and one quietly compromised mailbox.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Six habits, one inbox",
+          "duration": "8–10 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 8,
+        "max": 10
+      },
+      "path": "email-security-habits/README.md"
+    },
+    {
+      "slug": "handling-sensitive-information",
+      "title": "Sharing Without Leaking",
+      "track": "security-awareness",
+      "format": "course",
+      "audience": "Everyone at a small, high-trust firm that handles client, investor, deal, and personal information; no technical background is needed.",
+      "prerequisites": [],
+      "description": "Three practical lessons for deciding what is sensitive, sharing it on purpose, and correcting a mis-share in the first hour rather than the first week.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Know what is sensitive",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Share deliberately",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Fix mistakes fast",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "handling-sensitive-information/README.md"
+    },
+    {
+      "slug": "insider-threat-awareness",
+      "title": "Insider Risk Without Suspicion",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone at a small, high-trust firm, with a short note for anyone who manages people or contractors.",
+      "prerequisites": [],
+      "description": "A short module on why most insider incidents are mistakes or convenience, what the rare deliberate ones look like, and how to raise a concern without accusing anyone.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Access, pressure, and the quiet exit",
+          "duration": "10–12 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 10,
+        "max": 12
+      },
+      "path": "insider-threat-awareness/README.md"
+    },
+    {
+      "slug": "phishing-and-social-engineering",
+      "title": "Phishing and Social Engineering",
+      "track": "security-awareness",
+      "format": "course",
+      "audience": "Everyone at a small, high-trust firm: administration, finance, investment, and operations colleagues with no technical background.",
+      "prerequisites": [],
+      "description": "Three practical lessons on reading a message for the pressure it carries, verifying it through a channel it did not supply, and reporting a click without fear.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Spot the pressure",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Verify out of band",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "After the click",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "phishing-and-social-engineering/README.md"
+    },
+    {
+      "slug": "putting-an-ai-agent-to-work-safely",
+      "title": "Putting an AI Agent to Work Safely",
+      "track": "technology-operations",
+      "format": "course",
+      "audience": "The technology operator or small IT team at a high-trust firm asked to deploy an AI agent that can act (read files, send messages, run tools), and the manager who approves it.",
+      "prerequisites": [
+        "AI at Work",
+        "Using AI Without Leaking"
+      ],
+      "description": "Three lessons for putting an AI agent that can act to work at a small high-trust firm: scope its authority, isolate and broker what it touches, and plan how to watch it and stop it.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Scope the task and the authority",
+          "duration": "20–25 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Isolate, broker, and allowlist",
+          "duration": "20–25 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Observe and stop",
+          "duration": "20–25 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 60,
+        "max": 75
+      },
+      "path": "putting-an-ai-agent-to-work-safely/README.md"
+    },
+    {
+      "slug": "qr-code-scams",
+      "title": "Before You Scan",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone at the firm, whatever their role; no technical background is needed.",
+      "prerequisites": [],
+      "description": "One short lesson on QR codes in emails, documents, and public places: why a code is a link you cannot read, how to preview it, and when to report instead of scanning.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "A QR code is a link you cannot read",
+          "duration": "8–10 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 8,
+        "max": 10
+      },
+      "path": "qr-code-scams/README.md"
+    },
+    {
+      "slug": "ransomware-awareness",
+      "title": "Ransomware: What Everyone Can Do",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone at a small, high-trust firm, whatever their role; no technical background is needed.",
+      "prerequisites": [],
+      "description": "A short module on how ransomware arrives, what its first minutes look like, and the two things anyone can do that help most: disconnect and speak up.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Slow it down and speak up",
+          "duration": "10–12 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 10,
+        "max": 12
+      },
+      "path": "ransomware-awareness/README.md"
+    },
+    {
+      "slug": "safe-ai-use-at-work",
+      "title": "Using AI Without Leaking",
+      "track": "ai-at-work",
+      "format": "course",
+      "audience": "Everyone at a small, high-trust firm who uses an AI assistant for writing, summarizing, or analysis; no technical background is needed.",
+      "prerequisites": [
+        "AI at Work"
+      ],
+      "description": "Three lessons on using an AI assistant without leaking client, investor, or personal information, being steered by the material you paste, or passing on a confident mistake.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "What not to paste",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Instructions hiding in the material",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Check before it counts",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "safe-ai-use-at-work/README.md"
+    },
+    {
+      "slug": "safeguards-for-a-small-investment-firm",
+      "title": "What a Safeguards Program Actually Contains",
+      "track": "technology-operations",
+      "format": "bite",
+      "audience": "Partners, operations and compliance leads, and the technology lead at a small investment firm (venture capital or private equity) who will be asked to show how client and investor information is protected.",
+      "prerequisites": [],
+      "description": "One short lesson on the nine components a written information security program is generally expected to contain, and how a small firm shows each with dated evidence rather than a binder.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Nine things a reviewer will ask to see",
+          "duration": "12–15 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 12,
+        "max": 15
+      },
+      "path": "safeguards-for-a-small-investment-firm/README.md"
+    },
+    {
+      "slug": "secure-browsing-and-downloads",
+      "title": "Downloads, Extensions, and Pop-ups",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone at the firm who uses a browser, which is everyone.",
+      "prerequisites": [],
+      "description": "A short module on where risky software really comes from, how to read a download page and an address bar, and what to do after a bad install.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Install nothing in a hurry",
+          "duration": "8–10 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 8,
+        "max": 10
+      },
+      "path": "secure-browsing-and-downloads/README.md"
+    },
+    {
+      "slug": "sign-in-security",
+      "title": "Passwords, Passkeys, and MFA",
+      "track": "security-awareness",
+      "format": "course",
+      "audience": "Everyone at a small, high-trust firm, with no technical background assumed.",
+      "prerequisites": [],
+      "description": "Three practical lessons on keeping one password per account, choosing a second factor that resists phishing, and recovering safely when something goes wrong.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "One password per account",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Choose a stronger second factor",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Recover safely",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "sign-in-security/README.md"
+    },
+    {
+      "slug": "social-media-security",
+      "title": "What Your Profile Gives Away",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone at the firm, with particular relevance to people whose roles are public: partners, executive assistants, and finance.",
+      "prerequisites": [],
+      "description": "A short module on how ordinary public posts add up to a convincing pretext, and the one posting habit that removes most of the risk.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Small facts, big pretext",
+          "duration": "8–10 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 8,
+        "max": 10
+      },
+      "path": "social-media-security/README.md"
+    },
+    {
+      "slug": "the-first-hour",
+      "title": "The First Hour",
+      "track": "technology-operations",
+      "format": "course",
+      "audience": "The people who would be in the room when something goes wrong at a small, high-trust firm: the technology lead, the operations or finance lead, a partner or executive, and whoever answers the phone.",
+      "prerequisites": [],
+      "description": "Three lessons on the first hour of a cyber incident at a small firm: a plan that names people, a triage record that separates facts from assumptions, and a communication plan with the first sentence each person hears.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Before anything happens",
+          "duration": "20–25 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Triage and contain",
+          "duration": "20–25 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Communicate and recover",
+          "duration": "20–25 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 60,
+        "max": 75
+      },
+      "path": "the-first-hour/README.md"
+    },
+    {
+      "slug": "understanding-personal-information",
+      "title": "Personal Information in Plain Words",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone who handles names, contact details, identifiers, or financial details of people: clients, investors, employees, or candidates.",
+      "prerequisites": [],
+      "description": "One short lesson on recognizing personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "If it points to a person, treat it as theirs",
+          "duration": "8–10 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 8,
+        "max": 10
+      },
+      "path": "understanding-personal-information/README.md"
+    },
+    {
+      "slug": "verify-before-you-pay",
+      "title": "Verify Before You Pay",
+      "track": "security-awareness",
+      "format": "course",
+      "audience": "Anyone who requests, approves, or processes payments or vendor changes at a small firm: finance, operations, executive assistants, and partners. No technical background is needed.",
+      "prerequisites": [],
+      "description": "Three practical lessons on spotting business email compromise, verifying payment changes through a second channel, and writing a procedure a small firm can actually follow.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Recognize business email compromise",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Verify through a second channel",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Design the procedure and the response",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "verify-before-you-pay/README.md"
+    },
+    {
+      "slug": "voice-phishing",
+      "title": "Calls That Want Something",
+      "track": "security-awareness",
+      "format": "bite",
+      "audience": "Everyone who answers a phone or joins video calls for the firm.",
+      "prerequisites": [],
+      "description": "One short lesson on the calls and voicemails that ask for a code, a password, a payment, or remote access, and the single habit that defeats them.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Hang up and call back",
+          "duration": "8–10 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 8,
+        "max": 10
+      },
+      "path": "voice-phishing/README.md"
+    },
+    {
+      "slug": "working-securely-anywhere",
+      "title": "Working Securely Anywhere",
+      "track": "security-awareness",
+      "format": "course",
+      "audience": "Everyone at a small, high-trust firm who works from home, travels, or uses more than one device, with no technical background assumed.",
+      "prerequisites": [],
+      "description": "Three practical lessons on keeping a laptop or phone trustworthy, working on someone else's network without fear, and handling personal devices and unapproved apps.",
+      "reviewedOn": "2026-09-21",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Keep the device trustworthy",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 2,
+          "title": "Work away from the office",
+          "duration": "15–20 minutes"
+        },
+        {
+          "number": 3,
+          "title": "Personal devices and unsanctioned apps",
+          "duration": "15–20 minutes"
+        }
+      ],
+      "minutes": {
+        "min": 45,
+        "max": 60
+      },
+      "path": "working-securely-anywhere/README.md"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "everyone-first-month",
+      "title": "Everyone: the first month",
+      "audience": "Every new joiner, and everyone else once a year",
+      "description": "One module a week for the first month. Each one is a habit that stops a common incident: the message that wants something, the password used twice, the folder shared too widely, the laptop left in a lounge.",
+      "steps": [
+        "phishing-and-social-engineering",
+        "sign-in-security",
+        "handling-sensitive-information",
+        "working-securely-anywhere",
+        "email-security-habits",
+        "voice-phishing",
+        "qr-code-scams"
+      ]
+    },
+    {
+      "id": "finance-and-payments",
+      "title": "Finance and payments",
+      "audience": "Anyone who requests, verifies, approves, or processes a payment or a vendor change",
+      "description": "The fraud that costs small firms the most is a payment sent to the wrong place on the strength of a convincing message or call. This journey builds the verification habit and the procedure around it.",
+      "steps": [
+        "verify-before-you-pay",
+        "voice-phishing",
+        "phishing-and-social-engineering",
+        "understanding-personal-information",
+        "the-first-hour"
+      ]
+    },
+    {
+      "id": "working-with-ai",
+      "title": "Working with AI",
+      "audience": "Everyone who uses an AI assistant for writing, summarizing, research, or analysis",
+      "description": "Start with framing, context, and checking. Then learn what not to paste, how material can carry hidden instructions, why a fluent answer is not evidence, and where a human must own the decision.",
+      "steps": [
+        "ai-at-work",
+        "safe-ai-use-at-work",
+        "ai-hallucinations-and-misinformation",
+        "ai-in-people-decisions"
+      ]
+    },
+    {
+      "id": "managers-and-leads",
+      "title": "Managers and team leads",
+      "audience": "Anyone who approves access, hires, offboards, or would be called when something goes wrong",
+      "description": "The manager's part of security is small and specific: access that matches the job, a clean exit, decisions about people that a human can explain, and knowing who decides in the first hour.",
+      "steps": [
+        "insider-threat-awareness",
+        "ai-in-people-decisions",
+        "social-media-security",
+        "the-first-hour"
+      ]
+    },
+    {
+      "id": "technology-operators",
+      "title": "Technology operators",
+      "audience": "The technology lead or small IT and security team at a high-trust firm",
+      "description": "The operator's path: what a safeguards program has to contain, how to put an agent to work without handing it the firm, where an assistant helps the security work, and how the first hour of an incident runs.",
+      "steps": [
+        "safeguards-for-a-small-investment-firm",
+        "putting-an-ai-agent-to-work-safely",
+        "ai-in-the-security-program",
+        "ransomware-awareness",
+        "secure-browsing-and-downloads",
+        "the-first-hour"
+      ]
+    }
+  ]
+}

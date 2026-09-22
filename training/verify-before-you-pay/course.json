@@ -1,0 +1,314 @@
+{
+  "version": "1.0.0",
+  "slug": "verify-before-you-pay",
+  "title": "Verify Before You Pay",
+  "track": "security-awareness",
+  "audience": "Anyone who requests, approves, or processes payments or vendor changes at a small firm: finance, operations, executive assistants, and partners. No technical background is needed.",
+  "prerequisites": [],
+  "description": "Three practical lessons on spotting business email compromise, verifying payment changes through a second channel, and writing a procedure a small firm can actually follow.",
+  "introduction": [
+    "Most payment fraud I have seen up close did not involve a hacker in the technical sense. Someone asked a busy person to send money somewhere new, gave a good reason, and asked for it today. The request looked ordinary because almost everything in it was ordinary.",
+    "This course follows one fictional firm through a week of payment requests: a vendor changing bank details, a partner asking for a confidential wire, a phone call that sounds like the finance lead, and a procedure with a hole in it. You will mark up, verify, and redesign; you will not pay anything.",
+    "No technical background is needed. Work on paper or in a document, try each task before opening the example, and keep the packet open. The habit I want you to leave with is small: when the destination of money changes, stop and verify through a channel the request did not give you.",
+    "The suggested 15–20 minutes per lesson is a starting estimate. Take longer if you want, answer aloud or in writing, and bring your own firm's procedure alongside D4. The example answers are comparisons, not scripts."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A week of payment requests at Kestrel Row Partners",
+    "description": "You are Dana Okonkwo, the operations associate who prepares payments at Kestrel Row Partners, a fictional twelve-person investment firm. Every person, firm, bank, domain, and amount in this packet is fictional. The exercise reference date is Monday 21 September 2026. D1 and D2 are fraudulent requests constructed for the exercise, and the call summarized in D3 was not made by the person it sounded like. D4 is the firm's genuine current procedure and contains at least one gap you should find. Nothing in the packet has been paid.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Vendor email: new bank details for the next invoice",
+        "date": "2026-09-17",
+        "kind": "Email to accounts@kestrelrow.example.com from accounts@northfield-av.example.com, the address on the vendor record",
+        "body": [
+          "Subject: Updated remittance details for invoice NAV-2291",
+          "Hi Dana, a quick housekeeping note ahead of the boardroom refresh. Northfield has moved its business banking to Merrow Trade Bank as part of our year-end tidy-up. Please update your records so invoice NAV-2291 ($18,640.00, due 25 September) is paid to the new account.",
+          "New details: Account name Northfield Audio Visual Ltd. Bank Merrow Trade Bank. Account number 4471 0092 3318. Routing 067 118 552. Reference NAV-2291.",
+          "Our previous account will reject incoming payments after 22 September, so please do not use the old details. If payment slips past the 25th, the 28 September installation date may need to move, and I would rather avoid that for you.",
+          "If anything is unclear, reply here or call me on my mobile, 555 0142 7716. Thanks as always. Ben Okafor, Accounts, Northfield Audio Visual Ltd."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "An urgent and confidential wire request inside an existing thread",
+        "date": "2026-09-18",
+        "kind": "Email thread, subject 'Re: Q3 close: outstanding items', shown newest first",
+        "body": [
+          "From Marcus Halden (marcus.halden@kestrelrow.example.com) to Dana Okonkwo only, 18 September 2026, 16:52: Dana, adding this to the close thread so it stays with the other items. We are finalising a co-investment side letter with Bramblewood Holdings and they need a $240,000.00 deposit to land before their 5 pm cutoff tomorrow. Priya is traveling and I have cleared it with her by phone.",
+          "This is not announced yet, so please keep it between us until Monday. Details: Bramblewood Holdings Escrow, account 88 2201 5567, routing 031 447 890, reference KRP-BW-Deposit. I am in meetings until late and email is the best way to reach me. Send me the confirmation when it is done. M.",
+          "From Marcus Halden to Priya Raman and Dana Okonkwo, 10 September 2026, 11:02: Thanks Priya. I will sign the engagement letter this week. Northfield can wait for the installation date. Nothing else from me.",
+          "From Priya Raman to Marcus Halden and Dana Okonkwo, 10 September 2026, 09:14: Three items still open for the Q3 close: the Northfield boardroom invoice, the audit engagement letter, and the September management fee calculation. Dana, can you list what is still waiting on signatures?"
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Call note: a voice that sounded like the finance lead",
+        "date": "2026-09-18",
+        "kind": "Plain-text note written by Dana at 17:25, immediately after the call",
+        "body": [
+          "Incoming call at 17:08 from a mobile number not in my contacts and not Priya's directory number. Caller identified herself as Priya. The voice sounded like Priya: same pace, same way of saying my name. Slight echo and a half-second lag, which she said was the airport lounge.",
+          "She said Marcus wanted the Northfield payment expedited to the new account today so the install would not slip, and asked me to release NAV-2291 before I left. She also mentioned 'the Bramblewood thing Marcus emailed you about' and said it was fine.",
+          "When I said I would call her back on her usual number to confirm, she said her phone was at four percent and not to bother; I should just email Marcus once it was done. She asked me to confirm by 17:30. Call ended at 17:12.",
+          "I have not released either payment. I have not emailed Marcus. Writing this down while it is fresh."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Excerpt of the current payment and vendor change procedure",
+        "date": "2025-03-04",
+        "kind": "Internal procedure KRP-FIN-04, version 2.1, last reviewed 4 March 2025, sections 3 to 6 of 8",
+        "body": [
+          "3. New vendors. Finance sets up a new vendor after receiving a signed engagement or order, a tax form, and bank details supplied by the vendor in writing. The operations associate may not create vendor records.",
+          "4. Changes to vendor bank details. Finance will update vendor bank details on receipt of written notice from the vendor on company letterhead or from the vendor's known email address. The change takes effect immediately so that payments in progress are not delayed.",
+          "5. Approval of payments. Payments up to $10,000 may be released by the operations associate once an invoice is on file. Payments above $10,000 require approval by the finance lead or a partner, given in writing or by phone. Urgent payments may be approved by any partner.",
+          "6. Records. Approval emails are kept in the shared finance mailbox. Phone approvals are noted by the operations associate on the payment record."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "recognize-business-email-compromise",
+      "number": 1,
+      "title": "Recognize business email compromise",
+      "summary": "One pattern sits behind most payment fraud: change the destination, keep everything else normal.",
+      "duration": "15–20 minutes",
+      "outcome": "Mark up two payment-related messages with what is being changed and what is creating the pressure.",
+      "explanation": [
+        "Business email compromise is a plain crime with a technical name: someone who legitimately moves money is asked to move it somewhere new. The FBI's Internet Crime Complaint Center counted 305,033 incidents and over 55 billion dollars in exposed losses between October 2013 and December 2023. [S1]",
+        "The pattern is change the destination, keep everything else normal. The invoice number matches, the amount matches, the sign-off is familiar; only the account, payee, or counterparty is new. Vendor bank changes, executive requests, and hijacked threads are the same trick in three costumes.",
+        "I do not use the sender address or the writing quality as the test. A mailbox under someone else's control sends from the real address, and email authentication checks the sending server, not who is typing. [S5] Pressure does the rest: a closing, a capital call, a cutoff tomorrow, a colleague who cannot be reached."
+      ],
+      "workedExample": {
+        "title": "Reading D1 for what matters",
+        "before": "A colleague forwards D1: 'Ben's usual address, invoice number and amount match the quote, his usual sign-off. Updating the bank details now so the 25th is not missed.'",
+        "after": "Changed: the bank and account for NAV-2291. Unchanged: sender address, invoice number, amount, tone, signature. Pressure: the old account 'will reject incoming payments after 22 September' and the installation may move. Decision: hold the change and verify by callback before anything is updated.",
+        "why": "Every reassuring detail is one a diverter keeps intact on purpose. Only the destination moved, and the deadline exists to stop anyone checking that one thing."
+      },
+      "task": {
+        "prompt": "Read D1 and D2. For each, write three lines: what is being changed, what has been kept normal, and what is creating the pressure. Add one sentence on who benefits if you act today without checking.",
+        "deliverable": "A markup of two messages, six to eight lines, readable in under a minute.",
+        "checklist": [
+          "Name the exact thing that changed: account, payee, counterparty, or approval path.",
+          "List two normal-looking details and say why they prove nothing about the destination.",
+          "Quote the phrase in each message that creates the urgency.",
+          "Change no record, send no reply, release no payment."
+        ]
+      },
+      "hint": "Cover the sender line and read for two questions only: where does the money go, and why today?",
+      "modelAnswer": [
+        "D1. Changed: the destination bank and account for NAV-2291. Normal: the address on the vendor record, the invoice number, the quoted amount, Ben's sign-off. Pressure: the old account rejects payments after 22 September and the installation 'may need to move'. The mobile number offered is inside the message, so it verifies nothing.",
+        "D2. Changed: a new counterparty and account, requested by email outside the procedure; Priya's agreement is claimed, not shown, and she is off the copy line. Normal: Marcus's real address, a genuine thread, his short style. Pressure: a 5 pm cutoff, confidentiality, 'email is the best way to reach me'. Speed benefits whoever controls the new accounts."
+      ],
+      "reflection": "Which detail in D2 convinced you most, and why does it say nothing about where the money would go?",
+      "transfer": {
+        "prompt": "Suppose D1 had three spelling mistakes and came from an address one letter off the vendor record. Does your markup change?",
+        "answer": "The clues get easier; the test does not change. The destination moved and a deadline is pushing, so mark and verify it the same way. Train yourself on typos and the clean message from the real mailbox gets through."
+      },
+      "check": {
+        "question": "D2 came from Marcus's real address inside a thread you remember. What does that tell you?",
+        "options": [
+          {
+            "id": "a",
+            "label": "The request is genuine; a real thread cannot be faked.",
+            "feedback": "A hijacked mailbox replies inside real threads from the real address. In this packet the earlier D2 messages are genuine; the final one adds a new payee, drops Priya, and sets a cutoff. That is what needs verifying."
+          },
+          {
+            "id": "b",
+            "label": "Nothing about where the money would go; the new payee and the cutoff need verifying.",
+            "feedback": "Supported. The address and thread show which mailbox sent the message, not who was typing or where the account leads. Lesson 2 covers how to check."
+          },
+          {
+            "id": "c",
+            "label": "It is a scam; partners never email about wires.",
+            "feedback": "Partners at small firms email about payments constantly, and D2 could be a hurried genuine request. The decision is not 'scam or not' from the header; it is 'verify the new destination before anything moves'."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "verify-through-a-second-channel",
+      "number": 2,
+      "title": "Verify through a second channel",
+      "summary": "Confirm a change of destination through a route the request did not hand you, then write it down.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a verification plan for one change request that names the channel, the person, and the record kept.",
+      "explanation": [
+        "A second channel is one the message did not give you: the vendor's number from the record created when the relationship began, not the number in the signature. IC3 advises secondary channels to verify requests; the NCSC asks for a second type of communication. [S1, S4]",
+        "Two controls belong with the callback. Dual approval: a second person who did not receive the request approves any new destination. A cooling period: new bank details wait, two business days in my practice, before the first payment. The FTC calls this an internal procedure for confirming sensitive requests. [S2]",
+        "A voice that sounds like a colleague is not verification. Cloning needs a short sample, and the FTC is blunt: do not trust the voice, call the person back on a number you already have. [S3] Video is no different. Then record who you called, which number, when, and what they said."
+      ],
+      "workedExample": {
+        "title": "Confirming D1 without asking the attacker",
+        "before": "Dana replies to D1: 'Thanks Ben, can you confirm the new details?' The same mailbox answers: 'Confirmed, go ahead.' Dana updates the vendor record.",
+        "after": "Dana calls Northfield's accounts line from the 2024 vendor record and asks whether the bank has changed, without reading out the new details. She notes time, number, and answer, asks Priya to approve as second approver, and keeps NAV-2291 on the old details.",
+        "why": "Replying asks whoever wrote the email to confirm their own message. The callback uses a route the message never touched, and the hold means a mistake costs a late fee, not the invoice."
+      },
+      "task": {
+        "prompt": "Choose D1 or D3. Write a verification plan naming the channel, the source of the contact detail, the person to reach, what you will ask, the second approver, the waiting period, and the record.",
+        "deliverable": "Six to ten lines that a colleague could carry out tomorrow morning without asking you anything.",
+        "checklist": [
+          "The channel and contact detail come from a record older than the request.",
+          "The second approver did not receive the original request.",
+          "New or changed details wait before any payment uses them.",
+          "The record names date, time, number, person reached, and result."
+        ]
+      },
+      "hint": "For each line ask: if the person behind this request controlled this channel too, would my plan still catch them?",
+      "modelAnswer": [
+        "Plan for D3. Channel: a call I place to Priya's mobile as listed in the firm directory, not the number that called me; if no answer, Marcus on his directory number. Question: 'Did you call me at 17:08 about Northfield?' She tells me what she asked for.",
+        "Second approver: Marcus or the other partner, only after Priya confirms or denies the call on her own number. Wait: NAV-2291 stays on the old details until the Northfield callback completes and two business days pass. Record: date, time, number dialed, who answered, what they said."
+      ],
+      "reflection": "Which line of your plan would fail if the attacker also controlled Priya's mailbox, and what would you change?",
+      "transfer": {
+        "prompt": "Northfield's accounts line goes to voicemail. Two minutes later Ben emails offering a video call right now to confirm.",
+        "answer": "A video call arranged through the same thread is the same channel wearing a headset, and video can be imitated too. Leave a voicemail, try the switchboard number on the record, and wait. If the deadline arrives first, pay the old details."
+      },
+      "check": {
+        "question": "The D3 caller said not to call back and to email Marcus instead. What is the supported move?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Release the payment; the voice was Priya's and she knew the invoice.",
+            "feedback": "A cloned voice needs a short sample, and knowing the invoice shows the caller read the same emails you did. In this packet the caller also supplied the reason not to verify."
+          },
+          {
+            "id": "b",
+            "label": "Email Marcus to confirm, as she asked.",
+            "feedback": "That is the channel the request chose for you. In this packet Marcus's mailbox already carries D2, which itself needs verifying, so a reply from it settles nothing."
+          },
+          {
+            "id": "c",
+            "label": "Call Priya on her directory number anyway and hold both payments until she and a second approver confirm.",
+            "feedback": "Supported. The number on file is a route the caller does not control, the hold costs at most a late fee, and a genuine Priya will understand. If her phone was dying, she will call back."
+          }
+        ],
+        "answerId": "c"
+      }
+    },
+    {
+      "slug": "design-the-procedure-and-the-response",
+      "number": 3,
+      "title": "Design the procedure and the response",
+      "summary": "Turn the habit into a one-page control and decide now what the first hour looks like.",
+      "duration": "15–20 minutes",
+      "outcome": "Draft a one-page payment-change procedure and first-hour response that a small firm could adopt.",
+      "explanation": [
+        "A payment-change control names who requests, who verifies, who approves, and how it is recorded; roles stay separate however small the team. D4 fails where the attacker aims: section 4 accepts bank details from letterhead or a known email address, which a compromised mailbox supplies; section 5 lets any partner approve urgent payments by phone.",
+        "If money moves, the first hour is recall, not blame. Call the bank and request a recall; IC3 lists contacting your financial institution, requesting a recall, and filing at ic3.gov as the immediate steps. [S1] Tell leadership and the technology team, preserve every message, and report; the FTC also names local law enforcement. [S2]",
+        "The no-blame rule is speed, not kindness. The NCSC is direct: blaming users does not work, and people who fear reprisals will not report mistakes promptly, if at all. [S4] A recall attempted at 10:40 has a chance; one attempted after a quiet weekend usually does not."
+      ],
+      "workedExample": {
+        "title": "Rewriting section 4 of D4",
+        "before": "Finance will update vendor bank details on receipt of written notice from the vendor on company letterhead or from the vendor's known email address. Effective immediately.",
+        "after": "Vendor bank details change only after a written request, a callback by someone other than the recipient to the number on the vendor record, a second approval, a two-business-day hold, and a log entry. Payments due during the hold use the old details.",
+        "why": "Letterhead and the known address are what a compromised mailbox already has, so the old clause verified nothing. The rewrite moves the check to a channel the attacker does not hold."
+      },
+      "task": {
+        "prompt": "Using D4 and the first two lessons, write a one-page procedure with four headed parts: the payment-change control; urgency and exceptions; the first hour if money moved; the reporting rule. Name roles, not people.",
+        "deliverable": "One page of headings and short lines that a new hire could follow on day one.",
+        "checklist": [
+          "Closes D4 section 4 with a callback to a number on file and a hold.",
+          "Separates requester, verifier, and approver, even at a small headcount.",
+          "Bank call first, reporting route named, prompt report never punished."
+        ]
+      },
+      "hint": "Write it for someone who joined on Monday and has never met Marcus or Priya.",
+      "modelAnswer": [
+        "Control. Request in writing, logged. Verify: someone other than the recipient calls the number on the vendor record or directory and logs it. Approve: a second person who did not receive the request; above $10,000, the finance lead or a partner who is not the requester. Urgency: no fast lane; new details still wait two business days.",
+        "First hour. One: call the bank and request a recall. Two: tell the managing partner and the technology team, who check the mailbox for forwarding rules and unfamiliar sign-ins. Three: preserve every message and call note. Four: file with IC3. Reporting rule: a prompt report counts as the procedure working."
+      ],
+      "reflection": "Which step would the busiest partner most want to skip, and what will you say when they ask?",
+      "transfer": {
+        "prompt": "The firm has three people. The finance lead is also a partner and today the only approver. What changes?",
+        "answer": "Roles stay separate even when the people do not. Whoever receives a request cannot be its sole approver, so the third person verifies by callback and the partner approves. If only two are available, the change waits. The bank's dual-authorization feature can be the second control."
+      },
+      "check": {
+        "question": "On Monday at 10:40 Dana learns Friday's $240,000 wire from D2 went to an unverified account. What comes first?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Email Marcus to ask whether he really sent D2.",
+            "feedback": "Worth knowing, but it uses the mailbox that may still be compromised and spends minutes the recall needs. In this packet who sent D2 does not change the first action."
+          },
+          {
+            "id": "b",
+            "label": "Call the bank and request a recall, then tell leadership and the technology team and preserve the messages.",
+            "feedback": "Supported. Recall odds fall by the hour, leadership must know before anyone else acts on D2, the technology team checks the mailbox, and the messages are evidence."
+          },
+          {
+            "id": "c",
+            "label": "Delete the D2 thread so nobody acts on it, then investigate quietly.",
+            "feedback": "Deleting destroys what the bank, the technology team, and law enforcement will ask for, and quiet investigation is the delay the no-blame rule exists to prevent. The thread holds the account details the bank needs."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Business Email Compromise: The $55 Billion Scam (Public Service Announcement I-091124-PSA)",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2024/PSA240911",
+      "publishedOrUpdated": "2024-09-11",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines BEC as a scam targeting businesses and individuals who perform legitimate transfer-of-funds requests. Reports 305,033 incidents and $55.5 billion in exposed losses from October 2013 to December 2023 across all 50 states and 186 countries. Advises using secondary channels and/or two-factor authentication to verify requests and checking that sender addresses and URLs match. If compromised: contact your financial institution, request a recall, file a complaint at ic3.gov.",
+      "application": "Lesson 1 uses the definition and scale; Lesson 2 uses the secondary-channel advice; Lesson 3 uses the immediate victim steps in the first-hour sequence.",
+      "limits": "Figures are complaints reported to IC3 and count exposed, not confirmed, losses, and stop at December 2023. The PSA does not prescribe cooling periods, dual approval, or callback procedure; those are this course's proposals. Reporting routes are for the United States.",
+      "revisit": "When IC3 publishes a newer BEC announcement or annual report, or when the recommended victim steps change."
+    },
+    {
+      "id": "S2",
+      "title": "Cybersecurity for Small Business (Business Email Imposters section)",
+      "publisher": "US Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/small-businesses/cybersecurity",
+      "publishedOrUpdated": "2025-09 (month only, as shown on the page when opened)",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes a scammer setting up an email address that looks like it is from your company and sending messages from it. Recommends email authentication, prompt patching, staff training, and internal procedures that require confirmation of sensitive requests, such as calling to verify wire transfer instructions received by email. If spoofed: report to local law enforcement, the FBI's IC3, and the FTC at ReportFraud.ftc.gov; notify customers without hyperlinks.",
+      "application": "Lesson 2 uses the confirm-by-phone procedure; Lesson 3 uses the reporting routes and the instruction to alert staff and refresh training.",
+      "limits": "Framed mainly around your own domain being spoofed against your customers, not a vendor's compromised mailbox or a hijacked internal thread. The verification advice is brief and does not specify who calls, which number, or how long changes wait. The date was read from the page as a month only.",
+      "revisit": "When the FTC revises its small business cybersecurity pages or publishes business-focused deepfake guidance."
+    },
+    {
+      "id": "S3",
+      "title": "Scammers use AI to enhance their family emergency schemes",
+      "publisher": "US Federal Trade Commission, consumer alert by Alvaro Puig",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes",
+      "publishedOrUpdated": "2023-03-20",
+      "reviewedOn": "2026-09-21",
+      "support": "Explains that a voice can be cloned from a short audio clip found online. Advises: do not trust the voice; call the person who supposedly contacted you and verify the story, using a number you already have; if you cannot reach them, check with someone else who knows them. Notes that scammers ask for payment by methods that are hard to reverse.",
+      "application": "Lesson 2 uses the do-not-trust-the-voice rule and the callback to a known number for the D3 call; the reversibility point supports treating wires as high stakes.",
+      "limits": "A consumer alert about family emergency scams, not workplace payment fraud, written in 2023 before current voice and video tools. It does not address video impersonation or business approval controls.",
+      "revisit": "When the FTC or another primary source publishes guidance on voice or video impersonation aimed at businesses."
+    },
+    {
+      "id": "S4",
+      "title": "Phishing attacks: defending your organisation",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/guidance/phishing",
+      "publishedOrUpdated": "Published 2018-02-05, reviewed 2024-02-13",
+      "reviewedOn": "2026-09-21",
+      "support": "Recommends making processes more resistant to phishing by verifying all important email requests with a second type of communication (SMS, a phone call, logging into an account, or confirmation by post or in person). States that no training package can teach users to spot every phishing attempt, that blaming users for clicking does not work, and that users who fear reprisals will not report mistakes promptly, if at all.",
+      "application": "Lesson 1 uses the point that spotting every attempt is unrealistic; Lesson 2 uses the second-type-of-communication rule; Lesson 3 uses the no-blame reporting position.",
+      "limits": "General phishing guidance for organizations, not a payment-fraud procedure; it sets no thresholds, cooling periods, or approval roles. Reporting routes it points to are for the United Kingdom.",
+      "revisit": "At the NCSC's next stated review of the page, or if the NCSC publishes dedicated business email compromise guidance."
+    },
+    {
+      "id": "S5",
+      "title": "Phishing Guidance: Stopping the Attack Cycle at Phase One",
+      "publisher": "CISA, with NSA, FBI, and MS-ISAC",
+      "url": "https://www.cisa.gov/resources-tools/resources/phishing-guidance-stopping-attack-cycle-phase-one",
+      "publishedOrUpdated": "2023-10-18 (page); document marked October 2023",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes attackers who impersonate supervisors, trusted colleagues, or IT personnel in targeted emails. Recommends user training on social engineering and on reporting suspicious messages, and DMARC with SPF and DKIM so mail systems can check the sending server and reject spoofed domains. Includes a section for small and medium-sized organizations that prioritizes awareness training.",
+      "application": "Lesson 1 uses the impersonation point and the observation that authentication checks the sending server, which is why a compromised genuine account passes; Lesson 3 gives the technology team's role in checking the mailbox.",
+      "limits": "Focused on credential and malware phishing rather than payment fraud; it does not name business email compromise, callbacks, dual approval, or recall steps. Technical controls in it are for the technology team, not the payment approver.",
+      "revisit": "When CISA updates the guidance or publishes a companion document on payment fraud."
+    }
+  ]
+}

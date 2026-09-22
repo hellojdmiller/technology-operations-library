@@ -1,0 +1,168 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "safeguards-for-a-small-investment-firm",
+  "title": "What a Safeguards Program Actually Contains",
+  "track": "technology-operations",
+  "audience": "Partners, operations and compliance leads, and the technology lead at a small investment firm (venture capital or private equity) who will be asked to show how client and investor information is protected.",
+  "prerequisites": [],
+  "description": "One short lesson on the nine components a written information security program is generally expected to contain, and how a small firm shows each with dated evidence rather than a binder.",
+  "introduction": [
+    "Sooner or later someone asks a small investment firm to produce its information security program. It might be a prospective investor's questionnaire, an auditor, an insurer, or a regulator's examiner. The firm usually has more than it thinks and less than it needs, and nobody has written down which is which.",
+    "This module names the nine components such a program is generally expected to contain and shows how a firm of about fifteen people covers each with dated evidence. I use the SEC's amended Regulation S-P and the FTC Safeguards Rule as examples of what reviewers expect, not as a statement of what applies to you.",
+    "Nothing here is legal advice. Which rules bind a firm depends on its registration, its clients, and where it operates, and that is a question for counsel. The exercise takes 12 to 15 minutes, needs no tool account, and ends with a gap list you could hand to a partner."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "An investor asks to see the program",
+    "description": "You are helping Quillon Ridge Partners, a fictional venture firm of fourteen staff and one contractor, answer a prospective investor's questionnaire about its safeguards program. Everyone and everything in this packet is fictional: the firm, the investor, the vendors, and every name and domain. The exercise reference date is 21 September 2026. D1 describes what the firm actually has today and is deliberately thin. D2 is the investor's questionnaire excerpt. D3 lists the roles you can assign work to.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "What we have today: the operations lead's inventory",
+        "date": "2026-09-14",
+        "kind": "Internal note from Mei Okafor, operations lead, to the partners",
+        "body": [
+          "Dana asked me to list everything we could show an investor about information security. Here is the honest inventory. I have not embellished anything.",
+          "Policy: one document, 'Quillon Ridge Information Security Policy', two pages, dated March 2021, written by the former office manager. It says staff must use strong passwords, lock their screens, and 'report anything suspicious to a partner'. It names no owner and has never been revised.",
+          "Access controls: a screenshot from the identity console dated 30 August 2026 showing multi-factor authentication enforced for all 14 active staff accounts. We have no record of reviewing who can reach the shared drives, the data room, or the fund administrator portal, and no written leaver checklist.",
+          "Encryption: nothing written. Laptops came from Brackenmoor Managed IT with disk encryption turned on, as far as I know. I do not know which of our cloud systems encrypt what, and nobody has ever asked.",
+          "Vendors: a spreadsheet of 23 vendors with a contact and a renewal date for each. There is no column for what data each holds, no risk rating, no review date, and I cannot find security terms in most of the contracts.",
+          "Incident response: none. If something happened we would call Brackenmoor and Dana. There is no written procedure, no notification timeline, and no list of who to contact at counsel or the insurer.",
+          "Training: none recorded. New joiners get a walkthrough from me. Testing: none that I know of; Brackenmoor may run something. Review: the 2021 policy has never been reviewed."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Due-diligence questionnaire excerpt",
+        "date": "2026-09-16",
+        "kind": "Section 7, Information Security, from the operational due-diligence questionnaire sent by Osprey Meadow Family Office (fictional)",
+        "body": [
+          "7.1 Provide your written information security program and identify the individual responsible for it by name and title.",
+          "7.2 Describe your most recent information security risk assessment: its date, who performed it, and how findings were tracked to closure.",
+          "7.3 Describe access controls over investor and portfolio information, including multi-factor authentication coverage and how access is reviewed and removed when staff leave.",
+          "7.4 Describe how investor information is encrypted at rest and in transit, naming the systems that hold it.",
+          "7.5 Describe how you assess third-party service providers before engagement and monitor them afterward, including your fund administrator and IT provider.",
+          "7.6 Provide your incident response plan. State how, and within what period, you would notify us of an incident affecting our information.",
+          "7.7 Describe security training for staff, its frequency, and how attendance is recorded.",
+          "7.8 Describe how the program is monitored and tested, and give the date and scope of the most recent test.",
+          "7.9 State when the program was last reviewed, by whom, and what changed. Responses are due 16 October 2026."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Organization chart excerpt: roles by title",
+        "date": "2026-09-01",
+        "kind": "Extract from the firm's internal directory",
+        "body": [
+          "Managing Partner: Dana Whitlock. Two further partners lead investments. The partners approve policy and spending.",
+          "Chief Financial Officer and Chief Compliance Officer: Tomas Reyes. Owns regulatory filings, the compliance manual, and the relationships with outside counsel and the fund administrator, Tolliver Fund Services (fictional).",
+          "Operations Lead: Mei Okafor. Runs the office, onboarding and offboarding, vendor contracts, and investor relations logistics. Sam Achterberg, investor relations associate, reports to Mei and handles questionnaires.",
+          "Technology Lead: Jordan Bell. Joined 2025. Administers identity, email, devices, and the data room, and handles desktop support. Brackenmoor Managed IT (fictional) provides the helpdesk, device builds, and monitoring under a monthly contract that Jordan manages.",
+          "Headcount: 14 staff plus one contractor. Outside counsel and the insurer are retained but do not appear in the chart."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "nine-things-a-reviewer-will-ask-to-see",
+      "number": 1,
+      "title": "Nine things a reviewer will ask to see",
+      "summary": "Turn 'we have a policy' into nine rows of dated evidence, gaps, and owners.",
+      "duration": "12–15 minutes",
+      "outcome": "A nine-row gap list for the packet's firm: evidence that exists, evidence missing, and an owner for each component.",
+      "explanation": [
+        "A reviewer asking for the safeguards program is asking about nine things: a named owner, a written risk assessment, access controls, encryption of sensitive information, vendor oversight, an incident response program with notification procedures, training, monitoring and testing, and periodic review. The FTC's Safeguards Rule guide lists nearly the same set. [S2]",
+        "Which rule binds you depends on registration and jurisdiction; ask counsel. As examples, the SEC's 2024 Regulation S-P amendments require registered advisers to keep a written incident response program, oversee service providers, notify affected individuals within 30 days, and record compliance. The FTC rule reaches firms outside SEC registration. [S1, S2]",
+        "A reviewer wants proof each thing happens, not a binder: a dated assessment, an MFA export, a vendor list with review dates, an incident plan with a notification clock, a training record. NIST's small business guide says the same: name who is responsible, inventory assets, require MFA, keep a plan listing who to call. [S3]"
+      ],
+      "workedExample": {
+        "title": "From a policy sentence to dated evidence",
+        "before": "Access controls: our security policy requires strong passwords and MFA for all staff. Policy attached.",
+        "after": "Access controls. Exists: MFA enforced on 14 accounts, console export dated 30 August 2026. Missing: quarterly access review, leaver checklist. Owner: Jordan Bell, technology lead; first review due 31 October 2026.",
+        "why": "Every claim is dated, the gaps are stated, and one named person owns them by a date."
+      },
+      "task": {
+        "prompt": "Using D1 to D3, build a nine-row gap list for Quillon Ridge: for each component, the dated evidence that exists, the evidence missing, and one owner by title from D3. Where nothing exists, write 'none'.",
+        "deliverable": "Nine rows, each written as exists; missing; owner.",
+        "checklist": [
+          "Each row names one owner by title from D3, not the IT provider.",
+          "Evidence is a dated artifact, not a policy sentence.",
+          "The incident row names who decides on notification and the notice period.",
+          "Empty rows say 'none', not 'in progress'."
+        ]
+      },
+      "hint": "Each D2 question maps to one row. Then ask of D1: could I attach something dated today? If not, that is the gap; D3 says whose desk it lands on.",
+      "modelAnswer": [
+        "Owner: none named; a written appointment; managing partner appoints, likely the CFO and CCO. Risk assessment: none; a dated assessment of where investor and deal data lives and its risks; CFO and CCO with the technology lead. Access controls: MFA export, 30 August 2026; quarterly access review and leaver checklist; technology lead.",
+        "Encryption: nothing written; a one-page note listing which systems hold sensitive data and how each encrypts it; technology lead. Vendor oversight: 23-vendor list; data held, risk tier, review date, and breach-notice contract terms; operations lead. Incident response: none; a plan with roles, a notification clock, counsel and insurer contacts; CFO and CCO.",
+        "Training: none recorded; an annual session with an attendance record; operations lead. Monitoring and testing: none known; continuous monitoring or periodic scans, plus the last test's date and scope; technology lead. Periodic review: 2021 policy, never revisited; an annual review date and change record; CFO and CCO."
+      ],
+      "reflection": "Which row was hardest to give an owner, and what does that say about where the program stalls?",
+      "transfer": {
+        "prompt": "Suppose there is no technology lead and Brackenmoor handles all IT. What changes in your list?",
+        "answer": "The owner column, not the evidence column. Each technical row still needs an owner inside the firm, probably the operations lead or CFO, who asks Brackenmoor for evidence and files it. A provider can produce an MFA export; it cannot own the program. It also becomes a vendor row."
+      },
+      "check": {
+        "question": "D2 question 7.6 asks for the incident response plan and notification period. What is the honest position today?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Attach the 2021 policy; it mentions reporting incidents.",
+            "feedback": "D1 says no procedure exists; the policy only tells staff to tell a partner. Calling it the plan overstates, and the reviewer will ask for roles and a timeline."
+          },
+          {
+            "id": "b",
+            "label": "Record 'none', name the CFO and CCO as owner, draft the plan before 16 October.",
+            "feedback": "Supported. It records the true position, gives the row a D3 owner, and makes the questionnaire deadline the plan's deadline."
+          },
+          {
+            "id": "c",
+            "label": "Say Brackenmoor handles incidents, so the plan is theirs.",
+            "feedback": "Brackenmoor is one of D1's 23 vendors, not the program's owner. The investor asked the firm, and notifying is the firm's decision; the provider belongs inside the firm's plan."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Fact Sheet: Final Rules, Enhancements to Regulation S-P",
+      "publisher": "US Securities and Exchange Commission",
+      "url": "https://www.sec.gov/files/34-100155-fact-sheet.pdf",
+      "publishedOrUpdated": "Undated; states the amendments were adopted 15 May 2024",
+      "reviewedOn": "2026-09-21",
+      "support": "States that amendments adopted 15 May 2024 apply to broker-dealers, investment companies, registered investment advisers, and transfer agents. They require written policies and procedures for an incident response program reasonably designed to detect, respond to, and recover from unauthorized access to customer information; oversight of service providers through due diligence and monitoring; notice to affected individuals as soon as practicable and no later than 30 days after becoming aware; and written records documenting compliance. Larger entities had 18 months and smaller entities 24 months from Federal Register publication to comply.",
+      "application": "One example of what a safeguards program is expected to contain: the incident response, vendor oversight, notification, and recordkeeping rows of the gap list, and the reminder that the questionnaire deadline is not the only clock the packet firm faces.",
+      "limits": "A two-page summary, not the rule text, and it applies to SEC-registered covered institutions. An exempt reporting adviser, a state-registered adviser, or a firm outside the United States may face different obligations. Nothing in the lesson is legal advice; the firm's counsel decides which rules apply.",
+      "revisit": "When the SEC amends Regulation S-P again or publishes staff guidance on it, or when the firm's registration status changes."
+    },
+    {
+      "id": "S2",
+      "title": "FTC Safeguards Rule: What Your Business Needs to Know",
+      "publisher": "US Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftc-safeguards-rule-what-your-business-needs-know",
+      "publishedOrUpdated": "December 2024 (date line on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Explains the elements a covered financial institution's written information security program must include: a Qualified Individual to implement and supervise it; a written risk assessment; safeguards including access controls, a data inventory, encryption at rest and in transit, multi-factor authentication, secure disposal, change management, and activity logging; regular monitoring and testing (continuous monitoring, or annual penetration testing with vulnerability scans every six months); staff training; service provider oversight; keeping the program current; a written incident response plan; and annual reporting to the board. It adds a duty to notify the FTC within 30 days of a notification event affecting 500 or more consumers, and says firms holding information on fewer than 5,000 consumers are exempt from certain provisions.",
+      "application": "The nine components in the lesson are drawn from this list, and the worked example and model answer use its point that each element needs an evidence trail, not only a policy statement.",
+      "limits": "Applies to financial institutions under FTC jurisdiction; the page lists investment advisers not registered with the SEC among its examples, and an SEC-registered adviser is generally under Regulation S-P instead. The nine-row frame is a teaching device drawn from this page, not a checklist any regulator has endorsed, and the page is guidance rather than the rule text.",
+      "revisit": "When the FTC updates the page or amends the Safeguards Rule, or when the firm's registration changes which regulator's rule applies."
+    },
+    {
+      "id": "S3",
+      "title": "NIST Cybersecurity Framework 2.0: Small Business Quick-Start Guide (SP 1300)",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://csrc.nist.gov/pubs/sp/1300/final",
+      "publishedOrUpdated": "February 2024",
+      "reviewedOn": "2026-09-21",
+      "support": "A supplement to CSF 2.0 for small and medium businesses with modest or no cybersecurity plans, organized by the six Functions: Govern, Identify, Protect, Detect, Respond, and Recover. Its actions include understanding legal, regulatory, and contractual requirements and who is responsible for the strategy (Govern); keeping an inventory of hardware, software, systems, and services (Identify); requiring multi-factor authentication on all accounts that offer it and restricting sensitive information to those who need it (Protect); monitoring logs and alerts or engaging a provider to do so (Detect); and a basic incident response plan naming a champion, who to call, and what, when, and how to report (Respond).",
+      "application": "Shows that a small firm covers the nine components with people it already has; the model answer's owner and incident response rows follow its advice to name a responsible person and keep a contact list.",
+      "limits": "Voluntary guidance, not a regulatory requirement, and written for any small organization rather than for investment firms. It does not tell a firm which rules bind it or what a specific reviewer will accept.",
+      "revisit": "When NIST revises CSF 2.0 or the quick-start guide, or when the firm grows past the point where a quick-start guide fits."
+    }
+  ]
+}

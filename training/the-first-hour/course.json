@@ -1,0 +1,305 @@
+{
+  "version": "1.0.0",
+  "slug": "the-first-hour",
+  "title": "The First Hour",
+  "track": "technology-operations",
+  "audience": "The people who would be in the room when something goes wrong at a small, high-trust firm: the technology lead, the operations or finance lead, a partner or executive, and whoever answers the phone.",
+  "prerequisites": [],
+  "description": "Three lessons on the first hour of a cyber incident at a small firm: a plan that names people, a triage record that separates facts from assumptions, and a communication plan with the first sentence each person hears.",
+  "introduction": [
+    "The first hour of an incident is decided before it starts. When an alert lands at 07:42 on a Monday, the questions are simple: who is in charge, who can pause an account, who calls the bank. If those answers live in a committee charter, the hour goes to finding people instead of acting.",
+    "This course follows one fictional morning at a small firm: a phished password, an unfamiliar sign-in, and a forwarding rule quietly copying mail outside. You will fill a one-page plan from a flawed one, write a triage record for the alert, and plan who hears what, and when.",
+    "Nothing here needs a tool account. Work on paper or in a document, and do not touch a live system as part of the exercise. Deciding is the practice; doing happens later, with the right authority. The example answers are comparisons, not scripts, and I want you to argue with them.",
+    "Each lesson takes about 20–25 minutes. When you finish, the 45-minute incident-readiness workshop in this library's cyber-risk section is the rehearsal that makes the plan a habit. Run it with the same people who appear in your skeleton, and update the plan afterward."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A Monday morning at Tarrow Lane Partners",
+    "description": "You are helping the team at Tarrow Lane Partners, a fictional 28-person investment advisory firm, through the first hour after a phished password. Everyone and everything in this packet is fictional: the firm, its people, the bank, the insurer, the law firm, and the provider. The exercise reference date is Monday 21 September 2026; times are the firm's local time. The people: Dana Okafor, Director of Technology (the firm has no Chief Technology Officer); Marcus Ellery, Chief Operating Officer; Ingrid Solano, Managing Partner; Theo Baptiste, office manager, who answers the main line and the help channel; Rowan Whitlock, associate, traveling today. D1 is a system alert and D2 a colleague's message. D3 is the firm's current plan and is deliberately incomplete; you will mark its gaps in Lesson 1. D4 is a blank template. Nothing in this exercise is sent, reset, or disabled; you draft the decisions.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Identity provider alert: unusual sign-in followed by new inbox rule",
+        "date": "2026-09-21",
+        "kind": "Automated alert, plain text, as received in the technology mailbox",
+        "body": [
+          "Subject: [Alert, medium] Unusual sign-in followed by new inbox rule for rowan.whitlock@tarrowlane.example.com. Detected 2026-09-21 07:42 firm local time. Status: no automatic action taken. The user's session remains active.",
+          "Event 1, 07:31: successful sign-in to the account from a location and device not seen for this user in the previous 30 days. The multi-factor prompt was approved from the user's registered app 40 seconds after the password was accepted.",
+          "Event 2, 07:38: new inbox rule created through web mail. Rule name: '.' (a single period). Condition: all incoming messages. Actions: mark as read, move to the folder 'RSS Subscriptions', forward a copy to archive.sync.4471@mail.example.net.",
+          "Event 3, 07:40: three mailbox searches from the same session for the terms 'wire', 'invoice', and 'capital call'.",
+          "Recommended actions: review the sign-in with the user through a channel other than this mailbox; consider revoking active sessions; review inbox rules and forwarding settings. This alert was generated automatically."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Message from Rowan Whitlock to the help channel",
+        "date": "2026-09-21",
+        "kind": "Chat message, 08:05, read by Theo Baptiste",
+        "body": [
+          "Theo, weird thing this morning and I want to flag it before I board. Around 07:25 I got an email saying my mailbox was almost full and I had to sign in to keep receiving messages. The link opened a page that looked exactly like our sign-in, same logo and everything.",
+          "I typed my password, got the phone prompt, approved it, and then the page just went blank. I deleted the email straight after because it looked like spam once I thought about it. Nothing else seemed off, mail is still coming in.",
+          "I am at the gate now, flight lands 14:10 and I will be on hotel wifi tonight. Should I change my password when I land? I have the 15:00 call with the Quarry Street Bank team about the capital call wire, so I need my mail working for that.",
+          "The page address was something like tarrowlane-signin.example.net, I think. Sorry if this is nothing."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Excerpt from the firm's cyber incident response plan, version 1.2",
+        "date": "2025-03-10",
+        "kind": "Policy excerpt: sections 2 to 6 and Appendix B, as currently approved",
+        "body": [
+          "2. Roles. The Incident Response Committee comprises the Chief Technology Officer, the Chief Operating Officer, the General Counsel (external), and a Managing Partner. The Committee will convene within four hours of a suspected incident being reported and will determine the response.",
+          "3. Reporting. Staff should report suspected incidents to the IT function or to their manager as soon as possible. The IT function will assess the report and inform the Committee where appropriate.",
+          "4. Containment. The IT function will take steps to contain the incident as soon as practical, having regard to the impact on business operations. Significant actions, including the shutdown of any system used by clients, require Committee approval.",
+          "5. Communication. The Committee will determine what is communicated, to whom, and when. Staff must not discuss incidents outside the firm.",
+          "6. Review. This plan is reviewed annually by the Chief Technology Officer.",
+          "Appendix B, contacts. Cyber insurer: Orrery Insurance Group, policy TL-CY-4471, claims line (number held in the finance vault). Outside counsel: Corwin Larkin LLP, main switchboard. Bank: Quarry Street Bank, relationship manager (see finance contacts). Managed IT provider: Bluefold Managed Services, 24-hour line (fictional). Appendix last updated 2023-11-02."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Incident timeline and decision record",
+        "date": "2026-01-15",
+        "kind": "Blank template with field definitions, kept in the shared incident folder",
+        "body": [
+          "Header: incident reference; incident lead; scribe; status (alert, incident, or closed); declared as an incident by whom, at what time, and under which criterion.",
+          "Timeline rows. Each row records: time with time zone; what was observed or done; source (alert, person, log, screenshot); who recorded it; and whether the entry is a fact, an assumption, or a decision. Facts come from a log or a screenshot. Everything else is an assumption until it does.",
+          "Decision rows also record: the decision; the owner; the authority used (a plan section or a named person); what it pauses or changes (accounts, sessions, devices, automations, data); and how we will know it worked.",
+          "Evidence log: item; where it is kept; who captured it; when; and whether the original still exists.",
+          "Communication log: recipient; time; channel; who spoke; the first sentence they heard; what they were asked to do; when the next update is due.",
+          "Open questions: what we do not know yet; who is finding out; by when."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "before-anything-happens",
+      "number": 1,
+      "title": "Before anything happens",
+      "summary": "Turn a plan that names committees into one that names people.",
+      "duration": "20–25 minutes",
+      "outcome": "A one-page plan skeleton filled from the packet, with gaps marked and owned.",
+      "explanation": [
+        "My plan fits on one page and names people. A committee must be convened; a person can be called. D3 promises a meeting within four hours while the rule in D1 keeps forwarding. NIST makes roles, responsibilities, and authorities, including who may shut down assets, core to incident response policy. [S1]",
+        "Two decisions belong in the plan before anyone is stressed. The observation window: how long we watch before acting, and who may cut it short; NIST frames this as balancing quick recovery against observing the attacker. Pause authority: who may revoke sessions, disable an account, or stop an automation without waiting for a meeting. [S1]",
+        "The contact list is the part people skip: insurer with policy number, counsel, the bank relationship manager, the provider's 24-hour line, the identity provider's support route. NCSC tells small firms to assign roles, record who owns each responsibility and how to reach them, and check contacts every couple of months. [S3]"
+      ],
+      "workedExample": {
+        "title": "From a committee to a name",
+        "before": "The Incident Response Committee comprises the Chief Technology Officer, the Chief Operating Officer, the General Counsel, and a Managing Partner, and convenes within four hours.",
+        "after": "Lead: Dana Okafor. Deputy: Marcus Ellery. Pause authority: either may revoke sessions, disable an account, and stop an automation at once; shutting down a shared system needs a call to Ingrid Solano first. Observation window: 30 minutes at most; zero if money is moving.",
+        "why": "Every line has a person and a limit. The times are this firm's choices, not a standard, decided before the alert."
+      },
+      "task": {
+        "prompt": "Using D3 and the people in the scenario, draft a one-page skeleton with five headings: roles; decision authority (who decides, who may pause or shut down, alone or after a call); observation window; contacts; review date. Where the packet gives no answer, write GAP and name who fills it.",
+        "deliverable": "A skeleton where every role names a person and every gap has an owner.",
+        "checklist": [
+          "Every role names a person and a backup, not a title or committee.",
+          "Pause authority covers sessions, accounts, and systems, and says whether a call comes first; the window has a maximum.",
+          "Contacts cover insurer, counsel, bank, managed IT, and identity provider, each with a named person or line, or GAP."
+        ]
+      },
+      "hint": "Read D3 sentence by sentence and ask: who would I call at 07:45 on Monday? A title or meeting is a gap.",
+      "modelAnswer": [
+        "Roles: lead Dana Okafor, deputy Marcus Ellery, scribe Theo Baptiste. D3's Chief Technology Officer does not exist: GAP, closed by naming Dana. Pause authority: Dana or Marcus may revoke sessions, disable an account, and stop an automation at once; shutting down a shared system needs a call to Ingrid Solano first.",
+        "Observation window: GAP; proposed 30 minutes maximum, zero once money or data is leaving. Contacts: insurer Orrery Insurance, policy TL-CY-4471, and counsel Corwin Larkin have no named person; the bank manager has no out-of-hours number; the identity provider route is missing; Appendix B and the annual review are overdue. All GAP, owners Marcus and Dana."
+      ],
+      "reflection": "Which D3 gap would have cost the most time this morning, and why?",
+      "transfer": {
+        "prompt": "Suppose there is no COO, and a fractional finance lead in two days a week does Marcus's work. What changes?",
+        "answer": "Pause authority cannot rest on someone unreachable three days a week. Name a second internal person, Ingrid or a senior associate, as deputy with pause authority; keep the fractional lead as insurer and bank contact owner; note their unavailable days."
+      },
+      "check": {
+        "question": "D3 says the Committee convenes within four hours. Which change best closes the gap in this packet?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Shorten the convening time to one hour.",
+            "feedback": "A faster meeting is still a meeting. D1 shows the rule forwarding from 07:38 with the session active; whoever reads D1 needs authority to revoke that session now, not a shorter wait."
+          },
+          {
+            "id": "b",
+            "label": "Name a lead and deputy with pause authority, and set a maximum observation window.",
+            "feedback": "This gives whoever reads D1 at 07:42 someone to call and a decision they may make. It closes both D3 gaps: the missing window and the missing named authority."
+          },
+          {
+            "id": "c",
+            "label": "Delegate containment decisions to the managed IT provider's 24-hour line.",
+            "feedback": "Bluefold can act, but D3 gives it no authority and the firm keeps the consequences. In this packet, disabling Rowan's account before a bank call is the firm's decision, not the provider's."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "triage-and-contain",
+      "number": 2,
+      "title": "Triage and contain",
+      "summary": "Answer three questions, decide what to pause, keep the evidence.",
+      "duration": "20–25 minutes",
+      "outcome": "A triage record for the packet's alert with each decision and its owner.",
+      "explanation": [
+        "Three questions come first: what do we know, what is affected, is it still happening? D1 gives an unfamiliar sign-in, an approved multi-factor prompt, a rule forwarding all mail outside, and searches for 'wire' and 'capital call'. NCSC's first questions match: what was reported, by whom, and what is the scope. [S3]",
+        "An alert becomes an incident when it meets criteria written down in advance. NIST says incidents are declared when adverse events meet defined incident criteria, after a preliminary review of severity and urgency. An external forwarding rule after a phished password meets any sensible criterion, so declare it and start the record. [S1]",
+        "Pause is several actions: disable the account, revoke sessions, isolate the devices Rowan used, and remove the rule. Capture first, clean second: screenshot the rule and export the sign-in log before touching them. The FTC says do not destroy evidence; CISA says record how, when, and by whom each item was captured. [S4, S2]"
+      ],
+      "workedExample": {
+        "title": "From 'change it when you land' to a sequence",
+        "before": "Tell Rowan to change the password after landing, and ask Bluefold about the rule this afternoon.",
+        "after": "07:50 Dana revokes Rowan's sessions and disables sign-in. 07:55 Theo screenshots the rule; Dana exports the sign-in log. 08:00 Dana removes the rule and checks for others. 08:10 Dana phones Rowan; password and multi-factor are reset on a firm device after landing.",
+        "why": "Sessions first: the attacker holds a live token, and the FTC notes a system stays exposed until stolen credentials change. Evidence before removal: the screenshot is the record. Phone: the mailbox is compromised. [S4]"
+      },
+      "task": {
+        "prompt": "Using D4, write the triage record for 07:42 to 08:42: what is known, what is assumed, what is affected, whether it is still happening. Then list each containment decision with owner, authority, what it pauses, and how you will know it worked.",
+        "deliverable": "A triage record with a status line, four or more owned decisions, and evidence captured before removal.",
+        "checklist": [
+          "Facts and assumptions are labeled; 'the attacker read the wire emails' is an assumption until a log shows it.",
+          "Sessions are revoked before the password is reset, and the rule is captured before it is removed.",
+          "Rowan is reached by phone; the 15:00 bank call is flagged."
+        ]
+      },
+      "hint": "Take D1 line by line: fact from a log, or inference? Then ask what would stop it continuing now.",
+      "modelAnswer": [
+        "Status: incident, declared by Dana at 07:48 under the criterion 'external sign-in plus forwarding to an external address' (D3 has none). Known (D1, D2): unfamiliar sign-in 07:31, multi-factor approved, rule created 07:38, searches 07:40, credentials typed into a lookalike page. Assumed: the attacker still holds a session and read bank mail. Still happening: yes.",
+        "Decisions: 07:50 Dana revokes sessions and disables sign-in (pause authority). 07:55 Theo screenshots the rule, Dana exports the sign-in log; each logged with where, who, when. 08:00 Dana removes the rule and checks for others. 08:05 Marcus puts the 15:00 wire call on hold. 08:15 Dana phones Rowan; reset after landing, on a firm device."
+      ],
+      "reflection": "Which decision changes if D1 said the session had already expired, and why?",
+      "transfer": {
+        "prompt": "Change one fact: the D1 account is Ingrid Solano's, the managing partner, who is in the office. What changes?",
+        "answer": "Pause authority still applies; seniority does not exempt an account. Dana revokes sessions and disables sign-in, tells Ingrid in person first, and adds a check of what Ingrid's account can approve (payments, signatures). The bank is warned about any instruction in her name."
+      },
+      "check": {
+        "question": "Rowan asks about changing the password after landing at 14:10. What is supported in this packet?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Yes, at 14:10; the alert is medium and D3 allows four hours.",
+            "feedback": "The rule created at 07:38 forwards every message until removed, and the session is still active; six hours of waiting lets the attacker read everything, bank correspondence included."
+          },
+          {
+            "id": "b",
+            "label": "Revoke sessions and disable the account now, capture the rule before removing it, reset the password after landing on a firm device.",
+            "feedback": "This stops the live session at once, preserves the evidence, and needs no airport connection. Sessions first, evidence before removal, then the password."
+          },
+          {
+            "id": "c",
+            "label": "Change the password now from the airport and delete the rule from the phone.",
+            "feedback": "A new password with the attacker's session alive changes nothing, and deleting the rule from Rowan's phone destroys evidence on a possibly affected device. Rowan should not do the cleanup."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "communicate-and-recover",
+      "number": 3,
+      "title": "Communicate and recover",
+      "summary": "Decide who hears what and when, then restore and write it down.",
+      "duration": "20–25 minutes",
+      "outcome": "A communication plan with recipients, timing, and the one sentence each hears first.",
+      "explanation": [
+        "Who is told when is a plan decision. NIST separates coordination, notification, public communication, and information sharing, and says the mechanisms should exist in advance. My order: leadership, affected people, the bank if money is exposed, insurer and counsel, then regulators where the firm's obligations require; counsel confirms that last step. [S1]",
+        "Cadence beats volume: say what is known, what is being done, and when the next update comes, then keep that time even with no news. NIST recommends regular status updates; the FTC says do not make misleading statements or withhold what people need to protect themselves. [S1, S4]",
+        "Recover from known-good state: confirm rules, delegates, and multi-factor methods match what the firm set, and check the devices used, before trusting the account. NIST's recovery criteria include verifying restoration assets before use, then an after-action report; NCSC says review, learn, and update the plan. [S1, S3]"
+      ],
+      "workedExample": {
+        "title": "One sentence, the right one first",
+        "before": "All staff, 08:30, email: 'We are experiencing a security incident. IT is investigating.'",
+        "after": "Ingrid, 08:15, phone from Dana: 'Rowan's mailbox was accessed by an outsider; access is cut, wire on hold, update 09:00.' Bank manager, 08:30, known number from Marcus: 'No instruction from Rowan's address today; changes by phone only.'",
+        "why": "Each sentence gives the recipient one thing to do or not do. Staff hear after Rowan and the bank, and hear what happened, not 'an incident'."
+      },
+      "task": {
+        "prompt": "Plan day one in D4's communication log. For leadership, Rowan, the bank, insurer, counsel, staff, and any regulator or outside party the firm's obligations may require, give time, channel, speaker, first sentence, and next update. Add three lines: what known-good means here, who verifies it, and what the after-action note covers.",
+        "deliverable": "A communication log with six or more recipients and first sentences, plus recovery and after-action lines.",
+        "checklist": [
+          "Leadership and Rowan hear before staff; the bank before 15:00 by a known number.",
+          "Insurer and counsel are called within hours with the policy number; counsel confirms regulatory duties.",
+          "Every entry has a next update; recovery names what is checked before the account is trusted."
+        ]
+      },
+      "hint": "Ask, for each recipient: what will they do wrong in the next hour if I say nothing?",
+      "modelAnswer": [
+        "Ingrid and the bank: see the example. 08:15 Rowan, phone: 'Account disabled on purpose; call from a firm device when you land.' 08:45 Orrery Insurance claims line, Marcus, policy TL-CY-4471: 'Suspected mailbox compromise; requesting panel contacts.' 09:00 Corwin Larkin, Marcus: 'Mail forwarded externally for 22 minutes; advise on notification duties for client or personal data.'",
+        "09:00 staff, chat, Theo: 'One mailbox was accessed and is contained; if you received an odd message from Rowan since 07:30, do not act on it; tell me.' Regulators and affected outside parties: only on counsel's advice; Marcus decides by end of day. Cadence: leadership 09:00, 12:00, 17:00; staff 17:00; bank 12:00.",
+        "Recovery: known-good means no rules, delegates, or forwarding beyond the firm's standard; multi-factor re-registered on a firm device; devices checked; no other account showing the same sign-in pattern. Dana verifies. After-action note: Dana, due 2026-09-28; what happened and when, what we did in what order, what the plan changes; then the tabletop."
+      ],
+      "reflection": "Which first sentence was hardest to write, and why?",
+      "transfer": {
+        "prompt": "Change one condition: the log shows the attacker downloaded three client statements with personal data before sessions were revoked. What changes?",
+        "answer": "Counsel moves up and is asked about duties to those clients and, where the firm's obligations require, a regulator. The insurer hears exposure is confirmed, not suspected. The clients join the list with a first sentence counsel drafts. Other timings hold."
+      },
+      "check": {
+        "question": "It is 08:20. Who hears next in this packet, and how?",
+        "options": [
+          {
+            "id": "a",
+            "label": "All staff, by email.",
+            "feedback": "It tells staff nothing specific to do, and in this packet the bank, the likeliest to act wrongly this hour, has not yet heard."
+          },
+          {
+            "id": "b",
+            "label": "The bank manager, by a known number: accept no changes from Rowan's address today.",
+            "feedback": "The 15:00 wire call and the searches for 'wire' and 'capital call' make the bank the likeliest to act on a false instruction; use a known number, not one from an email."
+          },
+          {
+            "id": "c",
+            "label": "Nobody yet; wait for the review.",
+            "feedback": "Waiting leaves the bank exposed during the window the attacker prepared for. Its first sentence needs only the fact of access, which D1 already shows."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile (NIST SP 800-61 Rev. 3)",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "publishedOrUpdated": "2025-04 (month only; the CSRC page and the PDF cover both say April 2025)",
+      "reviewedOn": "2026-09-21",
+      "support": "Organizes incident response around CSF 2.0. Policy should set roles, responsibilities, and authorities, including who may disconnect or shut down assets (Section 2.3). Incidents are declared against defined criteria (DE.AE-08). Response strategy balances quick recovery against observing the attacker (RS.MA-03). Records and evidence are preserved (RS.AN-06, RS.AN-07). Notification follows procedures for what is reported to whom and when, with regulators and law enforcement per plan criteria (RS.CO-02). Restoration assets are verified before use, and an after-action report closes recovery (RC.RP-03, RC.RP-06).",
+      "application": "Lesson 1 takes roles, authorities, and the observation trade-off from it; Lesson 2 the declaration criteria and evidence handling; Lesson 3 the notification categories, status cadence, verified recovery, and after-action note.",
+      "limits": "A profile of outcomes and considerations, not a procedure. It sets no time limits, names no observation window length, and does not say who a small firm's pause authority should be; those are this course's proposals. Written for organizations of any size, so small-firm specifics are inferred.",
+      "revisit": "When NIST revises SP 800-61 or CSF 2.0, or the SP 800-61 project page adds small-organization guidance."
+    },
+    {
+      "id": "S2",
+      "title": "Cybersecurity Incident & Vulnerability Response Playbooks",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/resources-tools/resources/federal-government-cybersecurity-incident-and-vulnerability-response-playbooks",
+      "publishedOrUpdated": "undated on the page; the PDF cover says Publication: November 2021, and the file is hosted at a 2024-08 path",
+      "reviewedOn": "2026-09-21",
+      "support": "The incident response playbook covers preparation, detection and analysis, containment, eradication and recovery, post-incident activity, and coordination. Preparation includes designating a coordination lead and out-of-band channels. The checklist says to log how, when, and by whom each item of evidence was acquired and to keep a timeline with time zones. Containment weighs service impact, duration, and evidence; recovery resets passwords on compromised accounts; the hotwash reviews roles, responsibilities, and authority.",
+      "application": "Lesson 2 uses the evidence-log fields, the timeline habit, and the containment trade-offs; D4's fields mirror the checklist's timeline and evidence rows.",
+      "limits": "Written for US federal civilian agencies, with reporting duties to CISA that do not apply to a private firm; CISA says only that future iterations may be useful outside government. Its phases follow the older SP 800-61 Rev. 2 model that Rev. 3 has since reorganized.",
+      "revisit": "When CISA issues a revised edition or a version aimed at non-federal organizations."
+    },
+    {
+      "id": "S3",
+      "title": "Small Business Guide: Response & Recovery",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/collection/small-business-guidance--response-and-recovery",
+      "publishedOrUpdated": "Published 12 June 2019, reviewed 8 October 2020 (page); the PDF says information correct at October 2020, with references to Action Fraud removed April 2026",
+      "reviewedOn": "2026-09-21",
+      "support": "Five steps: prepare, identify, resolve, report, learn. Prepare: assign roles, document who owns each responsibility and how to contact them, document trigger points where a decision transfers between people (who decides to shut down the website, when senior management is involved), keep a contact list of partners including bank and insurer, check contact details every couple of months, and exercise. Identify: ten questions starting with what was reported and by whom. Report: legal obligations, law enforcement, keep staff and customers informed proportionately, consider legal advice. Learn: review actions taken and update the plan.",
+      "application": "Lesson 1 builds the one-page skeleton on its prepare step; Lesson 2 opens with its identification questions; Lesson 3 uses its report and learn steps.",
+      "limits": "UK-specific reporting routes (the ICO, police) do not transfer. The guide predates SP 800-61 Rev. 3 and is aimed at very small organizations, so it says little about identity-provider alerts or session revocation.",
+      "revisit": "When NCSC re-reviews the guide or replaces the Small Business Guide collection."
+    },
+    {
+      "id": "S4",
+      "title": "Data Breach Response: A Guide for Business",
+      "publisher": "US Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/data-breach-response-guide-business",
+      "publishedOrUpdated": "August 2023 (as stated on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Secure operations: mobilize a response team, take affected equipment offline without powering it down before forensics arrive, do not destroy forensic evidence, and change stolen credentials because the system stays vulnerable until you do. Communications: do not make misleading statements or withhold what people need to protect themselves. Notify law enforcement, affected businesses, and individuals; US states require notification for breaches of personal information.",
+      "application": "Lesson 2 uses the evidence and credential points; Lesson 3 uses the communication guidance and the general shape of notification duties.",
+      "limits": "US consumer-protection guidance about personal data breaches. It does not cover mailbox compromise specifically, and its notification rules are US state law, not a universal duty; the course states regulatory obligations generally and leaves specifics to counsel.",
+      "revisit": "When the FTC updates the guide or when the firm's jurisdictions change their notification laws."
+    }
+  ]
+}

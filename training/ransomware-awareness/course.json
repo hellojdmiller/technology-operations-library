@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "slug": "ransomware-awareness",
+  "format": "bite",
+  "title": "Ransomware: What Everyone Can Do",
+  "track": "security-awareness",
+  "audience": "Everyone at a small, high-trust firm, whatever their role; no technical background is needed.",
+  "prerequisites": [],
+  "description": "A short module on how ransomware arrives, what its first minutes look like, and the two things anyone can do that help most: disconnect and speak up.",
+  "introduction": [
+    "Ransomware is the incident I plan for most, because it turns one click into a firm-wide outage. The good news is that the first response does not need a technical person. It needs someone who notices, disconnects, and says so quickly, without trying to be the hero.",
+    "This short module follows one Monday morning at a small fictional firm. You will read a suspicious invoice email, a worried chat from a colleague, and the firm's own response card. Then you will write the two-minute note I would want from you in that moment.",
+    "Nothing here needs a tool account or a security background. Work on paper or in a document, try the task before opening the example, and explain your choice in your own words. The example answer is a comparison, not a script to memorize."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A Monday morning at Ashgrove Point",
+    "description": "You are Priya Nair, an associate at Ashgrove Point Advisory, a small fictional firm of about thirty people. Everyone and everything in this packet is fictional, including the firm, its domains, its staff, and the sender. The exercise reference date is Monday 21 September 2026. D1 is a deliberately suspicious email with a macro-enabled attachment, not a genuine invoice. D2 is a colleague's chat. D3 is the firm's own response card.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Overdue invoice email with an attachment",
+        "date": "2026-09-21",
+        "kind": "Email: a deliberately suspicious message with a macro-enabled attachment",
+        "body": [
+          "From: Accounts Receivable <accounts@billing-notices.example.net>. To: priya.nair@ashgrovepoint.example.com. Received: Monday 21 September 2026, 08:41. Subject: Invoice 4471 is 14 days overdue. Attachment: Invoice_4471.docm (68 KB).",
+          "Dear Priya, our records show that invoice 4471 for consulting services remains unpaid. The attached document contains your protected invoice. Open it and select Enable Content to view the payment details and avoid the late fee that will be applied today.",
+          "If you have already paid, please ignore this notice. Do not reply to this message; it is sent from an unmonitored mailbox. Kind regards, Accounts Receivable Team."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Chat from Tomas about his files",
+        "date": "2026-09-21",
+        "kind": "Internal chat message: a colleague describing what he sees",
+        "body": [
+          "09:14 Tomas Reyes: Priya, something is wrong with my laptop. Every file in my Deals folder now ends in .lockd and none of them will open. There is a new text file on my desktop called READ_ME_NOW.txt that I have not opened yet.",
+          "09:15 Tomas Reyes: I opened that overdue invoice email about twenty minutes ago and clicked the button so it would display. It showed a blank page and I moved on. Did you get the same email?",
+          "09:16 Tomas Reyes: I am about to restart to see if that clears it. I do not want to bother Lena over what might be nothing. Can you have a look before I call anyone?"
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "If you suspect ransomware: the response card (excerpt)",
+        "date": "2026-06-01",
+        "kind": "Fictional policy excerpt: the firm's one-page response instructions",
+        "body": [
+          "1. Disconnect. Unplug the network cable and turn off Wi-Fi on the affected computer. If you cannot find the setting, ask the nearest colleague to help you. Do this before anything else.",
+          "2. Leave it on. Do not power off, restart, or log out unless the technology lead tells you to. Leave any ransom note where it is. Do not open, delete, or move files.",
+          "3. Call, do not message. Phone the technology lead, Lena Ortiz, on the number printed on your desk card. If there is no answer within ten minutes, phone the operations partner, Marcus Bell. Tell them what you saw and when.",
+          "4. Do not pay or negotiate. Nobody at the firm contacts the attacker or responds to a demand. Any decision about payment sits with the partners, advised by our legal counsel, our insurer, and law enforcement.",
+          "5. Warn, do not investigate. If a colleague reports the same symptoms, tell them to follow steps 1 to 3. Do not forward the suspicious email. Do not try to clean or scan the machine yourself."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "slow-it-down-and-speak-up",
+      "number": 1,
+      "title": "Slow it down and speak up",
+      "summary": "Notice the early signs, disconnect, and tell the right person first.",
+      "duration": "10–12 minutes",
+      "outcome": "A two-minute response note naming who is told first and what is not touched.",
+      "explanation": [
+        "Ransomware usually arrives through an ordinary door: a phishing link or attachment, a stolen or reused password, or a remote-access service left open to the internet. The attacker rarely needs anything exotic. One click or one forgotten server is enough. [S1, S3]",
+        "The early signs need no technical eye: files renamed with a strange extension or refusing to open, a text file that appeared on its own demanding payment, a document asking you to enable content or install something first, a colleague locked out without explanation. Attention is the skill.",
+        "When you see one, disconnect the machine from the network and tell the technology team immediately. Ransomware spreads to shared drives while connected. Do not power off unless told to: the running system holds evidence responders need, and fixing it yourself destroys it while buying the attacker time. [S1, S2]",
+        "The rest sits above your desk. Paying is a leadership decision, made with counsel, the insurer, and law enforcement, who do not encourage it; you report, you never answer the demand. Backups decide recovery, and one that exists is not one that works. Ask when a restore was last tested. [S1, S3, S4, S5]"
+      ],
+      "workedExample": {
+        "title": "From a quick fix to a quick report",
+        "before": "Tomas's plan: restart, run a virus scan, and tell Lena after lunch if the files are still broken. Forward the invoice to Priya to check.",
+        "after": "Priya's plan: Tomas unplugs the cable and turns off Wi-Fi now, leaves the laptop on, and leaves the note unopened. Priya phones Lena at once with what he saw and when he clicked. Both copies of the email stay unopened.",
+        "why": "Disconnecting limits spread to the shared drives. Leaving the laptop on preserves what Lena needs. Calling now lets her check other machines and the backups. Nothing is forwarded, opened, or cleaned."
+      },
+      "task": {
+        "prompt": "You are Priya at 09:17. From D2 and D3, write up to 100 words: what Tomas does in the next two minutes, who is told first and how, what nobody touches, and what you do with your copy of D1.",
+        "deliverable": "A two-minute note a colleague could act on without reading the policy.",
+        "checklist": [
+          "Disconnect first: cable out, Wi-Fi off, laptop left on.",
+          "Who is told first, and by what route, per D3.",
+          "What nobody touches: the note, the files, the power button, the email."
+        ]
+      },
+      "hint": "Read D3 as a sequence: disconnect, leave on, call. Then find what Tomas is about to do in D2 that D3 forbids.",
+      "modelAnswer": [
+        "Tomas: unplug your network cable and turn off Wi-Fi now. Leave the laptop on. Do not restart, open READ_ME_NOW.txt, or touch the Deals folder. Stay at your desk so Lena can reach you. I am calling her now.",
+        "Told first: Lena Ortiz by phone on the desk card number, Marcus Bell if no answer in ten minutes. I will say Tomas enabled content on an invoice attachment around 08:55 and saw .lockd files at 09:14. My copy of the email stays unopened; I mention it on the call."
+      ],
+      "reflection": "Which line in your note would be hardest to follow in the moment, and why does D3 still ask for it?",
+      "transfer": {
+        "prompt": "Change one condition: Tomas has opened READ_ME_NOW.txt. It says the price doubles in 24 hours and warns against contacting anyone. Does your note change?",
+        "answer": "Nothing changes: disconnect, leave on, call Lena. The deadline is pressure, not information; D3 keeps any payment decision with the partners and their advisers. Add one line to your call: the note has been read, and what it demands."
+      },
+      "check": {
+        "question": "Tomas wants to restart his laptop before anyone is called. What fits D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Let him restart; if the files come back, nothing needs reporting.",
+            "feedback": "D3 says leave it on unless the technology lead decides otherwise. A restart can destroy what Lena needs, and files reappearing would not prove the shared drives are clean."
+          },
+          {
+            "id": "b",
+            "label": "Disconnect from the network, leave the laptop on, and phone Lena.",
+            "feedback": "This follows D3 in order: disconnect, leave on, call. It limits spread, keeps evidence, and puts the decision with the person the firm named."
+          },
+          {
+            "id": "c",
+            "label": "Power off and carry the laptop to Lena's desk later this morning.",
+            "feedback": "Powering off is the step D3 reserves for the technology lead, and 'later this morning' delays the call D3 wants now. A laptop on a desk is not a report."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "#StopRansomware Guide",
+      "publisher": "CISA, with MS-ISAC, NSA, and FBI",
+      "url": "https://www.cisa.gov/stopransomware/ransomware-guide",
+      "publishedOrUpdated": "2023-09 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Names the common initial access routes: internet-facing vulnerabilities and misconfigurations, compromised credentials, phishing, precursor malware, social engineering, and third parties. Recommends offline, encrypted backups tested regularly. For response: isolate affected systems, take the network offline at the switch level if several systems are hit, power down only if disconnecting is not possible, use out-of-band communication, and notify CISA, the FBI, and management.",
+      "application": "The arrival routes, the disconnect-first rule, the leave-it-on rule, and the tested-backups line draw on it. D3 mirrors its order.",
+      "limits": "Written for organizations and their responders, not the individual at a desk; it does not say who inside a firm should be told first. On payment it only advises consulting law enforcement about possible decryptors.",
+      "revisit": "When CISA issues a new edition of the guide or changes the response order."
+    },
+    {
+      "id": "S2",
+      "title": "I've Been Hit By Ransomware!",
+      "publisher": "CISA (#StopRansomware)",
+      "url": "https://www.cisa.gov/stopransomware/ive-been-hit-ransomware",
+      "publishedOrUpdated": "2023-05 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "A response checklist: isolate affected systems first; physically disconnect from Ethernet and Wi-Fi if the network cannot be taken offline; power down only as a last resort because it destroys volatile evidence; disable remote access during containment; report to CISA, the local FBI field office, IC3, or the Secret Service.",
+      "application": "Supports the worked example and the check: disconnect, leave on, call. D3's 'unless the technology lead tells you to' reflects its last-resort framing of powering down.",
+      "limits": "A responder's checklist that assumes a plan and technical staff. It does not address a colleague's instinct to restart or the pressure of a ransom deadline.",
+      "revisit": "When the page's checklist order or reporting contacts change."
+    },
+    {
+      "id": "S3",
+      "title": "Mitigating malware and ransomware attacks",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/guidance/mitigating-malware-and-ransomware-attacks",
+      "publishedOrUpdated": "Published 2020-02-13; version 3.0 updated 2021-09-09",
+      "reviewedOn": "2026-09-21",
+      "support": "Lists entry routes including malicious attachments, compromised websites, exposed remote services such as RDP, and phishing. Calls up-to-date backups the most effective way to recover, kept separate from the network and regularly tested. States that law enforcement do not encourage, endorse, or condone paying, that payment gives no guarantee, and that the computer stays infected.",
+      "application": "The arrival paragraph, the tested-backups line, and the 'paying is a leadership decision' paragraph lean on it.",
+      "limits": "Last updated in 2021. It points to separate NCSC guidance for the response itself rather than giving step-by-step actions, and its reporting routes are UK-specific.",
+      "revisit": "When NCSC publishes a new version or merges it with its response guidance."
+    },
+    {
+      "id": "S4",
+      "title": "Ransomware",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/CrimeInfo/Ransomware",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Ransomware can arrive by opening an email attachment, clicking an ad, following a link, or visiting an infected website. 'The FBI does not support paying a ransom': payment does not guarantee data back and encourages more attacks. Recommends reporting to IC3 with details of the variant, file extensions, and demand, and keeping backups stored separately from the network.",
+      "application": "Supports the paragraph on paying and the arrival examples. Reporting to IC3 is an action for the partners and technology lead, not the reader.",
+      "limits": "Aimed at the US public and undated. It gives no step-by-step response for a person at a desk.",
+      "revisit": "If the FBI's stated position on payment or the reporting route changes."
+    },
+    {
+      "id": "S5",
+      "title": "Ransomware Risk Management: A Cybersecurity Framework 2.0 Community Profile (NIST IR 8374 Rev. 1)",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "url": "https://csrc.nist.gov/pubs/ir/8374/r1/final",
+      "publishedOrUpdated": "2026-06 (month only); supersedes the February 2022 edition",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines ransomware as an attack that encrypts data and demands payment to restore access, noting attackers may also steal data and demand a further payment not to disclose it. Maps Cybersecurity Framework 2.0 outcomes across govern, identify, protect, detect, respond, and recover so an organization can gauge its readiness.",
+      "application": "Supports placing ransomware readiness, including any payment decision, at the governance level rather than with the person who first notices.",
+      "limits": "Only the abstract page was reviewed, not the full profile. It is a planning framework and gives no individual response steps.",
+      "revisit": "If NIST revises the profile again or the Cybersecurity Framework changes."
+    }
+  ]
+}

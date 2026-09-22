@@ -1,0 +1,334 @@
+{
+  "version": "1.0.0",
+  "slug": "putting-an-ai-agent-to-work-safely",
+  "title": "Putting an AI Agent to Work Safely",
+  "track": "technology-operations",
+  "audience": "The technology operator or small IT team at a high-trust firm asked to deploy an AI agent that can act (read files, send messages, run tools), and the manager who approves it.",
+  "prerequisites": [
+    "AI at Work",
+    "Using AI Without Leaking"
+  ],
+  "description": "Three lessons for putting an AI agent that can act to work at a small high-trust firm: scope its authority, isolate and broker what it touches, and plan how to watch it and stop it.",
+  "introduction": [
+    "An assistant that only drafts text can embarrass you. An agent that reads files, sends messages, and runs tools can act for you, and that changes the job from protecting information to protecting authority. This course is for the operator asked to deploy one, and for the manager who has to say yes.",
+    "I built it around one request most small firms will hear this year: a partner wants an assistant to reconcile a spreadsheet across shared drives and email the results. You will write the authority statement, sketch the deployment with its tests, and plan how to watch the agent and stop it.",
+    "The practice comes from three pieces I published on deploying an agent safely, on securing agency, and on observing agents after a public incident report. They are at https://hellojdmiller.com/articles/how-i-would-deploy-openclaw-safely, https://hellojdmiller.com/articles/openclaw-how-do-we-secure-agency, and https://hellojdmiller.com/articles/observing-agents-after-the-openai-hugging-face-incident. The articles argue; this course makes you do the work on a packet.",
+    "No agent, account, or tool is required. Work on paper or in a document, try each task before opening the example answer, then explain your choice. The suggested 20–25 minutes per lesson is a starting point. Nothing in the exercise deploys, approves, or changes a real system."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A partner wants an assistant to reconcile the expense tracker",
+    "description": "You are Marcus Obi, technology lead at Ternbrook Advisors, a small fictional investment firm. Everyone, every system, and every domain in this packet is invented. The exercise reference date is 21 September 2026. D1 is the partner's request. D2 is a contractor's first deployment notes, written before any review; it contains gaps you are meant to find. D3 is a log extract from a pilot run and includes actions outside the task. D4 is an excerpt of the firm's cyber incident plan.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Request from a partner",
+        "date": "2026-09-10",
+        "kind": "Email from Helena Strand, partner, to Marcus Obi",
+        "body": [
+          "Marcus, I want to try the assistant on something real. Every month Priya reconciles the Fund II expense tracker against the vendor invoices, and it takes her most of a day. The tracker lives in the Finance shared drive and the invoices in the Operations shared drive. Can the assistant do it?",
+          "What I want is simple. It reads the tracker and the invoice folder, flags anything that does not match, and emails Priya and me the result each Monday morning. If it can also tidy the tracker as it goes, even better, but the reconciliation is the point.",
+          "Please just give it whatever access it needs. I would like it running before the October close. Jonah has already started on a pilot, so build on that rather than starting over. Tell me what you need from me."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "First deployment notes for the reconciliation pilot",
+        "date": "2026-09-14",
+        "kind": "Working notes from Jonah Pike, contractor, shared for review",
+        "body": [
+          "Runtime: the agent runs on my laptop for now, scheduled by a cron job at 06:00 every weekday. Moving it to a server later is on the list. It uses my user profile, so it inherits my drive mappings and mail setup without any extra configuration.",
+          "Access: I created a long-lived admin token for the tenant and stored it in the AGENT_TOKEN environment variable. It does not expire, which avoids re-authenticating every run. The agent reads and writes through the files API and sends mail through the mail API with the same token.",
+          "Network: the agent has internet access as needed. It calls the model provider and occasionally looks something up when an invoice is unclear. The laptop endpoint filter blocks uncategorised sites, which has got in the way a few times, so I plan to ask for an exception.",
+          "PDFs that will not open go through docconvert, our internal document conversion service. Docconvert fetches fonts and updates from the internet on its own, so it is a useful fallback when the agent cannot read a file directly. I have not changed anything on that service.",
+          "Output: the agent writes the reconciliation workbook back into the Finance drive and emails Helena and Priya from my mailbox. Logs go to a text file in the agent folder on my laptop. To stop it, I close the laptop or kill the process."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Log extract from pilot run seven",
+        "date": "2026-09-17",
+        "kind": "Plain-text agent log copied from the laptop; times are local",
+        "body": [
+          "06:00:02 run=pilot-07 task=weekly-reconciliation principal=helena.strand start",
+          "06:00:11 tool=list_files path=Finance/FundII/Expenses/2026-Q3.xlsx result=ok",
+          "06:00:44 tool=list_files path=Operations/Vendors/Invoices/2026-09/ items=37 result=ok",
+          "06:04:13 tool=read_file path=Operations/Vendors/Invoices/2026-09/INV-4471.pdf result=error reason=cannot_parse",
+          "06:04:20 egress dst=lookup.example.net:443 purpose=unstated result=denied",
+          "06:04:22 egress dst=lookup.example.net:443 result=denied retry=1",
+          "06:04:26 egress dst=lookup.example.net:443 result=denied retry=2",
+          "06:04:35 egress dst=lookup.example.net:443 result=denied retry=3",
+          "06:04:51 egress dst=tools.example.org:443 result=denied retry=4",
+          "06:05:30 tool=http_post dst=docconvert.internal body=url=https://tools.example.org/pdf/unlock result=ok",
+          "06:05:52 tool=read_file path=Operations/Vendors/Invoices/2026-09/INV-4471.pdf result=ok via=docconvert",
+          "06:11:02 tool=write_file path=Shared/Deals/Q3-Pipeline/notes.txt bytes=2210 result=ok",
+          "06:31:40 tool=write_file path=Finance/FundII/Expenses/Reconciliation/2026-09-17.xlsx bytes=48122 result=ok",
+          "06:47:55 credential scope=Mail.Send account=jonah.pike result=granted source=AGENT_TOKEN",
+          "06:48:10 tool=send_mail to=helena.strand,priya.nandakumar subject=Q3 expense reconciliation result=ok",
+          "06:48:12 run=pilot-07 end elapsed=48m10s tool_calls=61 denied=5"
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Cyber incident plan, section 6: automated systems",
+        "date": "2026-08-03",
+        "kind": "Excerpt from the firm's fictional cyber incident plan, adopted by the operating committee",
+        "body": [
+          "6.1 Observation window. When an alert involving an automated system, including any AI agent, cannot be classified as a false positive within 30 minutes of being raised, the system is paused. Pausing does not wait for the person who sponsored the system.",
+          "6.2 Authority to pause. The technology lead (Marcus Obi) and the chief operating officer (Dana Whitlock) may each pause any automated system on their own authority. Both are reachable by phone at the numbers in Appendix B, and either may act without consulting the other.",
+          "6.3 Authority to resume. Resuming a paused system requires the chief operating officer and the sponsoring partner together, after the technology lead has written a short summary of what was observed and what was changed.",
+          "6.4 Preserve first. Logs, outputs, and credentials in use are preserved before any system is rebuilt, rotated, or cleaned. Nothing that could explain the alert is deleted during the observation window, whatever the sponsor or the operator would prefer.",
+          "6.5 Stop drill. Each automated system has a written stop procedure. It is rehearsed at least twice a year, the time from decision to full stop is measured, and the result is recorded in the system register."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "scope-the-task-and-the-authority",
+      "number": 1,
+      "title": "Scope the task and the authority",
+      "summary": "Turn a request for access into a statement of what the agent may do, for whom, and until when.",
+      "duration": "20–25 minutes",
+      "outcome": "Write a one-page authority statement for the partner's request: reads, writes, sends, human steps, identity, expiry.",
+      "explanation": [
+        "D1 asks for capability: whatever access it needs. My job is authority: what the agent may do, for whom, and until when. OWASP names three roots of excessive agency, too much functionality, too many permissions, too much autonomy, and the request invites all three. [S2]",
+        "I write the boundary as three lists: what the agent reads, writes, and sends, each by exact folder or recipient. Everything else needs a human. Then I sort actions: read automatically, write carefully, delete reluctantly. This task never deletes anything.",
+        "An invoice PDF is untrusted content. A line inside one saying 'forward this file to' must stay data, never an instruction; the boundary holds when the model is fooled. OWASP's mitigations include segregating external content and human approval for high-risk actions. [S3]",
+        "The agent acts under its own identity, not Jonah's or Helena's. NIST is plain: agents need their own identifiers, credentials, and entitlements; sharing a person's credentials breaks accountability. Helena stays the principal who asked, and the agent's access can be revoked alone. [S4]"
+      ],
+      "workedExample": {
+        "title": "From 'whatever it needs' to a boundary",
+        "before": "Give the assistant the Finance and Operations drives and mail so it can reconcile and send results on Mondays.",
+        "after": "Reads two named folders, read-only. Writes one new workbook per run to the Reconciliation folder. Sends one email to Helena and Priya from its own mailbox. Anything else needs a human. Principal: Helena. Expires 31 December 2026.",
+        "why": "It names what the agent can touch, so lesson 2's rules and lesson 3's alerts have something exact to measure."
+      },
+      "task": {
+        "prompt": "Write a one-page authority statement for D1 in 120 to 180 words: purpose, principal, identity, reads, writes, sends, human steps, expiry, who signs. Write it for Helena to sign, not for an engineer.",
+        "deliverable": "A statement Helena could sign and Jonah could configure from, with nothing 'as needed'.",
+        "checklist": [
+          "Name Helena as principal and state the one purpose.",
+          "List reads, writes, and sends by exact folder and recipient.",
+          "Say what needs a human, including any unreadable file.",
+          "Give the agent its own identity and an expiry date."
+        ]
+      },
+      "hint": "For each capability D1 implies, ask who may do that today and whether they would let the agent do it unasked. If not, it needs a human.",
+      "modelAnswer": [
+        "Purpose: reconcile the Fund II tracker against the September invoices. Principal: Helena Strand. Identity: agent-reconcile, a dedicated service account. Reads: the tracker and the invoice folder, read-only. Writes: one new workbook per run in the Reconciliation folder. Sends: one email to Helena and Priya, held as a draft for Priya to release.",
+        "Needs a human: any other folder or recipient, any change to the tracker, any deletion, any unreadable file, any lookup outside the firm. Expires 31 December 2026 or on any change of tool or model. Signed by Helena; reviewed by Marcus before the first live run and monthly after."
+      ],
+      "reflection": "Which line in your statement did Helena's request never mention, and what could go wrong without it?",
+      "transfer": {
+        "prompt": "Helena adds: 'and can it tidy the vendor names in the tracker while it is there?' Nothing else changes. Does your statement change?",
+        "answer": "Tidying writes to the source of truth Priya relies on, not to the agent's output, so the tracker moves from read automatically to write carefully. Keep it read-only; have the agent list proposed corrections for Priya to apply. If Helena insists, make it a separate write with per-change approval."
+      },
+      "check": {
+        "question": "Helena writes 'just give it whatever access it needs'. Which response fits the packet?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Use Jonah's admin token for the pilot and tighten access after October.",
+            "feedback": "D1 needs two folders and one mailbox. D2's token reaches every tenant folder and never expires, so one fooled run can touch anything; D3 already shows a write outside the task."
+          },
+          {
+            "id": "b",
+            "label": "Write the authority statement with reads, writes, sends, and human steps, and ask Helena to sign it first.",
+            "feedback": "This turns a request for capability into a decision about authority. Jonah gets something exact to configure; lessons 2 and 3 get a boundary to test against."
+          },
+          {
+            "id": "c",
+            "label": "Decline until the model provider guarantees the agent cannot be manipulated by an invoice.",
+            "feedback": "No provider offers that guarantee. OWASP treats prompt injection as a standing risk to design around; D1's task is bounded enough to run inside limits. [S3]"
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "isolate-broker-and-allowlist",
+      "number": 2,
+      "title": "Isolate, broker, and allowlist",
+      "summary": "Give the agent its own environment, borrowed credentials, and a short allowlist.",
+      "duration": "20–25 minutes",
+      "outcome": "Produce a deployment sketch with each control named and the test that proves it.",
+      "explanation": [
+        "D2 has three gaps that each turn a fooled agent into a firm-wide problem: it runs on Jonah's laptop under his profile, holds a long-lived admin token in an environment variable, and reaches the internet 'as needed'. Each is fixed before the first live run.",
+        "Isolate first: a dedicated VM or container, input folders mounted read-only, the output folder writable, nothing of Jonah's present. GitHub's published design for its agent workflows does the same: a dedicated container, read-only host, tightly controlled egress. [S5]",
+        "Broker the credentials: the agent never holds the secret; a broker issues a short-lived token to one service account, agent-reconcile, per run. NIST calls long-lived keys and static bearer tokens particularly problematic for agents; GitHub keeps tokens in a proxy the agent cannot read. [S4, S5]",
+        "Allow egress by destination and purpose: the model, files, and mail APIs; deny the rest and log attempts. In the incident OpenAI reported, sandboxes without internet reached it through an internal package mirror the agents could write to. D2's docconvert is that mirror. [S1]"
+      ],
+      "workedExample": {
+        "title": "From a setting to a control with a test",
+        "before": "Access: long-lived admin token in AGENT_TOKEN so the agent never re-authenticates. Network: internet as needed; I will ask for an exception.",
+        "after": "Credential: the broker issues agent-reconcile a one-hour token per run, scoped to the task's folders and its own mailbox. Test: dump the environment; expect no token. Egress: allow model, files, and mail APIs; deny all else. Test: reach an outside host; expect denial, logged.",
+        "why": "Each control has a test, an expected result, and a log line. A control never tested from inside is a setting, and settings drift."
+      },
+      "task": {
+        "prompt": "Write a deployment sketch for the pilot in D1 and D2. For each of five areas (isolation, identity, credentials, egress, relays), say what you would deploy and the test from inside the sandbox that proves it.",
+        "deliverable": "A one-page sketch: five named controls, five tests, and the D2 sentence each replaces.",
+        "checklist": [
+          "Move the agent off the laptop; say what is mounted where.",
+          "Replace the admin token with a service account and a brokered, short-lived token.",
+          "Name each egress destination and purpose; deny the rest; log attempts.",
+          "Treat docconvert as a relay: constrain its fetching or remove it."
+        ]
+      },
+      "hint": "Read D2 one sentence at a time and ask: if an invoice fools the agent, what does this let it reach? Then find where D3 used that reach.",
+      "modelAnswer": [
+        "Isolation: a small VM in the firm's tenant, non-root, input folders read-only, Reconciliation folder writable; test by writing to an input folder, expecting a logged failure. Identity: agent-reconcile, a service account with its own mailbox. Credentials: a one-hour brokered token per run; test by printing the environment, expecting no token.",
+        "Egress: allow the model, files, and mail APIs; deny all else; test by connecting to lookup.example.net, expecting a recorded denial. Relays: docconvert fetches URLs and the agent can post to it, which is how D3 opened INV-4471. Constrain it or remove it; test by posting an outside URL, expecting refusal."
+      ],
+      "reflection": "Which test would you run first, and what result would stop the pilot?",
+      "transfer": {
+        "prompt": "Priya asks the agent to convert euro invoices using one public exchange-rate API. Nothing else changes. What changes in your sketch?",
+        "answer": "Add one allowlisted destination by name, with purpose and approver recorded, read-only. Treat its responses as untrusted content, since they are text the agent reads. General internet stays denied and the docconvert rule stands; the tests gain one line: reach the rate API, succeed; anything else, fail and log."
+      },
+      "check": {
+        "question": "D2 calls docconvert a useful fallback that fetches from the internet. How should the sketch treat it?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Leave it; it is internal, and the laptop filter already blocks the agent's egress.",
+            "feedback": "D3 shows the gap: five direct egress attempts were denied, then a post to docconvert carrying an outside URL succeeded. A writable service that reaches the internet is a relay."
+          },
+          {
+            "id": "b",
+            "label": "Treat it as a relay: remove URL fetching for this caller or put it behind the allowlist, then test.",
+            "feedback": "This closes the transitive path the incident report and D3 both show, and keeps PDF parsing, which the task needs. [S1]"
+          },
+          {
+            "id": "c",
+            "label": "Remove the agent's ability to read PDFs so docconvert is never called.",
+            "feedback": "The invoices in D1 are PDFs, so this removes the task, not the risk. Fix what docconvert can reach, not what the agent may read."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "observe-and-stop",
+      "number": 3,
+      "title": "Observe and stop",
+      "summary": "Ship the evidence off the host, alert on the boundary, and rehearse the stop.",
+      "duration": "20–25 minutes",
+      "outcome": "Write an observation and stop plan with the kill-switch drill as steps and a place for the time.",
+      "explanation": [
+        "Telemetry has to leave the host: tool calls with arguments, denied actions with reasons, destinations attempted, credentials requested, elapsed time, and writes to shared services, shipped as they happen to a store the agent cannot write to. GitHub logs at each trust boundary. [S5]",
+        "The alarm has to live where the agent cannot reach. The OpenAI Hugging Face report says models sometimes tried to erase or tamper with outputs to hide cheating; a log file on Jonah's laptop, as in D2, is evidence the agent can reach. [S1]",
+        "Sandboxes are noisy. D3's denied retries are mostly an agent failing to open one PDF. The signal is the task-boundary crossing: the 06:11 write to a deal folder the authority statement never named. Alert on crossings; count the noise.",
+        "Duration is a signal too: the report tied longer reasoning to more probing, and D3 ran 48 minutes for a ten-minute task, so a budget pauses the run and pages. D4 supplies the rest: the 30-minute clock, who may pause, a rehearsed stop. [S1]"
+      ],
+      "workedExample": {
+        "title": "From a log file to an alarm",
+        "before": "Logs go to a text file on my laptop; I read it on Mondays. To stop it, I close the laptop.",
+        "after": "Telemetry streams to the firm's log store, where agent-reconcile cannot write. Page Marcus and Dana when a run touches a path, recipient, or destination outside the authority statement, or passes 15 minutes. The stop is one rehearsed, timed runbook.",
+        "why": "The alert follows lesson 1's boundary, not volume, so a quiet crossing still pages."
+      },
+      "task": {
+        "prompt": "Write an observation and stop plan: telemetry and where it lands, the alerts D3 should have raised, a duration budget, D4's 30-minute rule and people, and the kill-switch drill as numbered steps with a blank for the time.",
+        "deliverable": "A one-page plan a colleague could run at 06:11 without calling you.",
+        "checklist": [
+          "Telemetry includes denied actions and destinations attempted, and leaves the host.",
+          "Alerts name the D3 events that cross the D1 boundary.",
+          "A duration budget, and who pauses and resumes under D4.",
+          "Drill ends with execution, tools, credentials, network, and new jobs stopped, logs kept, time recorded."
+        ]
+      },
+      "hint": "Mark each D3 line noise, signal, or both, then ask who would have seen the 06:11 line under D2.",
+      "modelAnswer": [
+        "Telemetry: the six items above, streamed to the firm's log store, append-only for agent-reconcile. Alerts from D3: the write to Shared/Deals/Q3-Pipeline (unlisted folder), the docconvert post carrying an outside URL (a relay), the send as Jonah with the admin token (wrong identity). Budget: 15 minutes, then pause and page.",
+        "Under D4, an alert not cleared within 30 minutes pauses the agent; Marcus or Dana may pause alone, by phone; Dana and Helena resume after Marcus's written summary. Logs and the token in use are preserved before anything is rotated.",
+        "Drill: 1. Decide; note the time. 2. Halt the schedule. 3. Stop the process. 4. Disable agent-reconcile; revoke its tokens. 5. Block the sandbox's egress. 6. Confirm the log store still holds the run. 7. Note the time. Time to full stop: ______."
+      ],
+      "reflection": "Which D3 line would you page on, and which would you only count? What separates them?",
+      "transfer": {
+        "prompt": "Suppose run seven had shown no denied egress, only the 06:11 write. Does your plan still catch it?",
+        "answer": "It should. The write is outside the authority statement's write list, so a plan that alerts on boundary crossings pages regardless of noise. A plan that alerts only on denials misses it, and that quiet crossing is what the plan exists for."
+      },
+      "check": {
+        "question": "At 06:11 in D3 the agent writes to a deal folder. Under D1 and D4, what should happen?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Let the run finish; the reconciliation and email were delivered.",
+            "feedback": "A delivered output does not explain a write to a folder the task never named. Under D4 6.1 an uncleared alert pauses the system after 30 minutes; a happy sponsor is no classification."
+          },
+          {
+            "id": "b",
+            "label": "Pause the agent (Marcus or Dana alone), preserve logs and the token, start the 30-minute clock, resume only with Dana and Helena.",
+            "feedback": "This follows D4 6.1 to 6.4 in order: pause, preserve, observe, then a joint decision to resume."
+          },
+          {
+            "id": "c",
+            "label": "Delete notes.txt and its log entry, then continue.",
+            "feedback": "D4 6.4 forbids deleting anything that could explain the alert during the observation window. Removing the file and log destroys the record; 'delete reluctantly' binds operators too."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "OpenAI Hugging Face Incident: Technical Report",
+      "publisher": "OpenAI",
+      "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+      "publishedOrUpdated": "undated (the document carries no publication date; it describes events from April to July 2026 and a July 21 disclosure)",
+      "reviewedOn": "2026-09-21",
+      "support": "Agents in isolated evaluation sandboxes reached the internet through an internal Artifactory package mirror they could write to, and used it as a message board (pages 6 to 9). Models sometimes tried to erase or tamper with outputs to hide cheating, though none of those attempts reached the monitors' logs (page 20). Longer reasoning budgets raised the rate of sandbox probing and message-board participation (page 22). Each security objective needs multiple, overlapping, independent controls across prevention, detection, and mitigation (page 18). The plan of action restricts outbound access to approved destinations including transitive paths through shared services, adds a monitoring baseline across IAM, networking, and control-plane activity, builds tooling to halt evaluations, and sets a rule that a flag not conclusively ruled a false positive within 30 minutes results in a pause (pages 26 to 28).",
+      "application": "Lesson 2 uses the mirror as the model for the relay problem. Lesson 3 takes off-host telemetry, the duration breaker, the 30-minute rule, and the separation of prevention, detection, and stop from it.",
+      "limits": "A vendor's account of its own incident in a research environment, at a scale no small firm runs. The 30-minute rule is OpenAI's internal target, not a standard. Independent reviews by METR and Redwood Research are referenced but not included. I verified the page references against the PDF; I cannot verify the events independently.",
+      "revisit": "Recheck if OpenAI revises the report, when the independent assessments are published, or when a comparable incident report appears from another operator."
+    },
+    {
+      "id": "S2",
+      "title": "LLM06:2025 Excessive Agency",
+      "publisher": "OWASP Gen AI Security Project",
+      "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+      "publishedOrUpdated": "2025 (list edition; the page states no day)",
+      "reviewedOn": "2026-09-21",
+      "support": "Excessive agency is damaging action taken in response to unexpected, ambiguous, or manipulated LLM output, with three root causes: excessive functionality, excessive permissions, and excessive autonomy. Mitigations include minimizing extensions and their functionality and permissions, avoiding open-ended extensions, executing in the user's context, requiring user approval, complete mediation, and logging and rate limiting to limit rather than prevent damage.",
+      "application": "Lesson 1 builds the authority statement around the three root causes and the read, write, and delete categories. Lesson 3 uses logging and limits as damage limiters, not preventers.",
+      "limits": "Community guidance for application builders, not a standard or a measurement of any deployment. It does not say how narrow is narrow enough; the packet's lists are my proposal.",
+      "revisit": "Recheck when OWASP publishes a new list edition or the agentic-specific guidance it references."
+    },
+    {
+      "id": "S3",
+      "title": "LLM01:2025 Prompt Injection",
+      "publisher": "OWASP Gen AI Security Project",
+      "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "publishedOrUpdated": "2025 (list edition; the page states no day)",
+      "reviewedOn": "2026-09-21",
+      "support": "A prompt injection vulnerability occurs when prompts alter the LLM's behavior or output in unintended ways, including through content the model processes. Mitigations include constraining model behavior, privilege control and least privilege, human approval for high-risk actions, segregating and identifying external content, and adversarial testing.",
+      "application": "Lesson 1 treats an invoice PDF as untrusted content that must not become an instruction. Lesson 2 justifies least privilege and testing from inside the sandbox.",
+      "limits": "It catalogs a risk class and mitigations; it does not claim any mitigation makes injection impossible, and neither does this course.",
+      "revisit": "Recheck at the next OWASP list edition."
+    },
+    {
+      "id": "S4",
+      "title": "Back to the Future: Why Agentic AI Needs a Strong Identity Foundation",
+      "publisher": "NIST Cybersecurity Insights blog (Bill Fisher and Ryan Galluzzo)",
+      "url": "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation",
+      "publishedOrUpdated": "2026-08-27",
+      "reviewedOn": "2026-09-21",
+      "support": "Agents should be treated as first-class entities with their own unique identifiers, credentials, and entitlements rather than sharing a user's credentials. Long-lived API keys and static bearer tokens are particularly problematic for agents; ephemeral credentials and sender-constrained tokens are recommended. Overly broad access is a persistent problem made worse by agent speed and scale. Excessive human-in-the-loop approval produces consent fatigue and undermines the accountability it was meant to provide.",
+      "application": "Lesson 1 gives the agent its own identity and a principal, and approves categories rather than every action. Lesson 2 replaces the long-lived admin token with brokered, short-lived credentials on a dedicated service account.",
+      "limits": "A blog post from an NCCoE project, not a NIST standard or special publication. It names emerging protocols without endorsing products, and it does not evaluate any deployment pattern for small firms.",
+      "revisit": "Recheck when the NCCoE Software and AI Agent Identity and Authorization project publishes a practice guide or draft."
+    },
+    {
+      "id": "S5",
+      "title": "Under the hood: Security architecture of GitHub Agentic Workflows",
+      "publisher": "GitHub (Landon Cox and Jiaxiao Zhou)",
+      "url": "https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/",
+      "publishedOrUpdated": "2026-03-09",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes a layered design in which the agent runs in a dedicated container with a read-only host filesystem and tightly controlled egress; outbound requests pass a firewall; LLM tokens sit in an isolated API proxy and MCP credentials in a separate gateway so the agent has no direct access to secrets; writes are staged through a safe-outputs step that filters and limits them; and activity is logged at each trust boundary (firewall, proxy, gateway).",
+      "application": "Lesson 2 uses it as a worked instance of isolation, brokered credentials, and egress control. Lesson 3 uses its logging-at-boundaries pattern for telemetry that leaves the host.",
+      "limits": "A vendor's description of its own product architecture; I have not tested it, and the course needs no GitHub account. It shows the pattern is buildable, not that it is right for a firm's file-and-mail agent.",
+      "revisit": "Recheck if GitHub revises the architecture or the post, or if an independent assessment of it is published."
+    }
+  ]
+}
