@@ -38,6 +38,8 @@ jobs:
         run: |
           node training/lib/build-course.mjs --all --check
           node training/lib/build-catalog.mjs --check
+      - name: Check the technology landscape graph and its Obsidian vault
+        run: node landscape/lib/build-landscape.mjs --check
       - name: Regenerate workflow exports and catalog
         run: |
           node scripts/build-workflows.mjs

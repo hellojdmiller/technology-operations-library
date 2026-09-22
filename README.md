@@ -39,6 +39,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [Workplace and vendor training](training/README.md) | 3 AI at Work lessons, 100-site learning directory, 6 modules, 8 video-based task cards, 3 operating exercises, and a session delivery pack | Everyday AI use, free learning discovery, Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 6 sample collections | MCP design and server, Azure Bicep, configuration scripts, control-evidence review, and investor-reporting reconciliation |
 | Verification labs | [n8n runtime](labs/n8n-runtime/README.md) and [agent security](labs/agent-security/README.md) | Reproduce n8n cases and inspect offline agent-control decisions with fictional inputs |
+| [Technology landscape](landscape/README.md) | A vendor knowledge graph and generated Obsidian vault | Layers, categories, vendors, and typed relations across identity, devices, collaboration, security, network, infrastructure, data and AI, business systems, developer tools, and personal technology, sourced from Wikidata, vendor documentation, and the CNCF and LF AI landscapes |
 | [AI research and companions](research/README.md) | Research paper, three companion readings, and 17 working files | Chips, model progress, context, human learning, accepted productivity, and user progression |
 | [Showcase walkthroughs](showcase/README.md) | 3 guided examples, an editor walkthrough, and observed assistant trials | Run a sample, inspect its evidence, and understand what it establishes |
 
@@ -62,6 +63,7 @@ node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evi
 node scripts/build-catalog.mjs
 node training/free-training-directory/build.mjs --check
 node training/ai-at-work/build.mjs --check
+node landscape/lib/build-landscape.mjs --check
 ```
 
 The workflow build regenerates exports from readable JavaScript and sample inputs. Keep both together. The catalog build indexes the reviewed resource collections. The separate [runtime lab](labs/n8n-runtime/README.md) requires Docker and the pinned n8n image.
