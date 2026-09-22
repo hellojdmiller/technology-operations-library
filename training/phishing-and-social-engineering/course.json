@@ -1,0 +1,325 @@
+{
+  "version": "1.0.0",
+  "slug": "phishing-and-social-engineering",
+  "title": "Phishing and Social Engineering",
+  "track": "security-awareness",
+  "audience": "Everyone at a small, high-trust firm: administration, finance, investment, and operations colleagues with no technical background.",
+  "prerequisites": [],
+  "description": "Three practical lessons on reading a message for the pressure it carries, verifying it through a channel it did not supply, and reporting a click without fear.",
+  "introduction": [
+    "Most of the messages that cause real damage at small firms are not clever. They are ordinary requests, sent at a busy moment, from someone who appears to have the right to ask. This course is about noticing the pressure inside a message before you act on the request it carries.",
+    "You will work from one fictional packet: a shared-document notice, a text message claiming to be the managing partner, a genuine security notice, and the firm's own one-page reporting instructions. Two of the four are malicious. The point is not to guess which; it is to practice habits that make guessing unnecessary.",
+    "No technical background is needed and no tool account is required. Work on paper or in a document. Try each task before opening the example answer, then explain your choice in your own words. The examples are comparisons to learn from, not scripts to memorise or wording to reuse.",
+    "Nobody spots every message, and the guidance I lean on says so plainly. What protects a firm is that people report quickly, verify through a channel the message did not supply, and say so without fear when they have clicked. Those three habits are the three lessons that follow."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A busy Monday at Harbourline Partners",
+    "description": "You are Sam Okafor, an operations associate at Harbourline Partners, a small fictional investment firm. Everyone and everything in this packet is fictional. The exercise reference date is Monday 21 September 2026. D1 is a shared-document notice sent from a lookalike domain and D2 is a text message from someone posing as the managing partner; both are malicious and neither is what it claims to be. D3 is a genuine security notice from the firm's own systems, sent after Sam registered a new phone with the technology team at 09:12 that morning. D4 is the firm's one-page reporting instructions, and every lesson relies on it.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Shared-document notice",
+        "date": "2026-09-21",
+        "kind": "Email as it appeared in Sam's inbox at 13:41",
+        "body": [
+          "From: Harbourline Partners <share@harbourline-docs.example.net>",
+          "To: sam.okafor@harbourline.example.com",
+          "Subject: Priya Raman shared 'Ridgeway closing binder (final)' with you",
+          "Priya Raman has shared a document with you. For security reasons this link will expire in 24 hours.",
+          "Open document: https://harbourline.example.com.docs-view.example.net/open/8813",
+          "You will be asked to sign in with your work email and password to confirm your identity before viewing.",
+          "This message was sent automatically. Please do not reply."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Text message from 'Priya'",
+        "date": "2026-09-21",
+        "kind": "Text message to Sam's work mobile at 14:52",
+        "body": [
+          "From: +1 555 013 4471 (not in Sam's contacts)",
+          "Hi Sam, Priya here. New number, my phone died this morning and I am on a loaner. I am in back-to-back sessions on the Ridgeway closing and cannot take calls.",
+          "I need a favor handled quietly today. A 48,500 payment has to reach a new counterparty account before 4pm or we lose the slot. Please confirm you are at your desk and I will send the account details.",
+          "Do not copy Dana on this yet, the terms are not announced. I will explain in person tomorrow. Thank you, I appreciate you handling it."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Account security notice",
+        "date": "2026-09-21",
+        "kind": "Email from the firm's identity system at 09:14",
+        "body": [
+          "From: Harbourline Partners Security <security-alerts@harbourline.example.com>",
+          "To: sam.okafor@harbourline.example.com",
+          "Subject: A new sign-in method was added to your account",
+          "On Monday 21 September 2026 at 09:12, an authenticator app on a device named 'Sam mobile' was added as a sign-in method for your account. The change was made from the office network with the technology team.",
+          "If you recognize this change, no action is needed. If you do not, contact the technology team at techhelp@harbourline.example.com, on extension 220, or in person. Do not reply to this message.",
+          "This notice contains no links. Harbourline security notices never ask you to sign in, enter a password, or download anything."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "How to report a suspicious message",
+        "date": "2026-09-01",
+        "kind": "Firm instructions: one page from the technology team",
+        "body": [
+          "Report first, ask second. In your mail client, select the message and choose Report, then Report phishing. If the button is missing, forward the message to phishing@harbourline.example.com. For a text or a call, send a screenshot or a short description to the same address. Reporting takes ten seconds and lets us check every other inbox.",
+          "Never reply, never click, never open the attachment, and never call a number the message gives you. That includes unsubscribe links and 'verify your account' buttons.",
+          "Verify through a channel the message did not supply: the internal directory, a colleague in person, or a website you type yourself. Our only email domain is harbourline.example.com. Look at the address after the @ sign and the registered domain in any link, not the display name.",
+          "Payments and account changes: any new or changed payee, urgent payment, or request to keep a payment quiet is confirmed by voice with the requester on a directory number and approved by Dana Whitfield. A text or an email never authorizes a payment, whoever it appears to come from.",
+          "Shared-document notices and calendar invites: open documents from the portal you type yourself, not from the notice. Do not accept or decline an unexpected invite; report it and we will remove it.",
+          "If you clicked, opened, replied, or entered a password: tell the technology team immediately at techhelp@harbourline.example.com, on extension 220, or Leo Marsh in person. Out of hours, call the Technology on-call number in the directory. Do not delete the message. Do not shut down, wipe, or unplug anything. Do not change your password until we tell you which device to use. If you cannot reach anyone within 30 minutes out of hours, change your password from a different trusted device and tell us what you did.",
+          "No blame. Nobody spots every message; a late report is the only thing that makes an incident worse. We will never penalise a report, including a report of your own click.",
+          "Our own security notices come from security-alerts@harbourline.example.com, contain no links, and direct you to the contacts above."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "spot-the-pressure",
+      "number": 1,
+      "title": "Spot the pressure",
+      "summary": "Read a message for its ask, then for the pressure that stops you checking.",
+      "duration": "15–20 minutes",
+      "outcome": "Mark up two messages with their specific signals and say what each wants the reader to do.",
+      "explanation": [
+        "I read a message twice. The first pass asks only what it wants me to do: open a link, open a file, send money, reply, or approve a prompt. Every lure has an ask. Then comes the pressure: a deadline, a senior name, a request for secrecy. [S1, S2]",
+        "Identity next. A display name is free text; the address after the @ sign is what was actually used. In a link only the registered domain counts, whatever familiar name sits in front of it. Lookalikes add a word or swap a letter. [S4]",
+        "A well-written message is not a safe message. Guidance still lists spelling mistakes as a sign, and they do appear, but their absence proves nothing. A genuine notice like D3 differs in what it asks through itself: nothing. [S1, S4]"
+      ],
+      "workedExample": {
+        "title": "Marking up the document notice",
+        "before": "A Harbourline notice about the Ridgeway binder, like every week. The sender name matches and the link has our name in it, so I opened it.",
+        "after": "Ask: sign in with my work password. Pressure: a 24-hour expiry and the managing partner's name. Identity: the address is share@harbourline-docs.example.net and the link's registered domain is docs-view.example.net; D4 says our only domain is harbourline.example.com. Missing: any reason Priya would send me this.",
+        "why": "It names the ask and the pressure first, then checks the address and registered domain against D4 instead of trusting a display name."
+      },
+      "task": {
+        "prompt": "Mark up D1 and D2: the ask, every pressure signal, and what the identity shows once you look past the display name or claimed name. Add one sentence on why D3 lacks these signals.",
+        "deliverable": "Two annotated messages plus one sentence on D3.",
+        "checklist": [
+          "Name the ask in D1 and in D2.",
+          "List each pressure signal: urgency, authority, secrecy, a new payee.",
+          "Compare D1's address and link domain with the firm domain in D4.",
+          "Note what D2 offers instead of a verifiable identity."
+        ]
+      },
+      "hint": "Read only the sender line and the ask first. Then read the body and count the reasons not to check.",
+      "modelAnswer": [
+        "D1. Ask: sign in with my work password to view a document. Pressure: a 24-hour expiry and the managing partner's name on the share. Identity: display name Harbourline Partners, address share@harbourline-docs.example.net, link domain docs-view.example.net. Neither is harbourline.example.com, the only domain D4 recognizes.",
+        "D2. Ask: confirm I am at my desk so account details can follow, then pay 48,500 to a new account by 4pm. Pressure: the deadline, the managing partner's authority, keeping Dana out, and a dead-phone story excusing the unknown number. Identity: a claimed name, nothing more.",
+        "D3. It asks nothing through itself: no link, no reply, no password, no deadline. It describes a change I made with the technology team that morning and points to contacts I know from D4. That is why the signals are absent."
+      ],
+      "reflection": "Which signal in D2 would still worry you if the text had come from Priya's real number, and why?",
+      "transfer": {
+        "prompt": "D1 arrives again a week later, word for word, but now from dana.whitfield@harbourline.example.com, our real domain. What changes?",
+        "answer": "The address check passes; nothing else does. The link still resolves to docs-view.example.net, the ask is still my password, and the expiry pressure is unchanged. A real account can be compromised, so I mark it suspicious, report it under D4, and ask Dana in person."
+      },
+      "check": {
+        "question": "Which reading of D2 is best supported by the packet?",
+        "options": [
+          {
+            "id": "a",
+            "label": "It is genuinely from Priya, because it knows about the Ridgeway closing and Dana's role; the payment simply needs Dana's approval.",
+            "feedback": "Knowing a deal and a colleague's name is not identity; D2 offers nothing verifiable. The unknown number, secrecy, deadline, and new account are all present, and D4 says a text never authorizes a payment."
+          },
+          {
+            "id": "b",
+            "label": "The unknown number, secrecy, the deadline, and a new payee are the signals; the message wants Sam to confirm availability so account details can follow.",
+            "feedback": "This names the ask and each pressure signal and treats the claimed name as unverified. What to do next is Lesson 2."
+          },
+          {
+            "id": "c",
+            "label": "It is harmless for now because it only asks Sam to confirm he is at his desk; replying costs nothing.",
+            "feedback": "Replying tells the sender the number is live and opens the channel for the account details; the payment ask is already in the message. D4 says never reply."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "verify-out-of-band",
+      "number": 2,
+      "title": "Verify out of band",
+      "summary": "Report first, then check through a channel the message did not supply.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a verification plan for one message that a colleague could follow unaided.",
+      "explanation": [
+        "I report first. The report button in D4 gets the message to people who can check every other inbox. It takes ten seconds and costs nothing if I am wrong. Microsoft and Google both put reporting one click away inside the message. [S4, S5]",
+        "Then I verify through a channel the message did not supply: a directory number, a colleague in person, a website I type. The FTC's rule: a phone number or website you know is real, not the information in the message. I never reply or use its links. [S2, S1]",
+        "Invites and shared-document notices get the same care. They arrive as system mail, carry links, and accepting or declining an invite sends a reply. I open documents from the portal I type and leave unexpected invites for the technology team. D3 gets verified too."
+      ],
+      "workedExample": {
+        "title": "A verification plan for the text message",
+        "before": "I will call the number that texted me and ask something only Priya would know. If she knows about Ridgeway, I will wait for the details.",
+        "after": "Report: screenshot the text to phishing@harbourline.example.com. Verify: call Priya on her directory extension or the number in my phone; if unreachable, tell Dana in person. Do not: reply or call the new number. Outcome: even if Priya confirms, the payment still needs Dana's approval under D4.",
+        "why": "Every channel comes from the directory or the room, not the message. Reporting comes first, and the payment stays with D4 whatever the call reveals."
+      },
+      "task": {
+        "prompt": "Write a verification plan for D1 under four headings: Report, Verify, Do not, and Outcome. Name the channel for each step and where it comes from. Add two lines on how you would confirm D3, which is genuine.",
+        "deliverable": "A four-heading plan for D1 plus a two-line check for D3.",
+        "checklist": [
+          "Report using the button or address in D4 before anything else.",
+          "Choose a channel the message did not supply; say who you will ask and what.",
+          "List what you will not do: reply, click, sign in, or forward.",
+          "State what happens if the document is real, and if not."
+        ]
+      },
+      "hint": "For every step, ask whether the message supplied this address, number, or link. If so, cross it out and look elsewhere.",
+      "modelAnswer": [
+        "Report: select D1, choose Report, then Report phishing; if the button is missing, forward it to phishing@harbourline.example.com. Verify: ask Priya at her desk or on her extension whether she shared a Ridgeway binder, and check the portal by typing its address myself.",
+        "Do not: click, sign in, reply, or forward. Outcome: if Priya did share something, I open it from the portal I typed and tell the technology team it was a false alarm. If not, the report stands.",
+        "D3: I check that the added device matches the phone I registered at 09:12 and confirm with Leo on extension 220. No link and no ask matches D4's description of genuine notices, but the confirmation settles it."
+      ],
+      "reflection": "Why does reporting come before verifying, when verifying might show the message was genuine after all?",
+      "transfer": {
+        "prompt": "A calendar invite titled 'Q3 investor call' arrives from an organizer you do not recognize, with a join link and a note that attendance is mandatory. Your plan?",
+        "answer": "Do not accept, decline, or click join: accepting and declining both reply, and the link is the ask. Report it by the D4 route. Ask whoever normally arranges investor calls, in person or by extension. Leave the invite for the technology team to remove."
+      },
+      "check": {
+        "question": "Sam wants to check D1 quickly. Which action fits D4?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Click the link to see where it goes, but do not enter a password.",
+            "feedback": "Clicking is the ask, and a page can capture a session or run code without a password. The link's registered domain is docs-view.example.net, not the firm's; D4 says never click."
+          },
+          {
+            "id": "b",
+            "label": "Reply to the notice and ask who shared the document.",
+            "feedback": "The reply goes to share@harbourline-docs.example.net, a lookalike domain, and tells the sender the address is live. D4 says never reply; the question belongs to Priya at her desk."
+          },
+          {
+            "id": "c",
+            "label": "Use the Report button, then ask Priya in person or by extension whether she shared anything, and open documents only from the portal you type.",
+            "feedback": "Reporting first gets the message to the team, the channels come from the directory and the room, and the typed portal is the only safe way to open a real share."
+          }
+        ],
+        "answerId": "c"
+      }
+    },
+    {
+      "slug": "after-the-click",
+      "number": 3,
+      "title": "After the click",
+      "summary": "Tell someone fast, preserve everything, and let the technology team direct the fix.",
+      "duration": "15–20 minutes",
+      "outcome": "Write a short incident note the technology team could act on without seeing your screen.",
+      "explanation": [
+        "The first ten minutes after a click are for telling someone, not fixing it. Nothing dramatic: I do not shut down, wipe, or unplug anything, I do not delete the message, and I leave the tab open. I tell the technology team by the D4 route. [S1, S4]",
+        "Passwords come second. Microsoft and Google say to change the password on an affected account; I add a sequence: only when the team says so, and from a device they trust. The team revokes sessions, resets the password, and checks forwarding rules and sign-in methods. [S4, S5]",
+        "No blame, as a working rule rather than a kindness. The NCSC says no training package can teach users to spot every phishing attempt, and that people who fear reprisals will not report mistakes promptly. A late report is what makes a click worse. [S3]"
+      ],
+      "workedExample": {
+        "title": "From an apology to a usable note",
+        "before": "Sorry, I clicked something dodgy in that document email, but I closed it and changed my password straight away. I deleted the email so nobody else clicks it.",
+        "after": "14:07, 21 September. Sam Okafor, ext 218, desk 4. At about 13:50 I opened the link in the Ridgeway binder notice on my work laptop, office network, and entered my password. The tab and message are untouched; I have changed nothing.",
+        "why": "The note gives time, device, network, account, what was entered, and what is preserved. The apology destroyed the evidence and may have handed over the new password."
+      },
+      "task": {
+        "prompt": "Write the incident note: at 13:50 Sam opened the D1 link on the work laptop, entered his password, then approved a sign-in prompt on his phone. Write it for the technology team in under 120 words.",
+        "deliverable": "A short incident note someone could act on without seeing your screen.",
+        "checklist": [
+          "Give the time of the click and the time of the note.",
+          "Name the device, the network, and the account.",
+          "Say exactly what was entered and that a sign-in prompt was approved.",
+          "State what you have not done, and how the team can reach you."
+        ]
+      },
+      "hint": "Write for someone who cannot see your screen and cannot call you back. Every sentence should state a fact or name what you did not touch.",
+      "modelAnswer": [
+        "14:07, 21 September 2026. Sam Okafor, ext 218, desk 4. At about 13:50 I opened the link in the 'Ridgeway binder' notice from share@harbourline-docs.example.net on my work laptop, office network, and entered my work email and password. A minute later I approved a sign-in prompt on my phone.",
+        "The message is in my inbox and the tab is open. I have not changed my password, deleted anything, or signed out. I am at my desk and will not touch the laptop until you say which device to use. The approved prompt probably means the sign-in completed."
+      ],
+      "reflection": "Which single detail in your note most changes what the technology team does first, and why?",
+      "transfer": {
+        "prompt": "Same events, but at 22:30 on a Friday, on your personal phone over home Wi-Fi, and nobody answers extension 220. What changes?",
+        "answer": "Report tonight: email techhelp@harbourline.example.com and call the Technology on-call number in the directory. Keep the phone on and the message intact. If nobody responds within 30 minutes, D4 allows one exception: change the password from a different trusted device, not the phone, and say what you did."
+      },
+      "check": {
+        "question": "Sam has entered his password on the D1 page. Which first step fits D4?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Delete the email and clear the browser history so nobody clicks again, then tell the team on Monday.",
+            "feedback": "Deleting removes the sender, link, and headers the team needs, and the account is at risk now, not Monday. D4 says do not delete and report immediately."
+          },
+          {
+            "id": "b",
+            "label": "Tell the technology team now on extension 220 or in person, leave the message and tab alone, and change nothing until told which device to use.",
+            "feedback": "This is the D4 sequence: report immediately, preserve everything, take direction on the password and the device."
+          },
+          {
+            "id": "c",
+            "label": "Change the password immediately on the same laptop, then power it off so nothing can spread.",
+            "feedback": "Changing the password on the same machine may hand the new one over, and powering off destroys what the team can inspect. D4 says shut down nothing and wait for the device instruction."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Avoiding Social Engineering and Phishing Attacks",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks",
+      "publishedOrUpdated": "2021-02-01",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines social engineering, phishing, vishing (voice) and smishing (text). Lists indicators: sender addresses imitating legitimate businesses, generic greetings, links whose displayed text does not match the destination, poor spelling and formatting, unsolicited attachments. Advises verifying identity directly with the company rather than through contact details in the message, and, if compromised, reporting to network administrators immediately and changing passwords used in the incident.",
+      "application": "Lesson 1 uses the indicator list and the smishing definition for the text message. Lesson 2 uses the instruction to verify directly and not through the message's own contact details. Lesson 3 uses the instruction to report immediately.",
+      "limits": "A general-public tip page from 2021. It does not address AI-written lures, colleague impersonation inside a firm, or the account-recovery steps a technology team takes. Its list of indicators is illustrative, not a measure of how often each appears.",
+      "revisit": "When CISA revises or archives the page, or when the firm's reporting route changes."
+    },
+    {
+      "id": "S2",
+      "title": "How To Recognize and Avoid Phishing Scams",
+      "publisher": "Federal Trade Commission, consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams",
+      "publishedOrUpdated": "2022-09 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Lists the stories phishing messages tell: suspicious activity, a problem with your account or payment, a request to confirm personal or financial information, an unrecognised invoice, a link to make a payment. Shows a sample with a generic greeting and a billing-problem lure. Says legitimate companies will not email or text a link to update payment information, and that if you have an account you should contact the company using a phone number or website you know is real, not the information in the email. Recommends multi-factor authentication and gives US reporting addresses.",
+      "application": "Lesson 1 uses the list of lure stories. Lesson 2 uses the known-number, known-website rule as its core instruction.",
+      "limits": "Consumer guidance about companies contacting individuals. It does not cover impersonation of a colleague, a workplace report button, or what a firm's technology team does after a click. Its reporting addresses are for US consumers; the course uses the firm's own route in D4.",
+      "revisit": "When the FTC updates the article or its reporting addresses."
+    },
+    {
+      "id": "S3",
+      "title": "Phishing attacks: defending your organisation",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/guidance/phishing",
+      "publishedOrUpdated": "2024-02-13 (version 2.0; first published 2018-02-05)",
+      "reviewedOn": "2026-09-21",
+      "support": "Sets out four layers of defense: make it difficult for attackers to reach users, help users identify and report suspected phishing, protect the organization from the effects of undetected phishing, and respond quickly to incidents. States that no training package, including phishing simulations, can teach users to spot every phishing attempt; advises against reprimanding users who struggle to recognize phishing because users who fear reprisals will not report mistakes promptly; and asks for a culture where users can report phishing emails, including ones they have clicked on.",
+      "application": "The introduction's framing that spotting is one layer, not the whole defense. Lesson 3's no-blame rule and its insistence that a late report is what makes a click worse.",
+      "limits": "Written for technology, operations or security staff at medium and large organizations. It does not specify the first steps an individual should take after a click, and it does not evaluate exercises like the ones in this course.",
+      "revisit": "When the NCSC publishes a new version of the guidance."
+    },
+    {
+      "id": "S4",
+      "title": "Protect yourself from phishing",
+      "publisher": "Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/protect-yourself-from-phishing-0c7ea947-ba98-3bd9-7184-430e1f860a44",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Lists signs of phishing: an urgent call to action or threats; first-time, infrequent, or External-marked senders; spelling and bad grammar; generic greetings; mismatched email domains including look-alike domains such as micros0ft.com; and suspicious links or attachments to check by hovering rather than clicking. Says Report, then Report phishing in Outlook is the fastest way to report, and to contact the organization through official channels. If phished: document the details, change passwords on affected accounts, enable multifactor authentication, and notify IT support for a work account.",
+      "application": "Lesson 1 uses the display-name and look-alike-domain signs. Lesson 2 uses the in-client report button as the first step. Lesson 3 uses the advice to document details and notify the technology team.",
+      "limits": "Vendor help for one mail client. The course does not require Outlook; the firm's route is D4. The page does not say which device to change a password from or what an administrator checks afterward; those sequences are my practice, not Microsoft's text.",
+      "revisit": "When Microsoft changes the Report menu or revises the page."
+    },
+    {
+      "id": "S5",
+      "title": "Avoid & report phishing emails",
+      "publisher": "Google, Gmail Help",
+      "url": "https://support.google.com/mail/answer/8253?hl=en",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Report a message from its More menu with Report phishing. Watch for messages that ask for personal or financial information, ask you to click links or download software, imitate sites or people you know, or use emotion and urgency, including fake urgent messages from authority figures. Do not enter your password after clicking a link in a message. If you did, review recent security activity on your account's notifications page and change your password if it was compromised.",
+      "application": "Lesson 1 uses the authority and urgency signs. Lesson 2 uses the in-client report route. Lesson 3 uses the advice to review recent account activity and change a compromised password.",
+      "limits": "Vendor help for Gmail. In this course the firm's technology team handles session and password resets, so the self-service steps are context rather than the procedure. The page carries no date, so its currency cannot be confirmed from the page itself.",
+      "revisit": "When Google revises the page or changes the report menu."
+    }
+  ]
+}

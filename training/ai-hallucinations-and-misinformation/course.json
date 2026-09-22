@@ -1,0 +1,187 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "ai-hallucinations-and-misinformation",
+  "title": "When the Assistant Is Confidently Wrong",
+  "track": "ai-at-work",
+  "audience": "Everyone who uses an AI assistant for research, summaries, or drafting.",
+  "prerequisites": [
+    "AI at Work"
+  ],
+  "description": "A short module on spotting fabricated statistics, report titles, dates, and quotes in AI-assisted text, and tracing each claim to its primary source before it leaves the firm.",
+  "introduction": [
+    "An assistant can hand you a market note that reads like finished work: a named report, a precise percentage, a quotation from a chief economist. In the AI at Work course you checked a draft against a packet. This module is about claims that point outside the packet, to sources nobody has opened yet.",
+    "Fluency is not evidence. The same process that produces a good sentence also produces a confident wrong one, and nothing in the text tells you which you have. I want you to leave with one habit: every number, title, date, and quote gets traced to its primary source before it goes out.",
+    "No AI account is needed. Work on paper or in a document, review the fictional packet, then compare with the example. If you try a prompt in an organization-approved tool, use only this packet. The suggested 9–12 minutes is a starting estimate; take longer if the checking needs it."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A market note that reads too well",
+    "description": "You are helping Priya, an associate at Quillmere Advisory (a fictional firm), review a short market note before it goes to a client. Everyone and everything in this packet is fictional, including the institutes, reports, events, and people. The exercise reference date is 21 September 2026. D1 is a deliberately flawed assistant draft, not evidence of anything. D2 holds the two sources the note was meant to draw on. D3 is the firm's rule for AI-assisted text.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Assistant draft: market note on e-invoicing among small suppliers",
+        "date": "2026-09-18",
+        "kind": "Deliberately flawed example: an assistant's draft, not an observed AI response",
+        "body": [
+          "Draft for Priya. Sources used: the Larkfield Institute survey and the Cashflow Gap report. Ready to send after a quick read.",
+          "Electronic invoicing has crossed a tipping point among small suppliers. The Larkfield Institute's Small Supplier Payments Survey 2026, published 3 March 2026 from responses by 2,400 suppliers, found that 68% of small suppliers now issue e-invoices, up from 41% in 2024.",
+          "The shift is being driven by cash flow pressure. According to The Cashflow Gap Report 2025 by Northgate Analytics, small suppliers wait an average of 54 days for payment, and e-invoicing shortens that wait by roughly a third.",
+          "As Larkfield's chief economist, Dr. Dana Okafor, put it at the Meridian Payments Forum in June: 'Late payment is the single biggest threat to small suppliers, and e-invoicing is the fix.'",
+          "Respondents most often gave customer requirements as their reason for adopting e-invoicing, ahead of faster payment and lower administration cost."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "The two sources Priya gave the assistant",
+        "date": "2026-09-18",
+        "kind": "Excerpts from two fictional source documents: a survey summary page and a panel transcript",
+        "body": [
+          "Source A: Larkfield Institute, Small Supplier Payments Survey 2026, summary page. Published May 2026; fieldwork March 2026. Respondents: 1,150 suppliers with fewer than 50 staff. Full report at larkfield.example.com/sspsurvey2026.",
+          "Source A, key finding: 48% of respondents issue electronic invoices for most of their customers, up from 41% in the 2024 survey. Adoption is higher among suppliers with 20 to 49 staff (57%) than among those with fewer than 10 staff (39%).",
+          "Source A, reasons for adopting: the most common reason given was that a customer required it (52% of adopters), followed by faster payment (31%) and lower administration cost (24%). The survey did not measure days to payment.",
+          "Source B: Meridian Payments Forum, panel transcript, 12 June 2026, session 'Getting paid on time'. Panel: Dr. Dana Okafor (chief economist, Larkfield Institute), Tomas Reyes (owner, Reyes Fabrication, 14 staff), Ines Marlow (moderator). Transcript at meridianforum.example.com/2026/paid-on-time.",
+          "Source B, excerpt. Marlow: 'What worries the suppliers you talk to most?' Reyes: 'For most of the suppliers I speak to, late payment is a bigger worry than losing a customer. E-invoicing helps some of them, but only when the customer actually pays on the invoice date.' Okafor: 'Our data says adoption is rising, but we have not measured whether it changes when people get paid.'"
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Client communications rule: AI-assisted text",
+        "date": "2026-07-01",
+        "kind": "Fictional policy excerpt",
+        "body": [
+          "Any text prepared with an AI assistant is checked claim by claim before it leaves the firm. A claim is any number, date, named report, quotation, or attribution. The person sending the text is responsible for the check, whoever ran the tool.",
+          "Each claim is labeled verified (found in the primary source, with matching wording and context), corrected (the source says something different, and the text now matches the source), or removed (no primary source could be found). A link, a footnote, or the assistant's own assurance is not verification.",
+          "A quotation is used only when the exact words appear in the source, attributed to the person who said them, in the context they said them. If the source is a paraphrase or a summary, the text says so.",
+          "Keep the review notes with the draft. Do not paste client data or unpublished material into tools the firm has not approved."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "plausible-is-not-true",
+      "number": 1,
+      "title": "Plausible is not the same as true",
+      "summary": "Trace every number, title, date, and quote to its primary source, and label what you find.",
+      "duration": "9–12 minutes",
+      "outcome": "A review of D1 with each claim labeled verified, corrected, or removed, and the source used for each label.",
+      "explanation": [
+        "A fabricated answer rarely looks fabricated. It arrives as a named report, a precise percentage, a confident date, and a quotation with a name attached. NIST calls this confabulation: confidently stated but false content, produced by predicting likely text rather than looking anything up. [S1]",
+        "Fluency is not evidence. In one study, 55% of one model's citations did not exist; a newer model still fabricated 18%, with errors in many real ones. Vendors say the same in plain words: responses are not guaranteed factual, so check before sending. [S2, S4, S5]",
+        "Three checks catch most of it. Find the primary source, not a page about it. Confirm the number is in that source. Confirm the quote is verbatim, from the named person, in context. No source shown means unsupported: asking the assistant to confirm yields a second confident answer, not evidence. [S1]",
+        "A footnote link is a lead, not a completed check. Misinformation also enters through what you give it: a pasted summary with a wrong number comes back polished and cited to you. Check inputs too, and keep sensitive material out of public tools. [S3]"
+      ],
+      "workedExample": {
+        "title": "Open the source before trusting the number",
+        "before": "The Larkfield Institute's Small Supplier Payments Survey 2026 found that 68% of small suppliers now issue e-invoices, up from 41% in 2024.",
+        "after": "Corrected, per D2 Source A: 'Larkfield's Small Supplier Payments Survey 2026 found 48% of small suppliers now issue e-invoices, up from 41% in 2024.'",
+        "why": "The institute, the title, and the 2024 figure were real, which made the 68% easy to accept. Only opening the summary page showed the difference."
+      },
+      "task": {
+        "prompt": "Review D1 against D2 and D3. Label every claim (numbers, dates, named reports, quotations, attributions) verified, corrected, or removed, with the source used and corrected wording where needed.",
+        "deliverable": "A claim-by-claim review Priya can act on without reopening the sources.",
+        "checklist": [
+          "Every D1 number and date is traced to Source A or B, or removed.",
+          "The Northgate report is handled under D3's rule for claims with no primary source.",
+          "The quotation is checked for exact words, speaker, and context."
+        ]
+      },
+      "hint": "Start with the claims that would change what a client does: the headline percentage, the payment-days figure, and the quote. Then check sample size and publication date, where fabrication hides.",
+      "modelAnswer": [
+        "Corrected: 68% becomes 48% (Source A); 41% for 2024 is verified. Corrected: 2,400 becomes 1,150 respondents, and 3 March 2026 becomes May 2026 (Source A). Verified: suppliers under 50 staff, and customer requirement as the top reason for adopting.",
+        "Removed: The Cashflow Gap Report 2025, Northgate Analytics, the 54-day average, and the 'roughly a third' saving. Nothing in D2 mentions the report, and Source A says the survey did not measure days to payment. Under D3, no primary source means removed.",
+        "Corrected: the quotation. Tomas Reyes, a panelist, said 'late payment is a bigger worry than losing a customer', adding that e-invoicing helps only when customers pay on the date. Quote Reyes exactly and in context, or drop it."
+      ],
+      "reflection": "Which D1 claim would you have accepted unchecked, and what made its wording convincing?",
+      "transfer": {
+        "prompt": "The assistant reruns with a footnote link under every sentence, each opening a real page on larkfield.example.com. Does your review change?",
+        "answer": "No. A link that opens is a lead, not a check. Open each page and confirm the number, date, or words are there. The Northgate claim can link to a page that never mentions it."
+      },
+      "check": {
+        "question": "The assistant cannot source the 54-day figure but says it is 'widely reported'. Under D3, what do you do?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Keep it, softened to 'industry research suggests'.",
+            "feedback": "Softening does not supply a source. Source A says the survey did not measure payment days, and D3 needs a primary source for every number."
+          },
+          {
+            "id": "b",
+            "label": "Remove the figure and the Northgate report until a primary source is found, and record that.",
+            "feedback": "This follows D3. The report is not in D2, the number cannot be checked, and a claim with no primary source is removed, not softened."
+          },
+          {
+            "id": "c",
+            "label": "Ask the assistant to confirm the figure and, if it does, mark it verified.",
+            "feedback": "A second confident answer from the same tool is not verification; D3 says the assistant's assurance does not count, and this tool already invented the report title."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "publishedOrUpdated": "2024-07 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines confabulation as generative AI systems generating and confidently presenting erroneous or false content, colloquially called hallucinations or fabrications; explains it as a natural result of models approximating the statistical distribution of their training data; notes that outputs may include confabulated logic or citations that purport to justify an answer, and that the risk arises when users believe false content because of the confident tone.",
+      "application": "The lesson borrows the term, the explanation that fluency comes from prediction rather than lookup, and the point that a confident justification or citation can itself be fabricated.",
+      "limits": "A voluntary risk-management profile written for organizations deploying generative AI. It catalogs risks and suggested actions; it does not measure how often fabrication occurs or test the three checks taught here.",
+      "revisit": "When NIST revises the profile or the AI RMF, or when the organization adopts a different risk framework."
+    },
+    {
+      "id": "S2",
+      "title": "Fabrication and errors in the bibliographic citations generated by ChatGPT",
+      "publisher": "Scientific Reports (William H. Walters and Esther Isabelle Wilder), via PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10484980/",
+      "publishedOrUpdated": "2023-09-07",
+      "reviewedOn": "2026-09-21",
+      "support": "Across 84 short literature reviews containing 636 citations, 55% of GPT-3.5 citations and 18% of GPT-4 citations were fabricated. Of the citations that did exist, 43% (GPT-3.5) and 24% (GPT-4) contained substantive errors such as wrong authors, titles, dates, or pagination; book chapters were especially unreliable.",
+      "application": "Supports the claim that real-looking citations are often invented or wrong, and that a newer model reduces but does not remove the problem, so each citation is opened rather than trusted.",
+      "limits": "Two 2023 models, academic literature reviews, and bibliographic citations. It does not measure fabrication rates for current assistants, for market notes, or for statistics quoted inside a source, and it does not test the checks in this module.",
+      "revisit": "When comparable studies on current models or on non-academic claims are published."
+    },
+    {
+      "id": "S3",
+      "title": "ChatGPT and large language models: what's the risk?",
+      "publisher": "UK National Cyber Security Centre",
+      "url": "https://www.ncsc.gov.uk/blog-post/chatgpt-and-large-language-models-whats-the-risk",
+      "publishedOrUpdated": "2023-03-14",
+      "reviewedOn": "2026-09-21",
+      "support": "States that large language models can get things wrong and hallucinate incorrect facts, producing convincing-sounding answers that may be only partly correct, especially as topics get more niche. Advises against including sensitive information in queries to public models because the provider stores and can review them.",
+      "application": "Supports the point that a confident tone is not a signal of accuracy, and the closing note on keeping sensitive material out of public tools.",
+      "limits": "A 2023 blog post about public chat tools. It does not describe enterprise deployments with contractual data protection, and it does not measure error rates.",
+      "revisit": "When the NCSC publishes updated guidance on generative AI use."
+    },
+    {
+      "id": "S4",
+      "title": "Data, Privacy, and Security for Microsoft Copilot",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy",
+      "publishedOrUpdated": "2026-07-09 (page date)",
+      "reviewedOn": "2026-09-21",
+      "support": "Under 'About the content that Microsoft Copilot creates' the page states that responses generative AI produces are not guaranteed to be 100% factual, and that users should still use their judgment when reviewing the output before sending it to others; it describes the product as giving a chance to review drafts and summaries rather than fully automating them.",
+      "application": "Used as the vendor's own statement that output is reviewed before it is sent, which is what D3 requires.",
+      "limits": "Product documentation for one vendor's enterprise offering. It describes intended use and protections, not measured accuracy. No Copilot account is needed for this module.",
+      "revisit": "When Microsoft revises the page or the organization changes its approved tools."
+    },
+    {
+      "id": "S5",
+      "title": "Use Gemini Apps",
+      "publisher": "Google (Gemini Apps Help)",
+      "url": "https://support.google.com/gemini/answer/13275745?hl=en",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Under 'Before you use Gemini Apps' the page states: 'Gemini Apps can make mistakes. When using Gemini Apps, double-check responses and don't rely on responses from Gemini Apps for professional advice.'",
+      "application": "A second vendor statement that responses can be wrong and should be double-checked; the lesson turns 'double-check' into three specific checks.",
+      "limits": "A consumer help page. It does not say how often mistakes occur or how to check a response. No Gemini account is needed for this module.",
+      "revisit": "When Google revises the help page."
+    }
+  ]
+}

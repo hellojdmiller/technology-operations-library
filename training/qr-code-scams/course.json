@@ -1,0 +1,156 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "qr-code-scams",
+  "title": "Before You Scan",
+  "track": "security-awareness",
+  "audience": "Everyone at the firm, whatever their role; no technical background is needed.",
+  "prerequisites": [],
+  "description": "One short lesson on QR codes in emails, documents, and public places: why a code is a link you cannot read, how to preview it, and when to report instead of scanning.",
+  "introduction": [
+    "A QR code is a link with the address hidden. When I see a link in an email I can at least hover over it and read where it goes. When I scan a code, my phone reads it for me and offers to open it, and most people tap without looking.",
+    "That is why codes turn up in phishing emails, in PDFs, and on stickers pasted over the real code on a parking meter. The code itself is harmless. The page it opens is the problem, and the phone that opens it is often a personal one with none of the firm's protections.",
+    "This module gives you one question to ask before scanning, a way to preview the destination, and two requests that are never legitimate by code in a work message. Work from the fictional packet on paper or in a document; you do not need to scan anything."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "Three codes in one week",
+    "description": "You work at Fennimore Grove Advisors, a small fictional firm in a shared building. Everything in this packet is fictional: the firm, the building, the people, the domains, and the notices. The exercise reference date is 22 September 2026. D1 and D2 are deliberately deceptive and should be treated as attempts to get something. D3 is the firm's guidance for the exercise.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Printed notice in the office lobby",
+        "date": "2026-09-21",
+        "kind": "Description of a printed notice with a QR code (fictional)",
+        "body": [
+          "A laminated A4 notice appeared on the lobby wall beside the lift on Monday morning, next to the building's own signage and in a similar style. The heading reads: 'Parking permit renewal: action required by 26 September.' Nobody on reception was told it was coming.",
+          "The text says: 'All tenant parking permits are moving to a digital system. Scan the code below to update your permit and vehicle details. Permits not updated by the deadline will be deactivated.' Below the text is a large QR code and the line 'Managed by the building operations team.'",
+          "When you hold your phone's camera over the code without tapping, the preview banner shows permits-renewal-portal.example.net. The building manager's usual emails come from an address ending in ternbridge-house.example.com, and previous parking notices have always come by email from that address."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Email from 'payroll' with a QR code",
+        "date": "2026-09-22",
+        "kind": "Email described in text (fictional)",
+        "body": [
+          "From: Payroll Services, payroll-notices@fgadvisors-hr.example.net. To: you. Subject: 'Action needed: confirm your bank details before the September payroll run.' Received at 08:03. There is no attachment; the body holds one image, a QR code, and three short paragraphs of text.",
+          "The body reads: 'As part of our payroll migration, every employee must re-confirm their bank details by 24 September. To keep this secure, we are not sending links. Scan the code below with your phone and sign in with your work account to confirm. Employees who do not confirm may see their September salary delayed.'",
+          "The firm's genuine payroll messages come from finance@fennimoregrove.example.com and never ask for bank details by email; changes are made in the HR portal after signing in from a laptop. Nobody in finance has mentioned a provider migration, and the September run is not until the 30th."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Excerpt: links and codes in messages",
+        "date": "2026-06-01",
+        "kind": "Fictional guidance excerpt",
+        "body": [
+          "A QR code is a link. Treat it exactly as you would treat a link in an email or text: preview where it goes before you open it, and do not open it if the destination does not match the person or organization that claims to have sent it, spelled exactly.",
+          "The firm, its payroll and HR providers, and IT will never ask you to scan a code to reset multi-factor authentication, to confirm or change bank details, or to sign in to your work account. A code that asks for any of those is something to report, not something to do.",
+          "Codes in public places are usually fine when the surface is intact, the code is printed as part of the original sign or menu, and the preview shows a domain you expect. A sticker, a notice nobody can vouch for, or an unfamiliar preview means type the address yourself instead.",
+          "Report suspicious codes and messages to it-help@fennimoregrove.example.com with a photo or a forwarded copy. Do not scan the code to check it, and do not enter anything on a page a code opened. Reporting something that turns out to be genuine is fine."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "a-qr-code-is-a-link-you-cannot-read",
+      "number": 1,
+      "title": "A QR code is a link you cannot read",
+      "summary": "Preview the destination, match it to the sender, and know which requests never arrive by code.",
+      "duration": "8–10 minutes",
+      "outcome": "A decision for each of D1 and D2 (scan, preview then decide, or report) with one reason each.",
+      "explanation": [
+        "A QR code is a web address drawn as a picture. Nobody can read it by eye, and email security tools may not scan the image, so it slips past filters that would catch the same link as text, then opens on a phone, often personal. [S3]",
+        "The tricks are simple. A sticker covers the real code on a parking meter or menu. An email gives an urgent reason to scan: a missed delivery, a suspended account, a password to change. The page at the end is a sign-in or payment screen. [S1, S2]",
+        "Your phone gives you a moment to look. Hold the camera over the code without tapping and read the address; the domain should match whoever claims to have sent it. Two requests skip that step: a multi-factor reset and a bank-details update never arrive by code. Report those. [S1, S2]"
+      ],
+      "workedExample": {
+        "title": "Reading the preview instead of the notice",
+        "before": "The notice looks official, hangs beside the building's own signs, and has a deadline. I scan it, tap through, and a page asks for my name, plate, and a card for a small 'permit fee'.",
+        "after": "I hold the camera over the code and read the banner: permits-renewal-portal.example.net. The building manager writes from ternbridge-house.example.com, and reception knows nothing about it. I do not open it. I photograph the notice for IT and ask reception to check.",
+        "why": "The preview gave me the one fact the notice could not fake: where the code goes. A domain that does not match the building, plus a notice nobody can vouch for, is enough to stop."
+      },
+      "task": {
+        "prompt": "Read D1 to D3. For D1 and D2, write one decision each: scan, preview then decide, or report without scanning. Give one reason each, pointing to something in the document.",
+        "deliverable": "Two decisions with two reasons, ready to send to IT.",
+        "checklist": [
+          "Each decision is scan, preview then decide, or report.",
+          "Each reason names something in the document, not a general feeling.",
+          "D2 is checked against D3's never-by-code list.",
+          "Neither decision opens the page to see what happens."
+        ]
+      },
+      "hint": "Ask two questions of each code: what does the preview say, and what does the page want? A request on D3's never-by-code list settles it before you even preview.",
+      "modelAnswer": [
+        "D1: preview then decide, and the preview decides it. permits-renewal-portal.example.net does not match the building's ternbridge-house.example.com, and nobody at reception knows about the notice. Report it with a photo, ask reception to check, and do not open the page.",
+        "D2: report without scanning. It asks me to sign in with my work account and confirm bank details, both on D3's never-by-code list, from fgadvisors-hr.example.net, which is not the firm's domain. 'We are not sending links, for security' is the tell: the code is the link."
+      ],
+      "reflection": "D2 says the code replaces a link 'to keep this secure'. Why does that make the message less trustworthy, not more?",
+      "transfer": {
+        "prompt": "Change one thing: the D1 code is printed into the building's own laminated parking sign, not a separate notice, and the preview shows ternbridge-house.example.com/parking. Your decision now?",
+        "answer": "Preview then decide, and it passes: the code is part of the original sign, not a sticker or loose notice, and the preview matches the building's domain. Scan it, enter only what a permit form needs, and stop if a surprise fee appears."
+      },
+      "check": {
+        "question": "D2 uses a code instead of a link 'to keep this secure'. Which response fits D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Scan it on your personal phone rather than the work laptop, as the email suggests.",
+            "feedback": "A personal phone is where the sender wants this page: a device without the firm's filters. And confirming bank details by code is on D3's never-by-code list, whatever the device."
+          },
+          {
+            "id": "b",
+            "label": "Preview the code, and if the address looks like a payroll provider, sign in and confirm.",
+            "feedback": "Previewing is right for most codes, but D3 rules this one out first: bank details and work sign-in never arrive by code. A plausible provider domain is cheap to register and proves nothing."
+          },
+          {
+            "id": "c",
+            "label": "Do not scan. Forward the email to IT and ask finance whether a migration is happening.",
+            "feedback": "This fits D3. The request is on the never-by-code list, the sender domain is not the firm's, and finance can confirm or deny a migration in one conversation. Nothing is entered."
+          }
+        ],
+        "answerId": "c"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Scammers hide harmful links in QR codes to steal your information",
+      "publisher": "Federal Trade Commission, Consumer Alerts (Alvaro Puig)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/12/scammers-hide-harmful-links-qr-codes-steal-your-information",
+      "publishedOrUpdated": "2023-12-06",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes scammers covering QR codes on parking meters with their own, and sending codes by text or email with an urgent story: a package that could not be delivered, an account problem, suspicious activity. Advises checking the URL the code shows for misspellings or a switched letter, not scanning codes in unexpected messages, contacting the company through a number or website you know, keeping the phone updated, and using strong passwords and multi-factor authentication.",
+      "application": "The parking-meter sticker, the urgent email, the preview check, and the 'contact them a way you already know' step in the lesson come from this alert.",
+      "limits": "Consumer guidance with no figures on how common QR scams are. It does not cover codes in work documents or a firm's payroll process.",
+      "revisit": "Recheck when the FTC issues a newer QR code alert."
+    },
+    {
+      "id": "S2",
+      "title": "Cybercriminals Tampering with QR Codes to Steal Victim Funds",
+      "publisher": "FBI Internet Crime Complaint Center (IC3), Public Service Announcement I-011822-PSA",
+      "url": "https://www.ic3.gov/PSA/2022/PSA220118",
+      "publishedOrUpdated": "2022-01-18",
+      "reviewedOn": "2026-09-21",
+      "support": "Warns that tampered QR codes redirect victims to malicious sites that steal login and financial information, may carry malware, and can redirect payments. Tips: check the URL after scanning, look for physical tampering such as a sticker over the original, do not download an app from a QR code, avoid paying through a site reached by code, and call the company to verify unexpected notices. Report to a local FBI field office or ic3.gov.",
+      "application": "Supports the sticker check, the sign-in and payment page warning, and the 'call to verify' step. Reporting in the lesson goes to IT first, which the firm's rule (D3) requires.",
+      "limits": "From early 2022 and focused on payment fraud in public places. It predates the rise of QR codes in phishing emails and gives no rates.",
+      "revisit": "Recheck when IC3 publishes a newer QR code announcement."
+    },
+    {
+      "id": "S3",
+      "title": "QR Codes - what's the real risk?",
+      "publisher": "UK National Cyber Security Centre (NCSC), blog post by Dave Chismon",
+      "url": "https://www.ncsc.gov.uk/blog-post/qr-codes-whats-real-risk",
+      "publishedOrUpdated": "2024-02-08",
+      "reviewedOn": "2026-09-21",
+      "support": "Judges QR code fraud relatively modest compared with other cyber fraud: codes in pubs and restaurants are generally safe, open areas such as stations and car parks are riskier, and the growing problem is 'quishing', codes in emails. Criminals use them because people distrust links, security tools may not scan images in emails, and personal phones lack enterprise protections. Advises using the phone's built-in scanner and caution with codes in unsolicited emails.",
+      "application": "Sets the lesson's proportion (most public codes are fine), explains why codes bypass email filters and land on personal phones, and anchors the email-first worry.",
+      "limits": "A blog post giving the NCSC's assessment, not a measured study. UK-focused and silent on US reporting routes.",
+      "revisit": "Recheck if the NCSC publishes formal QR code guidance or updates the post."
+    }
+  ]
+}

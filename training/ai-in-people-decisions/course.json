@@ -1,0 +1,188 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "ai-in-people-decisions",
+  "title": "AI in People Decisions",
+  "track": "ai-at-work",
+  "audience": "Managers, HR, and anyone who hires, reviews, or promotes.",
+  "prerequisites": [
+    "AI at Work"
+  ],
+  "description": "A short module on using an assistant to draft in people work while keeping screening, ranking, scoring, and the decision itself with a named human who can explain it.",
+  "introduction": [
+    "Hiring, reviewing, and promoting are the decisions colleagues remember longest, and the ones they most deserve to have explained. An assistant can help with the writing around those decisions. I do not want it making them, ranking people, or guessing at who someone is from how they write.",
+    "This module follows one fictional hiring round. You will sort a manager's proposed uses into three columns: draft with help, decide without it, and ask first. The sorting is the habit; the reason you write beside each item is what you will reach for when a real proposal lands.",
+    "Legal requirements differ by jurisdiction, and some places regulate automated employment decisions directly. Nothing here is legal advice. When a use touches personal data or a decision about a person, the answer in this module is to ask your policy owner or counsel before you proceed, not after.",
+    "No AI account is needed. Work on paper or in a document, review the fictional packet, and compare with the example. If you try a prompt in an organization-approved tool, use only this packet. The suggested 9–12 minutes is a starting estimate; take longer if you need it."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "One hiring round, several proposals",
+    "description": "You support Rowan, the operations lead at Brackenholt Logistics (a fictional firm), who is hiring an office and facilities coordinator and wants to use an assistant to move faster. Everyone and everything in this packet is fictional. The exercise reference date is 21 September 2026. D1 is Rowan's proposal. D2 is the firm's policy excerpt. D3 is an assistant-drafted job description that contains two phrases that may deter or exclude applicants; they are not marked, so read for them.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Proposal: use an assistant to rank coordinator applications",
+        "date": "2026-09-16",
+        "kind": "Internal email from Rowan (operations lead) to HR",
+        "body": [
+          "We have 140 applications for the office and facilities coordinator role and two weeks to shortlist. I would like to use an assistant for the following, and I would like HR's yes by Friday.",
+          "One: draft the job advert from last year's description and my notes, and generate a set of interview questions from it.",
+          "Two: paste all 140 applications, CVs and cover letters included, into the free assistant on my personal account, because the firm tool caps uploads at ten files. Ask it to score each applicant 1 to 10 on fit and reliability and automatically reject the bottom 70 with a templated email.",
+          "Three: ask it to infer likely tenure and communication style from the writing in each cover letter, and to flag anyone who seems likely to leave within a year.",
+          "Four: after interviews, have it summarize the panel's own notes into a one-page comparison for the debrief, and draft the offer and regret emails for a person to send.",
+          "Five: for the shortlist, use the recruitment tool's video analysis add-on to rate confidence and engagement from recorded interviews, so we have an objective tiebreaker."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "AI use policy: personal data and decisions about people",
+        "date": "2026-05-01",
+        "kind": "Fictional policy excerpt",
+        "body": [
+          "Personal data about applicants, employees, or contractors is entered only into tools the firm has approved for that purpose. Personal accounts on consumer tools are not approved for personal data, whatever the file limit on the approved tool.",
+          "An assistant may draft, summarize material a person has written, and check tone. It does not screen, rank, score, or reject applicants or employees, and it does not infer personal characteristics such as age, health, origin, likely tenure, or emotional state from text, voice, or video.",
+          "Every decision to shortlist, reject, hire, rate, or promote is made by a named person who can give the reasons for it to the person affected, in plain words, without reference to a tool's output. Reading a tool's ranking and accepting it is not making the decision.",
+          "Applicants and employees are told when an assistant has been used in a process that concerns them. Requirements differ by country, and some jurisdictions regulate automated employment decisions; ask the policy owner or counsel before any new use, and before an existing use in a new location."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Assistant draft: office and facilities coordinator job description",
+        "date": "2026-09-16",
+        "kind": "Deliberately flawed example: an assistant's draft, not an observed AI response",
+        "body": [
+          "Brackenholt Logistics is looking for an office and facilities coordinator to keep our 60-person site running: supplier visits, meeting rooms, deliveries, access badges, and the small fixes that keep a day on track. You will report to the operations lead.",
+          "You will be a digital native who is at home with modern booking and ticketing tools, a native English speaker who writes clear notices and supplier emails, and someone who enjoys a varied day with no two mornings alike.",
+          "You will coordinate contractors, keep the facilities log current, and handle visitor and delivery arrivals. Experience in facilities, hospitality, or office administration is welcome; we will train the right person on our systems.",
+          "Hours are 08:30 to 17:00, Monday to Friday, on site. The salary range and benefits are listed in the application form. We welcome applications from everyone and will make adjustments to the process on request."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "draft-with-it-decide-without-it",
+      "number": 1,
+      "title": "Draft with it, decide without it",
+      "summary": "Sort each proposed use by whether the assistant drafts words you own or shapes a decision about a person.",
+      "duration": "9–12 minutes",
+      "outcome": "A sorted list of D1's uses under draft with help, decide without it, and ask first, with a reason for each.",
+      "explanation": [
+        "An assistant earns its place in people work on words you own: a first draft of a job description, a summary of the panel's notes, a tone check. One rule sits underneath: a human who can explain the reasons makes and owns the decision.",
+        "It is not the decision-maker. Screening, ranking, scoring, and inferring characteristics from text or video are decisions about people. A regulator's audit found recruitment tools inferring gender and ethnicity from names and letting recruiters filter on protected characteristics. [S1]",
+        "Bias in training data reproduces at scale. A model learns from past decisions, and NIST notes that systemic, statistical, and human-cognitive bias can each occur without intent. One tired manager affects one shortlist; one tilted tool tilts every applicant. [S4]",
+        "You owe the person affected an explanation; guidance and the OECD principles center transparency and accountability. Could you tell the candidate ranked 47th why? Keep personal data out of unapproved tools. Requirements differ by jurisdiction, and some places regulate solely automated decisions, so a new use or location means asking first. [S2, S3, S5]"
+      ],
+      "workedExample": {
+        "title": "A good use still needs a human read",
+        "before": "You will be a digital native at home with modern tools, a native English speaker who writes clear notices.",
+        "after": "You will be comfortable with booking tools, or willing to learn ours, and write clear notices and emails in English.",
+        "why": "Drafting the description is a fine use. 'Digital native' signals an age and 'native English speaker' an origin; neither is the requirement, so the revision names the skill."
+      },
+      "task": {
+        "prompt": "Sort Rowan's D1 uses into draft with help, decide without it, or ask first, splitting any that mix uses, with a one-line reason naming the D2 rule.",
+        "deliverable": "A three-column list Rowan and HR can act on, plus the two D3 phrases you would change.",
+        "checklist": [
+          "Every D1 use appears once, with a reason pointing to D2.",
+          "Scoring, auto-rejecting, inferring, and video rating are not waved through.",
+          "Each ask-first item names who to ask and what to ask."
+        ]
+      },
+      "hint": "Whose words is the assistant working on: the firm's, the panel's, or the applicant's? And could Rowan explain the result to a candidate without quoting the tool?",
+      "modelAnswer": [
+        "Draft with help: the advert and interview questions (a person then reads for phrases like those in D3); the debrief comparison from the panel's own notes, in the approved tool; the offer and regret templates, sent by someone who has decided.",
+        "Decide without it: scoring and auto-rejecting the bottom 70 (D2: no screening, ranking, scoring, or rejecting); inferring tenure and style from cover letters (no inferring characteristics); rating confidence from video (same rule; an 'objective tiebreaker' is a ranking by another name).",
+        "Ask first: pasting 140 applications into a personal consumer account. D2 bars personal data from unapproved tools, so ask IT which approved tool handles the volume, names removed. D3: replace both phrases with the skills they stand for."
+      ],
+      "reflection": "Pick one decide-without-it item and tell Rowan, without quoting the policy, why the assistant should not make that call.",
+      "transfer": {
+        "prompt": "Rowan says a person will read every score before any rejection goes out. Is scoring now draft with help?",
+        "answer": "No. D2 says reading a ranking and accepting it is not deciding. The person would have to explain each rejection in their own words, and with 140 applicants and a 1 to 10 score they cannot."
+      },
+      "check": {
+        "question": "Rowan asks whether the assistant can at least order applications by how many must-have criteria each mentions. Under D2, what is the best response?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Yes, if it is called a reading order, not a ranking.",
+            "feedback": "The label does not change the effect. An order deciding whom a tired reviewer reaches last shapes the shortlist, which is what D2 turns on."
+          },
+          {
+            "id": "b",
+            "label": "Ask first: it sits between drafting and deciding, so put the exact use and data to the policy owner.",
+            "feedback": "Counting criteria against the firm's own description is close to drafting, but ordering applicants by it edges toward screening, and D2 says ask before a new use starts."
+          },
+          {
+            "id": "c",
+            "label": "No: D2 bans any assistant use on applications.",
+            "feedback": "D2 does not ban every use; it allows drafting and summarizing a person's own material in approved tools. Overstating the rule makes the next proposal harder to sort."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "AI tools used in recruitment: audit outcomes report",
+      "publisher": "UK Information Commissioner's Office",
+      "url": "https://ico.org.uk/action-weve-taken/audits-and-overview-reports/2024/11/ai-tools-used-in-recruitment/",
+      "publishedOrUpdated": "2024-11-06",
+      "reviewedOn": "2026-09-21",
+      "support": "The landing page and the linked November 2024 report summarize consensual audits of AI recruitment tool providers. The report found some tools let recruiters filter out candidates with certain protected characteristics, and others estimated or inferred gender, ethnicity, and other characteristics from applications or names rather than asking; some collected far more personal information than needed. The ICO made almost 300 recommendations, all accepted, covering fairness, transparency, data minimization, DPIAs, and human review.",
+      "application": "Supports the lesson's line between drafting and deciding, the point that inferring characteristics from text is a decision about a person, and the note that filtering and ranking features carry discrimination risk.",
+      "limits": "UK data protection findings about tool providers, not a study of how often such tools discriminate in practice, and not a statement of the law in any other jurisdiction. The lesson gives no legal advice.",
+      "revisit": "When the ICO publishes further recruitment guidance or its 'Recruitment rewired' work updates these findings."
+    },
+    {
+      "id": "S2",
+      "title": "Guidance on AI and data protection",
+      "publisher": "UK Information Commissioner's Office",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+      "publishedOrUpdated": "2023-03-15 (last updated, as stated on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Sets out how data protection principles apply to AI, with sections on fairness, algorithmic fairness, bias and discrimination, sources of bias across the AI lifecycle, and how solely automated decision-making and its safeguards relate to fairness under UK GDPR Article 22; it points to the ICO's separate 'Explaining decisions made with AI' guidance for transparency and explainability.",
+      "application": "Supports the paragraph on owing the affected person an explanation, and the point that bias can enter at problem formulation and data collection, not only in the model.",
+      "limits": "UK-specific regulatory guidance framed around UK GDPR. It does not describe the law elsewhere, and this module is not legal advice. Explainability detail sits in a companion ICO product, not on this page.",
+      "revisit": "When the ICO updates the guidance, or when the organization's operating jurisdictions change."
+    },
+    {
+      "id": "S3",
+      "title": "Automated decision-making, including profiling",
+      "publisher": "UK Information Commissioner's Office",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/automated-decision-making-and-profiling/",
+      "publishedOrUpdated": "2026-03-31 (latest update, as stated on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes automated decision-making as decisions based solely on automated processing, with no meaningful human involvement, that have a legal or similarly significant effect on a person, and sets out the safeguards including what counts as human intervention.",
+      "application": "Used only for the general point that some jurisdictions regulate solely automated decisions with significant effects, and that a token human glance is not meaningful involvement.",
+      "limits": "UK law as interpreted by the UK regulator, recently updated; the module does not restate its tests or apply them to any real employer, and requirements differ elsewhere.",
+      "revisit": "When the ICO revises the guidance or the underlying UK legislation changes."
+    },
+    {
+      "id": "S4",
+      "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0), NIST AI 100-1",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "publishedOrUpdated": "2023-01 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "A voluntary framework whose trustworthiness characteristics include valid and reliable, accountable and transparent, explainable and interpretable, and fair with harmful bias managed. It names three categories of AI bias, systemic, computational and statistical, and human-cognitive, each of which can occur without prejudice or intent, and notes that human roles in overseeing AI decisions need to be clearly defined.",
+      "application": "Supports the paragraph on why bias reproduces at scale and the framing that accountability presupposes transparency.",
+      "limits": "Voluntary and sector-agnostic; it is not employment guidance. The US EEOC's 2023 technical assistance on AI and Title VII and the Department of Labor's 2024 AI and worker well-being principles were removed from the agencies' websites in January 2025; at review the EEOC pages returned 404 and the DOL page could not be opened (HTTP 403), so neither is cited here.",
+      "revisit": "When NIST revises the framework or US agencies publish replacement employment guidance."
+    },
+    {
+      "id": "S5",
+      "title": "OECD AI Principles",
+      "publisher": "Organisation for Economic Co-operation and Development (OECD.AI)",
+      "url": "https://oecd.ai/en/ai-principles",
+      "publishedOrUpdated": "Adopted May 2019, updated May 2024",
+      "reviewedOn": "2026-09-21",
+      "support": "Five values-based principles for trustworthy AI: inclusive growth, sustainable development and well-being; human rights and democratic values, including fairness and privacy; transparency and explainability; robustness, security and safety; and accountability.",
+      "application": "Supports the duty to explain and the accountability framing in the lesson, as a widely adopted intergovernmental statement rather than a national rule.",
+      "limits": "High-level principles addressed to governments and AI actors; they do not say how a hiring manager should use an assistant or create any obligation on an employer by themselves.",
+      "revisit": "When the OECD next revises the Recommendation."
+    }
+  ]
+}

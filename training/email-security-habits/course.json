@@ -1,0 +1,218 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "email-security-habits",
+  "title": "Email Habits That Hold",
+  "track": "security-awareness",
+  "audience": "Everyone who uses a work mailbox.",
+  "prerequisites": [],
+  "description": "One short lesson that turns six everyday email habits into a personal checklist, practiced on one suspicious message and one quietly compromised mailbox.",
+  "introduction": [
+    "Email is where most of my working day arrives, and it is where most attempts on a small firm arrive too. I do not think the answer is suspicion of everything. It is a handful of habits that run without effort, so the one message that matters gets noticed.",
+    "This module names six habits and practices each on a fictional packet: a message wearing a colleague's name, a mailbox with a rule its owner never made, and the firm's own email guidance. You will leave with a checklist in your words, with one packet example under each line.",
+    "Nothing here requires a particular mail product. Where Outlook or Gmail behave in a specific way, I say so and cite the vendor page, because you need the actual behavior. You decide and report in this exercise; you do not open, click, or change any setting."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "One morning at Marlow Ridge Partners",
+    "description": "You work in operations at Marlow Ridge Partners, a fictional investment firm with the mail domain marlowridge.example.com. Everyone and everything here is fictional: people, domains, bank details. The exercise reference date is 21 September 2026. D1 is a suspicious message to assess, not a genuine instruction. D2 describes a mailbox rule its owner did not create. D3 is the firm's email guidance.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "A message that looks like it came from Owen",
+        "date": "2026-09-21",
+        "kind": "Suspicious email: a colleague's display name over an external address",
+        "body": [
+          "From: Owen Castellanos <owen.castellanos.mrp@fastmail-relay.example.net>. To: you. Subject: [EXTERNAL] Updated wire details for Friday. Attachment: Payment_Instructions_Sept.zip (38 KB). Received 07:12.",
+          "Body: 'Morning. Our bank changed the receiving account for the Friday distribution. Revised instructions attached, and the confirmation letter is here: https://secure-docs-marlowridge.example.net/view/8821. Please update the template before 10:00. I am in meetings all morning and cannot take calls. Owen. Sent from my phone.'",
+          "What you already know: Owen Castellanos is the firm's finance director and his address in the directory is owen.castellanos@marlowridge.example.com. He has never sent payment instructions as a zip file. The Friday distribution is real and is on the finance calendar."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Rosa's mailbox: a rule nobody remembers making",
+        "date": "2026-09-21",
+        "kind": "Mailbox description: rule settings seen during a routine check",
+        "body": [
+          "Rosa Adeyemi, Accounts Payable, opens Settings, Mail, Rules while tidying her inbox. She finds a rule named '.' that she does not remember creating. Condition: subject or body contains 'invoice'. Actions: forward to ap.archive.mrp@docsafe-mail.example.net, mark as read, and move to the RSS Feeds folder. Created 2026-09-17 at 03:14.",
+          "Rosa was asleep at that time and has not shared her password. She does recall signing in to 'renew her mailbox storage' from a link in an email on 16 September. Two suppliers have asked this week why invoices they sent have not been acknowledged."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Email guidance (excerpt)",
+        "date": "2026-06-15",
+        "kind": "Fictional policy excerpt: tagging, reporting, forwarding, rules, and sending",
+        "body": [
+          "Every message from outside the firm carries an [EXTERNAL] tag in the subject. A colleague's name on an external message is a reason to check the address, not a reason to trust it.",
+          "Suspicious messages are reported with the Report button in the mail client, which sends the message to IT and the mail provider for analysis. Do not delete, reply, or forward them to colleagues for opinions. If a message asks to change payment details, confirm by phone using the number already in the firm directory.",
+          "Work mail is not forwarded to personal accounts, by hand or by rule, and automatic forwarding outside the firm is blocked where the system allows. Check your own rules and forwarding settings monthly.",
+          "Any rule or forward you did not create is reported to IT the same day as a possible account takeover. Leave it in place for IT to examine, and change your password when IT confirms the mailbox is clean.",
+          "Before you reply or forward: check who is on the To and Cc lines, especially after auto-complete; use Reply All only when everyone needs the answer; and trim earlier messages from a thread before forwarding it outside the team."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "six-habits-one-inbox",
+      "number": 1,
+      "title": "Six habits, one inbox",
+      "summary": "Six checks that catch the message that matters, on a suspicious email and a hijacked mailbox.",
+      "duration": "8–10 minutes",
+      "outcome": "A personal six-habit checklist with one packet example under each habit.",
+      "explanation": [
+        "The display name says Owen; the address says otherwise. I read the address before acting on any message and compare it with the directory. A senior name plus a deadline earns a closer look, not a faster one. [S3, S7]",
+        "Hover, or long-press on a phone, to see where a link goes before opening it. An unexpected attachment is a question for the sender through a channel I already trust. 'Cannot take calls' is pressure, not proof. [S1, S7]",
+        "Sending has quiet mistakes too. Auto-complete picks the wrong Priya, Reply All reaches forty people, and a forwarded thread carries history its new reader was never meant to see. I check recipients and trim history first.",
+        "The Report button does what deletion cannot: it hands IT the evidence and tells the mail provider; the message leaves the inbox anyway. Report without blame and the firm sees the campaign; delete quietly and it sees nothing. [S2, S4, S7]",
+        "Rules and forwards turn a stolen password into a long-term listener. Attackers create rules in mailboxes they enter, and owners rarely notice. I check mine monthly and keep work mail out of personal accounts, beyond the firm's protections. [S6, S5, S8]"
+      ],
+      "workedExample": {
+        "title": "The same message, read twice",
+        "before": "Owen needs the template by 10:00, so I open the zip, update the bank details, and reply.",
+        "after": "Owen's name over fastmail-relay.example.net, an [EXTERNAL] tag on a message about our own bank account, an unexpected zip, a link to a domain that is not ours. I open neither; I report it and call Owen's directory number.",
+        "why": "Every habit fired on one message, and reporting kept the evidence. Calling the directory number separates deciding from doing."
+      },
+      "task": {
+        "prompt": "Write your six habits, one line each in your own words, with one example from D1, D2, or D3 under each. End with two actions you would take today on D1 and D2.",
+        "deliverable": "Six lines, one packet example each, plus two next actions.",
+        "checklist": [
+          "All six habits appear: address, links, attachments, sending care, report not delete, mailbox yours.",
+          "Each example names the document and the specific detail.",
+          "D1 is reported and verified by phone; D2 goes to IT with the rule left in place."
+        ]
+      },
+      "hint": "For sending care, look at what D1 invites: a reply goes to the external address, and forwarding it around spreads it.",
+      "modelAnswer": [
+        "1. Address, not name: Owen's name over fastmail-relay.example.net; the directory says marlowridge.example.com. 2. Hover first: D1's link goes to secure-docs-marlowridge.example.net, not our domain. 3. Unexpected attachments are questions: Owen never sends instructions as a zip, so I ask him, not the file.",
+        "4. Send with care: replying to D1 answers the attacker; forwarding it for opinions spreads it. 5. Report, not delete: the Report button gives D1 to IT and the provider. 6. Keep the mailbox mine: Rosa's '.' rule forwards every invoice outside the firm.",
+        "Today: report D1 and call Owen's directory number. Rosa reports the rule to IT, leaves it as evidence, and changes her password when IT says so."
+      ],
+      "reflection": "Which habit runs without thinking for you, and which would you have skipped on D1?",
+      "transfer": {
+        "prompt": "Suppose D1 comes from owen.castellanos@marlowridge.example.com, the real address, no [EXTERNAL] tag, same zip, link, and 'cannot take calls'. Which habits still apply?",
+        "answer": "The address check passes, so Owen's own account may be compromised, as with Rosa in D2. The other habits hold: unexpected zip and link, a directory-number call about the payment change, and the message reported."
+      },
+      "check": {
+        "question": "Rosa has found the '.' rule in D2. What is the supported next step?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Delete the rule, change her password, and carry on.",
+            "feedback": "Deleting the rule destroys the evidence of what left since 17 September, and a password change before IT checks may leave other footholds. D3: report today, keep the rule, change the password when IT confirms."
+          },
+          {
+            "id": "b",
+            "label": "Report the rule to IT today, leave it in place, and contact suppliers when IT advises.",
+            "feedback": "This follows D3 and the takeover guidance: a rule the owner did not create signals compromise, IT needs the evidence intact, and outside contact follows IT's assessment. The suppliers' questions confirm the diversion."
+          },
+          {
+            "id": "c",
+            "label": "Leave it; the invoices are still in the RSS Feeds folder.",
+            "feedback": "The rule also forwards every invoice to docsafe-mail.example.net, outside the firm, and two suppliers are already asking. Nothing lost inside does not mean nothing left; D3 calls that a possible takeover."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Teach Employees to Avoid Phishing",
+      "publisher": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/secure-our-world/teach-employees-avoid-phishing",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Signs include strange requests, urgent language, suspicious links, and messages from known contacts whose accounts are compromised. Advises hovering over a link without clicking to see where it leads, using a known contact method to verify, and making sure employees know to whom and how to report; in its words, 'always report and delete the phishing message'.",
+      "application": "Habits one, two, and five, and the worked example's phone call to a known number.",
+      "limits": "General small-business guidance with no date shown. It does not address inbox rules, forwarding, or personal accounts, and it does not single out unexpected attachments. CISA's older 'Recognize and Report Phishing' page carries an archive notice, so I have not cited it.",
+      "revisit": "If CISA revises Secure Our World or dates the page."
+    },
+    {
+      "id": "S2",
+      "title": "Phishing attacks: defending your organisation",
+      "publisher": "UK National Cyber Security Centre",
+      "url": "https://www.ncsc.gov.uk/guidance/phishing",
+      "publishedOrUpdated": "Published 5 February 2018, updated 13 February 2024",
+      "reviewedOn": "2026-09-21",
+      "support": "A four-layer defense: make it hard for messages to arrive, help users identify and report, protect against the effects of undetected messages, respond quickly. Calls for a simple reporting process and a culture where people report without fear of reprimand, and cautions against punitive phishing simulations.",
+      "application": "Habit five's 'report, not delete' and the tone of the whole lesson: habits, not blame.",
+      "limits": "Written for security staff in medium and large organizations; smaller firms are pointed to other NCSC material. It does not describe client buttons or personal-account rules.",
+      "revisit": "If the NCSC updates the guidance or replaces the layered model."
+    },
+    {
+      "id": "S3",
+      "title": "How to spot a scam email, text message or call",
+      "publisher": "UK National Cyber Security Centre",
+      "url": "https://www.ncsc.gov.uk/collection/phishing-scams/spot-scams",
+      "publishedOrUpdated": "Published 26 November 2021, last reviewed 5 September 2022",
+      "reviewedOn": "2026-09-21",
+      "support": "Five signs: authority, urgency, emotion, scarcity, and current events. Advises against using the numbers or address in the message and for using details from the official website instead; genuine organizations do not ask for personal information by email.",
+      "application": "The 'pressure is not proof' point and the directory-number call in the worked example.",
+      "limits": "Aimed at individuals and consumer scams; it does not cover workplace reporting tools or mailbox rules.",
+      "revisit": "If the NCSC revises the collection."
+    },
+    {
+      "id": "S4",
+      "title": "Report phishing and suspicious emails in Outlook for admins",
+      "publisher": "Microsoft Learn (Microsoft Defender for Office 365)",
+      "url": "https://learn.microsoft.com/en-us/defender-office-365/submissions-outlook-report-messages",
+      "publishedOrUpdated": "Page dated 3 July 2026",
+      "reviewedOn": "2026-09-21",
+      "support": "Users report junk or phishing with the built-in Report button in current Outlook for Windows, Mac, iOS, Android, the new Outlook, and Outlook on the web, when the organization has user reporting turned on. Messages reported as phishing are deleted; reported junk moves to Junk Email and blocks the sender; reports go to a reporting mailbox, to Microsoft, or both.",
+      "application": "Habit five: what the button does and why it beats deleting.",
+      "limits": "Describes Microsoft 365 with Exchange Online mailboxes. Availability depends on admin settings and client version; a firm without the button needs another reporting route, which D3 leaves to IT.",
+      "revisit": "If Microsoft changes the Report button's behavior or supported versions."
+    },
+    {
+      "id": "S5",
+      "title": "Manage email messages by using rules in Outlook",
+      "publisher": "Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/office/manage-email-messages-by-using-rules-in-outlook-c24f5dea-9465-4df4-ad17-a50704d66c59",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Rules live under Settings, Mail, Rules in current Outlook clients. A rule has a name, a condition, and an action; actions include forwarding and redirecting, and rules can be edited, disabled, or deleted from the same list.",
+      "application": "Where to look when checking your own rules under habit six, and how Rosa finds the rule in D2.",
+      "limits": "A how-to page for users; it does not discuss malicious rules or account compromise. Menu names differ between Outlook versions.",
+      "revisit": "If Outlook moves or renames the rules settings."
+    },
+    {
+      "id": "S6",
+      "title": "Detect and remediate Outlook rules and custom forms injection attacks",
+      "publisher": "Microsoft Learn (Microsoft Defender for Office 365)",
+      "url": "https://learn.microsoft.com/en-us/defender-office-365/detect-and-remediate-outlook-rules-forms-attack",
+      "publishedOrUpdated": "Page dated 3 July 2026",
+      "reviewedOn": "2026-09-21",
+      "support": "After stealing credentials, an attacker signs in to the mailbox and creates inbox rules as a persistence mechanism; users are unlikely to notice. Investigators should look for rules the user did not create, unexpected rules, or rules with suspicious names, remove them, then reset the password and turn on multifactor authentication.",
+      "application": "Habit six and the D2 check: an unfamiliar rule is a sign of takeover, and remediation is IT's job.",
+      "limits": "Written for administrators and focused on rules that launch applications; simple forwarding rules like Rosa's are a related pattern rather than the one described. It does not set the order of password change versus investigation for users; D3 supplies that.",
+      "revisit": "If Microsoft revises the article or Outlook's rule protections change."
+    },
+    {
+      "id": "S7",
+      "title": "Avoid and report phishing emails",
+      "publisher": "Google (Gmail Help)",
+      "url": "https://support.google.com/mail/answer/8253",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Report phishing from the More menu next to Reply on a computer. Warns about urgent-sounding messages, advises checking that the email address matches the sender name and that the message is authenticated, and hovering over links to see whether the destination matches; do not click links or download files from untrustworthy sources even without a warning.",
+      "application": "Habits one, two, three, and five for Gmail users.",
+      "limits": "Consumer Gmail help. Google Workspace organizations may have different reporting routes and admin settings.",
+      "revisit": "If Google changes the reporting menu or the page."
+    },
+    {
+      "id": "S8",
+      "title": "Automatically forward Gmail messages to another account",
+      "publisher": "Google (Gmail Help)",
+      "url": "https://support.google.com/mail/answer/10957",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Forwarding lives under Settings, Forwarding and POP/IMAP. Adding a forwarding address requires clicking a verification link sent to that address; once on, all new mail except spam is forwarded, and filters can forward only matching messages. Forwarding is turned off from the same tab, and a notice shows in the inbox while it is on.",
+      "application": "Habit six for Gmail users: where to check for forwards you did not create, and why the inbox notice matters.",
+      "limits": "Consumer Gmail help; Workspace admins may restrict forwarding. It does not discuss account compromise.",
+      "revisit": "If Google changes the forwarding settings or the page."
+    }
+  ]
+}

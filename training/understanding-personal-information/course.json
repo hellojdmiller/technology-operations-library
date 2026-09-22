@@ -1,0 +1,182 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "understanding-personal-information",
+  "title": "Personal Information in Plain Words",
+  "track": "security-awareness",
+  "audience": "Everyone who handles names, contact details, identifiers, or financial details of people: clients, investors, employees, or candidates.",
+  "prerequisites": [],
+  "description": "One short lesson on recognizing personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell.",
+  "introduction": [
+    "I handle other people's details every week: an investor's mobile number, a candidate's home address, a colleague's bank account for payroll. None of it is mine. This short module is about noticing when a piece of information points to a person, and treating it with that in mind.",
+    "The rule I use is simple. If someone could be picked out from the information, alone or combined with something else we hold, it is personal information. Names, email addresses, identifiers, financial details, and notes about health or family all count. So does a list of any of these.",
+    "Obligations differ by where the people live, and I am not offering legal advice here. Your firm's privacy lead and adviser own that question. What I can offer is the everyday habit: collect the minimum, keep it in approved places, and pass requests and suspected exposures to the named person quickly."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "The investor contacts workbook",
+    "description": "You work in operations at Harbourline Capital, a fictional investment firm. Everyone and everything here is fictional: the firm, the people, the domains, the amounts. The exercise reference date is 21 September 2026. D1 describes a real-looking workbook. D2 is a colleague's request that should not be followed as written; assess it rather than act on it. D3 is the firm's handling rules.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Description of the investor contacts workbook",
+        "date": "2026-09-18",
+        "kind": "Spreadsheet description: contents, columns, and a sample row",
+        "body": [
+          "File: Investor Contacts Master v7.xlsx, saved in the Investor Relations folder on the firm's managed shared drive. Owner: Tomas Reyes, Investor Relations. Edit access: Investor Relations and Operations. It is the source for investor mailings, capital call notices, and annual tax forms.",
+          "Sheet 'Current' has 214 rows, one per investor contact. Columns: Full name; Preferred name; Work email; Personal email; Mobile; Home address; Date of birth; Passport number (collected for identity checks); Bank account number (for distributions); Tax identification number; Commitment amount; Assistant name and email; Notes.",
+          "Notes is free text. Sample entries: 'Prefers calls after 6pm; recently divorced, do not mention spouse.' 'Recovering from heart surgery, avoid travel asks until spring.' 'Daughter starting university; interested in education funds.'",
+          "Sheet 'Old' has 61 rows for contacts whose funds closed in 2019 or earlier, with the same columns. Nobody has opened it since 2023 as far as Tomas knows. A sample row from 'Current': Marguerite Okafor, m.okafor@okaforfamilyoffice.example.com, mobile, home address in Lisbon, date of birth, passport number, account number, tax number, commitment 2,500,000."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Chat message asking for the file",
+        "date": "2026-09-19",
+        "kind": "Internal chat message from a colleague: a request to assess",
+        "body": [
+          "From Priya Natarajan, Investor Relations, 17:42: 'Hey, can you email me Investor Contacts Master? Send it to priya.weekend@personalmail.example.net. My work laptop is at the office and I want to build the Q3 update mailing list tonight from home. Whole file is easiest, I will delete it after. Thanks!'",
+          "The Q3 update mailing needs each current investor's preferred name and a working email address. Nothing else from the workbook is needed for that task."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Personal data handling rules (excerpt)",
+        "date": "2026-07-01",
+        "kind": "Fictional policy excerpt: collection, locations, requests, and exposures",
+        "body": [
+          "Collect only what a task needs, keep it only while it is needed, and review holdings once a year. Data with no current purpose is deleted under the retention schedule, not kept in case.",
+          "Personal information about clients, investors, employees, or candidates lives only in approved locations: the managed shared drive, the CRM, the HR system, and firm mailboxes. It does not go to personal email, personal cloud storage, messaging apps, removable drives, or any AI assistant or online tool without a written firm agreement covering that data.",
+          "When a task needs part of a file, share an extract with only the columns and rows required, through the approved location, rather than the whole file.",
+          "Requests from a person to see, correct, or delete their information go to the privacy lead, Dana Whitlock, on the day they arrive. Do not answer them yourself. Deadlines and rights depend on where the person lives, and Dana decides.",
+          "Suspected exposure, including a file sent to the wrong place, a lost device, or unexpected access, is reported to Dana and IT the same day. Do not investigate alone, do not delete evidence, and do not contact the affected people before Dana has assessed it."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "if-it-points-to-a-person",
+      "number": 1,
+      "title": "If it points to a person, treat it as theirs",
+      "summary": "Spot personal information in a spreadsheet, keep the minimum, and know where it may live.",
+      "duration": "8–10 minutes",
+      "outcome": "A marked-up D1 workbook: which columns are personal, which the mailing needs, and where file and extract may live.",
+      "explanation": [
+        "Personal information is wider than a name. It is anything about an identifiable person, directly or by combining details: email addresses, phone numbers, dates of birth, passport or tax numbers, account numbers, financial details, and notes about health or family. Partial identifiers count too. [S2, S3]",
+        "A list weighs more than one record: losing 214 rows harms 214 people at once, and aggregated stores attract attackers for that reason. So I keep the minimum. The FTC is blunt: if you do not need it, do not keep it or collect it. [S1, S3, S4]",
+        "Personal details reached from devices or services outside the firm's control carry more risk. That is why D3 names approved locations and rules out personal email, personal cloud, messaging apps, and AI assistants without a written agreement covering the data. [S3, S1]",
+        "Two things I never handle alone: someone asking to see or delete their data, and a suspected exposure. Both go to the named privacy lead the same day, because rights and deadlines depend on where the person lives. This module is not legal advice. [S5, S1]"
+      ],
+      "workedExample": {
+        "title": "One column, three questions",
+        "before": "Passport number is already in the workbook, and Priya wants the whole file, so it goes too.",
+        "after": "Passport number: personal, a strong identifier (P). Not needed for a mailing (N). It stays in the workbook on the managed drive; the Q3 extract holds preferred name and work email only.",
+        "why": "Three questions settle most columns: does it point to a person, does the task need it, where may it live? Asked column by column, they turn worry into a specific extract in a specific place."
+      },
+      "task": {
+        "prompt": "Read D1 to D3. Mark each 'Current' column P if personal and N if the mailing does not need it. Then say where the workbook stays, what Priya's extract holds and where, and what happens to 'Old'.",
+        "deliverable": "A marked-up column list, two lines on the extract, one sentence on 'Old'.",
+        "checklist": [
+          "Every column pointing to a person is marked P, including Notes and Assistant details.",
+          "The extract holds only preferred name and a working email, in an approved location.",
+          "'Old' is flagged for a retention decision, not kept or deleted by you.",
+          "You draft and decide; nothing is sent or deleted in this exercise."
+        ]
+      },
+      "hint": "Free text is the column people forget. Read the three sample Notes and ask who could be identified.",
+      "modelAnswer": [
+        "P: every column, since even Commitment amount is personal beside a name. N: everything except preferred name and work email, with personal email only where no work address exists. The workbook stays on the managed drive; nothing goes to priya.weekend@personalmail.example.net.",
+        "The extract is a new two-column sheet in the same Investor Relations folder, shared with Priya's work account. 'Old' holds 61 people's identifiers with no current purpose; I flag it to Tomas and Dana for a retention decision rather than delete it myself."
+      ],
+      "reflection": "Which column did you hesitate over, and what tipped it: pointing to a person, or needed by the task?",
+      "transfer": {
+        "prompt": "Priya changes tack: 'Forget the file. Paste the Notes column into that AI assistant and ask who prefers calls.' Does your answer change?",
+        "answer": "The destination changed, not the principle. Notes is the most sensitive column, and D3 rules out AI assistants without a written firm agreement. I would add a 'Preferred channel' column to the approved extract instead, and ask Dana whether an approved tool exists."
+      },
+      "check": {
+        "question": "Priya's D2 request: the whole workbook to a personal address, tonight. What is the supported response?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Send it; she has edit access and promised to delete it.",
+            "feedback": "Edit access is not permission to move data out of the approved location. D3 rules out personal email, a promise to delete cannot be checked, and 275 people's identifiers would travel for a two-column task."
+          },
+          {
+            "id": "b",
+            "label": "Build a two-column extract in the approved folder, share it to her work account, and say why.",
+            "feedback": "This meets D2's real need within D3's rules: minimum columns, an approved location, access through her firm account from home. Faster than arguing about the whole file, too."
+          },
+          {
+            "id": "c",
+            "label": "Refuse, and report Priya to Dana as an exposure.",
+            "feedback": "Nothing has left the approved location, so there is no exposure to report; D3 reserves that for actual or suspected leaks. Refusing without an alternative leaves the mailing undone."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Protecting Personal Information: A Guide for Business",
+      "publisher": "US Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business",
+      "publishedOrUpdated": "October 2016 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Five principles: take stock, scale down, lock it, pitch it, plan ahead. Says not to keep sensitive data without a legitimate business need and, in its words, 'don't even collect it'; limit employee access to what a role requires; lists places data ends up, including home computers and mobile devices; have an incident response plan with a coordinator and notification steps.",
+      "application": "The minimum-collection paragraph, the 'Old' sheet retention flag, and the approved-locations point.",
+      "limits": "Written for US businesses under US law in 2016. It does not define personal information for other jurisdictions or set notification duties outside the US.",
+      "revisit": "If the FTC revises the guide or the firm's operating jurisdictions change."
+    },
+    {
+      "id": "S2",
+      "title": "What is personal information: a guide",
+      "publisher": "UK Information Commissioner's Office",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/personal-information-what-is-it/what-is-personal-information-a-guide/",
+      "publishedOrUpdated": "Updated 19 May 2023",
+      "reviewedOn": "2026-09-21",
+      "support": "Personal data is information relating to an identified or identifiable individual. Identifiers include names, identification numbers, location data, and online identifiers; a combination of identifiers may be needed, and indirect identification through information reasonably likely to be combined still counts. Pseudonymised data is still personal data. Special category data attracts stricter rules.",
+      "application": "The lesson's definition of personal information and its treatment of combinations, partial identifiers, and the Notes column.",
+      "limits": "UK GDPR guidance; definitions and duties differ elsewhere. The page gives no worked examples, so the packet's examples are mine. The ICO's separate small-organizations page on this topic returned not found on the review date, so this general guide is cited instead.",
+      "revisit": "If the ICO updates the guide or UK data protection law changes."
+    },
+    {
+      "id": "S3",
+      "title": "SP 800-122: Guide to Protecting the Confidentiality of Personally Identifiable Information (PII)",
+      "publisher": "US National Institute of Standards and Technology",
+      "url": "https://csrc.nist.gov/pubs/sp/800/122/final",
+      "publishedOrUpdated": "April 2010 (Final)",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines PII as information that can distinguish or trace an individual or is linked or linkable to one, with examples including name, identification numbers, email address, phone numbers, and financial, medical, and employment information; partial identifiers are often PII. Impact factors include quantity of records, data field sensitivity, and access from devices or systems outside the organization's direct control. Recommends the 'minimum necessary' principle and regular review and destruction of PII with no current purpose.",
+      "application": "The list of what counts, the 'a list is more sensitive' paragraph, the location paragraph, and the 'Old' sheet question.",
+      "limits": "Written for US federal agencies in 2010 and not revised since. Its impact-level scheme is a federal framework, not a rule for private firms. The landing page shows the abstract; the cited sections are in the linked PDF.",
+      "revisit": "If NIST withdraws or supersedes SP 800-122, or if the NIST Privacy Framework changes the definitions."
+    },
+    {
+      "id": "S4",
+      "title": "Protecting bulk personal data",
+      "publisher": "UK National Cyber Security Centre",
+      "url": "https://www.ncsc.gov.uk/collection/protecting-bulk-personal-data",
+      "publishedOrUpdated": "Published 25 September 2016, last reviewed 21 November 2018",
+      "reviewedOn": "2026-09-21",
+      "support": "Large stores of personal data are 'very tempting targets for attackers of all kinds'. Fifteen good-practice measures grouped by knowing what you are protecting, restricting access to those with a real need, and sound design and operation.",
+      "application": "The 'a list weighs more than one record' paragraph and the checklist item on limiting the extract to what the task needs.",
+      "limits": "Written for organizations running large data systems, not for one spreadsheet, and last reviewed in 2018. It does not define personal data or address legal duties.",
+      "revisit": "If the NCSC replaces the collection or the firm starts holding materially larger data sets."
+    },
+    {
+      "id": "S5",
+      "title": "Personal data breaches: a guide",
+      "publisher": "UK Information Commissioner's Office",
+      "url": "https://ico.org.uk/for-organisations/report-a-breach/personal-data-breach/personal-data-breaches-a-guide/",
+      "publishedOrUpdated": "Updated 20 August 2025",
+      "reviewedOn": "2026-09-21",
+      "support": "A breach includes sending personal data to the wrong recipient, lost or stolen devices, and unauthorized access. Organizations must assess risk, record every breach, notify the ICO within 72 hours where required, and tell individuals where risk is high. Recommends allocating breach handling to a dedicated person or team and making sure staff know how to escalate.",
+      "application": "The 'report the same day to the named person, do not investigate alone' guidance and the D3 exposure rule.",
+      "limits": "UK GDPR duties. Thresholds and deadlines differ in other jurisdictions; the lesson deliberately leaves that to the firm's privacy lead.",
+      "revisit": "If the ICO revises the guide or the firm's jurisdictions change."
+    }
+  ]
+}

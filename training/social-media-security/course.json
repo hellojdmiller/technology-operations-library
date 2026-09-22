@@ -1,0 +1,192 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "social-media-security",
+  "title": "What Your Profile Gives Away",
+  "track": "security-awareness",
+  "audience": "Everyone at the firm, with particular relevance to people whose roles are public: partners, executive assistants, and finance.",
+  "prerequisites": [],
+  "description": "A short module on how ordinary public posts add up to a convincing pretext, and the one posting habit that removes most of the risk.",
+  "introduction": [
+    "I am not going to tell anyone to stop posting. A public profile is part of how this business works: people need to find us, and a partner who never appears anywhere is not doing part of the job. What I want is for each of us to know what a post gives away.",
+    "This module takes about ten minutes. It uses three ordinary posts from a fictional firm, a fake connection request built from them, and an excerpt of that firm's guidance. You will list what the posts reveal, spot where the fake borrowed each fact, and pick the one change that would have mattered most.",
+    "Nothing here requires an account or a tool. Work on paper or in a document. Everyone and every firm in the packet is invented. Try the task before opening the example answer, then explain your choice in your own words; the explanation is the part that sticks."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "Three posts and a connection request",
+    "description": "You work at Larkspur Ridge Partners, a small fictional investment firm. Everyone and everything in this packet is fictional: the people, the firm, the vendor, the event, and the domains. The exercise reference date is 21 September 2026. D1 describes three ordinary public posts as a colleague would see them. D2 is a deliberately fake connection request and message from an account impersonating a real colleague; treat it as the threat, not as evidence of what Maren said. D3 is an excerpt of the firm's social media guidance.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Three public posts from the past fortnight",
+        "date": "2026-09-18",
+        "kind": "Public posts: described in text, as anyone on the platform would see them",
+        "body": [
+          "Post one, from the personal account of Maren Solberg, partner, dated 12 September: 'Off to the Harborfront Growth Summit in Lisbon, 22 to 25 September. Happy to meet anyone attending. Back at my desk the following Monday.' The photo shows an airport lounge; her conference badge is on the table, readable, with her name and the firm's name.",
+          "Post two, from the firm's account, dated 16 September: 'Great first week working with the team at Ledgerline as we move our expense and payments reporting onto their platform. Thanks to Tomas Reyes in finance for leading the rollout.' The photo shows two laptops on a desk. One screen shows the Ledgerline sign-in page; the other shows a spreadsheet with a tab labeled 'Q3 wire schedule'.",
+          "Post three, from the firm's account, dated 18 September: 'Thrilled to welcome Dana Okafor to our finance team as Accounts Payable Associate. Dana starts Monday 21 September and will be working closely with Tomas on supplier payments.' The photo shows Dana holding a welcome card in front of the office door, with the badge reader and the suite number in frame."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Connection request and message from 'Maren Solberg'",
+        "date": "2026-09-22",
+        "kind": "Impersonation account: connection request and direct message, described in text",
+        "body": [
+          "On Dana's second day, a connection request arrives from a profile named Maren Solberg, Partner at Larkspur Ridge Partners. The profile photo is Maren's real photo, and the headline matches. The profile was created this month, shows 14 connections and no posts, and its work history lists only the firm. The profile address ends in 'maren-solberg-lrp2'. The real Maren's profile ends in 'marensolberg'.",
+          "Dana accepts. A message follows within a minute: 'Hi Dana, welcome aboard! I'm in Lisbon at the summit this week and my email is playing up on the hotel wifi. Tomas mentioned you're helping with supplier payments. Ledgerline has asked us to re-confirm our account details before the Q3 wires go out. Could you send me the current wire schedule here so I can check it tonight? Keep this between us for now, I don't want to bother Tomas mid-rollout. Thanks, M.'"
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Social media guidance (excerpt)",
+        "date": "2026-06-01",
+        "kind": "Fictional policy excerpt: what may be shared about work, and how to report impersonation",
+        "body": [
+          "You are welcome to say where you work and what you do in general terms. Do not post travel dates in advance, client or portfolio company names, vendor names during a rollout, internal system names, or photos that show screens, badges, documents, or whiteboards. Post about a trip after you are back.",
+          "New joiners are announced by the firm's account after the person has completed their first week. The announcement names the team, not the person's specific duties or the colleagues they work with.",
+          "Personal accounts that name the firm must use a unique password and two-step verification. Review who can see your posts at least once a year, and remove connections you do not recognize.",
+          "If you see an account pretending to be a colleague or the firm, do not engage with it. Take a screenshot, report it to the platform using its impersonation report, and tell the technology team the same day. If you have already replied or shared something, say so. Nobody is in trouble for reporting.",
+          "Requests for payment details, schedules, or documents never come through social media messages. Verify any such request by calling the person on a number from the firm directory, not a number in the message."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "small-facts-big-pretext",
+      "number": 1,
+      "title": "Small facts, big pretext",
+      "summary": "Three harmless posts become one convincing request. Find the change that removes the most.",
+      "duration": "8–10 minutes",
+      "outcome": "A list of what the packet's posts reveal, and the one change that reduces the most risk.",
+      "explanation": [
+        "An attacker rarely needs a secret, only enough ordinary facts to sound like they belong: who is away, who is new, who handles payments. A travel post gives the timing, a photographed badge or screen gives names and systems, and a welcome post gives someone who cannot yet tell normal from odd. [S1, S2]",
+        "Impersonation accounts copy a real colleague's photo and title. The tells are small: a new profile, few connections, a slightly different address, a message that asks you to hurry or keep quiet. Check with the real person by a channel you already trust, then report the account through the platform. [S3, S4, S5]",
+        "A personal account that names the firm is part of the firm's surface. Use a unique password and two-step verification, and check yearly who can see your posts. Report impersonation to the platform and the technology team the same day, even if you already replied. [S1, S3, S6]"
+      ],
+      "workedExample": {
+        "title": "The same trip, posted two ways",
+        "before": "Off to the Harborfront Growth Summit in Lisbon, 22 to 25 September, back the following Monday. Photo: the airport lounge, my badge showing my name and the firm's.",
+        "after": "Three good days at the Harborfront Growth Summit, mostly talking about founder resilience. Photo: the conference hall, no badge, posted after I was home.",
+        "why": "It keeps the professional value and drops the dates, the reachability gap, and the badge. Nobody can time a request or borrow the firm's name from it."
+      },
+      "task": {
+        "prompt": "Read D1 and D2. For each post in D1, write one line: what it reveals and who could use it. Mark which details in D2 came from D1, then name the one posting change that would have cost the attacker the most.",
+        "deliverable": "Three lines for D1, one for D2, and one change, readable aloud in a team meeting.",
+        "checklist": [
+          "Cover all three posts, including the photos.",
+          "Link two details in D2 to specific facts in D1.",
+          "Name one change and say why it removes the most.",
+          "Say what Dana does next under D3, without replying."
+        ]
+      },
+      "hint": "Underline every fact the sender of D2 knows. Then find where each one came from in D1.",
+      "modelAnswer": [
+        "Post one: Maren is away 22 to 25 September and hard to reach; the badge shows her name and the firm's. Post two: the vendor, a live rollout, Tomas leading it, a screen titled Q3 wire schedule. Post three: Dana is new, in finance, working with Tomas on payments. D2 uses all of it.",
+        "The change with the largest effect is holding welcome posts until after the first week and leaving out duties and colleagues, because the attacker needed a newcomer who could not yet tell normal from odd. Removing travel dates is second. Dana should not reply: screenshot, report the profile, tell the technology team today."
+      ],
+      "reflection": "Which fact in D1 did you first think was harmless, and what changed your mind?",
+      "transfer": {
+        "prompt": "Suppose the welcome post had said only 'Welcome to the team, Dana', with no team or duties, and D2 still arrived. What changes?",
+        "answer": "The attacker loses the payments angle and the link to Tomas, so the message becomes vaguer and easier to doubt. Dana's steps do not change: verify Maren by phone on a directory number, send nothing, report the profile, tell the technology team. Less exposure weakens the pretext; the rule stays."
+      },
+      "check": {
+        "question": "Dana has accepted the request and read the message in D2. What is the best next step under D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Quiz 'Maren' on a detail only the real Maren would know, and send the schedule if the answer is right.",
+            "feedback": "Most details can be looked up in D1 or asked of another colleague, and replying confirms the account is live. D3 says schedules never travel by social media message, whatever the quiz result."
+          },
+          {
+            "id": "b",
+            "label": "Do not reply. Screenshot both, report the account for impersonation, tell the technology team today, and call the real Maren on a directory number.",
+            "feedback": "This follows D3 and keeps verifying separate from doing. Reporting today matters because the same account is probably messaging other colleagues too."
+          },
+          {
+            "id": "c",
+            "label": "Remove the connection and move on, since nothing was sent.",
+            "feedback": "Nothing was lost, but the account still exists and will try the next new joiner. D3 asks for a report to the platform and the technology team even when you did not respond."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Social Media Cybersecurity (tip sheet)",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA), with the National Cyber Security Alliance",
+      "url": "https://www.cisa.gov/sites/default/files/publications/Social-Media-Cybersecurity-Tip-Sheet-122019-508.pdf",
+      "publishedOrUpdated": "October 2019 (Cybersecurity Awareness Month 2019 edition; file dated December 2019)",
+      "reviewedOn": "2026-09-21",
+      "support": "Says there is no delete button on the internet, to set privacy settings and disable geotagging, to connect only with people you know and trust, to limit what you post (it names addresses, birthdays, and vacation plans as details criminals use to target you), and to report suspicious activity to the platform.",
+      "application": "The lesson's list of what posts reveal, the trusted-connections point, and the report-to-the-platform step follow this sheet.",
+      "limits": "A one-page consumer awareness sheet from 2019. It does not cover workplace impersonation or firm accounts, and it cites usage statistics that are now out of date.",
+      "revisit": "Recheck if CISA replaces the sheet or publishes newer social media guidance for organizations."
+    },
+    {
+      "id": "S2",
+      "title": "Manage your Online Presence",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/resources-tools/training/manage-your-online-presence",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Says threat actors use publicly available information for social engineering and spear phishing; advises against posting travel details, schedules, and location, recommends private accounts and disabled location tags, says to connect only with people you know, and to check that accounts are not impersonations created to gain access to you.",
+      "application": "The travel-post, welcome-post, and impersonation points in the explanation and the worked example draw on this page.",
+      "limits": "Written with a public-sector and personal-security audience in mind and points to a military-published guide for platform settings. It is advice, not evidence of how often these attacks succeed.",
+      "revisit": "Recheck if CISA moves or rewrites the page, or if the linked platform guide changes."
+    },
+    {
+      "id": "S3",
+      "title": "Social media: how to use it safely",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/guidance/social-media-how-to-use-it-safely",
+      "publishedOrUpdated": "Published 24 January 2019; reviewed 5 September 2022",
+      "reviewedOn": "2026-09-21",
+      "support": "Advises thinking about what followers need to know versus what is unnecessary but useful to criminals, using each platform's privacy settings, turning on two-step verification so a known password alone is not enough, spotting fake accounts (recently created, odd names, unusual activity from a known contact), checking with a friend by another method if their account looks compromised, and using platform reporting tools.",
+      "application": "The account-security paragraph, the tells of a fake profile, and the verify-by-another-channel advice come from here.",
+      "limits": "Personal-use guidance that links out to platform settings pages which change often. It does not address firm policy or who inside an organization should be told.",
+      "revisit": "Recheck at the NCSC's next review of the page or if the platform links break."
+    },
+    {
+      "id": "S4",
+      "title": "How To Avoid Imposter Scams",
+      "publisher": "US Federal Trade Commission (FTC), Consumer Advice",
+      "url": "https://consumer.ftc.gov/features/how-avoid-imposter-scams",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes scammers pretending to be businesses, government agencies, or people you know, using faked caller ID, real employee names, and urgency; advises not to click links or call numbers in unexpected messages, to verify the story by contacting the organization through a phone number, website, or email you know is real, and to report at ReportFraud.ftc.gov.",
+      "application": "The lesson's rule to verify through a channel you already have, and its treatment of urgency and secrecy as signals, follow this guidance.",
+      "limits": "Consumer-facing and US-centerd. It focuses on money and personal information rather than on workplace documents, and its reporting route is US-specific.",
+      "revisit": "Recheck if the FTC restructures its imposter-scam pages or changes the reporting route."
+    },
+    {
+      "id": "S5",
+      "title": "Report fake profiles",
+      "publisher": "LinkedIn Help",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a1338436",
+      "publishedOrUpdated": "The page shows only a relative 'last updated' stamp (about nine months before review)",
+      "reviewedOn": "2026-09-21",
+      "support": "Gives the steps to report a profile (More, then Report or block, then choose 'This person is impersonating someone' or 'This account is not a real person'), lists warning signs such as little information, mismatched details, stock or celebrity photos, and pressure to move off the platform, and says the reported member is not told who reported them.",
+      "application": "D3's platform-report step and the fake-profile tells in the explanation and model answer use this page.",
+      "limits": "One platform's process, and the menu labels change. It does not tell you when to also notify your employer.",
+      "revisit": "Recheck when LinkedIn changes its reporting menus or the page address."
+    },
+    {
+      "id": "S6",
+      "title": "Report a Facebook profile or Page pretending to be you or someone else",
+      "publisher": "Meta (Facebook Help Centre)",
+      "url": "https://www.facebook.com/help/174210519303259",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "States that impersonating profiles and Pages break the Community Standards, gives the report steps (Options below the cover photo, then Report profile or Report Page), and says you can report an impersonation even without a Facebook account.",
+      "application": "Covers the personal-account case in the explanation: colleagues can report an impersonation of themselves or the firm on Facebook even if they are not on it.",
+      "limits": "A help page for one product family; Instagram and Threads have their own forms. It does not cover what an employer should do.",
+      "revisit": "Recheck when Meta changes the reporting flow or the page address."
+    }
+  ]
+}

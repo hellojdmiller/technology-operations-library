@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "voice-phishing",
+  "title": "Calls That Want Something",
+  "track": "security-awareness",
+  "audience": "Everyone who answers a phone or joins video calls for the firm.",
+  "prerequisites": [],
+  "description": "One short lesson on the calls and voicemails that ask for a code, a password, a payment, or remote access, and the single habit that defeats them.",
+  "introduction": [
+    "Most of the calls that go wrong at a small firm do not sound like scams. They sound like the bank, a vendor, IT, or a partner in a hurry. The caller knows a few real details, the number on the screen looks right, and the request seems small.",
+    "This short module teaches one habit: end the call and call back on a number you already have. It works whether the caller is a stranger, a spoofed number, or a cloned voice, because it never asks you to judge who is telling the truth in the moment.",
+    "Work from the fictional packet on paper or in a document. Nothing here needs a tool account, and nothing asks you to phone anyone during the exercise. Try the task, compare with the example, then say out loud what you will do the next time your phone rings."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "Two calls on a Tuesday",
+    "description": "You work at Fennimore Grove Advisors, a small fictional firm. Everyone and everything in this packet is fictional: the firm, the bank, the law firm, the people, the numbers, and the amounts. The exercise reference date is 22 September 2026. D1 and D2 are deliberately deceptive: each is an attempt to get something it should not. D3 is the firm's rule for the exercise.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Transcript: a call from 'the bank's fraud team'",
+        "date": "2026-09-22",
+        "kind": "Call transcript (fictional)",
+        "body": [
+          "Incoming call at 10:14. The caller ID shows Bramblewick Bank, the same name that appears on the firm's operating account statements. You answer because the firm does bank there. The line is clear, with call-center noise in the background, and the caller sounds calm and practiced.",
+          "Caller: Good morning, this is Dana from the Bramblewick fraud team. We have flagged two card transactions on the firm account this morning, one for 1,940 dollars at an electronics retailer and one for 3,200 dollars overseas. Did you authorize either of those? You: No, I did not.",
+          "Caller: I am blocking the card and reversing both charges now. To confirm I am speaking with an authorized signer, I have sent a six-digit code to the mobile number on file. Can you read that back to me? You: I have a text with a code. It says not to share it with anyone.",
+          "Caller: That warning is for people who call you out of the blue. You are speaking to the fraud team, and the reversal cannot be processed without the code. I can only hold this window open for two more minutes before the transactions settle. What are the six digits?"
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Voicemail: an urgent payment approval",
+        "date": "2026-09-22",
+        "kind": "Voicemail transcript (fictional)",
+        "body": [
+          "Voicemail received at 12:47 from a mobile number that is not saved in your contacts. The voice sounds like Priya Ostrander, one of the firm's partners, who is traveling this week. There is traffic noise in the background and the message is slightly rushed. Transcript follows.",
+          "Hi, it's Priya. Sorry to do this by voicemail, I am between meetings and my phone is about to die. I need you to approve the wire sitting in the payments queue for Ostrey and Vane Legal, the 48,500 one. It has to go out before 2 today or we lose the closing date.",
+          "I know this is not how we usually do it. Just approve it from your side and I will sort the second approval and the paperwork tonight. Do not call me back on this number, it is a loaner, text me on it if there is a problem. Thanks, I owe you one."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Excerpt: the firm's rule on phone requests",
+        "date": "2026-06-01",
+        "kind": "Fictional policy excerpt",
+        "body": [
+          "No one at Fennimore Grove Advisors, and no bank, vendor, or service provider we work with, will ask you for a one-time code, a password, or remote access to your computer by phone. If a caller asks for any of those, end the call and report it the same day.",
+          "Payment approvals and changes to payment details are never accepted by phone, voicemail, or text, including from a partner. They go through the payments queue with the usual two approvers, whatever the deadline. A caller who asks you to skip that step is asking you to break the rule.",
+          "If you need to confirm something a caller said, hang up and call back using the number in the firm directory, on the back of the card, or on a previous statement. Do not use a number the caller gives you, and do not trust the name or number shown on caller ID.",
+          "Report suspicious calls and voicemails to it-help@fennimoregrove.example.com the same day, with the time, the number shown, and what the caller asked for. Reporting a call that turns out to be genuine is fine and costs nobody anything."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "hang-up-and-call-back",
+      "number": 1,
+      "title": "Hang up and call back",
+      "summary": "One habit that beats spoofed numbers, cloned voices, and pushy callers.",
+      "duration": "8–10 minutes",
+      "outcome": "A callback script for any caller, plus a note of what the D1 and D2 callers asked for.",
+      "explanation": [
+        "Voice phishing is a call or voicemail that wants something valuable: a one-time code, a password, a payment approval, new bank details, or remote access. The caller claims to be the bank, a vendor, IT, or an executive, and wants it now. [S1, S4]",
+        "Caller ID proves nothing; it can be made to show any name or number. The voice proves nothing either: a short clip from a webinar or greeting is enough to clone someone. 'It sounded exactly like her' now describes the attack. [S1, S2, S3, S5]",
+        "So I do not judge the caller in the moment. I say, 'I am going to hang up and call you back through the main number,' then do it using the directory, the card, or a statement. I report the call either way. [S1, S2, S4]"
+      ],
+      "workedExample": {
+        "title": "Turning a demand into a callback",
+        "before": "Caller ID matches the bank, the caller knows about the flagged transactions, and the clock is running. I read out the code so the charges get reversed in time.",
+        "after": "I say: 'I cannot read codes over the phone. I will hang up and call the fraud line on the back of the card.' I note the time, number shown, and request, then make that call and report to IT.",
+        "why": "The code is what lets someone into the account; a genuine fraud team does not need it. Calling back on a number you already have moves the conversation to a line the caller cannot control."
+      },
+      "task": {
+        "prompt": "Read D1 to D3. Write a two or three sentence callback script for either caller, then one line each for D1 and D2: what was asked for, and which number you would call back on.",
+        "deliverable": "A short script and two one-line notes, ready to send to IT.",
+        "checklist": [
+          "The script ends the call without arguing about who the caller is.",
+          "The callback number comes from the directory, card, or statement, not the caller.",
+          "Each note names the request: code, password, payment, or remote access.",
+          "Neither note treats caller ID or a familiar voice as evidence."
+        ]
+      },
+      "hint": "Notice what each caller does not want you to do. D1 says the text's warning does not apply; D2 says do not call this number back. Those instructions are the request in disguise.",
+      "modelAnswer": [
+        "Script: 'I do not give codes or approve payments over the phone. I am going to hang up and call you back on the number we have on file. If this is urgent, it will still be urgent in five minutes.'",
+        "D1 asked for the six-digit code; callback on the fraud line from the card or a statement, not caller ID. D2 asked me to approve a 48,500 wire outside the two-approver process; callback on Priya's directory number, not the loaner. The wire stays queued and both go to IT today."
+      ],
+      "reflection": "Which part of D2 made hanging up hardest: the voice, the deadline, or 'do not call back'? Why does the habit still hold?",
+      "transfer": {
+        "prompt": "Change one thing: the D1 caller asks for no code, but wants you to install a 'secure session' app to watch you check the transactions. Does your response change?",
+        "answer": "No. Remote access sits on D3's list beside codes and passwords; letting someone see or control your screen hands over everything on it. Same script, same callback on the card's number, same report."
+      },
+      "check": {
+        "question": "The D2 voicemail sounds exactly like Priya and names a real matter. What do you do?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Text the loaner number to confirm, then approve the wire if the reply says yes.",
+            "feedback": "A reply from the loaner only proves whoever left the voicemail holds that phone. It is the channel the caller chose, and D3 rules out payment approvals by voicemail or text, whoever asks."
+          },
+          {
+            "id": "b",
+            "label": "Leave the wire in the queue, call Priya's directory number, and report the voicemail to IT.",
+            "feedback": "This is the habit. The wire keeps its two approvers, the callback uses a number you already had, and IT gets the details whether or not Priya really called."
+          },
+          {
+            "id": "c",
+            "label": "Approve the wire, since a cloned voice could not know about the closing, and tell Priya later.",
+            "feedback": "A real detail is not proof; the matter name could come from a compromised mailbox or a public filing. D3 bars payment approvals by phone, even from a partner, and a sent wire cannot be recalled."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Phone Scams",
+      "publisher": "Federal Trade Commission, Consumer Advice",
+      "url": "https://consumer.ftc.gov/articles/phone-scams",
+      "publishedOrUpdated": "2023-08 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Scammers pose as government agencies, businesses, or family members, create urgency, demand hard-to-reverse payment methods, and can make any name or number show up on caller ID. The page says to hang up, never give Social Security numbers, usernames, or passwords, verify by calling a number you know is genuine, and report at ReportFraud.ftc.gov.",
+      "application": "The lesson's list of caller personas, the point that caller ID proves nothing, and the hang-up-and-call-back habit follow this page.",
+      "limits": "Consumer guidance aimed at individuals, not a study of workplace vishing or of how often a callback prevents a loss. It does not describe AI voice cloning or firm payment controls.",
+      "revisit": "Recheck if the FTC updates the article or changes its reporting address."
+    },
+    {
+      "id": "S2",
+      "title": "Scammers use AI to enhance their family emergency schemes",
+      "publisher": "Federal Trade Commission, Consumer Alerts (Alvaro Puig)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes",
+      "publishedOrUpdated": "2023-03-20",
+      "reviewedOn": "2026-09-21",
+      "support": "A scammer needs only a short audio clip, which can come from content posted online, plus a voice-cloning program to imitate a voice. The alert says do not trust the voice, call the person back on a number you know is theirs, and treat requests for wire transfers, cryptocurrency, or gift cards as warning signs.",
+      "application": "The lesson's claim that a familiar voice is not evidence, and the callback on a number you already have, come from this alert.",
+      "limits": "Written about family emergency scams, not executive impersonation at work. It does not measure how convincing cloned voices are or how often people follow the callback advice.",
+      "revisit": "Recheck when the FTC publishes newer voice-cloning guidance or supersedes the alert."
+    },
+    {
+      "id": "S3",
+      "title": "Senior US Officials Impersonated in Malicious Messaging Campaign",
+      "publisher": "FBI Internet Crime Complaint Center (IC3), Public Service Announcement",
+      "url": "https://www.ic3.gov/PSA/2025/PSA250515",
+      "publishedOrUpdated": "2025-05-15",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes an ongoing vishing and smishing campaign that uses AI-generated voice messages to impersonate officials and build rapport. It says AI-generated content is often difficult to identify, advises independently identifying a phone number for the person and calling to verify, and says never to provide a two-factor code to anyone over email, text, or a messaging app.",
+      "application": "Supports the lesson's treatment of cloned voices and the rule that codes are never read out to a caller. Its verify-by-independent-number advice is the callback habit.",
+      "limits": "Aimed at officials and their contacts rather than small firms. It describes one campaign and gives no figures on how many attempts succeeded.",
+      "revisit": "Recheck when IC3 issues a newer vishing announcement."
+    },
+    {
+      "id": "S4",
+      "title": "Avoiding Social Engineering and Phishing Attacks",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks",
+      "publishedOrUpdated": "2021-02-01 (released; the page is marked as archived content)",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines social engineering and phishing, and vishing as the voice variant that exploits VoIP to spoof caller ID. Advises not giving out personal or organizational information unless you are certain of the person's authority, verifying a request by contacting the company directly rather than through contact details supplied with the request, and reporting to your organization's network administrators if you think you are a victim.",
+      "application": "Provides the definitions and the 'verify directly, using details you already had' rule that the callback habit puts into practice, and the same-day report to IT.",
+      "limits": "Archived general guidance from 2021. It predates current AI voice-cloning tools and is not specific to phone requests for payments or codes.",
+      "revisit": "Recheck if CISA replaces the archived page with current guidance."
+    },
+    {
+      "id": "S5",
+      "title": "Phishing Guidance: Stopping the Attack Cycle at Phase One",
+      "publisher": "CISA, NSA, FBI, and MS-ISAC (joint guide, PDF)",
+      "url": "https://www.cisa.gov/sites/default/files/2023-10/Phishing%20Guidance%20-%20Stopping%20the%20Attack%20Cycle%20at%20Phase%20One_508c.pdf",
+      "publishedOrUpdated": "2023-10 (month only on the document; the landing page gives 2023-10-18)",
+      "reviewedOn": "2026-09-21",
+      "support": "Notes that malicious actors use VoIP to easily spoof caller ID, taking advantage of public trust in phone services; that SMS or voice MFA codes can be captured, including through a fake login page that collects the six-digit code; that users should promptly report phishing incidents; and that organizations can report to CISA at report@cisa.gov or to the FBI's IC3.",
+      "application": "Backs the caller ID point and the rule that codes are never given out. Its reporting advice supports the same-day report to IT.",
+      "limits": "Written for network defenders and software makers, mostly about email phishing. It does not discuss voice cloning or give advice phrased for someone on a call.",
+      "revisit": "Recheck when CISA revises the guide or publishes vishing-specific guidance."
+    }
+  ]
+}

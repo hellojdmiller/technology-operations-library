@@ -1,0 +1,170 @@
+{
+  "version": "1.0.0",
+  "slug": "insider-threat-awareness",
+  "format": "bite",
+  "title": "Insider Risk Without Suspicion",
+  "track": "security-awareness",
+  "audience": "Everyone at a small, high-trust firm, with a short note for anyone who manages people or contractors.",
+  "prerequisites": [],
+  "description": "A short module on why most insider incidents are mistakes or convenience, what the rare deliberate ones look like, and how to raise a concern without accusing anyone.",
+  "introduction": [
+    "Insider risk is an awkward subject at a small firm, because the insiders are people you like. I want to take the suspicion out of it. Almost every incident I have handled was a shortcut or a gap in process, and the fix was a better process, not a better interrogation.",
+    "This short module follows one week at a small fictional firm. You will read a departing colleague's request, an access report with one line that does not add up, and the firm's offboarding checklist. Then you will write the kind of note that gets a problem fixed without making anyone a suspect.",
+    "Nothing here needs a tool account or a security background. Work on paper or in a document, try the task before opening the example, and explain your choice in your own words. If you manage people or contractors, the third paragraph of the lesson speaks to you directly."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "A leaver, a lingering account, and a checklist",
+    "description": "You are Maya Lindqvist, an analyst at Wrenfield Partners, a small fictional firm of about twenty-five people. Everyone and everything in this packet is fictional, including the firm, its domains, its staff, and the agencies named in the access report. The exercise reference date is Monday 21 September 2026. D1 is a favor asked by a colleague; it is not evidence of wrongdoing. D2 is an extract from a routine report. D3 is the firm's own checklist.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Chat from Dev, who leaves on Friday",
+        "date": "2026-09-21",
+        "kind": "Internal chat message: a departing colleague asks a favor",
+        "body": [
+          "17:42 Dev Kapoor: Maya, quick favor. IT has already switched off sync on my laptop ahead of Friday, and I still need my stuff from the Deals shared drive: my templates, the models I built, and my contacts sheet.",
+          "17:43 Dev Kapoor: Could you zip up the folder called 'Dev working' and drop it into this personal cloud link? It is my own work anyway; I just want it for my portfolio. Link: share.example.net/dk-files",
+          "17:44 Dev Kapoor: Please do not make a thing of it with Ravi. He is swamped with the quarter close and I do not want my last week to be about paperwork. Thanks, you are a star."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Access review extract: contractor accounts",
+        "date": "2026-09-18",
+        "kind": "Plain-text report extract: quarterly access review, contractor accounts only",
+        "body": [
+          "WRENFIELD PARTNERS. Quarterly access review. Extract: accounts of type CONTRACTOR. Generated 2026-09-18 06:00 UTC by the identity system. Columns: account, agency, status, contract end, last sign-in, groups.",
+          "l.moreau@wrenfield.example.com, Halden Row Design, ACTIVE, contract end 2026-12-31, last sign-in 2026-09-17 15:10 UTC, groups: Marketing-Shared.",
+          "c.okafor@wrenfield.example.com, Halden Row Design, ACTIVE, contract end 2026-07-31, last sign-in 2026-09-16 22:41 UTC, groups: Marketing-Shared, Deals-ReadOnly.",
+          "j.tan@wrenfield.example.com, Pellworth Accounting Services, DISABLED, contract end 2026-08-29, last sign-in 2026-08-28 11:05 UTC, groups: none.",
+          "Reviewer action required: confirm that each ACTIVE account is still needed, by 2026-09-25. Review owner: Ines Duarte, technology lead."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Offboarding checklist and how to raise a concern (excerpt)",
+        "date": "2026-05-12",
+        "kind": "Fictional policy excerpt: the leaver process and the concern route",
+        "body": [
+          "Leavers. The manager submits the leaver form at least five working days before the last day. Accounts are disabled by 18:00 on the last day. Laptop sync is switched off earlier where the technology lead judges it sensible.",
+          "Contractors. Every contractor account carries an end date set when it is created, and the identity system disables it on that date. Extensions need a new end date from the manager. The technology lead reviews all contractor accounts quarterly.",
+          "Work files. Files on shared drives belong to the firm and stay there. Personal copies of firm files are not permitted, including for a portfolio. A leaver who needs specific files asks their manager, who decides what can be released and how.",
+          "Raise a concern. If something about access or data does not look right, take it to the technology lead, Ines Duarte, first. Frame it as a question: 'I noticed this, is it expected?' Nobody is criticized for a good-faith question, and you do not need to be sure."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "access-pressure-and-the-quiet-exit",
+      "number": 1,
+      "title": "Access, pressure, and the quiet exit",
+      "summary": "Separate what you saw from what it might mean, then take it to the one person whose job it is.",
+      "duration": "10–12 minutes",
+      "outcome": "A short note separating what the packet shows from what it might mean, naming the one person to raise it with.",
+      "explanation": [
+        "Most insider incidents I have seen were not malicious. Someone shared a login to save a day. Someone copied files to a personal drive before leaving because it felt like their work. A contractor kept access because nobody set an end date. Guidance treats unintentional cases as a category of their own. [S1, S2]",
+        "The few deliberate cases usually show as access that does not match the job: an account still active after its contract ended, a night-time sign-in from someone who works days, a read-only user pulling whole folders. You do not need to know intent. You need to notice the mismatch. [S3]",
+        "The answer is deliberately boring: good offboarding, least privilege, and a way to raise concerns without accusation. SEI lists a termination procedure and least privilege as practices; the NCSC puts joiners, movers, and leavers processes before new tools. Managers: submit leaver forms early, give contractors end dates, and make questions safe. [S2, S3, S4]",
+        "If someone asks you to share a password or skip a control 'just this once', say no kindly, offer the sanctioned route, and tell the technology lead. The ask is usually convenience, and the control exists because convenience is how most incidents begin. Declining accuses nobody."
+      ],
+      "workedExample": {
+        "title": "From a hunch to a note",
+        "before": "Dev is stealing client data before he leaves, and the agency still has someone inside our systems at night. I need to warn Ravi and the partners today.",
+        "after": "What I saw: Dev asked me to copy a shared-drive folder to a personal link (D1). A contractor account is active past its end date, with a sign-in last Wednesday night (D2). What it might mean: convenience, a missed end date, or something else. Raising with Ines.",
+        "why": "The first version decides guilt and spreads it to three people. The second records checkable facts, keeps the meaning open, and goes to the one person D3 names."
+      },
+      "task": {
+        "prompt": "You are Maya on Monday evening. From D1 to D3, write up to 90 words under 'What the packet shows' and 'What it might mean', ending with the one person you take it to.",
+        "deliverable": "A short note that separates facts from interpretation and names one person.",
+        "checklist": [
+          "Every fact traceable to D1 or D2.",
+          "At least two possible meanings left open.",
+          "One person, chosen from D3's concern route."
+        ]
+      },
+      "hint": "Write the facts as if Dev and the contractor were reading over your shoulder; anything that feels like an accusation is interpretation.",
+      "modelAnswer": [
+        "What the packet shows: Dev asked me to zip the 'Dev working' folder from the Deals drive to a personal link, and not to involve Ravi (D1). Account c.okafor is active with a contract end of 31 July and a sign-in on 16 September at 22:41 (D2).",
+        "What it might mean: Dev wants his templates for a portfolio, and D3 routes that through Ravi. The contractor account may be an unrecorded extension or a missed end date; I cannot tell. Raising both with Ines tomorrow, as questions."
+      ],
+      "reflection": "Which sentence in your note was hardest to keep as a fact rather than a meaning?",
+      "transfer": {
+        "prompt": "Change one condition: Ravi, your manager, asks you to share your password so a temp can cover your inbox during your leave.",
+        "answer": "The habit holds when the asker is senior. Decline kindly, offer the sanctioned route (Ines can set up delegated inbox access), and if pressed, take it to Ines as a question. D3 has no seniority exception."
+      },
+      "check": {
+        "question": "Dev asks you to copy the folder to his personal link, quietly. What fits D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Do it. It is his own work and he leaves Friday.",
+            "feedback": "D3 says shared-drive files stay with the firm, personal copies are not permitted even for a portfolio, and releases go through the manager, busy or not."
+          },
+          {
+            "id": "b",
+            "label": "Decline kindly, point Dev to Ravi, and mention it to Ines.",
+            "feedback": "This follows D3: the manager decides releases, access questions go to Ines first, nobody is accused, and Dev keeps a route to what he may have."
+          },
+          {
+            "id": "c",
+            "label": "Report Dev to the operations partner as a suspected data thief.",
+            "feedback": "The packet shows a request, not a theft, and D3 names the technology lead, not the operations partner, as the first stop. Deciding guilt is interpretation, not fact."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Defining Insider Threats",
+      "publisher": "CISA",
+      "url": "https://www.cisa.gov/topics/physical-security/insider-threat-mitigation/defining-insider-threats",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines an insider as anyone who has or had authorized access to or knowledge of an organization's resources, and insider threat as the potential to use that access, wittingly or unwittingly, to do harm. Lists unintentional threats (negligence, such as losing a device; accidental, such as a misdirected email or an opened phishing attachment), intentional threats, collusive threats, and third-party threats from contractors or vendors.",
+      "application": "The opening paragraph and its examples of convenience and mistakes rest on these categories. The contractor line in D2 reflects the third-party category.",
+      "limits": "Gives categories and examples, not proportions. It does not say that most incidents are unintentional; that framing is my own operating experience, stated as such.",
+      "revisit": "If CISA restructures its insider threat pages or changes the definitions."
+    },
+    {
+      "id": "S2",
+      "title": "Insider Threat Mitigation Guide",
+      "publisher": "CISA",
+      "url": "https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide",
+      "publishedOrUpdated": "2026 edition; the page dates its companion resource 2026-01-28",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes a program for understanding insider threats, identifying the forms they take, and implementing mitigation, including 'countering unintentional incidents' alongside preventing loss of intellectual property and compromise of sensitive data. Frames threat management as intervention that balances organizational protection and individual care.",
+      "application": "Supports treating unintentional incidents as part of the same program and taking a non-accusatory approach to concerns.",
+      "limits": "The landing page was reviewed, not the full PDF. Written for critical infrastructure organizations with dedicated programs, far larger than a small firm.",
+      "revisit": "When CISA publishes a further edition."
+    },
+    {
+      "id": "S3",
+      "title": "Common Sense Guide to Mitigating Insider Threats, Seventh Edition",
+      "publisher": "Software Engineering Institute, Carnegie Mellon University (CERT Division)",
+      "url": "https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/",
+      "publishedOrUpdated": "2022-09-07",
+      "reviewedOn": "2026-09-21",
+      "support": "Draws on a repository of more than 3,000 insider threat cases and describes 22 best practices covering both malicious and unintentional insiders. Relevant practices include Best Practice 6 (consider threats from insiders and trusted external entities), 11 (institute stringent access controls and monitoring policies), 15 (enforce separation of duties and least privilege), and 20 (develop a comprehensive workforce member termination procedure).",
+      "application": "Grounds the 'access that does not match the job' paragraph and the offboarding, least privilege, and contractor points.",
+      "limits": "Written for organizations with security, HR, and legal functions. Practice titles were confirmed from the report PDF linked on the page; the case data comes from reported incidents, which under-represent mistakes that were never logged.",
+      "revisit": "When SEI publishes an eighth edition."
+    },
+    {
+      "id": "S4",
+      "title": "Reducing data exfiltration by malicious insiders",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/guidance/reducing-data-exfiltration-by-malicious-insiders",
+      "publishedOrUpdated": "Published 2022-06-30; reviewed 2026-07-29",
+      "reviewedOn": "2026-09-21",
+      "support": "Recommends preventing, monitoring, and auditing: least-privilege access, improving joiners, movers, and leavers processes before buying new tools, resolving conflicts between policy and usability by co-creating processes with staff, and applying the strictest controls to privileged users and critical assets. Names email and removable storage as the highest-impact routes.",
+      "application": "Supports the offboarding and least-privilege paragraph and the manager note about end dates and reviewing access.",
+      "limits": "Focused on malicious exfiltration and on technical, HR, and legal owners, not on what a colleague should do when asked for a favor. UK-oriented.",
+      "revisit": "At the NCSC's next stated review date or if the guidance is restructured."
+    }
+  ]
+}

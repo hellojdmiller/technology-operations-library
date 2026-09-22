@@ -1,0 +1,333 @@
+{
+  "version": "1.0.0",
+  "slug": "sign-in-security",
+  "title": "Passwords, Passkeys, and MFA",
+  "track": "security-awareness",
+  "audience": "Everyone at a small, high-trust firm, with no technical background assumed.",
+  "prerequisites": [],
+  "description": "Three practical lessons on keeping one password per account, choosing a second factor that resists phishing, and recovering safely when something goes wrong.",
+  "introduction": [
+    "Most account takeovers I have dealt with did not involve a clever attacker. Someone reused a password, a personal service leaked it, and the attacker tried it at work. Or a prompt arrived at night and a tired person tapped approve. This course is about closing those two doors.",
+    "You do not need a technical background. The three lessons follow one colleague, Priya, through a breach notice, a night of unexpected prompts, and a chat message from someone claiming to be support. Everything in the packet is fictional. Work on paper or in a document; no tool account is needed.",
+    "Each lesson names one habit, shows it once, then asks you to apply it to the packet and compare your answer with an example. The examples are comparisons, not scripts. Take the time you need, keep the packet open, and try each task before you read its answer."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "One reused password, three days later",
+    "description": "You work at Harrowvale Advisory, a small fictional firm. Everyone and everything in this packet is fictional, including the firm, the people, the services, and the domains. The exercise reference date is 21 September 2026. D1, D2, and D3 are the evidence. D4 is an impersonation attempt: the sender is not the technology team, whatever the display name says. Use the packet to practice deciding; do not change any real account during the exercise.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Breach notification from a personal service, forwarded to the technology team",
+        "date": "2026-09-16",
+        "kind": "Email: a forwarded notice with the recipient's own note on top",
+        "body": [
+          "Forwarded by Priya Raman (praman@harrowvale.example.com) to Lena Okafor, technology lead, on 16 September 2026 at 07:52.",
+          "Lena, I got this on my personal email last night. I am fairly sure the Pantry Box password is the same one I use for my work email and for the file-sharing site. I have not changed anything yet. What should I do first? Priya",
+          "From: Pantry Box Security (security@pantrybox.example.com). To: priya.r@mail.example.com. Sent: 15 September 2026, 22:14. Subject: Important notice about your Pantry Box account.",
+          "We are writing to tell you about a security incident that affects your account. On 11 September 2026 we found that an unauthorized party had accessed a database containing customer names, email addresses, delivery postcodes, and hashed passwords. We have no evidence that payment card details were affected.",
+          "As a precaution we have signed out all sessions on your account. We recommend that you change your Pantry Box password now, and that you also change the password on any other account where you used the same or a similar password.",
+          "Please be alert to emails or calls that claim to be from Pantry Box and ask for your password, a code, or payment details. We will never ask for these. We are sorry for the concern this may cause."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Sign-in report: unexpected authenticator prompts overnight",
+        "date": "2026-09-18",
+        "kind": "Log extract: plain-text export from the firm's sign-in report",
+        "body": [
+          "Sign-in report for praman@harrowvale.example.com, exported by Lena Okafor on 18 September 2026 at 09:10 after Priya mentioned at the morning stand-up that her phone had been buzzing all night. Times are local. The account's registered method is the authenticator app with number matching.",
+          "01:12. Password verified from an unrecognised device (Android, mobile browser) in a city the user has never signed in from. Push prompt sent, number 47. Result: expired, no number entered.",
+          "01:14. Password verified, same device and location. Push prompt sent, number 82. Result: expired, no number entered.",
+          "01:19. Password verified, same device. Push prompt sent, number 15. Result: user tapped Deny.",
+          "01:23. Password verified, same device. Push prompt sent, number 91. Result: user tapped Deny.",
+          "01:31. Password verified, same device. Push prompt sent, number 60. Result: expired, no number entered.",
+          "01:40. Password verified, same device. Push prompt sent, number 28. Result: user tapped Deny.",
+          "01:47. Password verified, same device. Push prompt sent, number 74. Result: expired, no number entered.",
+          "01:58. Password verified, same device. Push prompt sent, number 33. Result: user tapped Deny.",
+          "02:06. Password verified, same device. Push prompt sent, number 09. Result: expired, no number entered. No further activity from this device.",
+          "No sign-in was completed. The password had not been changed at the time of export. No report other than the stand-up remark had been made to the technology team."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Excerpt from the firm's sign-in standard",
+        "date": "2026-06-01",
+        "kind": "Policy excerpt: sections 3 to 6 of a fictional internal standard",
+        "body": [
+          "Harrowvale Advisory Sign-in Standard, version 2.1, approved 1 June 2026. Sections 1 and 2 (scope and definitions) are omitted from this excerpt.",
+          "3.1 Every member of staff uses the firm-provided password manager. Every work account has its own generated password of at least 16 characters, never reused and never recorded anywhere except the manager. The manager's own passphrase is the one password you memorise.",
+          "3.2 A password is changed when there is evidence it may be known to someone else: a breach notice for any service where it was reused, unexpected sign-in prompts, or a request from the technology team. Routine scheduled changes are not required.",
+          "4.1 Multi-factor authentication is required on every work account. Staff use the authenticator app with number matching or a passkey. Text-message codes are not an approved method for work accounts; the technology team may allow one as a temporary fallback for no more than seven days.",
+          "4.2 Administrators (anyone who can change other people's access, including the technology team and the finance systems owner) use phishing-resistant methods only: a security key or a passkey, with a second key registered as backup.",
+          "4.3 Never approve a sign-in prompt you did not start, and never enter a number for a prompt you did not start. Deny it and report it to the technology team the same day.",
+          "5.1 Recovery codes for work accounts are stored in the password manager as secure notes. They are not kept in email, chat, photos, or on paper at your desk. The manager's own printed emergency kit is kept at home, away from the devices it unlocks.",
+          "6.1 The technology team will never ask you for a password, a one-time code, or to approve a prompt. Anyone who does is not the technology team. Verify any support request by calling the team on the extension listed on the internal directory page (4400), never on a number given to you in the message itself.",
+          "6.2 Report a suspected compromise as early as you can, even if you are unsure. There is no penalty for a false alarm. Late reports are the ones that cost the firm."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Chat transcript: a request for a code from \"IT Support\"",
+        "date": "2026-09-18",
+        "kind": "Chat transcript: direct messages exported from the firm's chat app",
+        "body": [
+          "Direct-message conversation exported by Lena Okafor on 18 September 2026 at 09:15. Sender display name: IT Support (Harrowvale). Sender account: hv-helpdesk@harrowvale-support.example.net, an external guest account, not a firm account. Recipient: Priya Raman.",
+          "08:42 IT Support: Hi Priya, this is IT Support. We picked up several suspicious sign-in attempts on your account overnight from an unrecognised device. We need to secure the account before 09:00 or it will be locked for 48 hours.",
+          "08:43 Priya: Yes, my phone was buzzing all night. I mentioned it at stand-up just now.",
+          "08:43 IT Support: That matches what we see. To cancel the attacker's sessions I need to verify the account. You will get a 6-digit code by text in a moment. Please paste it here.",
+          "08:44 IT Support: You will also see one more prompt in your authenticator app. Approve that one, it is from us, so we can push the fix through.",
+          "08:45 Priya: Should I check with Lena first? She is already looking at it.",
+          "08:45 IT Support: Lena is in a meeting and asked us to handle it. We are against the clock here, 15 minutes left. The code should have arrived by now.",
+          "08:46 Priya: Hang on.",
+          "Transcript ends. Priya sent nothing further on this channel before the export."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "one-password-per-account",
+      "number": 1,
+      "title": "One password per account",
+      "summary": "Reuse, not weakness, is the usual problem. One generated password per account, longest reach first.",
+      "duration": "15–20 minutes",
+      "outcome": "A personal plan for moving three accounts to unique, managed passwords, in order of risk.",
+      "explanation": [
+        "The password that hurts you is usually not the weak one. It is the good one you used twice. When a personal service is breached, the leaked email and password pairs are tried against work sign-in pages within days.",
+        "Guidance has moved on from symbols and forced changes. NIST says verifiers should not require periodic password changes, should check new passwords against lists of known compromised ones, and should force a change on evidence of compromise. [S1] A breach notice for a reused password is that evidence.",
+        "A password manager makes this realiztic. It generates, stores, and fills a long random password, so you never type or remember it. You memorise one long passphrase for the manager and protect it with your strongest second factor. D3 3.1 makes the firm's manager mandatory.",
+        "Hashed passwords can be cracked, and the notice date is not the breach date. Order your moves by reach: work email first, because it resets everything else, then money or client files, then the breached service. The FBI gives the same advice: unique passwords. [S5]"
+      ],
+      "workedExample": {
+        "title": "From stronger to separate",
+        "before": "Priya's first thought: \"I will make the Pantry Box password longer with more symbols. My work password is already long, so it is fine.\"",
+        "after": "Priya's revised plan: \"Work email first, generated by the manager. Then file sharing, same way. Then Pantry Box. I tell Lena before I start so she can watch the sign-in report.\"",
+        "why": "Reuse is the fault, not strength. The mailbox can reset everything else, so it moves first. Telling Lena first separates deciding from doing."
+      },
+      "task": {
+        "prompt": "Using D1 and D3, write Priya's plan for moving three accounts to unique, manager-generated passwords, in order of risk, with one reason per account and one line on who she tells and when. Then do the same for three of your own accounts, described by type.",
+        "deliverable": "Two numbered plans with reasons: Priya's, and your own.",
+        "checklist": [
+          "Work email first, with the reason it can reset other accounts.",
+          "Each account gets a generated password in the manager, not a variation.",
+          "The breached service is included but not first.",
+          "The technology team is told before the changes start."
+        ]
+      },
+      "hint": "For each account ask: with this password, what else could someone reach? Longest reach goes first.",
+      "modelAnswer": [
+        "Priya's plan. First, work email: the leaked password opens it, and the mailbox receives every other account's reset link. Second, file sharing: same password, and it holds client documents. Third, Pantry Box: the breached service, least reach, but the old password is retired there too.",
+        "Every new password is generated and stored by the firm's manager (D3 3.1). Priya messages Lena before she starts, so Lena can watch the sign-in report while the passwords change. Your own plan has the same shape: mailbox first, then money or documents, then the leaked service."
+      ],
+      "reflection": "Which account did you put first, and what does it reach that the other two do not?",
+      "transfer": {
+        "prompt": "Suppose D1 said the database held names and email addresses only, no passwords. Does Priya's plan change?",
+        "answer": "The order stays; the urgency drops. Priya still replaces the reused password everywhere, because reuse is the fault and she cannot verify the service's claim. She expects targeted phishing now that her name and address are out, still tells Lena, and spreads the changes over a few days."
+      },
+      "check": {
+        "question": "Priya's Pantry Box password is also her work email password. Which first step fits D1 and D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Change the Pantry Box password first, since that is where the breach was.",
+            "feedback": "The leaked password already opens Priya's work mailbox, and D3 3.2 treats a breach notice for a reused password as evidence to change it. Pantry Box has the least reach, so it moves last."
+          },
+          {
+            "id": "b",
+            "label": "Change the work email password to a manager-generated one, then the others, and tell the technology team.",
+            "feedback": "This fits D1 and D3: the mailbox has the longest reach, the manager makes the password unique, and Lena can watch for activity while Priya works."
+          },
+          {
+            "id": "c",
+            "label": "Wait for Pantry Box to confirm the hashed passwords were cracked.",
+            "feedback": "D1 gives no timeline, and D3 3.2 needs only evidence the password may be known, not proof of cracking. Waiting leaves the mailbox open; D2 shows attempts on Priya's work account by the 18th."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "choose-a-stronger-second-factor",
+      "number": 2,
+      "title": "Choose a stronger second factor",
+      "summary": "A ladder from text codes to passkeys: strongest rung on the accounts with the longest reach.",
+      "duration": "15–20 minutes",
+      "outcome": "An annotated decision about which factor to use for which account, and what to do with an unexpected prompt.",
+      "explanation": [
+        "Second factors are not equal. CISA ranks them strongest to weakest: passkeys and security keys built on FIDO, then authenticator codes or number-matched prompts, then plain push prompts, then text or voice codes, a last resort. [S2] The lower the rung, the more ways round it.",
+        "The gap is phishing. A code you read can be typed into a fake page, so NIST does not count typed codes as phishing-resistant and restricts text-message delivery. [S1] A passkey, unlocked like your phone and synced or held on a security key, will not answer a site it was not registered with. [S3]",
+        "Push prompts fail differently. An attacker with your password sends prompt after prompt until you tap approve; CISA calls this push bombing. Number matching blocks it: you must type a number from a sign-in screen you cannot see. Microsoft applies it to every Authenticator push. Never approve a prompt you did not start. [S2, S4]"
+      ],
+      "workedExample": {
+        "title": "From making it stop to deciding per account",
+        "before": "Priya, 01:40: \"If I approve one, the buzzing will probably stop. Text codes were fine for years.\"",
+        "after": "Priya, next morning: \"Passkeys for work email and the password manager; they reach everything. Number-matched authenticator elsewhere until passkeys arrive. No text codes at work. Prompts: deny, type nothing, change the password from my laptop, message Lena at 08:00.\"",
+        "why": "Strongest factor on the longest reach; text codes off work accounts (D3 4.1); the unexpected prompt treated as proof the password is known, not noise."
+      },
+      "task": {
+        "prompt": "Using D2 and D3, write an annotated decision for Priya's work email, password manager, and file-sharing account: the factor for each and one reason. Then write two lines on what she does with the D2 prompts and one on what she does not do.",
+        "deliverable": "A three-row decision (account, factor, reason) and a three-line response to D2.",
+        "checklist": [
+          "The two accounts with the longest reach get a passkey or security key.",
+          "No work account stays on text-message codes.",
+          "The D2 response includes deny, no number, change the password, and report.",
+          "Says why approving even once is wrong here."
+        ]
+      },
+      "hint": "Read the 01:12 line of D2. What had to be true for a prompt to be sent at all?",
+      "modelAnswer": [
+        "Work email: passkey; the mailbox resets every other account and a fake page cannot phish a passkey. Password manager: passkey or security key; it holds every other password. File sharing: number-matched authenticator; that service offers no passkeys yet and D3 4.1 permits it. Text codes: nowhere at work.",
+        "Each D2 prompt followed a verified password from a device Priya has never used, so the password is known. Deny every prompt and type no number. Change the password in the manager on waking and tell Lena before stand-up (D3 4.3). Do not approve one to stop the noise."
+      ],
+      "reflection": "Which account got your strongest factor, and what would the next rung down have cost?",
+      "transfer": {
+        "prompt": "Tomasz, a systems administrator, uses only the number-matched authenticator app. Under D3, is that enough?",
+        "answer": "No. D3 4.2 requires administrators to use phishing-resistant methods only: a security key or passkey, with a second key as backup. Number matching stops push bombing but not a fake page collecting a code. Tomasz registers a key with the technology team and drops the app once it works."
+      },
+      "check": {
+        "question": "At 01:58 in D2 a prompt with number 33 arrives after another verified password. What should Priya do?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Approve once so the prompts stop, then sort it out in the morning.",
+            "feedback": "Every D2 prompt followed a verified password from an unrecognised device in an unfamiliar city. Approving hands that device her session; D3 4.3 forbids it, and one approval is all the attacker needs."
+          },
+          {
+            "id": "b",
+            "label": "Deny, enter no number, change the password from her laptop, and report it the same day.",
+            "feedback": "This fits D2 and D3: the prompts prove the password is known, so it changes; typing nothing keeps the attacker out; the same-day report is D3 4.3."
+          },
+          {
+            "id": "c",
+            "label": "Ignore them: number matching means nothing can be approved by mistake.",
+            "feedback": "Number matching stops an accidental tap, but D2 shows the attacker has the password and D4 shows the next move: asking Priya for a code and an approval. D3 4.3 requires a same-day report, and the password must change."
+          }
+        ],
+        "answerId": "b"
+      }
+    },
+    {
+      "slug": "recover-safely",
+      "number": 3,
+      "title": "Recover safely",
+      "summary": "Lockouts and suspected compromise are when you are most persuadable. Know where your codes are, verify support yourself, report early.",
+      "duration": "15–20 minutes",
+      "outcome": "A short recovery note for one scenario, including who to call and what not to do.",
+      "explanation": [
+        "Recovery is when you are most persuadable. You are locked out, or suspect someone is in, and want it fixed in ten minutes. Attackers know this, so the recovery path is where they impersonate support and add a deadline. Slowing down is the skill.",
+        "Know where your recovery codes are before you need them. D3 5.1 puts work-account codes in the password manager as secure notes and keeps the manager's printed kit at home. Codes in email, chat, or a photo belong to whoever has your mailbox.",
+        "Two patterns recur. Support impersonation asks for a code or an approval. SIM swap runs the other way: the criminal impersonates you to your carrier, takes your number, and receives the text codes that reset your passwords. The FBI's warning sign is a phone with no service. [S2, S5]",
+        "Tell the technology team early. Early reports stay small, and D3 6.2 promises no penalty for a false alarm. Verify support requests by calling the published extension yourself, never a number in the message: under D3 6.1 the team never asks for a code."
+      ],
+      "workedExample": {
+        "title": "From here is the code to I will call",
+        "before": "Priya's draft reply to D4, 08:46: \"OK, sorry, I am just nervous. The code is 482913. Approving the prompt now.\"",
+        "after": "Priya's revised reply: \"I cannot share codes or approve prompts. I will call the technology team on the directory extension now.\" She sends nothing else, phones 4400, and tells Lena what was asked.",
+        "why": "D3 6.1: the team never asks for a code, so anyone who does is not the team. Verification moves to a channel Priya chose. A lockout is an inconvenience; the code is a takeover."
+      },
+      "task": {
+        "prompt": "Write a recovery note for one scenario: (a) you receive the D4 message, or (b) your phone suddenly has no service and your work email password fails. Cover your first action, who you call, what you do not do, and where your codes are.",
+        "deliverable": "A five-to-eight-line note a colleague could follow under stress.",
+        "checklist": [
+          "The team is called on a number you looked up, not one you were given.",
+          "No code is shared and no prompt approved anywhere in the note.",
+          "It names where the recovery codes live (D3 5.1)."
+        ]
+      },
+      "hint": "Write the do-not lines first. Under stress, those are the ones you forget.",
+      "modelAnswer": [
+        "Scenario (a). Stop replying. Paste no code, approve no prompt. Call 4400 from the internal directory, not a number in the message. Say: an external guest account posing as IT asked for a code and an approval at 08:43; I sent nothing. Codes are in the manager's secure notes.",
+        "Scenario (b). Treat no service plus a failed password as a likely SIM swap. Call the technology team from a colleague's phone, then the carrier on its own published number. Use no text codes until the number is back. Codes are in the manager."
+      ],
+      "reflection": "Which line of your note would be hardest to follow at 08:45 with D4's clock running?",
+      "transfer": {
+        "prompt": "The D4 message instead shows Lena's display name, while Lena is on leave. Does your note change?",
+        "answer": "No. D3 6.1 is about the request, not the requester: the team never asks for a code or an approval, so a message that does is not from the team. Display names can be set by anyone. Priya still calls 4400 and tells whoever answers."
+      },
+      "check": {
+        "question": "D4 says the account locks for 48 hours unless Priya pastes the code now. Which response fits D3?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Paste the code: IT already knows about the overnight sign-ins.",
+            "feedback": "Knowing about the prompts proves nothing; D2 shows the attacker caused them. D3 6.1 says the team never asks for a code, and D4's sender is an external guest account."
+          },
+          {
+            "id": "b",
+            "label": "Refuse, approve nothing, and call the technology team on the directory extension.",
+            "feedback": "This fits D3 6.1 and 6.2: the request is the tell, verification moves to a channel Priya looked up, and the early call lets the team act on D2 too."
+          },
+          {
+            "id": "c",
+            "label": "Ask the sender to prove they are IT with a staff ID first.",
+            "feedback": "An ID image can be copied or invented, and replying keeps Priya on the attacker's channel and clock. D3 6.1 gives one method: call the published extension. D4's deadline is the pressure tactic."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "NIST SP 800-63B: Digital Identity Guidelines, Authentication and Authenticator Management",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "publishedOrUpdated": "2025-08-26 (publication date shown on the page for SP 800-63-4)",
+      "reviewedOn": "2026-09-21",
+      "support": "Verifiers shall not require periodic password changes but shall force a change when there is evidence of compromise; shall compare new passwords against a blocklist of known compromised passwords; shall not impose composition rules; single-factor passwords need at least 15 characters. Out-of-band delivery over the telephone network is a restricted authenticator. Manually entered one-time codes are not considered phishing-resistant.",
+      "application": "Lesson 1 uses the evidence-of-compromise rule and the end of forced rotation. Lesson 2 uses the restricted status of text-message delivery and the rule that typed codes are not phishing-resistant.",
+      "limits": "Written for organizations that run sign-in systems, not for individual staff. It does not tell a person which factor to pick for a given account and does not measure how often reuse leads to takeover.",
+      "revisit": "When NIST publishes a new revision, or changes the restricted status of telephone-based delivery, which the document says it may do as the threat landscape evolves."
+    },
+    {
+      "id": "S2",
+      "title": "Implementing Phishing-Resistant MFA (fact sheet)",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf",
+      "publishedOrUpdated": "October 2022 (month only, as printed on the fact sheet)",
+      "reviewedOn": "2026-09-21",
+      "support": "Table 1 ranks MFA forms strongest to weakest: FIDO/WebAuthn and PKI-based (phishing-resistant); app-based one-time codes and push with number matching; push without number matching (vulnerable to push bombing); SMS or voice (vulnerable to phishing, SS7, and SIM swap, and to be used only as a last resort). Defines push bombing and SIM swap, and says app codes or number-matched push are the best options for small and medium businesses that cannot yet deploy phishing-resistant MFA.",
+      "application": "Lesson 2 turns Table 1 into a plain-words ladder and uses the push bombing description. Lesson 3 uses its SIM swap definition alongside the FBI announcement.",
+      "limits": "Dated October 2022, before passkeys were widely offered by consumer services, and addressed to IT leaders rather than staff. It gives no incident rates and does not say how long a migration takes.",
+      "revisit": "If CISA replaces the fact sheet or issues newer MFA guidance. Confirm the PDF still resolves: on review the resource landing page returned a 404 while the PDF itself remained available, and CISA's older MFA web pages carried an archived-content banner."
+    },
+    {
+      "id": "S3",
+      "title": "Passkeys: Passwordless Authentication",
+      "publisher": "FIDO Alliance",
+      "url": "https://fidoalliance.org/passkeys/",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "A passkey is an authentication credential based on FIDO standards, stored on a phone, computer, or hardware security key, and used with the same unlock as the device (biometric, PIN, or pattern). Synced passkeys move between a user's devices through a cloud service; device-bound passkeys never leave one device. Passkeys use public key cryptography, are described as always strong and phishing-resistant, and are built on the FIDO2 specifications (WebAuthn and CTAP).",
+      "application": "Lesson 2 uses it for what a passkey is, how it is unlocked, the synced versus security-key distinction, and why it will not answer a site it was not registered with.",
+      "limits": "Published by the industry body that promotes the standard, so it describes benefits rather than trade-offs. It does not cover recovery when every device holding a passkey is lost, and availability depends on each service.",
+      "revisit": "When the page changes, or when a service the firm relies on adds or removes passkey support."
+    },
+    {
+      "id": "S4",
+      "title": "How number matching works in MFA push notifications for Authenticator",
+      "publisher": "Microsoft Learn (Microsoft Entra ID documentation)",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-number-match",
+      "publishedOrUpdated": "2025-11-06 (article date shown on the page)",
+      "reviewedOn": "2026-09-21",
+      "support": "Number matching is enabled for all Authenticator push notifications: the user sees a number on the sign-in screen and must enter it in the app to approve. Users cannot opt out. When the sign-in starts on the same device that runs Authenticator, Microsoft mobile apps may show a Yes/No prompt instead, because the prompt only appears on the device that initiated the sign-in.",
+      "application": "Lesson 2 uses it to explain why an unexpected prompt cannot be approved without the number shown on the sign-in screen, which is why the D4 impersonator had to talk Priya into approving rather than simply sending more prompts.",
+      "limits": "Describes one vendor's product. Other authenticator apps behave differently, and number matching does not protect against a fake sign-in page that relays the number to the victim.",
+      "revisit": "When Microsoft changes the article or Authenticator's behavior. The page carried an article date of November 2025 on review."
+    },
+    {
+      "id": "S5",
+      "title": "Criminals Increasing SIM Swap Schemes to Steal Millions of Dollars from US Public",
+      "publisher": "FBI Internet Crime Complaint Center (IC3), public service announcement",
+      "url": "https://www.ic3.gov/PSA/2022/PSA220208",
+      "publishedOrUpdated": "2022-02-08",
+      "reviewedOn": "2026-09-21",
+      "support": "Criminals take over a phone number by impersonating the victim to the carrier, bribing carrier staff, or phishing staff. They then receive SMS-based two-factor codes, reset passwords, and take over accounts. Advice includes unique passwords for online accounts, never giving account details over the phone, watching for loss of SMS connectivity, and using stronger MFA such as biometrics, physical security tokens, or standalone authentication apps.",
+      "application": "Lesson 3 uses the SIM swap pattern and the no-service warning sign. Lesson 1 cites its unique-password advice.",
+      "limits": "A 2022 US public announcement with loss figures for 2021. It does not describe carrier protections added since, and its advice is aimed at consumers rather than firms.",
+      "revisit": "If the FBI or FCC publishes newer SIM swap guidance, or if the firm's mobile carrier changes its port-out protections."
+    }
+  ]
+}

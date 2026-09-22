@@ -1,0 +1,201 @@
+{
+  "version": "1.0.0",
+  "format": "bite",
+  "slug": "secure-browsing-and-downloads",
+  "title": "Downloads, Extensions, and Pop-ups",
+  "track": "security-awareness",
+  "audience": "Everyone at the firm who uses a browser, which is everyone.",
+  "prerequisites": [],
+  "description": "A short module on where risky software really comes from, how to read a download page and an address bar, and what to do after a bad install.",
+  "introduction": [
+    "Almost every bad install I have cleaned up started with someone doing something reasonable: looking for a PDF tool, reading an article, trying a colleague's recommendation. The trap was the route, not the person. This module is about noticing the route before the click, without needing to be a technician.",
+    "It takes about ten minutes and uses four fictional situations: a search advert on a lookalike domain, a fake browser update pop-up, a colleague's extension request, and the firm's approved-software excerpt. For each one you will decide to proceed, ask first, or report, and write down the single signal that decided it.",
+    "No tool account is needed. Work on paper or in a document and install nothing during the exercise. Everyone and every product in the packet is invented. Try the task first, compare with the example, then explain one decision aloud; saying why is what makes the habit hold."
+  ],
+  "reviewedOn": "2026-09-21",
+  "scenario": {
+    "title": "Four small decisions in one afternoon",
+    "description": "You work at Larkspur Ridge Partners, a small fictional investment firm. Everyone and everything in this packet is fictional: the people, the firm, the products, the extension, and the domains. The exercise reference date is 21 September 2026. D1 describes a search result page whose top advert points to a lookalike domain. D2 is a deliberately fake pop-up; the browser in the scenario is not out of date. D3 is a genuine request from a real colleague about an extension that has not been reviewed. D4 is an excerpt of the firm's approved-software list and request route.",
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Search results for 'pdf editor free download'",
+        "date": "2026-09-21",
+        "kind": "Search result page: described in text",
+        "body": [
+          "The first result carries a small 'Sponsored' label. Title: 'Official PDF Editor Pro. Free Download. Edit, sign, and merge PDFs.' Displayed address: pdfeditor-pro-download.example.net. The description promises 'no account needed, 100% safe, works offline'.",
+          "The second result, unlabelled, is the vendor's own site: pdfeditorpro.example.com. Its page is titled 'Download PDF Editor Pro' and notes that a sign-in is required for the licensed version, and that the installer is about 180 MB.",
+          "Opening the sponsored result would show a page with the vendor's logo, a large green 'Download now' button, and a counter reading '2,841 downloads today'. The file offered is PDFEditorPro_Setup.exe, 3 MB. The page's footer has no company name or address."
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Pop-up shown while reading a news article",
+        "date": "2026-09-21",
+        "kind": "Browser update pop-up: text described",
+        "body": [
+          "A full-window overlay appears over the article, carrying the browser's logo and this text: 'Your browser is out of date. Critical security update required. Version 128 detected; version 131 available. Update now to keep your data safe.' A blue button reads 'Update now'. Small gray text below it reads 'Update will download automatically (Browser_Update_v131.exe)'.",
+          "The address bar still shows news-daily-reader.example.org/article/..., not a browser vendor's domain. The overlay has no close button; the only ways out are the blue button or closing the tab."
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Chat message from a colleague",
+        "date": "2026-09-21",
+        "kind": "Internal chat message: a genuine request from a real colleague",
+        "body": [
+          "From Jonas Petrov (investment team), 14:12: 'Hey, have you tried PageGist? It's a browser extension that summarizes any page in one click, brilliant for long filings. Install it from the extension store, takes ten seconds. It asks to read and change all your data on all websites, but I think that's just how summarizers work. Would be great if the whole team had it before Thursday's pipeline review.'",
+          "The extension store listing shows 4.6 stars from 1,900 reviews, a developer named 'PG Labs', an update three weeks ago, and the permission line 'Read and change all your data on all websites'. The privacy policy link opens a one-page site with no company name or address."
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Approved software and how to ask for something new (excerpt)",
+        "date": "2026-05-12",
+        "kind": "Fictional policy excerpt: approved list and request route",
+        "body": [
+          "Software and browser extensions are installed from the firm's self-service catalog or by the technology team. The catalog includes a PDF editor, the password manager, the meeting tools, and two approved browser extensions: the password manager and the ad and tracker blocker.",
+          "To request anything else, send the technology team the name, the link, and what you need it for. Most requests get an answer within two working days. Extensions that ask to read all site data are reviewed before approval, because they can see everything you see, including email and internal systems.",
+          "Never install software from a search advert, a pop-up, or a link in a message. Browser updates arrive through the browser's own menu and the firm's device management, never through a web page.",
+          "If you have installed something you now doubt: stop using the device, do not run any 'cleaner' or 'removal tool' offered by the page, note what you clicked and when, and call or message the technology team. Nobody is in trouble for reporting quickly."
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "install-nothing-in-a-hurry",
+      "number": 1,
+      "title": "Install nothing in a hurry",
+      "summary": "Spot the ordinary routes bad software takes, and decide each case on one signal.",
+      "duration": "8–10 minutes",
+      "outcome": "A decision for each packet situation (proceed, ask first, or report) with the signal that decided it.",
+      "explanation": [
+        "Most bad software arrives by an ordinary route: the advert above the real search result, a page that says the browser needs updating, a free copy of a paid tool. Adverts can point anywhere, which is why criminals buy them for popular tools, and a page can do harm without a click. [S1, S3]",
+        "Read the address bar first. The real site is the part before the first single slash; a lookalike adds words, changes the ending, or uses a hyphen the vendor never does. Browsers update through their own menu, never through a web page, and a real security warning never asks you to call. [S2, S4, S6]",
+        "An extension that can read and change all your data on all websites sees everything you see, email included. The warning means it could misbehave, not that it does, so the firm reviews these first. After a doubtful install: stop, tell the technology team, never run the cleaner the page offers. [S4, S5]"
+      ],
+      "workedExample": {
+        "title": "Reading the address bar before the page",
+        "before": "The sponsored result says Official PDF Editor Pro and carries the vendor's logo. I click Download now.",
+        "after": "The address is pdfeditor-pro-download.example.net; the vendor's site, one result down, is pdfeditorpro.example.com. The installer is 3 MB against the vendor's 180 MB. I close the tab and open the firm's catalog, which has a PDF editor.",
+        "why": "The logo and the word official cost nothing to copy. The domain, the file size, and the approved route do not."
+      },
+      "task": {
+        "prompt": "For each of D1, D2, and D3, decide: proceed, ask first, or report. Write the one signal from the packet that decided it. For D3 only, add a two-line reply to Jonas.",
+        "deliverable": "Three decisions with one signal each, plus a two-line reply you could send to a colleague.",
+        "checklist": [
+          "Each decision names a packet signal, not a general rule.",
+          "The D2 decision says how real browser updates arrive, per D4.",
+          "The reply treats Jonas as a colleague and points to the request route.",
+          "You installed, clicked, and ran nothing inside the exercise."
+        ]
+      },
+      "hint": "Ask each time: who put this here, where does the address really go, and what does D4 say about this route?",
+      "modelAnswer": [
+        "D1: report. The top result is an advert on a lookalike domain with a 3 MB installer that does not match the vendor's; the catalog already has a PDF editor. D2: report and close the tab. A news site is not the browser vendor, and D4 says updates never arrive through a web page.",
+        "D3: ask first. Jonas is real and the extension may be fine, but it wants all site data, which D4 sends for review. Reply: 'Looks useful, I'd like it too. All-site-data extensions need the tech team's two-day review first. Send them the link and I'll add my name.'"
+      ],
+      "reflection": "Which of the three was hardest to say no to, and why?",
+      "transfer": {
+        "prompt": "Suppose the D2 pop-up said instead 'Your computer is infected. Call this number now', with a phone number and no download. Does your decision change?",
+        "answer": "No. It is the same scam in different words: a web page cannot inspect your computer, and a real warning never asks you to call. Close the tab and report it. If you already called or let someone connect, tell the technology team now and change the passwords used on that device."
+      },
+      "check": {
+        "question": "A colleague clicked Update now in D2 and the download ran. The page now offers a free 'cleaner'. What should they do under D4?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Run the cleaner, since the page found the problem and can remove it.",
+            "feedback": "The cleaner comes from the page that showed the fake update: the second half of one scam. D4 says never run a cleaner the page offers; it hands the attacker a second install."
+          },
+          {
+            "id": "b",
+            "label": "Stop using the device, note what was clicked and when, run nothing else, and call or message the technology team.",
+            "feedback": "This matches D4 and keeps the evidence intact. Knowing the exact file and time lets the technology team check the device quickly."
+          },
+          {
+            "id": "c",
+            "label": "Delete the downloaded file and carry on, since nothing seems wrong.",
+            "feedback": "Nothing seeming wrong is not evidence; the installer may already have done its work. Deleting it removes the trace the technology team needs. D4 asks for a report, not a quiet cleanup."
+          }
+        ],
+        "answerId": "b"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Capacity Enhancement Guide: Securing Web Browsers and Defending Against Malvertising for Non-Federal Organizations",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/sites/default/files/2023-09/Non-Fed%20-%20Guidance_for_Securing_Your_Web_Browsers%20Aug-23%20Revision.pdf",
+      "publishedOrUpdated": "August 2023 revision (per the file name; the pages themselves carry no date)",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines malvertising as malicious or hijacked adverts that spread malware, says it 'can compromise a network even if you do not click on an ad' and can force redirects, names outdated browsers and unaware users as the main openings, and recommends standardized browsers, ad blocking, protective DNS, and browser isolation. It warns that ad-blocking extensions run with high privilege and see all traffic.",
+      "application": "The 'ordinary route' and 'harm without a click' points, and the approved-extension idea behind D4, follow this guide.",
+      "limits": "Written for IT leaders, not end users, and it does not describe lookalike domains or fake update pages specifically. The three-page guide gives no evidence on how often each route is used.",
+      "revisit": "Recheck if CISA issues a newer revision or moves the file."
+    },
+    {
+      "id": "S2",
+      "title": "Tips to Stay Safe while Surfing the Web, Part 1: Web Browser Settings",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "url": "https://www.cisa.gov/resources-tools/training/tips-stay-safe-while-surfing-web-part-1-web-browser-settings",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Says to keep the browser updated with automatic updates on and to restart it so patches apply, that pop-up notification permissions can be abused for phishing or to deliver malware, to vet browser extensions for privacy and security before installing, and not to grant site permissions such as location, camera, or microphone unless a site needs them.",
+      "application": "The lesson's points on how updates really arrive, on pop-ups, and on vetting extensions before installing draw on this page.",
+      "limits": "A general awareness page that names one specific ad-blocking extension as a recommendation; this module does not adopt that, because extension choice is a firm decision made through the review route. No date or evidence base is given.",
+      "revisit": "Recheck if CISA revises or removes the page."
+    },
+    {
+      "id": "S3",
+      "title": "Helping banish malicious adverts – and drive a secure advertising ecosystem",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/blog-post/helping-banish-malicious-adverts",
+      "publishedOrUpdated": "6 November 2024",
+      "reviewedOn": "2026-09-21",
+      "support": "Defines malvertising as using online advertising to deliver malicious activity, says it 'often doesn't require any user interaction', notes that ad networks let attackers target by location and device, and cites research that 0.26 percent of 1.1 trillion adverts served in 2023 were security violations, with the UK rate at 0.56 percent.",
+      "application": "Supports the explanation's claim that adverts are a deliberate delivery route for criminals and that a page can do harm without a click.",
+      "limits": "A blog post aimed at brands and their advertising partners, not at people browsing; the statistics come from an industry study the NCSC cites rather than its own measurement.",
+      "revisit": "Recheck if the NCSC publishes end-user guidance on malvertising or updates the figures."
+    },
+    {
+      "id": "S4",
+      "title": "How To Spot, Avoid, and Report Tech Support Scams",
+      "publisher": "US Federal Trade Commission (FTC), Consumer Advice",
+      "url": "https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams",
+      "publishedOrUpdated": "September 2025 (month only)",
+      "reviewedOn": "2026-09-21",
+      "support": "Describes scams that start with fake pop-up warnings, calls, or texts claiming a virus was found, says legitimate companies do not contact you unsolicited and that real security warnings never ask you to call a phone number, and advises anyone who fell for one to change passwords, contact their bank about charges, and report at ReportFraud.ftc.gov.",
+      "application": "The fake-update and 'computer is infected' points, the changed case, and the after-a-bad-install advice on passwords follow this page.",
+      "limits": "Consumer-facing and US-centerd; it addresses money and remote-access scams rather than workplace devices, and its reporting route is US-specific.",
+      "revisit": "Recheck when the FTC updates the article or changes the reporting route."
+    },
+    {
+      "id": "S5",
+      "title": "Permissions requested by apps and extensions",
+      "publisher": "Google (Chrome Web Store Help)",
+      "url": "https://support.google.com/chrome_webstore/answer/186213?hl=en",
+      "publishedOrUpdated": "undated",
+      "reviewedOn": "2026-09-21",
+      "support": "Sorts extension permissions into high, medium, and low alert levels; says 'Your data on all the websites you visit' lets an extension read, request, or change data from every page; and states that a permission warning 'doesn't mean the app is dangerous, just that it can be'.",
+      "application": "The lesson's reading of D3's permission line, and the point that the warning describes capability rather than intent, come from this page.",
+      "limits": "Chrome-specific wording; other browsers phrase the same permissions differently. It explains what a permission allows, not how to judge a particular developer.",
+      "revisit": "Recheck when Google changes the permission wording or the page address."
+    },
+    {
+      "id": "S6",
+      "title": "Report a scam advert",
+      "publisher": "UK National Cyber Security Centre (NCSC)",
+      "url": "https://www.ncsc.gov.uk/collection/phishing-scams/report-scam-advert",
+      "publishedOrUpdated": "Published 26 November 2021; reviewed 5 September 2022",
+      "reviewedOn": "2026-09-21",
+      "support": "Says criminals place adverts on websites, search engines, and social media that 'look genuine', explains that paid adverts can be reported to the Advertising Standards Authority and suspicious websites to the NCSC for takedown, and points people who lost money or were hacked to Action Fraud or Police Scotland.",
+      "application": "Backs the D1 decision to report a search advert rather than only ignore it, and the idea that reporting helps the next person who searches.",
+      "limits": "UK reporting routes; the equivalent elsewhere differs. It does not cover how to read a domain or a download page.",
+      "revisit": "Recheck at the NCSC's next review of the page or if the reporting routes change."
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # Workplace and technology training
 
+## The training catalog
+
+The [catalog](CATALOG.md) lists every module across three tracks: security awareness for everyone, AI at work for everyone who uses an assistant, and technology operations for the operator and the people in the room when something goes wrong. Short modules take 8 to 15 minutes; courses have three lessons of 15 to 25 minutes. Every module works on paper or in a document, uses a fictional packet, and needs no tool account. The catalog also carries five [learning journeys](CATALOG.md#learning-journeys): the first month for everyone, finance and payments, working with AI, managers and team leads, and technology operators.
+
+Each module folder holds a canonical `course.json` and the generated lesson files, packet, worksheet, facilitator guide, and research notes. To add or change one, read [COURSE-AUTHORING.md](COURSE-AUTHORING.md).
+
 ## AI at Work: start with everyday tasks
 
 [AI at Work](ai-at-work/README.md) is a three-lesson course for employees across departments. Practice giving a clear assignment, choosing the right context, and checking a draft before sharing it. One fictional workshop packet connects the lessons; no AI account or technical background is needed. Includes examples, hints, answer guidance, a blank worksheet, and a facilitator guide.
