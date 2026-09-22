@@ -12,11 +12,11 @@ The library is organized around reusable operating work across industries and te
 |---|---|---|
 | Run an automation | [Change-readiness walkthrough](showcase/change-readiness-review.md) | A fictional change packet, its review result, and the checks behind it |
 | Review your controls | [Control-evidence walkthrough](showcase/control-evidence-review.md) | A local report that keeps missing, stale, and conflicting evidence visible |
-| Learn with AI | [AI at Work](training/ai-at-work/README.md), [prompting guide](prompting/README.md), and [portable skills](skills/README.md) | Three everyday employee lessons, followed by deeper prompting and reusable instructions |
+| Learn with AI | [AI at Work](training/ai-at-work/README.md), the [Working with AI journey](training/CATALOG.md#working-with-ai), [prompting guide](prompting/README.md), and [portable skills](skills/README.md) | Three everyday employee lessons, then three modules on using an assistant without leaking or being misled, deeper prompting, and reusable instructions |
 | Assess a platform | [Platform security baselines](baselines/README.md) | Control catalogs and risk-assessment templates for Google Workspace, Microsoft 365, Cloudflare, AWS, and GitHub, with a local comparison tool and fictional examples |
 
 
-The [100-site training directory](training/free-training-directory/README.md) helps teams find public, free-account and customer-included learning, with access limits, official sources and a CSV for an internal catalog. The [vendor video task cards](training/vendor-walkthroughs/README.md) pair official lessons with original practice, evidence checks, and teach-back prompts. Use the [training delivery pack](training/delivery/README.md) to run a proposed 60-minute first session and plan follow-up checks over 30 days.
+The [training catalog](training/CATALOG.md) lists 21 modules across three tracks (security awareness, AI at work, and technology operations) and five learning journeys; every module works on paper with a fictional packet and needs no tool account. The [100-site training directory](training/free-training-directory/README.md) helps teams find public, free-account and customer-included learning, with access limits, official sources and a CSV for an internal catalog. The [vendor video task cards](training/vendor-walkthroughs/README.md) pair official lessons with original practice, evidence checks, and teach-back prompts. Use the [training delivery pack](training/delivery/README.md) to run a proposed 60-minute first session and plan follow-up checks over 30 days.
 
 The [showcase walkthroughs](showcase/README.md) connect three operating problems to runnable examples: a read-only MCP service catalog, a control-evidence review, and a change-readiness workflow. Each explains the input, expected output, checks, and remaining limitations. Start there to understand how I approach the work, then use the collections below for related procedures and templates.
 
@@ -36,7 +36,7 @@ For a sensitive reporting workflow, use the [investor-reporting pack](operations
 | [AI prompting guide](prompting/README.md) | 11 chapters, 16 copyable patterns, and practice records | Task design, context, research, writing, documents, code, agents, evaluation, and troubleshooting |
 | [Portable skills](skills/README.md) | 4 self-contained skills and 1 linked Claude Code workflow system | Build/buy review, notes to runbook, risk review, document sanitization, and [Aloha](https://github.com/hellojdmiller/aloha) |
 | [Documentation examples](documentation/README.md) | 12 examples, including 9 adapted documents | Policies, procedures, BCP, disaster recovery, cyber risk, incidents, and decisions |
-| [Workplace and vendor training](training/README.md) | 3 AI at Work lessons, 100-site learning directory, 6 modules, 8 video-based task cards, 3 operating exercises, and a session delivery pack | Everyday AI use, free learning discovery, Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
+| [Workplace and technology training](training/README.md) | 21 modules in 3 tracks (12 short modules and 9 three-lesson courses) with 5 learning journeys, 6 operator modules, 8 video-based task cards, a 100-site learning directory, a session delivery pack, and a training record template | Phishing, sign-in security, sensitive information, working anywhere, payment fraud, everyday and safe AI use, AI agents, safeguards programs, the first hour of an incident, Microsoft 365/Entra, Google Workspace, Intune, Jamf, n8n, and SaaS handover |
 | [Implementation work samples](work-samples/README.md) | 6 sample collections | MCP design and server, Azure Bicep, configuration scripts, control-evidence review, and investor-reporting reconciliation |
 | Verification labs | [n8n runtime](labs/n8n-runtime/README.md) and [agent security](labs/agent-security/README.md) | Reproduce n8n cases and inspect offline agent-control decisions with fictional inputs |
 | [Technology landscape](landscape/README.md) | A vendor knowledge graph and generated Obsidian vault | Layers, categories, vendors, and typed relations across identity, devices, collaboration, security, network, infrastructure, data and AI, business systems, developer tools, and personal technology, sourced from Wikidata, vendor documentation, and the CNCF and LF AI landscapes |
@@ -47,7 +47,7 @@ For search and collection filters, open [catalog/index.html](catalog/index.html)
 
 ## What is ready to use
 
-The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 47 isolated CLI cases across fifteen workflows on its pinned version. A bounded [Claude MCP and pasted-skill trial](showcase/host-trials/README.md) now adds host observations and review findings. Cloud deployment, real-tenant checks, vendor training exercises, native skill loading, and wider cross-client trials remain pending.
+The guidance and examples are available for review and adaptation. The code has local checks described in [VALIDATION.md](VALIDATION.md). The [n8n runtime lab](labs/n8n-runtime/README.md) passed 47 isolated CLI cases across fifteen workflows on its pinned version. A bounded [Claude MCP and pasted-skill trial](showcase/host-trials/README.md) now adds host observations and review findings. Cloud deployment, real-tenant checks, learner sessions for the training modules and vendor exercises, native skill loading, and wider cross-client trials remain pending.
 
 The n8n examples use manual triggers and fictional input. The baseline tool evaluates supplied assertions; it does not inspect a tenant. Infrastructure examples require application code and environment-specific review. Each resource explains its input, intended result, and limits.
 
@@ -63,10 +63,12 @@ node --test tests/*.test.mjs baselines/tests/*.test.mjs work-samples/control-evi
 node scripts/build-catalog.mjs
 node training/free-training-directory/build.mjs --check
 node training/ai-at-work/build.mjs --check
+node training/lib/build-course.mjs --all --check
+node training/lib/build-catalog.mjs --check
 node landscape/lib/build-landscape.mjs --check
 ```
 
-The workflow build regenerates exports from readable JavaScript and sample inputs. Keep both together. The catalog build indexes the reviewed resource collections. The separate [runtime lab](labs/n8n-runtime/README.md) requires Docker and the pinned n8n image.
+The workflow build regenerates exports from readable JavaScript and sample inputs. Keep both together. The catalog build indexes the reviewed resource collections. The training builders check every module's structure and exports and fail on training catalog drift. The separate [runtime lab](labs/n8n-runtime/README.md) requires Docker and the pinned n8n image.
 
 With Python 3.9 or later, `python3 research/verify_sync.py` checks the research copy's hashes, file inventory, local navigation, and CSV structure without network access or extra packages. The [sync guide](research/SYNC.md) also explains how to compare it against the pinned website source commit.
 

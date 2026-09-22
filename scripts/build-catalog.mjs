@@ -4,12 +4,14 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const markdown = (folder) => fs.readdirSync(path.join(root, folder), { withFileTypes: true })
-  .filter((item) => item.isFile() && item.name.endsWith('.md') && !['README.md', 'VALIDATION.md', 'training-record-template.md'].includes(item.name))
+  .filter((item) => item.isFile() && item.name.endsWith('.md') && !['README.md', 'VALIDATION.md', 'CATALOG.md', 'COURSE-AUTHORING.md', 'training-record-template.md'].includes(item.name))
   .map((item) => `${folder}/${item.name}`);
 const folders = (folder, file) => fs.readdirSync(path.join(root, folder), { withFileTypes: true })
   .filter((item) => item.isDirectory() && fs.existsSync(path.join(root, folder, item.name, file)))
   .map((item) => `${folder}/${item.name}/${file}`);
 const entries = [];
+const training = JSON.parse(fs.readFileSync(path.join(root, 'training', 'catalog.json'), 'utf8'));
+const trackTitle = Object.fromEntries(training.tracks.map((track) => [track.id, track.title]));
 const descriptions = {
   'training/ai-at-work/README.md': 'Three free lessons for everyday employees: frame a task, supply useful context, and review an AI draft. Includes a fictional workshop packet, examples, answer guidance, a worksheet, and facilitator notes; no AI account required.',
   'training/free-training-directory/README.md': 'Find 100 learning sites for staff, operators, developers and managers. Includes free scope, customer/account conditions, official evidence, proposed starter tasks and a CSV for an internal training catalog.',
@@ -37,14 +39,23 @@ const descriptions = {
   'training/intune-device-operations.md': 'Distinguish enrollment, assignment, compliance evaluation, and access outcomes using a bounded device exercise.',
   'training/jamf-device-operations.md': 'Practice policy scope, inventory freshness, execution evidence, and recovery for managed Apple devices.',
   'training/n8n-workflow-operator.md': 'Import an example, compare expected records, distinguish business exceptions from execution failures, and record recovery.',
-  'training/saas-ownership-and-handover.md': 'Rehearse service ownership, administrator transfer, billing, integrations, vendor dependencies, and handover acceptance.'
+  'training/saas-ownership-and-handover.md': 'Rehearse service ownership, administrator transfer, billing, integrations, vendor dependencies, and handover acceptance.',
+  'training/vendor-walkthroughs/microsoft-admin-routing.md': 'Route four fictional Microsoft 365 requests to the right owner and administration surface, separating technical access from business approval and naming the evidence each needs. A 20-minute tabletop; no tenant or login required.',
+  'training/vendor-walkthroughs/entra-access-decision.md': 'Explain a fictional Entra Conditional Access decision: which users a report-only policy includes or excludes, what the sign-in evidence shows, and whether it is ready to enforce. A 25-minute tabletop paired with official Microsoft material.',
+  'training/vendor-walkthroughs/intune-compliance-evidence.md': 'Trace a fictional Intune compliance result from policy assignment through evaluation to the access outcome, and say which evidence is current. A 25-minute tabletop paired with official Microsoft demonstration chapters.',
+  'training/vendor-walkthroughs/google-user-scope.md': 'Diagram which organizational units and groups a fictional Google Workspace setting reaches before changing access, then update an enrollment-readiness note. A 25-minute tabletop paired with official Google admin material.',
+  'training/vendor-walkthroughs/google-shared-drive-access.md': 'Build an expected-versus-observed access matrix for two files and two users on a fictional Google shared drive, then explain each allowed and denied result. A 25-minute tabletop paired with the official shared-drives webinar.',
+  'training/vendor-walkthroughs/jamf-inventory-policy.md': 'Prove that a fictional Jamf policy reached the intended Mac by comparing scope, execution, and inventory evidence and flagging what is stale. A 25-minute tabletop paired with the public Jamf 100 lessons on scope and policies.',
+  'training/vendor-walkthroughs/n8n-import-and-result.md': 'Inspect an imported n8n example and record its actual result for four fictional cases, separating execution status from the business outcome. A 30-minute tabletop paired with the official n8n Essentials outline.',
+  'training/vendor-walkthroughs/n8n-failure-and-recovery.md': 'Classify a fictional n8n failure, decide what recovery is possible, and write a handover another operator can reproduce. A 30-minute tabletop paired with the official n8n Integrations and In Practice outlines.'
 };
+for (const course of training.courses) descriptions[`training/${course.path}`] ??= course.description;
 function add(collection, files, readiness) {
   for (const file of files) {
     const text = fs.readFileSync(path.join(root, file), 'utf8');
     const title = text.match(/^# (.+)$/m)?.[1];
     if (!title) throw new Error(`Missing title: ${file}`);
-    const paragraph = text.split('\n\n').find((p) => p && !/^(#|>|---|\||\*\*|```)/.test(p) && !p.includes('name:')) || readiness;
+    const paragraph = text.split('\n\n').find((p) => p && !/^(#|>|---|\||\*\*|```|<!--)/.test(p) && !p.includes('name:')) || readiness;
     let description = descriptions[file] || paragraph.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*`]/g, '').replace(/\n/g, ' ');
     if (description.length > 245) description = description.slice(0, 245).replace(/\s+\S*$/, '') + '…';
     entries.push({ title, collection, path: file, readiness, description });
@@ -65,7 +76,7 @@ add('Training', markdown('training'), 'Practice module; labs not executed');
 add('Training', markdown('training/vendor-walkthroughs'), 'Official video and reading paths with original exercises; participant practice unexecuted');
 add('Training', ['training/delivery/README.md'], 'Proposed session and follow-up plan; no learner sessions or measured outcomes');
 add('Training', ['training/free-training-directory/README.md'], 'Official sources reviewed; enrollment, playback, customer entitlement and learner outcomes untested');
-add('Training', ['training/ai-at-work/README.md'], 'Research and fictional exercises reviewed; no learner trials or measured outcomes');
+for (const course of training.courses) add('Training', [`training/${course.path}`], `${trackTitle[course.track]} ${course.format === 'bite' ? 'short module' : 'course'}; fictional packet and authored answer keys; no learner trial`);
 add('Work samples', folders('work-samples', 'README.md'), 'See sample validation and deployment limits');
 add('AI research', [
   'research/beyond-the-model-frontier.md',
@@ -82,7 +93,7 @@ add('Showcase', [
   'showcase/host-trials/README.md',
 ], 'Guided local example; see measured checks and remaining limits');
 entries.sort((a, b) => a.collection.localeCompare(b.collection) || a.title.localeCompare(b.title));
-const catalog = { version: 1, reviewed_on: '2026-09-19', repository: 'https://github.com/hellojdmiller/technology-operations-library', visibility: 'Public resource collection', entries };
+const catalog = { version: 1, reviewed_on: '2026-09-21', repository: 'https://github.com/hellojdmiller/technology-operations-library', visibility: 'Public resource collection', entries };
 const destination = path.join(root, 'catalog');
 fs.mkdirSync(destination, { recursive: true });
 fs.writeFileSync(path.join(destination, 'resources.json'), JSON.stringify(catalog, null, 2) + '\n');
@@ -92,7 +103,7 @@ const html = `<!doctype html>
 <style>
 :root{color-scheme:light;--ink:#132a35;--muted:#53666d;--line:#d4dfe0;--paper:#f4f7f5;--accent:#176459}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:54px 28px}header{max-width:840px;margin-bottom:30px}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--accent)}h1{font-size:clamp(34px,5vw,60px);letter-spacing:-.05em;line-height:1.07;margin:15px 0 20px}p{margin:0 0 14px;color:var(--muted)}a{color:var(--accent)}.controls{display:flex;gap:14px;flex-wrap:wrap;background:white;padding:20px;border:1px solid var(--line);border-radius:12px}label{display:block;font-size:13px;font-weight:650}.search{flex:1;min-width:220px}input,select{font:inherit;display:block;padding:10px 12px;margin-top:5px;border:1px solid #aabfc1;border-radius:6px;background:white;color:var(--ink);width:100%}input:focus,select:focus,a:focus{outline:3px solid #91cabe;outline-offset:2px}.count{margin:22px 0 14px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}article{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:12px;background:white;padding:22px}article h2{font-size:20px;line-height:1.3;letter-spacing:-.02em;margin:0}article p{font-size:14px;margin:0}article .type{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);font-weight:700}.status{margin-top:auto!important;padding-top:14px;border-top:1px solid #e6ecea;font-size:12px!important}footer{margin-top:30px;color:var(--muted);font-size:13px}.empty{padding:20px}noscript{display:block;padding:20px}
 </style></head><body><main><header><div class="eyebrow">JD Miller · Public resource library</div><h1>Technology<br>Operations Library.</h1><p>Operating guidance, AI research, workflows, baseline reviews, portable skills, documentation, training, and guided implementation samples. Start with the job you need to do.</p><p><a href="https://github.com/hellojdmiller/technology-operations-library">Open the public repository</a>.</p></header>
-<section class="controls" aria-label="Filter resources"><label class="search">Search the library<input id="search" type="search" placeholder="Try recovery, access, vendor, AI…"></label><label>Collection<select id="collection"><option value="">All collections</option></select></label></section><p class="count" id="count" role="status" aria-live="polite"></p><section class="grid" id="resources" aria-label="Resources"></section><noscript>Enable JavaScript for filtering, or use the repository README to browse.</noscript><footer>Examples use fictional data. Review each resource's validation limits before use. Nothing here has been applied to a production environment. Catalog reviewed September 19, 2026.</footer></main>
+<section class="controls" aria-label="Filter resources"><label class="search">Search the library<input id="search" type="search" placeholder="Try recovery, access, vendor, AI…"></label><label>Collection<select id="collection"><option value="">All collections</option></select></label></section><p class="count" id="count" role="status" aria-live="polite"></p><section class="grid" id="resources" aria-label="Resources"></section><noscript>Enable JavaScript for filtering, or use the repository README to browse.</noscript><footer>Examples use fictional data. Review each resource's validation limits before use. Nothing here has been applied to a production environment. Catalog reviewed September 21, 2026.</footer></main>
 <script type="application/json" id="catalog">${data}</script><script>
 const data=JSON.parse(document.getElementById('catalog').textContent);const filter=document.getElementById('collection');const search=document.getElementById('search');const list=document.getElementById('resources');
 for(const category of [...new Set(data.entries.map(x=>x.collection))]){const option=document.createElement('option');option.value=category;option.textContent=category;filter.append(option)}

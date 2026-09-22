@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed_on": "2026-09-19",
+  "reviewed_on": "2026-09-21",
   "repository": "https://github.com/hellojdmiller/technology-operations-library",
   "visibility": "Public resource collection",
   "entries": [
@@ -806,22 +806,36 @@
       "title": "AI at Work",
       "collection": "Training",
       "path": "training/ai-at-work/README.md",
-      "readiness": "Research and fictional exercises reviewed; no learner trials or measured outcomes",
+      "readiness": "AI at work course; fictional packet and authored answer keys; no learner trial",
       "description": "Three free lessons for everyday employees: frame a task, supply useful context, and review an AI draft. Includes a fictional workshop packet, examples, answer guidance, a worksheet, and facilitator notes; no AI account required."
     },
     {
-      "title": "Authoring a course",
+      "title": "AI in People Decisions",
       "collection": "Training",
-      "path": "training/COURSE-AUTHORING.md",
-      "readiness": "Practice module; labs not executed",
-      "description": "Every course in this directory is one folder with a canonical course.json. Everything a learner reads (README, lessons, packet, worksheet, facilitator guide, research notes) is generated from that file by training/lib/build-course.mjs. Edit the…"
+      "path": "training/ai-in-people-decisions/README.md",
+      "readiness": "AI at work short module; fictional packet and authored answer keys; no learner trial",
+      "description": "A short module on using an assistant to draft in people work while keeping screening, ranking, scoring, and the decision itself with a named human who can explain it."
+    },
+    {
+      "title": "Before You Scan",
+      "collection": "Training",
+      "path": "training/qr-code-scams/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "One short lesson on QR codes in emails, documents, and public places: why a code is a link you cannot read, how to preview it, and when to report instead of scanning."
+    },
+    {
+      "title": "Calls That Want Something",
+      "collection": "Training",
+      "path": "training/voice-phishing/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "One short lesson on the calls and voicemails that ask for a code, a password, a payment, or remote access, and the single habit that defeats them."
     },
     {
       "title": "Check Google Workspace user scope before changing access",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/google-user-scope.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "The official manage-users webinar is listed as 31:50. Use it for user-management orientation, not as an exact 2SV procedure. The official hub embeds video ID PGvxTmolKGc; the hub was updated September 18, 2026, but the video's publication date…"
+      "description": "Diagram which organizational units and groups a fictional Google Workspace setting reaches before changing access, then update an enrollment-readiness note. A 25-minute tabletop paired with official Google admin material."
     },
     {
       "title": "Deliver one useful training session, then check what carries forward",
@@ -831,11 +845,25 @@
       "description": "Deliver a proposed 60-minute vendor task-card session, then plan 30-day follow-up with a coach rubric, blank learner log and fictional example. Keep assisted practice, independent reasoning and work authority separate."
     },
     {
+      "title": "Downloads, Extensions, and Pop-ups",
+      "collection": "Training",
+      "path": "training/secure-browsing-and-downloads/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "A short module on where risky software really comes from, how to read a download page and an address bar, and what to do after a bad install."
+    },
+    {
+      "title": "Email Habits That Hold",
+      "collection": "Training",
+      "path": "training/email-security-habits/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "One short lesson that turns six everyday email habits into a personal checklist, practiced on one suspicious message and one quietly compromised mailbox."
+    },
+    {
       "title": "Explain an Entra Conditional Access decision",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/entra-access-decision.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "Microsoft's device and Conditional Access demonstration, published March 10, 2025, lists chapters at 12:40 for Conditional Access and 15:40 for emergency access. These are verified chapter labels; end-to-end playback and captions were not…"
+      "description": "Explain a fictional Entra Conditional Access decision: which users a report-only policy includes or excludes, what the sign-in evidence shows, and whether it is ready to enforce. A 25-minute tabletop paired with official Microsoft material."
     },
     {
       "title": "Google Workspace operator: scope, verify, and recover",
@@ -849,7 +877,14 @@
       "collection": "Training",
       "path": "training/vendor-walkthroughs/n8n-import-and-result.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "Start at the official n8n education portal and N8N101 Essentials, 2026H2. The public outline covers canvas, nodes, execution and data flow. It was inspected; enrolled lessons, video playback, captions and transcripts were not. Publication date…"
+      "description": "Inspect an imported n8n example and record its actual result for four fictional cases, separating execution status from the business outcome. A 30-minute tabletop paired with the official n8n Essentials outline."
+    },
+    {
+      "title": "Insider Risk Without Suspicion",
+      "collection": "Training",
+      "path": "training/insider-threat-awareness/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "A short module on why most insider incidents are mistakes or convenience, what the rare deliberate ones look like, and how to raise a concern without accusing anyone."
     },
     {
       "title": "Intune device operations: understand a compliance result",
@@ -863,7 +898,7 @@
       "collection": "Training",
       "path": "training/vendor-walkthroughs/intune-compliance-evidence.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "Microsoft's device and Conditional Access demonstration, March 10, 2025, lists a compliance-policy chapter at 03:58 and access-policy chapter at 12:40. The chapter list was inspected; playback, captions and a full transcript were not verified."
+      "description": "Trace a fictional Intune compliance result from policy assignment through evaluation to the access outcome, and say which evidence is current. A 25-minute tabletop paired with official Microsoft demonstration chapters."
     },
     {
       "title": "Jamf device operations: prove scope and execution",
@@ -887,25 +922,60 @@
       "description": "Import an example, compare expected records, distinguish business exceptions from execution failures, and record recovery."
     },
     {
+      "title": "Passwords, Passkeys, and MFA",
+      "collection": "Training",
+      "path": "training/sign-in-security/README.md",
+      "readiness": "Security awareness course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three practical lessons on keeping one password per account, choosing a second factor that resists phishing, and recovering safely when something goes wrong."
+    },
+    {
+      "title": "Personal Information in Plain Words",
+      "collection": "Training",
+      "path": "training/understanding-personal-information/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "One short lesson on recognizing personal information in ordinary files, keeping only what a task needs, and knowing where it may live and who to tell."
+    },
+    {
+      "title": "Phishing and Social Engineering",
+      "collection": "Training",
+      "path": "training/phishing-and-social-engineering/README.md",
+      "readiness": "Security awareness course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three practical lessons on reading a message for the pressure it carries, verifying it through a channel it did not supply, and reporting a click without fear."
+    },
+    {
       "title": "Prove a Jamf inventory policy reached the intended Mac",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/jamf-inventory-policy.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "Use the public Jamf 100 lessons: 17 — Device Scope, 22 — Deploy a Policy, and 23 — Policies and Jamf Self Service. Each page has video plus written key points, review and practice material. Use the written material as the reading alternative;…"
+      "description": "Prove that a fictional Jamf policy reached the intended Mac by comparing scope, execution, and inventory evidence and flagging what is stale. A 25-minute tabletop paired with the public Jamf 100 lessons on scope and policies."
+    },
+    {
+      "title": "Putting an AI Agent to Work Safely",
+      "collection": "Training",
+      "path": "training/putting-an-ai-agent-to-work-safely/README.md",
+      "readiness": "Technology operations course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three lessons for putting an AI agent that can act to work at a small high-trust firm: scope its authority, isolate and broker what it touches, and plan how to watch it and stop it."
+    },
+    {
+      "title": "Ransomware: What Everyone Can Do",
+      "collection": "Training",
+      "path": "training/ransomware-awareness/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "A short module on how ransomware arrives, what its first minutes look like, and the two things anyone can do that help most: disconnect and speak up."
     },
     {
       "title": "Recover an n8n example without confusing failure states",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/n8n-failure-and-recovery.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "Use the official N8N102 Integrations and N8N103 In Practice outlines, edition 2026H2, for error handling, debugging and maintenance topics. Their publication dates were not displayed. The public outlines were reviewed; enrolled lessons, videos,…"
+      "description": "Classify a fictional n8n failure, decide what recovery is possible, and write a handover another operator can reproduce. A 30-minute tabletop paired with the official n8n Integrations and In Practice outlines."
     },
     {
       "title": "Route a Microsoft 365 request to the right owner",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/microsoft-admin-routing.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "Use Microsoft's admin-center overview, updated February 2, 2026. The page contains videos for simplified and dashboard views with accompanying explanatory text. Read that text if video is unavailable; it is not identified here as a verified…"
+      "description": "Route four fictional Microsoft 365 requests to the right owner and administration surface, separating technical access from business approval and naming the evidence each needs. A 20-minute tabletop; no tenant or login required."
     },
     {
       "title": "SaaS ownership and handover: can someone else operate it?",
@@ -915,18 +985,74 @@
       "description": "Rehearse service ownership, administrator transfer, billing, integrations, vendor dependencies, and handover acceptance."
     },
     {
-      "title": "Training catalog",
+      "title": "Sharing Without Leaking",
       "collection": "Training",
-      "path": "training/CATALOG.md",
-      "readiness": "Practice module; labs not executed",
-      "description": "<!-- Generated by training/lib/build-catalog.mjs from every course.json. Edit the courses or journeys.json and regenerate. -->"
+      "path": "training/handling-sensitive-information/README.md",
+      "readiness": "Security awareness course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three practical lessons for deciding what is sensitive, sharing it on purpose, and correcting a mis-share in the first hour rather than the first week."
+    },
+    {
+      "title": "The First Hour",
+      "collection": "Training",
+      "path": "training/the-first-hour/README.md",
+      "readiness": "Technology operations course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three lessons on the first hour of a cyber incident at a small firm: a plan that names people, a triage record that separates facts from assumptions, and a communication plan with the first sentence each person hears."
+    },
+    {
+      "title": "Using AI Without Leaking",
+      "collection": "Training",
+      "path": "training/safe-ai-use-at-work/README.md",
+      "readiness": "AI at work course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three lessons on using an AI assistant without leaking client, investor, or personal information, being steered by the material you paste, or passing on a confident mistake."
     },
     {
       "title": "Verify access to a Google shared drive",
       "collection": "Training",
       "path": "training/vendor-walkthroughs/google-shared-drive-access.md",
       "readiness": "Official video and reading paths with original exercises; participant practice unexecuted",
-      "description": "The official shared-drives webinar is listed as 20:44 and covers drive creation, membership, access levels and files. The hub's observed embed ID is HXkFgMUkjaI. Its September 18, 2026 page update is not the video's publication date, which…"
+      "description": "Build an expected-versus-observed access matrix for two files and two users on a fictional Google shared drive, then explain each allowed and denied result. A 25-minute tabletop paired with the official shared-drives webinar."
+    },
+    {
+      "title": "Verify Before You Pay",
+      "collection": "Training",
+      "path": "training/verify-before-you-pay/README.md",
+      "readiness": "Security awareness course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three practical lessons on spotting business email compromise, verifying payment changes through a second channel, and writing a procedure a small firm can actually follow."
+    },
+    {
+      "title": "What a Safeguards Program Actually Contains",
+      "collection": "Training",
+      "path": "training/safeguards-for-a-small-investment-firm/README.md",
+      "readiness": "Technology operations short module; fictional packet and authored answer keys; no learner trial",
+      "description": "One short lesson on the nine components a written information security program is generally expected to contain, and how a small firm shows each with dated evidence rather than a binder."
+    },
+    {
+      "title": "What Your Profile Gives Away",
+      "collection": "Training",
+      "path": "training/social-media-security/README.md",
+      "readiness": "Security awareness short module; fictional packet and authored answer keys; no learner trial",
+      "description": "A short module on how ordinary public posts add up to a convincing pretext, and the one posting habit that removes most of the risk."
+    },
+    {
+      "title": "When the Assistant Is Confidently Wrong",
+      "collection": "Training",
+      "path": "training/ai-hallucinations-and-misinformation/README.md",
+      "readiness": "AI at work short module; fictional packet and authored answer keys; no learner trial",
+      "description": "A short module on spotting fabricated statistics, report titles, dates, and quotes in AI-assisted text, and tracing each claim to its primary source before it leaves the firm."
+    },
+    {
+      "title": "Where AI Helps a Small Security Team",
+      "collection": "Training",
+      "path": "training/ai-in-the-security-program/README.md",
+      "readiness": "Technology operations short module; fictional packet and authored answer keys; no learner trial",
+      "description": "One short lesson on which security tasks an assistant does well, which decisions stay with a person, what never enters a tool without a data agreement, and how every claim gets verified."
+    },
+    {
+      "title": "Working Securely Anywhere",
+      "collection": "Training",
+      "path": "training/working-securely-anywhere/README.md",
+      "readiness": "Security awareness course; fictional packet and authored answer keys; no learner trial",
+      "description": "Three practical lessons on keeping a laptop or phone trustworthy, working on someone else's network without fear, and handling personal devices and unapproved apps."
     },
     {
       "title": "Azure Container Apps deployment pattern",
