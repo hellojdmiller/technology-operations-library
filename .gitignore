@@ -11,3 +11,4 @@ local-results/
 *.parameters.local.json
 raw-sources/
 source-provenance/
+landscape/lib/cache/signals/raw/

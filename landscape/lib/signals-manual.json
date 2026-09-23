@@ -1,0 +1,2147 @@
+{
+  "_readme": "Hand-maintained inputs for lib/fetch-signals.mjs. Every entry is either a decision about an automatic match (Form D accept/reject, with the reason) or a candidate that the fetcher verifies over the network before it is used (repositories must exist on GitHub, packages must return download data, announcement and event URLs must answer and must contain the evidence phrase). Nothing here is written into signals.json unverified.",
+  "formD": {
+    "aliases": {
+      "xai": [
+        "X.AI Corp.",
+        "X.AI Holdings Corp."
+      ],
+      "ramp": [
+        "Ramp Business Corp"
+      ],
+      "decagon": [
+        "Decagon AI, Inc."
+      ],
+      "grafana-labs": [
+        "Raintank Inc."
+      ],
+      "zed": [
+        "Zed Industries, Inc."
+      ],
+      "fleet": [
+        "Fleet Device Management Inc."
+      ],
+      "arize": [
+        "Arize AI, Inc."
+      ],
+      "personio": [
+        "Personio Group SE"
+      ],
+      "visible": [
+        "Visible.vc, Inc."
+      ],
+      "omnissa": [
+        "Omnissa Holdco LLC"
+      ],
+      "grammarly": [
+        "Superhuman Platform Inc."
+      ],
+      "lovable": [
+        "Lovable Labs Inc"
+      ],
+      "clay": [
+        "Clay Labs Inc."
+      ],
+      "mercury": [
+        "Mercury Technologies, Inc."
+      ],
+      "veeam": [
+        "Veeam Software Holding Inc."
+      ],
+      "kaseya": [
+        "Kaseya Holdings Inc."
+      ],
+      "wasabi": [
+        "Wasabi Holding, Inc."
+      ],
+      "sigma-computing": [
+        "Sigma Computing, Inc."
+      ],
+      "cake-equity": [
+        "Cake Equity Holdings, Inc."
+      ],
+      "juniper-square": [
+        "Juniper Square, Inc."
+      ]
+    },
+    "accept": {
+      "grammarly": {
+        "0002033975": "Same CIK filed as Grammarly, Inc. and later as Superhuman Platform Inc.; EDGAR former-names record the rename"
+      },
+      "supabase": {
+        "0001829334": "Supabase, Inc. filings list a Singapore address in 2024 and a Delaware address later; the same registrant"
+      },
+      "personio": {
+        "0002071225": "Personio Group SE, Munich; the German HR vendor"
+      },
+      "visible": {
+        "0001619876": "Visible.vc, Inc.; the legal name carries the product domain"
+      },
+      "omnissa": {
+        "0002030062": "Omnissa Holdco LLC, Mountain View; the KKR carve-out of VMware end-user computing"
+      },
+      "push-security": {
+        "0001948464": "Push Security, Inc., Boston; the US entity of the London company, amount matches its announced Series B"
+      },
+      "granola": {
+        "0001969640": "Granola, Inc.; Delaware registered-agent address for the London company, amount matches its announced Series A"
+      },
+      "zitadel": {
+        "0002031136": "Zitadel, Inc., San Francisco; US entity of the Swiss company"
+      },
+      "framer": {
+        "0001658299": "Framer, Inc., Netherlands address; amount matches its announced Series D"
+      },
+      "snowflake": {
+        "0001640147": "Snowflake Inc., Bozeman MT, the public company (Form D can be filed by public companies for exempt placements)"
+      },
+      "lovable": {
+        "0002055162": "Lovable Labs Inc, Delaware registered agent address; the US entity of the Swedish company, amounts match its announced rounds"
+      },
+      "sonarsource": {
+        "0002098632": "SonarSource, Inc, Austin; the US entity of the Swiss company"
+      },
+      "veeam": {
+        "0001882091": "Veeam Software Holding Inc., Kirkland WA; Veeam moved its headquarters to Kirkland"
+      },
+      "zoominfo": {
+        "0001794515": "ZoomInfo Technologies Inc., Vancouver WA, the public company; the landscape hqCountry disagrees and should be reviewed"
+      }
+    },
+    "reject": {
+      "openai-codex": {
+        "0002036789": "Codex Labs Corp, San Jose, is not OpenAI Codex"
+      },
+      "axiom": {
+        "0001819732": "Axiom, Inc. of San Francisco could not be tied to axiom.co; not forced"
+      },
+      "clay": {
+        "0002007583": "Clay Technologies, Inc., London, is a different company from clay.com (Clay Labs Inc., New York)"
+      },
+      "coda": {
+        "0001976426": "Coda Group, Inc., Spokane, is not coda.io"
+      },
+      "cognition": {
+        "0001993674": "Cognition Corp, Lexington MA, is not cognition.ai"
+      },
+      "element": {
+        "0002068417": "Element Labs Inc., Brooklyn, is not element.io"
+      },
+      "goose": {
+        "0001996852": "Goose Holdings, Inc., Chicago, is unrelated to the open-source agent"
+      },
+      "lumos": {
+        "0001923584": "Lumos Technologies, Inc., North Carolina, is a fiber network operator"
+      },
+      "render": {
+        "0002105360": "Render LLC, Tennessee, is not render.com"
+      },
+      "sierra": {
+        "0001857137": "Sierra Co LLC, Minnesota, is not sierra.ai",
+        "0001857156": "Sierra Holding Co LLC, Minnesota, is not sierra.ai"
+      },
+      "starburst": {
+        "0001558890": "Starburst Labs, Inc., Providence, could not be tied to Starburst Data of Boston; not forced"
+      },
+      "vanta": {
+        "0002091015": "Vanta Group Inc., Florida, is not vanta.com"
+      }
+    }
+  },
+  "repos": {
+    "a2a-protocol": "a2aproject/A2A",
+    "activepieces": "activepieces/activepieces",
+    "affine": "toeverything/AFFiNE",
+    "aider": "Aider-AI/aider",
+    "airbyte": "airbytehq/airbyte",
+    "alfresco": "Alfresco/alfresco-community-repo",
+    "anytype": "anyproto/anytype-ts",
+    "appflowy": "AppFlowy-IO/AppFlowy",
+    "appsmith": "appsmithorg/appsmith",
+    "aqua-security": "aquasecurity/trivy",
+    "argo-cd": "argoproj/argo-cd",
+    "arize": "Arize-ai/phoenix",
+    "baserow": "bram2w/baserow",
+    "bicep": "Azure/bicep",
+    "budibase": "Budibase/budibase",
+    "chroma": "chroma-core/chroma",
+    "claude-agent-sdk": "anthropics/claude-agent-sdk-python",
+    "confident-ai": "confident-ai/deepeval",
+    "continue": "continuedev/continue",
+    "convex": "get-convex/convex-backend",
+    "coolify": "coollabsio/coolify",
+    "dbt-labs": "dbt-labs/dbt-core",
+    "defectdojo": "DefectDojo/django-DefectDojo",
+    "directus": "directus/directus",
+    "docmost": "docmost/docmost",
+    "documenso": "documenso/documenso",
+    "docuseal": "docusealco/docuseal",
+    "dokploy": "Dokploy/dokploy",
+    "duckdb": "duckdb/duckdb",
+    "element": "element-hq/element-web",
+    "ente": "ente-io/ente",
+    "external-secrets-operator": "external-secrets/external-secrets",
+    "fleet": "fleetdm/fleet",
+    "flowise": "FlowiseAI/Flowise",
+    "giskard": "Giskard-AI/giskard",
+    "git": "git/git",
+    "gitleaks": "gitleaks/gitleaks",
+    "glpi": "glpi-project/glpi",
+    "gophish": "gophish/gophish",
+    "grafana-labs": "grafana/grafana",
+    "greenbone": "greenbone/openvas-scanner",
+    "headscale": "juanfont/headscale",
+    "helicone": "Helicone/helicone",
+    "hugging-face": "huggingface/transformers",
+    "infisical": "Infisical/infisical",
+    "langflow": "langflow-ai/langflow",
+    "langfuse": "langfuse/langfuse",
+    "lets-encrypt": "letsencrypt/boulder",
+    "libreoffice": "LibreOffice/core",
+    "lightdash": "lightdash/lightdash",
+    "litellm": "BerriAI/litellm",
+    "llamaindex": "run-llama/llama_index",
+    "mastra": "mastra-ai/mastra",
+    "meltano": "meltano/meltano",
+    "moodle": "moodle/moodle",
+    "neon": "neondatabase/neon",
+    "openai-agents-sdk": "openai/openai-agents-python",
+    "openvpn": "OpenVPN/openvpn",
+    "openwrt": "openwrt/openwrt",
+    "opnsense": "opnsense/core",
+    "osticket": "osTicket/osTicket",
+    "outline": "outline/outline",
+    "owncloud": "owncloud/ocis",
+    "papermark": "mfts/papermark",
+    "pi-hole": "pi-hole/pi-hole",
+    "plane": "makeplane/plane",
+    "portkey": "Portkey-AI/gateway",
+    "prefect": "PrefectHQ/prefect",
+    "projectdiscovery": "projectdiscovery/nuclei",
+    "prowler": "prowler-cloud/prowler",
+    "roo-code": "RooCodeInc/Roo-Code",
+    "rudderstack": "rudderlabs/rudder-server",
+    "semaphore": "semaphoreio/semaphore",
+    "signoz": "SigNoz/signoz",
+    "snipe-it": "grokability/snipe-it",
+    "sonarsource": "SonarSource/sonarqube",
+    "sqlite": "sqlite/sqlite",
+    "steampipe": "turbot/steampipe",
+    "terragrunt": "gruntwork-io/terragrunt",
+    "tigerdata": "timescale/timescaledb",
+    "tooljet": "ToolJet/ToolJet",
+    "trigger-dev": "triggerdotdev/trigger.dev",
+    "truffle-security": "trufflesecurity/trufflehog",
+    "turso": "tursodatabase/turso",
+    "twenty": "twentyhq/twenty",
+    "vercel-ai-sdk": "vercel/ai",
+    "windmill": "windmill-labs/windmill"
+  },
+  "reposSkipped": {
+    "codeberg": "Hosted on its own Forgejo instance, not GitHub",
+    "forgejo": "Primary repository is on Codeberg, the GitHub copy is a mirror without stargazer history",
+    "eramba": "Community edition source is distributed from the vendor site, no canonical GitHub repository found",
+    "starburst": "Commercial distribution of Trino; Trino itself is a separate vendor node",
+    "thunderbird": "Desktop source lives in Mozilla Mercurial; the GitHub Android repository does not represent the desktop client",
+    "wireguard": "Canonical repositories are on git.zx2c4.com; GitHub copies are mirrors"
+  },
+  "packages": {
+    "n8n": {
+      "npm": [
+        "n8n"
+      ],
+      "dockerhub": "n8nio/n8n"
+    },
+    "vercel-ai-sdk": {
+      "npm": [
+        "ai"
+      ]
+    },
+    "langchain": {
+      "npm": [
+        "langchain"
+      ],
+      "pypi": [
+        "langchain"
+      ]
+    },
+    "llamaindex": {
+      "npm": [
+        "llamaindex"
+      ],
+      "pypi": [
+        "llama-index"
+      ]
+    },
+    "litellm": {
+      "pypi": [
+        "litellm"
+      ]
+    },
+    "crewai": {
+      "pypi": [
+        "crewai"
+      ]
+    },
+    "langfuse": {
+      "npm": [
+        "langfuse"
+      ],
+      "pypi": [
+        "langfuse"
+      ]
+    },
+    "mastra": {
+      "npm": [
+        "@mastra/core"
+      ]
+    },
+    "openai-agents-sdk": {
+      "pypi": [
+        "openai-agents"
+      ]
+    },
+    "claude-agent-sdk": {
+      "pypi": [
+        "claude-agent-sdk"
+      ],
+      "npm": [
+        "@anthropic-ai/claude-agent-sdk"
+      ]
+    },
+    "claude-code": {
+      "npm": [
+        "@anthropic-ai/claude-code"
+      ]
+    },
+    "openai-codex": {
+      "npm": [
+        "@openai/codex"
+      ]
+    },
+    "gemini-cli": {
+      "npm": [
+        "@google/gemini-cli"
+      ]
+    },
+    "opencode": {
+      "npm": [
+        "opencode-ai"
+      ]
+    },
+    "aider": {
+      "pypi": [
+        "aider-chat"
+      ]
+    },
+    "model-context-protocol": {
+      "npm": [
+        "@modelcontextprotocol/sdk"
+      ],
+      "pypi": [
+        "mcp"
+      ]
+    },
+    "fastmcp": {
+      "pypi": [
+        "fastmcp"
+      ]
+    },
+    "pydantic-ai": {
+      "pypi": [
+        "pydantic-ai"
+      ]
+    },
+    "smolagents": {
+      "pypi": [
+        "smolagents"
+      ]
+    },
+    "dspy": {
+      "pypi": [
+        "dspy"
+      ]
+    },
+    "microsoft-autogen": {
+      "pypi": [
+        "autogen-agentchat"
+      ]
+    },
+    "semantic-kernel": {
+      "pypi": [
+        "semantic-kernel"
+      ]
+    },
+    "google-adk": {
+      "pypi": [
+        "google-adk"
+      ]
+    },
+    "browser-use": {
+      "pypi": [
+        "browser-use"
+      ]
+    },
+    "composio": {
+      "pypi": [
+        "composio"
+      ]
+    },
+    "chroma": {
+      "pypi": [
+        "chromadb"
+      ]
+    },
+    "weaviate": {
+      "pypi": [
+        "weaviate-client"
+      ]
+    },
+    "qdrant": {
+      "pypi": [
+        "qdrant-client"
+      ],
+      "dockerhub": "qdrant/qdrant"
+    },
+    "milvus": {
+      "pypi": [
+        "pymilvus"
+      ],
+      "dockerhub": "milvusdb/milvus"
+    },
+    "lancedb": {
+      "pypi": [
+        "lancedb"
+      ]
+    },
+    "pinecone": {
+      "pypi": [
+        "pinecone"
+      ]
+    },
+    "pgvector": {
+      "pypi": [
+        "pgvector"
+      ]
+    },
+    "vllm": {
+      "pypi": [
+        "vllm"
+      ]
+    },
+    "ollama": {
+      "pypi": [
+        "ollama"
+      ],
+      "dockerhub": "ollama/ollama",
+      "homebrew": {
+        "formula": "ollama"
+      }
+    },
+    "mlflow": {
+      "pypi": [
+        "mlflow"
+      ]
+    },
+    "weights-and-biases": {
+      "pypi": [
+        "wandb"
+      ]
+    },
+    "promptfoo": {
+      "npm": [
+        "promptfoo"
+      ]
+    },
+    "guardrails-ai": {
+      "pypi": [
+        "guardrails-ai"
+      ]
+    },
+    "confident-ai": {
+      "pypi": [
+        "deepeval"
+      ]
+    },
+    "giskard": {
+      "pypi": [
+        "giskard"
+      ]
+    },
+    "dbt-labs": {
+      "pypi": [
+        "dbt-core"
+      ]
+    },
+    "apache-airflow": {
+      "pypi": [
+        "apache-airflow"
+      ]
+    },
+    "prefect": {
+      "pypi": [
+        "prefect"
+      ]
+    },
+    "dagster": {
+      "pypi": [
+        "dagster"
+      ]
+    },
+    "meltano": {
+      "pypi": [
+        "meltano"
+      ]
+    },
+    "duckdb": {
+      "pypi": [
+        "duckdb"
+      ],
+      "npm": [
+        "duckdb"
+      ],
+      "homebrew": {
+        "formula": "duckdb"
+      }
+    },
+    "trino": {
+      "pypi": [
+        "trino"
+      ],
+      "dockerhub": "trinodb/trino"
+    },
+    "apache-spark": {
+      "pypi": [
+        "pyspark"
+      ]
+    },
+    "clickhouse": {
+      "pypi": [
+        "clickhouse-connect"
+      ],
+      "dockerhub": "clickhouse/clickhouse-server"
+    },
+    "supabase": {
+      "npm": [
+        "@supabase/supabase-js"
+      ],
+      "pypi": [
+        "supabase"
+      ]
+    },
+    "pocketbase": {
+      "npm": [
+        "pocketbase"
+      ]
+    },
+    "convex": {
+      "npm": [
+        "convex"
+      ]
+    },
+    "turso": {
+      "npm": [
+        "@libsql/client"
+      ]
+    },
+    "neon": {
+      "npm": [
+        "@neondatabase/serverless"
+      ]
+    },
+    "redis": {
+      "pypi": [
+        "redis"
+      ],
+      "dockerhub": "library/redis"
+    },
+    "valkey": {
+      "dockerhub": "valkey/valkey"
+    },
+    "postgresql": {
+      "dockerhub": "library/postgres"
+    },
+    "mysql": {
+      "dockerhub": "library/mysql"
+    },
+    "mariadb": {
+      "dockerhub": "library/mariadb"
+    },
+    "mongodb": {
+      "dockerhub": "library/mongo"
+    },
+    "elastic": {
+      "dockerhub": "library/elasticsearch"
+    },
+    "opensearch": {
+      "dockerhub": "opensearchproject/opensearch"
+    },
+    "grafana-labs": {
+      "dockerhub": "grafana/grafana"
+    },
+    "prometheus": {
+      "dockerhub": "prom/prometheus"
+    },
+    "victoriametrics": {
+      "dockerhub": "victoriametrics/victoria-metrics"
+    },
+    "signoz": {
+      "dockerhub": "signoz/signoz"
+    },
+    "opentelemetry": {
+      "npm": [
+        "@opentelemetry/api"
+      ],
+      "pypi": [
+        "opentelemetry-api"
+      ]
+    },
+    "jaeger": {
+      "dockerhub": "jaegertracing/all-in-one"
+    },
+    "sentry": {
+      "npm": [
+        "@sentry/node"
+      ],
+      "pypi": [
+        "sentry-sdk"
+      ]
+    },
+    "uptime-kuma": {
+      "dockerhub": "louislam/uptime-kuma"
+    },
+    "posthog": {
+      "npm": [
+        "posthog-js"
+      ],
+      "pypi": [
+        "posthog"
+      ]
+    },
+    "plausible": {
+      "dockerhub": "plausible/analytics"
+    },
+    "matomo": {
+      "dockerhub": "library/matomo"
+    },
+    "opentofu": {
+      "homebrew": {
+        "formula": "opentofu"
+      }
+    },
+    "terragrunt": {
+      "homebrew": {
+        "formula": "terragrunt"
+      }
+    },
+    "pulumi": {
+      "pypi": [
+        "pulumi"
+      ],
+      "npm": [
+        "@pulumi/pulumi"
+      ],
+      "homebrew": {
+        "formula": "pulumi"
+      }
+    },
+    "ansible": {
+      "pypi": [
+        "ansible-core"
+      ],
+      "homebrew": {
+        "formula": "ansible"
+      }
+    },
+    "checkov": {
+      "pypi": [
+        "checkov"
+      ]
+    },
+    "kubernetes": {
+      "homebrew": {
+        "formula": "kubernetes-cli"
+      }
+    },
+    "helm": {
+      "homebrew": {
+        "formula": "helm"
+      }
+    },
+    "k3s": {
+      "dockerhub": "rancher/k3s"
+    },
+    "argo-cd": {
+      "homebrew": {
+        "formula": "argocd"
+      }
+    },
+    "flux": {
+      "homebrew": {
+        "formula": "flux"
+      }
+    },
+    "crossplane": {
+      "homebrew": {
+        "formula": "crossplane"
+      }
+    },
+    "cilium": {
+      "homebrew": {
+        "formula": "cilium-cli"
+      }
+    },
+    "istio": {
+      "homebrew": {
+        "formula": "istioctl"
+      }
+    },
+    "linkerd": {
+      "homebrew": {
+        "formula": "linkerd"
+      }
+    },
+    "traefik": {
+      "dockerhub": "library/traefik",
+      "homebrew": {
+        "formula": "traefik"
+      }
+    },
+    "caddy": {
+      "dockerhub": "library/caddy",
+      "homebrew": {
+        "formula": "caddy"
+      }
+    },
+    "nginx": {
+      "dockerhub": "library/nginx"
+    },
+    "envoy": {
+      "dockerhub": "envoyproxy/envoy"
+    },
+    "portainer": {
+      "dockerhub": "portainer/portainer-ce"
+    },
+    "podman": {
+      "homebrew": {
+        "formula": "podman"
+      }
+    },
+    "docker": {
+      "homebrew": {
+        "cask": "docker-desktop"
+      }
+    },
+    "trivy": {
+      "homebrew": {
+        "formula": "trivy"
+      }
+    },
+    "gitleaks": {
+      "homebrew": {
+        "formula": "gitleaks"
+      }
+    },
+    "truffle-security": {
+      "homebrew": {
+        "formula": "trufflehog"
+      }
+    },
+    "semgrep": {
+      "pypi": [
+        "semgrep"
+      ],
+      "homebrew": {
+        "formula": "semgrep"
+      }
+    },
+    "checkly": {
+      "npm": [
+        "checkly"
+      ]
+    },
+    "sops": {
+      "homebrew": {
+        "formula": "sops"
+      }
+    },
+    "hashicorp-vault": {
+      "dockerhub": "hashicorp/vault"
+    },
+    "openbao": {
+      "homebrew": {
+        "formula": "openbao"
+      }
+    },
+    "infisical": {
+      "npm": [
+        "@infisical/sdk"
+      ],
+      "dockerhub": "infisical/infisical"
+    },
+    "tailscale": {
+      "homebrew": {
+        "cask": "tailscale-app"
+      }
+    },
+    "headscale": {
+      "dockerhub": "headscale/headscale"
+    },
+    "netbird": {
+      "dockerhub": "netbirdio/netbird"
+    },
+    "wireguard": {
+      "homebrew": {
+        "formula": "wireguard-tools"
+      }
+    },
+    "zerotier": {
+      "homebrew": {
+        "cask": "zerotier-one"
+      }
+    },
+    "pi-hole": {
+      "dockerhub": "pihole/pihole"
+    },
+    "adguard": {
+      "dockerhub": "adguard/adguardhome"
+    },
+    "wazuh": {
+      "dockerhub": "wazuh/wazuh-manager"
+    },
+    "osquery": {
+      "homebrew": {
+        "cask": "osquery"
+      }
+    },
+    "fleet": {
+      "dockerhub": "fleetdm/fleet"
+    },
+    "keycloak": {
+      "dockerhub": "keycloak/keycloak"
+    },
+    "pomerium": {
+      "dockerhub": "pomerium/pomerium"
+    },
+    "teleport": {
+      "homebrew": {
+        "formula": "teleport"
+      }
+    },
+    "nextcloud": {
+      "dockerhub": "library/nextcloud"
+    },
+    "owncloud": {
+      "dockerhub": "owncloud/ocis"
+    },
+    "seafile": {
+      "dockerhub": "seafileltd/seafile-mc"
+    },
+    "immich": {
+      "dockerhub": "altran1502/immich-server"
+    },
+    "paperless-ngx": {
+      "dockerhub": "paperlessngx/paperless-ngx"
+    },
+    "docmost": {
+      "dockerhub": "docmost/docmost"
+    },
+    "outline": {
+      "dockerhub": "outlinewiki/outline"
+    },
+    "wiki-js": {
+      "dockerhub": "requarks/wiki"
+    },
+    "bookstack": {
+      "dockerhub": "linuxserver/bookstack"
+    },
+    "appflowy": {
+      "dockerhub": "appflowyinc/appflowy_cloud"
+    },
+    "logseq": {
+      "homebrew": {
+        "cask": "logseq"
+      }
+    },
+    "obsidian": {
+      "homebrew": {
+        "cask": "obsidian"
+      }
+    },
+    "joplin": {
+      "homebrew": {
+        "cask": "joplin"
+      }
+    },
+    "anytype": {
+      "homebrew": {
+        "cask": "anytype"
+      }
+    },
+    "libreoffice": {
+      "homebrew": {
+        "cask": "libreoffice"
+      }
+    },
+    "onlyoffice": {
+      "dockerhub": "onlyoffice/documentserver"
+    },
+    "mattermost": {
+      "dockerhub": "mattermost/mattermost-team-edition"
+    },
+    "rocket-chat": {
+      "dockerhub": "rocketchat/rocket.chat"
+    },
+    "zulip": {
+      "dockerhub": "zulip/docker-zulip"
+    },
+    "element": {
+      "dockerhub": "vectorim/element-web"
+    },
+    "jitsi": {
+      "dockerhub": "jitsi/web"
+    },
+    "signal": {
+      "homebrew": {
+        "cask": "signal"
+      }
+    },
+    "telegram": {
+      "homebrew": {
+        "cask": "telegram"
+      }
+    },
+    "discord": {
+      "homebrew": {
+        "cask": "discord"
+      }
+    },
+    "slack": {
+      "homebrew": {
+        "cask": "slack"
+      }
+    },
+    "zoom": {
+      "homebrew": {
+        "cask": "zoom"
+      }
+    },
+    "notion": {
+      "homebrew": {
+        "cask": "notion"
+      }
+    },
+    "linear": {
+      "homebrew": {
+        "cask": "linear"
+      }
+    },
+    "cursor": {
+      "homebrew": {
+        "cask": "cursor"
+      }
+    },
+    "zed": {
+      "homebrew": {
+        "cask": "zed"
+      }
+    },
+    "visual-studio-code": {
+      "homebrew": {
+        "cask": "visual-studio-code"
+      }
+    },
+    "1password": {
+      "homebrew": {
+        "cask": "1password"
+      }
+    },
+    "bitwarden": {
+      "homebrew": {
+        "cask": "bitwarden"
+      },
+      "npm": [
+        "@bitwarden/cli"
+      ]
+    },
+    "keepassxc": {
+      "homebrew": {
+        "cask": "keepassxc"
+      }
+    },
+    "vaultwarden": {
+      "dockerhub": "vaultwarden/server"
+    },
+    "passbolt": {
+      "dockerhub": "passbolt/passbolt"
+    },
+    "raycast": {
+      "homebrew": {
+        "cask": "raycast"
+      }
+    },
+    "restic": {
+      "homebrew": {
+        "formula": "restic"
+      }
+    },
+    "borgbackup": {
+      "homebrew": {
+        "formula": "borgbackup"
+      }
+    },
+    "duplicati": {
+      "dockerhub": "duplicati/duplicati"
+    },
+    "gitea": {
+      "dockerhub": "gitea/gitea"
+    },
+    "forgejo": {
+      "homebrew": {
+        "formula": "forgejo"
+      }
+    },
+    "woodpecker-ci": {
+      "dockerhub": "woodpeckerci/woodpecker-server"
+    },
+    "jenkins": {
+      "dockerhub": "jenkins/jenkins"
+    },
+    "gitlab": {
+      "dockerhub": "gitlab/gitlab-ce"
+    },
+    "semaphore": {
+      "dockerhub": "semaphoreui/semaphore"
+    },
+    "huginn": {
+      "dockerhub": "huginn/huginn"
+    },
+    "node-red": {
+      "npm": [
+        "node-red"
+      ],
+      "dockerhub": "nodered/node-red"
+    },
+    "activepieces": {
+      "dockerhub": "activepieces/activepieces"
+    },
+    "trigger-dev": {
+      "npm": [
+        "@trigger.dev/sdk"
+      ]
+    },
+    "inngest": {
+      "npm": [
+        "inngest"
+      ]
+    },
+    "temporal": {
+      "npm": [
+        "@temporalio/client"
+      ],
+      "pypi": [
+        "temporalio"
+      ]
+    },
+    "dify": {
+      "dockerhub": "langgenius/dify-api"
+    },
+    "flowise": {
+      "npm": [
+        "flowise"
+      ]
+    },
+    "langflow": {
+      "pypi": [
+        "langflow"
+      ]
+    },
+    "nocodb": {
+      "dockerhub": "nocodb/nocodb"
+    },
+    "baserow": {
+      "dockerhub": "baserow/baserow"
+    },
+    "appsmith": {
+      "dockerhub": "appsmith/appsmith-ce"
+    },
+    "tooljet": {
+      "dockerhub": "tooljet/tooljet"
+    },
+    "budibase": {
+      "dockerhub": "budibase/budibase"
+    },
+    "directus": {
+      "npm": [
+        "directus"
+      ],
+      "dockerhub": "directus/directus"
+    },
+    "twenty": {
+      "dockerhub": "twentycrm/twenty"
+    },
+    "plane": {
+      "dockerhub": "makeplane/plane-frontend"
+    },
+    "openproject": {
+      "dockerhub": "openproject/openproject"
+    },
+    "documenso": {
+      "dockerhub": "documenso/documenso"
+    },
+    "docuseal": {
+      "dockerhub": "docuseal/docuseal"
+    },
+    "metabase": {
+      "dockerhub": "metabase/metabase"
+    },
+    "apache-superset": {
+      "pypi": [
+        "apache-superset"
+      ],
+      "dockerhub": "apache/superset"
+    },
+    "redash": {
+      "dockerhub": "redash/redash"
+    },
+    "lightdash": {
+      "dockerhub": "lightdash/lightdash"
+    },
+    "airbyte": {
+      "dockerhub": "airbyte/server"
+    },
+    "rudderstack": {
+      "dockerhub": "rudderlabs/rudder-server"
+    },
+    "apache-kafka": {
+      "dockerhub": "apache/kafka"
+    },
+    "steampipe": {
+      "homebrew": {
+        "formula": "steampipe"
+      }
+    },
+    "prowler": {
+      "pypi": [
+        "prowler"
+      ]
+    },
+    "cloud-custodian": {
+      "pypi": [
+        "c7n"
+      ]
+    },
+    "projectdiscovery": {
+      "homebrew": {
+        "formula": "nuclei"
+      }
+    },
+    "defectdojo": {
+      "dockerhub": "defectdojo/defectdojo-django"
+    },
+    "gophish": {
+      "dockerhub": "gophish/gophish"
+    },
+    "zabbix": {
+      "dockerhub": "zabbix/zabbix-server-pgsql"
+    },
+    "nagios": {
+      "dockerhub": "jasonrivers/nagios"
+    },
+    "snipe-it": {
+      "dockerhub": "snipe/snipe-it"
+    },
+    "glpi": {
+      "dockerhub": "diouxx/glpi"
+    },
+    "zammad": {
+      "dockerhub": "zammad/zammad-docker-compose"
+    },
+    "osticket": {
+      "dockerhub": "osticket/osticket"
+    },
+    "meshcentral": {
+      "dockerhub": "typhonragewind/meshcentral"
+    },
+    "rustdesk": {
+      "homebrew": {
+        "cask": "rustdesk"
+      }
+    },
+    "moodle": {
+      "dockerhub": "bitnami/moodle"
+    },
+    "erpnext": {
+      "dockerhub": "frappe/erpnext"
+    },
+    "odoo": {
+      "dockerhub": "library/odoo"
+    },
+    "hugging-face": {
+      "pypi": [
+        "transformers"
+      ]
+    },
+    "llama-cpp": {
+      "pypi": [
+        "llama-cpp-python"
+      ],
+      "homebrew": {
+        "formula": "llama.cpp"
+      }
+    },
+    "openrouter": {
+      "npm": [
+        "@openrouter/ai-sdk-provider"
+      ]
+    },
+    "browserbase": {
+      "npm": [
+        "@browserbasehq/sdk"
+      ]
+    },
+    "e2b": {
+      "pypi": [
+        "e2b"
+      ],
+      "npm": [
+        "e2b"
+      ]
+    },
+    "roo-code": {
+      "npm": [
+        "@roo-code/types"
+      ]
+    },
+    "cline": {
+      "npm": [
+        "cline"
+      ]
+    },
+    "continue": {
+      "npm": [
+        "@continuedev/cli"
+      ]
+    },
+    "goose": {
+      "homebrew": {
+        "formula": "block-goose-cli"
+      }
+    },
+    "coolify": {
+      "dockerhub": "coollabsio/coolify"
+    },
+    "dokploy": {
+      "dockerhub": "dokploy/dokploy"
+    },
+    "git": {
+      "homebrew": {
+        "formula": "git"
+      }
+    },
+    "sqlite": {
+      "homebrew": {
+        "formula": "sqlite"
+      }
+    },
+    "ente": {
+      "homebrew": {
+        "cask": "ente-auth"
+      }
+    },
+    "thunderbird": {
+      "homebrew": {
+        "cask": "thunderbird"
+      }
+    },
+    "mullvad": {
+      "homebrew": {
+        "cask": "mullvad-vpn"
+      }
+    },
+    "proton": {
+      "homebrew": {
+        "cask": "proton-mail"
+      }
+    },
+    "openvpn": {
+      "dockerhub": "kylemanna/openvpn"
+    }
+  },
+  "hn": {
+    "skip": {
+      "git": "Generic term; mentions are about the tool but cannot be separated from usage of the word",
+      "goose": "Common word; the open-source agent has no distinctive phrase that Hacker News titles use consistently"
+    },
+    "domainQueries": [
+      "absorb",
+      "affine",
+      "affinity",
+      "amplitude",
+      "anduin",
+      "anecdotes",
+      "archer",
+      "ashby",
+      "atlantis",
+      "axiom",
+      "bear",
+      "bicep",
+      "bill-com",
+      "box",
+      "braintrust",
+      "bubble",
+      "caddy",
+      "carta",
+      "census",
+      "chef",
+      "chroma",
+      "chronograph",
+      "clay",
+      "clio",
+      "clockwise",
+      "close",
+      "coda",
+      "cognition",
+      "continue",
+      "convex",
+      "conveyor",
+      "copper",
+      "cornerstone",
+      "dagger",
+      "decagon",
+      "domo",
+      "doodle",
+      "doppler",
+      "dust",
+      "elastic",
+      "element",
+      "ente",
+      "envoy",
+      "expel",
+      "f5",
+      "fathom-ai",
+      "fireflies-ai",
+      "fleet",
+      "flux",
+      "folk",
+      "framework",
+      "front",
+      "galileo",
+      "glean",
+      "glide",
+      "granola",
+      "grata",
+      "greenhouse",
+      "guru",
+      "harness",
+      "harmonic",
+      "haystack",
+      "helm",
+      "hex",
+      "hey",
+      "honeycomb",
+      "hover",
+      "ideals",
+      "intruder",
+      "jaeger",
+      "joplin",
+      "lattice",
+      "lever",
+      "lindy",
+      "linear",
+      "loom",
+      "lovable",
+      "lumos",
+      "make",
+      "manus",
+      "mega",
+      "mercury",
+      "neon",
+      "omni",
+      "outline",
+      "panther",
+      "passthrough",
+      "pdq",
+      "plane",
+      "prefect",
+      "preset",
+      "proton",
+      "prowler",
+      "pulley",
+      "puppet",
+      "railway",
+      "ramp",
+      "remarkable",
+      "remote",
+      "render",
+      "sage",
+      "segment",
+      "semaphore",
+      "sierra",
+      "signal",
+      "socket",
+      "sops",
+      "spinnaker",
+      "starburst",
+      "teleport",
+      "temporal",
+      "things",
+      "tropic",
+      "twenty",
+      "v0",
+      "vespa",
+      "visible",
+      "wasabi",
+      "windmill",
+      "wiz",
+      "writer",
+      "zed",
+      "zip"
+    ],
+    "customQueries": {
+      "a2a-protocol": "\"Agent2Agent\"",
+      "apollo-io": "\"Apollo.io\"",
+      "bolt-new": "\"bolt.new\"",
+      "bunny-net": "\"bunny.net\"",
+      "cal-com": "\"Cal.com\"",
+      "dbt-labs": "\"dbt Labs\"",
+      "fly-io": "\"Fly.io\"",
+      "grafana-labs": "\"Grafana\"",
+      "incident-io": "\"incident.io\"",
+      "llama-cpp": "\"llama.cpp\"",
+      "mend": "\"Mend.io\"",
+      "mistral-ai": "\"Mistral\"",
+      "monday-com": "\"monday.com\"",
+      "openai-codex": "\"OpenAI Codex\"",
+      "otter-ai": "\"Otter.ai\"",
+      "plausible": "\"Plausible Analytics\"",
+      "reclaim-ai": "\"Reclaim.ai\"",
+      "rocket-chat": "\"Rocket.Chat\"",
+      "s-and-p-global": "\"S&P Global\"",
+      "trigger-dev": "\"Trigger.dev\"",
+      "vercel-ai-sdk": "\"Vercel AI SDK\"",
+      "wiki-js": "\"Wiki.js\"",
+      "weights-and-biases": "\"Weights & Biases\"",
+      "ss-and-c-technologies": "\"SS&C\""
+    },
+    "ambiguousKept": {
+      "cursor": "Common word; kept because the editor dominates Hacker News usage in this window, counts include some generic uses",
+      "prometheus": "Also a film and a name; kept because the monitoring project dominates Hacker News usage",
+      "obsidian": "Also a mineral and a security vendor; kept because the note app dominates Hacker News usage",
+      "sentry": "Common word; kept because the error-tracking product dominates Hacker News usage",
+      "snowflake": "Common word; kept because the company dominates Hacker News usage",
+      "notion": "Common word; kept because the product dominates Hacker News usage",
+      "zoom": "Common word; kept because the company dominates Hacker News usage",
+      "meta": "Common prefix; kept because the company dominates Hacker News usage",
+      "amazon": "Company mentions include retail and cloud",
+      "google": "Company mentions span every product",
+      "microsoft": "Company mentions span every product",
+      "apple": "Company mentions span every product",
+      "oracle": "Company mentions span every product",
+      "pinecone": "Also a plant; kept because the database dominates Hacker News usage",
+      "claude": "Also a first name; kept because the assistant dominates Hacker News usage"
+    }
+  },
+  "announcements": [
+    {
+      "vendor": "anthropic",
+      "date": "2025-03-03",
+      "round": "Series E",
+      "amountUsd": 3500000000,
+      "url": "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation",
+      "evidence": [
+        "3.5 billion",
+        "$3.5B"
+      ]
+    },
+    {
+      "vendor": "anthropic",
+      "date": "2025-09-02",
+      "round": "Series F",
+      "amountUsd": 13000000000,
+      "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+      "evidence": [
+        "13 billion",
+        "$13B"
+      ]
+    },
+    {
+      "vendor": "cursor",
+      "date": "2025-01-16",
+      "round": "Series B",
+      "amountUsd": 105000000,
+      "url": "https://cursor.com/blog/series-b",
+      "evidence": [
+        "105M",
+        "105 million"
+      ]
+    },
+    {
+      "vendor": "cursor",
+      "date": "2025-06-05",
+      "round": "Series C",
+      "amountUsd": 900000000,
+      "url": "https://cursor.com/blog/series-c",
+      "evidence": [
+        "900M",
+        "900 million"
+      ]
+    },
+    {
+      "vendor": "cursor",
+      "date": "2025-11-13",
+      "round": "Series D",
+      "amountUsd": 2300000000,
+      "url": "https://cursor.com/blog/series-d",
+      "evidence": [
+        "2.3B",
+        "2.3 billion"
+      ]
+    },
+    {
+      "vendor": "mistral-ai",
+      "date": "2025-09-09",
+      "round": "Series C",
+      "amountUsd": null,
+      "amountNote": "EUR 1.7 billion as stated by the vendor; not converted to USD",
+      "url": "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai",
+      "evidence": [
+        "1.7"
+      ]
+    },
+    {
+      "vendor": "elevenlabs",
+      "date": "2025-01-30",
+      "round": "Series C",
+      "amountUsd": 180000000,
+      "url": "https://elevenlabs.io/blog/series-c",
+      "evidence": [
+        "180"
+      ]
+    },
+    {
+      "vendor": "n8n",
+      "date": "2025-10-15",
+      "round": "Series C",
+      "amountUsd": 180000000,
+      "url": "https://blog.n8n.io/series-c/",
+      "evidence": [
+        "180M",
+        "180 million",
+        "$180"
+      ]
+    },
+    {
+      "vendor": "vercel",
+      "date": "2025-05-29",
+      "round": "Series F",
+      "amountUsd": 300000000,
+      "url": "https://vercel.com/blog/series-f",
+      "evidence": [
+        "300M",
+        "300 million",
+        "$300"
+      ]
+    },
+    {
+      "vendor": "tines",
+      "date": "2025-02-11",
+      "round": "Series C",
+      "amountUsd": 125000000,
+      "url": "https://www.tines.com/blog/series-c-fundraise/",
+      "evidence": [
+        "125M",
+        "125 million",
+        "$125"
+      ]
+    },
+    {
+      "vendor": "vanta",
+      "date": "2025-07-23",
+      "round": "Series D",
+      "amountUsd": 150000000,
+      "url": "https://www.vanta.com/resources/vanta-announces-series-d",
+      "evidence": [
+        "150M",
+        "150 million",
+        "$150"
+      ]
+    },
+    {
+      "vendor": "tailscale",
+      "date": "2025-04-08",
+      "round": "Series C",
+      "amountUsd": 160000000,
+      "url": "https://tailscale.com/blog/series-c",
+      "evidence": [
+        "160M",
+        "160 million",
+        "$160"
+      ]
+    },
+    {
+      "vendor": "clickhouse",
+      "date": "2025-05-29",
+      "round": "Series C",
+      "amountUsd": 350000000,
+      "url": "https://clickhouse.com/blog/clickhouse-raises-350-million-series-c-to-power-analytics-for-ai-era",
+      "evidence": [
+        "350"
+      ]
+    },
+    {
+      "vendor": "hex",
+      "date": "2025-09-23",
+      "round": "Series C",
+      "amountUsd": 70000000,
+      "url": "https://hex.tech/blog/series-c/",
+      "evidence": [
+        "70M",
+        "70 million",
+        "$70"
+      ]
+    },
+    {
+      "vendor": "omni",
+      "date": "2025-03-13",
+      "round": "Series B",
+      "amountUsd": 69000000,
+      "url": "https://omni.co/blog/omni-series-b-funding",
+      "evidence": [
+        "69M",
+        "69 million",
+        "$69"
+      ]
+    },
+    {
+      "vendor": "deel",
+      "date": "2025-10-20",
+      "round": "Series E",
+      "amountUsd": 300000000,
+      "url": "https://www.deel.com/blog/new-investment-valuation/",
+      "evidence": [
+        "300M",
+        "300 million",
+        "$300"
+      ]
+    },
+    {
+      "vendor": "rippling",
+      "date": "2025-05-09",
+      "round": "Series G",
+      "amountUsd": 450000000,
+      "url": "https://www.rippling.com/blog/series-g-fundraising-tender-offer",
+      "evidence": [
+        "450M",
+        "450 million",
+        "$450"
+      ]
+    },
+    {
+      "vendor": "zip",
+      "date": "2024-10-22",
+      "round": "Series D",
+      "amountUsd": 190000000,
+      "url": "https://ziphq.com/blog/series-d",
+      "evidence": [
+        "190M",
+        "190 million",
+        "$190"
+      ]
+    },
+    {
+      "vendor": "attio",
+      "date": "2025-08-01",
+      "round": "Series B",
+      "amountUsd": 52000000,
+      "url": "https://attio.com/blog/attio-raises-52m-series-b",
+      "evidence": [
+        "52M",
+        "52 million",
+        "$52"
+      ]
+    },
+    {
+      "vendor": "together-ai",
+      "date": "2025-02-20",
+      "round": "Series B",
+      "amountUsd": 305000000,
+      "url": "https://www.together.ai/blog/together-ai-announcing-305m-series-b",
+      "evidence": [
+        "305"
+      ]
+    },
+    {
+      "vendor": "fireworks-ai",
+      "date": "2025-10-27",
+      "round": "Series C",
+      "amountUsd": 250000000,
+      "url": "https://fireworks.ai/blog/series-c",
+      "evidence": [
+        "250M",
+        "250 million",
+        "$250"
+      ]
+    },
+    {
+      "vendor": "langchain",
+      "date": "2025-10-21",
+      "round": "Series B",
+      "amountUsd": 125000000,
+      "url": "https://blog.langchain.com/series-b/",
+      "evidence": [
+        "125M",
+        "125 million",
+        "$125"
+      ]
+    },
+    {
+      "vendor": "browserbase",
+      "date": "2025-06-18",
+      "round": "Series B",
+      "amountUsd": 40000000,
+      "url": "https://www.browserbase.com/blog/series-b",
+      "evidence": [
+        "40M",
+        "40 million",
+        "$40"
+      ]
+    },
+    {
+      "vendor": "socket",
+      "date": "2024-10-22",
+      "round": "Series B",
+      "amountUsd": 40000000,
+      "url": "https://socket.dev/blog/series-b",
+      "evidence": [
+        "40M",
+        "40 million",
+        "$40"
+      ]
+    },
+    {
+      "vendor": "sublime-security",
+      "date": "2024-12-05",
+      "round": "Series B",
+      "amountUsd": 60000000,
+      "url": "https://sublime.security/blog/series-b",
+      "evidence": [
+        "60M",
+        "60 million",
+        "$60"
+      ]
+    },
+    {
+      "vendor": "render",
+      "date": "2025-06-25",
+      "round": "Series C",
+      "amountUsd": 80000000,
+      "url": "https://render.com/blog/series-c",
+      "evidence": [
+        "80M",
+        "80 million",
+        "$80"
+      ]
+    },
+    {
+      "vendor": "hightouch",
+      "date": "2025-02-18",
+      "round": "Series C",
+      "amountUsd": 80000000,
+      "url": "https://hightouch.com/blog/hightouch-funding-series-c",
+      "evidence": [
+        "80M",
+        "80 million",
+        "$80"
+      ]
+    },
+    {
+      "vendor": "posthog",
+      "date": "2025-06-25",
+      "round": "Series D",
+      "amountUsd": 70000000,
+      "url": "https://posthog.com/blog/series-d",
+      "evidence": [
+        "70M",
+        "70 million",
+        "$70"
+      ]
+    },
+    {
+      "vendor": "incident-io",
+      "date": "2025-04-10",
+      "round": "Series B",
+      "amountUsd": 62000000,
+      "url": "https://incident.io/blog/incident.io-raises-62m",
+      "evidence": [
+        "62M",
+        "62 million",
+        "$62"
+      ]
+    },
+    {
+      "vendor": "temporal",
+      "date": "2025-03-31",
+      "round": "Series C",
+      "amountUsd": 146000000,
+      "url": "https://temporal.io/blog/temporal-series-c-announcement",
+      "evidence": [
+        "146"
+      ]
+    },
+    {
+      "vendor": "pulumi",
+      "date": "2024-10-01",
+      "round": "Series C",
+      "amountUsd": 41000000,
+      "url": "https://www.pulumi.com/blog/series-c/",
+      "evidence": [
+        "41M",
+        "41 million",
+        "$41"
+      ]
+    },
+    {
+      "vendor": "supabase",
+      "date": "2025-10-03",
+      "round": "Series E",
+      "amountUsd": 100000000,
+      "url": "https://supabase.com/blog/supabase-series-e",
+      "evidence": [
+        "100M",
+        "100 million"
+      ]
+    },
+    {
+      "vendor": "lovable",
+      "date": "2025-07-17",
+      "round": "Series A",
+      "amountUsd": 200000000,
+      "url": "https://lovable.dev/blog/series-a",
+      "evidence": [
+        "200M",
+        "200 million"
+      ]
+    },
+    {
+      "vendor": "clickhouse",
+      "date": "2026-01-27",
+      "round": "Series D",
+      "amountUsd": 400000000,
+      "url": "https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres",
+      "evidence": [
+        "400"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "vendor": "wiz",
+      "date": "2025-03-18",
+      "type": "acquired",
+      "detail": "Google announced an agreement to acquire Wiz for $32 billion",
+      "url": "https://blog.google/inside-google/company-announcements/google-agreement-acquire-wiz/",
+      "evidence": [
+        "Wiz"
+      ]
+    },
+    {
+      "vendor": "weights-and-biases",
+      "date": "2025-05-05",
+      "type": "acquired",
+      "detail": "CoreWeave completed its acquisition of Weights & Biases (announced 2025-03-04)",
+      "url": "https://www.coreweave.com/news/coreweave-completes-acquisition-of-weights-biases-2",
+      "evidence": [
+        "Weights"
+      ]
+    },
+    {
+      "vendor": "neon",
+      "date": "2025-05-14",
+      "type": "acquired",
+      "detail": "Databricks announced an agreement to acquire Neon",
+      "url": "https://www.databricks.com/blog/databricks-neon",
+      "evidence": [
+        "Neon"
+      ]
+    },
+    {
+      "vendor": "superhuman",
+      "date": "2025-07-01",
+      "type": "acquired",
+      "detail": "Grammarly announced the acquisition of Superhuman",
+      "url": "https://www.grammarly.com/blog/company/grammarly-to-acquire-superhuman/",
+      "evidence": [
+        "Superhuman"
+      ]
+    },
+    {
+      "vendor": "coda",
+      "date": "2024-12-17",
+      "type": "acquired",
+      "detail": "Grammarly announced the acquisition of Coda",
+      "url": "https://www.grammarly.com/blog/company/grammarly-to-acquire-coda/",
+      "evidence": [
+        "Coda"
+      ]
+    },
+    {
+      "vendor": "hashicorp",
+      "date": "2025-02-27",
+      "type": "acquired",
+      "detail": "IBM completed its acquisition of HashiCorp",
+      "url": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform",
+      "evidence": [
+        "HashiCorp"
+      ]
+    },
+    {
+      "vendor": "informatica",
+      "date": "2025-11-12",
+      "type": "acquired",
+      "detail": "Salesforce completed its acquisition of Informatica",
+      "url": "https://www.salesforce.com/news/press-releases/2025/11/12/salesforce-completes-acquisition-of-informatica/",
+      "evidence": [
+        "Informatica"
+      ]
+    },
+    {
+      "vendor": "chronosphere",
+      "date": "2026-01-29",
+      "type": "acquired",
+      "detail": "Palo Alto Networks completed its acquisition of Chronosphere (announced 2025-11-19)",
+      "url": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-chronosphere-acquisition--unifying-observability-and-security-for-the-ai-era",
+      "evidence": [
+        "Chronosphere"
+      ]
+    },
+    {
+      "vendor": "cyberark",
+      "date": "2026-02-11",
+      "type": "acquired",
+      "detail": "Palo Alto Networks completed its acquisition of CyberArk (announced 2025-07-30)",
+      "url": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-cyberark-to-secure-the-ai-era",
+      "evidence": [
+        "CyberArk"
+      ]
+    },
+    {
+      "vendor": "red-canary",
+      "date": "2025-08-01",
+      "type": "acquired",
+      "detail": "Zscaler completed its acquisition of Red Canary (announced 2025-05-27)",
+      "url": "https://www.zscaler.com/press/zscaler-completes-acquisition-red-canary-accelerate-innovations-agentic-ai-driven-security",
+      "evidence": [
+        "Red Canary"
+      ]
+    },
+    {
+      "vendor": "lakera",
+      "date": "2025-09-16",
+      "type": "acquired",
+      "detail": "Check Point announced an agreement to acquire Lakera",
+      "url": "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/",
+      "evidence": [
+        "Lakera"
+      ]
+    },
+    {
+      "vendor": "preqin",
+      "date": "2025-03-03",
+      "type": "acquired",
+      "detail": "BlackRock completed its acquisition of Preqin",
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-preqin-acquisition",
+      "evidence": [
+        "Preqin"
+      ]
+    },
+    {
+      "vendor": "jamf",
+      "date": "2025-10-29",
+      "type": "acquired",
+      "detail": "Jamf announced an agreement to be acquired by Francisco Partners",
+      "url": "https://www.jamf.com/resources/press-releases/jamf-enters-into-definitive-agreement-to-be-acquired-by-francisco-partners-in-2-2-billion-transaction/",
+      "evidence": [
+        "Francisco Partners"
+      ]
+    },
+    {
+      "vendor": "couchbase",
+      "date": "2025-06-20",
+      "type": "acquired",
+      "detail": "Couchbase announced an agreement to be acquired by Haveli Investments",
+      "url": "https://www.couchbase.com/press-releases/couchbase-to-be-acquired-by-haveli-investments/",
+      "evidence": [
+        "Haveli"
+      ]
+    },
+    {
+      "vendor": "navan",
+      "date": "2025-10-30",
+      "type": "listed",
+      "detail": "Navan priced its initial public offering on 2025-10-29 and began trading on Nasdaq on 2025-10-30",
+      "url": "https://investors.navan.com/news-releases/news-release-details/navan-announces-pricing-initial-public-offering",
+      "evidence": [
+        "initial public offering"
+      ]
+    },
+    {
+      "vendor": "netskope",
+      "date": "2025-09-18",
+      "type": "listed",
+      "detail": "Netskope began trading on Nasdaq after its initial public offering",
+      "url": "https://www.netskope.com/press-releases/netskope-announces-pricing-of-initial-public-offering",
+      "evidence": [
+        "initial public offering"
+      ]
+    },
+    {
+      "vendor": "dbt-labs",
+      "date": "2026-06-01",
+      "type": "acquired",
+      "detail": "dbt Labs and Fivetran completed their merger (agreement announced 2025-10-13)",
+      "url": "https://www.fivetran.com/press/fivetran-dbt-labs-complete-merger-to-create-the-data-infrastructure-for-trusted-ai-agents",
+      "evidence": [
+        "dbt"
+      ]
+    },
+    {
+      "vendor": "pipedream",
+      "date": "2025-05-13",
+      "type": "acquired",
+      "detail": "Workato announced the acquisition of Pipedream",
+      "url": "https://www.workato.com/the-connector/workato-acquires-pipedream/",
+      "evidence": [
+        "Pipedream"
+      ]
+    },
+    {
+      "vendor": "census",
+      "date": "2025-05-21",
+      "type": "acquired",
+      "detail": "Fivetran announced the acquisition of Census",
+      "url": "https://www.fivetran.com/press/fivetran-acquires-census",
+      "evidence": [
+        "Census"
+      ]
+    },
+    {
+      "vendor": "smartsheet",
+      "date": "2025-01-22",
+      "type": "acquired",
+      "detail": "Smartsheet completed its acquisition by Blackstone and Vista Equity Partners",
+      "url": "https://www.smartsheet.com/content-center/news/blackstone-and-vista-equity-partners-complete-acquisition-smartsheet",
+      "evidence": [
+        "Vista"
+      ]
+    },
+    {
+      "vendor": "dayforce",
+      "date": "2026-02-04",
+      "type": "acquired",
+      "detail": "Thoma Bravo completed its acquisition of Dayforce (agreement announced 2025-08-21)",
+      "url": "https://www.dayforce.com/who-we-are/newsroom/thoma-bravo-completes-acquisition-of-dayforce",
+      "evidence": [
+        "Thoma Bravo"
+      ]
+    },
+    {
+      "vendor": "grammarly",
+      "date": "2025-10-29",
+      "type": "renamed",
+      "detail": "Grammarly announced that the company is renamed Superhuman",
+      "url": "https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/",
+      "evidence": [
+        "Superhuman"
+      ]
+    }
+  ],
+  "kaggleCandidates": [
+    {
+      "title": "Stack Overflow Annual Developer Survey (Kaggle mirrors)",
+      "url": "https://www.kaggle.com/search?q=stack+overflow+developer+survey",
+      "license": "ODbL 1.0 at the upstream",
+      "note": "Upstream used directly from the Stack Overflow archive; no token needed"
+    },
+    {
+      "title": "Hacker News (BigQuery public dataset mirrored on Kaggle)",
+      "url": "https://www.kaggle.com/datasets/hacker-news/hacker-news",
+      "license": "CC0 as labelled on Kaggle; confirm before use",
+      "note": "Would add comment-level mentions and the full story text for every vendor, not just story counts"
+    },
+    {
+      "title": "PyPI download statistics (BigQuery public dataset)",
+      "url": "https://console.cloud.google.com/marketplace/product/gcp-public-data-pypi/pypi",
+      "license": "Public dataset, terms per Google Cloud",
+      "note": "Needs Google Cloud credentials rather than Kaggle; would extend the PyPI series past the 180 days pypistats.org exposes"
+    },
+    {
+      "title": "GH Archive on BigQuery (githubarchive)",
+      "url": "https://www.gharchive.org/",
+      "license": "Public event data; Google Cloud terms",
+      "note": "Needs Google Cloud credentials; would allow forks, issues, and contributors per quarter for every repository instead of the OSS Insight stargazer and pull-request-creator series"
+    }
+  ],
+  "rejectedDatasets": [
+    {
+      "dataset": "Kaggle: Startup Investments (Crunchbase export)",
+      "reason": "Derived from Crunchbase, a licensed dataset; the Kaggle license label does not change the upstream terms"
+    },
+    {
+      "dataset": "Kaggle: Unicorn companies and CB Insights lists",
+      "reason": "Derived from CB Insights, a licensed dataset"
+    },
+    {
+      "dataset": "Kaggle and GitHub: tech-stack datasets scraped from StackShare or BuiltWith",
+      "reason": "Scrapes of licensed sites whose terms forbid redistribution"
+    },
+    {
+      "dataset": "Kaggle and GitHub: LinkedIn company headcount datasets",
+      "reason": "Scrapes of LinkedIn, whose terms forbid scraping"
+    },
+    {
+      "dataset": "Kaggle: Tech layoffs (layoffs.fyi)",
+      "reason": "Compiled from press reports without an open license and republished without one"
+    },
+    {
+      "dataset": "Kaggle: G2 and Capterra review datasets",
+      "reason": "Scrapes of licensed review sites"
+    },
+    {
+      "dataset": "PitchBook, Dealroom, Harmonic, and Specter exports",
+      "reason": "Licensed products; excluded by the brief"
+    },
+    {
+      "dataset": "Devographics State of JS and State of CSS results",
+      "reason": "Not used in this run: the data license could not be confirmed from the repository at retrieval time; revisit if a clear license statement is found"
+    },
+    {
+      "dataset": "DORA State of DevOps",
+      "reason": "Report only; no openly licensed respondent data"
+    }
+  ],
+  "packagesSkipped": {
+    "terraform": "Removed from Homebrew core after the 2023 license change; the HashiCorp tap has no public analytics",
+    "doppler": "Distributed through a vendor tap without public Homebrew analytics",
+    "homebrew": "Homebrew does not publish install counts for itself",
+    "authentik": "Images are published on GitHub Container Registry, which exposes no pull counts",
+    "zitadel": "Images are published on GitHub Container Registry, which exposes no pull counts",
+    "affine": "Images are published on GitHub Container Registry, which exposes no pull counts",
+    "windmill": "Images are published on GitHub Container Registry, which exposes no pull counts",
+    "greenbone": "Images are published on GitHub Container Registry, which exposes no pull counts"
+  },
+  "announcementsDropped": {
+    "openai": "openai.com answers automated requests with 403, so the funding posts could not be verified",
+    "groq": "The newsroom page could not be fetched (404 to automated clients)",
+    "granola": "No vendor page for the Series B could be located; the Series A is covered by Form D",
+    "cato-networks": "The news page renders client-side, so the amount could not be confirmed in the fetched text",
+    "n8n": "The Series B post answered but the amount could not be confirmed in the fetched text; the Series C is verified",
+    "supabase": "Series D and F are covered by Form D filings; the Series E post is verified",
+    "clay": "Covered by Form D filings"
+  },
+  "eventsDropped": {
+    "reclaim-ai": "Dropbox announced the acquisition on 2024-08-20, before the window",
+    "juniper-networks": "hpe.com could not be reached by the fetcher, so the completion release could not be verified",
+    "brex": "The Brex journal post answered 200 on the first fetch but 404 on re-check, and the evidence phrase appears in the error page footer, so the event is not recorded"
+  }
+}
