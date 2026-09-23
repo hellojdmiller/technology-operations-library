@@ -40,6 +40,8 @@ jobs:
           node training/lib/build-catalog.mjs --check
       - name: Check the technology landscape graph and its Obsidian vault
         run: node landscape/lib/build-landscape.mjs --check
+      - name: Check the landscape market signals and their category aggregates
+        run: node landscape/lib/build-signals.mjs --check
       - name: Regenerate workflow exports and catalog
         run: |
           node scripts/build-workflows.mjs
