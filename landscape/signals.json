@@ -1,6 +1,6 @@
 {
  "version": "1.0.0",
- "generatedOn": "2026-09-22",
+ "generatedOn": "2026-09-23",
  "license": "CC0-1.0 for the signal data, except the Stack Overflow survey shares which stay under ODbL 1.0; each source keeps its own license (see attributions)",
  "window": {
   "start": "2024-09-01",
@@ -70,6 +70,7 @@
   "adoption": "Package series for vendors whose product maps to one package: npm registry daily downloads summed per quarter (two years), PyPI downloads without mirrors from pypistats.org (only the last 180 days are exposed, so the first covered quarter is partial), Homebrew install counts (rolling 30, 90, and 365 day snapshots), Docker Hub lifetime pull counts (a snapshot), and OSS Insight monthly first-time pull request creators summed per quarter. Downloads include CI systems, mirrors, and bots.",
   "surveys": "Stack Overflow Developer Survey public results for 2024 and 2025 (ODbL). Multi-select tool questions were mapped to landscape vendors in lib/signals-survey-mapping.json; a vendor's share is the share of respondents who answered the question and named it, and a category's share is the share who named any mapped vendor in that category, counting only the categories each question speaks to. Only the database question kept the same option list in both years; other questions changed and are reported without a year-over-year difference. The 2026 results were not published at retrieval time.",
   "events": "Acquisitions, parent changes, renames, and dissolutions from Wikidata statements whose start time falls in the window (year-precision dates are flagged), renames from EDGAR former names of matched Form D filers, maturity changes between the CNCF, LF AI and Data, and CD Foundation landscape files at the window start and at retrieval, and vendor announcements verified by fetching the page and finding the counterpart's name in it.",
+  "conferences": "Conference presence reads each event's own public directory page: exhibitor and sponsor lists for RSAC and Black Hat USA, vendor and village lists for DEF CON, for 2025 and 2026. Before a page is read the host's robots.txt is fetched and applied to the fetcher's own user agent (TechnologyOperationsLibrary-signals); a host that refuses the identified fetcher is recorded as refused with the status it returned and is never retried under a browser identity. Readable at retrieval: DEF CON 33, DEF CON 34. Refused or unreadable: RSAC 2025, RSAC 2026, Black Hat USA 2025, Black Hat USA 2026 (reasons per page in the conferences block). Entries are matched to landscape vendors by the registrable domain of the linked website, by normalized name (corporate suffixes and words such as Labs or Technologies removed), or both; an entry that matches nothing or more than one vendor stays unmatched and is listed with its near misses. Only names, linked websites, and the retrieval date are recorded from each page; presence measures who paid or applied for a table, not adoption, revenue, or quality. A vendor in two categories counts toward both when categories are aggregated.",
   "aggregation": "Category and layer totals split each vendor's figure equally across its landscape categories so that a vendor in two categories is not counted twice; a layer total sums its categories. Every table in SIGNALS.md marks category totals that rest on one or two filings.",
   "shareAlike": "The Stack Overflow survey shares are the only share-alike (ODbL) input. They appear in signals-by-category.json under surveys and in the Survey trend table of SIGNALS.md, so that derived database is offered under ODbL 1.0 as well; every other figure in these files is under CC0 like the rest of the landscape.",
   "rejectedDatasets": [
@@ -267,6 +268,16 @@
    "retrieved": "2026-09-22",
    "credit": "Funding rounds and corporate events as announced by each vendor on its own site; each record links the page it came from.",
    "shareAlike": false
+  },
+  {
+   "dataset": "DEF CON vendor and village directories",
+   "publisher": "DEF CON Communications, Inc.",
+   "license": "Copyright DEF CON Communications, Inc.; public pages, no terms on reading; only names, linked websites, and the retrieval date are recorded",
+   "licenseUrl": "https://defcon.org/html/links/dc-policy.html",
+   "url": "https://defcon.org/",
+   "retrieved": "2026-09-23",
+   "credit": "Vendor and village listings from the DEF CON conference site (DEF CON 33 vendors, DEF CON 33 villages, DEF CON 34 vendors, DEF CON 34 villages), read on the retrieval date; each event record links the page it came from.",
+   "shareAlike": false
   }
  ],
  "coverage": {
@@ -281,6 +292,7 @@
   "withHnMentions": 650,
   "withAdoption": 263,
   "withEvents": 26,
+  "withConferences": 0,
   "withAnySignal": 676,
   "formDFilings": 78,
   "formDCandidatesReviewed": 19
@@ -1138,6 +1150,1010 @@
    }
   ]
  },
+ "conferences": {
+  "userAgent": "TechnologyOperationsLibrary-signals/1.0 (https://github.com/hellojdmiller/technology-operations-library; hellojdmiller@gmail.com)",
+  "retrieved": "2026-09-23",
+  "events": [
+   {
+    "id": "rsac-2025-exhibitors",
+    "event": "RSAC 2025",
+    "year": 2025,
+    "list": "exhibitors",
+    "url": "https://www.rsaconference.com/usa/expo-and-sponsors/exhibitor-list",
+    "robotsUrl": "https://www.rsaconference.com/robots.txt",
+    "robotsStatus": 403,
+    "robotsRule": "unreadable",
+    "status": null,
+    "finalUrl": null,
+    "retrieved": "2026-09-23",
+    "sha256": null,
+    "exhibitorCount": null,
+    "matched": [],
+    "unmatchedCount": null,
+    "unmatched": [],
+    "refused": "robots.txt could not be read (status 403, an HTML error page); the directory was not fetched because the site's rules for automated reading are unknown",
+    "note": "RSAC serves one exhibitor directory for the current year; a 2025 archive page could not be identified because the site refused every request."
+   },
+   {
+    "id": "rsac-2026-exhibitors",
+    "event": "RSAC 2026",
+    "year": 2026,
+    "list": "exhibitors",
+    "url": "https://www.rsaconference.com/usa/expo-and-sponsors/exhibitor-list",
+    "robotsUrl": "https://www.rsaconference.com/robots.txt",
+    "robotsStatus": 403,
+    "robotsRule": "unreadable",
+    "status": null,
+    "finalUrl": null,
+    "retrieved": "2026-09-23",
+    "sha256": null,
+    "exhibitorCount": null,
+    "matched": [],
+    "unmatchedCount": null,
+    "unmatched": [],
+    "refused": "robots.txt could not be read (status 403, an HTML error page); the directory was not fetched because the site's rules for automated reading are unknown",
+    "note": null
+   },
+   {
+    "id": "blackhat-usa-2025-sponsors",
+    "event": "Black Hat USA 2025",
+    "year": 2025,
+    "list": "sponsors",
+    "url": "https://www.blackhat.com/us-25/sponsors.html",
+    "robotsUrl": "https://www.blackhat.com/robots.txt",
+    "robotsStatus": 200,
+    "robotsRule": "allowed",
+    "status": 403,
+    "finalUrl": "https://blackhat.com/us-25/sponsors.html",
+    "retrieved": "2026-09-23",
+    "sha256": "7f6c87c1838da2af006bdace49121e32b2860be48175b2ca27723e913876571a",
+    "exhibitorCount": null,
+    "matched": [],
+    "unmatchedCount": null,
+    "unmatched": [],
+    "refused": "the server answered 403 to the identified fetcher with a security-service block page; no browser identity was tried",
+    "note": null
+   },
+   {
+    "id": "blackhat-usa-2026-sponsors",
+    "event": "Black Hat USA 2026",
+    "year": 2026,
+    "list": "sponsors",
+    "url": "https://www.blackhat.com/us-26/sponsors.html",
+    "robotsUrl": "https://www.blackhat.com/robots.txt",
+    "robotsStatus": 200,
+    "robotsRule": "allowed",
+    "status": 403,
+    "finalUrl": "https://blackhat.com/us-26/sponsors.html",
+    "retrieved": "2026-09-23",
+    "sha256": "f333a5c4113e6828099d97a62afb7ab2cd904a6d237bd496b84ad49559bb458e",
+    "exhibitorCount": null,
+    "matched": [],
+    "unmatchedCount": null,
+    "unmatched": [],
+    "refused": "the server answered 403 to the identified fetcher with a security-service block page; no browser identity was tried",
+    "note": null
+   },
+   {
+    "id": "defcon-33-vendors",
+    "event": "DEF CON 33",
+    "year": 2025,
+    "list": "vendors",
+    "url": "https://defcon.org/html/defcon-33/dc-33-vendors.html",
+    "robotsUrl": "https://defcon.org/robots.txt",
+    "robotsStatus": 200,
+    "robotsRule": "no rule for this agent",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-33/dc-33-vendors.html",
+    "retrieved": "2026-09-23",
+    "sha256": "1cc567c506336152711e580b081ac832c7bc8d0ffc46d45149d766e44ba0cc86",
+    "exhibitorCount": 35,
+    "matched": [],
+    "unmatchedCount": 35,
+    "unmatched": [
+     {
+      "name": "Arts and Ent.",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Cryptocurrency Advocate",
+      "website": "https://www.cryptoadvocate.cc",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "deepnet LLC",
+      "website": "https://deepnet.store",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Electronic Cats",
+      "website": "https://electroniccats.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Electronic Frontier Foundation (EFF)",
+      "website": "https://eff.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "EXPLIoT",
+      "website": "https://expliot.io",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "FREE WiLi - Intrepid Control Systems Inc",
+      "website": "https://freewili.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "HackerBoxes",
+      "website": "https://hackerboxes.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "HackerWarehouse",
+      "website": "https://hackerwarehouse.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Hak5 LLC",
+      "website": "https://shop.hak5.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "iFixit",
+      "website": "https://www.ifixit.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Keyport",
+      "website": "https://mykeyport.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Killchainz Clothing",
+      "website": "https://Killchainz.shop",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "M2 Powered Partners LLC",
+      "website": "https://m2-p2.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Mar Williams",
+      "website": "https://patreon.com/spux",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Midwest Gadgets LLC",
+      "website": "https://www.midwestgadgets.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Miscreants, LLC",
+      "website": "https://miscreants.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "No Starch Press, Inc",
+      "website": "https://nostarch.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Nuand LLC",
+      "website": "https://nuand.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Octopwn GmbH",
+      "website": "https://www.octopwn.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "PhysSec Education",
+      "website": "https://www.physsec.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Rabbit-Labs",
+      "website": "https://rabbit-labs.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Red Team Tools",
+      "website": "https://redteamtools.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "REKCAH Publishing",
+      "website": "https://rekcahcomics.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Rogue's Roost, LLC",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Rokland LLC",
+      "website": "https://www.rokland.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Salty Security",
+      "website": "https://saltysecurity.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Shadowvex Industries",
+      "website": "https://shadowvexindustries.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "SOK",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Sparrows Manufacturing Co",
+      "website": "https://www.sparrowslockpicks.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "The Calyx Institute",
+      "website": "https://calyxinstitute.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "The Open Organisation of Lockpickers (TOOOL)",
+      "website": "https://toool.us",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "The Tor Project, Inc.",
+      "website": "https://torproject.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Women in Security and Privacy",
+      "website": "https://www.wisporg.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Xcape, Inc.",
+      "website": "https://Xca.pe",
+      "reason": null,
+      "nearMisses": []
+     }
+    ],
+    "refused": null,
+    "note": null
+   },
+   {
+    "id": "defcon-33-villages",
+    "event": "DEF CON 33",
+    "year": 2025,
+    "list": "villages",
+    "url": "https://defcon.org/html/defcon-33/dc-33-villages.html",
+    "robotsUrl": "https://defcon.org/robots.txt",
+    "robotsStatus": 200,
+    "robotsRule": "no rule for this agent",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-33/dc-33-villages.html",
+    "retrieved": "2026-09-23",
+    "sha256": "8bf0172fddf258fbe385724cce9123011526c7e69f7a5670f55a4da6ddbacd2f",
+    "exhibitorCount": 34,
+    "matched": [],
+    "unmatchedCount": 34,
+    "unmatched": [
+     {
+      "name": "Adversary Village",
+      "website": "https://adversaryvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Aerospace Village",
+      "website": "https://www.aerospacevillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "AI Village",
+      "website": "https://aivillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "AppSec Village",
+      "website": "https://www.appsecvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Artificial Intelligence Cyber Challenge (AIxCC)",
+      "website": "https://aicyberchallenge.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Biohacking Village",
+      "website": "https://villageb.io/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Blacks In Cyber Village",
+      "website": "https://www.blacksincyberconf.com/bic-village",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Blue Team Village (BTV)",
+      "website": "https://blueteamvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Bug Bounty Village",
+      "website": "https://www.bugbountydefcon.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Car Hacking Village",
+      "website": "https://www.carhackingvillage.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Cloud Village",
+      "website": "https://dc33.cloud-village.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Crypto Privacy Village",
+      "website": "https://cryptovillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Data Duplication Village",
+      "website": "https://dcddv.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Embedded Systems Village",
+      "website": "https://embeddedvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "GameHacking.GG",
+      "website": "https://gamehacking.gg",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Ham Radio Village",
+      "website": "https://hamvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Hardware Hacking and Soldering Skills Village (HHV/SSV)",
+      "website": "https://dchhv.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "ICS Village",
+      "website": "https://www.icsvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "IOT Village",
+      "website": "https://iotvillage.org/defcon.html",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Lock Pick Village",
+      "website": "https://toool.us/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Malware Village",
+      "website": "https://malwarevillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Maritime Hacking Village",
+      "website": "https://maritimehackingvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Packet Hacking Village",
+      "website": "https://www.wallofsheep.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Payment Village",
+      "website": "https://www.paymentvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Physical Security Village",
+      "website": "https://physsec.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Policy @ DEF CON",
+      "website": "https://defcon.org/policy/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Quantum Village",
+      "website": "https://quantumvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Radio Frequency Village",
+      "website": "https://rfhackers.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Recon Village",
+      "website": "https://reconvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Red Team Village",
+      "website": "https://redteamvillage.io/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Social Engineering Community Village",
+      "website": "https://www.se.community/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Tamper-Evident Village",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Telecom Village",
+      "website": "https://telecomvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Voting Village",
+      "website": "https://votingvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     }
+    ],
+    "refused": null,
+    "note": null
+   },
+   {
+    "id": "defcon-34-vendors",
+    "event": "DEF CON 34",
+    "year": 2026,
+    "list": "vendors",
+    "url": "https://defcon.org/html/defcon-34/dc-34-vendors.html",
+    "robotsUrl": "https://defcon.org/robots.txt",
+    "robotsStatus": 200,
+    "robotsRule": "no rule for this agent",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-34/dc-34-vendors.html",
+    "retrieved": "2026-09-23",
+    "sha256": "782aaa2689f66cfbde3c67a9eb58f7d8bdce61ee3047c14f0f48c29060ead9a8",
+    "exhibitorCount": 32,
+    "matched": [],
+    "unmatchedCount": 32,
+    "unmatched": [
+     {
+      "name": "1BitSquared LLC",
+      "website": "https://1bitsquared.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Cognitive Security Institute",
+      "website": "https://www.cognitivesecurityinstitute.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Cryptocurrency Advocate",
+      "website": "https://www.cryptocurrencyvillage.cc/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "DEEPNET LLC",
+      "website": "https://deepnet.store",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Electronic Cats",
+      "website": "https://www.electroniccats.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Electronic Frontier Foundation (EFF)",
+      "website": "https://eff.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "FREE-WILI, LLC (last year was Intrepid Control Systems)",
+      "website": "https://freewili.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Geist-Projekt/Crisiswear",
+      "website": "https://www.crisiswear.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Hacker Warehouse",
+      "website": "https://hackerwarehouse.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Hak5 LLC",
+      "website": "https://hak5.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "iFixit Inc",
+      "website": "https://iFixit.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "InDiPro",
+      "website": "https://indiprogames.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Keyport, Inc.",
+      "website": "https://www.mykeyport.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "LowMesh LLC",
+      "website": "https://lowmesh.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Manifesto Industries LLC",
+      "website": "https://sneakreaper-industries.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Midwest Gadgets LLC",
+      "website": "https://www.midwestgadgets.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Miscreants",
+      "website": "https://shop.miscreants.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "No Starch Press Inc",
+      "website": "https://nostarch.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Octopwn Kft",
+      "website": "https://www.octopwn.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Phreeli Company",
+      "website": "https://www.phreeli.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "PhysSec Education Education PhysSec",
+      "website": "https://physsec.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Rabbit-Labs LLC",
+      "website": "https://rabbit-labs.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Red Team Tools",
+      "website": "https://redteamtools.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "REKCAH Publishing",
+      "website": "https://www.blackhillsinfosec.com/rekcah/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Rogue’s Roost LLC",
+      "website": "https://Roguesroostllc.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Rokland LLC",
+      "website": "https://www.rokland.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Shadowvex Industries",
+      "website": "https://shadowvex.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Sparrows Manufacturing Co",
+      "website": "https://sparrowslockpicks.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "The Calyx Institute",
+      "website": "https://calyx.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "The Open Organisation of Lockpickers (TOOOL)",
+      "website": "https://toool.us/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "The Tor Project",
+      "website": "https://torproject.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Women in Security and Privacy (WISP)",
+      "website": "https://www.wisporg.com",
+      "reason": null,
+      "nearMisses": []
+     }
+    ],
+    "refused": null,
+    "note": null
+   },
+   {
+    "id": "defcon-34-villages",
+    "event": "DEF CON 34",
+    "year": 2026,
+    "list": "villages",
+    "url": "https://defcon.org/html/defcon-34/dc-34-villages.html",
+    "robotsUrl": "https://defcon.org/robots.txt",
+    "robotsStatus": 200,
+    "robotsRule": "no rule for this agent",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-34/dc-34-villages.html",
+    "retrieved": "2026-09-23",
+    "sha256": "426318607f750bf02687131322bcd6b0f576bfe0e8b83f94aa64e303d9df0bf7",
+    "exhibitorCount": 38,
+    "matched": [],
+    "unmatchedCount": 38,
+    "unmatched": [
+     {
+      "name": "Adversary Village",
+      "website": "https://adversaryvillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Aerospace Village",
+      "website": "https://aerospacevillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "AI Village",
+      "website": "https://aivillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "AppSec Village",
+      "website": "https://www.appsecvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Badgelife Village",
+      "website": "https://badge.life",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Biohacking Village",
+      "website": "https://villageb.io",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Blacks In Cyber Village",
+      "website": "https://www.blacksincyberconf.com/bic-village",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Blue Team Village (BTV)",
+      "website": "https://blueteamvillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Bug Bounty Village",
+      "website": "https://www.bugbountydefcon.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Call Center Village",
+      "website": "https://www.callcentervillage.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Car Hacking Village",
+      "website": "https://www.carhackingvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Cloud Village",
+      "website": "https://www.cloud-village.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Crypto & Privacy Village",
+      "website": "https://cryptovillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Cryptocurrency Village",
+      "website": "https://www.cryptocurrencyvillage.cc/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Data Duplication Village",
+      "website": "https://dcddv.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Embedded Systems Village",
+      "website": "https://embeddedvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Game Hacking Village",
+      "website": "https://gamehacking.gg",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Ham Radio Village",
+      "website": "https://hamvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Hardware Hacking and Soldering Skills Village (HHV/SSV)",
+      "website": "https://dchhv.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "ICS Village",
+      "website": "https://www.icsvillage.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "IoT Village",
+      "website": "https://iotvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Lockpick Village",
+      "website": "https://toool.us/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Maker's Village",
+      "website": "https://makersvillage.space",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Malware Village",
+      "website": "https://malwarevillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Maritime Hacking Village",
+      "website": "https://maritimehackingvillage.com/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Packet Hacking Village",
+      "website": "https://www.wallofsheep.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Payment Village",
+      "website": "https://paymentvillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Physical Security Village",
+      "website": "https://www.physsec.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Policy @ DEF CON",
+      "website": "https://defcon.org/policy/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Quantum Village",
+      "website": "https://quantumvillage.org/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Radio Frequency Village",
+      "website": "http://rfhackers.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Recon Village",
+      "website": "https://reconvillage.org",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Red Team Village",
+      "website": "https://redteamvillage.io/",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Scambait Village",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Social Engineering Community Village",
+      "website": "https://www.se.community",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Tamper-Evident Village",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Telecom Village",
+      "website": "https://telecomvillage.com",
+      "reason": null,
+      "nearMisses": []
+     },
+     {
+      "name": "Voting Village",
+      "website": null,
+      "reason": null,
+      "nearMisses": []
+     }
+    ],
+    "refused": null,
+    "note": null
+   }
+  ]
+ },
  "vendors": {
   "1password": {
    "funding": [],
@@ -1183,7 +2199,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "360learning": {
    "funding": [],
@@ -1212,7 +2229,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "4degrees": {
    "funding": [],
@@ -1241,7 +2259,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "a2a-protocol": {
    "funding": [],
@@ -1316,7 +2335,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "abnormal-ai": {
    "funding": [],
@@ -1345,7 +2365,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "absorb": {
    "funding": [],
@@ -1374,7 +2395,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "acronis": {
    "funding": [],
@@ -1403,7 +2425,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "action1": {
    "funding": [],
@@ -1432,7 +2455,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "activepieces": {
    "funding": [],
@@ -1522,7 +2546,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "adaptive-security": {
    "funding": [],
@@ -1551,7 +2576,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "addepar": {
    "funding": [],
@@ -1580,7 +2606,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "addigy": {
    "funding": [],
@@ -1609,7 +2636,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "adguard": {
    "funding": [],
@@ -1654,7 +2682,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "adobe": {
    "funding": [],
@@ -1683,7 +2712,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "adobe-acrobat-sign": {
    "funding": [],
@@ -1712,7 +2742,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "adp": {
    "funding": [],
@@ -1741,7 +2772,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "affine": {
    "funding": [],
@@ -1816,7 +2848,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "affinity": {
    "funding": [],
@@ -1845,7 +2878,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "afi-ai": {
    "funding": [],
@@ -1874,7 +2908,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "aider": {
    "funding": [],
@@ -1969,7 +3004,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "airbyte": {
    "funding": [],
@@ -2059,7 +3095,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "airtable": {
    "funding": [],
@@ -2088,7 +3125,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "akamai": {
    "funding": [],
@@ -2117,7 +3155,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "akeyless": {
    "funding": [],
@@ -2146,7 +3185,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "alfresco": {
    "funding": [],
@@ -2221,7 +3261,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "alibaba-cloud": {
    "funding": [],
@@ -2250,7 +3291,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "allvue-systems": {
    "funding": [],
@@ -2279,7 +3321,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "alphasense": {
    "funding": [],
@@ -2308,7 +3351,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "alteryx": {
    "funding": [],
@@ -2337,7 +3381,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "altvia": {
    "funding": [],
@@ -2366,7 +3411,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "amazon": {
    "funding": [],
@@ -2395,7 +3441,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "amazon-bedrock": {
    "funding": [],
@@ -2424,7 +3471,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "amazon-redshift": {
    "funding": [],
@@ -2453,7 +3501,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "amazon-web-services": {
    "funding": [],
@@ -2482,7 +3531,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "amplitude": {
    "funding": [],
@@ -2511,7 +3561,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "anduin": {
    "funding": [],
@@ -2540,7 +3591,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "anecdotes": {
    "funding": [],
@@ -2569,7 +3621,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "angellist": {
    "funding": [],
@@ -2598,7 +3651,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ansarada": {
    "funding": [],
@@ -2627,7 +3681,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ansible": {
    "funding": [],
@@ -2738,7 +3793,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "anthropic": {
    "funding": [
@@ -2810,7 +3866,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "anydesk": {
    "funding": [],
@@ -2839,7 +3896,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "anytype": {
    "funding": [],
@@ -2930,7 +3988,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apache-airflow": {
    "funding": [],
@@ -3025,7 +4084,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apache-cassandra": {
    "funding": [],
@@ -3100,7 +4160,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apache-iceberg": {
    "funding": [],
@@ -3175,7 +4236,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apache-kafka": {
    "funding": [],
@@ -3265,7 +4327,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apache-spark": {
    "funding": [],
@@ -3360,7 +4423,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apache-superset": {
    "funding": [],
@@ -3470,7 +4534,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apollo-io": {
    "funding": [],
@@ -3499,7 +4564,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "appflowy": {
    "funding": [],
@@ -3589,7 +4655,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "appgate": {
    "funding": [],
@@ -3618,7 +4685,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apple": {
    "funding": [],
@@ -3647,7 +4715,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apple-business-manager": {
    "funding": [],
@@ -3676,7 +4745,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apple-intelligence": {
    "funding": [],
@@ -3705,7 +4775,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apple-notes": {
    "funding": [],
@@ -3734,7 +4805,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apple-passwords": {
    "funding": [],
@@ -3763,7 +4835,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "apple-shortcuts": {
    "funding": [],
@@ -3792,7 +4865,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "appomni": {
    "funding": [],
@@ -3821,7 +4895,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "appsmith": {
    "funding": [],
@@ -3911,7 +4986,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "aqua-security": {
    "funding": [],
@@ -3986,7 +5062,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "archer": {
    "funding": [],
@@ -4015,7 +5092,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "arctic-wolf": {
    "funding": [],
@@ -4044,7 +5122,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "argo-cd": {
    "funding": [],
@@ -4135,7 +5214,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "arista": {
    "funding": [],
@@ -4164,7 +5244,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "arize": {
    "funding": [
@@ -4261,7 +5342,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "asana": {
    "funding": [],
@@ -4290,7 +5372,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ashby": {
    "funding": [],
@@ -4319,7 +5402,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "asus": {
    "funding": [],
@@ -4348,7 +5432,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "atera": {
    "funding": [],
@@ -4377,7 +5462,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "atlantis": {
    "funding": [],
@@ -4452,7 +5538,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "atlassian": {
    "funding": [],
@@ -4481,7 +5568,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "attio": {
    "funding": [
@@ -4532,7 +5620,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "auditboard": {
    "funding": [],
@@ -4561,7 +5650,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "augment-code": {
    "funding": [],
@@ -4590,7 +5680,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "auth0": {
    "funding": [],
@@ -4619,7 +5710,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "authentik": {
    "funding": [],
@@ -4694,7 +5786,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "automox": {
    "funding": [],
@@ -4723,7 +5816,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "axiom": {
    "funding": [],
@@ -4752,7 +5846,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "azure-ai-foundry": {
    "funding": [],
@@ -4781,7 +5876,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "azure-devops": {
    "funding": [],
@@ -4810,7 +5906,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "backblaze": {
    "funding": [],
@@ -4839,7 +5936,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "backstop-solutions": {
    "funding": [],
@@ -4868,7 +5966,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bamboohr": {
    "funding": [],
@@ -4897,7 +5996,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "barracuda": {
    "funding": [],
@@ -4926,7 +6026,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "basecamp": {
    "funding": [],
@@ -4955,7 +6056,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "baserow": {
    "funding": [],
@@ -5045,7 +6147,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bear": {
    "funding": [],
@@ -5074,7 +6177,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "better-stack": {
    "funding": [],
@@ -5103,7 +6207,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bettercloud": {
    "funding": [],
@@ -5132,7 +6237,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "beyond-identity": {
    "funding": [],
@@ -5161,7 +6267,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "beyondtrust": {
    "funding": [],
@@ -5190,7 +6297,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bicep": {
    "funding": [],
@@ -5265,7 +6373,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bill-com": {
    "funding": [],
@@ -5294,7 +6403,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bitbucket": {
    "funding": [],
@@ -5323,7 +6433,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bitdefender": {
    "funding": [],
@@ -5352,7 +6463,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bitsight": {
    "funding": [],
@@ -5381,7 +6493,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bitwarden": {
    "funding": [],
@@ -5504,7 +6617,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bloomberg": {
    "funding": [],
@@ -5533,7 +6647,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "blumira": {
    "funding": [],
@@ -5562,7 +6677,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bmc": {
    "funding": [],
@@ -5591,7 +6707,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bolt-new": {
    "funding": [],
@@ -5620,7 +6737,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bookstack": {
    "funding": [],
@@ -5710,7 +6828,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "borgbackup": {
    "funding": [],
@@ -5801,7 +6920,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "box": {
    "funding": [],
@@ -5830,7 +6950,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "braintrust": {
    "funding": [],
@@ -5859,7 +6980,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "brex": {
    "funding": [],
@@ -5888,7 +7010,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "browser-use": {
    "funding": [],
@@ -5983,7 +7106,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "browserbase": {
    "funding": [],
@@ -6045,7 +7169,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bubble": {
    "funding": [],
@@ -6074,7 +7199,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "budibase": {
    "funding": [],
@@ -6164,7 +7290,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bugcrowd": {
    "funding": [],
@@ -6193,7 +7320,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "buildkite": {
    "funding": [],
@@ -6222,7 +7350,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "bunny-net": {
    "funding": [],
@@ -6251,7 +7380,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "caddy": {
    "funding": [],
@@ -6357,7 +7487,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cake-equity": {
    "funding": [
@@ -6408,7 +7539,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cal-com": {
    "funding": [],
@@ -6483,7 +7615,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "calendly": {
    "funding": [],
@@ -6512,7 +7645,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "camunda": {
    "funding": [],
@@ -6541,7 +7675,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "canoe-intelligence": {
    "funding": [],
@@ -6570,7 +7705,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "carta": {
    "funding": [],
@@ -6599,7 +7735,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cato-networks": {
    "funding": [],
@@ -6628,7 +7765,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cb-insights": {
    "funding": [],
@@ -6657,7 +7795,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "census": {
    "funding": [],
@@ -6686,7 +7825,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "chatgpt": {
    "funding": [],
@@ -6715,7 +7855,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "check-point": {
    "funding": [],
@@ -6744,7 +7885,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "checkly": {
    "funding": [],
@@ -6806,7 +7948,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "checkmarx": {
    "funding": [],
@@ -6835,7 +7978,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "checkov": {
    "funding": [],
@@ -6930,7 +8074,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "chef": {
    "funding": [],
@@ -6959,7 +8104,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "chroma": {
    "funding": [],
@@ -7054,7 +8200,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "chronograph": {
    "funding": [],
@@ -7083,7 +8230,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "chronosphere": {
    "funding": [],
@@ -7121,7 +8269,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "cilium": {
    "funding": [],
@@ -7212,7 +8361,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "circleci": {
    "funding": [],
@@ -7241,7 +8391,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cisco": {
    "funding": [],
@@ -7270,7 +8421,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cisco-duo": {
    "funding": [],
@@ -7299,7 +8451,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cisco-meraki": {
    "funding": [],
@@ -7328,7 +8481,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cisco-umbrella": {
    "funding": [],
@@ -7357,7 +8511,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ciso-assistant": {
    "funding": [],
@@ -7432,7 +8587,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "claude": {
    "funding": [],
@@ -7461,7 +8617,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "claude-agent-sdk": {
    "funding": [],
@@ -7588,7 +8745,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "claude-code": {
    "funding": [],
@@ -7650,7 +8808,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "clay": {
    "funding": [
@@ -7743,7 +8902,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cledara": {
    "funding": [],
@@ -7772,7 +8932,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "clickhouse": {
    "funding": [
@@ -7925,7 +9086,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "clickup": {
    "funding": [],
@@ -7954,7 +9116,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cline": {
    "funding": [],
@@ -8029,7 +9192,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "clio": {
    "funding": [],
@@ -8058,7 +9222,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "clockwise": {
    "funding": [],
@@ -8087,7 +9252,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "close": {
    "funding": [],
@@ -8116,7 +9282,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cloud-custodian": {
    "funding": [],
@@ -8211,7 +9378,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cloudflare": {
    "funding": [],
@@ -8240,7 +9408,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cockroach-labs": {
    "funding": [],
@@ -8269,7 +9438,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "coda": {
    "funding": [],
@@ -8307,7 +9477,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "codeberg": {
    "funding": [],
@@ -8336,7 +9507,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cognition": {
    "funding": [],
@@ -8365,7 +9537,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cohere": {
    "funding": [],
@@ -8394,7 +9567,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cohesity": {
    "funding": [],
@@ -8423,7 +9597,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "commvault": {
    "funding": [],
@@ -8452,7 +9627,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "composio": {
    "funding": [],
@@ -8502,7 +9678,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "conductorone": {
    "funding": [
@@ -8553,7 +9730,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "confident-ai": {
    "funding": [],
@@ -8648,7 +9826,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "confluence": {
    "funding": [],
@@ -8677,7 +9856,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "confluent": {
    "funding": [],
@@ -8706,7 +9886,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "connectwise": {
    "funding": [],
@@ -8735,7 +9916,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "containerd": {
    "funding": [],
@@ -8810,7 +9992,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "continue": {
    "funding": [],
@@ -8917,7 +10100,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "convex": {
    "funding": [],
@@ -9024,7 +10208,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "conveyor": {
    "funding": [
@@ -9075,7 +10260,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "coolify": {
    "funding": [],
@@ -9165,7 +10351,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "copper": {
    "funding": [],
@@ -9194,7 +10381,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cornerstone": {
    "funding": [],
@@ -9223,7 +10411,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "couchbase": {
    "funding": [],
@@ -9261,7 +10450,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "coupa": {
    "funding": [],
@@ -9290,7 +10480,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "coursera": {
    "funding": [],
@@ -9319,7 +10510,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "crewai": {
    "funding": [],
@@ -9414,7 +10606,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "crossplane": {
    "funding": [],
@@ -9514,7 +10707,8 @@
      "retrieved": "2026-09-22",
      "method": "landscape-history"
     }
-   ]
+   ],
+   "conferences": []
   },
   "crowdstrike": {
    "funding": [],
@@ -9543,7 +10737,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "crunchbase": {
    "funding": [],
@@ -9572,7 +10767,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "culture-amp": {
    "funding": [],
@@ -9601,7 +10797,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cursor": {
    "funding": [
@@ -9711,7 +10908,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "cyberark": {
    "funding": [],
@@ -9749,7 +10947,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "dagger": {
    "funding": [],
@@ -9824,7 +11023,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dagster": {
    "funding": [],
@@ -9919,7 +11119,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dashlane": {
    "funding": [],
@@ -9948,7 +11149,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "databricks": {
    "funding": [
@@ -10146,7 +11348,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "datadog": {
    "funding": [],
@@ -10175,7 +11378,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "datasite": {
    "funding": [],
@@ -10204,7 +11408,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "datto": {
    "funding": [],
@@ -10233,7 +11438,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dayforce": {
    "funding": [],
@@ -10271,7 +11477,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "dbt-labs": {
    "funding": [],
@@ -10375,7 +11582,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "dealcloud": {
    "funding": [],
@@ -10404,7 +11612,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dealroom": {
    "funding": [],
@@ -10433,7 +11642,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "decagon": {
    "funding": [
@@ -10484,7 +11694,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "deel": {
    "funding": [
@@ -10577,7 +11788,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "deepseek": {
    "funding": [],
@@ -10606,7 +11818,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "defectdojo": {
    "funding": [],
@@ -10696,7 +11909,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "delinea": {
    "funding": [],
@@ -10725,7 +11939,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dell": {
    "funding": [],
@@ -10754,7 +11969,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dependabot": {
    "funding": [],
@@ -10783,7 +11999,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dify": {
    "funding": [],
@@ -10873,7 +12090,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "digicert": {
    "funding": [],
@@ -10902,7 +12120,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "digify": {
    "funding": [],
@@ -10931,7 +12150,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "digitalocean": {
    "funding": [],
@@ -10960,7 +12180,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "directus": {
    "funding": [],
@@ -11082,7 +12303,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "discord": {
    "funding": [],
@@ -11128,7 +12350,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dmarcian": {
    "funding": [],
@@ -11157,7 +12380,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dnsfilter": {
    "funding": [],
@@ -11186,7 +12410,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dnsimple": {
    "funding": [],
@@ -11215,7 +12440,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "docebo": {
    "funding": [],
@@ -11244,7 +12470,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "docker": {
    "funding": [],
@@ -11335,7 +12562,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "docmost": {
    "funding": [],
@@ -11425,7 +12653,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "docsend": {
    "funding": [],
@@ -11454,7 +12683,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "documenso": {
    "funding": [],
@@ -11544,7 +12774,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "docuseal": {
    "funding": [],
@@ -11634,7 +12865,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "docusign": {
    "funding": [],
@@ -11663,7 +12895,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dokploy": {
    "funding": [],
@@ -11753,7 +12986,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "domo": {
    "funding": [],
@@ -11782,7 +13016,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "doodle": {
    "funding": [],
@@ -11811,7 +13046,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "doppler": {
    "funding": [],
@@ -11840,7 +13076,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "drata": {
    "funding": [
@@ -11891,7 +13128,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dremio": {
    "funding": [],
@@ -11920,7 +13158,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dropbox": {
    "funding": [],
@@ -11949,7 +13188,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dropbox-sign": {
    "funding": [],
@@ -11978,7 +13218,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "druva": {
    "funding": [],
@@ -12007,7 +13248,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dspy": {
    "funding": [],
@@ -12102,7 +13344,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "duckdb": {
    "funding": [],
@@ -12245,7 +13488,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "duplicati": {
    "funding": [],
@@ -12335,7 +13579,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dust": {
    "funding": [],
@@ -12364,7 +13609,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dynamo-software": {
    "funding": [],
@@ -12393,7 +13639,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "dynatrace": {
    "funding": [],
@@ -12422,7 +13669,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "e2b": {
    "funding": [],
@@ -12549,7 +13797,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "eero": {
    "funding": [],
@@ -12578,7 +13827,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "efront": {
    "funding": [],
@@ -12607,7 +13857,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "egnyte": {
    "funding": [],
@@ -12636,7 +13887,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "elastic": {
    "funding": [],
@@ -12726,7 +13978,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "element": {
    "funding": [],
@@ -12816,7 +14069,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "elevenlabs": {
    "funding": [
@@ -12867,7 +14121,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "emburse": {
    "funding": [],
@@ -12896,7 +14151,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "endor-labs": {
    "funding": [],
@@ -12925,7 +14181,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ente": {
    "funding": [],
@@ -13016,7 +14273,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "env0": {
    "funding": [],
@@ -13045,7 +14303,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "envoy": {
    "funding": [],
@@ -13135,7 +14394,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "eramba": {
    "funding": [],
@@ -13164,7 +14424,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "erpnext": {
    "funding": [],
@@ -13254,7 +14515,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "eset": {
    "funding": [],
@@ -13283,7 +14545,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "evernote": {
    "funding": [],
@@ -13312,7 +14575,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "expel": {
    "funding": [],
@@ -13341,7 +14605,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "expensify": {
    "funding": [],
@@ -13370,7 +14635,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "expressvpn": {
    "funding": [],
@@ -13399,7 +14665,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "external-secrets-operator": {
    "funding": [],
@@ -13474,7 +14741,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "extreme-networks": {
    "funding": [],
@@ -13503,7 +14771,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "f5": {
    "funding": [],
@@ -13532,7 +14801,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "factset": {
    "funding": [],
@@ -13561,7 +14831,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fantastical": {
    "funding": [],
@@ -13590,7 +14861,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fastly": {
    "funding": [],
@@ -13619,7 +14891,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fastmail": {
    "funding": [],
@@ -13648,7 +14921,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fastmcp": {
    "funding": [],
@@ -13743,7 +15017,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fathom-ai": {
    "funding": [],
@@ -13772,7 +15047,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fathom-analytics": {
    "funding": [],
@@ -13801,7 +15077,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "firebase": {
    "funding": [],
@@ -13830,7 +15107,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "firebolt": {
    "funding": [],
@@ -13859,7 +15137,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fireflies-ai": {
    "funding": [],
@@ -13888,7 +15167,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "firehydrant": {
    "funding": [],
@@ -13917,7 +15197,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fireworks-ai": {
    "funding": [
@@ -13968,7 +15249,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "firmex": {
    "funding": [],
@@ -13997,7 +15279,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fivetran": {
    "funding": [],
@@ -14026,7 +15309,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fleet": {
    "funding": [
@@ -14138,7 +15422,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "flowise": {
    "funding": [],
@@ -14245,7 +15530,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "flutterflow": {
    "funding": [],
@@ -14274,7 +15560,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "flux": {
    "funding": [],
@@ -14365,7 +15652,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fly-io": {
    "funding": [],
@@ -14394,7 +15682,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "folk": {
    "funding": [],
@@ -14423,7 +15712,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "forgejo": {
    "funding": [],
@@ -14469,7 +15759,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fortinet": {
    "funding": [],
@@ -14498,7 +15789,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "framer": {
    "funding": [
@@ -14549,7 +15841,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "framework": {
    "funding": [],
@@ -14578,7 +15871,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "freshbooks": {
    "funding": [],
@@ -14607,7 +15901,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "freshworks": {
    "funding": [],
@@ -14636,7 +15931,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "front": {
    "funding": [],
@@ -14665,7 +15961,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "frontegg": {
    "funding": [],
@@ -14694,7 +15991,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fundcount": {
    "funding": [],
@@ -14723,7 +16021,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "fundwave": {
    "funding": [],
@@ -14752,7 +16051,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "galileo": {
    "funding": [],
@@ -14781,7 +16081,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gandi": {
    "funding": [],
@@ -14810,7 +16111,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gemini-cli": {
    "funding": [],
@@ -14917,7 +16219,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "giskard": {
    "funding": [],
@@ -15012,7 +16315,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "git": {
    "funding": [],
@@ -15083,7 +16387,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gitbook": {
    "funding": [],
@@ -15112,7 +16417,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gitea": {
    "funding": [],
@@ -15202,7 +16508,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gitguardian": {
    "funding": [],
@@ -15231,7 +16538,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "github": {
    "funding": [],
@@ -15260,7 +16568,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "github-actions": {
    "funding": [],
@@ -15289,7 +16598,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "github-copilot": {
    "funding": [],
@@ -15318,7 +16628,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gitlab": {
    "funding": [],
@@ -15386,7 +16697,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gitleaks": {
    "funding": [],
@@ -15477,7 +16789,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "glean": {
    "funding": [],
@@ -15506,7 +16819,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "glide": {
    "funding": [],
@@ -15535,7 +16849,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "glpi": {
    "funding": [],
@@ -15625,7 +16940,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "godaddy": {
    "funding": [],
@@ -15654,7 +16970,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google": {
    "funding": [],
@@ -15683,7 +17000,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-adk": {
    "funding": [],
@@ -15778,7 +17096,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-analytics": {
    "funding": [],
@@ -15807,7 +17126,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-appsheet": {
    "funding": [],
@@ -15836,7 +17156,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-bigquery": {
    "funding": [],
@@ -15865,7 +17186,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-cloud": {
    "funding": [],
@@ -15894,7 +17216,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-drive": {
    "funding": [],
@@ -15923,7 +17246,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-gemini": {
    "funding": [],
@@ -15952,7 +17276,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-meet": {
    "funding": [],
@@ -15981,7 +17306,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-password-manager": {
    "funding": [],
@@ -16010,7 +17336,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-security-operations": {
    "funding": [],
@@ -16039,7 +17366,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "google-workspace": {
    "funding": [],
@@ -16068,7 +17396,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "goose": {
    "funding": [],
@@ -16139,7 +17468,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gophish": {
    "funding": [],
@@ -16229,7 +17559,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "grafana-labs": {
    "funding": [
@@ -16341,7 +17672,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "grammarly": {
    "funding": [
@@ -16598,7 +17930,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "granola": {
    "funding": [],
@@ -16627,7 +17960,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "grata": {
    "funding": [],
@@ -16656,7 +17990,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "graylog": {
    "funding": [],
@@ -16731,7 +18066,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "greenbone": {
    "funding": [],
@@ -16806,7 +18142,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "greenhouse": {
    "funding": [],
@@ -16835,7 +18172,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "groq": {
    "funding": [],
@@ -16864,7 +18202,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "guardrails-ai": {
    "funding": [],
@@ -16959,7 +18298,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gumloop": {
    "funding": [],
@@ -16988,7 +18328,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "guru": {
    "funding": [],
@@ -17017,7 +18358,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "gusto": {
    "funding": [],
@@ -17046,7 +18388,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hackerone": {
    "funding": [],
@@ -17075,7 +18418,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "haloitsm": {
    "funding": [],
@@ -17104,7 +18448,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "harmonic": {
    "funding": [],
@@ -17133,7 +18478,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "harness": {
    "funding": [],
@@ -17162,7 +18508,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hashicorp": {
    "funding": [],
@@ -17200,7 +18547,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "hashicorp-vault": {
    "funding": [],
@@ -17245,7 +18593,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "haystack": {
    "funding": [],
@@ -17320,7 +18669,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "headscale": {
    "funding": [],
@@ -17378,7 +18728,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "helicone": {
    "funding": [],
@@ -17453,7 +18804,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "helm": {
    "funding": [],
@@ -17544,7 +18896,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "help-scout": {
    "funding": [],
@@ -17573,7 +18926,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "heroku": {
    "funding": [],
@@ -17602,7 +18956,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hetzner": {
    "funding": [],
@@ -17631,7 +18986,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hevo-data": {
    "funding": [],
@@ -17660,7 +19016,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hex": {
    "funding": [
@@ -17711,7 +19068,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hexnode": {
    "funding": [],
@@ -17740,7 +19098,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hey": {
    "funding": [],
@@ -17769,7 +19128,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hibob": {
    "funding": [],
@@ -17798,7 +19158,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hightouch": {
    "funding": [
@@ -17849,7 +19210,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "homebrew": {
    "funding": [],
@@ -17924,7 +19286,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "honeycomb": {
    "funding": [],
@@ -17953,7 +19316,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hover": {
    "funding": [],
@@ -17982,7 +19346,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hoxhunt": {
    "funding": [],
@@ -18011,7 +19376,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hp": {
    "funding": [],
@@ -18040,7 +19406,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hpe-aruba-networking": {
    "funding": [],
@@ -18069,7 +19436,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hubspot": {
    "funding": [],
@@ -18098,7 +19466,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hugging-face": {
    "funding": [],
@@ -18193,7 +19562,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "huginn": {
    "funding": [],
@@ -18283,7 +19653,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "huntress": {
    "funding": [],
@@ -18312,7 +19683,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hyperproof": {
    "funding": [],
@@ -18341,7 +19713,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "hypr": {
    "funding": [],
@@ -18370,7 +19743,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ibm": {
    "funding": [],
@@ -18399,7 +19773,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ibm-cloud": {
    "funding": [],
@@ -18428,7 +19803,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "icloud": {
    "funding": [],
@@ -18457,7 +19833,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ideals": {
    "funding": [],
@@ -18486,7 +19863,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "idrive": {
    "funding": [],
@@ -18515,7 +19893,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ifttt": {
    "funding": [],
@@ -18544,7 +19923,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ilevel": {
    "funding": [],
@@ -18573,7 +19953,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "imanage": {
    "funding": [],
@@ -18602,7 +19983,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "immich": {
    "funding": [],
@@ -18692,7 +20074,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "imperva": {
    "funding": [],
@@ -18721,7 +20104,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "incident-io": {
    "funding": [
@@ -18772,7 +20156,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "infisical": {
    "funding": [],
@@ -18894,7 +20279,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "influxdata": {
    "funding": [],
@@ -18969,7 +20355,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "informatica": {
    "funding": [],
@@ -19007,7 +20394,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "inngest": {
    "funding": [
@@ -19136,7 +20524,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "intercom": {
    "funding": [],
@@ -19165,7 +20554,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "intralinks": {
    "funding": [],
@@ -19194,7 +20584,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "intruder": {
    "funding": [],
@@ -19223,7 +20614,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "investran": {
    "funding": [],
@@ -19252,7 +20644,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ironclad": {
    "funding": [],
@@ -19281,7 +20674,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ironscales": {
    "funding": [],
@@ -19310,7 +20704,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "istio": {
    "funding": [],
@@ -19401,7 +20796,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ivanti": {
    "funding": [],
@@ -19430,7 +20826,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jabra": {
    "funding": [],
@@ -19459,7 +20856,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jaeger": {
    "funding": [],
@@ -19549,7 +20947,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jamf": {
    "funding": [],
@@ -19587,7 +20986,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "jenkins": {
    "funding": [],
@@ -19677,7 +21077,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jetbrains": {
    "funding": [],
@@ -19706,7 +21107,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jira": {
    "funding": [],
@@ -19735,7 +21137,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jira-service-management": {
    "funding": [],
@@ -19764,7 +21167,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jitsi": {
    "funding": [],
@@ -19854,7 +21258,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "joplin": {
    "funding": [],
@@ -19945,7 +21350,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "josys": {
    "funding": [],
@@ -19974,7 +21380,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "jumpcloud": {
    "funding": [],
@@ -20003,7 +21410,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "juniper-networks": {
    "funding": [],
@@ -20032,7 +21440,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "juniper-square": {
    "funding": [
@@ -20083,7 +21492,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "justworks": {
    "funding": [],
@@ -20112,7 +21522,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "k3s": {
    "funding": [],
@@ -20202,7 +21613,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "kandji": {
    "funding": [],
@@ -20231,7 +21643,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "kaseya": {
    "funding": [
@@ -20282,7 +21695,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "keepassxc": {
    "funding": [],
@@ -20373,7 +21787,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "keeper-security": {
    "funding": [],
@@ -20402,7 +21817,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "keepit": {
    "funding": [],
@@ -20431,7 +21847,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "keycloak": {
    "funding": [],
@@ -20521,7 +21938,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "kiro": {
    "funding": [],
@@ -20550,7 +21968,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "knowbe4": {
    "funding": [],
@@ -20579,7 +21998,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "koyfin": {
    "funding": [],
@@ -20608,7 +22028,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "kubernetes": {
    "funding": [],
@@ -20699,7 +22120,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lakera": {
    "funding": [],
@@ -20737,7 +22159,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "lancedb": {
    "funding": [],
@@ -20832,7 +22255,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "langchain": {
    "funding": [
@@ -20981,7 +22405,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "langflow": {
    "funding": [],
@@ -21076,7 +22501,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "langfuse": {
    "funding": [],
@@ -21203,7 +22629,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lansweeper": {
    "funding": [],
@@ -21232,7 +22659,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "laserfiche": {
    "funding": [],
@@ -21261,7 +22689,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lastpass": {
    "funding": [],
@@ -21290,7 +22719,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lattice": {
    "funding": [],
@@ -21319,7 +22749,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ledgy": {
    "funding": [],
@@ -21348,7 +22779,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lenovo": {
    "funding": [],
@@ -21377,7 +22809,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lets-encrypt": {
    "funding": [],
@@ -21452,7 +22885,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lever": {
    "funding": [],
@@ -21481,7 +22915,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "libreoffice": {
    "funding": [],
@@ -21572,7 +23007,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lightdash": {
    "funding": [],
@@ -21662,7 +23098,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lindy": {
    "funding": [],
@@ -21691,7 +23128,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "linear": {
    "funding": [],
@@ -21737,7 +23175,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "linkedin": {
    "funding": [],
@@ -21766,7 +23205,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "linkedin-learning": {
    "funding": [],
@@ -21795,7 +23235,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "linkerd": {
    "funding": [],
@@ -21886,7 +23327,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "litellm": {
    "funding": [],
@@ -21981,7 +23423,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "litmos": {
    "funding": [],
@@ -22010,7 +23453,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "llama-cpp": {
    "funding": [],
@@ -22121,7 +23565,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "llamaindex": {
    "funding": [],
@@ -22248,7 +23693,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "logicgate": {
    "funding": [],
@@ -22277,7 +23723,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "logitech": {
    "funding": [],
@@ -22306,7 +23753,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "logseq": {
    "funding": [],
@@ -22397,7 +23845,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "looker": {
    "funding": [],
@@ -22426,7 +23875,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "loom": {
    "funding": [],
@@ -22455,7 +23905,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lovable": {
    "funding": [
@@ -22590,7 +24041,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lseg": {
    "funding": [],
@@ -22619,7 +24071,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "lumos": {
    "funding": [],
@@ -22648,7 +24101,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "m-files": {
    "funding": [],
@@ -22677,7 +24131,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "make": {
    "funding": [],
@@ -22706,7 +24161,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "malwarebytes": {
    "funding": [],
@@ -22735,7 +24191,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "manageengine": {
    "funding": [],
@@ -22764,7 +24221,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "manus": {
    "funding": [],
@@ -22793,7 +24251,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mariadb": {
    "funding": [],
@@ -22883,7 +24342,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mastra": {
    "funding": [],
@@ -22990,7 +24450,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "material-security": {
    "funding": [],
@@ -23019,7 +24480,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "matillion": {
    "funding": [],
@@ -23048,7 +24510,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "matomo": {
    "funding": [],
@@ -23138,7 +24601,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mattermost": {
    "funding": [],
@@ -23228,7 +24692,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mega": {
    "funding": [],
@@ -23257,7 +24722,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "meltano": {
    "funding": [],
@@ -23352,7 +24818,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mend": {
    "funding": [],
@@ -23381,7 +24848,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mendix": {
    "funding": [],
@@ -23410,7 +24878,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mercury": {
    "funding": [
@@ -23482,7 +24951,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "meshcentral": {
    "funding": [],
@@ -23550,7 +25020,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "meta": {
    "funding": [],
@@ -23579,7 +25050,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "metabase": {
    "funding": [],
@@ -23669,7 +25141,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft": {
    "funding": [],
@@ -23698,7 +25171,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-365": {
    "funding": [],
@@ -23727,7 +25201,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-authenticator": {
    "funding": [],
@@ -23756,7 +25231,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-autogen": {
    "funding": [],
@@ -23851,7 +25327,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-azure": {
    "funding": [],
@@ -23880,7 +25357,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-copilot": {
    "funding": [],
@@ -23909,7 +25387,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-copilot-studio": {
    "funding": [],
@@ -23938,7 +25417,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-defender": {
    "funding": [],
@@ -23967,7 +25447,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-dynamics-365": {
    "funding": [],
@@ -23996,7 +25477,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-entra-id": {
    "funding": [],
@@ -24025,7 +25507,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-fabric": {
    "funding": [],
@@ -24054,7 +25537,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-intune": {
    "funding": [],
@@ -24083,7 +25567,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-onenote": {
    "funding": [],
@@ -24112,7 +25597,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-power-apps": {
    "funding": [],
@@ -24141,7 +25627,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-power-automate": {
    "funding": [],
@@ -24170,7 +25657,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-power-bi": {
    "funding": [],
@@ -24199,7 +25687,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-sentinel": {
    "funding": [],
@@ -24228,7 +25717,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-sql-server": {
    "funding": [],
@@ -24257,7 +25747,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "microsoft-teams": {
    "funding": [],
@@ -24286,7 +25777,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mikrotik": {
    "funding": [],
@@ -24315,7 +25807,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "milvus": {
    "funding": [],
@@ -24425,7 +25918,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mimecast": {
    "funding": [],
@@ -24454,7 +25948,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mistral-ai": {
    "funding": [
@@ -24505,7 +26000,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mixpanel": {
    "funding": [],
@@ -24534,7 +26030,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mlflow": {
    "funding": [],
@@ -24629,7 +26126,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "model-context-protocol": {
    "funding": [],
@@ -24756,7 +26254,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "monday-com": {
    "funding": [],
@@ -24785,7 +26284,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mongodb": {
    "funding": [],
@@ -24830,7 +26330,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "moodle": {
    "funding": [],
@@ -24920,7 +26421,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "morningstar": {
    "funding": [],
@@ -24949,7 +26451,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mosyle": {
    "funding": [
@@ -25000,7 +26503,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "motherduck": {
    "funding": [],
@@ -25029,7 +26533,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "msci": {
    "funding": [],
@@ -25058,7 +26563,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mullvad": {
    "funding": [],
@@ -25104,7 +26610,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "mysql": {
    "funding": [],
@@ -25194,7 +26701,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "n8n": {
    "funding": [
@@ -25338,7 +26846,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nagios": {
    "funding": [],
@@ -25428,7 +26937,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "namecheap": {
    "funding": [],
@@ -25457,7 +26967,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "navan": {
    "funding": [],
@@ -25495,7 +27006,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "navatar": {
    "funding": [],
@@ -25524,7 +27036,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "neon": {
    "funding": [],
@@ -25640,7 +27153,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "netbird": {
    "funding": [],
@@ -25730,7 +27244,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "netdocuments": {
    "funding": [],
@@ -25759,7 +27274,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "netgear": {
    "funding": [],
@@ -25788,7 +27304,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "netlify": {
    "funding": [],
@@ -25817,7 +27334,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "netskope": {
    "funding": [],
@@ -25855,7 +27373,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "netsuite": {
    "funding": [],
@@ -25884,7 +27403,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "new-relic": {
    "funding": [],
@@ -25913,7 +27433,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nextcloud": {
    "funding": [],
@@ -26003,7 +27524,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nextdns": {
    "funding": [],
@@ -26032,7 +27554,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nginx": {
    "funding": [],
@@ -26122,7 +27645,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ninjaone": {
    "funding": [],
@@ -26151,7 +27675,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ninjio": {
    "funding": [],
@@ -26180,7 +27705,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nocodb": {
    "funding": [],
@@ -26270,7 +27796,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "node-red": {
    "funding": [],
@@ -26392,7 +27919,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nord-security": {
    "funding": [],
@@ -26421,7 +27949,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nordpass": {
    "funding": [],
@@ -26450,7 +27979,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nordvpn": {
    "funding": [],
@@ -26479,7 +28009,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "notion": {
    "funding": [],
@@ -26525,7 +28056,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ns1": {
    "funding": [],
@@ -26554,7 +28086,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "nudge-security": {
    "funding": [],
@@ -26583,7 +28116,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "obsidian": {
    "funding": [],
@@ -26629,7 +28163,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "obsidian-security": {
    "funding": [],
@@ -26658,7 +28193,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "octopus-deploy": {
    "funding": [],
@@ -26687,7 +28223,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "odoo": {
    "funding": [],
@@ -26777,7 +28314,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "okta": {
    "funding": [],
@@ -26806,7 +28344,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ollama": {
    "funding": [],
@@ -26932,7 +28471,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "omni": {
    "funding": [
@@ -26983,7 +28523,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "omnissa": {
    "funding": [
@@ -27055,7 +28596,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "onedrive": {
    "funding": [],
@@ -27084,7 +28626,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "onelogin": {
    "funding": [],
@@ -27113,7 +28656,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "onetrust": {
    "funding": [],
@@ -27142,7 +28686,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "onlyoffice": {
    "funding": [],
@@ -27232,7 +28777,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "opal-security": {
    "funding": [],
@@ -27261,7 +28807,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openai": {
    "funding": [],
@@ -27290,7 +28837,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openai-agents-sdk": {
    "funding": [],
@@ -27385,7 +28933,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openai-codex": {
    "funding": [],
@@ -27447,7 +28996,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openbao": {
    "funding": [],
@@ -27538,7 +29088,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "opencode": {
    "funding": [],
@@ -27645,7 +29196,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openproject": {
    "funding": [],
@@ -27735,7 +29287,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openrouter": {
    "funding": [
@@ -27840,7 +29393,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "opensearch": {
    "funding": [],
@@ -27930,7 +29484,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "opentelemetry": {
    "funding": [],
@@ -28066,7 +29621,8 @@
      "retrieved": "2026-09-22",
      "method": "landscape-history"
     }
-   ]
+   ],
+   "conferences": []
   },
   "opentofu": {
    "funding": [],
@@ -28166,7 +29722,8 @@
      "retrieved": "2026-09-22",
      "method": "landscape-history"
     }
-   ]
+   ],
+   "conferences": []
   },
   "openvpn": {
    "funding": [],
@@ -28256,7 +29813,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "openwrt": {
    "funding": [],
@@ -28331,7 +29889,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "opnsense": {
    "funding": [],
@@ -28406,7 +29965,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "oracle": {
    "funding": [],
@@ -28435,7 +29995,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "oracle-cloud-infrastructure": {
    "funding": [],
@@ -28464,7 +30025,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "oracle-database": {
    "funding": [],
@@ -28493,7 +30055,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "orca-security": {
    "funding": [],
@@ -28522,7 +30085,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "osquery": {
    "funding": [],
@@ -28613,7 +30177,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "osticket": {
    "funding": [],
@@ -28703,7 +30268,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "otter-ai": {
    "funding": [],
@@ -28732,7 +30298,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "outline": {
    "funding": [],
@@ -28822,7 +30389,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "outsystems": {
    "funding": [],
@@ -28851,7 +30419,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ovhcloud": {
    "funding": [],
@@ -28880,7 +30449,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "owncloud": {
    "funding": [],
@@ -28970,7 +30540,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "paessler-prtg": {
    "funding": [],
@@ -28999,7 +30570,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pagerduty": {
    "funding": [],
@@ -29028,7 +30600,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "palo-alto-networks": {
    "funding": [],
@@ -29057,7 +30630,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pandadoc": {
    "funding": [],
@@ -29086,7 +30660,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "panther": {
    "funding": [],
@@ -29115,7 +30690,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "paperless-ngx": {
    "funding": [],
@@ -29205,7 +30781,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "papermark": {
    "funding": [],
@@ -29280,7 +30857,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "passbolt": {
    "funding": [],
@@ -29370,7 +30948,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "passthrough": {
    "funding": [],
@@ -29399,7 +30978,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "patronus-ai": {
    "funding": [],
@@ -29428,7 +31008,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "paychex": {
    "funding": [],
@@ -29457,7 +31038,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "payhawk": {
    "funding": [],
@@ -29486,7 +31068,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "paylocity": {
    "funding": [],
@@ -29515,7 +31098,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pcloud": {
    "funding": [],
@@ -29544,7 +31128,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pdq": {
    "funding": [],
@@ -29573,7 +31158,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "perforce": {
    "funding": [],
@@ -29611,7 +31197,8 @@
      "retrieved": "2026-09-22",
      "method": "wikidata"
     }
-   ]
+   ],
+   "conferences": []
   },
   "perplexity": {
    "funding": [],
@@ -29640,7 +31227,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "personio": {
    "funding": [
@@ -29691,7 +31279,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pfsense": {
    "funding": [],
@@ -29766,7 +31355,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pgvector": {
    "funding": [],
@@ -29861,7 +31451,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pi-hole": {
    "funding": [],
@@ -29951,7 +31542,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pinecone": {
    "funding": [],
@@ -30001,7 +31593,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ping-identity": {
    "funding": [],
@@ -30030,7 +31623,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pipedream": {
    "funding": [],
@@ -30059,7 +31653,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pipedrive": {
    "funding": [],
@@ -30088,7 +31683,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pitchbook": {
    "funding": [],
@@ -30117,7 +31713,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "plane": {
    "funding": [],
@@ -30207,7 +31804,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "planetscale": {
    "funding": [],
@@ -30236,7 +31834,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "plausible": {
    "funding": [],
@@ -30326,7 +31925,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pleo": {
    "funding": [],
@@ -30355,7 +31955,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pluralsight": {
    "funding": [],
@@ -30384,7 +31985,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pocketbase": {
    "funding": [],
@@ -30491,7 +32093,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "podman": {
    "funding": [],
@@ -30582,7 +32185,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pomerium": {
    "funding": [],
@@ -30672,7 +32276,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "porkbun": {
    "funding": [],
@@ -30701,7 +32306,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "portainer": {
    "funding": [],
@@ -30746,7 +32352,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "portkey": {
    "funding": [],
@@ -30821,7 +32428,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "postgresql": {
    "funding": [],
@@ -30911,7 +32519,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "posthog": {
    "funding": [
@@ -31060,7 +32669,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "prefect": {
    "funding": [],
@@ -31155,7 +32765,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "preqin": {
    "funding": [],
@@ -31193,7 +32804,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "preset": {
    "funding": [],
@@ -31222,7 +32834,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "procurify": {
    "funding": [],
@@ -31251,7 +32864,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "productiv": {
    "funding": [],
@@ -31280,7 +32894,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "projectdiscovery": {
    "funding": [],
@@ -31371,7 +32986,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "prometheus": {
    "funding": [],
@@ -31461,7 +33077,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "promptfoo": {
    "funding": [
@@ -31590,7 +33207,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "proofpoint": {
    "funding": [],
@@ -31619,7 +33237,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "proton": {
    "funding": [],
@@ -31665,7 +33284,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "prowler": {
    "funding": [],
@@ -31760,7 +33380,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pulley": {
    "funding": [],
@@ -31789,7 +33410,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pulumi": {
    "funding": [
@@ -31954,7 +33576,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "puppet": {
    "funding": [],
@@ -31983,7 +33606,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "push-security": {
    "funding": [
@@ -32034,7 +33658,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "pydantic-ai": {
    "funding": [],
@@ -32129,7 +33754,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "qdrant": {
    "funding": [],
@@ -32239,7 +33865,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "qlik": {
    "funding": [],
@@ -32268,7 +33895,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "quad9": {
    "funding": [],
@@ -32297,7 +33925,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "qualys": {
    "funding": [],
@@ -32326,7 +33955,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "quickbase": {
    "funding": [],
@@ -32355,7 +33985,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "quickbooks": {
    "funding": [],
@@ -32384,7 +34015,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "railway": {
    "funding": [],
@@ -32413,7 +34045,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ramp": {
    "funding": [
@@ -32527,7 +34160,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rancher": {
    "funding": [],
@@ -32602,7 +34236,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rapid7": {
    "funding": [],
@@ -32631,7 +34266,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "raspberry-pi": {
    "funding": [],
@@ -32660,7 +34296,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "raycast": {
    "funding": [],
@@ -32706,7 +34343,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "reclaim-ai": {
    "funding": [],
@@ -32735,7 +34373,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "red-canary": {
    "funding": [],
@@ -32773,7 +34412,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "red-hat": {
    "funding": [],
@@ -32848,7 +34488,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "red-sift": {
    "funding": [],
@@ -32877,7 +34518,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "redash": {
    "funding": [],
@@ -32967,7 +34609,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "redis": {
    "funding": [],
@@ -33032,7 +34675,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "relevance-ai": {
    "funding": [],
@@ -33061,7 +34705,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "remarkable": {
    "funding": [],
@@ -33090,7 +34735,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "remote": {
    "funding": [],
@@ -33119,7 +34765,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "render": {
    "funding": [
@@ -33170,7 +34817,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "replit": {
    "funding": [],
@@ -33199,7 +34847,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "restic": {
    "funding": [],
@@ -33290,7 +34939,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "retool": {
    "funding": [],
@@ -33319,7 +34969,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rippling": {
    "funding": [
@@ -33370,7 +35021,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rocket-chat": {
    "funding": [],
@@ -33460,7 +35112,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "roo-code": {
    "funding": [
@@ -33589,7 +35242,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rootly": {
    "funding": [],
@@ -33618,7 +35272,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rsa-securid": {
    "funding": [],
@@ -33647,7 +35302,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rubrik": {
    "funding": [],
@@ -33676,7 +35332,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rudderstack": {
    "funding": [],
@@ -33766,7 +35423,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rundit": {
    "funding": [],
@@ -33795,7 +35453,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "rustdesk": {
    "funding": [],
@@ -33886,7 +35545,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "s-and-p-global": {
    "funding": [],
@@ -33915,7 +35575,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sage": {
    "funding": [],
@@ -33944,7 +35605,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sailpoint": {
    "funding": [],
@@ -33973,7 +35635,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "salesforce": {
    "funding": [],
@@ -34002,7 +35665,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "salesforce-agentforce": {
    "funding": [],
@@ -34031,7 +35695,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "samsung": {
    "funding": [],
@@ -34060,7 +35725,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sap": {
    "funding": [],
@@ -34089,7 +35755,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sastrify": {
    "funding": [],
@@ -34118,7 +35785,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "saviynt": {
    "funding": [],
@@ -34147,7 +35815,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "savvycal": {
    "funding": [],
@@ -34176,7 +35845,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "scaleway": {
    "funding": [],
@@ -34205,7 +35875,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "scalr": {
    "funding": [],
@@ -34234,7 +35905,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "seafile": {
    "funding": [],
@@ -34324,7 +35996,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "secureframe": {
    "funding": [],
@@ -34353,7 +36026,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "securityscorecard": {
    "funding": [],
@@ -34382,7 +36056,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "segment": {
    "funding": [],
@@ -34411,7 +36086,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "semantic-kernel": {
    "funding": [],
@@ -34506,7 +36182,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "semaphore": {
    "funding": [],
@@ -34596,7 +36273,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "semgrep": {
    "funding": [],
@@ -34707,7 +36385,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sentinelone": {
    "funding": [],
@@ -34736,7 +36415,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sentry": {
    "funding": [],
@@ -34863,7 +36543,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "servicenow": {
    "funding": [
@@ -34914,7 +36595,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sharepoint": {
    "funding": [],
@@ -34943,7 +36625,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "shareworks": {
    "funding": [],
@@ -34972,7 +36655,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sierra": {
    "funding": [],
@@ -35001,7 +36685,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sigma-computing": {
    "funding": [
@@ -35052,7 +36737,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "signal": {
    "funding": [],
@@ -35143,7 +36829,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "signoz": {
    "funding": [],
@@ -35233,7 +36920,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "silverfort": {
    "funding": [],
@@ -35262,7 +36950,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "skillsoft": {
    "funding": [],
@@ -35291,7 +36980,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "slack": {
    "funding": [],
@@ -35337,7 +37027,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "slite": {
    "funding": [],
@@ -35366,7 +37057,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "smartsheet": {
    "funding": [],
@@ -35404,7 +37096,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "smolagents": {
    "funding": [],
@@ -35499,7 +37192,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "snipe-it": {
    "funding": [],
@@ -35589,7 +37283,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "snowflake": {
    "funding": [
@@ -35640,7 +37335,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "snyk": {
    "funding": [],
@@ -35669,7 +37365,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "socket": {
    "funding": [
@@ -35741,7 +37438,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "softr": {
    "funding": [],
@@ -35770,7 +37468,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "solarwinds": {
    "funding": [],
@@ -35799,7 +37498,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sonarsource": {
    "funding": [
@@ -35896,7 +37596,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sonicwall": {
    "funding": [],
@@ -35925,7 +37626,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sophos": {
    "funding": [],
@@ -35954,7 +37656,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sops": {
    "funding": [],
@@ -36045,7 +37748,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sosafe": {
    "funding": [],
@@ -36074,7 +37778,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sourcegraph": {
    "funding": [],
@@ -36103,7 +37808,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sourcescrub": {
    "funding": [],
@@ -36132,7 +37838,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "spacelift": {
    "funding": [],
@@ -36161,7 +37868,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "spendesk": {
    "funding": [],
@@ -36190,7 +37898,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "spiceworks": {
    "funding": [],
@@ -36219,7 +37928,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "spinnaker": {
    "funding": [],
@@ -36294,7 +38004,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "splashtop": {
    "funding": [],
@@ -36323,7 +38034,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "splunk": {
    "funding": [],
@@ -36352,7 +38064,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sprinto": {
    "funding": [],
@@ -36381,7 +38094,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sqlite": {
    "funding": [],
@@ -36472,7 +38186,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "squarespace": {
    "funding": [],
@@ -36510,7 +38225,8 @@
      "retrieved": "2026-09-22",
      "method": "wikidata"
     }
-   ]
+   ],
+   "conferences": []
   },
   "ss-and-c-technologies": {
    "funding": [],
@@ -36539,7 +38255,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "standard-metrics": {
    "funding": [],
@@ -36568,7 +38285,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "starburst": {
    "funding": [],
@@ -36597,7 +38315,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "steampipe": {
    "funding": [],
@@ -36688,7 +38407,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "stripe": {
    "funding": [],
@@ -36734,7 +38454,8 @@
      "retrieved": "2026-09-22",
      "method": "wikidata"
     }
-   ]
+   ],
+   "conferences": []
   },
   "strongdm": {
    "funding": [],
@@ -36763,7 +38484,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sublime-security": {
    "funding": [],
@@ -36792,7 +38514,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sumo-logic": {
    "funding": [],
@@ -36821,7 +38544,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "supabase": {
    "funding": [
@@ -37096,7 +38820,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "superblocks": {
    "funding": [],
@@ -37125,7 +38850,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "superhuman": {
    "funding": [],
@@ -37163,7 +38889,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "sydecar": {
    "funding": [
@@ -37214,7 +38941,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "synology": {
    "funding": [],
@@ -37243,7 +38971,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sysaid": {
    "funding": [],
@@ -37272,7 +39001,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "sysdig": {
    "funding": [],
@@ -37347,7 +39077,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "system76": {
    "funding": [],
@@ -37376,7 +39107,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tableau": {
    "funding": [],
@@ -37405,7 +39137,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tabnine": {
    "funding": [],
@@ -37434,7 +39167,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tailscale": {
    "funding": [
@@ -37502,7 +39236,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "talentlms": {
    "funding": [],
@@ -37531,7 +39266,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tanium": {
    "funding": [],
@@ -37560,7 +39296,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "teamviewer": {
    "funding": [],
@@ -37589,7 +39326,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tekton": {
    "funding": [],
@@ -37664,7 +39402,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "telegram": {
    "funding": [],
@@ -37710,7 +39449,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "teleport": {
    "funding": [],
@@ -37801,7 +39541,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "temporal": {
    "funding": [
@@ -37950,7 +39691,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tenable": {
    "funding": [],
@@ -37979,7 +39721,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "teradata": {
    "funding": [],
@@ -38008,7 +39751,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "terraform": {
    "funding": [],
@@ -38037,7 +39781,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "terragrunt": {
    "funding": [],
@@ -38128,7 +39873,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "things": {
    "funding": [],
@@ -38157,7 +39903,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "thoropass": {
    "funding": [],
@@ -38186,7 +39933,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "thoughtspot": {
    "funding": [],
@@ -38215,7 +39963,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "threema": {
    "funding": [],
@@ -38244,7 +39993,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "thunderbird": {
    "funding": [],
@@ -38290,7 +40040,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tigerdata": {
    "funding": [],
@@ -38365,7 +40116,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tines": {
    "funding": [
@@ -38416,7 +40168,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "todoist": {
    "funding": [],
@@ -38445,7 +40198,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "together-ai": {
    "funding": [
@@ -38496,7 +40250,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tooljet": {
    "funding": [],
@@ -38586,7 +40341,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "topdesk": {
    "funding": [],
@@ -38615,7 +40371,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "torii": {
    "funding": [],
@@ -38644,7 +40401,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "torq": {
    "funding": [],
@@ -38673,7 +40431,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tp-link": {
    "funding": [],
@@ -38702,7 +40461,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tracxn": {
    "funding": [],
@@ -38731,7 +40491,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "traefik": {
    "funding": [],
@@ -38837,7 +40598,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tray-ai": {
    "funding": [],
@@ -38866,7 +40628,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "trello": {
    "funding": [],
@@ -38895,7 +40658,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "trend-micro": {
    "funding": [],
@@ -38924,7 +40688,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tresorit": {
    "funding": [],
@@ -38953,7 +40718,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "trigger-dev": {
    "funding": [],
@@ -39060,7 +40826,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "trinet": {
    "funding": [],
@@ -39089,7 +40856,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "trino": {
    "funding": [],
@@ -39199,7 +40967,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "trivy": {
    "funding": [],
@@ -39290,7 +41059,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tropic": {
    "funding": [],
@@ -39319,7 +41089,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "truffle-security": {
    "funding": [],
@@ -39410,7 +41181,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "turbopuffer": {
    "funding": [],
@@ -39439,7 +41211,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "turso": {
    "funding": [],
@@ -39546,7 +41319,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "tuta": {
    "funding": [],
@@ -39621,7 +41395,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "twenty": {
    "funding": [],
@@ -39711,7 +41486,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "twingate": {
    "funding": [],
@@ -39740,7 +41516,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ubiquiti": {
    "funding": [],
@@ -39769,7 +41546,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "udemy": {
    "funding": [],
@@ -39798,7 +41576,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "ukg": {
    "funding": [],
@@ -39827,7 +41606,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "upguard": {
    "funding": [],
@@ -39856,7 +41636,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "uptime-kuma": {
    "funding": [],
@@ -39946,7 +41727,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "uptimerobot": {
    "funding": [],
@@ -39975,7 +41757,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "v0": {
    "funding": [],
@@ -40004,7 +41787,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "valence-security": {
    "funding": [],
@@ -40033,7 +41817,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "valimail": {
    "funding": [],
@@ -40062,7 +41847,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "valkey": {
    "funding": [],
@@ -40152,7 +41938,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vanta": {
    "funding": [
@@ -40203,7 +41990,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vaultwarden": {
    "funding": [],
@@ -40293,7 +42081,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "veeam": {
    "funding": [
@@ -40386,7 +42175,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vendr": {
    "funding": [],
@@ -40415,7 +42205,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "veracode": {
    "funding": [],
@@ -40444,7 +42235,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vercel": {
    "funding": [
@@ -40495,7 +42287,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vercel-ai-sdk": {
    "funding": [],
@@ -40602,7 +42395,8 @@
      "note": "Registry download counts include mirrors, CI, and bots; quarter sums cover the days listed"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vespa": {
    "funding": [],
@@ -40677,7 +42471,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vestberry": {
    "funding": [],
@@ -40706,7 +42501,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "victoriametrics": {
    "funding": [],
@@ -40796,7 +42592,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "visible": {
    "funding": [
@@ -40847,7 +42644,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "visual-studio-code": {
    "funding": [],
@@ -40938,7 +42736,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "vllm": {
    "funding": [],
@@ -41033,7 +42832,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wasabi": {
    "funding": [
@@ -41084,7 +42884,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "watchguard": {
    "funding": [],
@@ -41113,7 +42914,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wazuh": {
    "funding": [],
@@ -41203,7 +43005,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "weaviate": {
    "funding": [],
@@ -41298,7 +43101,8 @@
      "note": "pypistats.org exposes only the last 180 days, so earlier quarters are absent and the first covered quarter is partial"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "webex": {
    "funding": [],
@@ -41327,7 +43131,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "webflow": {
    "funding": [],
@@ -41356,7 +43161,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "weights-and-biases": {
    "funding": [],
@@ -41415,7 +43221,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "whatsapp": {
    "funding": [],
@@ -41444,7 +43251,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "whereby": {
    "funding": [],
@@ -41473,7 +43281,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "whistic": {
    "funding": [],
@@ -41502,7 +43311,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wiki-js": {
    "funding": [],
@@ -41592,7 +43402,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "windmill": {
    "funding": [],
@@ -41667,7 +43478,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wireguard": {
    "funding": [],
@@ -41713,7 +43525,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wix": {
    "funding": [],
@@ -41742,7 +43555,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wiz": {
    "funding": [],
@@ -41780,7 +43594,8 @@
      "retrieved": "2026-09-22",
      "method": "announcement"
     }
-   ]
+   ],
+   "conferences": []
   },
   "woodpecker-ci": {
    "funding": [],
@@ -41870,7 +43685,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wordpress": {
    "funding": [],
@@ -41945,7 +43761,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "workato": {
    "funding": [],
@@ -41974,7 +43791,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "workday": {
    "funding": [],
@@ -42003,7 +43821,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "workos": {
    "funding": [],
@@ -42032,7 +43851,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "workramp": {
    "funding": [],
@@ -42061,7 +43881,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "wrike": {
    "funding": [],
@@ -42090,7 +43911,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "writer": {
    "funding": [
@@ -42141,7 +43963,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "xai": {
    "funding": [
@@ -42255,7 +44078,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "xero": {
    "funding": [],
@@ -42284,7 +44108,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "yubico": {
    "funding": [],
@@ -42313,7 +44138,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zabbix": {
    "funding": [],
@@ -42403,7 +44229,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zammad": {
    "funding": [],
@@ -42493,7 +44320,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zapier": {
    "funding": [],
@@ -42522,7 +44350,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zed": {
    "funding": [
@@ -42635,7 +44464,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zendesk": {
    "funding": [],
@@ -42664,7 +44494,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zerotier": {
    "funding": [],
@@ -42710,7 +44541,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zip": {
    "funding": [
@@ -42761,7 +44593,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zitadel": {
    "funding": [],
@@ -42836,7 +44669,8 @@
      "note": "Monthly count of first-time pull request authors from GH Archive events, summed per quarter"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zluri": {
    "funding": [],
@@ -42865,7 +44699,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zoho": {
    "funding": [],
@@ -42894,7 +44729,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zoom": {
    "funding": [],
@@ -42940,7 +44776,8 @@
      "note": "Homebrew analytics publish rolling 30, 90, and 365 day install counts, not a dated series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zoominfo": {
    "funding": [
@@ -42991,7 +44828,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zscaler": {
    "funding": [],
@@ -43020,7 +44858,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zulip": {
    "funding": [],
@@ -43110,7 +44949,8 @@
      "note": "Docker Hub exposes a lifetime pull count on the day of retrieval, not a series"
     }
    ],
-   "events": []
+   "events": [],
+   "conferences": []
   },
   "zylo": {
    "funding": [],
@@ -43139,7 +44979,8 @@
    },
    "hnSkipped": null,
    "adoption": [],
-   "events": []
+   "events": [],
+   "conferences": []
   }
  }
 }

@@ -29,7 +29,7 @@ const urls = new Set();
 for (const vendor of landscape.vendors) { if (vendor.website) urls.add(vendor.website); vendor.sources.forEach((s) => urls.add(s)); }
 for (const relation of landscape.relations) urls.add(relation.source);
 // Market-signal sources (landscape/signals.json) are checked too when the file exists: filing indexes, announcement and
-// event pages, repository pages, and attribution pages. Query-style API endpoints are skipped because a HEAD request
+// event pages, repository pages, attribution pages, and conference directory pages with their robots.txt. Query-style API endpoints are skipped because a HEAD request
 // there says nothing about the page a reader would open.
 const signalUrls = new Set();
 const API_HOSTS = ['hn.algolia.com', 'api.ossinsight.io', 'api.npmjs.org', 'pypistats.org', 'formulae.brew.sh', 'hub.docker.com', 'api.github.com', 'data.sec.gov', 'query.wikidata.org', 'raw.githubusercontent.com'];
@@ -43,6 +43,7 @@ if (signals) {
     for (const e of v.events) consider(e.source);
   }
   for (const k of signals.methods.kaggleCandidates) consider(k.url);
+  for (const e of signals.conferences?.events ?? []) { consider(e.url); consider(e.robotsUrl); }
   for (const u of signalUrls) urls.add(u);
 }
 const pending = [...urls].filter((url) => !cache[url] && !url.startsWith('https://www.wikidata.org/'));

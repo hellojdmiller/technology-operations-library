@@ -1,0 +1,875 @@
+{
+ "retrieved": "2026-09-23",
+ "userAgent": "TechnologyOperationsLibrary-signals/1.0 (https://github.com/hellojdmiller/technology-operations-library; hellojdmiller@gmail.com)",
+ "robots": {
+  "https://www.rsaconference.com/robots.txt": {
+   "url": "https://www.rsaconference.com/robots.txt",
+   "status": 403,
+   "retrieved": "2026-09-23",
+   "sha256": "07093e6d2f6d26395b2c4fa9707ec023adc1b2b7c5f4c0d76f759d26324629d9",
+   "body": null,
+   "error": null
+  },
+  "https://www.blackhat.com/robots.txt": {
+   "url": "https://www.blackhat.com/robots.txt",
+   "status": 200,
+   "retrieved": "2026-09-23",
+   "sha256": "7319ab8cfaa03d2108a3990982b21b9193ae8b6f108d848cd2176efccd6ea755",
+   "body": "User-agent: *\nDisallow: /errors/\nAllow: /",
+   "error": null
+  },
+  "https://defcon.org/robots.txt": {
+   "url": "https://defcon.org/robots.txt",
+   "status": 200,
+   "retrieved": "2026-09-23",
+   "sha256": "c33da0b5fd0dd9c07defe6f7f9529555652723663c172c05ebe6c43a8781c75e",
+   "body": "User-agent: AI2Bot\nUser-agent: Ai2Bot-Dolma\nUser-agent: aiHitBot\nUser-agent: Amazonbot\nUser-agent: anthropic-ai\nUser-agent: Applebot\nUser-agent: Applebot-Extended\nUser-agent: Brightbot 1.0\nUser-agent: Bytespider\nUser-agent: CCBot\nUser-agent: ChatGPT-User\nUser-agent: Claude-Web\nUser-agent: ClaudeBot\nUser-agent: cohere-ai\nUser-agent: cohere-training-data-crawler\nUser-agent: Cotoyogi\nUser-agent: Crawlspace\nUser-agent: Diffbot\nUser-agent: DuckAssistBot\nUser-agent: FacebookBot\nUser-agent: Factset_spyderbot\nUser-agent: FirecrawlAgent\nUser-agent: FriendlyCrawler\nUser-agent: Google-Extended\nUser-agent: GoogleOther\nUser-agent: GoogleOther-Image\nUser-agent: GoogleOther-Video\nUser-agent: GPTBot\nUser-agent: iaskspider/2.0\nUser-agent: ICC-Crawler\nUser-agent: ImagesiftBot\nUser-agent: img2dataset\nUser-agent: imgproxy\nUser-agent: ISSCyberRiskCrawler\nUser-agent: Kangaroo Bot\nUser-agent: meta-externalagent\nUser-agent: Meta-ExternalAgent\nUser-agent: meta-externalfetcher\nUser-agent: Meta-ExternalFetcher\nUser-agent: NovaAct\nUser-agent: OAI-SearchBot\nUser-agent: omgili\nUser-agent: omgilibot\nUser-agent: Operator\nUser-agent: PanguBot\nUser-agent: Perplexity-User\nUser-agent: PerplexityBot\nUser-agent: PetalBot\nUser-agent: Scrapy\nUser-agent: SemrushBot-OCOB\nUser-agent: SemrushBot-SWA\nUser-agent: Sidetrade indexer bot\nUser-agent: TikTokSpider\nUser-agent: Timpibot\nUser-agent: VelenPublicWebCrawler\nUser-agent: Webzio-Extended\nUser-agent: YouBot\nDisallow: /\n",
+   "error": null
+  }
+ },
+ "events": {
+  "rsac-2025-exhibitors": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://www.rsaconference.com/robots.txt",
+    "status": 403,
+    "rule": "unreadable",
+    "matchedGroup": null
+   },
+   "page": null,
+   "entries": [],
+   "refused": "robots.txt could not be read (status 403, an HTML error page); the directory was not fetched because the site's rules for automated reading are unknown"
+  },
+  "rsac-2026-exhibitors": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://www.rsaconference.com/robots.txt",
+    "status": 403,
+    "rule": "unreadable",
+    "matchedGroup": null
+   },
+   "page": null,
+   "entries": [],
+   "refused": "robots.txt could not be read (status 403, an HTML error page); the directory was not fetched because the site's rules for automated reading are unknown"
+  },
+  "blackhat-usa-2025-sponsors": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://www.blackhat.com/robots.txt",
+    "status": 200,
+    "rule": "allowed",
+    "matchedGroup": "*"
+   },
+   "page": {
+    "url": "https://www.blackhat.com/us-25/sponsors.html",
+    "status": 403,
+    "finalUrl": "https://blackhat.com/us-25/sponsors.html",
+    "server": "cloudflare",
+    "sha256": "7f6c87c1838da2af006bdace49121e32b2860be48175b2ca27723e913876571a",
+    "bytes": 5482,
+    "error": null
+   },
+   "entries": [],
+   "refused": "the server answered 403 to the identified fetcher with a security-service block page; no browser identity was tried"
+  },
+  "blackhat-usa-2026-sponsors": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://www.blackhat.com/robots.txt",
+    "status": 200,
+    "rule": "allowed",
+    "matchedGroup": "*"
+   },
+   "page": {
+    "url": "https://www.blackhat.com/us-26/sponsors.html",
+    "status": 403,
+    "finalUrl": "https://blackhat.com/us-26/sponsors.html",
+    "server": "cloudflare",
+    "sha256": "f333a5c4113e6828099d97a62afb7ab2cd904a6d237bd496b84ad49559bb458e",
+    "bytes": 5482,
+    "error": null
+   },
+   "entries": [],
+   "refused": "the server answered 403 to the identified fetcher with a security-service block page; no browser identity was tried"
+  },
+  "defcon-33-vendors": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://defcon.org/robots.txt",
+    "status": 200,
+    "rule": "no rule for this agent",
+    "matchedGroup": null
+   },
+   "page": {
+    "url": "https://defcon.org/html/defcon-33/dc-33-vendors.html",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-33/dc-33-vendors.html",
+    "server": null,
+    "sha256": "1cc567c506336152711e580b081ac832c7bc8d0ffc46d45149d766e44ba0cc86",
+    "bytes": 43884,
+    "error": null
+   },
+   "entries": [
+    {
+     "name": "Arts and Ent.",
+     "website": null,
+     "anchor": "orga_41135"
+    },
+    {
+     "name": "Cryptocurrency Advocate",
+     "website": "https://www.cryptoadvocate.cc",
+     "anchor": "orga_41137"
+    },
+    {
+     "name": "deepnet LLC",
+     "website": "https://deepnet.store",
+     "anchor": "orga_41138"
+    },
+    {
+     "name": "Electronic Cats",
+     "website": "https://electroniccats.com",
+     "anchor": "orga_41139"
+    },
+    {
+     "name": "Electronic Frontier Foundation (EFF)",
+     "website": "https://eff.org/",
+     "anchor": "orga_41140"
+    },
+    {
+     "name": "EXPLIoT",
+     "website": "https://expliot.io",
+     "anchor": "orga_41141"
+    },
+    {
+     "name": "FREE WiLi - Intrepid Control Systems Inc",
+     "website": "https://freewili.com",
+     "anchor": "orga_41146"
+    },
+    {
+     "name": "HackerBoxes",
+     "website": "https://hackerboxes.com/",
+     "anchor": "orga_41143"
+    },
+    {
+     "name": "HackerWarehouse",
+     "website": "https://hackerwarehouse.com",
+     "anchor": "orga_41142"
+    },
+    {
+     "name": "Hak5 LLC",
+     "website": "https://shop.hak5.org",
+     "anchor": "orga_41144"
+    },
+    {
+     "name": "iFixit",
+     "website": "https://www.ifixit.com",
+     "anchor": "orga_41145"
+    },
+    {
+     "name": "Keyport",
+     "website": "https://mykeyport.com",
+     "anchor": "orga_41147"
+    },
+    {
+     "name": "Killchainz Clothing",
+     "website": "https://Killchainz.shop",
+     "anchor": "orga_41159"
+    },
+    {
+     "name": "M2 Powered Partners LLC",
+     "website": "https://m2-p2.com",
+     "anchor": "orga_41148"
+    },
+    {
+     "name": "Mar Williams",
+     "website": "https://patreon.com/spux",
+     "anchor": "orga_41149"
+    },
+    {
+     "name": "Midwest Gadgets LLC",
+     "website": "https://www.midwestgadgets.com",
+     "anchor": "orga_41150"
+    },
+    {
+     "name": "Miscreants, LLC",
+     "website": "https://miscreants.com",
+     "anchor": "orga_41151"
+    },
+    {
+     "name": "No Starch Press, Inc",
+     "website": "https://nostarch.com",
+     "anchor": "orga_41153"
+    },
+    {
+     "name": "Nuand LLC",
+     "website": "https://nuand.com",
+     "anchor": "orga_41154"
+    },
+    {
+     "name": "Octopwn GmbH",
+     "website": "https://www.octopwn.com",
+     "anchor": "orga_41155"
+    },
+    {
+     "name": "PhysSec Education",
+     "website": "https://www.physsec.org",
+     "anchor": "orga_41157"
+    },
+    {
+     "name": "Rabbit-Labs",
+     "website": "https://rabbit-labs.com",
+     "anchor": "orga_41194"
+    },
+    {
+     "name": "Red Team Tools",
+     "website": "https://redteamtools.com",
+     "anchor": "orga_41166"
+    },
+    {
+     "name": "REKCAH Publishing",
+     "website": "https://rekcahcomics.com",
+     "anchor": "orga_41158"
+    },
+    {
+     "name": "Rogue's Roost, LLC",
+     "website": null,
+     "anchor": "orga_41160"
+    },
+    {
+     "name": "Rokland LLC",
+     "website": "https://www.rokland.com",
+     "anchor": "orga_41161"
+    },
+    {
+     "name": "Salty Security",
+     "website": "https://saltysecurity.com",
+     "anchor": "orga_41195"
+    },
+    {
+     "name": "Shadowvex Industries",
+     "website": "https://shadowvexindustries.com",
+     "anchor": "orga_41162"
+    },
+    {
+     "name": "SOK",
+     "website": null,
+     "anchor": "orga_41163"
+    },
+    {
+     "name": "Sparrows Manufacturing Co",
+     "website": "https://www.sparrowslockpicks.com",
+     "anchor": "orga_41164"
+    },
+    {
+     "name": "The Calyx Institute",
+     "website": "https://calyxinstitute.org",
+     "anchor": "orga_41165"
+    },
+    {
+     "name": "The Open Organisation of Lockpickers (TOOOL)",
+     "website": "https://toool.us",
+     "anchor": "orga_41167"
+    },
+    {
+     "name": "The Tor Project, Inc.",
+     "website": "https://torproject.org",
+     "anchor": "orga_41168"
+    },
+    {
+     "name": "Women in Security and Privacy",
+     "website": "https://www.wisporg.com",
+     "anchor": "orga_41171"
+    },
+    {
+     "name": "Xcape, Inc.",
+     "website": "https://Xca.pe",
+     "anchor": "orga_41172"
+    }
+   ],
+   "refused": null
+  },
+  "defcon-33-villages": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://defcon.org/robots.txt",
+    "status": 200,
+    "rule": "no rule for this agent",
+    "matchedGroup": null
+   },
+   "page": {
+    "url": "https://defcon.org/html/defcon-33/dc-33-villages.html",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-33/dc-33-villages.html",
+    "server": null,
+    "sha256": "8bf0172fddf258fbe385724cce9123011526c7e69f7a5670f55a4da6ddbacd2f",
+    "bytes": 67871,
+    "error": null
+   },
+   "entries": [
+    {
+     "name": "Adversary Village",
+     "website": "https://adversaryvillage.org/",
+     "anchor": "orga_40719"
+    },
+    {
+     "name": "Aerospace Village",
+     "website": "https://www.aerospacevillage.org/",
+     "anchor": "orga_40720"
+    },
+    {
+     "name": "AI Village",
+     "website": "https://aivillage.org/",
+     "anchor": "orga_40718"
+    },
+    {
+     "name": "AppSec Village",
+     "website": "https://www.appsecvillage.com/",
+     "anchor": "orga_40721"
+    },
+    {
+     "name": "Artificial Intelligence Cyber Challenge (AIxCC)",
+     "website": "https://aicyberchallenge.com/",
+     "anchor": "orga_40722"
+    },
+    {
+     "name": "Biohacking Village",
+     "website": "https://villageb.io/",
+     "anchor": "orga_40723"
+    },
+    {
+     "name": "Blacks In Cyber Village",
+     "website": "https://www.blacksincyberconf.com/bic-village",
+     "anchor": "orga_40724"
+    },
+    {
+     "name": "Blue Team Village (BTV)",
+     "website": "https://blueteamvillage.org/",
+     "anchor": "orga_40725"
+    },
+    {
+     "name": "Bug Bounty Village",
+     "website": "https://www.bugbountydefcon.com/",
+     "anchor": "orga_40726"
+    },
+    {
+     "name": "Car Hacking Village",
+     "website": "https://www.carhackingvillage.com",
+     "anchor": "orga_40727"
+    },
+    {
+     "name": "Cloud Village",
+     "website": "https://dc33.cloud-village.org",
+     "anchor": "orga_40728"
+    },
+    {
+     "name": "Crypto Privacy Village",
+     "website": "https://cryptovillage.org/",
+     "anchor": "orga_40729"
+    },
+    {
+     "name": "Data Duplication Village",
+     "website": "https://dcddv.org/",
+     "anchor": "orga_40730"
+    },
+    {
+     "name": "Embedded Systems Village",
+     "website": "https://embeddedvillage.org/",
+     "anchor": "orga_40731"
+    },
+    {
+     "name": "GameHacking.GG",
+     "website": "https://gamehacking.gg",
+     "anchor": "orga_40967"
+    },
+    {
+     "name": "Ham Radio Village",
+     "website": "https://hamvillage.org/",
+     "anchor": "orga_40732"
+    },
+    {
+     "name": "Hardware Hacking and Soldering Skills Village (HHV/SSV)",
+     "website": "https://dchhv.org/",
+     "anchor": "orga_40733"
+    },
+    {
+     "name": "ICS Village",
+     "website": "https://www.icsvillage.com/",
+     "anchor": "orga_40734"
+    },
+    {
+     "name": "IOT Village",
+     "website": "https://iotvillage.org/defcon.html",
+     "anchor": "orga_40735"
+    },
+    {
+     "name": "Lock Pick Village",
+     "website": "https://toool.us/",
+     "anchor": "orga_40736"
+    },
+    {
+     "name": "Malware Village",
+     "website": "https://malwarevillage.org/",
+     "anchor": "orga_40968"
+    },
+    {
+     "name": "Maritime Hacking Village",
+     "website": "https://maritimehackingvillage.com/",
+     "anchor": "orga_40969"
+    },
+    {
+     "name": "Packet Hacking Village",
+     "website": "https://www.wallofsheep.com",
+     "anchor": "orga_40737"
+    },
+    {
+     "name": "Payment Village",
+     "website": "https://www.paymentvillage.org/",
+     "anchor": "orga_40738"
+    },
+    {
+     "name": "Physical Security Village",
+     "website": "https://physsec.org",
+     "anchor": "orga_40970"
+    },
+    {
+     "name": "Policy @ DEF CON",
+     "website": "https://defcon.org/policy/",
+     "anchor": "orga_40740"
+    },
+    {
+     "name": "Quantum Village",
+     "website": "https://quantumvillage.org/",
+     "anchor": "orga_40741"
+    },
+    {
+     "name": "Radio Frequency Village",
+     "website": "https://rfhackers.com/",
+     "anchor": "orga_40742"
+    },
+    {
+     "name": "Recon Village",
+     "website": "https://reconvillage.org/",
+     "anchor": "orga_40743"
+    },
+    {
+     "name": "Red Team Village",
+     "website": "https://redteamvillage.io/",
+     "anchor": "orga_40744"
+    },
+    {
+     "name": "Social Engineering Community Village",
+     "website": "https://www.se.community/",
+     "anchor": "orga_40745"
+    },
+    {
+     "name": "Tamper-Evident Village",
+     "website": null,
+     "anchor": "orga_41104"
+    },
+    {
+     "name": "Telecom Village",
+     "website": "https://telecomvillage.com/",
+     "anchor": "orga_40747"
+    },
+    {
+     "name": "Voting Village",
+     "website": "https://votingvillage.org/",
+     "anchor": "orga_40748"
+    }
+   ],
+   "refused": null
+  },
+  "defcon-34-vendors": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://defcon.org/robots.txt",
+    "status": 200,
+    "rule": "no rule for this agent",
+    "matchedGroup": null
+   },
+   "page": {
+    "url": "https://defcon.org/html/defcon-34/dc-34-vendors.html",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-34/dc-34-vendors.html",
+    "server": null,
+    "sha256": "782aaa2689f66cfbde3c67a9eb58f7d8bdce61ee3047c14f0f48c29060ead9a8",
+    "bytes": 51108,
+    "error": null
+   },
+   "entries": [
+    {
+     "name": "1BitSquared LLC",
+     "website": "https://1bitsquared.com/",
+     "anchor": "orga_41536"
+    },
+    {
+     "name": "Cognitive Security Institute",
+     "website": "https://www.cognitivesecurityinstitute.org/",
+     "anchor": "orga_41511"
+    },
+    {
+     "name": "Cryptocurrency Advocate",
+     "website": "https://www.cryptocurrencyvillage.cc/",
+     "anchor": "orga_41517"
+    },
+    {
+     "name": "DEEPNET LLC",
+     "website": "https://deepnet.store",
+     "anchor": "orga_41538"
+    },
+    {
+     "name": "Electronic Cats",
+     "website": "https://www.electroniccats.com",
+     "anchor": "orga_41525"
+    },
+    {
+     "name": "Electronic Frontier Foundation (EFF)",
+     "website": "https://eff.org",
+     "anchor": "orga_41521"
+    },
+    {
+     "name": "FREE-WILI, LLC (last year was Intrepid Control Systems)",
+     "website": "https://freewili.com/",
+     "anchor": "orga_41519"
+    },
+    {
+     "name": "Geist-Projekt/Crisiswear",
+     "website": "https://www.crisiswear.com",
+     "anchor": "orga_41532"
+    },
+    {
+     "name": "Hacker Warehouse",
+     "website": "https://hackerwarehouse.com/",
+     "anchor": "orga_41526"
+    },
+    {
+     "name": "Hak5 LLC",
+     "website": "https://hak5.org",
+     "anchor": "orga_41518"
+    },
+    {
+     "name": "iFixit Inc",
+     "website": "https://iFixit.com",
+     "anchor": "orga_41523"
+    },
+    {
+     "name": "InDiPro",
+     "website": "https://indiprogames.com",
+     "anchor": "orga_41510"
+    },
+    {
+     "name": "Keyport, Inc.",
+     "website": "https://www.mykeyport.com",
+     "anchor": "orga_41537"
+    },
+    {
+     "name": "LowMesh LLC",
+     "website": "https://lowmesh.com",
+     "anchor": "orga_41529"
+    },
+    {
+     "name": "Manifesto Industries LLC",
+     "website": "https://sneakreaper-industries.com/",
+     "anchor": "orga_41515"
+    },
+    {
+     "name": "Midwest Gadgets LLC",
+     "website": "https://www.midwestgadgets.com",
+     "anchor": "orga_41522"
+    },
+    {
+     "name": "Miscreants",
+     "website": "https://shop.miscreants.com/",
+     "anchor": "orga_41534"
+    },
+    {
+     "name": "No Starch Press Inc",
+     "website": "https://nostarch.com",
+     "anchor": "orga_41540"
+    },
+    {
+     "name": "Octopwn Kft",
+     "website": "https://www.octopwn.com",
+     "anchor": "orga_41514"
+    },
+    {
+     "name": "Phreeli Company",
+     "website": "https://www.phreeli.com",
+     "anchor": "orga_41530"
+    },
+    {
+     "name": "PhysSec Education Education PhysSec",
+     "website": "https://physsec.org",
+     "anchor": "orga_41527"
+    },
+    {
+     "name": "Rabbit-Labs LLC",
+     "website": "https://rabbit-labs.com/",
+     "anchor": "orga_41531"
+    },
+    {
+     "name": "Red Team Tools",
+     "website": "https://redteamtools.com",
+     "anchor": "orga_41535"
+    },
+    {
+     "name": "REKCAH Publishing",
+     "website": "https://www.blackhillsinfosec.com/rekcah/",
+     "anchor": "orga_41513"
+    },
+    {
+     "name": "Rogue’s Roost LLC",
+     "website": "https://Roguesroostllc.com",
+     "anchor": "orga_41516"
+    },
+    {
+     "name": "Rokland LLC",
+     "website": "https://www.rokland.com",
+     "anchor": "orga_41533"
+    },
+    {
+     "name": "Shadowvex Industries",
+     "website": "https://shadowvex.com",
+     "anchor": "orga_41539"
+    },
+    {
+     "name": "Sparrows Manufacturing Co",
+     "website": "https://sparrowslockpicks.com/",
+     "anchor": "orga_41512"
+    },
+    {
+     "name": "The Calyx Institute",
+     "website": "https://calyx.org",
+     "anchor": "orga_41520"
+    },
+    {
+     "name": "The Open Organisation of Lockpickers (TOOOL)",
+     "website": "https://toool.us/",
+     "anchor": "orga_41528"
+    },
+    {
+     "name": "The Tor Project",
+     "website": "https://torproject.org/",
+     "anchor": "orga_41541"
+    },
+    {
+     "name": "Women in Security and Privacy (WISP)",
+     "website": "https://www.wisporg.com",
+     "anchor": "orga_41524"
+    }
+   ],
+   "refused": null
+  },
+  "defcon-34-villages": {
+   "retrieved": "2026-09-23",
+   "robots": {
+    "url": "https://defcon.org/robots.txt",
+    "status": 200,
+    "rule": "no rule for this agent",
+    "matchedGroup": null
+   },
+   "page": {
+    "url": "https://defcon.org/html/defcon-34/dc-34-villages.html",
+    "status": 200,
+    "finalUrl": "https://defcon.org/html/defcon-34/dc-34-villages.html",
+    "server": null,
+    "sha256": "426318607f750bf02687131322bcd6b0f576bfe0e8b83f94aa64e303d9df0bf7",
+    "bytes": 82476,
+    "error": null
+   },
+   "entries": [
+    {
+     "name": "Adversary Village",
+     "website": "https://adversaryvillage.org",
+     "anchor": "orga_41326"
+    },
+    {
+     "name": "Aerospace Village",
+     "website": "https://aerospacevillage.org",
+     "anchor": "orga_41383"
+    },
+    {
+     "name": "AI Village",
+     "website": "https://aivillage.org/",
+     "anchor": "orga_41327"
+    },
+    {
+     "name": "AppSec Village",
+     "website": "https://www.appsecvillage.com/",
+     "anchor": "orga_41350"
+    },
+    {
+     "name": "Badgelife Village",
+     "website": "https://badge.life",
+     "anchor": "orga_41349"
+    },
+    {
+     "name": "Biohacking Village",
+     "website": "https://villageb.io",
+     "anchor": "orga_41384"
+    },
+    {
+     "name": "Blacks In Cyber Village",
+     "website": "https://www.blacksincyberconf.com/bic-village",
+     "anchor": "orga_41363"
+    },
+    {
+     "name": "Blue Team Village (BTV)",
+     "website": "https://blueteamvillage.org",
+     "anchor": "orga_41334"
+    },
+    {
+     "name": "Bug Bounty Village",
+     "website": "https://www.bugbountydefcon.com/",
+     "anchor": "orga_41336"
+    },
+    {
+     "name": "Call Center Village",
+     "website": "https://www.callcentervillage.com",
+     "anchor": "orga_41429"
+    },
+    {
+     "name": "Car Hacking Village",
+     "website": "https://www.carhackingvillage.com/",
+     "anchor": "orga_41337"
+    },
+    {
+     "name": "Cloud Village",
+     "website": "https://www.cloud-village.org/",
+     "anchor": "orga_41338"
+    },
+    {
+     "name": "Crypto & Privacy Village",
+     "website": "https://cryptovillage.org",
+     "anchor": "orga_41430"
+    },
+    {
+     "name": "Cryptocurrency Village",
+     "website": "https://www.cryptocurrencyvillage.cc/",
+     "anchor": "orga_41359"
+    },
+    {
+     "name": "Data Duplication Village",
+     "website": "https://dcddv.org",
+     "anchor": "orga_41340"
+    },
+    {
+     "name": "Embedded Systems Village",
+     "website": "https://embeddedvillage.org/",
+     "anchor": "orga_41341"
+    },
+    {
+     "name": "Game Hacking Village",
+     "website": "https://gamehacking.gg",
+     "anchor": "orga_41431"
+    },
+    {
+     "name": "Ham Radio Village",
+     "website": "https://hamvillage.org/",
+     "anchor": "orga_41342"
+    },
+    {
+     "name": "Hardware Hacking and Soldering Skills Village (HHV/SSV)",
+     "website": "https://dchhv.org",
+     "anchor": "orga_41344"
+    },
+    {
+     "name": "ICS Village",
+     "website": "https://www.icsvillage.com",
+     "anchor": "orga_41343"
+    },
+    {
+     "name": "IoT Village",
+     "website": "https://iotvillage.org/",
+     "anchor": "orga_41432"
+    },
+    {
+     "name": "Lockpick Village",
+     "website": "https://toool.us/",
+     "anchor": "orga_41345"
+    },
+    {
+     "name": "Maker's Village",
+     "website": "https://makersvillage.space",
+     "anchor": "orga_41289"
+    },
+    {
+     "name": "Malware Village",
+     "website": "https://malwarevillage.org",
+     "anchor": "orga_41298"
+    },
+    {
+     "name": "Maritime Hacking Village",
+     "website": "https://maritimehackingvillage.com/",
+     "anchor": "orga_41387"
+    },
+    {
+     "name": "Packet Hacking Village",
+     "website": "https://www.wallofsheep.com",
+     "anchor": "orga_41348"
+    },
+    {
+     "name": "Payment Village",
+     "website": "https://paymentvillage.org",
+     "anchor": "orga_41382"
+    },
+    {
+     "name": "Physical Security Village",
+     "website": "https://www.physsec.org",
+     "anchor": "orga_41330"
+    },
+    {
+     "name": "Policy @ DEF CON",
+     "website": "https://defcon.org/policy/",
+     "anchor": "orga_41347"
+    },
+    {
+     "name": "Quantum Village",
+     "website": "https://quantumvillage.org/",
+     "anchor": "orga_41434"
+    },
+    {
+     "name": "Radio Frequency Village",
+     "website": "http://rfhackers.com",
+     "anchor": "orga_41351"
+    },
+    {
+     "name": "Recon Village",
+     "website": "https://reconvillage.org",
+     "anchor": "orga_41352"
+    },
+    {
+     "name": "Red Team Village",
+     "website": "https://redteamvillage.io/",
+     "anchor": "orga_41353"
+    },
+    {
+     "name": "Scambait Village",
+     "website": null,
+     "anchor": "orga_41428"
+    },
+    {
+     "name": "Social Engineering Community Village",
+     "website": "https://www.se.community",
+     "anchor": "orga_41366"
+    },
+    {
+     "name": "Tamper-Evident Village",
+     "website": null,
+     "anchor": "orga_41508"
+    },
+    {
+     "name": "Telecom Village",
+     "website": "https://telecomvillage.com",
+     "anchor": "orga_41354"
+    },
+    {
+     "name": "Voting Village",
+     "website": null,
+     "anchor": "orga_41324"
+    }
+   ],
+   "refused": null
+  }
+ }
+}

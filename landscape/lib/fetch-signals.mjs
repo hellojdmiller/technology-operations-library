@@ -16,6 +16,8 @@
 //   events         Wikidata ownership, parent, name, and dissolution statements; EDGAR former names; landscape maturity changes; verified vendor announcements
 //
 // Every fetch is cached under lib/cache/signals/ with the retrieval date, so a rerun is idempotent and resumable.
+// Conference directories are fetched by fetch-conferences.mjs into the same cache directory; the assembly below reads that
+// cache so a full rebuild keeps the conferences block (see conferences.mjs).
 // Large raw downloads (Form D zips, survey CSVs) go to lib/cache/signals/raw/, which is not committed.
 // No token is ever written: a GitHub token is read from GITHUB_TOKEN or from `gh auth token` at run time only.
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
@@ -23,6 +25,7 @@ import { inflateRawSync } from 'node:zlib';
 import { execSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assembleConferences } from './conferences.mjs';
 
 const directory = dirname(fileURLToPath(import.meta.url));
 const root = join(directory, '..');
@@ -775,6 +778,7 @@ const hn = (await loadCache('hn', { vendors: {} })).vendors;
 const adoption = await (async () => { const saved = flags.refresh; flags.refresh = false; const dry = flags.dryRun; flags.dryRun = true; flags.quiet = true; const r = await fetchAdoption(); flags.dryRun = dry; flags.refresh = saved; flags.quiet = false; return r; })();
 const survey = await loadCache('stackoverflow', { years: {}, probes: {} });
 const eventList = events ?? await (async () => { const saved = flags.refresh; flags.refresh = false; const dry = flags.dryRun; flags.dryRun = true; flags.quiet = true; const r = await fetchEvents(); flags.dryRun = dry; flags.refresh = saved; flags.quiet = false; return r; })();
+const conferences = assembleConferences(await loadCache('conferences', null), landscape);
 const announcementList = announcements ?? await (async () => { const saved = flags.refresh; flags.refresh = false; const dry = flags.dryRun; flags.dryRun = true; flags.quiet = true; const r = await fetchAnnouncements(); flags.dryRun = dry; flags.refresh = saved; flags.quiet = false; return r; })();
 
 // Counting rule for Form D: an original filing counts its amount sold when the first sale is within a quarter of the window
@@ -823,6 +827,7 @@ for (const vendor of landscape.vendors) {
     hnSkipped: manual.hn.skip[vendor.id] ?? null,
     adoption: adoptionEntries,
     events: eventList.filter((e) => e.vendor === vendor.id).map(({ vendor: _v, ...rest }) => rest),
+    conferences: conferences.byVendor[vendor.id] ?? [],
   };
 }
 
@@ -842,6 +847,7 @@ const attributions = [
   { dataset: 'Wikidata', publisher: 'Wikimedia Foundation and contributors', license: 'CC0 1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', url: 'https://query.wikidata.org/', retrieved: eventList.find((e) => e.method === 'wikidata')?.retrieved ?? null, credit: 'Ownership, parent organization, official name, dissolution, headquarters, and source code repository statements from Wikidata (CC0).', shareAlike: false },
   { dataset: 'CNCF, LF AI and Data, and CD Foundation landscapes', publisher: 'The Linux Foundation and its foundations', license: 'Apache-2.0 (landscape data)', licenseUrl: 'https://github.com/cncf/landscape/blob/master/LICENSE', url: 'https://github.com/cncf/landscape', retrieved: eventList.find((e) => e.method === 'landscape-history')?.retrieved ?? null, credit: 'Project maturity levels from the landscape.yml files of the CNCF, LF AI and Data, and CD Foundation landscapes, compared between two commits.', shareAlike: false },
   { dataset: 'Vendor newsroom and blog posts', publisher: 'Each vendor', license: 'Each vendor\'s own terms; only the URL, date, and stated figure are recorded', licenseUrl: null, url: null, retrieved: announcementList.map((a) => a.retrieved).filter(Boolean).sort().at(-1) ?? null, credit: 'Funding rounds and corporate events as announced by each vendor on its own site; each record links the page it came from.', shareAlike: false },
+  ...conferences.attributions,
 ];
 
 const coverage = {
@@ -856,6 +862,7 @@ const coverage = {
   withHnMentions: Object.values(vendors).filter((v) => v.hnMentions && v.hnMentions.total > 0).length,
   withAdoption: Object.values(vendors).filter((v) => v.adoption.length).length,
   withEvents: Object.values(vendors).filter((v) => v.events.length).length,
+  withConferences: Object.values(vendors).filter((v) => v.conferences.length).length,
   withAnySignal: Object.values(vendors).filter((v) => v.funding.length || v.stars?.byQuarter || (v.hnMentions && v.hnMentions.total > 0) || v.adoption.length || v.events.length).length,
   formDFilings: Object.values(vendors).reduce((n, v) => n + v.funding.filter((f) => f.kind === 'form-d').length, 0),
   formDCandidatesReviewed: formD.review.length,
@@ -869,6 +876,7 @@ const methods = {
   adoption: `Package series for vendors whose product maps to one package: npm registry daily downloads summed per quarter (two years), PyPI downloads without mirrors from pypistats.org (only the last 180 days are exposed, so the first covered quarter is partial), Homebrew install counts (rolling 30, 90, and 365 day snapshots), Docker Hub lifetime pull counts (a snapshot), and OSS Insight monthly first-time pull request creators summed per quarter. Downloads include CI systems, mirrors, and bots.`,
   surveys: `Stack Overflow Developer Survey public results for 2024 and 2025 (ODbL). Multi-select tool questions were mapped to landscape vendors in lib/signals-survey-mapping.json; a vendor's share is the share of respondents who answered the question and named it, and a category's share is the share who named any mapped vendor in that category, counting only the categories each question speaks to. Only the database question kept the same option list in both years; other questions changed and are reported without a year-over-year difference. The 2026 results were ${survey.probes?.['2026']?.status === 200 ? 'available but not yet mapped' : 'not published at retrieval time'}.`,
   events: `Acquisitions, parent changes, renames, and dissolutions from Wikidata statements whose start time falls in the window (year-precision dates are flagged), renames from EDGAR former names of matched Form D filers, maturity changes between the CNCF, LF AI and Data, and CD Foundation landscape files at the window start and at retrieval, and vendor announcements verified by fetching the page and finding the counterpart's name in it.`,
+  conferences: conferences.method,
   aggregation: `Category and layer totals split each vendor's figure equally across its landscape categories so that a vendor in two categories is not counted twice; a layer total sums its categories. Every table in SIGNALS.md marks category totals that rest on one or two filings.`,
   shareAlike: `The Stack Overflow survey shares are the only share-alike (ODbL) input. They appear in signals-by-category.json under surveys and in the Survey trend table of SIGNALS.md, so that derived database is offered under ODbL 1.0 as well; every other figure in these files is under CC0 like the rest of the landscape.`,
   rejectedDatasets: manual.rejectedDatasets,
@@ -898,6 +906,7 @@ const signals = {
   attributions,
   coverage,
   surveys,
+  conferences: conferences.block,
   vendors,
 };
 const out = JSON.stringify(signals, null, 1) + '\n';

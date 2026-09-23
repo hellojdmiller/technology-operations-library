@@ -1,6 +1,6 @@
 # Market signals
 
-Where capital and attention went across the technology landscape between 2024-09-01 and 2026-09-22, by quarter, category, and layer. Generated from [signals.json](signals.json) by `lib/build-signals.mjs` on 2026-09-22; the per-category numbers are in [signals-by-category.json](signals-by-category.json). Quarters marked * are partial (2024-Q3: 2024-09-01 to 2024-09-30; 2026-Q3: 2026-07-01 to 2026-09-22).
+Where capital and attention went across the technology landscape between 2024-09-01 and 2026-09-22, by quarter, category, and layer. Generated from [signals.json](signals.json) by `lib/build-signals.mjs` on 2026-09-23; the per-category numbers are in [signals-by-category.json](signals-by-category.json). Quarters marked * are partial (2024-Q3: 2024-09-01 to 2024-09-30; 2026-Q3: 2026-07-01 to 2026-09-22).
 
 Read this with the limits in mind: Form D amounts are what issuers reported as sold in exempt offerings, not what companies banked, and only US filers appear; announcements are self-reported; stars, downloads, and Hacker News stories measure attention, not revenue. Nothing here is a valuation or a market share. Category totals split each vendor equally across its categories, and every table marks a total that rests on one or two filings.
 
@@ -191,6 +191,30 @@ Acquisitions, take-privates, mergers, listings, renames, parent changes, and dis
 | OpenTelemetry | CNCF landscape maturity moved from incubating to graduated between 2024-09-01 (commit 8a3cb0f) and the retrieval date | [landscape](https://github.com/cncf/landscape/blob/master/landscape.yml) |
 | OpenTofu | CNCF landscape maturity moved from none to sandbox between 2024-09-01 (commit 8a3cb0f) and the retrieval date | [landscape](https://github.com/cncf/landscape/blob/master/landscape.yml) |
 
+## Conference presence
+
+Which landscape vendors held a table or a sponsorship at the large security conferences, read from each event's own public directory after its robots.txt. Presence measures who paid or applied for a place on the floor, not adoption or revenue; a directory that refused the identified fetcher is listed below as not yet available rather than guessed.
+
+| Event | Year | List | Listed | Matched to the map | Retrieved | Source |
+|---|---:|---|---:|---:|---|---|
+| DEF CON 33 | 2025 | vendors | 35 | 0 | 2026-09-23 | [defcon.org](https://defcon.org/html/defcon-33/dc-33-vendors.html) |
+| DEF CON 33 | 2025 | villages | 34 | 0 | 2026-09-23 | [defcon.org](https://defcon.org/html/defcon-33/dc-33-villages.html) |
+| DEF CON 34 | 2026 | vendors | 32 | 0 | 2026-09-23 | [defcon.org](https://defcon.org/html/defcon-34/dc-34-vendors.html) |
+| DEF CON 34 | 2026 | villages | 38 | 0 | 2026-09-23 | [defcon.org](https://defcon.org/html/defcon-34/dc-34-villages.html) |
+
+No landscape vendor appears on a readable directory: the 139 entries across 4 pages (DEF CON 33 vendors, DEF CON 33 villages, DEF CON 34 vendors, DEF CON 34 villages) are hardware and merchandise sellers, publishers, nonprofits, and community villages, none of which the map lists. Every entry, its linked website, and its near misses are in signals.json under conferences.events[].unmatched, so the zero is checkable.
+
+### Conference presence: not yet available
+
+Directories that were attempted and could not be read. The fetcher identified itself with the library's user agent and contact address, read robots.txt first, and did not retry under a browser identity; each row records what the host answered and why the page was not used.
+
+| Event | Year | List | Directory | robots.txt | Page | Attempted | Why not used |
+|---|---:|---|---|---|---|---|---|
+| RSAC 2025 | 2025 | exhibitors | [www.rsaconference.com](https://www.rsaconference.com/usa/expo-and-sponsors/exhibitor-list) | [403](https://www.rsaconference.com/robots.txt) | not fetched | 2026-09-23 | robots.txt could not be read (status 403, an HTML error page); the directory was not fetched because the site's rules for automated reading are unknown RSAC serves one exhibitor directory for the current year; a 2025 archive page could not be identified because the site refused every request. |
+| RSAC 2026 | 2026 | exhibitors | [www.rsaconference.com](https://www.rsaconference.com/usa/expo-and-sponsors/exhibitor-list) | [403](https://www.rsaconference.com/robots.txt) | not fetched | 2026-09-23 | robots.txt could not be read (status 403, an HTML error page); the directory was not fetched because the site's rules for automated reading are unknown |
+| Black Hat USA 2025 | 2025 | sponsors | [www.blackhat.com](https://www.blackhat.com/us-25/sponsors.html) | [200](https://www.blackhat.com/robots.txt) | 403 | 2026-09-23 | the server answered 403 to the identified fetcher with a security-service block page; no browser identity was tried |
+| Black Hat USA 2026 | 2026 | sponsors | [www.blackhat.com](https://www.blackhat.com/us-26/sponsors.html) | [200](https://www.blackhat.com/robots.txt) | 403 | 2026-09-23 | the server answered 403 to the identified fetcher with a security-service block page; no browser identity was tried |
+
 ## Coverage
 
 How many of the vendors carry each signal. A vendor with no signal has an empty record in signals.json, never a guess.
@@ -207,9 +231,11 @@ How many of the vendors carry each signal. A vendor with no signal has an empty 
 | Hacker News counts above zero | 650 | 825 |
 | Package download or install data | 263 | 825 |
 | Event in the window | 26 | 825 |
+| Conference presence (a readable directory lists the vendor) | 0 | 825 |
 | Categories with counted capital | 38 | 67 |
 | Categories with a star series | 55 | 67 |
 | Categories with a survey share | 26 | 67 |
+| Categories with a conference presence | 0 | 67 |
 
 Blind spots (no counted capital and no star series): [Email security](vault/Categories/Email security.md), [Hyperscale cloud](vault/Categories/Hyperscale cloud.md), [Cap table and equity management](vault/Categories/Cap table and equity management.md), [Personal devices](vault/Categories/Personal devices.md). These categories still have Hacker News counts where the vendor name is distinctive.
 
@@ -230,6 +256,8 @@ Form D candidates reviewed by hand: 19 name matches were excluded (pooled funds)
 **Developer survey.** Stack Overflow Developer Survey public results for 2024 and 2025 (ODbL). Multi-select tool questions were mapped to landscape vendors in lib/signals-survey-mapping.json; a vendor's share is the share of respondents who answered the question and named it, and a category's share is the share who named any mapped vendor in that category, counting only the categories each question speaks to. Only the database question kept the same option list in both years; other questions changed and are reported without a year-over-year difference. The 2026 results were not published at retrieval time.
 
 **Events.** Acquisitions, parent changes, renames, and dissolutions from Wikidata statements whose start time falls in the window (year-precision dates are flagged), renames from EDGAR former names of matched Form D filers, maturity changes between the CNCF, LF AI and Data, and CD Foundation landscape files at the window start and at retrieval, and vendor announcements verified by fetching the page and finding the counterpart's name in it.
+
+**Conference presence.** Conference presence reads each event's own public directory page: exhibitor and sponsor lists for RSAC and Black Hat USA, vendor and village lists for DEF CON, for 2025 and 2026. Before a page is read the host's robots.txt is fetched and applied to the fetcher's own user agent (TechnologyOperationsLibrary-signals); a host that refuses the identified fetcher is recorded as refused with the status it returned and is never retried under a browser identity. Readable at retrieval: DEF CON 33, DEF CON 34. Refused or unreadable: RSAC 2025, RSAC 2026, Black Hat USA 2025, Black Hat USA 2026 (reasons per page in the conferences block). Entries are matched to landscape vendors by the registrable domain of the linked website, by normalized name (corporate suffixes and words such as Labs or Technologies removed), or both; an entry that matches nothing or more than one vendor stays unmatched and is listed with its near misses. Only names, linked websites, and the retrieval date are recorded from each page; presence measures who paid or applied for a table, not adoption, revenue, or quality. A vendor in two categories counts toward both when categories are aggregated.
 
 **Aggregation.** Category and layer totals split each vendor's figure equally across its landscape categories so that a vendor in two categories is not counted twice; a layer total sums its categories. Every table in SIGNALS.md marks category totals that rest on one or two filings.
 
@@ -273,7 +301,8 @@ Every dataset used, with the credit line its license asks for. Retrieval dates a
 | [Wikidata](https://query.wikidata.org/) | Wikimedia Foundation and contributors | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | 2026-09-22 | Ownership, parent organization, official name, dissolution, headquarters, and source code repository statements from Wikidata (CC0). |
 | [CNCF, LF AI and Data, and CD Foundation landscapes](https://github.com/cncf/landscape) | The Linux Foundation and its foundations | [Apache-2.0 (landscape data)](https://github.com/cncf/landscape/blob/master/LICENSE) | 2026-09-22 | Project maturity levels from the landscape.yml files of the CNCF, LF AI and Data, and CD Foundation landscapes, compared between two commits. |
 | Vendor newsroom and blog posts | Each vendor | Each vendor's own terms; only the URL, date, and stated figure are recorded | 2026-09-22 | Funding rounds and corporate events as announced by each vendor on its own site; each record links the page it came from. |
+| [DEF CON vendor and village directories](https://defcon.org/) | DEF CON Communications, Inc. | [Copyright DEF CON Communications, Inc.; public pages, no terms on reading; only names, linked websites, and the retrieval date are recorded](https://defcon.org/html/links/dc-policy.html) | 2026-09-23 | Vendor and village listings from the DEF CON conference site (DEF CON 33 vendors, DEF CON 33 villages, DEF CON 34 vendors, DEF CON 34 villages), read on the retrieval date; each event record links the page it came from. |
 
 Share-alike: The Stack Overflow survey shares are the only share-alike (ODbL) input. They appear in signals-by-category.json under surveys and in the Survey trend table of SIGNALS.md, so that derived database is offered under ODbL 1.0 as well; every other figure in these files is under CC0 like the rest of the landscape.
 
-_Generated from signals.json by lib/build-signals.mjs on 2026-09-22. Edit the fetch inputs in lib/signals-manual.json and lib/signals-survey-mapping.json, rerun lib/fetch-signals.mjs, then rebuild._
+_Generated from signals.json by lib/build-signals.mjs on 2026-09-23. Edit the fetch inputs in lib/signals-manual.json and lib/signals-survey-mapping.json, rerun lib/fetch-signals.mjs (and lib/fetch-conferences.mjs for the conference directories), then rebuild._
