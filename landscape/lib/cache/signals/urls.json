@@ -1,0 +1,2011 @@
+{
+ "https://a2a-protocol.org": {
+  "status": 200,
+  "finalUrl": "https://a2a-protocol.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/a2aproject"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.activepieces.com": {
+  "status": 200,
+  "finalUrl": "https://www.activepieces.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/activepieces"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://affine.pro": {
+  "status": 200,
+  "finalUrl": "https://affine.pro/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/toeverything"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://aider.chat": {
+  "status": 200,
+  "finalUrl": "https://aider.chat/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Aider-AI"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://airbyte.com": {
+  "status": 200,
+  "finalUrl": "https://airbyte.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/airbytehq"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.hyland.com/en/products/alfresco-platform": {
+  "status": 200,
+  "finalUrl": "https://www.hyland.com/en/solutions/products/alfresco-platform",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Alfresco"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://anytype.io": {
+  "status": 200,
+  "finalUrl": "https://anytype.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/anyproto"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://appflowy.com": {
+  "status": 200,
+  "finalUrl": "https://appflowy.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/AppFlowy-IO"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.appsmith.com": {
+  "status": 200,
+  "finalUrl": "https://www.appsmith.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/appsmithorg"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.aquasec.com": {
+  "status": 200,
+  "finalUrl": "https://www.aquasec.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/aquasecurity"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://argoproj.github.io/cd/": {
+  "status": 200,
+  "finalUrl": "https://argoproj.github.io/cd/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/argoproj"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://arize.com": {
+  "status": 200,
+  "finalUrl": "https://arize.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Arize-ai"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://baserow.io": {
+  "status": 200,
+  "finalUrl": "https://baserow.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/bram2w"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/": {
+  "status": 200,
+  "finalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Azure"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://budibase.com": {
+  "status": 200,
+  "finalUrl": "https://budibase.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Budibase"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.trychroma.com": {
+  "status": 200,
+  "finalUrl": "https://www.trychroma.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/chroma-core"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://docs.claude.com/en/api/agent-sdk/overview": {
+  "status": 200,
+  "finalUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/anthropics"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.confident-ai.com": {
+  "status": 200,
+  "finalUrl": "https://www.confident-ai.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/confident-ai"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.continue.dev": {
+  "status": 200,
+  "finalUrl": "https://continue.dev/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/continuedev"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.convex.dev": {
+  "status": 200,
+  "finalUrl": "https://www.convex.dev/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/get-convex"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://coolify.io": {
+  "status": 200,
+  "finalUrl": "https://coolify.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/coollabsio"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.getdbt.com": {
+  "status": 200,
+  "finalUrl": "https://www.getdbt.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/dbt-labs"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.defectdojo.org": {
+  "status": 200,
+  "finalUrl": "https://defectdojo.com/community",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/DefectDojo"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://directus.io": {
+  "status": 200,
+  "finalUrl": "https://directus.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/directus"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://docmost.com": {
+  "status": 200,
+  "finalUrl": "https://docmost.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/docmost"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://documenso.com": {
+  "status": 200,
+  "finalUrl": "https://documenso.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/documenso"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.docuseal.com": {
+  "status": 200,
+  "finalUrl": "https://www.docuseal.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/docusealco"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://dokploy.com": {
+  "status": 200,
+  "finalUrl": "https://dokploy.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Dokploy"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://duckdb.org": {
+  "status": 200,
+  "finalUrl": "https://duckdb.org/",
+  "error": null,
+  "matched": [
+   "github.com/duckdb"
+  ],
+  "evidence": [
+   "github.com/duckdb"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://element.io": {
+  "status": 200,
+  "finalUrl": "https://element.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/element-hq"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://ente.io": {
+  "status": 200,
+  "finalUrl": "https://ente.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/ente-io"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://external-secrets.io": {
+  "status": 200,
+  "finalUrl": "https://external-secrets.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/external-secrets"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://fleetdm.com": {
+  "status": 200,
+  "finalUrl": "https://fleetdm.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/fleetdm"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://flowiseai.com": {
+  "status": 200,
+  "finalUrl": "https://flowiseai.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/FlowiseAI"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.giskard.ai": {
+  "status": 200,
+  "finalUrl": "https://www.giskard.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Giskard-AI"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://git-scm.com": {
+  "status": 200,
+  "finalUrl": "https://git-scm.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/git"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://gitleaks.io": {
+  "status": 200,
+  "finalUrl": "https://gitleaks.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/gitleaks"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://glpi-project.org": {
+  "status": 200,
+  "finalUrl": "https://www.glpi-project.org/en/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/glpi-project"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://getgophish.com": {
+  "status": 200,
+  "finalUrl": "https://getgophish.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/gophish"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://grafana.com": {
+  "status": 200,
+  "finalUrl": "https://grafana.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/grafana"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.greenbone.net": {
+  "status": 200,
+  "finalUrl": "https://www.greenbone.net/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/greenbone"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://headscale.net": {
+  "status": 200,
+  "finalUrl": "https://headscale.net/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/juanfont"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.helicone.ai": {
+  "status": 200,
+  "finalUrl": "https://www.helicone.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Helicone"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://huggingface.co": {
+  "status": 200,
+  "finalUrl": "https://huggingface.co/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/huggingface"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://infisical.com": {
+  "status": 200,
+  "finalUrl": "https://infisical.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Infisical"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.langflow.org": {
+  "status": 200,
+  "finalUrl": "https://www.langflow.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/langflow-ai"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://langfuse.com": {
+  "status": 200,
+  "finalUrl": "https://langfuse.com/",
+  "error": null,
+  "matched": [
+   "github.com/langfuse"
+  ],
+  "evidence": [
+   "github.com/langfuse"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://letsencrypt.org": {
+  "status": 200,
+  "finalUrl": "https://letsencrypt.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/letsencrypt"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.libreoffice.org": {
+  "status": 200,
+  "finalUrl": "https://www.libreoffice.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/LibreOffice"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.lightdash.com": {
+  "status": 200,
+  "finalUrl": "https://www.lightdash.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/lightdash"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.litellm.ai": {
+  "status": 200,
+  "finalUrl": "https://www.litellm.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/BerriAI"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.llamaindex.ai": {
+  "status": 200,
+  "finalUrl": "https://www.llamaindex.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/run-llama"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://mastra.ai": {
+  "status": 200,
+  "finalUrl": "https://mastra.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/mastra-ai"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://meltano.com": {
+  "status": 200,
+  "finalUrl": "https://meltano.com/",
+  "error": null,
+  "matched": [
+   "github.com/meltano"
+  ],
+  "evidence": [
+   "github.com/meltano"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://moodle.org": {
+  "status": 403,
+  "finalUrl": "https://moodle.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/moodle"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://neon.com": {
+  "status": 200,
+  "finalUrl": "https://neon.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/neondatabase"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://openai.github.io/openai-agents-python/": {
+  "status": 200,
+  "finalUrl": "https://openai.github.io/openai-agents-python/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/openai"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://openvpn.net": {
+  "status": 200,
+  "finalUrl": "https://openvpn.net/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/OpenVPN"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://openwrt.org": {
+  "status": 200,
+  "finalUrl": "https://openwrt.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/openwrt"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://opnsense.org": {
+  "status": 200,
+  "finalUrl": "https://opnsense.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/opnsense"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://osticket.com": {
+  "status": 200,
+  "finalUrl": "https://osticket.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/osTicket"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.getoutline.com": {
+  "status": 200,
+  "finalUrl": "https://www.getoutline.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/outline"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://owncloud.com": {
+  "status": 200,
+  "finalUrl": "https://owncloud.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/owncloud"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.papermark.com": {
+  "status": 200,
+  "finalUrl": "https://www.papermark.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/mfts"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://pi-hole.net": {
+  "status": 200,
+  "finalUrl": "https://pi-hole.net/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/pi-hole"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://plane.so": {
+  "status": 200,
+  "finalUrl": "https://plane.so/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/makeplane"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://portkey.ai": {
+  "status": 200,
+  "finalUrl": "https://portkey.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/Portkey-AI"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.prefect.io": {
+  "status": 200,
+  "finalUrl": "https://www.prefect.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/PrefectHQ"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://projectdiscovery.io": {
+  "status": 200,
+  "finalUrl": "https://projectdiscovery.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/projectdiscovery"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://prowler.com": {
+  "status": 200,
+  "finalUrl": "https://prowler.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/prowler-cloud"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://roocode.com": {
+  "status": 200,
+  "finalUrl": "https://roomote.dev/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/RooCodeInc"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.rudderstack.com": {
+  "status": 200,
+  "finalUrl": "https://www.rudderstack.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/rudderlabs"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://semaphore.io": {
+  "status": 200,
+  "finalUrl": "https://semaphore.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/semaphoreio"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://signoz.io": {
+  "status": 200,
+  "finalUrl": "https://signoz.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/SigNoz"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://snipeitapp.com": {
+  "status": 200,
+  "finalUrl": "https://snipeitapp.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/grokability"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.sonarsource.com": {
+  "status": 200,
+  "finalUrl": "https://www.sonarsource.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/SonarSource"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.sqlite.org": {
+  "status": 200,
+  "finalUrl": "https://www.sqlite.org/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/sqlite"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://steampipe.io": {
+  "status": 200,
+  "finalUrl": "https://steampipe.io/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/turbot"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://terragrunt.gruntwork.io": {
+  "status": 200,
+  "finalUrl": "https://terragrunt.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/gruntwork-io"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.tigerdata.com": {
+  "status": 200,
+  "finalUrl": "https://www.tigerdata.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/timescale"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.tooljet.ai": {
+  "status": 200,
+  "finalUrl": "https://www.tooljet.ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/ToolJet"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://trigger.dev": {
+  "status": 200,
+  "finalUrl": "https://trigger.dev/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/triggerdotdev"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://trufflesecurity.com": {
+  "status": 200,
+  "finalUrl": "https://trufflesecurity.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/trufflesecurity"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://turso.tech": {
+  "status": 200,
+  "finalUrl": "https://turso.tech/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/tursodatabase"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://twenty.com": {
+  "status": 200,
+  "finalUrl": "https://twenty.com/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/twentyhq"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://ai-sdk.dev": {
+  "status": 200,
+  "finalUrl": "https://ai-sdk.dev/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/vercel"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.windmill.dev": {
+  "status": 200,
+  "finalUrl": "https://www.windmill.dev/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "github.com/windmill-labs"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation": {
+  "status": 200,
+  "finalUrl": "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation",
+  "error": null,
+  "matched": [
+   "3.5 billion"
+  ],
+  "evidence": [
+   "3.5 billion",
+   "$3.5B"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation": {
+  "status": 200,
+  "finalUrl": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+  "error": null,
+  "matched": [
+   "13 billion",
+   "$13B"
+  ],
+  "evidence": [
+   "13 billion",
+   "$13B"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://openai.com/index/scale-the-benefits-of-ai/": {
+  "status": 403,
+  "finalUrl": "https://openai.com/index/scale-the-benefits-of-ai/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "6.6B",
+   "6.6 billion"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://openai.com/index/march-funding-updates/": {
+  "status": 403,
+  "finalUrl": "https://openai.com/index/march-funding-updates/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "40B",
+   "40 billion"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://cursor.com/blog/series-b": {
+  "status": 200,
+  "finalUrl": "https://cursor.com/blog/series-b",
+  "error": null,
+  "matched": [
+   "105M"
+  ],
+  "evidence": [
+   "105M",
+   "105 million"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://cursor.com/blog/series-c": {
+  "status": 200,
+  "finalUrl": "https://cursor.com/blog/series-c",
+  "error": null,
+  "matched": [
+   "900 million"
+  ],
+  "evidence": [
+   "900M",
+   "900 million"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://cursor.com/blog/series-d": {
+  "status": 200,
+  "finalUrl": "https://cursor.com/blog/series-d",
+  "error": null,
+  "matched": [
+   "2.3B"
+  ],
+  "evidence": [
+   "2.3B",
+   "2.3 billion"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai": {
+  "status": 200,
+  "finalUrl": "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/",
+  "error": null,
+  "matched": [
+   "1.7"
+  ],
+  "evidence": [
+   "1.7"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://elevenlabs.io/blog/series-c": {
+  "status": 200,
+  "finalUrl": "https://elevenlabs.io/blog/series-c",
+  "error": null,
+  "matched": [
+   "180"
+  ],
+  "evidence": [
+   "180"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://blog.n8n.io/series-b/": {
+  "status": 200,
+  "finalUrl": "https://blog.n8n.io/series-b/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "60M",
+   "60 million",
+   "$60"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://blog.n8n.io/series-c/": {
+  "status": 200,
+  "finalUrl": "https://blog.n8n.io/series-c/",
+  "error": null,
+  "matched": [
+   "180M",
+   "180 million",
+   "$180"
+  ],
+  "evidence": [
+   "180M",
+   "180 million",
+   "$180"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://vercel.com/blog/series-f": {
+  "status": 200,
+  "finalUrl": "https://vercel.com/blog/series-f",
+  "error": null,
+  "matched": [
+   "300M",
+   "$300"
+  ],
+  "evidence": [
+   "300M",
+   "300 million",
+   "$300"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.tines.com/blog/series-c/": {
+  "status": 404,
+  "finalUrl": "https://www.tines.com/blog/series-c/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "125M",
+   "125 million",
+   "$125"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.catonetworks.com/news/cato-networks-raises-359-million/": {
+  "status": 200,
+  "finalUrl": "https://www.catonetworks.com/news/cato-networks-raises-359-million/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "359"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.vanta.com/resources/series-d": {
+  "status": 404,
+  "finalUrl": "https://www.vanta.com/resources/series-d",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "150M",
+   "150 million",
+   "$150"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://tailscale.com/blog/series-c": {
+  "status": 200,
+  "finalUrl": "https://tailscale.com/blog/series-c",
+  "error": null,
+  "matched": [
+   "160 million",
+   "$160"
+  ],
+  "evidence": [
+   "160M",
+   "160 million",
+   "$160"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://clickhouse.com/blog/clickhouse-raises-350-million-series-c": {
+  "status": 404,
+  "finalUrl": "https://clickhouse.com/blog/clickhouse-raises-350-million-series-c",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "350"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://hex.tech/blog/series-c/": {
+  "status": 200,
+  "finalUrl": "https://hex.tech/blog/series-c/",
+  "error": null,
+  "matched": [
+   "70M",
+   "$70"
+  ],
+  "evidence": [
+   "70M",
+   "70 million",
+   "$70"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://omni.co/blog/series-b": {
+  "status": 404,
+  "finalUrl": "https://omni.co/blog/series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "69M",
+   "69 million",
+   "$69"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.deel.com/blog/series-d/": {
+  "status": 404,
+  "finalUrl": "https://www.deel.com/blog/series-d/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "300M",
+   "300 million",
+   "$300"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.rippling.com/blog/series-g": {
+  "status": 404,
+  "finalUrl": "https://www.rippling.com/blog/series-g",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "450M",
+   "450 million",
+   "$450"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://ziphq.com/blog/series-d": {
+  "status": 200,
+  "finalUrl": "https://zip.com/blog/series-d",
+  "error": null,
+  "matched": [
+   "190 million",
+   "$190"
+  ],
+  "evidence": [
+   "190M",
+   "190 million",
+   "$190"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.granola.ai/blog/series-b": {
+  "status": 404,
+  "finalUrl": "https://www.granola.ai/blog/series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "43M",
+   "43 million",
+   "$43"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://attio.com/blog/series-b": {
+  "status": 404,
+  "finalUrl": "https://attio.com/blog/series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "52M",
+   "52 million",
+   "$52"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.together.ai/blog/together-ai-announcing-305m-series-b": {
+  "status": 200,
+  "finalUrl": "https://www.together.ai/blog/together-ai-announcing-305m-series-b",
+  "error": null,
+  "matched": [
+   "305"
+  ],
+  "evidence": [
+   "305"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://fireworks.ai/blog/series-c": {
+  "status": 200,
+  "finalUrl": "https://fireworks.ai/blog/series-c",
+  "error": null,
+  "matched": [
+   "250M",
+   "250 million",
+   "$250"
+  ],
+  "evidence": [
+   "250M",
+   "250 million",
+   "$250"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://blog.langchain.com/series-b/": {
+  "status": 200,
+  "finalUrl": "https://www.langchain.com/blog/series-b",
+  "error": null,
+  "matched": [
+   "125M",
+   "$125"
+  ],
+  "evidence": [
+   "125M",
+   "125 million",
+   "$125"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.browserbase.com/blog/series-b": {
+  "status": 500,
+  "finalUrl": "https://www.browserbase.com/blog/series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "40M",
+   "40 million",
+   "$40"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://groq.com/newsroom/groq-raises-750m-at-6-9b-valuation": {
+  "status": 404,
+  "finalUrl": "https://groq.com/newsroom/groq-raises-750m-at-6-9b-valuation",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "750"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://socket.dev/blog/socket-raises-40m-series-b": {
+  "status": 404,
+  "finalUrl": "https://socket.dev/blog/socket-raises-40m-series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "40M",
+   "40 million",
+   "$40"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://sublime.security/blog/series-b": {
+  "status": 429,
+  "finalUrl": "https://sublime.security/blog/series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "60M",
+   "60 million",
+   "$60"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://render.com/blog/series-c": {
+  "status": 200,
+  "finalUrl": "https://render.com/blog/series-c",
+  "error": null,
+  "matched": [
+   "80M",
+   "$80"
+  ],
+  "evidence": [
+   "80M",
+   "80 million",
+   "$80"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://hightouch.com/blog/series-c": {
+  "status": 404,
+  "finalUrl": "https://hightouch.com/blog/series-c",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "80M",
+   "80 million",
+   "$80"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://posthog.com/blog/series-d": {
+  "status": 200,
+  "finalUrl": "https://posthog.com/blog/series-d",
+  "error": null,
+  "matched": [
+   "70M",
+   "$70"
+  ],
+  "evidence": [
+   "70M",
+   "70 million",
+   "$70"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://incident.io/blog/series-b": {
+  "status": 404,
+  "finalUrl": "https://incident.io/blog/series-b",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "62M",
+   "62 million",
+   "$62"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://temporal.io/blog/series-c": {
+  "status": 404,
+  "finalUrl": "https://temporal.io/blog/series-c",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "146"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.pulumi.com/blog/series-c/": {
+  "status": 200,
+  "finalUrl": "https://www.pulumi.com/blog/series-c/",
+  "error": null,
+  "matched": [
+   "41M",
+   "$41"
+  ],
+  "evidence": [
+   "41M",
+   "41 million",
+   "$41"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://supabase.com/blog/supabase-raises-200m-series-d": {
+  "status": 404,
+  "finalUrl": "https://supabase.com/blog/supabase-raises-200m-series-d",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "200M",
+   "200 million"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://supabase.com/blog/supabase-series-e": {
+  "status": 200,
+  "finalUrl": "https://supabase.com/blog/supabase-series-e",
+  "error": null,
+  "matched": [
+   "100M"
+  ],
+  "evidence": [
+   "100M",
+   "100 million"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://lovable.dev/blog/series-a": {
+  "status": 200,
+  "finalUrl": "https://lovable.dev/blog",
+  "error": null,
+  "matched": [
+   "200M"
+  ],
+  "evidence": [
+   "200M",
+   "200 million"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.clay.com/blog/series-c": {
+  "status": 404,
+  "finalUrl": "https://www.clay.com/blog/series-c",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "100M",
+   "100 million"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://blog.google/inside-google/company-announcements/google-agreement-acquire-wiz/": {
+  "status": 200,
+  "finalUrl": "https://blog.google/company-news/inside-google/company-announcements/google-agreement-acquire-wiz/",
+  "error": null,
+  "matched": [
+   "Wiz"
+  ],
+  "evidence": [
+   "Wiz"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.coreweave.com/news/coreweave-to-acquire-weights-biases": {
+  "status": 404,
+  "finalUrl": "https://www.coreweave.com/news/coreweave-to-acquire-weights-biases",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Weights"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.databricks.com/blog/databricks-neon": {
+  "status": 200,
+  "finalUrl": "https://www.databricks.com/blog/databricks-neon",
+  "error": null,
+  "matched": [
+   "Neon"
+  ],
+  "evidence": [
+   "Neon"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.grammarly.com/blog/company/grammarly-acquires-superhuman/": {
+  "status": 404,
+  "finalUrl": "https://www.grammarly.com/blog/company/grammarly-acquires-superhuman/",
+  "error": null,
+  "matched": [
+   "Superhuman"
+  ],
+  "evidence": [
+   "Superhuman"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.grammarly.com/blog/company/grammarly-coda/": {
+  "status": 404,
+  "finalUrl": "https://www.grammarly.com/blog/company/grammarly-coda/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Coda"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://blog.dropbox.com/topics/company/dropbox-acquires-reclaim-ai": {
+  "status": 404,
+  "finalUrl": "https://blog.dropbox.com/topics/company/dropbox-acquires-reclaim-ai",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Reclaim"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp-creating-a-comprehensive-end-to-end-hybrid-cloud-platform": {
+  "status": 404,
+  "finalUrl": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp-creating-a-comprehensive-end-to-end-hybrid-cloud-platform",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "HashiCorp"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.salesforce.com/news/press-releases/2025/11/12/salesforce-completes-acquisition-of-informatica/": {
+  "status": 200,
+  "finalUrl": "https://www.salesforce.com/news/press-releases/2025/11/12/salesforce-completes-acquisition-of-informatica/?bc=HL",
+  "error": null,
+  "matched": [
+   "Informatica"
+  ],
+  "evidence": [
+   "Informatica"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-intent-to-acquire-chronosphere": {
+  "status": 404,
+  "finalUrl": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-intent-to-acquire-chronosphere",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Chronosphere"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-agreement-to-acquire-cyberark": {
+  "status": 404,
+  "finalUrl": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-agreement-to-acquire-cyberark",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "CyberArk"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.zscaler.com/press/zscaler-announces-intent-acquire-red-canary": {
+  "status": 404,
+  "finalUrl": "https://www.zscaler.com/press/zscaler-announces-intent-acquire-red-canary",
+  "error": null,
+  "matched": [
+   "Red Canary"
+  ],
+  "evidence": [
+   "Red Canary"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.checkpoint.com/press-releases/check-point-to-acquire-lakera-to-deliver-end-to-end-ai-security-for-enterprises/": {
+  "status": 404,
+  "finalUrl": "https://www.checkpoint.com/press-releases/check-point-to-acquire-lakera-to-deliver-end-to-end-ai-security-for-enterprises/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Lakera"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.hpe.com/us/en/newsroom/press-release/2025/07/hewlett-packard-enterprise-completes-acquisition-of-juniper-networks.html": {
+  "status": 0,
+  "finalUrl": null,
+  "error": "ERR_HTTP2_STREAM_ERROR",
+  "matched": [],
+  "evidence": [
+   "Juniper"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-completes-acquisition-of-preqin": {
+  "status": 404,
+  "finalUrl": "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-completes-acquisition-of-preqin",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Preqin"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.jamf.com/news/jamf-to-be-acquired-by-francisco-partners/": {
+  "status": 404,
+  "finalUrl": "https://www.jamf.com/blog/jamf-to-be-acquired-by-francisco-partners/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Francisco Partners"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.couchbase.com/press-releases/couchbase-to-be-acquired-by-haveli-investments/": {
+  "status": 403,
+  "finalUrl": "https://www.couchbase.com/press-releases/couchbase-to-be-acquired-by-haveli-investments/",
+  "error": null,
+  "matched": [
+   "Haveli"
+  ],
+  "evidence": [
+   "Haveli"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://navan.com/newsroom/navan-announces-pricing-of-initial-public-offering": {
+  "status": 404,
+  "finalUrl": "https://navan.com/newsroom/navan-announces-pricing-of-initial-public-offering",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "initial public offering"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.netskope.com/press-releases/netskope-announces-pricing-of-initial-public-offering": {
+  "status": 200,
+  "finalUrl": "https://www.netskope.com/press-releases/netskope-announces-pricing-of-initial-public-offering",
+  "error": null,
+  "matched": [
+   "initial public offering"
+  ],
+  "evidence": [
+   "initial public offering"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.fivetran.com/press/fivetran-and-dbt-labs-to-merge": {
+  "status": 404,
+  "finalUrl": "https://www.fivetran.com/press/fivetran-and-dbt-labs-to-merge",
+  "error": null,
+  "matched": [
+   "dbt"
+  ],
+  "evidence": [
+   "dbt"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.workato.com/the-connector/workato-acquires-pipedream/": {
+  "status": 404,
+  "finalUrl": "https://www.workato.com/the-connector/workato-acquires-pipedream/",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Pipedream"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.fivetran.com/press/fivetran-acquires-census": {
+  "status": 404,
+  "finalUrl": "https://www.fivetran.com/press/fivetran-acquires-census",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Census"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.smartsheet.com/news/smartsheet-completes-acquisition-blackstone-vista-equity-partners": {
+  "status": 404,
+  "finalUrl": "https://www.smartsheet.com/news/smartsheet-completes-acquisition-blackstone-vista-equity-partners",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Vista"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.dayforce.com/news/dayforce-to-be-acquired-by-thoma-bravo": {
+  "status": 404,
+  "finalUrl": "https://www.dayforce.com/news/dayforce-to-be-acquired-by-thoma-bravo",
+  "error": null,
+  "matched": [],
+  "evidence": [
+   "Thoma Bravo"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.grammarly.com/blog/company/introducing-superhuman/": {
+  "status": 404,
+  "finalUrl": "https://www.grammarly.com/blog/company/introducing-superhuman/",
+  "error": null,
+  "matched": [
+   "Superhuman"
+  ],
+  "evidence": [
+   "Superhuman"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.tines.com/blog/series-c-fundraise/": {
+  "status": 200,
+  "finalUrl": "https://www.tines.com/blog/series-c-fundraise/",
+  "error": null,
+  "matched": [
+   "125M",
+   "125 million",
+   "$125"
+  ],
+  "evidence": [
+   "125M",
+   "125 million",
+   "$125"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.vanta.com/resources/vanta-announces-series-d": {
+  "status": 200,
+  "finalUrl": "https://www.vanta.com/resources/vanta-announces-series-d",
+  "error": null,
+  "matched": [
+   "150M",
+   "150 million",
+   "$150"
+  ],
+  "evidence": [
+   "150M",
+   "150 million",
+   "$150"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://clickhouse.com/blog/clickhouse-raises-350-million-series-c-to-power-analytics-for-ai-era": {
+  "status": 200,
+  "finalUrl": "https://clickhouse.com/blog/clickhouse-raises-350-million-series-c-to-power-analytics-for-ai-era",
+  "error": null,
+  "matched": [
+   "350"
+  ],
+  "evidence": [
+   "350"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://omni.co/blog/omni-series-b-funding": {
+  "status": 200,
+  "finalUrl": "https://omni.co/blog/omni-series-b-funding",
+  "error": null,
+  "matched": [
+   "69 million",
+   "$69"
+  ],
+  "evidence": [
+   "69M",
+   "69 million",
+   "$69"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.deel.com/blog/new-investment-valuation/": {
+  "status": 200,
+  "finalUrl": "https://www.deel.com/blog/new-investment-valuation/",
+  "error": null,
+  "matched": [
+   "300 million",
+   "$300"
+  ],
+  "evidence": [
+   "300M",
+   "300 million",
+   "$300"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.rippling.com/blog/series-g-fundraising-tender-offer": {
+  "status": 200,
+  "finalUrl": "https://www.rippling.com/blog/series-g-fundraising-tender-offer",
+  "error": null,
+  "matched": [
+   "450M",
+   "$450"
+  ],
+  "evidence": [
+   "450M",
+   "450 million",
+   "$450"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://attio.com/blog/attio-raises-52m-series-b": {
+  "status": 200,
+  "finalUrl": "https://attio.com/blog/attio-raises-52m-series-b",
+  "error": null,
+  "matched": [
+   "52M",
+   "52 million",
+   "$52"
+  ],
+  "evidence": [
+   "52M",
+   "52 million",
+   "$52"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://socket.dev/blog/series-b": {
+  "status": 200,
+  "finalUrl": "https://socket.dev/blog/series-b",
+  "error": null,
+  "matched": [
+   "40M",
+   "$40"
+  ],
+  "evidence": [
+   "40M",
+   "40 million",
+   "$40"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://hightouch.com/blog/hightouch-funding-series-c": {
+  "status": 200,
+  "finalUrl": "https://hightouch.com/blog/hightouch-funding-series-c",
+  "error": null,
+  "matched": [
+   "80M",
+   "80 million",
+   "$80"
+  ],
+  "evidence": [
+   "80M",
+   "80 million",
+   "$80"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://incident.io/blog/incident.io-raises-62m": {
+  "status": 200,
+  "finalUrl": "https://incident.io/blog/incident.io-raises-62m",
+  "error": null,
+  "matched": [
+   "62M",
+   "$62"
+  ],
+  "evidence": [
+   "62M",
+   "62 million",
+   "$62"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://temporal.io/blog/temporal-series-c-announcement": {
+  "status": 200,
+  "finalUrl": "https://temporal.io/blog/temporal-series-c-announcement",
+  "error": null,
+  "matched": [
+   "146"
+  ],
+  "evidence": [
+   "146"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres": {
+  "status": 200,
+  "finalUrl": "https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres",
+  "error": null,
+  "matched": [
+   "400"
+  ],
+  "evidence": [
+   "400"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.coreweave.com/news/coreweave-completes-acquisition-of-weights-biases-2": {
+  "status": 200,
+  "finalUrl": "https://www.coreweave.com/news/coreweave-completes-acquisition-of-weights-biases-2",
+  "error": null,
+  "matched": [
+   "Weights"
+  ],
+  "evidence": [
+   "Weights"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.grammarly.com/blog/company/grammarly-to-acquire-superhuman/": {
+  "status": 200,
+  "finalUrl": "https://www.grammarly.com/blog/company/grammarly-to-acquire-superhuman/",
+  "error": null,
+  "matched": [
+   "Superhuman"
+  ],
+  "evidence": [
+   "Superhuman"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.grammarly.com/blog/company/grammarly-to-acquire-coda/": {
+  "status": 200,
+  "finalUrl": "https://www.grammarly.com/blog/company/grammarly-to-acquire-coda/",
+  "error": null,
+  "matched": [
+   "Coda"
+  ],
+  "evidence": [
+   "Coda"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform": {
+  "status": 200,
+  "finalUrl": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform",
+  "error": null,
+  "matched": [
+   "HashiCorp"
+  ],
+  "evidence": [
+   "HashiCorp"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-chronosphere-acquisition--unifying-observability-and-security-for-the-ai-era": {
+  "status": 200,
+  "finalUrl": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-chronosphere-acquisition--unifying-observability-and-security-for-the-ai-era",
+  "error": null,
+  "matched": [
+   "Chronosphere"
+  ],
+  "evidence": [
+   "Chronosphere"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-cyberark-to-secure-the-ai-era": {
+  "status": 200,
+  "finalUrl": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-cyberark-to-secure-the-ai-era",
+  "error": null,
+  "matched": [
+   "CyberArk"
+  ],
+  "evidence": [
+   "CyberArk"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.zscaler.com/press/zscaler-completes-acquisition-red-canary-accelerate-innovations-agentic-ai-driven-security": {
+  "status": 200,
+  "finalUrl": "https://www.zscaler.com/press/zscaler-completes-acquisition-red-canary-accelerate-innovations-agentic-ai-driven-security",
+  "error": null,
+  "matched": [
+   "Red Canary"
+  ],
+  "evidence": [
+   "Red Canary"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/": {
+  "status": 200,
+  "finalUrl": "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/",
+  "error": null,
+  "matched": [
+   "Lakera"
+  ],
+  "evidence": [
+   "Lakera"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-preqin-acquisition": {
+  "status": 200,
+  "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-preqin-acquisition",
+  "error": null,
+  "matched": [
+   "Preqin"
+  ],
+  "evidence": [
+   "Preqin"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.jamf.com/resources/press-releases/jamf-enters-into-definitive-agreement-to-be-acquired-by-francisco-partners-in-2-2-billion-transaction/": {
+  "status": 200,
+  "finalUrl": "https://www.jamf.com/resources/press-releases/jamf-enters-into-definitive-agreement-to-be-acquired-by-francisco-partners-in-2-2-billion-transaction/",
+  "error": null,
+  "matched": [
+   "Francisco Partners"
+  ],
+  "evidence": [
+   "Francisco Partners"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://investors.navan.com/news-releases/news-release-details/navan-announces-pricing-initial-public-offering": {
+  "status": 200,
+  "finalUrl": "https://investors.navan.com/news-releases/news-release-details/navan-announces-pricing-initial-public-offering",
+  "error": null,
+  "matched": [
+   "initial public offering"
+  ],
+  "evidence": [
+   "initial public offering"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.fivetran.com/press/fivetran-dbt-labs-complete-merger-to-create-the-data-infrastructure-for-trusted-ai-agents": {
+  "status": 200,
+  "finalUrl": "https://www.fivetran.com/press/fivetran-dbt-labs-complete-merger-to-create-the-data-infrastructure-for-trusted-ai-agents",
+  "error": null,
+  "matched": [
+   "dbt"
+  ],
+  "evidence": [
+   "dbt"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.smartsheet.com/content-center/news/blackstone-and-vista-equity-partners-complete-acquisition-smartsheet": {
+  "status": 200,
+  "finalUrl": "https://www.smartsheet.com/content-center/news/blackstone-and-vista-equity-partners-complete-acquisition-smartsheet",
+  "error": null,
+  "matched": [
+   "Vista"
+  ],
+  "evidence": [
+   "Vista"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.dayforce.com/who-we-are/newsroom/thoma-bravo-completes-acquisition-of-dayforce": {
+  "status": 200,
+  "finalUrl": "https://www.dayforce.com/who-we-are/newsroom/thoma-bravo-completes-acquisition-of-dayforce",
+  "error": null,
+  "matched": [
+   "Thoma Bravo"
+  ],
+  "evidence": [
+   "Thoma Bravo"
+  ],
+  "retrieved": "2026-09-22"
+ },
+ "https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/": {
+  "status": 200,
+  "finalUrl": "https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/",
+  "error": null,
+  "matched": [
+   "Superhuman"
+  ],
+  "evidence": [
+   "Superhuman"
+  ],
+  "retrieved": "2026-09-22"
+ }
+}
