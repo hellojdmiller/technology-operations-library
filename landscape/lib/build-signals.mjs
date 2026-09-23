@@ -31,7 +31,7 @@ const nonNegative = (value, label) => requireCondition(Number.isFinite(value) &&
 const optionalNonNegative = (value, label) => { if (value !== null) nonNegative(value, label); };
 
 requireCondition(!rawSignals.includes(EM_DASH), 'signals.json must not contain em dashes');
-shape(signals, ['version', 'generatedOn', 'license', 'window', 'methods', 'attributions', 'coverage', 'surveys', 'vendors'], 'signals');
+shape(signals, ['version', 'generatedOn', 'license', 'window', 'methods', 'attributions', 'coverage', 'surveys', 'conferences', 'vendors'], 'signals');
 requireCondition(signals.version === '1.0.0', 'Unexpected version');
 isoDate(signals.generatedOn, 'generatedOn');
 text(signals.license, 'license');
@@ -47,8 +47,8 @@ const byQuarterShape = (value, label, allowNull = true) => {
   shape(value, QUARTERS, label);
   for (const q of QUARTERS) requireCondition((allowNull && value[q] === null) || (Number.isFinite(value[q]) && value[q] >= 0), `${label}.${q}: expected non-negative number${allowNull ? ' or null' : ''}`);
 };
-shape(signals.methods, ['formD', 'announcements', 'stars', 'hnMentions', 'adoption', 'surveys', 'events', 'aggregation', 'shareAlike', 'rejectedDatasets', 'kaggleCandidates'], 'methods');
-for (const key of ['formD', 'announcements', 'stars', 'hnMentions', 'adoption', 'surveys', 'events', 'aggregation', 'shareAlike']) text(signals.methods[key], `methods.${key}`);
+shape(signals.methods, ['formD', 'announcements', 'stars', 'hnMentions', 'adoption', 'surveys', 'events', 'conferences', 'aggregation', 'shareAlike', 'rejectedDatasets', 'kaggleCandidates'], 'methods');
+for (const key of ['formD', 'announcements', 'stars', 'hnMentions', 'adoption', 'surveys', 'events', 'conferences', 'aggregation', 'shareAlike']) text(signals.methods[key], `methods.${key}`);
 for (const r of signals.methods.rejectedDatasets) { shape(r, ['dataset', 'reason'], 'rejected dataset'); text(r.dataset, 'rejected dataset'); text(r.reason, 'rejected reason'); }
 for (const k of signals.methods.kaggleCandidates) { shape(k, ['title', 'url', 'license', 'note'], 'kaggle candidate'); https(k.url, `kaggle candidate ${k.title}`); }
 requireCondition(Array.isArray(signals.attributions) && signals.attributions.length > 0, 'attributions: expected array');
@@ -68,6 +68,35 @@ for (const q of signals.surveys.questions) {
     for (const [c, share] of Object.entries(r.categoryShares)) { requireCondition(categoryIds.has(c), `survey ${q.id} ${year}: unknown category ${c}`); requireCondition(share >= 0 && share <= 1, `survey ${q.id} ${year} ${c}: share out of range`); }
   }
 }
+// Conference presence: one record per directory page attempted, readable or refused; matches name landscape vendors.
+shape(signals.conferences, ['userAgent', 'retrieved', 'events'], 'conferences');
+text(signals.conferences.userAgent, 'conferences.userAgent');
+if (signals.conferences.retrieved !== null) isoDate(signals.conferences.retrieved, 'conferences.retrieved');
+const CONFERENCE_EVENT_KEYS = ['id', 'event', 'year', 'list', 'url', 'robotsUrl', 'robotsStatus', 'robotsRule', 'status', 'finalUrl', 'retrieved', 'sha256', 'exhibitorCount', 'matched', 'unmatchedCount', 'unmatched', 'refused', 'note'];
+const CONFERENCE_LISTS = ['exhibitors', 'sponsors', 'vendors', 'villages'];
+const CONFERENCE_CONFIDENCE = ['domain-and-name', 'domain', 'name'];
+const CONFERENCE_VENDOR_KEYS = ['event', 'year', 'list', 'url', 'confidence'];
+const webUrl = (value, label) => requireCondition(value === null || (typeof value === 'string' && /^https?:\/\/\S+$/u.test(value)), `${label}: expected an http(s) URL or null`);
+requireCondition(Array.isArray(signals.conferences.events), 'conferences.events: expected array');
+requireCondition(new Set(signals.conferences.events.map((e) => e.id)).size === signals.conferences.events.length, 'conferences.events: ids must be unique');
+for (const e of signals.conferences.events) {
+  const el = `conference ${e.id}`;
+  shape(e, CONFERENCE_EVENT_KEYS, el); text(e.id, `${el}.id`); text(e.event, `${el}.event`);
+  requireCondition(Number.isInteger(e.year) && e.year >= 2024 && e.year <= 2027, `${el}.year`); requireCondition(CONFERENCE_LISTS.includes(e.list), `${el}.list ${e.list}`);
+  https(e.url, `${el}.url`); https(e.robotsUrl, `${el}.robotsUrl`);
+  requireCondition(e.robotsStatus === null || Number.isInteger(e.robotsStatus), `${el}.robotsStatus`); optionalText(e.robotsRule, `${el}.robotsRule`);
+  requireCondition(e.status === null || Number.isInteger(e.status), `${el}.status`); webUrl(e.finalUrl, `${el}.finalUrl`);
+  if (e.retrieved !== null) isoDate(e.retrieved, `${el}.retrieved`); requireCondition(e.sha256 === null || /^[0-9a-f]{64}$/u.test(e.sha256), `${el}.sha256`);
+  optionalText(e.refused, `${el}.refused`); optionalText(e.note, `${el}.note`);
+  requireCondition(Array.isArray(e.matched) && Array.isArray(e.unmatched), `${el}: matched and unmatched must be arrays`);
+  if (e.refused !== null) requireCondition(e.exhibitorCount === null && e.unmatchedCount === null && e.matched.length === 0 && e.unmatched.length === 0, `${el}: a refused page carries no entries`);
+  else {
+    requireCondition(e.status === 200 && e.retrieved !== null && e.sha256 !== null, `${el}: a readable page needs status 200, a retrieval date, and a hash`);
+    requireCondition(Number.isInteger(e.exhibitorCount) && e.exhibitorCount >= 0 && Number.isInteger(e.unmatchedCount) && e.matched.length + e.unmatchedCount === e.exhibitorCount && e.unmatched.length === e.unmatchedCount, `${el}: matched plus unmatched must equal the listed count`);
+    for (const [i, m] of e.matched.entries()) { const ml = `${el}.matched[${i}]`; shape(m, ['vendor', 'name', 'website', 'confidence'], ml); requireCondition(vendorSet.has(m.vendor), `${ml}: unknown vendor ${m.vendor}`); text(m.name, `${ml}.name`); webUrl(m.website, `${ml}.website`); requireCondition(CONFERENCE_CONFIDENCE.includes(m.confidence), `${ml}.confidence ${m.confidence}`); }
+    for (const [i, u] of e.unmatched.entries()) { const ul = `${el}.unmatched[${i}]`; shape(u, ['name', 'website', 'reason', 'nearMisses'], ul); text(u.name, `${ul}.name`); webUrl(u.website, `${ul}.website`); optionalText(u.reason, `${ul}.reason`); requireCondition(Array.isArray(u.nearMisses) && u.nearMisses.every((id) => vendorSet.has(id)), `${ul}.nearMisses`); }
+  }
+}
 const FUNDING_KEYS = ['date', 'quarter', 'amountUsd', 'kind', 'round', 'confidence', 'source', 'issuer', 'cik', 'accession', 'amendment', 'offeringTotalUsd', 'amountSoldUsd', 'industryGroup', 'saleDate', 'investors', 'dataset', 'retrieved', 'note'];
 const KINDS = ['form-d', 'announcement', 'wikidata'];
 const CONFIDENCE = ['exact', 'normalized', 'manual', 'vendor-stated'];
@@ -82,7 +111,7 @@ const EVENT_TYPES = ['acquired', 'shut-down', 'renamed', 'parent-changed', 'list
 requireCondition(Object.keys(signals.vendors).join('|') === vendorIds.join('|'), 'vendors: keys must be exactly the landscape vendor ids in landscape order');
 for (const [id, v] of Object.entries(signals.vendors)) {
   const label = `vendor ${id}`;
-  shape(v, ['funding', 'stars', 'repoNote', 'hnMentions', 'hnSkipped', 'adoption', 'events'], label);
+  shape(v, ['funding', 'stars', 'repoNote', 'hnMentions', 'hnSkipped', 'adoption', 'events', 'conferences'], label);
   requireCondition(Array.isArray(v.funding), `${label}.funding: expected array`);
   for (const [i, f] of v.funding.entries()) {
     const fl = `${label}.funding[${i}]`;
@@ -138,7 +167,14 @@ for (const [id, v] of Object.entries(signals.vendors)) {
     requireCondition(EVENT_TYPES.includes(e.type), `${el}: unknown type ${e.type}`); text(e.detail, `${el}.detail`); https(e.source, `${el}.source`); isoDate(e.retrieved, `${el}.retrieved`);
     requireCondition(['wikidata', 'edgar', 'announcement', 'landscape-history'].includes(e.method), `${el}.method`);
   }
+  requireCondition(Array.isArray(v.conferences), `${label}.conferences: expected array`);
+  for (const [i, c] of v.conferences.entries()) {
+    const cl = `${label}.conferences[${i}]`;
+    shape(c, CONFERENCE_VENDOR_KEYS, cl); text(c.event, `${cl}.event`); requireCondition(Number.isInteger(c.year), `${cl}.year`); requireCondition(CONFERENCE_LISTS.includes(c.list), `${cl}.list`); https(c.url, `${cl}.url`); requireCondition(CONFERENCE_CONFIDENCE.includes(c.confidence), `${cl}.confidence`);
+    requireCondition(signals.conferences.events.some((e) => e.event === c.event && e.year === c.year && e.list === c.list && e.url === c.url && e.matched.some((m) => m.vendor === id && m.confidence === c.confidence)), `${cl}: no matching entry in the conferences block`);
+  }
 }
+for (const e of signals.conferences.events) for (const m of e.matched) requireCondition(signals.vendors[m.vendor].conferences.some((c) => c.url === e.url && c.year === e.year), `conference ${e.id}: ${m.vendor} matched but its vendor record does not list the event`);
 
 // ---------- aggregation ----------
 const layerById = new Map(landscape.layers.map((l) => [l.id, l]));
@@ -209,12 +245,32 @@ for (const layer of landscape.layers) {
   const records = new Set(layerVendors.flatMap((v) => signals.vendors[v.id].funding.filter((f) => f.amountUsd).map((f) => `${v.id}|${f.date}|${f.source}`)));
   layers[layer.id] = { id: layer.id, name: layer.name, categoryCount: cats.length, vendorCount: layerVendors.length, capitalUsd: sum('capitalUsd'), capitalTotalUsd: round(cats.reduce((n, c) => n + c.capitalTotalUsd, 0)), countedFilings: records.size, fundedVendors: layerVendors.filter((v) => signals.vendors[v.id].funding.some((f) => f.amountUsd)).length, starsGained: sum('starsGained'), starVendors: layerVendors.filter((v) => signals.vendors[v.id].stars?.byQuarter).length, hnMentions: sum('hnMentions'), npmDownloads: sum('npmDownloads') };
 }
+// Conference presence per category: a vendor in two categories counts toward both; the share of the floor is the matched
+// vendors in the category over every entry the page lists, so a floor with no map vendor reads as zero, not missing.
+const conferencePages = signals.conferences.events.filter((e) => e.refused === null);
+const conferenceYears = [...new Set(conferencePages.map((e) => e.year))].sort();
+for (const c of Object.values(categories)) {
+  const inCategory = new Set(landscape.vendors.filter((v) => v.categories.includes(c.id)).map((v) => v.id));
+  c.conferences = conferencePages.map((e) => { const ids = [...new Set(e.matched.map((m) => m.vendor).filter((id) => inCategory.has(id)))].sort(); return { id: e.id, event: e.event, year: e.year, list: e.list, url: e.url, listed: e.exhibitorCount, exhibitors: ids.length, shareOfFloor: e.exhibitorCount ? round(ids.length / e.exhibitorCount, 4) : null, vendors: ids }; });
+  c.conferencesByYear = Object.fromEntries(conferenceYears.map((y) => { const pages = c.conferences.filter((x) => x.year === y); const ids = new Set(pages.flatMap((x) => x.vendors)); const listed = pages.reduce((n, x) => n + x.listed, 0); return [String(y), { pages: pages.length, listed, exhibitors: ids.size, shareOfFloor: listed ? round(ids.size / listed, 4) : null }]; }));
+  const ys = conferenceYears.map(String);
+  c.conferencesChange = ys.length >= 2 ? { from: ys.at(-2), to: ys.at(-1), exhibitors: c.conferencesByYear[ys.at(-1)].exhibitors - c.conferencesByYear[ys.at(-2)].exhibitors, shareOfFloor: round((c.conferencesByYear[ys.at(-1)].shareOfFloor ?? 0) - (c.conferencesByYear[ys.at(-2)].shareOfFloor ?? 0), 4) } : null;
+}
+const conferenceSummary = {
+  retrieved: signals.conferences.retrieved,
+  years: conferenceYears,
+  readable: conferencePages.map((e) => ({ id: e.id, event: e.event, year: e.year, list: e.list, url: e.url, retrieved: e.retrieved, listed: e.exhibitorCount, matched: [...new Set(e.matched.map((m) => m.vendor))].sort() })),
+  refused: signals.conferences.events.filter((e) => e.refused !== null).map((e) => ({ id: e.id, event: e.event, year: e.year, list: e.list, url: e.url, robotsUrl: e.robotsUrl, robotsStatus: e.robotsStatus, status: e.status, retrieved: e.retrieved, reason: e.refused, note: e.note })),
+  vendorsWithPresence: Object.values(signals.vendors).filter((v) => v.conferences.length).length,
+  categoriesWithPresence: Object.values(categories).filter((c) => c.conferences.some((x) => x.exhibitors > 0)).length,
+};
 const blindSpots = landscape.categories.filter((c) => categories[c.id].countedFilings === 0 && categories[c.id].starVendors === 0).map((c) => c.id);
 const byCategory = {
   version: signals.version, generatedOn: signals.generatedOn, license: signals.license,
   window: signals.window, halves: { first: FIRST_HALF, second: SECOND_HALF },
   note: signals.methods.aggregation,
   coverage: { ...signals.coverage, categoriesWithFunding: Object.values(categories).filter((c) => c.countedFilings > 0).length, categoriesWithStars: Object.values(categories).filter((c) => c.starVendors > 0).length, categoriesWithSurveyShare: Object.values(categories).filter((c) => c.surveys.length > 0).length, blindSpots },
+  conferences: conferenceSummary,
   layers, categories,
 };
 
@@ -267,6 +323,20 @@ const events = Object.entries(signals.vendors).flatMap(([id, v]) => v.events.fil
 lines.push(events.length ? table(['Date', 'Vendor', 'Type', 'Detail', 'Source'], events.map((e) => [e.date, link(vendorName(e.vendor), `vault/Vendors/${vendorName(e.vendor).replace(/[\\/:*?"<>|#^[\]]/gu, ' ').replace(/\s+/gu, ' ').trim()}.md`), e.type, e.detail.replace(/\|/gu, ','), `[${e.method}](${e.source})`])) : 'No events recorded.', '');
 const maturity = Object.entries(signals.vendors).flatMap(([id, v]) => v.events.filter((e) => e.type === 'maturity-changed').map((e) => ({ vendor: id, ...e }))).sort((a, b) => a.vendor.localeCompare(b.vendor));
 lines.push('### Open-source maturity changes', '', maturity.length ? table(['Vendor', 'Detail', 'Source'], maturity.map((e) => [vendorName(e.vendor), e.detail, `[landscape](${e.source})`])) : 'No maturity changes were found for landscape vendors between the window start and the retrieval date.', '');
+lines.push('## Conference presence', '', 'Which landscape vendors held a table or a sponsorship at the large security conferences, read from each event\'s own public directory after its robots.txt. Presence measures who paid or applied for a place on the floor, not adoption or revenue; a directory that refused the identified fetcher is listed below as not yet available rather than guessed.', '');
+lines.push(table(['Event', 'Year', 'List', 'Listed', 'Matched to the map', 'Retrieved', 'Source'], conferencePages.length ? conferencePages.map((e) => [e.event, String(e.year), e.list, String(e.exhibitorCount), e.matched.length ? [...new Set(e.matched.map((m) => vendorName(m.vendor)))].sort().join(', ') : '0', e.retrieved, `[${new URL(e.url).host}](${e.url})`]) : [['none readable', '', '', '', '', '', '']]), '');
+const presentCategories = catList.filter((c) => c.conferences.some((x) => x.exhibitors > 0));
+if (presentCategories.length) {
+  const y = conferenceYears.map(String);
+  lines.push(table(['Category', 'Layer', ...y.map((yy) => `Exhibitors ${yy}`), ...y.map((yy) => `Share of floor ${yy}`), 'Change', 'Vendors'], presentCategories.sort((a, b) => b.conferencesByYear[y.at(-1)].exhibitors - a.conferencesByYear[y.at(-1)].exhibitors || a.name.localeCompare(b.name)).map((c) => [link(c.name, `vault/Categories/${c.name}.md`), layerName(c.layer), ...y.map((yy) => String(c.conferencesByYear[yy].exhibitors)), ...y.map((yy) => (c.conferencesByYear[yy].shareOfFloor === null ? '' : pct(c.conferencesByYear[yy].shareOfFloor))), c.conferencesChange ? `${c.conferencesChange.exhibitors >= 0 ? '+' : ''}${c.conferencesChange.exhibitors}` : '', [...new Set(c.conferences.flatMap((x) => x.vendors))].map(vendorName).sort().join(', ')])), '');
+} else if (conferencePages.length) {
+  lines.push(`No landscape vendor appears on a readable directory: the ${conferencePages.reduce((n, e) => n + e.exhibitorCount, 0)} entries across ${conferencePages.length} pages (${[...new Set(conferencePages.map((e) => `${e.event} ${e.list}`))].join(', ')}) are hardware and merchandise sellers, publishers, nonprofits, and community villages, none of which the map lists. Every entry, its linked website, and its near misses are in signals.json under conferences.events[].unmatched, so the zero is checkable.`, '');
+}
+const refusedPages = signals.conferences.events.filter((e) => e.refused !== null);
+if (refusedPages.length) {
+  lines.push('### Conference presence: not yet available', '', 'Directories that were attempted and could not be read. The fetcher identified itself with the library\'s user agent and contact address, read robots.txt first, and did not retry under a browser identity; each row records what the host answered and why the page was not used.', '');
+  lines.push(table(['Event', 'Year', 'List', 'Directory', 'robots.txt', 'Page', 'Attempted', 'Why not used'], refusedPages.map((e) => [e.event, String(e.year), e.list, `[${new URL(e.url).host}](${e.url})`, e.robotsStatus === null ? 'not fetched' : `[${e.robotsStatus}](${e.robotsUrl})`, e.status === null ? 'not fetched' : String(e.status), e.retrieved ?? '', `${e.refused}${e.note ? ` ${e.note}` : ''}`.replace(/\|/gu, ',')])), '');
+}
 lines.push('## Coverage', '', 'How many of the vendors carry each signal. A vendor with no signal has an empty record in signals.json, never a guess.', '');
 const cov = signals.coverage;
 lines.push(table(['Signal', 'Vendors', 'Of'], [
@@ -280,20 +350,22 @@ lines.push(table(['Signal', 'Vendors', 'Of'], [
   ['Hacker News counts above zero', String(cov.withHnMentions), String(cov.vendors)],
   ['Package download or install data', String(cov.withAdoption), String(cov.vendors)],
   ['Event in the window', String(cov.withEvents), String(cov.vendors)],
+  ['Conference presence (a readable directory lists the vendor)', String(conferenceSummary.vendorsWithPresence), String(cov.vendors)],
   ['Categories with counted capital', String(byCategory.coverage.categoriesWithFunding), String(landscape.categories.length)],
   ['Categories with a star series', String(byCategory.coverage.categoriesWithStars), String(landscape.categories.length)],
   ['Categories with a survey share', String(byCategory.coverage.categoriesWithSurveyShare), String(landscape.categories.length)],
+  ['Categories with a conference presence', String(conferenceSummary.categoriesWithPresence), String(landscape.categories.length)],
 ]), '');
 lines.push(`Blind spots (no counted capital and no star series): ${blindSpots.length ? blindSpots.map((id) => link(catName(id), `vault/Categories/${catName(id)}.md`)).join(', ') : 'none'}. These categories still have Hacker News counts where the vendor name is distinctive.`, '');
 lines.push(`Form D candidates reviewed by hand: ${cov.formDCandidatesReviewed} name matches were excluded (pooled funds), rejected (different company), or held; the decisions and reasons are in lib/signals-manual.json and lib/cache/signals/form-d.json.`, '');
 lines.push('## Methods and limits', '');
-for (const [key, label] of [['formD', 'SEC Form D'], ['announcements', 'Vendor announcements'], ['stars', 'GitHub stars'], ['hnMentions', 'Hacker News'], ['adoption', 'Package downloads and installs'], ['surveys', 'Developer survey'], ['events', 'Events'], ['aggregation', 'Aggregation'], ['shareAlike', 'Share-alike terms']]) lines.push(`**${label}.** ${signals.methods[key]}`, '');
+for (const [key, label] of [['formD', 'SEC Form D'], ['announcements', 'Vendor announcements'], ['stars', 'GitHub stars'], ['hnMentions', 'Hacker News'], ['adoption', 'Package downloads and installs'], ['surveys', 'Developer survey'], ['events', 'Events'], ['conferences', 'Conference presence'], ['aggregation', 'Aggregation'], ['shareAlike', 'Share-alike terms']]) lines.push(`**${label}.** ${signals.methods[key]}`, '');
 lines.push('### Datasets considered and not used', '', ...signals.methods.rejectedDatasets.map((r) => `- ${r.dataset}: ${r.reason}`), '');
 lines.push('### Candidates that would need a Kaggle or cloud token', '', ...signals.methods.kaggleCandidates.map((k) => `- [${k.title}](${k.url}) (${k.license}): ${k.note}`), '');
 lines.push('## Attribution', '', 'Every dataset used, with the credit line its license asks for. Retrieval dates are the days the fetcher last read the source.', '');
 lines.push(table(['Dataset', 'Publisher', 'License', 'Retrieved', 'Credit'], signals.attributions.map((a) => [a.url ? link(a.dataset, a.url) : a.dataset, a.publisher, a.licenseUrl ? link(a.license, a.licenseUrl) : a.license, a.retrieved ?? '', a.credit.replace(/\|/gu, ',')])), '');
 lines.push(`Share-alike: ${signals.methods.shareAlike}`, '');
-lines.push(`_Generated from signals.json by lib/build-signals.mjs on ${signals.generatedOn}. Edit the fetch inputs in lib/signals-manual.json and lib/signals-survey-mapping.json, rerun lib/fetch-signals.mjs, then rebuild._`, '');
+lines.push(`_Generated from signals.json by lib/build-signals.mjs on ${signals.generatedOn}. Edit the fetch inputs in lib/signals-manual.json and lib/signals-survey-mapping.json, rerun lib/fetch-signals.mjs (and lib/fetch-conferences.mjs for the conference directories), then rebuild._`, '');
 const markdown = lines.join('\n');
 const byCategoryJson = JSON.stringify(byCategory, null, 1) + '\n';
 requireCondition(!markdown.includes(EM_DASH) && !byCategoryJson.includes(EM_DASH), 'Generated files must not contain em dashes');
@@ -307,5 +379,5 @@ for (const [name, expected] of outputs) {
   else await writeFile(location, expected, 'utf8');
 }
 if (checkOnly) requireCondition(stale.length === 0, `Generated signal files differ from signals.json: ${stale.join(', ')}. Run build-signals.mjs without --check.`);
-console.log(`Signals ${checkOnly ? 'checked' : 'built'}: ${cov.withFunding} vendors with funding, ${cov.withStars} with stars, ${cov.withHn} with Hacker News counts, ${cov.withAdoption} with package data, ${cov.withEvents} with events; ${byCategory.coverage.categoriesWithFunding} of ${landscape.categories.length} categories carry counted capital; ${blindSpots.length} blind-spot categories.`);
+console.log(`Signals ${checkOnly ? 'checked' : 'built'}: ${cov.withFunding} vendors with funding, ${cov.withStars} with stars, ${cov.withHn} with Hacker News counts, ${cov.withAdoption} with package data, ${cov.withEvents} with events, ${conferenceSummary.vendorsWithPresence} with a conference presence (${conferencePages.length} of ${signals.conferences.events.length} directory pages readable); ${byCategory.coverage.categoriesWithFunding} of ${landscape.categories.length} categories carry counted capital; ${blindSpots.length} blind-spot categories.`);
 console.log('This checks structure, referential integrity, and export consistency, not the accuracy of any source figure.');
