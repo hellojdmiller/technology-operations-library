@@ -25,7 +25,7 @@ Start with one concrete question:
 - **Accepting or recovering work:** [acceptance and recovery record](companions/05-acceptance-and-recovery-record.md), with the [fictional example](companions/07-fictional-worked-example.md).
 - **Testing the paper:** [proposition test plan](companions/06-proposition-test-plan.md) and [evidence and limitations](companions/08-evidence-and-limitations.md).
 
-For surrounding practices, see the [prompting guide](../prompting/README.md), [AI risk and agent controls](../cyber-risk/ai/agent-and-mcp-controls.md), [portable skills](../skills/README.md), and [vendor training](../training/README.md).
+For surrounding practices, see the [prompting guide](../prompting/README.md), [AI risk and agent controls](../cyber-risk/ai/agent-and-mcp-controls.md), [portable skills](../skills/README.md), and [workplace and technology training](../training/README.md).
 
 ## Evidence and privacy boundaries
 

@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "training/*/course.json",
+  "generatedFrom": "training/*/course.json, training/journeys.json, training/*.md, training/vendor-walkthroughs/*.md",
   "tracks": [
     {
       "id": "security-awareness",
@@ -648,6 +648,152 @@
         "secure-browsing-and-downloads",
         "the-first-hour"
       ]
+    }
+  ],
+  "operatorModules": [
+    {
+      "slug": "saas-ownership-and-handover",
+      "title": "SaaS ownership and handover: can someone else operate it?",
+      "path": "saas-ownership-and-handover.md",
+      "audience": "A firm technology lead, service owner, finance operator, or outside support provider",
+      "mode": "Tabletop; an optional isolated demo service can be inspected read-only",
+      "reviewedOn": "2026-09-17"
+    },
+    {
+      "slug": "microsoft-365-entra-operator",
+      "title": "Microsoft 365 and Entra operator: prove an identity change",
+      "path": "microsoft-365-entra-operator.md",
+      "audience": "A firm IT operator or outside administrator responsible for workforce access",
+      "mode": "Tabletop first; optional isolated tenant lab",
+      "reviewedOn": "2026-09-17"
+    },
+    {
+      "slug": "google-workspace-operator",
+      "title": "Google Workspace operator: scope, verify, and recover",
+      "path": "google-workspace-operator.md",
+      "audience": "An operator responsible for Google Workspace identity and administrative changes",
+      "mode": "Tabletop first; optional isolated Workspace lab",
+      "reviewedOn": "2026-09-17"
+    },
+    {
+      "slug": "intune-device-operations",
+      "title": "Intune device operations: understand a compliance result",
+      "path": "intune-device-operations.md",
+      "audience": "Endpoint operators supporting a small investment firm",
+      "mode": "Tabletop first; optional isolated tenant and disposable Windows device",
+      "reviewedOn": "2026-09-17"
+    },
+    {
+      "slug": "jamf-device-operations",
+      "title": "Jamf device operations: prove scope and execution",
+      "path": "jamf-device-operations.md",
+      "audience": "A Mac operator responsible for Jamf Pro policies and inventory",
+      "mode": "Tabletop first; optional isolated Jamf Pro lab with a disposable Mac",
+      "reviewedOn": "2026-09-17"
+    },
+    {
+      "slug": "n8n-workflow-operator",
+      "title": "n8n workflow operator: a successful run is only one observation",
+      "path": "n8n-workflow-operator.md",
+      "audience": "An operator who inherits automations or approves their results",
+      "mode": "Tabletop or an isolated n8n instance with synthetic data",
+      "reviewedOn": "2026-09-17"
+    }
+  ],
+  "vendorWalkthroughs": [
+    {
+      "number": 1,
+      "of": 8,
+      "title": "Route a Microsoft 365 request to the right owner",
+      "path": "vendor-walkthroughs/microsoft-admin-routing.md",
+      "practiceMinutes": 20,
+      "mode": "Tabletop; optional read-only inspection in a separate lab",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 2,
+      "of": 8,
+      "title": "Explain an Entra Conditional Access decision",
+      "path": "vendor-walkthroughs/entra-access-decision.md",
+      "practiceMinutes": 25,
+      "mode": "Tabletop; optional existing isolated identity lab",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 3,
+      "of": 8,
+      "title": "Investigate an Intune compliance result",
+      "path": "vendor-walkthroughs/intune-compliance-evidence.md",
+      "practiceMinutes": 25,
+      "mode": "Tabletop; optional existing isolated endpoint lab",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 4,
+      "of": 8,
+      "title": "Check Google Workspace user scope before changing access",
+      "path": "vendor-walkthroughs/google-user-scope.md",
+      "practiceMinutes": 25,
+      "mode": "Tabletop; optional existing isolated Workspace lab",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 5,
+      "of": 8,
+      "title": "Verify access to a Google shared drive",
+      "path": "vendor-walkthroughs/google-shared-drive-access.md",
+      "practiceMinutes": 25,
+      "mode": "Tabletop by default",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 6,
+      "of": 8,
+      "title": "Prove a Jamf inventory policy reached the intended Mac",
+      "path": "vendor-walkthroughs/jamf-inventory-policy.md",
+      "practiceMinutes": 25,
+      "mode": "Tabletop; optional existing isolated Jamf lab",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 7,
+      "of": 8,
+      "title": "Import an n8n example and explain its actual result",
+      "path": "vendor-walkthroughs/n8n-import-and-result.md",
+      "practiceMinutes": 30,
+      "mode": "Tabletop; optional isolated n8n editor",
+      "reviewedOn": "2026-09-19"
+    },
+    {
+      "number": 8,
+      "of": 8,
+      "title": "Recover an n8n example without confusing failure states",
+      "path": "vendor-walkthroughs/n8n-failure-and-recovery.md",
+      "practiceMinutes": 30,
+      "mode": "Tabletop; optional isolated local evaluator",
+      "reviewedOn": "2026-09-19"
+    }
+  ],
+  "supporting": [
+    {
+      "id": "directory",
+      "title": "100 training sites for people at work",
+      "path": "free-training-directory/README.md",
+      "count": 100,
+      "summary": "100 learning destinations with their free scope, access conditions, official evidence, and a proposed starter task, plus a CSV for an internal catalog."
+    },
+    {
+      "id": "delivery",
+      "title": "Deliver one useful training session, then check what carries forward",
+      "path": "delivery/README.md",
+      "count": 4,
+      "summary": "a proposed 60-minute first session around one task card and the records for follow-up checks over 30 days (coach-review.md, learner-progress.csv, session-guide.md, worked-example.md)."
+    },
+    {
+      "id": "record",
+      "title": "Operator training record",
+      "path": "training-record-template.md",
+      "summary": "the blank record for an operator module or task card: planned, simulated, executed, and verified kept apart."
     }
   ]
 }
