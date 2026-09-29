@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 
 const DAY = 86400000;
 // Official vendor documentation hosts accepted as control sources. Marketing, blog, and community hosts are deliberately excluded.
-export const OFFICIAL_DOC_HOSTS = ['knowledge.workspace.google.com', 'support.google.com', 'cloud.google.com', 'docs.cloud.google.com', 'learn.microsoft.com', 'developers.cloudflare.com', 'docs.aws.amazon.com', 'docs.github.com'];
+export const OFFICIAL_DOC_HOSTS = ['knowledge.workspace.google.com', 'support.google.com', 'cloud.google.com', 'docs.cloud.google.com', 'learn.microsoft.com', 'developers.cloudflare.com', 'docs.aws.amazon.com', 'docs.github.com', 'learn.chatgpt.com', 'developers.openai.com', 'support.claude.com', 'privacy.claude.com', 'code.claude.com', 'platform.claude.com'];
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const boolOrNull = value => typeof value === 'boolean' || value === null;
