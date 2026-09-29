@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-anthropic",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment for a claude.ai organization, a Claude Console organization, and managed Claude Code devices; not a real organization",
+    "edition": "Mixed synthetic plan examples, not a coherent purchased bundle: a fictional claude.ai Team plan, a Console organization on the Build tier, and Claude Code on Team seats"
+  },
+  "observations": [
+    {
+      "id": "ANT-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-01",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "ANT-04",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-04",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "ANT-05",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-05",
+      "notes": "Fictional Team plan; SCIM directory sync is not available in this licensing scenario. JIT is in use, so ANT-07 carries the removal step. Retain as unknown and review the gap."
+    },
+    {
+      "id": "ANT-11",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-11",
+      "notes": "Fictional review found the Team invite link still enabled from onboarding and posted in an old chat channel."
+    },
+    {
+      "id": "ANT-17",
+      "applicable": true,
+      "value": null,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-17",
+      "notes": "Fictional reviewer could not locate the signed commercial agreement to confirm no Development Partner Program enrollment."
+    },
+    {
+      "id": "ANT-19",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-19",
+      "notes": "Fictional Team plan; custom data retention is documented for Enterprise only."
+    },
+    {
+      "id": "ANT-25",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-25",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "ANT-27",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-27",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "ANT-29",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-29",
+      "notes": "Synthetic record: egress set to package managers only."
+    },
+    {
+      "id": "ANT-33",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-33",
+      "notes": "Fictional Team plan left Claude in Chrome at its documented default of enabled.",
+      "exception": {
+        "owner": "Fictional service owner",
+        "reason": "A fictional two-person research pilot is using Claude in Chrome on public data sources.",
+        "compensating_control": "Managed Chrome deployment limited to the two pilot users, a site allowlist of five public research sites, and a weekly review of session history by the fictional owner.",
+        "expires_on": "2026-10-29"
+      }
+    },
+    {
+      "id": "ANT-36",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-36",
+      "notes": "Synthetic review record for the single custom connector."
+    },
+    {
+      "id": "ANT-42",
+      "applicable": null,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-42",
+      "notes": "Fictional reviewer has not established whether Cowork is in use on managed devices."
+    },
+    {
+      "id": "ANT-47",
+      "applicable": true,
+      "value": true,
+      "implementation": "unknown",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-47",
+      "notes": "Fictional reviewer could not confirm whether changes are reviewed in a tool or by habit; the mechanism is not established."
+    },
+    {
+      "id": "ANT-48",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-30T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-48",
+      "notes": "Deliberately future-dated observation to exercise the date check."
+    },
+    {
+      "id": "ANT-54",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-54",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "ANT-58",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": null,
+      "observed_at": null,
+      "evidence_ref": null,
+      "notes": "Evidence not collected."
+    },
+    {
+      "id": "ANT-60",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-60",
+      "notes": "Only three pilot laptops were checked; Windows devices without WSL2 were not assessed."
+    },
+    {
+      "id": "ANT-73",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-73",
+      "notes": "Synthetic Admin API export showing only personal and service account keys."
+    },
+    {
+      "id": "ANT-74",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-74",
+      "notes": "Fictional export found one personal key created with expiration Never."
+    },
+    {
+      "id": "ANT-75",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/ANT-75",
+      "notes": "Synthetic absence-of-mechanism evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional inventory confirms no production or CI workload calls the Claude API; only personal development keys exist, and adding an automated workload triggers reassessment."
+    }
+  ]
+}
