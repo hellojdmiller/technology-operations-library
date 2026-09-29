@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-openai",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment for a ChatGPT workspace and an OpenAI API organization; not a real workspace or organization",
+    "edition": "Mixed synthetic plan examples, not a coherent purchased bundle: a fictional ChatGPT Business workspace with Codex, and a fictional pay-as-you-go API organization"
+  },
+  "observations": [
+    {
+      "id": "OAI-03",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-03",
+      "notes": "Fictional ChatGPT Business workspace; SCIM Directory Sync is documented for Enterprise, Edu, and Healthcare only. Retain as unknown and review the gap."
+    },
+    {
+      "id": "OAI-04",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": null,
+      "observed_at": null,
+      "evidence_ref": null,
+      "notes": "Evidence not collected."
+    },
+    {
+      "id": "OAI-05",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-05",
+      "notes": "Synthetic training record; no workspace or organization evidence exists."
+    },
+    {
+      "id": "OAI-06",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-06",
+      "notes": "Fictional ChatGPT Business workspace; custom roles and RBAC are not included with Business."
+    },
+    {
+      "id": "OAI-14",
+      "applicable": true,
+      "value": true,
+      "implementation": "unknown",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-14",
+      "notes": "Fictional reviewer could not tell whether apps were enabled by the Business default or by an administrator; plugin register incomplete."
+    },
+    {
+      "id": "OAI-17",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-17",
+      "notes": "Fictional review found one calendar app set to Never ask."
+    },
+    {
+      "id": "OAI-25",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-25",
+      "notes": "Fictional reviewer could not locate a public-publishing setting in the Business workspace; the Business default is not documented on the page read."
+    },
+    {
+      "id": "OAI-33",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-33",
+      "notes": "Synthetic training record; no workspace or organization evidence exists."
+    },
+    {
+      "id": "OAI-34",
+      "applicable": true,
+      "value": false,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-34",
+      "notes": "Fictional leaver token was suspended by removing local Codex permission but never revoked."
+    },
+    {
+      "id": "OAI-36",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-36",
+      "notes": "Synthetic training record; no workspace or organization evidence exists."
+    },
+    {
+      "id": "OAI-40",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-40",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "OAI-45",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-45",
+      "notes": "Only the two pilot Windows devices were checked."
+    },
+    {
+      "id": "OAI-49",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-49",
+      "notes": "Synthetic device-inventory evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional MDM inventory shows every managed device runs Windows, where Computer Use needs an active unlocked desktop and Locked Use does not exist; enrolling a Mac triggers reassessment."
+    },
+    {
+      "id": "OAI-51",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-51",
+      "notes": "Synthetic training record; no workspace or organization evidence exists."
+    },
+    {
+      "id": "OAI-59",
+      "applicable": true,
+      "value": true,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-59",
+      "notes": "Synthetic review of repository rules for instruction files."
+    },
+    {
+      "id": "OAI-63",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-63",
+      "notes": "Fictional API organization still allows user-owned project keys.",
+      "exception": {
+        "owner": "Fictional service owner",
+        "reason": "One fictional internal prototype still authenticates with a user-owned project key while its service account is set up.",
+        "compensating_control": "Key limited to one project with a 30-day maximum lifetime and weekly usage review by the fictional owner.",
+        "expires_on": "2026-10-29"
+      }
+    },
+    {
+      "id": "OAI-64",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-64",
+      "notes": "Synthetic training record; no workspace or organization evidence exists."
+    },
+    {
+      "id": "OAI-67",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-67",
+      "notes": "Synthetic training record; no workspace or organization evidence exists."
+    },
+    {
+      "id": "OAI-73",
+      "applicable": null,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-73",
+      "notes": "Fictional firm has not decided whether any API project handles client data, so applicability is not established."
+    },
+    {
+      "id": "OAI-80",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-10-15T12:00:00Z",
+      "evidence_ref": "fictional:exercise/OAI-80",
+      "notes": "Deliberately future-dated evidence entered in error."
+    }
+  ]
+}

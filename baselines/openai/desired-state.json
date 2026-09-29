@@ -1,0 +1,2184 @@
+{
+  "schema_version": 1,
+  "id": "tol-openai",
+  "version": "1.0.0",
+  "title": "OpenAI workspace and API platform proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-29",
+  "environment_specific": {
+    "workspace_scope": "[Define privately: ChatGPT workspace IDs and API organization and project IDs]",
+    "plan_and_products": "[Verify per feature: ChatGPT Business, Enterprise, or Edu; Work Cloud and Work Local; Codex seats; service accounts (pay-as-you-go); Compliance API; EKM; Prisma AIRS; API data residency, ZDR, or Modified Abuse Monitoring approval]",
+    "identity_provider": "[Record the provider, whether SSO and SCIM are available on the plan, and where MFA is enforced]",
+    "managed_devices": "[List operating systems, MDM tool, and Codex client versions in use]",
+    "pilot_population": "[Define administrators, members, Codex developers, automations, and API workloads]",
+    "recovery_objectives": "[Approve per workspace and API project]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "OAI-01",
+      "category": "identity",
+      "title": "Sign-in through the identity provider with MFA enforced there",
+      "assertion": "Members sign in to the ChatGPT workspace through single sign-on with the firm identity provider, and that provider enforces multi-factor authentication for every member.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Identity provider application assignment and MFA policy for the ChatGPT application, plus a synthetic member sign-in showing the MFA prompt.",
+      "review_gate": "ChatGPT does not provide workspace-wide MFA enforcement; members can only enable account-level MFA, so the identity provider must enforce it. SSO availability and the enforce-SSO setting are described on help.openai.com, which could not be read; confirm them on the actual plan. Documented default: no workspace-wide MFA enforcement exists.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Authentication",
+          "url": "https://learn.chatgpt.com/docs/auth",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-02",
+      "category": "identity",
+      "title": "Automatic Account Creation off when SCIM is used",
+      "assertion": "Automatic Account Creation is not enabled in any workspace that also uses Directory Sync with SCIM.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Identity and access settings page showing Automatic Account Creation and Directory Sync states, and a member export showing no member without a SCIM badge where SCIM is authoritative.",
+      "review_gate": "OpenAI says not to enable Automatic Account Creation and SCIM together, because accounts it creates might lack SCIM management and survive removal from an identity-provider group. Documented default: not stated on the pages read. Keep off unless no SCIM connection on the workspace and a monthly member review against the HR roster is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-03",
+      "category": "identity",
+      "title": "SCIM Directory Sync from a scoped group",
+      "assertion": "Directory Sync with SCIM is enabled and provisions members only from a named identity-provider group, and that group shows its SCIM badge in Workspace settings > Groups.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Identity and access page showing Directory Sync enabled, the Groups page with the SCIM badge, and the identity-provider assignment for the ChatGPT application.",
+      "review_gate": "Documented for ChatGPT Enterprise, Edu, and Healthcare; SCIM and synchronized groups are not included with ChatGPT Business, so on Business record the control as unsupported and rely on manual invitations and a monthly member review. A matching existing group name becomes SCIM-managed; reconcile names first. Documented default: not stated; the page describes a workspace owner selecting Enable Directory Sync.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Groups and provisioning",
+          "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-04",
+      "category": "identity",
+      "title": "Leavers removed at the identity provider",
+      "assertion": "For every leaver in the review period, the ChatGPT application assignment and every access-granting provisioning group were removed in the identity provider, and the member no longer appears in the workspace after synchronization.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Leaver list for the period matched against identity-provider change records and a workspace member export taken after the sync window.",
+      "review_gate": "SCIM-managed members removed only in the workspace can be added back by a later sync. Business workspaces without SCIM remove members in Workspace settings > Members. Most identity providers sync every 30 to 40 minutes and a sync cannot be forced.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Groups and provisioning",
+          "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-05",
+      "category": "identity",
+      "title": "Owner and Admin roles limited to named administrators",
+      "assertion": "Only named, individually accountable administrators hold the built-in Owner or Admin role, and no shared or service identity holds either role.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Workspace member export filtered by role compared with the approved administrator roster.",
+      "review_gate": "Built-in roles are Owner, Admin, Member, and Analytics Viewer. Only workspace owners can configure RBAC, create custom roles, and grant access-token permission, so the owner list is the most sensitive list in the workspace.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Roles and workspace permissions",
+          "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Admin rollout guide",
+          "url": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-06",
+      "category": "identity",
+      "title": "Custom roles deny restricted features with an explicit Off",
+      "assertion": "Custom roles are assigned through groups, and every feature the firm restricts is set to Off in a role held by the restricted population rather than left at Default.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles export or screenshots of each custom role, its group assignments, and the effective permissions of one representative member per group.",
+      "review_gate": "Custom roles and RBAC are documented for ChatGPT Enterprise, Edu, Healthcare, and Teachers; Business does not include custom member RBAC, so record this as unsupported there. Default inherits the workspace setting, On grants, and an explicit Off in any assigned role overrides On in another. A role cannot grant what the seat does not include. Role changes can take about five minutes to appear.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Roles and workspace permissions",
+          "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Groups and provisioning",
+          "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-07",
+      "category": "work",
+      "title": "Work Cloud granted only to approved roles",
+      "assertion": "Work Cloud is On only for approved roles or groups and Off in the workspace default for everyone else.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles page showing the Work Cloud workspace default and each role that turns it On, plus the member list of those groups.",
+      "review_gate": "Work Cloud, Work Local, and Codex Local appear as separate permissions where available; some workspaces combine local access. For eligible Enterprise and Edu workspaces, the default workspace role includes Work unless an administrator turns it off. Documented default: on in the default role for eligible Enterprise and Edu workspaces. Keep off unless a pilot group limited to connected apps with read-only Action control is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Roles and workspace permissions",
+          "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-08",
+      "category": "work",
+      "title": "Local Work and Codex access granted only to approved roles",
+      "assertion": "Allow members to use Codex and Work Locally, or Use Work locally and Allow members to use Codex locally where the controls are separate, is On only for approved roles.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles page showing the local-access controls for the workspace default and each custom role.",
+      "review_gate": "The combined and separate layouts vary by workspace; enabling one separate control does not grant the other. Local tasks run on the user device and can reach files, apps, and signed-in browsers the user can reach.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Roles and workspace permissions",
+          "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Access tokens",
+          "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-09",
+      "category": "work",
+      "title": "Cloud browser enabled only for approved roles",
+      "assertion": "Cloud browser access is enabled only for the roles that also hold Work Cloud and have an approved browsing need.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace settings showing cloud browser access and the roles it applies to.",
+      "review_gate": "For a Work task to use the cloud browser in an Enterprise workspace, administrators must enable both Work access and cloud browser access. Website sign-in through the cloud browser is not available in Enterprise or Edu workspaces. Documented default: Enterprise admins must enable cloud browsing; the Business default is not stated. Keep off unless website permissions limited to Always ask or Auto approve and a named pilot group is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work Overview",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Browser",
+          "url": "https://learn.chatgpt.com/docs/browser",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-10",
+      "category": "work",
+      "title": "Always allow website permission disabled workspace-wide",
+      "assertion": "The workspace prevents members from choosing Always allow for cloud browser website access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace browser settings showing Always allow is not available to members, and a member settings screen where the option is absent or disabled.",
+      "review_gate": "Users can choose Always ask, Auto approve, or Always allow where available; administrators can limit these choices, for example by disabling Always allow workspace-wide. OpenAI does not recommend Always allow. Documented default: ChatGPT asks before visiting a new website. Keep off unless a written exception for a named role whose tasks use only public reference sites is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work Overview",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Browser",
+          "url": "https://learn.chatgpt.com/docs/browser",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-11",
+      "category": "work",
+      "title": "Public internet access for Work code and shell execution off",
+      "assertion": "Public internet access for Work code and shell execution is off by workspace policy, so commands reach only the managed allowlist of destinations Work requires.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace network setting for Work code and shell execution, and a member Settings > Data controls > Work network access screen showing the restriction applies.",
+      "review_gate": "This controls network destinations for code and shell commands only; it does not disable web search, connected apps, or the cloud browser. A member turning on Allow public internet access does not override an administrator restriction. Changes apply after the current run finishes. Documented default: not stated on the pages read. Keep off unless a role limited to tasks without connected client data and a monthly review of Work activity is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work Overview",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-12",
+      "category": "work",
+      "title": "Computer History not granted to any role",
+      "assertion": "No workspace role has Enable Computer History turned on.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles page showing Enable Computer History for every role.",
+      "review_gate": "Computer History is off by default for Business and Enterprise workspaces; members cannot turn it on until an owner grants access, and Enterprise owners grant it by role. It is macOS only, requires Memories, and its local files are not encrypted by Computer History. Documented default: off. Keep off unless a named pilot on managed Macs with communication and finance apps excluded is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Computer History",
+          "url": "https://learn.chatgpt.com/docs/customization/computer-history",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Roles and workspace permissions",
+          "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-13",
+      "category": "work",
+      "title": "Model enablement and defaults reviewed",
+      "assertion": "Every model enabled for the workspace has a recorded approval, and workspace defaults for Chat and for Work and Codex name a model the affected users can access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace settings > Models showing enabled models, default models for Chat and for Work and Codex, and the approval record.",
+      "review_gate": "GPT-6 Sol and GPT-6 Luna are off by default in Enterprise at launch and need an administrator to enable each; GPT-6 Astra needs Daybreak access and is off for the first two weeks. GPT-5.5 retires from ChatGPT, Work, and Codex on October 14, 2026; replace it in defaults and managed configuration. A workspace model setting does not automatically apply to Codex clients, Codex cloud, or the API.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Workspace model availability",
+          "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work: usage and cost",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-14",
+      "category": "apps",
+      "title": "Plugin availability limited to an approved list per role",
+      "assertion": "Only plugins on the approved list are available or installed, and each is limited to the roles in its approval record.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Admin > Plugins list with installation policy per role compared with the approved plugin register (owner, data, actions, review date).",
+      "review_gate": "One page says plugins and their apps are off by default for Enterprise and Edu and on by default for Business; the local-security page adds that new Enterprise and Edu workspaces start with a selected set of apps enabled. Treat the actual state as unknown until inspected. Documented default: off for Enterprise and Edu, on for Business. Keep off unless a plugin register naming owner, permitted data, approved actions, and review date for every available plugin is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work Overview",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Plugin controls",
+          "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Admin rollout guide",
+          "url": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-15",
+      "category": "apps",
+      "title": "MCP server access assigned by role",
+      "assertion": "Each enabled MCP server connection in Workspace apps is assigned only to the roles named in its approval record.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace apps page and Permissions & roles showing each connection and its role assignment.",
+      "review_gate": "OpenAI uses app and MCP server interchangeably. A member can use an MCP server only when the plugin and MCP server are available to their role and they have access to the connected service. Making a plugin available does not enable its app.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Plugin controls",
+          "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-16",
+      "category": "apps",
+      "title": "Action control set to read-only unless writes are approved",
+      "assertion": "Every app that supports Action control is set to read-only actions, or to a custom set whose write actions have a recorded approval.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace apps Action control setting for each app, with the approval record for any write action.",
+      "review_gate": "Action control can allow all actions, read-only actions, or a custom set, and decides how newly added actions are handled; not every app supports it. OpenAI recommends starting with read actions. Documented default: not stated. Keep off unless a recorded write-action approval naming the owner, external effects, and recovery path is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Plugin controls",
+          "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-17",
+      "category": "apps",
+      "title": "App permissions never set to Never ask",
+      "assertion": "No app has App permissions set to Never ask; apps that can change data use Always ask, Any changes, or Important actions.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "App permissions setting for each app in Workspace apps.",
+      "review_gate": "App permissions control when ChatGPT asks before using an app; options can include Always ask, Any changes, Important actions, and Never ask depending on the app and workspace. An authorized write can run without a prompt when the policy allows it. Documented default: not stated. Keep off unless read-only Action control on the same app is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Plugin controls",
+          "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-18",
+      "category": "apps",
+      "title": "Shared and agent-owned connections scoped and owned",
+      "assertion": "Every shared or agent-owned connection has a named owner, scopes limited to its purpose, a restricted audience, and a dated review.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "List of shared and agent-owned connections with the connected account, scopes, audience, and review date.",
+      "review_gate": "A shared or agent-owned connection uses the connected account permissions, which can exceed the requesting user access. Connection details are on help.openai.com, which could not be read; rely on what the fetched pages state. Keep off unless an owner, least-privilege scopes, and a restricted audience recorded for each connection is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-19",
+      "category": "apps",
+      "title": "Plugin marketplace import pinned or protected",
+      "assertion": "Each GitHub marketplace imported into the workspace is pinned to a fixed commit, or its source branch requires reviewed pull requests before merge.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Admin > Plugins > Marketplaces showing Source, Path, and Branch, tag, or commit for each marketplace, plus the repository branch protection.",
+      "review_gate": "New marketplaces have automatic daily sync enabled, future syncs add any new plugin in the repository, and new plugins start with Available installation. A fixed commit stays at that revision. Deleting the marketplace deletes its imported plugins. Documented default: daily sync on. Keep off unless a fixed commit or a source branch that requires reviewed pull requests is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Plugin management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/plugin-management",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-20",
+      "category": "apps",
+      "title": "Upload plugins with custom MCP servers limited",
+      "assertion": "The Upload plugins with custom MCP servers permission is held only by named plugin maintainers.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles showing which roles hold Upload plugins and Upload plugins with custom MCP servers.",
+      "review_gate": "Listed among workspace permissions in the migration guide for ChatGPT Enterprise admins; custom RBAC is not included with Business. Imported plugins that declare MCP servers are marked Desktop only. Documented default: not stated. Keep off unless a maintainer review of each MCP server identity and scope before upload is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Moving your custom GPT workflows to plugins",
+          "url": "https://learn.chatgpt.com/docs/migrate-custom-gpts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Plugin management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/plugin-management",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-21",
+      "category": "apps",
+      "title": "Publish plugins to workspace limited",
+      "assertion": "The Publish plugins to workspace permission is held only by named plugin maintainers.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles showing which roles hold Publish plugins to workspace and Share plugins.",
+      "review_gate": "Publishing to the workspace directory is separate from sharing directly with people or groups. Listed among workspace permissions in the migration guide for ChatGPT Enterprise admins. Documented default: not stated. Keep off unless the plugin register approval for that plugin is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Moving your custom GPT workflows to plugins",
+          "url": "https://learn.chatgpt.com/docs/migrate-custom-gpts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-22",
+      "category": "sharing",
+      "title": "GPT creation limited to named builders",
+      "assertion": "Only the roles named in the GPT policy can create GPTs.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "GPT settings showing who can create GPTs.",
+      "review_gate": "The GPTs and Sharing admin page documents the control but not its default. OpenAI is moving custom GPT workflows to plugins; plan the replacement controls. GPT Store publishing and link-sharing details are on help.openai.com and could not be verified.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "GPTs and Sharing",
+          "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Moving your custom GPT workflows to plugins",
+          "url": "https://learn.chatgpt.com/docs/migrate-custom-gpts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-23",
+      "category": "sharing",
+      "title": "GPT sharing limited to specific people or groups",
+      "assertion": "GPTs can be shared with specific people or groups, and sharing with the entire workspace requires a recorded approval.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "GPT sharing setting and the management view listing Who can access for each GPT.",
+      "review_gate": "The management view lists name, builder, custom actions, who can access, chats, created, and updated. Documented default: not stated.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "GPTs and Sharing",
+          "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-24",
+      "category": "sharing",
+      "title": "GPT action domains allowlisted",
+      "assertion": "GPT custom actions are restricted to an approved list of external domains, or no domains are allowed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Domains setting on the GPTs admin page and the approval record for each allowed domain.",
+      "review_gate": "If no domains are allowed, custom GPT actions cannot execute. Domain approval does not replace API authentication or user authorization. Documented default: not stated.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "GPTs and Sharing",
+          "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-25",
+      "category": "sharing",
+      "title": "Sites public publishing off",
+      "assertion": "Publishing Sites to Anyone on the internet is not enabled for the workspace.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace setting for public Site publishing and a sample Site share dialog without the public option.",
+      "review_gate": "In Enterprise workspaces public publishing is off by default and must be enabled by an admin. The Business default was not stated on the page read. Sites is in public beta. A new Site starts limited to its owner and workspace admins. Keep off unless an owner review of Site content and connected data before each public release is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Sites",
+          "url": "https://learn.chatgpt.com/docs/sites",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-26",
+      "category": "sharing",
+      "title": "Sites external invitations off",
+      "assertion": "Allow members to invite external visitors to sites is Off in Permissions & roles.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles showing Allow members to invite external visitors to sites.",
+      "review_gate": "Documented as an Enterprise permission, separate from public publishing; Business has no separate external-invitation toggle, so on Business record this as unsupported and rely on Site review. Documented default: not stated. Keep off unless a sponsor and end date recorded for each external viewer is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Sites",
+          "url": "https://learn.chatgpt.com/docs/sites",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-27",
+      "category": "data",
+      "title": "Automatic Library references off",
+      "assertion": "The workspace setting that lets ChatGPT automatically reference saved Library files is off.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace setting for automatic Library references.",
+      "review_gate": "Administrators can control whether ChatGPT automatically references saved Library files; disabling it does not stop users from attaching files they are authorized to use. Library availability varies by plan. Documented default: not stated. Keep off unless Library use limited to non-client material and a quarterly review of saved files is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work Overview",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-28",
+      "category": "data",
+      "title": "Workspace conversation retention set to the approved schedule",
+      "assertion": "The workspace conversation-retention setting matches the firm approved retention schedule.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace retention setting and the approved schedule.",
+      "review_gate": "Enterprise and Edu chats, files, and canvas documents follow the configured workspace retention policy; Business keeps them indefinitely, so on Business record the gap and rely on deletion practice. Deleted chats are generally scheduled for deletion within 30 days. Custom retention periods are described on help.openai.com and could not be verified.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work Overview",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-29",
+      "category": "data",
+      "title": "Enterprise Key Management where customer keys are required",
+      "assertion": "Where the firm requires customer-managed encryption, Enterprise Key Management is configured for the workspace and the key owner is named.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "EKM configuration evidence and the key custody record.",
+      "review_gate": "Documented for eligible Enterprise and Edu workspaces; coverage varies by data category. Rotating a key does not delete data, and revoking key access can disrupt workflows; neither replaces retention. The API platform documents a separate EKM for application state.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Data controls in the OpenAI platform",
+          "url": "https://developers.openai.com/api/docs/guides/your-data",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-30",
+      "category": "data",
+      "title": "Prisma AIRS enforcement mode set to Block",
+      "assertion": "Where Prisma AIRS is connected, Enable Prisma AIRS is on and Enforcement mode is Block.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Codex Data controls > External guardrails showing Prisma AIRS enabled and the enforcement mode, and a Test connection result.",
+      "review_gate": "Needs Prisma AIRS access enabled by the OpenAI account team; it scans newly submitted Codex prompts only, not responses, tool calls, files, or images, and does not cover API-key sessions. Saving the connection does not enable scanning. Documented default: Block.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Prisma AIRS",
+          "url": "https://learn.chatgpt.com/docs/enterprise/prisma-airs",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-31",
+      "category": "data",
+      "title": "Prisma AIRS fails closed",
+      "assertion": "Where Prisma AIRS is connected, On AIRS failure is set to Block prompts.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Codex Data controls showing On AIRS failure.",
+      "review_gate": "Needs Prisma AIRS access. With Allow prompts, prompts continue without a completed scan when Prisma AIRS is unavailable. Documented default: Allow prompts. Keep off unless an outage alert on the Prisma AIRS endpoint and a recorded decision to fail open is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Prisma AIRS",
+          "url": "https://learn.chatgpt.com/docs/enterprise/prisma-airs",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-32",
+      "category": "automation",
+      "title": "Access token creation permission limited",
+      "assertion": "Only named workflow owners hold permission to create Codex access tokens.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Permissions & roles showing Allow users to create personal access tokens or Allow members to use Codex access tokens, and the roles holding it.",
+      "review_gate": "Codex access tokens are supported for Business and Enterprise; only a workspace owner can grant or remove the permission. A token acts as its creator. Documented default: not stated; the page describes turning the permission on.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Access tokens",
+          "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-33",
+      "category": "automation",
+      "title": "Access token expiration limit set",
+      "assertion": "The Access token expiration limit is set to a finite value no longer than the approved lifetime, and no active token lacks an expiry.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Access token expiration limit setting and the Access tokens list with expiry per token.",
+      "review_gate": "The limit applies to new tokens; existing tokens keep their validity window. Scoped personal tokens must expire, but an earlier Codex-only dialog can offer No expiration. The shortest custom window is one day. Keep off unless a recorded rotation schedule and secret-manager storage for that token is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Access tokens",
+          "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Service accounts",
+          "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-34",
+      "category": "automation",
+      "title": "Leaver and replaced tokens revoked, not suspended",
+      "assertion": "Every Codex access token created by a leaver or replaced during rotation has been revoked on the Access tokens page.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Access tokens list filtered by creator for each leaver, showing Revoked status.",
+      "review_gate": "Removing local Codex permission suspends tokens but does not revoke them, and restoring the permission reactivates them. Owners and admins can revoke any token; members only their own.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Access tokens",
+          "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-35",
+      "category": "automation",
+      "title": "Service accounts for durable automation",
+      "assertion": "Each durable Codex automation authenticates as a dedicated service account with finite-lifetime tokens, not as an employee.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Service accounts list, each account roles, groups, plugins, sharing, and token expiries.",
+      "review_gate": "Service accounts are available only on pay-as-you-go plans; elsewhere, name an active workflow owner and record the token. Only owners and admins create accounts; disabling or deleting an account revokes its tokens. A finite token lifetime must be under one year.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Service accounts",
+          "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "User lifecycle management",
+          "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-36",
+      "category": "codex",
+      "title": "Approval policy never blocked",
+      "assertion": "Managed requirements set allowed_approval_policies to a list that excludes never.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Effective requirements from a representative managed client (for example the startup summary) and the source requirements file.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. Cloud-managed requirements apply to supported ChatGPT sign-in on Business and Enterprise. The retired approval_policy = \"untrusted\" is no longer supported. Documented default: unconstrained when omitted. Keep off unless a read-only sandbox for that population, as in the documented CI pattern is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-37",
+      "category": "codex",
+      "title": "Full-access permission profile denied",
+      "assertion": "Managed requirements define allowed_permission_profiles and omit or set false :danger-full-access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a test on a managed client showing :danger-full-access cannot be selected.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. Requires Codex 0.138.0 or later; earlier versions ignore it. When present the table is the complete allowlist, so omitted profiles, including future built-ins, are denied. Documented default: unconstrained when omitted. Keep off unless an isolated container or devcontainer that is itself the approved boundary is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-38",
+      "category": "codex",
+      "title": "danger-full-access sandbox mode blocked for legacy clients",
+      "assertion": "Managed requirements set allowed_sandbox_modes to read-only and workspace-write only.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a test that --sandbox danger-full-access (including --yolo) falls back to an allowed mode.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. Use for deployments still configuring sandbox_mode; permission profiles are preferred on 0.138.0 or later. Documented default: unconstrained when omitted. Keep off unless an isolated container or devcontainer that is itself the approved boundary is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-39",
+      "category": "codex",
+      "title": "Live web search blocked",
+      "assertion": "Managed requirements set allowed_web_search_modes to a list that excludes live.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and the effective web_search value on a managed client.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. disabled is always allowed and an empty list allows only disabled. Documented default: cached, except full-access sessions default to live. Keep off unless a read-only sandbox and a task class that handles no client data is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-40",
+      "category": "codex",
+      "title": "MCP server allowlist enforced",
+      "assertion": "Managed requirements contain an mcp_servers allowlist matching each approved server by name and command or URL identity.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a test that an unlisted MCP server is disabled on a managed client.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. A server is enabled only when name and identity match; an empty table disables all MCP servers; the string command form does not inspect arguments or environment. Plugin-bundled servers use plugins.<plugin>.mcp_servers. Documented default: unconstrained when omitted. Keep off unless a reviewed server register and managed hooks that log tool calls is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-41",
+      "category": "codex",
+      "title": "Login method restricted to ChatGPT",
+      "assertion": "Local system requirements or macOS MDM set allowed_login_methods = [\"chatgpt\"].",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "System requirements.toml or MDM payload and a test that API-key login is refused.",
+      "review_gate": "Must be set in the local system requirements file or MDM; cloud-managed values are ignored. User-set forced_login_method must follow it. If omitted, login methods are unrestricted. API-key sessions follow the API organization retention settings and are not covered by Prisma AIRS. Keep off unless an API project with approved retention and a named owner for each API-key user is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Authentication",
+          "url": "https://learn.chatgpt.com/docs/auth",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-42",
+      "category": "codex",
+      "title": "ChatGPT login restricted to the firm workspace",
+      "assertion": "Local system requirements or macOS MDM set allowed_chatgpt_workspaces to the firm workspace ID only.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "System requirements.toml or MDM payload and a test that sign-in to another workspace is refused.",
+      "review_gate": "Must be set locally; cloud-managed values are ignored. It also applies to Codex access tokens. User-set forced_chatgpt_workspace_id must appear in the allowlist. The network header that blocks personal workspaces in the browser could not be verified. Documented default: unrestricted when omitted.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Authentication",
+          "url": "https://learn.chatgpt.com/docs/auth",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-43",
+      "category": "codex",
+      "title": "Computer Use disabled",
+      "assertion": "Managed requirements pin features.computer_use = false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a managed client where Computer Use setup is unavailable.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. This also disables Record & Replay. Computer Use operating a browser is not covered by Browser Use site policies. Documented default: allowed when omitted, subject to rollout. Keep off unless a [computer_use] policy with default_app_access = \"deny\" and an approved app list is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Computer Use",
+          "url": "https://learn.chatgpt.com/docs/computer-use",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-44",
+      "category": "codex",
+      "title": "Browser Use disabled",
+      "assertion": "Managed requirements pin features.browser_use = false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a managed client where Browser Use is unavailable.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. External Browser Use through the extension has a separate flag. Documented default: allowed when omitted. Keep off unless a [browser_use] default origin policy of deny with approved origins is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-45",
+      "category": "codex",
+      "title": "External Browser Use disabled",
+      "assertion": "Managed requirements pin features.browser_use_external = false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a managed client where the Chrome extension path is unavailable to the agent.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. This path can act in existing tabs and signed-in sessions; OpenAI does not store a separate complete record of Chrome actions through the extension. Documented default: allowed when omitted. Keep off unless a separate browser profile with no firm sign-ins and an origin allowlist is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-46",
+      "category": "codex",
+      "title": "Plugins pinned off for populations without an approved need",
+      "assertion": "Managed requirements pin features.plugins = false for every population without an approved plugin need.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements assignment by group and a managed client showing plugins unavailable.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. It also applies to API-key sign-in. features.apps separately pins app and connector integrations. Documented default: allowed when omitted. Keep off unless a [marketplaces] source allowlist with restrict_to_allowed_sources = true is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-47",
+      "category": "codex",
+      "title": "Appshots disabled",
+      "assertion": "Managed requirements set allow_appshots = false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a managed client where Appshot capture is unavailable.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. Appshots capture frontmost-window screenshots and accessible text as task context. Documented default: unconstrained when omitted. Keep off unless a population that handles no client data on screen is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-48",
+      "category": "codex",
+      "title": "Device remote control disabled",
+      "assertion": "Managed requirements set allow_remote_control = false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a managed client without device remote control.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. It does not disable SSH remote connections. Documented default: unconstrained when omitted. Keep off unless managed devices with full-disk encryption and a named approver for each paired device is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-49",
+      "category": "codex",
+      "title": "Locked Use prevented on managed Macs",
+      "assertion": "Managed requirements set computer_use.allow_locked_computer_use = false, and no managed Mac has Locked Use already enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements source and a device check that the Locked Use authorization plugin is not installed.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. The requirement removes the enablement controls but does not turn off Locked Use that is already on. Windows Computer Use needs an active unlocked desktop. Documented default: unconstrained when omitted. Keep off unless a dedicated managed Mac with no personal or client sessions signed in is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-50",
+      "category": "codex",
+      "title": "Managed command rules forbid or prompt for destructive commands",
+      "assertion": "Managed requirements include [rules] prefix_rules that forbid or prompt for the firm list of destructive or history-changing commands.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Requirements [rules] table and a test that a listed command is blocked or prompts.",
+      "review_gate": "Delivered through system requirements.toml, cloud-managed requirements, or macOS MDM; users cannot override requirements. If omitted, the key does not constrain users. Requirements rules must use prompt or forbidden, not allow, and merge with .rules files with the most restrictive decision winning.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Rules",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/rules",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-51",
+      "category": "cloud",
+      "title": "Codex cloud agent internet access off",
+      "assertion": "Every Codex cloud environment has agent internet access Off unless its approval record requires it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Codex settings > Environments showing agent internet access per environment.",
+      "review_gate": "Configured per environment. Setup scripts still run with internet access; the agent phase is offline by default. Documented default: off during the agent phase. Keep off unless a domain allowlist other than All (unrestricted) and GET, HEAD, and OPTIONS only is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Agent internet access",
+          "url": "https://learn.chatgpt.com/docs/cloud/internet-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Cloud environments",
+          "url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-52",
+      "category": "cloud",
+      "title": "No unrestricted domain allowlist",
+      "assertion": "No Codex cloud environment with internet access uses the All (unrestricted) allowlist preset.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Environment internet settings showing the preset and added domains.",
+      "review_gate": "Presets are None, Common dependencies, and All (unrestricted); None and Common dependencies accept added domains. Documented default: not applicable until access is turned on. Keep off unless GET, HEAD, and OPTIONS only and a review of each work log is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Agent internet access",
+          "url": "https://learn.chatgpt.com/docs/cloud/internet-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-53",
+      "category": "cloud",
+      "title": "HTTP methods limited to GET, HEAD, and OPTIONS",
+      "assertion": "Every Codex cloud environment with internet access restricts requests to GET, HEAD, and OPTIONS.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Environment internet settings showing allowed HTTP methods.",
+      "review_gate": "Other methods such as POST, PUT, PATCH, and DELETE are then blocked. Documented default: not stated. Keep off unless a domain allowlist limited to firm-controlled destinations is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Agent internet access",
+          "url": "https://learn.chatgpt.com/docs/cloud/internet-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-54",
+      "category": "cloud",
+      "title": "Environment credentials stored as secrets",
+      "assertion": "Credentials used by Codex cloud environments are stored as secrets, not as environment variables.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Environment settings listing variables and secrets, reviewed for credential-like values.",
+      "review_gate": "Secrets have an extra layer of encryption and are removed before the agent phase; environment variables persist for the whole task. For Business and Enterprise, caches are shared across users of an environment.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloud environments",
+          "url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-55",
+      "category": "instructions",
+      "title": "Each managed policy has a named owner",
+      "assertion": "Each cloud-managed requirements policy and managed configuration has a named owner, an assigned audience, and a recorded business reason, and only workspace administrators can edit it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Managed configuration page listing policies and assignments, and the policy register.",
+      "review_gate": "OpenAI advises assigning a person to own each managed policy and recording which users or groups receive it. Managed configuration does not grant access or revoke it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Admin rollout guide",
+          "url": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-56",
+      "category": "instructions",
+      "title": "Managed policy deployed from a reviewed source",
+      "assertion": "The text of every requirements.toml, managed_config.toml, and MDM payload lives in version control and changes only through reviewed commits.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Repository history for the policy files and a comparison of the deployed payload with the reviewed commit.",
+      "review_gate": "OpenAI advises treating the managed TOML like any other MDM setting under change control and not embedding secrets. MDM changes are read at the next client launch; verify effective settings after a change.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-57",
+      "category": "instructions",
+      "title": "Security settings enforced as requirements, not defaults",
+      "assertion": "Every security-relevant Codex setting in the baseline is delivered as a requirement users cannot override, not as a managed default.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Policy files showing each control key under requirements, and a user-level override test that falls back to the allowed value.",
+      "review_gate": "Requirements are admin-enforced constraints users cannot override; configuration defaults and legacy managed_config.toml values can be changed by users during a run. Omitted requirement keys remain unconstrained.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work local security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-58",
+      "category": "instructions",
+      "title": "Managed developer instructions reviewed",
+      "assertion": "Any additional_developer_instructions text in managed requirements is stored in version control and approved before deployment.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Requirements source history and the approval record for the current text.",
+      "review_gate": "Codex adds it as a separate developer message and rejects text over about 10,000 estimated tokens. The automatic review policy in guardian_policy_config is governed the same way.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configuration Reference",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-59",
+      "category": "instructions",
+      "title": "Repository AGENTS.md changes reviewed",
+      "assertion": "In every repository where Codex runs, AGENTS.md, AGENTS.override.md, and files under .codex and .agents change only through reviewed pull requests.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Repository rules showing required review for those paths and a sample of recent changes.",
+      "review_gate": "Codex concatenates global and project instruction files, with files closer to the working directory appearing later; ~/.codex/AGENTS.override.md can override global guidance on a device. The default workspace-write sandbox protects .git, .agents, and .codex as read-only. Project .codex rules load only when the project is trusted.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Custom instructions with AGENTS.md",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Rules",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/rules",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-60",
+      "category": "instructions",
+      "title": "API system prompts live in reviewed code",
+      "assertion": "Prompts and system instructions used by firm API applications are stored in version control and reviewed with the code, and no application depends on the v1/prompts endpoint.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Repository location of prompt modules, recent review records, and a search for v1/prompts usage.",
+      "review_gate": "OpenAI advises treating prompts as application code; reusable prompt objects are deprecated and v1/prompts is scheduled to shut down on November 30, 2026.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Prompting",
+          "url": "https://developers.openai.com/api/docs/guides/prompting",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-61",
+      "category": "api",
+      "title": "API organization owners limited and access granted through groups",
+      "assertion": "Only named administrators hold the organization Owner role, and other access is granted through groups and custom roles at organization or project level.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Organization members with roles, groups, and custom roles, and a non-owner test of expected access.",
+      "review_gate": "Groups can be synced from the identity provider through SCIM; access from multiple roles is a union. Allow up to 30 minutes for role changes and group sync.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage permissions in the OpenAI platform",
+          "url": "https://developers.openai.com/api/docs/guides/rbac",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Production best practices",
+          "url": "https://developers.openai.com/api/docs/guides/production-best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-62",
+      "category": "api",
+      "title": "API platform SSO configured",
+      "assertion": "API platform sign-in uses the firm identity provider through SSO.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "API organization SSO settings and a synthetic member sign-in.",
+      "review_gate": "The changelog records self-serve SSO configuration for Enterprise customers on custom and unlimited billing; configuration steps are on help.openai.com, which could not be read. On other billing, record this as unsupported.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Changelog",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-63",
+      "category": "api",
+      "title": "API key creation limited to service-account keys",
+      "assertion": "API Key Governance at the organization allows only service-account keys, or disables new key creation.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Platform settings > API Key Governance for the organization and each project.",
+      "review_gate": "Administrators can allow only service-account keys, allow only user-owned project keys, or disable new key creation; organization restrictions take precedence and projects can add but not loosen them. Existing keys are unaffected. Documented default: not stated. Keep off unless a maximum key lifetime and a quarterly key inventory is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Production best practices",
+          "url": "https://developers.openai.com/api/docs/guides/production-best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Changelog",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-64",
+      "category": "api",
+      "title": "Maximum API key lifetime enforced",
+      "assertion": "A maximum API key lifetime is set at the organization, and every project limit is at or below it.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Platform settings showing the organization and project maximum key lifetime, and the key list with expiry dates.",
+      "review_gate": "New keys must expire within the limit; project limits cannot exceed the organization limit. Existing keys created before the setting keep their state. Documented default: not stated. Keep off unless workload identity federation for the workloads concerned is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Production best practices",
+          "url": "https://developers.openai.com/api/docs/guides/production-best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Changelog",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-65",
+      "category": "api",
+      "title": "Project model allowlist",
+      "assertion": "Each production API project permits only an approved list of models.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Project model permissions (allow_list mode and model IDs) per project.",
+      "review_gate": "Model permissions apply an allowlist or a denied list to one project and can be managed through Terraform. They do not grant anyone access to the project.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Model, tool, and data controls with Terraform",
+          "url": "https://developers.openai.com/api/docs/guides/terraform/project-controls",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-66",
+      "category": "api",
+      "title": "Hosted tools set explicitly with remote MCP off",
+      "assertion": "Each production API project sets every hosted-tool permission explicitly, with remote MCP servers off unless approved.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Project hosted-tool permissions for file search, web search, image generation, remote MCP, and Code Interpreter.",
+      "review_gate": "The organization hosted-tool policy has three modes: allow all projects, deny all, or allow selected projects; a project cannot disable a tool the organization has enabled for every project. Documented default: not stated. Keep off unless an allowlist of approved MCP server URLs in the application code is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Model, tool, and data controls with Terraform",
+          "url": "https://developers.openai.com/api/docs/guides/terraform/project-controls",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-67",
+      "category": "api",
+      "title": "Hard spend limit enforced",
+      "assertion": "A monthly hard spend limit is enforced for the organization or for each production project.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Organization and project Limits pages showing the monthly spend limit and Enforce a hard limit.",
+      "review_gate": "Spend alerts notify but do not cap; a hard limit returns 429 errors when reached and enforcement is not instantaneous. The OpenAI-approved usage limit is separate. Documented default: not enforced until Enforce a hard limit is turned on.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Spend limits",
+          "url": "https://developers.openai.com/api/docs/guides/spend-limits",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Production best practices",
+          "url": "https://developers.openai.com/api/docs/guides/production-best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-68",
+      "category": "api",
+      "title": "IP allowlist on production API traffic",
+      "assertion": "An IP allowlist is active for every production API project or for the organization, listing only approved egress addresses.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "IP allowlist settings per scope and a blocked request from an unlisted address returning ip_not_authorized.",
+      "review_gate": "Applies only to API requests, not platform sign-in; project allowlists take precedence over the organization list and do not combine; up to 50 entries; changes take up to 15 minutes. Not compatible with Private Link. Documented default: not active until enabled.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "IP allowlist",
+          "url": "https://developers.openai.com/api/docs/guides/ip-allowlist",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Private Link",
+          "url": "https://developers.openai.com/api/docs/guides/private-link",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-69",
+      "category": "api",
+      "title": "Workload identity federation for automated workloads",
+      "assertion": "Automated workloads that hold an identity-provider token use workload identity federation instead of stored API keys.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Configured identity providers and service account mappings, and the workload inventory.",
+      "review_gate": "OpenAI exchanges a short-lived identity-provider token or verified certificate for a short-lived access token mapped to a project service account or, for Codex, a workspace principal.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Workload identity federation",
+          "url": "https://developers.openai.com/api/docs/guides/workload-identity-federation",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Changelog",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-70",
+      "category": "api",
+      "title": "Mutual TLS where certificate authentication is required",
+      "assertion": "Where the firm requires client-certificate authentication, a trusted certificate is activated for the production project or organization.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Organization settings > Security > Mutual TLS showing the activated trust anchor and its scope.",
+      "review_gate": "Upload stores a certificate but does not enforce mTLS; activation does. Test on a non-critical project first. Not compatible with Private Link.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Mutual TLS",
+          "url": "https://developers.openai.com/api/docs/guides/mutual-tls",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Private Link",
+          "url": "https://developers.openai.com/api/docs/guides/private-link",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-71",
+      "category": "api",
+      "title": "Admin API keys inventoried and owned",
+      "assertion": "Every Admin API key has a named owner, a purpose, and a secret-manager location, and unused keys have been deleted.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Admin keys list compared with the key register.",
+      "review_gate": "Admin API keys manage users, projects, API keys, spend limits, retention, rate limits, and audit logs; they cannot call non-administration endpoints.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Admin APIs",
+          "url": "https://developers.openai.com/api/docs/guides/admin-apis",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-72",
+      "category": "api",
+      "title": "Audit logging enabled",
+      "assertion": "Audit logging is enabled in organization settings, and a recent configuration change appears in the audit log.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Organization settings showing audit logging, and an Audit Logs API result for a synthetic change.",
+      "review_gate": "The changelog entry launching the Audit Log API states that audit logging must be enabled in settings; its section is dated Aug 1 under July, 2024 headings, so confirm the current state in settings. Documented default: must be enabled.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Changelog",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Admin APIs",
+          "url": "https://developers.openai.com/api/docs/guides/admin-apis",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-73",
+      "category": "api",
+      "title": "Abuse-monitoring retention decision recorded",
+      "assertion": "The organization data-retention setting (standard 30-day abuse monitoring, Modified Abuse Monitoring, or Zero Data Retention) matches a recorded decision for the firm client obligations.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Settings > Data controls > Data Retention for the organization and each project, and the decision record.",
+      "review_gate": "By default abuse-monitoring logs are kept for up to 30 days. Modified Abuse Monitoring and ZDR require approval; projects can inherit, pick a control, or select None. ZDR does not cover application state stored by ineligible endpoints such as assistants, threads, vector stores, files, and batches.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Data controls in the OpenAI platform",
+          "url": "https://developers.openai.com/api/docs/guides/your-data",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Model, tool, and data controls with Terraform",
+          "url": "https://developers.openai.com/api/docs/guides/terraform/project-controls",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-74",
+      "category": "api",
+      "title": "Data residency region chosen at project creation",
+      "assertion": "Every API project that handles data with a location obligation was created in the approved region.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Project list with region, and the obligation register.",
+      "review_gate": "Data residency is set per project when it is created and needs eligibility; non-US regions need approved abuse-monitoring controls and a Modified Retention amendment. System data can be stored outside the region.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Data controls in the OpenAI platform",
+          "url": "https://developers.openai.com/api/docs/guides/your-data",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-75",
+      "category": "api",
+      "title": "Moderation on user-supplied input",
+      "assertion": "Applications that accept input from people outside the firm check it with the moderation endpoint before use.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Application code path calling the moderation endpoint and a test record.",
+      "review_gate": "The moderation endpoint is free to use; omni-moderation-latest accepts text and images, not audio.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Moderation",
+          "url": "https://developers.openai.com/api/docs/guides/moderation",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Safety best practices",
+          "url": "https://developers.openai.com/api/docs/guides/safety-best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-76",
+      "category": "api",
+      "title": "safety_identifier sent for end users",
+      "assertion": "Applications serving end users send a stable, non-identifying safety_identifier with each request.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Application code showing the parameter and how the value is derived.",
+      "review_gate": "Recommended but not required; it traces activity to an individual end user and reduces the chance that one user misuse disrupts access for the organization. Hash the username or email rather than sending it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Safety best practices",
+          "url": "https://developers.openai.com/api/docs/guides/safety-best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-77",
+      "category": "monitoring",
+      "title": "Compliance records exported continuously",
+      "assertion": "Compliance API records are collected continuously into the firm SIEM or archive, with a recent record retrieved in the last review period.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Collection job logs, the retained record count, and a retrieval test.",
+      "review_gate": "Documented for eligible Enterprise and Edu workspaces; on Business record this as unsupported. The Compliance Logs Platform retains data for 30 days. Coverage does not include every shell command, browser action, or approval; the full event list lives in the Admin API reference, which could not be read.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work cloud security",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Compliance API and audit events",
+          "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-78",
+      "category": "monitoring",
+      "title": "Codex telemetry exported without prompt text",
+      "assertion": "Managed configuration exports Codex OpenTelemetry to a firm-controlled collector with otel.log_user_prompt = false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Managed configuration [otel] table and a sample event at the collector showing redacted prompts.",
+      "review_gate": "OTel export is off by default and prompt contents are redacted unless log_user_prompt is enabled. It covers local Codex clients, not ChatGPT Work on the web. Documented default: log_user_prompt = false. Keep off unless a collector with access controls and a retention limit approved for prompt content is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Agent approvals & security",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Managed configuration",
+          "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-79",
+      "category": "spend",
+      "title": "Per-user monthly credit limits set",
+      "assertion": "A default monthly per-user credit limit is set for the workspace, with group defaults and overrides recorded.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Usage limits settings showing the workspace default, group defaults, and overrides.",
+      "review_gate": "Documented for eligible Enterprise and Edu workspaces; Business follows a separate credit model described on help.openai.com. An individual override beats group and workspace defaults, the highest group limit applies, and a group without a limit is not a zero cap.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work: usage and cost",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "OAI-80",
+      "category": "spend",
+      "title": "Workspace overage limit set",
+      "assertion": "The workspace overage limit is set to an approved amount, or zero, and not No limit.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Global Admin Console overage limit and the approved amount.",
+      "review_gate": "Alerts notify but do not stop spending. If the account permits overage, an unset limit can allow usage beyond the credit balance; No limit is not a zero-spend cap. Keep off unless weekly credit review against the committed balance by a named owner is in place.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "ChatGPT Work admin FAQ",
+          "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "ChatGPT Work: usage and cost",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    }
+  ]
+}
