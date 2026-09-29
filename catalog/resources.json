@@ -194,6 +194,13 @@
       "description": "I would start with the two paths a small firm cannot afford to lose control of: who can change what runs in production, and which credentials can act without a person watching. In a GitHub organization used for internal tooling, automations,…"
     },
     {
+      "title": "Google Cloud: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/gcp/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would start with the blast radius. A small firm on Google Cloud usually has one or two people who hold Owner on everything, a handful of projects created by whoever needed one, a few service account keys nobody remembers downloading, and logs…"
+    },
+    {
       "title": "Google Workspace: a baseline for technology operations",
       "collection": "Cloud baselines",
       "path": "baselines/google-workspace/README.md",
@@ -206,6 +213,13 @@
       "path": "baselines/microsoft-365/README.md",
       "readiness": "Local assessment checked; tenant configuration not applied",
       "description": "I would treat this as a set of connected operating decisions: who can administer the firm, how staff and guests get access, where information can travel, and how we recover when a control or service fails. A long list of green settings is less…"
+    },
+    {
+      "title": "Microsoft Azure: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/azure/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would start with the blast radius. A small firm on Azure usually has one tenant, a few subscriptions that grew one project at a time, a Global Administrator who can elevate into every subscription with one toggle, and storage accounts that…"
     },
     {
       "title": "A 45-minute incident-readiness workshop",
