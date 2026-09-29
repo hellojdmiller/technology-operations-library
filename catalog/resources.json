@@ -173,6 +173,13 @@
       "description": "I would begin with the work someone intends to rely on. A fast answer, a convincing explanation, and a completed task are different observations. An acceptance decision needs to connect them to evidence, authority, and an outcome that can be…"
     },
     {
+      "title": "Anthropic: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/anthropic/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would start with what a small firm cannot afford to lose on this platform: control of who is inside the organization, and control of where firm data goes once Claude can read it. On Claude that means the identity path into claude.ai and the…"
+    },
+    {
       "title": "AWS: a baseline for technology operations",
       "collection": "Cloud baselines",
       "path": "baselines/aws/README.md",
@@ -220,6 +227,13 @@
       "path": "baselines/azure/README.md",
       "readiness": "Local assessment checked; tenant configuration not applied",
       "description": "I would start with the blast radius. A small firm on Azure usually has one tenant, a few subscriptions that grew one project at a time, a Global Administrator who can elevate into every subscription with one toggle, and storage accounts that…"
+    },
+    {
+      "title": "OpenAI: a baseline for technology operations",
+      "collection": "Cloud baselines",
+      "path": "baselines/openai/README.md",
+      "readiness": "Local assessment checked; tenant configuration not applied",
+      "description": "I would start with what a small firm cannot afford to lose on this platform: control over which people and agents can reach firm data through ChatGPT, and which credentials can run models or Codex without a person watching. In a ChatGPT…"
     },
     {
       "title": "A 45-minute incident-readiness workshop",
