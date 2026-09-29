@@ -1,0 +1,2867 @@
+{
+  "schema_version": 1,
+  "id": "tol-gcp",
+  "version": "1.0.0",
+  "title": "Google Cloud proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-29",
+  "environment_specific": {
+    "organization_scope": "[Define privately: organization, folders, and projects]",
+    "identity_source": "[Name the Google Workspace or Cloud Identity account and its super admins]",
+    "regions_in_use": "[List the regions and locations in use]",
+    "in_scope_workloads": "[List workloads, projects, and data classes]",
+    "security_command_center_tier": "[Record the SCC tier and activation date, and whether Security Health Analytics or Compliance Manager runs]",
+    "enabled_paid_services": "[Confirm SCC Premium or Enterprise, log storage beyond free allotments, Backup and DR, and Cloud KMS keys]",
+    "pilot_population": "[Define users, groups, and projects]",
+    "recovery_objectives": "[Approve per workload]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "GCP-01",
+      "category": "structure",
+      "title": "Organization resource adopted",
+      "assertion": "The firm has a Google Cloud organization resource linked to its Workspace or Cloud Identity domain, and at least one Organization Administrator role binding is assigned to a named group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of IAM and admin > Manage resources showing the organization node, and gcloud organizations get-iam-policy output showing the roles/resourcemanager.organizationAdmin binding.",
+      "review_gate": "Default: An organization resource is provisioned automatically for Workspace or Cloud Identity customers; the super admin who creates it is automatically assigned Organization Administrator. Workspace or Cloud Identity super admins must assign the role first; the super admin side is covered by GWS-01 and GWS-03.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up a Google Cloud organization resource",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "About resource hierarchy",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-02",
+      "category": "structure",
+      "title": "No projects outside the organization",
+      "assertion": "Every Google Cloud project used by the firm sits under the organization resource, and the \"No organization\" view in the project picker lists no firm projects.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Export of gcloud projects list with the parent field, plus a screenshot of the console project picker filtered to \"No organization\".",
+      "review_gate": "Default: Projects created before the organization existed remain under \"No organization\" until they are migrated. Moving a project into the organization applies inherited IAM and organization policies, so dry-run the org policies first (see the dry-run control); moving a project back to No organization requires Cloud Customer Care.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up a Google Cloud organization resource",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Migrate projects between organization resources",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/project-migration",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-03",
+      "category": "structure",
+      "title": "Organization Administrator roster",
+      "assertion": "The Organization Administrator role is granted only to a private Google Cloud administrator group with a short named roster, the super admin account is not a member, and no daily-use account holds it directly.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "gcloud organizations get-iam-policy output filtered to roles/resourcemanager.organizationAdmin, plus the member list of the administrator group.",
+      "review_gate": "Default: The super admin account that creates the organization resource is automatically assigned the Organization Administrator role. Keep at least two named members so recovery does not depend on one person; super admin protections are in GWS-01, GWS-02 and GWS-03.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Super administrator account best practices",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/super-admin-best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Set up a Google Cloud organization resource",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-04",
+      "category": "structure",
+      "title": "Default Project Creator grant removed",
+      "assertion": "The domain-wide Project Creator (roles/resourcemanager.projectCreator) binding added when the organization was created is removed, and the role is held only by a designated group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud organizations get-iam-policy output showing no domain: member on roles/resourcemanager.projectCreator.",
+      "review_gate": "Default: When the organization resource is created, all users in the domain are automatically granted Project Creator at the organization level. Designate the replacement Project Creator group before removing the domain grant, or staff lose the ability to create projects. Compensating control that would allow disabling or removing it: A designated Project Creator group that replaces the domain grant.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managing default organization roles",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/default-access-control",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Set up a Google Cloud organization resource",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-05",
+      "category": "structure",
+      "title": "Default Billing Account Creator grant removed",
+      "assertion": "The domain-wide Billing Account Creator (roles/billing.creator) binding added when the organization was created is removed, and the role is held only by a designated finance or admin group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud organizations get-iam-policy output showing no domain: member on roles/billing.creator.",
+      "review_gate": "Default: When the organization resource is created, all users in the domain are automatically granted Billing Account Creator at the organization level. Designate the replacement Billing Account Creator before removing the domain grant; a user needs this role to migrate existing billing accounts into the organization. Compensating control that would allow disabling or removing it: A designated Billing Account Creator group that replaces the domain grant.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managing default organization roles",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/default-access-control",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Guide to Cloud Billing Resource Organization and Access Management",
+          "url": "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Cloud Billing access control and permissions",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/billing-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-06",
+      "category": "structure",
+      "title": "Project labels for owner, environment, cost centre",
+      "assertion": "Every project carries labels identifying its owning team, its environment (for example production or test), and its cost centre.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "gcloud projects list --format with the labels field, showing the three label keys on every project.",
+      "review_gate": "Default: Projects have no labels unless someone adds them. Labels are metadata only and do not restrict access; do not put sensitive information in label values.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Overview",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/labels-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for labels",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/best-practices-labels",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-07",
+      "category": "structure",
+      "title": "Named accountable owners per project",
+      "assertion": "Each project has a named accountable owner group recorded, and the automatic Owner grant to the project creator is reviewed and replaced with that group or narrower roles.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Per-project list of IAM bindings for roles/owner, with the matching owner label or register entry.",
+      "review_gate": "Default: The initial IAM policy of a new project grants the Owner role to its creator. Removing the creator's Owner grant can lock out the only administrator; confirm the replacement group first.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About resource hierarchy",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-08",
+      "category": "structure",
+      "title": "Billing account owned by the organization",
+      "assertion": "The firm uses one central Cloud Billing account that has been migrated into the organization, and every project linked to it is under the organization.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Screenshot of Billing > Account management showing the organization as the billing account's parent, and the list of linked projects.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Multiple billing accounts are only warranted for legal or accounting splits, per the billing guide.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Guide to Cloud Billing Resource Organization and Access Management",
+          "url": "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-09",
+      "category": "structure",
+      "title": "Billing Account Administrator roster",
+      "assertion": "The Billing Account Administrator role (roles/billing.admin) is held by a short named roster of people with financial control, and not by a service account or mailing list.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Billing account IAM policy export (gcloud billing accounts get-iam-policy) listing roles/billing.admin members.",
+      "review_gate": "Default: By default, the person who creates the Cloud Billing account is a Billing Account Administrator. This role is needed to contact Billing Support, so keep at least one reachable named person on it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloud Billing access control and permissions",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/billing-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Guide to Cloud Billing Resource Organization and Access Management",
+          "url": "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-10",
+      "category": "structure",
+      "title": "Essential Contacts: security category",
+      "assertion": "An Essential Contact for the Security category is configured at the organization, addressed to a monitored group address rather than an individual.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of IAM and admin > Essential Contacts at the organization, or gcloud essential-contacts list --organization output.",
+      "review_gate": "Default: No custom contacts exist; Essential Contacts provides IAM principals as fallback contacts. CIS: CIS GCP 3.0 1.16 (detector ESSENTIAL_CONTACTS_NOT_CONFIGURED). Without custom contacts, notifications fall back to IAM principals who may not be the right people. The SCC detector for this requires the Premium tier.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Essential Contacts overview",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-11",
+      "category": "structure",
+      "title": "Essential Contacts: technical category",
+      "assertion": "An Essential Contact for the Technical category is configured at the organization, addressed to a monitored group address.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud essential-contacts list --organization output showing a TECHNICAL contact.",
+      "review_gate": "Default: No custom contacts exist; IAM principals are used as fallback contacts. Review contacts annually; the console may prompt for verification.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Essential Contacts overview",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-12",
+      "category": "structure",
+      "title": "Essential Contacts: billing category",
+      "assertion": "An Essential Contact for the Billing category is configured at the organization, addressed to a finance group address.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud essential-contacts list --organization output showing a BILLING contact.",
+      "review_gate": "Default: No custom contacts exist; IAM principals are used as fallback contacts. Billing notices can precede suspension; use a group address that finance monitors.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Essential Contacts overview",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-13",
+      "category": "iam",
+      "title": "No basic roles in production",
+      "assertion": "No principal holds a basic role (Owner, Editor, Viewer, or the preview Admin, Writer, Reader roles) on a production project except the approved Owner roster.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud projects get-iam-policy output for each production project filtered to roles/owner, roles/editor, roles/viewer, roles/admin, roles/writer and roles/reader.",
+      "review_gate": "Default: The creator of a new project is granted Owner; no other basic role grants are made by default. Use role recommendations to choose replacements and Policy Simulator to confirm access is not broken; the PRIMITIVE_ROLES_USED detector needs SCC Premium. Compensating control that would allow disabling or removing it: Replacement predefined roles chosen from role recommendations and checked with Policy Simulator.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Roles overview",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-14",
+      "category": "iam",
+      "title": "Owner role limited to approved roster",
+      "assertion": "The Owner role (roles/owner) on each production project is held only by the approved owner group recorded for that project.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Per-project export of roles/owner members compared with the recorded owner group.",
+      "review_gate": "Default: The creator of a project is granted Owner. Owner can modify allow policies, so treat membership changes as privileged; the OWNER_NOT_MONITORED detector (CIS 2.4) belongs to the logging baseline. Compensating control that would allow disabling or removing it: Replacement predefined roles chosen from role recommendations and checked with Policy Simulator.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Roles overview",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-15",
+      "category": "iam",
+      "title": "No basic roles on organization or folders",
+      "assertion": "No basic role is granted at the organization node or on any folder, because such grants are inherited by every project beneath them.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud organizations get-iam-policy and gcloud resource-manager folders get-iam-policy output filtered to basic roles.",
+      "review_gate": "Default: Not stated on the pages reviewed for organization or folder nodes; verify in the console. Grant at the organization only roles every project needs; basic roles at the top of the tree defeat per-project review. Compensating control that would allow disabling or removing it: None; grant predefined roles at project scope instead.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "About resource hierarchy",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-16",
+      "category": "iam",
+      "title": "Only organization identities in IAM",
+      "assertion": "Every principal in organization, folder and project allow policies belongs to the firm's Workspace or Cloud Identity domain; no consumer (@gmail.com) accounts are granted roles.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SCC NON_ORG_IAM_MEMBER findings, or Cloud Asset Inventory search-all-iam-policies output filtered for gmail.com members. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 1.1 (detector NON_ORG_IAM_MEMBER). The detector is available in the Standard or Premium tier and currently flags only @gmail.com identities; external partners should use accounts controlled under GWS-05.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-17",
+      "category": "iam",
+      "title": "Roles granted to groups",
+      "assertion": "IAM roles on the organization, folders and projects are granted to Google groups rather than to individual user accounts, except the documented break-glass accounts.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Cloud Asset Inventory export of IAM bindings with the count of user: members versus group: members.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Group membership then becomes the access list, so group ownership and external membership are governed under GWS-05 and GWS-06.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-18",
+      "category": "iam",
+      "title": "Predefined roles preferred; custom roles controlled",
+      "assertion": "Access is granted with predefined roles where one fits, and only a small number of trusted principals can create or edit custom roles.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "List of custom roles (gcloud iam roles list --organization and per project) and the holders of roles/iam.roleAdmin and roles/iam.organizationRoleAdmin.",
+      "review_gate": "Default: No custom roles exist by default; predefined roles are created and maintained by Google. Custom roles are not updated by Google as services change, and anyone who can edit a custom role can add any permission to it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Roles overview",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-19",
+      "category": "iam",
+      "title": "No admin roles on user-managed service accounts",
+      "assertion": "No user-managed service account holds Owner, Editor or any Admin role at the organization, folder or project level.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SCC ADMIN_SERVICE_ACCOUNT findings, or IAM policy export filtered to serviceAccount: members with owner, editor or *Admin roles. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 1.5 (detector ADMIN_SERVICE_ACCOUNT). Replace broad roles with the predefined roles the workload uses; the detector requires SCC Premium. Compensating control that would allow disabling or removing it: Narrow predefined roles chosen from role recommendations.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for using service accounts securely",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-20",
+      "category": "iam",
+      "title": "Service Account User and Token Creator not at project level",
+      "assertion": "Service Account User and Service Account Token Creator are granted on individual service accounts only, never at project, folder or organization level.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SCC OVER_PRIVILEGED_SERVICE_ACCOUNT_USER findings, or IAM policy export filtered to roles/iam.serviceAccountUser and roles/iam.serviceAccountTokenCreator. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 1.6 (detector OVER_PRIVILEGED_SERVICE_ACCOUNT_USER). A project-level grant lets the holder impersonate every service account in the project; the detector requires SCC Premium. Compensating control that would allow disabling or removing it: Grants on the specific service account resource only.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for using service accounts securely",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-21",
+      "category": "iam",
+      "title": "No user-managed service account keys",
+      "assertion": "No service account in the organization has a user-managed key; workloads use attached service accounts, Workload Identity Federation or impersonation instead.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SCC USER_MANAGED_SERVICE_ACCOUNT_KEY findings, or gcloud iam service-accounts keys list --managed-by=user per service account. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Keys can be created per IAM permissions unless iam.disableServiceAccountKeyCreation is enforced (enforced by default for organizations created on or after May 3, 2024). CIS: CIS GCP 3.0 1.4 (detector USER_MANAGED_SERVICE_ACCOUNT_KEY). Any exception needs a project-scoped override of the key creation constraint and a named owner; the detector requires SCC Premium. Compensating control that would allow disabling or removing it: A documented exception project with key expiry set by iam.serviceAccountKeyExpiryHours and rotation within 90 days.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for managing service account keys",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Use IAM securely",
+          "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-22",
+      "category": "iam",
+      "title": "Unused service accounts disabled",
+      "assertion": "Service accounts that have not authenticated in the past 90 days are disabled, and deleted only after a waiting period.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Service account insights (Recommender) list per project, and the disabled flag on the flagged accounts.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Service account insights are Pre-GA; API keys bound to service accounts and domain-wide delegation use are not tracked, so check those before disabling.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Find unused service accounts",
+          "url": "https://docs.cloud.google.com/policy-intelligence/docs/service-account-insights",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for using service accounts securely",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-23",
+      "category": "iam",
+      "title": "Workload Identity Federation for external CI",
+      "assertion": "External CI/CD systems (GitHub Actions, Azure DevOps, GitLab, AWS or Azure workloads) authenticate through Workload Identity Federation, with an attribute condition restricting tokens to the firm's own organization or repository.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud iam workload-identity-pools providers describe output showing the attribute condition, and confirmation that CI secrets hold no service account key.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. GitHub, GitLab SaaS and HCP Terraform share one issuer across all customers, so the attribute condition is mandatory to prevent spoofing.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure Workload Identity Federation with deployment pipelines",
+          "url": "https://docs.cloud.google.com/iam/docs/workload-identity-federation-with-deployment-pipelines",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Workload Identity Federation",
+          "url": "https://docs.cloud.google.com/iam/docs/workload-identity-federation",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-24",
+      "category": "iam",
+      "title": "Impersonation instead of keys for people",
+      "assertion": "People who need to act as a service account use impersonation with short-lived credentials (for example the gcloud --impersonate-service-account flag) rather than a downloaded key.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "List of holders of roles/iam.serviceAccountTokenCreator on each service account, and confirmation that no user-managed keys exist.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Grant Token Creator on the specific service account only, and only where the service account is not more privileged than the user.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Service account impersonation",
+          "url": "https://docs.cloud.google.com/iam/docs/service-account-impersonation",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for using service accounts securely",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-25",
+      "category": "iam",
+      "title": "Role recommendations reviewed",
+      "assertion": "IAM role recommendations for the organization, folders and projects are reviewed on a set schedule and either applied or dismissed with a reason.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Recommender export (gcloud recommender recommendations list --recommender=google.iam.policy.Recommender) with the status of each recommendation.",
+      "review_gate": "Default: The recommender looks at up to 90 days of permission usage. Recommendations for basic roles are free; recommendations for non-basic roles, resource-level grants, custom role suggestions, policy insights and lateral movement insights need SCC Premium or Enterprise.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Overview of role recommendations",
+          "url": "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for using service accounts securely",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-26",
+      "category": "iam",
+      "title": "No API keys unless required",
+      "assertion": "Projects use API keys only where an API requires one; unneeded keys are deleted.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SCC API_KEY_EXISTS findings, or gcloud services api-keys list per project. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 1.12 (detector API_KEY_EXISTS). The detector requires SCC Premium; authorization keys bound to service accounts are also covered by iam.managed.disableServiceAccountApiKeyCreation. Compensating control that would allow disabling or removing it: API and application restrictions on each remaining key, with rotation.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for managing API keys",
+          "url": "https://docs.cloud.google.com/docs/authentication/api-keys-best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-27",
+      "category": "iam",
+      "title": "API keys restricted to specific APIs",
+      "assertion": "Every API key has API restrictions listing only the APIs its application calls.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "SCC API_KEY_APIS_UNRESTRICTED findings, or gcloud services api-keys describe output showing apiTargets for each key. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: In the console and gcloud CLI at least one API restriction is required at creation; REST API keys are unrestricted unless specified. CIS: CIS GCP 3.0 1.14 (detector API_KEY_APIS_UNRESTRICTED). Keys created through the REST API are unrestricted unless restrictions are specified; the detector requires SCC Premium.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Manage API keys",
+          "url": "https://docs.cloud.google.com/docs/authentication/api-keys",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-28",
+      "category": "policy",
+      "title": "Disable service account key creation",
+      "assertion": "The organization enforces iam.managed.disableServiceAccountKeyCreation (or the legacy iam.disableServiceAccountKeyCreation), with project-level overrides only for documented exceptions.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for both constraint names at the organization, plus a list of projects with overrides.",
+      "review_gate": "Default: Enforced by default for organizations created on or after May 3, 2024 (Google Cloud security baseline); otherwise keys can be created per IAM roles. The baseline page lists the managed name; the constraint reference and IAM pages name the legacy one. This constraint enforces the setting in GCP-21 at the organization. The legacy constraint also blocks Cloud Storage HMAC key creation; confirm no workload needs a key before enforcing on older organizations. Compensating control that would allow disabling or removing it: Project-scoped override for a documented exception with key expiry and 90-day rotation.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage Google Cloud security baseline constraints",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for managing service account keys",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-29",
+      "category": "policy",
+      "title": "Disable service account key upload",
+      "assertion": "The organization enforces iam.disableServiceAccountKeyUpload (or the managed iam.managed.disableServiceAccountKeyUpload).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint at the organization.",
+      "review_gate": "Default: Enforced by default for organizations created on or after May 3, 2024 (Google Cloud security baseline); otherwise users can upload public keys per IAM roles. Uploading a public key is how externally generated keys are attached; exceptions need the same approval as key creation. Compensating control that would allow disabling or removing it: Project-scoped override for a documented exception with a Valid To date on the certificate.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage Google Cloud security baseline constraints",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Restrict IAM service account usage",
+          "url": "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-30",
+      "category": "policy",
+      "title": "Domain-restricted sharing",
+      "assertion": "The organization enforces iam.allowedPolicyMemberDomains (or the managed iam.managed.allowedPolicyMembers) allowing only the firm's Workspace customer ID or organization principal set.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe output for the constraint showing the allowed customer ID.",
+      "review_gate": "Default: Enforced by default for organizations created on or after May 3, 2024 (Google Cloud security baseline); with the firm's domain as the only allowed value; otherwise all user identities can be added to IAM policies. Existing external bindings are not removed by enforcement, so clean them up separately; the managed constraint can block folder and project creation if automatic grants fall outside the allowed set.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Restrict identities with domain-restricted sharing",
+          "url": "https://docs.cloud.google.com/organization-policy/restrict-domains",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Manage Google Cloud security baseline constraints",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-31",
+      "category": "policy",
+      "title": "No automatic Editor grant to default service accounts",
+      "assertion": "The organization enforces iam.automaticIamGrantsForDefaultServiceAccounts, so new Compute Engine and App Engine default service accounts receive no role automatically.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint at the organization.",
+      "review_gate": "Default: Enforced by default for organizations created on or after May 3, 2024 (Google Cloud security baseline); otherwise default service accounts automatically receive the Editor role when created. Enforcement does not remove Editor from existing default service accounts; remove those grants separately and grant the roles workloads need.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for using service accounts securely",
+          "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Manage Google Cloud security baseline constraints",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-32",
+      "category": "policy",
+      "title": "Prevent basic roles for default service accounts",
+      "assertion": "The organization enforces iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts, so no one can grant Editor or Owner to default service accounts at any time.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint at the organization.",
+      "review_gate": "Default: Not listed among the baseline constraints enforced at organization creation; the legacy automatic-grant constraint does not prevent later manual grants. It can cause permission issues for services relying on default service accounts; grant them specific roles first.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Restrict IAM service account usage",
+          "url": "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-33",
+      "category": "policy",
+      "title": "Exposed keys disabled automatically",
+      "assertion": "iam.serviceAccountKeyExposureResponse is set to DISABLE_KEY at the organization, or left unset, and is not set to WAIT_FOR_ABUSE.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint at the organization.",
+      "review_gate": "Default: If not set, defaults to the behavior described for DISABLE_KEY. Google does not guarantee detection; WAIT_FOR_ABUSE opts out of the protection.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Restrict IAM service account usage",
+          "url": "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-34",
+      "category": "policy",
+      "title": "Uniform bucket-level access required",
+      "assertion": "The organization enforces storage.uniformBucketLevelAccess, so new buckets must use uniform bucket-level access and existing ones cannot turn it off.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint, plus SCC BUCKET_POLICY_ONLY_DISABLED findings for pre-existing buckets. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Enforced by default for organizations created on or after May 3, 2024 (Google Cloud security baseline); otherwise the default value is False. This constraint enforces the setting in GCP-79 at the organization. Not retroactive; existing buckets with it disabled stay disabled until changed.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints for Cloud Storage",
+          "url": "https://docs.cloud.google.com/storage/docs/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Manage Google Cloud security baseline constraints",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-35",
+      "category": "policy",
+      "title": "Public access prevention enforced",
+      "assertion": "The organization enforces storage.publicAccessPrevention, so no bucket or object can be shared with allUsers or allAuthenticatedUsers.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint at the organization.",
+      "review_gate": "Default: Not in the security baseline list; default enforcement not stated on the pages reviewed; verify in the console. This constraint enforces the setting in GCP-77 at the organization. Public access is revoked for existing buckets when enforced; exempt only a dedicated public-content project. Compensating control that would allow disabling or removing it: A dedicated public-content project exempted from the constraint and holding only published material.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints for Cloud Storage",
+          "url": "https://docs.cloud.google.com/storage/docs/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Public access prevention",
+          "url": "https://docs.cloud.google.com/storage/docs/public-access-prevention",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-36",
+      "category": "policy",
+      "title": "Restrict external IPs on VMs",
+      "assertion": "The organization enforces compute.vmExternalIpAccess (or the managed compute.managed.vmExternalIpAccess) denying external IPv4 addresses, with named exceptions only.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint, and SCC PUBLIC_IP_ADDRESS findings. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: By default, all VM instances are allowed to use external IP addresses. This constraint enforces the setting in GCP-96 at the organization. Does not restrict IPv6; use IAP or Cloud NAT for administration and egress. Compensating control that would allow disabling or removing it: Named instance allowlist in the constraint with firewall rules limited to required ports.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-37",
+      "category": "policy",
+      "title": "Skip default network creation",
+      "assertion": "The organization enforces compute.skipDefaultNetworkCreation, so new projects are created without the default network.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint, and SCC DEFAULT_NETWORK findings for older projects. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: By default, a default network and supporting resources are created with each project. This constraint enforces the setting in GCP-65 at the organization. Not retroactive for existing default networks; delete them separately once unused. Compensating control that would allow disabling or removing it: A custom VPC with reviewed firewall rules replacing the default network.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-38",
+      "category": "policy",
+      "title": "Require OS Login",
+      "assertion": "The organization enforces compute.requireOsLogin (or compute.managed.requireOsLogin), so VM SSH access is controlled by IAM rather than metadata keys.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint.",
+      "review_gate": "Default: By default, the OS Login feature is disabled on Compute Engine projects. This constraint enforces the setting in GCP-91 at the organization. The managed form allows tag-based exemptions; confirm images support OS Login first.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-39",
+      "category": "policy",
+      "title": "Disable VM serial port access",
+      "assertion": "The organization enforces compute.disableSerialPortAccess (or compute.managed.disableSerialPortAccess).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint, and SCC COMPUTE_SERIAL_PORTS_ENABLED findings. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: By default, serial port access can be enabled per VM or per project through metadata. This constraint enforces the setting in GCP-93 at the organization. The managed form does not affect VMs already set to serial-port-enable=true until their metadata changes. Compensating control that would allow disabling or removing it: A tag-scoped exemption for a named VM during a recorded troubleshooting window.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-40",
+      "category": "policy",
+      "title": "Restrict VM IP forwarding",
+      "assertion": "The organization enforces compute.vmCanIpForward (or compute.managed.vmCanIpForward) so VMs cannot enable IP forwarding except named network appliances.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint, and SCC IP_FORWARDING_ENABLED findings. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: By default, any VM can enable IP forwarding in any virtual network. This constraint enforces the setting in GCP-94 at the organization. Not retroactive; NAT or firewall appliance VMs need an exemption.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-41",
+      "category": "policy",
+      "title": "Restrict public IP on Cloud SQL",
+      "assertion": "The organization enforces sql.restrictPublicIp (or sql.managed.restrictPublicIp).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint, and SCC SQL_PUBLIC_IP findings for existing instances. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: By default, Public IP access is allowed to Cloud SQL instances. This constraint enforces the setting in GCP-97 at the organization. Not retroactive; existing instances with public IP keep working until changed. Compensating control that would allow disabling or removing it: Cloud SQL Auth Proxy or connectors with no authorized networks.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-42",
+      "category": "policy",
+      "title": "Restrict Cloud SQL authorized networks",
+      "assertion": "The organization enforces sql.restrictAuthorizedNetworks (or sql.managed.restrictAuthorizedNetworks).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud org-policies describe for the constraint.",
+      "review_gate": "Default: By default, Authorized Networks can be added to Cloud SQL instances. This constraint enforces the setting in GCP-98 at the organization. Not retroactive; existing authorized networks continue to work.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-43",
+      "category": "policy",
+      "title": "Dry-run before enforcing",
+      "assertion": "Each new or tightened organization policy is first set in dry-run mode, or checked with Policy Simulator, and its violation logs reviewed before enforcement.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Dry-run policy spec (gcloud org-policies describe showing dryRunSpec) and the audit log query used to review violations.",
+      "review_gate": "Default: Not applicable; dry-run is opt-in. Dry-run works only with custom constraints, managed constraints and four legacy constraints, and needs billing enabled on the project; prefer the managed form of a constraint to get dry-run and simulation.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Test organization policies",
+          "url": "https://docs.cloud.google.com/organization-policy/test-policies",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization Policy overview",
+          "url": "https://docs.cloud.google.com/organization-policy/overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-44",
+      "category": "logging",
+      "title": "Admin Activity audit logs retained",
+      "assertion": "Admin Activity audit logs are written for every project, folder, and organization and remain retrievable from the _Required bucket for its fixed 400-day retention.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "A Logs Explorer query on the organization for logName cloudaudit.googleapis.com%2Factivity returning recent entries.",
+      "review_gate": "Default: Always written; cannot be configured, excluded, or disabled. Stored in _Required with a fixed 400-day retention and no retention charge. Nothing to enable; the check is that someone can query them. Logs Viewer (roles/logging.viewer) reads these; keep that role limited to people who need it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloud Audit Logs overview",
+          "url": "https://docs.cloud.google.com/logging/docs/audit",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Google Cloud Observability pricing",
+          "url": "https://cloud.google.com/products/observability/pricing",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-45",
+      "category": "logging",
+      "title": "Data Access audit logs on for all services",
+      "assertion": "The organization IAM audit config for allServices enables ADMIN_READ, DATA_READ, and DATA_WRITE Data Access audit logs, so every existing and new project inherits them.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud organizations get-iam-policy ORG_ID showing the auditConfigs block for allServices with all three log types. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Except for BigQuery, Data Access audit logs are disabled by default; ADMIN_READ, DATA_READ, and DATA_WRITE are typically disabled by default. BigQuery Data Access audit logs cannot be disabled. CIS: CIS GCP 3.0 2.1 (detector AUDIT_LOGGING_DISABLED). Data Access logs are chargeable and can be large; check projected Cloud Logging ingestion ($0.50/GiB after the free 50 GiB per project per month) before enabling DATA_READ everywhere. The AUDIT_LOGGING_DISABLED detector is Premium tier and not available for project-level activations.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloud Audit Logs overview",
+          "url": "https://docs.cloud.google.com/logging/docs/audit",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Enable Data Access audit logs",
+          "url": "https://docs.cloud.google.com/logging/docs/audit/configure-data-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-46",
+      "category": "logging",
+      "title": "_Default bucket retention set deliberately",
+      "assertion": "The retention period of each _Default log bucket (or of the central log bucket that receives Data Access logs) is set to a recorded, deliberate value rather than left unexamined.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Output of gcloud logging buckets list for the logging project and each project, showing retentionDays, plus the written retention decision.",
+      "review_gate": "Default: The default retention is 30 days; a custom value between 1 and 3650 days can be set. Retention beyond 30 days costs $0.01 per GiB per month; logs cannot be recovered once the retention period ends, so decide before shortening it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure log buckets",
+          "url": "https://docs.cloud.google.com/logging/docs/buckets",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Google Cloud Observability pricing",
+          "url": "https://cloud.google.com/products/observability/pricing",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-47",
+      "category": "logging",
+      "title": "Organization-level aggregated log sink",
+      "assertion": "An organization-level aggregated sink created with include-children routes at least all Cloud Audit Logs from every project and folder to a log bucket or Cloud Storage bucket in a dedicated logging project.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud logging sinks list --organization=ORG_ID and describe for the sink, showing includeChildren true, its filter, and its destination. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: No aggregated sink exists by default; each resource gets only its own _Required and _Default buckets and sinks. CIS: CIS GCP 3.0 2.2 (detector LOG_NOT_EXPORTED). Grant the sink writer identity access on the destination or nothing arrives. Routing to a different project means Admin Activity and System Event logs are not stored there unless a sink in that project stores them. LOG_NOT_EXPORTED is a Premium-tier detector.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Aggregate and store your organization's logs",
+          "url": "https://docs.cloud.google.com/logging/docs/central-log-storage",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Collate and route organization- and folder-level logs to supported destinations",
+          "url": "https://docs.cloud.google.com/logging/docs/export/aggregated_sinks",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-48",
+      "category": "logging",
+      "title": "Locked retention on the log destination",
+      "assertion": "The bucket that receives the organization audit log sink has a locked retention policy (Cloud Storage Bucket Lock, or a locked Cloud Logging bucket).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud storage buckets describe (retention policy isLocked true) or gcloud logging buckets describe (locked true) for the destination.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.3 (detector LOCKED_RETENTION_POLICY_NOT_SET). Locking is irreversible: the policy cannot be reduced or removed and the bucket cannot be deleted until every entry has met its retention. Set the retention value first and confirm the storage cost. The detector is Premium tier.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure log buckets",
+          "url": "https://docs.cloud.google.com/logging/docs/buckets",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Bucket Lock",
+          "url": "https://docs.cloud.google.com/storage/docs/bucket-lock",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-49",
+      "category": "logging",
+      "title": "Log storage in a restricted logging project",
+      "assertion": "The central log bucket sits in a dedicated logging project where only named security staff hold Private Logs Viewer or logging configuration roles, and no workload runs.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "IAM policy export of the logging project listing every principal with roles/logging.* or owner/editor.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Private Logs Viewer (roles/logging.privateLogViewer) is needed to read Data Access logs; apply least privilege and remove nonessential users.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Aggregate and store your organization's logs",
+          "url": "https://docs.cloud.google.com/logging/docs/central-log-storage",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Cloud Audit Logs overview",
+          "url": "https://docs.cloud.google.com/logging/docs/audit",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for Cloud Audit Logs",
+          "url": "https://docs.cloud.google.com/logging/docs/audit/best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-50",
+      "category": "logging",
+      "title": "Alert on project ownership changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for project ownership (roles/owner) assignments and changes, and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a OWNER_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.4 (detector OWNER_NOT_MONITORED). The OWNER_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-51",
+      "category": "logging",
+      "title": "Alert on audit configuration changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for audit configuration (IAM auditConfigs) changes, and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a AUDIT_CONFIG_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.5 (detector AUDIT_CONFIG_NOT_MONITORED). The AUDIT_CONFIG_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-52",
+      "category": "logging",
+      "title": "Alert on custom role changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for IAM custom role creation, update, and deletion, and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a CUSTOM_ROLE_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.6 (detector CUSTOM_ROLE_NOT_MONITORED). The CUSTOM_ROLE_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-53",
+      "category": "logging",
+      "title": "Alert on VPC firewall rule changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for VPC network firewall rule changes, and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a FIREWALL_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.7 (detector FIREWALL_NOT_MONITORED). The FIREWALL_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-54",
+      "category": "logging",
+      "title": "Alert on VPC route changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for VPC network route changes, and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a ROUTE_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.8 (detector ROUTE_NOT_MONITORED). The ROUTE_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-55",
+      "category": "logging",
+      "title": "Alert on VPC network changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for VPC network changes (create, delete, peering, and update), and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a NETWORK_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.9 (detector NETWORK_NOT_MONITORED). The NETWORK_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-56",
+      "category": "logging",
+      "title": "Alert on Cloud Storage IAM changes",
+      "assertion": "A log-based metric and a Cloud Monitoring alerting policy exist for Cloud Storage IAM permission changes, and the alert notifies an owned notification channel.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export the log-based metric filter and the alerting policy (gcloud logging metrics describe; gcloud monitoring policies list) plus a BUCKET_IAM_NOT_MONITORED findings export showing none open. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 2.0 2.10 (detector BUCKET_IAM_NOT_MONITORED). The BUCKET_IAM_NOT_MONITORED detector that checks this is a Premium-tier Security Health Analytics detector; without it, confirm the metric and policy by hand. Metrics built on audit logs only see what the log configuration records.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Log-based metrics overview",
+          "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-57",
+      "category": "logging",
+      "title": "Cloud DNS logging on VPC networks",
+      "assertion": "Every VPC network with workloads has a Cloud DNS server policy with logging enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud dns policies list showing enableLogging true and the networks each policy covers.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 2.12 (detector DNS_LOGGING_DISABLED). Cloud DNS has no separate charge for logging, but the logs add Cloud Logging storage cost. DNS_LOGGING_DISABLED is a Premium-tier detector.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Use logging and monitoring",
+          "url": "https://docs.cloud.google.com/dns/docs/monitoring",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-58",
+      "category": "logging",
+      "title": "Notification channels owned and redundant",
+      "assertion": "Security alerting policies notify at least two channel types, including email or Pub/Sub, each channel has a named owner, and a test alert is sent and received at least quarterly.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "gcloud monitoring channels list output with channel types and owners, and the date and receipt of the last test notification.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Mobile app, PagerDuty, webhooks, and Slack share one internal delivery service, so pair them with email or Pub/Sub.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create and manage notification channels",
+          "url": "https://docs.cloud.google.com/monitoring/support/notification-options",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-59",
+      "category": "detection",
+      "title": "Security Command Center tier recorded",
+      "assertion": "The firm records which Security Command Center tier the organization runs (Standard, Premium, or Enterprise) and which of the detectors in this baseline that tier provides.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Screenshot of Security Command Center settings showing the active tier and activation scope, with the written tier decision.",
+      "review_gate": "Default: Standard is offered at no additional charge; Premium can be activated at project or organization level; Enterprise at organization level only. Standard is offered at no additional charge; Premium and Enterprise are paid. Enterprise shuts down on May 21, 2027 and moves to Premium; do not adopt it new. Most detectors cited in this baseline are Premium tier.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Security Command Center service tiers",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/service-tiers",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-60",
+      "category": "detection",
+      "title": "Security Command Center at organization level",
+      "assertion": "Security Command Center is activated at the organization level, not per project, so every current and new project is in scope.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of Security Command Center settings at the organization node showing organization-level activation.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Requires a Google Cloud organization resource. Project-level activation loses some detection modules and integrations, and several detectors in this baseline need a Standard-legacy parent organization when activated per project.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Overview of activating Security Command Center",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-61",
+      "category": "detection",
+      "title": "Findings routed to an owned queue",
+      "assertion": "A Security Command Center notification config or continuous export sends new and updated findings to a Pub/Sub topic that feeds a monitored destination with a named owner.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud scc notifications list for the organization, the Pub/Sub subscription, and where messages land (ticket queue, email, or chat).",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Pub/Sub usage is billed separately; filter the config (for example by severity) so the queue stays readable.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Enable finding notifications for Pub/Sub",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/how-to-notifications",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Overview of exporting Security Command Center data",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/how-to-export-data",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-62",
+      "category": "detection",
+      "title": "High and critical findings triaged",
+      "assertion": "Every active finding of High or Critical severity has a named owner and a recorded decision (fix, accept with reason, or mute) within a set number of days.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Export of active High and Critical findings with owner and decision fields, or the ticket list they feed. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Severity is a starting point; the page notes a Low finding can matter more depending on the resource, so review context.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Finding severities",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/finding-severity-classifications",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-63",
+      "category": "detection",
+      "title": "Event Threat Detection enabled",
+      "assertion": "Event Threat Detection is enabled for the organization and its findings flow through the same notification route as other findings.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of Security Command Center settings, Services tab, showing Event Threat Detection enabled.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Requires Security Command Center Premium (Enterprise is being shut down). Some detectors rely on Data Access audit logs, so pair it with the Data Access logging control.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Overview of Event Threat Detection",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-event-threat-detection-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Security Command Center service tiers",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/service-tiers",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-64",
+      "category": "detection",
+      "title": "Misconfiguration scanning running",
+      "assertion": "Security Health Analytics is enabled where the tier provides it, or, for organizations where it is unavailable, Compliance Manager is scanning the organization for misconfigurations.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of Security Command Center settings showing Security Health Analytics enabled, or the Compliance Manager dashboard for the organization. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Security Health Analytics is disabled for new activations; Compliance Manager is used instead. Security Health Analytics is disabled for new activations on Standard-legacy, Premium, and Enterprise, and is not available on a newly activated Standard tier; those organizations use Compliance Manager. The detector findings cited in this baseline depend on which applies.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Overview of Security Health Analytics",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-security-health-analytics",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Compliance Manager overview",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/compliance-manager-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-65",
+      "category": "network",
+      "title": "Default network removed",
+      "assertion": "No project contains the auto-created default VPC network; projects that need networking use custom-mode networks built for them.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute networks list across all projects (or an Asset Inventory query) showing no network named default.",
+      "review_gate": "Default: New projects start with a default auto mode network with a subnet in each region, pre-populated with firewall rules, unless an organization policy prohibits it. CIS: CIS GCP 3.0 3.1 (detector DEFAULT_NETWORK). Check nothing runs on the default network before deleting it. Prevent recreation with the compute.skipDefaultNetworkCreation organization policy covered in the organization policy controls. Keep it only with a compensating control: its default-allow-ssh and default-allow-rdp rules deleted and replaced by IAP-only rules. Compensating control that would allow disabling or removing it: Its default-allow-ssh and default-allow-rdp rules deleted and replaced by IAP-only rules.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "VPC networks",
+          "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "VPC firewall rules",
+          "url": "https://docs.cloud.google.com/firewall/docs/firewalls",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-66",
+      "category": "network",
+      "title": "No SSH open to the internet",
+      "assertion": "No VPC firewall rule or firewall policy rule allows ingress on TCP port 22 from 0.0.0.0/0.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute firewall-rules list filtered for tcp:22 and sourceRanges 0.0.0.0/0 returning nothing, or no open OPEN_SSH_PORT findings. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: The default network includes default-allow-ssh, allowing tcp:22 from 0.0.0.0/0. CIS: CIS GCP 3.0 3.6 (detector OPEN_SSH_PORT). Before removing, move administrators to IAP TCP forwarding. Keep an open rule only with a compensating control: the source restricted to the IAP range 35.235.240.0/20 or named office addresses. Compensating control that would allow disabling or removing it: Source restricted to the IAP range 35.235.240.0/20 or named office addresses.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "VPC firewall rules",
+          "url": "https://docs.cloud.google.com/firewall/docs/firewalls",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-67",
+      "category": "network",
+      "title": "No RDP open to the internet",
+      "assertion": "No VPC firewall rule or firewall policy rule allows ingress on TCP port 3389 from 0.0.0.0/0.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute firewall-rules list filtered for tcp:3389 and sourceRanges 0.0.0.0/0 returning nothing, or no open OPEN_RDP_PORT findings. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: The default network includes default-allow-rdp, allowing tcp:3389 from 0.0.0.0/0. CIS: CIS GCP 3.0 3.7 (detector OPEN_RDP_PORT). Move Windows administration to IAP TCP forwarding first. Keep an open rule only with a compensating control: the source restricted to the IAP range 35.235.240.0/20 or named office addresses. Compensating control that would allow disabling or removing it: Source restricted to the IAP range 35.235.240.0/20 or named office addresses.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "VPC firewall rules",
+          "url": "https://docs.cloud.google.com/firewall/docs/firewalls",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-68",
+      "category": "network",
+      "title": "Admin access through IAP TCP forwarding",
+      "assertion": "Administrative SSH and RDP to VMs goes through IAP TCP forwarding, with ingress allowed only from 35.235.240.0/20 and roles/iap.tunnelResourceAccessor granted to named administrators.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "The firewall rule allowing 35.235.240.0/20 on the admin ports, and the IAM bindings for roles/iap.tunnelResourceAccessor at project or instance level.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Grant the IAP-secured Tunnel User role per project or per VM, not at the organization. IPv6 VMs use 2600:2d00:1:7::/64.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Use IAP for TCP forwarding",
+          "url": "https://docs.cloud.google.com/iap/docs/using-tcp-forwarding",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-69",
+      "category": "network",
+      "title": "VPC Flow Logs on every subnet",
+      "assertion": "Every subnet that hosts workloads has VPC Flow Logs enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute networks subnets list showing logConfig enabled for each subnet that hosts workloads.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 3.8 (detector VPC_FLOW_LOGS_SETTINGS_NOT_RECOMMENDED). Flow logs are vended network logs charged at $0.25/GiB; tune aggregation interval, sampling, and metadata against cost. The detector is Premium tier and needs extra configuration to enable. An organization-level flow logs configuration can cover all subnets.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "VPC Flow Logs",
+          "url": "https://docs.cloud.google.com/vpc/docs/flow-logs",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Google Cloud Observability pricing",
+          "url": "https://cloud.google.com/products/observability/pricing",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-70",
+      "category": "network",
+      "title": "Firewall rules logging on key rules",
+      "assertion": "Firewall rules logging is enabled on every rule that allows ingress from outside the VPC and on deny rules protecting sensitive systems.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute firewall-rules list --format showing logConfig enable for each in-scope rule, or no open FIREWALL_RULE_LOGGING_DISABLED findings for them. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Logging is enabled rule by rule and can incur costs, so limit it to rules that matter. The FIREWALL_RULE_LOGGING_DISABLED detector is Premium tier and has no CIS mapping.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "VPC firewall rules logging overview",
+          "url": "https://docs.cloud.google.com/firewall/docs/vpc-firewall-rules-logging-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "VPC firewall rules",
+          "url": "https://docs.cloud.google.com/firewall/docs/firewalls",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-71",
+      "category": "network",
+      "title": "Private Google Access on internal subnets",
+      "assertion": "Every subnet whose VMs have no external IP address has Private Google Access enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute networks subnets list showing privateIpGoogleAccess true for each in-scope subnet.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Enable subnet by subnet. Pair with the external IP organization policy covered in the organization policy controls.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Private Google Access",
+          "url": "https://docs.cloud.google.com/vpc/docs/private-google-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-72",
+      "category": "network",
+      "title": "Cloud NAT for outbound internet",
+      "assertion": "VMs that need outbound internet access reach it through a Cloud NAT gateway rather than through their own external IP addresses.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute routers nats list per region and an instance list showing no external IPs on NAT-served VMs.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Check Cloud NAT charges in the pricing page before rollout. External IPs on VMs are restricted by the compute.vmExternalIpAccess organization policy covered in the organization policy controls.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloud NAT overview",
+          "url": "https://docs.cloud.google.com/nat/docs/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organization policy constraints",
+          "url": "https://docs.cloud.google.com/organization-policy/reference/org-policy-constraints",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-73",
+      "category": "network",
+      "title": "Hierarchical firewall policy at org or folder",
+      "assertion": "A hierarchical firewall policy is associated with the organization or the relevant folders and holds the firm-wide rules (for example blocking inbound admin ports except from the IAP range).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud compute firewall-policies list --organization=ORG_ID and its associations and rules. Detector findings apply only where Security Health Analytics still runs: it is not available on new Security Command Center activations, which use Compliance Manager instead, and the Enterprise tier shuts down May 21, 2027.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Hierarchical rules apply to every VPC network beneath the node; test narrowly targeted rules before adding deny rules that could cut off production.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Firewall policies and rules",
+          "url": "https://docs.cloud.google.com/firewall/docs/firewall-policies-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-74",
+      "category": "network",
+      "title": "VPC Service Controls perimeter for sensitive data",
+      "assertion": "Projects holding sensitive data (for example fund or LP data in Cloud Storage or BigQuery) sit inside an enforced VPC Service Controls perimeter that restricts those services.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of gcloud access-context-manager perimeters describe showing protected projects and restricted services.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Only where sensitive data lives in Google Cloud; requires an access policy, which is organization-wide or scoped to a folder or project. Perimeters can break integrations, so test in dry-run mode first (see the dry-run control).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Overview of VPC Service Controls",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Access Context Manager Overview",
+          "url": "https://docs.cloud.google.com/access-context-manager/docs/overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-75",
+      "category": "network",
+      "title": "Perimeter changes tested in dry-run mode",
+      "assertion": "Every new VPC Service Controls perimeter or perimeter change runs in dry-run mode, and its violation logs are reviewed, before it is enforced.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "The dry-run perimeter configuration and a Logs Explorer export of dry-run violations reviewed before enforcement.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Dry-run violations are only logged, not denied, so leave it long enough to cover monthly jobs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Dry run mode for service perimeters",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-76",
+      "category": "network",
+      "title": "Perimeter access through defined access levels",
+      "assertion": "Any access into a VPC Service Controls perimeter from outside it is granted through a named Access Context Manager access level or ingress rule, each with a documented owner.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Output of gcloud access-context-manager levels list and the perimeter ingress rules, with the owner record.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Keep access levels narrow (specific IP ranges or device conditions); a broad level undoes the perimeter.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Access Context Manager Overview",
+          "url": "https://docs.cloud.google.com/access-context-manager/docs/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Overview of VPC Service Controls",
+          "url": "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-77",
+      "category": "data",
+      "title": "No public principals on buckets",
+      "assertion": "No Cloud Storage bucket or object grants access to allUsers or allAuthenticatedUsers through IAM policies or ACLs, unless the bucket is a documented public-content exception.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Cloud Asset Inventory export of bucket IAM policies across the organization filtered for allUsers and allAuthenticatedUsers, plus the list of approved public buckets.",
+      "review_gate": "Default: Not stated as a default; buckets become public only when someone grants a role to allUsers or allAuthenticatedUsers. CIS: CIS GCP 3.0 5.1 (detector PUBLIC_BUCKET_ACL). Take an inventory of public buckets and the workloads that rely on them before removing public grants; a bucket that must serve public content stays only in a project exempted from public access prevention. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: A dedicated public-content project exempted from public access prevention, holding only content approved for publication, or private bucket access through Cloud Load Balancing and Cloud CDN.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Make data public",
+          "url": "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Public access prevention",
+          "url": "https://docs.cloud.google.com/storage/docs/public-access-prevention",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-78",
+      "category": "data",
+      "title": "Public access prevention on every bucket",
+      "assertion": "Every bucket has public access prevention in effect, either set to enforced on the bucket or inherited from a storage.publicAccessPrevention organization policy set to True on its project, folder, or organization.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud storage buckets describe output (public_access_prevention field) for each bucket, plus the effective storage.publicAccessPrevention policy on each project.",
+      "review_gate": "Default: Bucket state can only be enforced or inherited; with inherited and no storage.publicAccessPrevention set on any parent, public access prevention does not apply. Enforcement blocks allUsers and allAuthenticatedUsers access immediately and can break applications that depend on public data, so check usage logs and IAM policies first; enforcement can take up to 10 minutes and cached copies may persist per Cache-Control. The organization policy constraint itself is covered in the organization policy section.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Public access prevention",
+          "url": "https://docs.cloud.google.com/storage/docs/public-access-prevention",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-79",
+      "category": "data",
+      "title": "Uniform bucket-level access on",
+      "assertion": "Every bucket has uniform bucket-level access enabled, so object ACLs are disabled and access is granted only through bucket-level IAM.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud storage buckets describe output showing uniform_bucket_level_access enabled for each bucket.",
+      "review_gate": "Default: Not stated as a default on the pages reviewed; buckets without it have a default object ACL. Verify in the console. CIS: CIS GCP 3.0 5.2 (detector BUCKET_POLICY_ONLY_DISABLED). Check each bucket's default object ACL and existing object ACLs before enabling, because ACL-based access stops working; uniform bucket-level access cannot be disabled after it has been active for 90 consecutive days. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Uniform bucket-level access",
+          "url": "https://docs.cloud.google.com/storage/docs/uniform-bucket-level-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-80",
+      "category": "recovery",
+      "title": "Soft delete retention kept",
+      "assertion": "Every bucket keeps a soft delete policy with a retention duration of at least the 7-day default, and no bucket or tag sets the retention duration to 0.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud storage buckets describe output showing soft_delete_policy retentionDurationSeconds for each bucket, and any tags that change the default.",
+      "review_gate": "Default: Enabled by default with a 7-day retention duration; configurable between 7 and 90 days, and 0 disables it. Soft-deleted objects are billed while retained, and objects removed before their minimum storage duration can incur early deletion charges; disable only for buckets of short-lived temporary data where Object Versioning or a separate backup covers recovery. Compensating control that would allow disabling or removing it: Object Versioning or a separate backup copy of the bucket's data.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Soft delete overview",
+          "url": "https://docs.cloud.google.com/storage/docs/soft-delete",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-81",
+      "category": "recovery",
+      "title": "Object Versioning on critical buckets",
+      "assertion": "Buckets holding critical records have Object Versioning enabled with an Object Lifecycle Management rule that deletes noncurrent versions after a set number of days or versions.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "List of critical buckets with gcloud storage buckets describe output showing versioning enabled and the lifecycle configuration.",
+      "review_gate": "Default: Not stated as a default on the page reviewed; the page describes versioning as a setting you enable on a bucket. Verify in the console. Each noncurrent version is billed at its storage class rate and there is no default limit on versions, so add a lifecycle rule; Google recommends soft delete for general protection, so use versioning where you need to keep several prior versions.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Object Versioning",
+          "url": "https://docs.cloud.google.com/storage/docs/object-versioning",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-82",
+      "category": "data",
+      "title": "KMS key rotation within 90 days",
+      "assertion": "Every symmetric Cloud KMS encryption key has an automatic rotation schedule with a rotation period of 90 days or less.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud kms keys list output for each key ring showing rotationPeriod and nextRotationTime.",
+      "review_gate": "Default: Not stated as a default; the page recommends configuring automatic rotation on a schedule. CIS: CIS GCP 2.0 1.10 (detector KMS_KEY_NOT_ROTATED). Cloud KMS does not rotate asymmetric keys automatically, so track those manually; rotation does not re-encrypt existing data. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Key rotation",
+          "url": "https://docs.cloud.google.com/kms/docs/key-rotation",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-83",
+      "category": "data",
+      "title": "No public access to KMS keys",
+      "assertion": "No Cloud KMS key or key ring IAM policy grants any role to allUsers or allAuthenticatedUsers.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Cloud Asset Inventory search of IAM policies on cloudkms.googleapis.com resources filtered for allUsers and allAuthenticatedUsers.",
+      "review_gate": "Default: Not stated as a default; public access exists only when someone grants it. CIS: CIS GCP 3.0 1.9 (detector KMS_PUBLIC_KEY). Remove the binding and grant the role to the specific service account that needs it. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: None; grant key use to named service accounts only.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Access control with IAM",
+          "url": "https://docs.cloud.google.com/kms/docs/iam",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-84",
+      "category": "data",
+      "title": "Separate KMS admins from key users",
+      "assertion": "No principal holds the Cloud KMS Admin role together with the CryptoKey Encrypter/Decrypter, Encrypter, Decrypter, Signer, or Signer/Verifier role on the same key.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "IAM policy export for key projects and key rings listing holders of roles/cloudkms.admin and each cryptographic role, with overlaps highlighted.",
+      "review_gate": "Default: Not stated as a default on the pages reviewed; verify in the console. CIS: CIS GCP 2.0 1.11 (detector KMS_ROLE_SEPARATION). For CMEK, Google recommends the service agent be the only principal allowed to encrypt and decrypt; in a small team keep admin and use roles on different named people or groups. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Separation of duties",
+          "url": "https://docs.cloud.google.com/kms/docs/separation-of-duties",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-85",
+      "category": "recovery",
+      "title": "Key destruction delay kept",
+      "assertion": "Cloud KMS keys keep a scheduled-for-destruction duration of at least the 30-day default, and key versions are disabled before they are scheduled for destruction.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud kms keys describe output showing destroyScheduledDuration for each key, and any Minimum destroy scheduled duration per key organization policy.",
+      "review_gate": "Default: The default scheduled for destruction duration is 30 days; a custom duration can be set at key creation. Destruction is permanent and crypto-shreds data encrypted with the key; the organization can enforce a minimum duration with the Minimum destroy scheduled duration per key constraint (organization policy section).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Destroy and restore key versions",
+          "url": "https://docs.cloud.google.com/kms/docs/destroy-restore",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-86",
+      "category": "data",
+      "title": "Secrets in Secret Manager, not env vars",
+      "assertion": "Application secrets (passwords, tokens, credentials) are stored in Secret Manager and read through its API, not placed in Cloud Run or Cloud Run functions environment variables.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Export of Cloud Run service and function environment variables reviewed for secret values, and the list of Secret Manager secrets each workload reads.",
+      "review_gate": "Default: Not stated as a default; secrets appear in environment variables only if deployed that way. CIS: CIS GCP 2.0 1.18 (detector SECRETS_IN_ENVIRONMENT_VARIABLES). Moving a secret requires an application change and a new revision; for Cloud Run revisions that contained secrets, move traffic off and delete them. The SECRETS_IN_ENVIRONMENT_VARIABLES detector must be enabled through Sensitive Data Protection. Compensating control that would allow disabling or removing it: None long term; move the value to Secret Manager and rotate it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secret Manager best practices",
+          "url": "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secret Manager overview",
+          "url": "https://docs.cloud.google.com/secret-manager/docs/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-87",
+      "category": "data",
+      "title": "Secret access granted per secret",
+      "assertion": "Secret Manager Secret Accessor is granted on individual secrets to the workloads that need them, not at project level, wherever one project holds secrets for several services.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "IAM policies on each secret and on the project, showing who holds roles/secretmanager.secretAccessor and where.",
+      "review_gate": "Default: Not stated as a default on the pages reviewed; verify in the console. Project-level grants give access to every secret in the project; separate staging and production into different projects as the best practices page suggests.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secret Manager best practices",
+          "url": "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Access control with IAM",
+          "url": "https://docs.cloud.google.com/secret-manager/docs/access-control",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-88",
+      "category": "compute",
+      "title": "VMs do not use the default service account",
+      "assertion": "No Compute Engine VM runs as the Compute Engine default service account; each VM uses a user-managed service account granted only the roles it needs, or no service account.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute instances list output with serviceAccounts[].email for every VM, showing none ending in -compute@developer.gserviceaccount.com.",
+      "review_gate": "Default: The default service account is attached by default to VMs created with the gcloud CLI or the console. CIS: CIS GCP 3.0 4.1 (detector DEFAULT_SERVICE_ACCOUNT_USED). Changing a VM's service account requires stopping it; the default account may hold the Editor role unless iam.automaticIamGrantsForDefaultServiceAccounts is enforced (enforced by default for organizations created after May 3, 2024). Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: The default service account stripped of Editor and granted only the roles the workload needs, documented per VM.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Service accounts",
+          "url": "https://docs.cloud.google.com/compute/docs/access/service-accounts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-89",
+      "category": "compute",
+      "title": "Default service account without full API scope",
+      "assertion": "No VM combines the Compute Engine default service account with the full cloud-platform access scope.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute instances list output showing serviceAccounts[].email and scopes for every VM.",
+      "review_gate": "Default: New VMs get limited default scopes (for example read-only Cloud Storage, logging write, monitoring write). CIS: CIS GCP 3.0 4.2 (detector FULL_API_ACCESS). Google's stated best practice is the full cloud-platform scope with a narrowly-roled user-managed service account, so this finding matters only where the default account is used. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: A user-managed service account with least-privilege IAM roles.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Service accounts",
+          "url": "https://docs.cloud.google.com/compute/docs/access/service-accounts",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-90",
+      "category": "compute",
+      "title": "Project-wide SSH keys blocked",
+      "assertion": "Every VM that uses metadata-based SSH keys has block-project-ssh-keys set to TRUE, so SSH keys in project metadata do not grant access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute instances describe metadata for each VM showing block-project-ssh-keys=TRUE, plus the project metadata ssh-keys entry.",
+      "review_gate": "Default: Not stated as a default on the page reviewed; blocking is set per VM at or after creation. Verify in the console. CIS: CIS GCP 3.0 4.3 (detector COMPUTE_PROJECT_WIDE_SSH_KEYS_ALLOWED). Users with keys in instance metadata can still connect, so review those too; OS Login (next control) removes the need for metadata keys. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: OS Login enabled on the VM, which ignores metadata SSH keys.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Restrict SSH keys from VMs",
+          "url": "https://docs.cloud.google.com/compute/docs/connect/restrict-ssh-keys",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-91",
+      "category": "compute",
+      "title": "OS Login enabled",
+      "assertion": "enable-oslogin is set to TRUE in project metadata for every project with VMs, and no instance overrides it with FALSE.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute project-info describe metadata showing enable-oslogin=TRUE, and a check of instance metadata for enable-oslogin=FALSE.",
+      "review_gate": "Default: Not stated as a default; OS Login is enabled by setting enable-oslogin to TRUE, and instance metadata FALSE overrides project TRUE. CIS: CIS GCP 2.0 4.4 (detector OS_LOGIN_DISABLED). OS Login deletes the VM's authorized_keys files and stops accepting metadata SSH keys, so grant roles/compute.osLogin or osAdminLogin first; the compute.requireOsLogin constraint is covered in the organization policy section. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About OS Login",
+          "url": "https://docs.cloud.google.com/compute/docs/oslogin",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Set up OS Login",
+          "url": "https://docs.cloud.google.com/compute/docs/oslogin/set-up-oslogin",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-92",
+      "category": "compute",
+      "title": "OS Login 2-step verification",
+      "assertion": "Projects with OS Login also set enable-oslogin-2fa to TRUE, so users must pass 2-Step Verification when connecting to VMs.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute project-info describe metadata showing enable-oslogin=TRUE and enable-oslogin-2fa=TRUE.",
+      "review_gate": "Default: Not stated as a default; enforced only when both enable-oslogin and enable-oslogin-2fa are TRUE. Users without 2-Step Verification are denied, and 2SV is not enforced on service account users; workforce 2SV itself is GWS-04.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up OS Login",
+          "url": "https://docs.cloud.google.com/compute/docs/oslogin/set-up-oslogin",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "About OS Login",
+          "url": "https://docs.cloud.google.com/compute/docs/oslogin",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-93",
+      "category": "compute",
+      "title": "Serial port access disabled",
+      "assertion": "Interactive serial console access is off: serial-port-enable is absent or FALSE in project metadata and no VM sets it to TRUE.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute project-info describe and instances describe metadata showing no serial-port-enable=TRUE.",
+      "review_gate": "Default: By default, interactive serial port access is disabled; a per-instance setting overrides the project setting. CIS: CIS GCP 3.0 4.5 (detector COMPUTE_SERIAL_PORTS_ENABLED). Enable temporarily on one VM for troubleshooting and turn it off afterwards; the interactive serial console does not support IP allowlists unless VPC Service Controls is used. The org policy constraint is in the organization policy section. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: Time-boxed enablement on a single VM for a recorded troubleshooting session.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Troubleshooting using the serial console",
+          "url": "https://docs.cloud.google.com/compute/docs/troubleshooting/troubleshooting-using-serial-console",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-94",
+      "category": "compute",
+      "title": "IP forwarding off",
+      "assertion": "No VM has IP forwarding (canIpForward) enabled unless it is a documented network appliance such as a NAT or firewall VM.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute instances list output showing canIpForward for every VM, with exceptions listed.",
+      "review_gate": "Default: By default, IP forwarding is disabled. CIS: CIS GCP 3.0 4.6 (detector IP_FORWARDING_ENABLED). IP forwarding lets a VM send and receive packets with arbitrary source or destination addresses; only routing appliances need it. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: A documented network appliance VM with firewall rules limiting its traffic.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Use routes",
+          "url": "https://docs.cloud.google.com/vpc/docs/using-routes",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-95",
+      "category": "compute",
+      "title": "Shielded VM enabled",
+      "assertion": "Every VM is a Shielded VM with vTPM and integrity monitoring enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute instances list output with shieldedInstanceConfig for every VM.",
+      "review_gate": "Default: vTPM and integrity monitoring are enabled by default for Shielded VM. CIS: CIS GCP 3.0 4.8 (detector SHIELDED_VM_DISABLED). Requires an image that supports Shielded VM; changing the options requires stopping the VM. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Shielded VM overview",
+          "url": "https://docs.cloud.google.com/compute/shielded-vm/docs/shielded-vm",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Modifying Shielded VM options on a VM instance",
+          "url": "https://docs.cloud.google.com/compute/shielded-vm/docs/modifying-shielded-vm",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-96",
+      "category": "compute",
+      "title": "No external IP on VMs",
+      "assertion": "No VM has an external IP address; administrators connect through IAP TCP forwarding and outbound internet traffic uses Cloud NAT, except documented internet-facing VMs.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute instances list output showing accessConfigs (natIP) for every VM, with the list of approved exceptions.",
+      "review_gate": "Default: A new VM gets an internal IP by default and an external IP can additionally be configured; with no vmExternalIpAccess policy, external IPs are allowed for all instances. CIS: CIS GCP 3.0 4.9 (detector PUBLIC_IP_ADDRESS). The compute.vmExternalIpAccess constraint (organization policy section) is not retroactive, so remove existing external IPs directly. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: A documented internet-facing VM behind restrictive firewall rules or a load balancer.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "IP addresses",
+          "url": "https://docs.cloud.google.com/compute/docs/ip-addresses",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configure static external IP addresses",
+          "url": "https://docs.cloud.google.com/compute/docs/ip-addresses/configure-static-external-ip-address",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Use IAP for TCP forwarding",
+          "url": "https://docs.cloud.google.com/iap/docs/using-tcp-forwarding",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-97",
+      "category": "data",
+      "title": "Cloud SQL without public IP",
+      "assertion": "Every Cloud SQL instance uses private IP only, with public IP disabled, unless an approved exception connects through the Cloud SQL Auth Proxy or a Cloud SQL connector.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud sql instances list output showing ipAddresses types and settings.ipConfiguration.ipv4Enabled for each instance.",
+      "review_gate": "Default: Not stated as a default on the pages reviewed; verify in the console. CIS: CIS GCP 3.0 6.6 and 6.2.9 (detector SQL_PUBLIC_IP). Public IP can be disabled only when private IP is configured, and disabling it restarts the instance and releases its address. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: No authorized networks and connections only through the Cloud SQL Auth Proxy or a Cloud SQL connector with IAM authorization.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Choose how to connect to Cloud SQL",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/connection-options",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configure public IP",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-ip",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-98",
+      "category": "data",
+      "title": "No open authorized networks on Cloud SQL",
+      "assertion": "No Cloud SQL instance lists 0.0.0.0/0 (or any range covering all addresses) as an authorized network.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud sql instances describe output showing settings.ipConfiguration.authorizedNetworks for each instance.",
+      "review_gate": "Default: Not stated as a default; authorized networks exist only when added. CIS: CIS GCP 3.0 6.5 (detector PUBLIC_SQL_INSTANCE). Replace broad ranges with specific client addresses or the Cloud SQL Auth Proxy; the sql.restrictAuthorizedNetworks constraint is covered in the organization policy section. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: Specific client CIDR ranges or the Cloud SQL Auth Proxy.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Authorize with authorized networks",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-99",
+      "category": "data",
+      "title": "Cloud SQL requires SSL/TLS",
+      "assertion": "Every Cloud SQL instance has sslMode set to ENCRYPTED_ONLY or TRUSTED_CLIENT_CERTIFICATE_REQUIRED.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud sql instances describe output showing settings.ipConfiguration.sslMode for each instance.",
+      "review_gate": "Default: ALLOW_UNENCRYPTED_AND_ENCRYPTED, which allows non-SSL connections, is the default. CIS: CIS GCP 2.0 6.4 (detector SSL_NOT_ENFORCED). Clients that connect without TLS will fail, so confirm drivers first; the Cloud SQL Auth Proxy and connectors encrypt on their own. SSL_NOT_ENFORCED is available at the Premium or Standard tier. Compensating control that would allow disabling or removing it: All clients connect only through the Cloud SQL Auth Proxy or a Cloud SQL connector.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure SSL/TLS certificates",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-ssl-instance",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-100",
+      "category": "data",
+      "title": "MySQL root user has a password",
+      "assertion": "Every Cloud SQL for MySQL instance has a strong password set for 'root'@'%', or that user is deleted.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "gcloud sql users list output for each MySQL instance, plus the record of when the root password was set and where it is stored.",
+      "review_gate": "Default: The default for 'root'@'%' is no password. CIS: CIS GCP 3.0 6.1.1 (detector SQL_NO_ROOT_PASSWORD). Store the password in Secret Manager; SQL_NO_ROOT_PASSWORD needs additional configuration and applies to instances with a public IP. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: None; set a strong password or delete the user.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About MySQL users",
+          "url": "https://docs.cloud.google.com/sql/docs/mysql/users",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-101",
+      "category": "data",
+      "title": "BigQuery datasets not public",
+      "assertion": "No BigQuery dataset grants access to allUsers or allAuthenticatedUsers.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Cloud Asset Inventory search of BigQuery dataset IAM policies and access entries filtered for allUsers and allAuthenticatedUsers.",
+      "review_gate": "Default: Not stated as a default; public access exists only when granted. CIS: CIS GCP 3.0 7.1 (detector PUBLIC_DATASET). Remove the public entry and grant BigQuery Data Viewer to named groups; the domain restricted sharing constraint is covered in the organization policy section. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page). Compensating control that would allow disabling or removing it: None; share with named principals or publish a separate sanitized dataset.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Control access to resources with IAM",
+          "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-102",
+      "category": "recovery",
+      "title": "Cloud SQL automated backups on",
+      "assertion": "Every Cloud SQL instance has automated backups enabled with a retention setting agreed for its data.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud sql instances describe output showing settings.backupConfiguration.enabled and retention for each instance.",
+      "review_gate": "Default: Automated backups are enabled by default when you create an instance in the Google Cloud console; with the gcloud CLI, Terraform, or the API you must enable them manually. CIS: CIS GCP 3.0 6.7 (detector AUTO_BACKUP_DISABLED). Instances created with the gcloud CLI, Terraform, or the API need backups enabled explicitly; do not manually delete automated backups because point-in-time recovery depends on them. Security Command Center detects this with Security Health Analytics at the Premium tier (per the Vulnerability findings page).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure point-in-time recovery (PITR)",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/configure-pitr",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Cloud SQL backups overview",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Vulnerability findings",
+          "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-103",
+      "category": "recovery",
+      "title": "Cloud SQL point-in-time recovery on",
+      "assertion": "Every production Cloud SQL instance has point-in-time recovery enabled with transaction log retention set deliberately.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud sql instances describe output showing the PITR setting and transactionLogRetentionDays.",
+      "review_gate": "Default: Enabled by default for Enterprise edition instances created in the console and for all Enterprise Plus instances; log retention defaults to 7 days (Enterprise, range 1 to 7) or 14 days (Enterprise Plus, range 1 to 35). Enabling PITR on an existing instance restarts it, and longer log retention needs more storage.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure point-in-time recovery (PITR)",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/configure-pitr",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Perform point-in-time recovery (PITR)",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-104",
+      "category": "recovery",
+      "title": "Cloud SQL deletion protection on",
+      "assertion": "Every production Cloud SQL instance and important read replica has deletion protection enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud sql instances describe output showing settings.deletionProtectionEnabled for each instance.",
+      "review_gate": "Default: Disabled by default unless the instance is created with the Google Cloud console or Terraform. Read replicas do not inherit the setting, so enable it separately; deletion protection must be turned off before an intended deletion.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Prevent deletion of an instance",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/deletion-protection",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-105",
+      "category": "recovery",
+      "title": "Snapshot schedules as the simpler alternative",
+      "assertion": "Where Backup and DR is not used, every persistent disk holding production data is attached to a snapshot schedule with a stated retention.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud compute resource-policies list output for snapshot schedules and gcloud compute disks describe showing resourcePolicies for each production disk.",
+      "review_gate": "Default: Not stated as a default; a disk is covered only when a schedule is attached. Snapshots incur storage charges; snapshot schedules do not provide the vault immutability of Backup and DR enforced retention.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create schedules for disk snapshots",
+          "url": "https://docs.cloud.google.com/compute/docs/disks/scheduled-snapshots",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-106",
+      "category": "recovery",
+      "title": "Restore test recorded",
+      "assertion": "At least once a year, a Cloud SQL point-in-time restore and a VM or disk restore are performed into a new instance, and the result and elapsed time are recorded.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "Restore test record listing the backup used, the new instance or disk created, data checks performed, elapsed time, and cleanup.",
+      "review_gate": "Default: Not applicable; this is a process control. A point-in-time recovery always creates a new instance, so budget for the temporary instance and delete it after the test.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Perform point-in-time recovery (PITR)",
+          "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/pitr",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Create schedules for disk snapshots",
+          "url": "https://docs.cloud.google.com/compute/docs/disks/scheduled-snapshots",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-107",
+      "category": "recovery",
+      "title": "Project liens on critical projects",
+      "assertion": "Projects holding production data, keys, backups, or logs have a Resource Manager lien restricting resourcemanager.projects.delete, and the team knows deleted projects are fully deleted after 30 days.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "gcloud alpha resource-manager liens list output for each critical project.",
+      "review_gate": "Default: No lien unless placed; soft-deleted projects are fully deleted after 30 days. Removing a lien needs the Project Lien Modifier role, so keep that role narrow; soft-deleted projects count against quota and are fully deleted after 30 days, so restore any mistaken deletion within that window.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Protect projects with liens",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/project-liens",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Create projects",
+          "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-108",
+      "category": "cost",
+      "title": "Budgets with threshold alerts",
+      "assertion": "Every billing account or project has a Cloud Billing budget with threshold alert rules that notify a monitored, firm-owned channel, with the owner aware that alerts-only budgets do not cap spend.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Budgets list from the Billing console showing scope, amount, thresholds, and notification recipients.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Alerts-only budgets do not cap spending. Alerts-only budgets do not stop usage or charges; spend cap budgets are in preview. Route notifications to a group mailbox rather than one person.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create, edit, or delete budgets and budget alerts",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "GCP-109",
+      "category": "cost",
+      "title": "Cost anomalies reviewed",
+      "assertion": "Cost anomaly notifications for the billing account reach a monitored channel and each anomaly is reviewed and closed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Anomalies page export or screenshot showing recent anomalies and their review status, plus notification settings.",
+      "review_gate": "Default: By default, Cloud Billing admins receive email notifications for anomalies. Anomaly thresholds are set automatically; adjust them if alerts are too noisy.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "View and manage cost anomalies",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/manage-anomalies",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    }
+  ]
+}
