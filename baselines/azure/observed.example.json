@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-azure",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment; not a real organization, tenant, or workload",
+    "subscriptions": "Synthetic three-subscription example under one management group, not a coherent deployed footprint"
+  },
+  "observations": [
+    {
+      "id": "AZ-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-01",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-08",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-08",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-09",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-09",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-15",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-15",
+      "notes": "The fictional firm holds no Entra ID P2 or ID Governance licences, so PIM for Azure resources is not available; retain as unknown and review the gap."
+    },
+    {
+      "id": "AZ-19",
+      "applicable": true,
+      "value": true,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-19",
+      "notes": "Deliberately stale evidence."
+    },
+    {
+      "id": "AZ-26",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-26",
+      "notes": "One fictional reporting integration still authenticates with a client secret.",
+      "exception": {
+        "owner": "Fictional cloud platform owner",
+        "reason": "One fictional reporting tool cannot use a managed identity or federated credential yet.",
+        "compensating_control": "A certificate credential stored in Key Vault, or federation.",
+        "expires_on": "2026-10-29"
+      }
+    },
+    {
+      "id": "AZ-28",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-28",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-30",
+      "applicable": true,
+      "value": null,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-30",
+      "notes": "Emergency access is designed but the quarterly exercise has not been run; value stays unknown."
+    },
+    {
+      "id": "AZ-33",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-33",
+      "notes": "Only the production subscription was checked; the sandbox subscription remains unreviewed."
+    },
+    {
+      "id": "AZ-35",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-35",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-38",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-38",
+      "notes": "Defender for Storage is not enabled or paid for in this fictional environment; retain as unknown and review the gap."
+    },
+    {
+      "id": "AZ-46",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": null,
+      "notes": "Reviewer asserted alignment but supplied no evidence reference."
+    },
+    {
+      "id": "AZ-70",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-70",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-73",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-73",
+      "notes": "Synthetic training record; no tenant evidence exists."
+    },
+    {
+      "id": "AZ-75",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-75",
+      "notes": "One fictional storage account still allows access from all networks."
+    },
+    {
+      "id": "AZ-80",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-80",
+      "notes": "One fictional NSG still allows TCP 3389 from Internet to a test VM."
+    },
+    {
+      "id": "AZ-85",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-85",
+      "notes": "Synthetic inventory evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional inventory confirms no Azure SQL logical servers in any subscription; a first Azure SQL deployment triggers reassessment."
+    },
+    {
+      "id": "AZ-93",
+      "applicable": null,
+      "value": null,
+      "implementation": "unknown",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-93",
+      "notes": "The reviewer has not yet established which fictional VMs count as production."
+    },
+    {
+      "id": "AZ-96",
+      "applicable": true,
+      "value": null,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-96",
+      "notes": "A restore test is scheduled but has not been performed; value stays unknown."
+    },
+    {
+      "id": "AZ-98",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/AZ-98",
+      "notes": "Budgets were checked on two of three fictional subscriptions."
+    }
+  ]
+}

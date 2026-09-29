@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "baseline_id": "tol-gcp",
+  "baseline_version": "1.0.0",
+  "fictional": true,
+  "environment": {
+    "scope": "Fictional assessment training environment; not a real organization, project, or workload",
+    "organization": "Synthetic single-organization example with two folders, not a coherent deployed footprint"
+  },
+  "observations": [
+    {
+      "id": "GCP-01",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-01",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GCP-02",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-02",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GCP-03",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-01-01T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-03",
+      "notes": "The roster review is older than the 90-day evidence window; value is not current."
+    },
+    {
+      "id": "GCP-13",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-13",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GCP-14",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": false,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-14",
+      "notes": "Only the production folder was reviewed; the sandbox folder and two unfoldered projects remain unreviewed."
+    },
+    {
+      "id": "GCP-21",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-21",
+      "notes": "One fictional reporting project still holds a user-managed service account key.",
+      "exception": {
+        "owner": "Fictional cloud platform owner",
+        "reason": "One fictional reporting tool cannot use Workload Identity Federation and still authenticates with a service account key.",
+        "compensating_control": "A documented exception project with key expiry set by iam.serviceAccountKeyExpiryHours and rotation within 90 days",
+        "expires_on": "2026-10-29"
+      }
+    },
+    {
+      "id": "GCP-28",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-28",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GCP-30",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-30",
+      "notes": "The constraint is enforced, but whether existing non-domain bindings remain has not been checked; value stays unknown."
+    },
+    {
+      "id": "GCP-44",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-44",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GCP-47",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": null,
+      "notes": "Reviewer asserted the sink exists but supplied no evidence reference."
+    },
+    {
+      "id": "GCP-58",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-58",
+      "notes": "Fictional alert policies notify a single personal email address; the delivery test to the team channel failed."
+    },
+    {
+      "id": "GCP-59",
+      "applicable": true,
+      "value": null,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-59",
+      "notes": "The tier is recorded, but whether Security Health Analytics or Compliance Manager runs for this fictional activation was not confirmed; value stays unknown."
+    },
+    {
+      "id": "GCP-63",
+      "applicable": true,
+      "value": null,
+      "implementation": "unsupported",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-63",
+      "notes": "Event Threat Detection needs a Security Command Center tier this fictional firm has not bought; retain as unknown and review the gap."
+    },
+    {
+      "id": "GCP-66",
+      "applicable": true,
+      "value": false,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-66",
+      "notes": "One fictional firewall rule allows TCP 22 from 0.0.0.0/0 on a test network."
+    },
+    {
+      "id": "GCP-77",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-77",
+      "notes": "Synthetic training record; no organization evidence exists."
+    },
+    {
+      "id": "GCP-82",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-82",
+      "notes": "Key inventory is incomplete; rotation status for two fictional keys was not recorded."
+    },
+    {
+      "id": "GCP-97",
+      "applicable": false,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-97",
+      "notes": "Synthetic inventory evidence supports this scoped exclusion.",
+      "not_applicable_reason": "Fictional inventory confirms no Cloud SQL instances in any project; a first Cloud SQL instance triggers reassessment of every Cloud SQL control."
+    },
+    {
+      "id": "GCP-105",
+      "applicable": true,
+      "value": null,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-105",
+      "notes": "Snapshot schedules exist for most disks, but the disk inventory has not been reconciled; value stays unknown."
+    },
+    {
+      "id": "GCP-106",
+      "applicable": true,
+      "value": null,
+      "implementation": "manual",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-106",
+      "notes": "A restore exercise is scheduled but has not been run; value stays unknown."
+    },
+    {
+      "id": "GCP-108",
+      "applicable": true,
+      "value": true,
+      "implementation": "native",
+      "scope_complete": true,
+      "reviewer": "Fictional assessor",
+      "observed_at": "2026-09-28T12:00:00Z",
+      "evidence_ref": "fictional:exercise/GCP-108",
+      "notes": "Synthetic training record; no organization evidence exists."
+    }
+  ]
+}

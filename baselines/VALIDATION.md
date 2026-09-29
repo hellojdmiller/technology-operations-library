@@ -9,6 +9,7 @@ Checked locally on **2026-09-20**.
 | Fictional assessments | Every example produces 7 aligned assertions, 3 gaps, and 1 scoped non-applicable control at its documented review date; unknowns are 9 for the three new catalogs and 13 and 14 for the refreshed Google and Microsoft catalogs, whose added controls carry no example observation |
 | Local comparison | 17 Node.js tests passed: incomplete, stale/future, unsupported, invalid, duplicate, exception, version, and date cases; CLI JSON and invalid-input behavior |
 | Local links | All relative Markdown links in the baseline subtree resolve |
+| Azure and Google Cloud catalogs (2026-09-29) | Microsoft Azure 99 and Google Cloud 109 controls on learn.microsoft.com and docs.cloud.google.com; worksheets and twelve-scenario risk templates match their catalogs; each fictional example yields 7 aligned, 3 gaps, and 1 scoped non-applicable control at 2026-09-29, with 88 and 98 unknowns; every source URL was retrieved during review |
 | Tenant activity | None: no authentication, tenant collection, tenant changes, installations, or live configuration tests |
 
 The assertions are a proposed operating baseline, not an exhaustive vendor benchmark, audit opinion, or regulatory certification. The JSON is library-specific data; it is not importable into either vendor's policy system.

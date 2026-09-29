@@ -24,6 +24,8 @@ const CATALOGS = [
   { provider: 'cloudflare', controls: 20, unknown: 9, asOf: '2026-09-20' },
   { provider: 'aws', controls: 20, unknown: 9, asOf: '2026-09-20' },
   { provider: 'github', controls: 20, unknown: 9, asOf: '2026-09-20' },
+  { provider: 'azure', controls: 99, unknown: 88, asOf: '2026-09-29' },
+  { provider: 'gcp', controls: 109, unknown: 98, asOf: '2026-09-29' },
 ];
 test('every catalog produces the intended mixed fictional result', () => {
   for (const { provider, controls, unknown, asOf } of CATALOGS) {

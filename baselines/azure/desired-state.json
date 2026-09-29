@@ -1,0 +1,2634 @@
+{
+  "schema_version": 1,
+  "id": "tol-azure",
+  "version": "1.0.0",
+  "title": "Microsoft Azure proposed operating baseline",
+  "status": "review_template_not_vendor_configuration",
+  "reviewed_on": "2026-09-29",
+  "environment_specific": {
+    "tenant_scope": "[Define privately: Entra tenant, management groups, and subscriptions]",
+    "regions_in_use": "[List approved Azure regions]",
+    "identity_baseline": "[Confirm the Microsoft 365 baseline covers this tenant's Entra identities, MFA, and emergency access]",
+    "in_scope_workloads": "[List workloads, subscriptions, and data classes]",
+    "licences_and_paid_plans": "[Confirm Entra ID P2 or ID Governance for PIM, Defender for Cloud plans, Azure Backup, Azure Bastion, and Log Analytics retention per subscription]",
+    "pilot_population": "[Define users, groups, and subscriptions]",
+    "recovery_objectives": "[Approve per workload]",
+    "control_owner": "[Assign privately]",
+    "approver": "[Assign privately]"
+  },
+  "controls": [
+    {
+      "id": "AZ-01",
+      "category": "structure",
+      "title": "Intermediate root management group",
+      "assertion": "Every subscription sits in a management group below a single intermediate root management group, and no subscription is placed directly under the Tenant root group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of the management group hierarchy (Management groups blade or az account management-group list) showing each subscription's parent.",
+      "review_gate": "Default: New subscriptions automatically default to the root management group when they're created. Moving a subscription changes which policies and role assignments it inherits; review inherited assignments at the target group before moving. A tree supports up to six levels, so keep it shallow.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organize your resources with management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-02",
+      "category": "structure",
+      "title": "Default management group for new subscriptions",
+      "assertion": "The hierarchy setting for the default management group points to a dedicated management group (for example a sandbox group), so new subscriptions never land in the root management group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of the root management group's hierarchy settings showing the default management group, or the REST response from .../settings/default.",
+      "review_gate": "Default: By default, a new subscription that you add in a tenant becomes a member of the root management group. Configuring hierarchy settings requires resource provider operations on the root management group, so it needs elevated or root-scope access; choose a group whose policies suit an unreviewed new subscription.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Protect your resource hierarchy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/how-to/protect-resource-hierarchy",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-03",
+      "category": "structure",
+      "title": "Authorization required to create management groups",
+      "assertion": "The hierarchy setting requireAuthorizationForGroupCreation is true, so only principals with Microsoft.Management/managementGroups/write on the root management group can create management groups.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of the root management group hierarchy settings showing the require-authorization setting on, or the settings REST response.",
+      "review_gate": "Default: Any user, by default, can create new management groups in a tenant. After enabling, anyone who creates management groups needs the write permission on the root group; grant it only to the platform administrators. Compensating control that would allow the setting to be relaxed: None documented; enable the require-authorization setting.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Protect your resource hierarchy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/how-to/protect-resource-hierarchy",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-04",
+      "category": "structure",
+      "title": "Production separated by subscription",
+      "assertion": "Production workloads run in subscriptions separate from development and test, and environments are separated by subscription rather than by creating a management group per environment.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "List of subscriptions with their environment tag and management group parent.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. The Cloud Adoption Framework advises against production, testing, and development management groups; separate environments into different subscriptions in the same management group.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Subscription considerations and recommendations",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-subscriptions",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-05",
+      "category": "structure",
+      "title": "No standing access at root scope",
+      "assertion": "No user or group holds a standing role assignment at root scope (/) or on the Tenant root group, apart from an approved and documented exception.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of az role assignment list --scope / and on the root management group, with any exceptions recorded.",
+      "review_gate": "Default: No one has default access to the root management group. Microsoft Entra Global Administrators are the only users who can elevate themselves to gain access. Assignments at the root apply to every management group and subscription; removing the elevated User Access Administrator assignment requires the toggle or CLI, not the IAM page. Compensating control that would allow the setting to be relaxed: A documented, time-limited exception with alerting on the assignment.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Organize your resources with management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Elevate access to manage all Azure subscriptions and management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-06",
+      "category": "structure",
+      "title": "Elevate access toggle off when not in use",
+      "assertion": "The 'Access management for Azure resources' toggle is No for every Global Administrator except during a recorded task, and the portal shows no users with elevated access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of Entra ID Properties showing the toggle state and the absence of the 'X users have elevated access' banner.",
+      "review_gate": "Default: No one has default access to the root management group; elevation is manual via the toggle. The toggle is per user; deactivating a PIM Global Administrator activation does not reset it, so set it to No first (see M365-23). Compensating control that would allow the setting to be relaxed: Elevation only for a recorded task, then reset to No, with alerts on elevate-access log entries (AZ-07).",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Elevate access to manage all Azure subscriptions and management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Organize your resources with management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-07",
+      "category": "structure",
+      "title": "Elevate access events are alerted",
+      "assertion": "Every elevate-access and remove-elevated-access event raises an alert to the security owner from the Microsoft Entra directory audit logs or the Azure activity log.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "The alert rule or analytics rule definition and one test alert record.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Microsoft documents Microsoft Sentinel as one detection path; Sentinel and Log Analytics ingestion are billed separately, and directory audit log entries for elevation are in preview. Sentinel pricing was not taken from a fetched page.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Elevate access to manage all Azure subscriptions and management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-08",
+      "category": "structure",
+      "title": "Subscriptions cannot leave the directory",
+      "assertion": "The subscription policy for subscriptions leaving the Microsoft Entra ID directory is set to Allow no users.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of Subscriptions > Manage policies showing both transfer policies.",
+      "review_gate": "Default: Allow no users is the documented default; on May 1st, 2026 Microsoft changed the default so subscriptions cannot be transferred in or out unless a global administrator allows it, and an explicit earlier choice is still respected. Only directory global administrators with direct role assignment, after elevating access, can edit subscription policies; plan a tenant migration through the exempted users list instead of opening the policy. Compensating control that would allow the setting to be relaxed: Named exempted users for a planned transfer, removed afterwards.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage Azure subscription policies",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/manage-azure-subscription-policy",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-09",
+      "category": "structure",
+      "title": "Subscriptions cannot enter the directory",
+      "assertion": "The subscription policy for subscriptions entering the Microsoft Entra ID directory is set to Allow no users.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of Subscriptions > Manage policies showing the entering policy.",
+      "review_gate": "Default: Allow no users is the documented default. Authorized users, including guests, can otherwise create subscriptions elsewhere and move them in; use exempted users for a planned inbound transfer. Compensating control that would allow the setting to be relaxed: Named exempted users for a planned transfer, removed afterwards.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage Azure subscription policies",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/manage-azure-subscription-policy",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-10",
+      "category": "iam",
+      "title": "More than one subscription owner",
+      "assertion": "Every subscription has more than one principal assigned the Owner role, eligible through PIM where licensed, so administrator access is redundant.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud recommendation status for 'There should be more than one owner assigned to subscriptions', or az role assignment list per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Count eligible and active assignments; the emergency access path (AZ-30) is not a substitute for a second named owner.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Reference table for all identity and access security recommendations in Microsoft Defender for cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-identity-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-11",
+      "category": "iam",
+      "title": "At most three subscription owners",
+      "assertion": "No subscription has more than three principals assigned the Owner role, and each holder is on the approved roster.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud status for 'A maximum of 3 owners should be designated for subscriptions', plus the roster.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Owner assignments inherited from management groups count toward the owners of a subscription; review inherited assignments too. Whether the Defender for Cloud count includes inherited assignments is not stated on the pages reviewed.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Best practices for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Reference table for all identity and access security recommendations in Microsoft Defender for cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-identity-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-12",
+      "category": "iam",
+      "title": "Privileged roles assigned at narrow scope",
+      "assertion": "Owner, User Access Administrator, and Role Based Access Control Administrator are not assigned at management group scope except to the approved platform roster through PIM, and job function roles are used where they suffice.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of role assignments at each management group scope filtered to privileged administrator roles.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Management group assignments reach every child subscription; CAF allows them for platform teams but says they should be controlled via PIM.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Best practices for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-13",
+      "category": "iam",
+      "title": "Role assignment rights limited and constrained",
+      "assertion": "User Access Administrator and Role Based Access Control Administrator assignments are limited to the approved roster, and Role Based Access Control Administrator assignments carry a condition restricting which roles can be assigned.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of UAA and RBAC Administrator assignments with their conditions.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Both roles can assign themselves or others the Owner role unless constrained; add a condition that excludes privileged roles.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Delegate Azure access management to others",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/delegate-role-assignments-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-14",
+      "category": "iam",
+      "title": "Roles assigned to groups",
+      "assertion": "Azure role assignments are made to Entra security groups rather than to individual user accounts, except for documented break-glass or PIM-managed individual assignments.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of role assignments showing principalType, with user-type assignments listed as exceptions.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Group owners and members then control Azure access, so keep role-assignable or tightly owned groups for privileged roles.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Best practices for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-15",
+      "category": "iam",
+      "title": "No permanent active Owner or User Access Administrator",
+      "assertion": "No user holds a permanent active Owner or User Access Administrator assignment at subscription or management group scope; these roles are eligible in PIM for Azure resources.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "PIM Azure resources assignment export showing eligible versus active, and Defender status for 'Privileged roles should not have permanent access at the subscription and resource group level'.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. PIM requires Microsoft Entra ID P2 or Microsoft Entra ID Governance licences for users with eligible or time-bound assignments. Compensating control that would allow the setting to be relaxed: A documented emergency access account per M365-04 with sign-in alerting.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure Azure resource role settings in PIM",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Microsoft Entra ID Governance licensing fundamentals",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Reference table for all identity and access security recommendations in Microsoft Defender for cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-identity-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-16",
+      "category": "iam",
+      "title": "PIM activation requires MFA",
+      "assertion": "The PIM role settings for Owner and User Access Administrator on each subscription and management group have 'On activation, require multifactor authentication' (or an authentication context) selected.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of the PIM role setting for each privileged role showing the activation requirement.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Users might not be prompted if they already did MFA in the session; use an authentication context with phishing-resistant strength per M365-03. Needs Entra ID P2 or ID Governance.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure Azure resource role settings in PIM",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Microsoft Entra ID Governance licensing fundamentals",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-17",
+      "category": "iam",
+      "title": "PIM activation duration limited",
+      "assertion": "The PIM 'Activation maximum duration' for Owner and User Access Administrator is set to the firm's approved value, no more than a working day.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of the Activation maximum duration setting per privileged role.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. The value can be from 1 to 24 hours. The slider allows 1 to 24 hours; the firm's chosen maximum is a local decision, not a Microsoft figure. Needs Entra ID P2 or ID Governance.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure Azure resource role settings in PIM",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-18",
+      "category": "iam",
+      "title": "Owner activation requires approval",
+      "assertion": "The PIM role setting for Owner at subscription and management group scope has 'Require approval to activate' on with at least two named approvers.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of the approval setting and approver list for the Owner role.",
+      "review_gate": "Default: There are no default approvers. There are no default approvers, and with two approvers make sure one is reachable out of hours or activation stalls. Needs Entra ID P2 or ID Governance.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure Azure resource role settings in PIM",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-19",
+      "category": "iam",
+      "title": "Recurring access review of Azure roles",
+      "assertion": "A recurring PIM access review covers privileged Azure resource role assignments on each subscription, at least quarterly.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "The access review definition showing scope, frequency, and reviewers, and the last completed review results.",
+      "review_gate": "Default: Frequency options include One time, Weekly, Monthly, Quarterly, Annually, or Semi-annually. Creating reviews for Azure resources requires Owner or User Access Administrator on the resource; denied guests always lose access. Needs Entra ID P2 or ID Governance. Where eligible assignments expire, the review is also the renewal point.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create an access review of Azure resource and Microsoft Entra roles in PIM",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Microsoft Entra ID Governance licensing fundamentals",
+          "url": "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-20",
+      "category": "iam",
+      "title": "No custom subscription administrator roles",
+      "assertion": "No custom Azure role grants subscription-wide administrator rights; built-in roles are used, and any custom role is an approved, reviewed exception.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Policy compliance for 'Audit usage of custom RBAC roles' and an export of custom role definitions with their Actions and assignable scopes.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 1.23. Custom roles are shared across subscriptions in the tenant and treated as an exception needing review and threat modelling. Avoid wildcard (*) actions in any approved custom role, since they grant future actions automatically. Compensating control that would allow the setting to be relaxed: A documented exception with a reviewed definition and named owner.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure custom roles",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-21",
+      "category": "iam",
+      "title": "Blocked accounts removed from Azure roles",
+      "assertion": "No blocked or deprecated account holds an Owner, read, or write role assignment on any subscription or Azure resource.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud status for 'Deprecated accounts with owner permissions should be removed from subscriptions' and the blocked-account recommendations.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Removing a leaver's Azure roles is a separate step from disabling their Entra account; build it into the offboarding checklist. Compensating control that would allow the setting to be relaxed: None documented; remove the assignments.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Reference table for all identity and access security recommendations in Microsoft Defender for cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-identity-access",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-22",
+      "category": "iam",
+      "title": "No guest accounts with Owner on Azure",
+      "assertion": "No guest (external) account holds the Owner role on any subscription or Azure resource.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud status for 'Guest accounts with owner permissions on Azure resources should be removed'.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 1.5. Guest lifecycle and expiry are covered by M365-10; this control covers only their Azure role assignments. Guests with read or write roles should also have a named sponsor and end date. Compensating control that would allow the setting to be relaxed: A named, time-bound PIM eligible assignment for the guest, reviewed in AZ-19.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Reference table for all identity and access security recommendations in Microsoft Defender for cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-identity-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-23",
+      "category": "iam",
+      "title": "Service principals not given admin roles",
+      "assertion": "No service principal holds Owner, Contributor, or User Access Administrator at subscription or resource group scope unless it is a documented deployment identity with the narrowest workable scope.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud status for 'Service Principals should not be assigned with administrative roles at the subscription and resource group level', and a role export filtered to ServicePrincipal.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CI deployment identities often need Contributor; scope them to a resource group and use federated credentials (AZ-25). Compensating control that would allow the setting to be relaxed: Resource group scope, federated credentials, and a named owner for the deployment identity.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Reference table for all identity and access security recommendations in Microsoft Defender for cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-identity-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Best practices for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-24",
+      "category": "iam",
+      "title": "Managed identities for Azure-hosted workloads",
+      "assertion": "Azure-hosted workloads authenticate to Azure resources with managed identities, preferring user-assigned identities, instead of app registrations with stored credentials.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Inventory of workloads with their identity type and any app registration credentials in use.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. A system-assigned identity is deleted with its resource; a user-assigned identity outlives it and must be cleaned up separately.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Managed identities for Azure resources",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Security best practices for application properties",
+          "url": "https://learn.microsoft.com/en-us/entra/identity-platform/security-best-practices-for-app-registration",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secure your Azure App Service deployment",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Managed Identities",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-managed-identity",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-25",
+      "category": "iam",
+      "title": "Federated credentials for external CI",
+      "assertion": "GitHub Actions and other external CI authenticate to Azure through federated identity credentials on a user-assigned managed identity or app registration, with no client secret stored in the CI system.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "The federated credential list on the identity and the workflow file showing azure/login with OpenID Connect.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. The client ID, tenant ID, and subscription ID still go in GitHub secrets; they are identifiers, not credentials. Compensating control that would allow the setting to be relaxed: Where federation is unsupported, a certificate credential in Key Vault with a short lifetime.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Workload Identity Federation",
+          "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Authenticate to Azure from GitHub Actions by OpenID Connect",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure-openid-connect",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-26",
+      "category": "iam",
+      "title": "No client secrets on Azure app registrations",
+      "assertion": "App registrations with Azure role assignments use no password credentials (client secrets); where a managed identity or federation is impossible they use a certificate from Key Vault.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of app registrations with role assignments and their passwordCredentials and keyCredentials.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. App registration ownership and consent are covered by M365-12; this control covers the credential type used against Azure. Compensating control that would allow the setting to be relaxed: A certificate credential stored in Key Vault, or federation.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Security best practices for application properties",
+          "url": "https://learn.microsoft.com/en-us/entra/identity-platform/security-best-practices-for-app-registration",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-27",
+      "category": "iam",
+      "title": "Conditional Access requires MFA for Azure management",
+      "assertion": "An enabled Conditional Access policy targets Windows Azure Service Management API for all users, excluding only the emergency access group, and requires multifactor authentication.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of the Conditional Access policy JSON and a sign-in log entry for Azure CLI showing the policy applied.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Test in report-only mode first; the suite covers Azure portal, PowerShell, and CLI. Authentication strength design is in M365-02 and M365-03. Compensating control that would allow the setting to be relaxed: Only the emergency access group is excluded, with sign-in alerting per M365-04.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Require MFA for Azure management with Conditional Access",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-28",
+      "category": "iam",
+      "title": "Mandatory Azure MFA not postponed",
+      "assertion": "Microsoft's mandatory MFA enforcement for Azure is active for both phases, and no postponement of Phase 1 or Phase 2 is set for the tenant.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of the mandatory MFA enforcement page (aka.ms/managemfaforazure) showing enforcement dates.",
+      "review_gate": "Default: Phase 1 from October 2024 for the Azure portal and admin centres; Phase 2 from October 1, 2025 for Azure CLI, PowerShell, mobile app, IaC tools and REST API create, update, or delete operations. Phase 2 could be postponed until July 1st, 2026; a postponement or lift request is a Global Administrator action and should be recorded.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Plan for mandatory Microsoft Entra multifactor authentication (MFA)",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-29",
+      "category": "iam",
+      "title": "User accounts not used as Azure service accounts",
+      "assertion": "No user account is used as a service account for Azure automation; scripts use managed identities or service principals.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Sign-in log query for non-interactive Azure CLI or PowerShell sign-ins by user accounts, with the resulting inventory.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Workload identities are not affected by mandatory MFA, but user accounts used by scripts will fail once enforcement applies. Compensating control that would allow the setting to be relaxed: Migrate to a managed identity or service principal with federated or certificate credentials.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Plan for mandatory Microsoft Entra multifactor authentication (MFA)",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Require MFA for Azure management with Conditional Access",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-30",
+      "category": "iam",
+      "title": "Emergency access on the Azure side",
+      "assertion": "Emergency access accounts (designed per M365-04) hold no standing Azure role, reach Azure only through Global Administrator elevation, use a passkey or certificate for MFA, and every sign-in alerts.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "The break-glass runbook, the Azure role assignment export showing no standing roles for the accounts, and the sign-in alert rule.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Mandatory Azure MFA applies to emergency access accounts too, so a password alone will not work; test quarterly. Microsoft's emergency access page names no Azure RBAC role for these accounts; reaching Azure only through elevation is this baseline's own design, not a Microsoft instruction.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage emergency access admin accounts",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Plan for mandatory Microsoft Entra multifactor authentication (MFA)",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Elevate access to manage all Azure subscriptions and management groups",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-31",
+      "category": "policy",
+      "title": "Microsoft cloud security benchmark assigned",
+      "assertion": "The Microsoft cloud security benchmark (MCSB) standard is assigned and enabled in Defender for Cloud on every subscription, so its recommendations are evaluated everywhere.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of Defender for Cloud > Environment settings > Security policies showing MCSB enabled for each subscription.",
+      "review_gate": "Default: MCSB is enabled by default for Azure when Defender for Cloud is enabled; the scope of the default assignment is not stated on the pages reviewed. Assigning at a management group makes every child subscription inherit the assignment; confirm new subscriptions are placed under that group. The standard itself is free with Foundational CSPM.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Regulatory compliance in Defender for Cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance-standards",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Security policies in Microsoft Defender for Cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/security-policy-concept",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Overview of Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-32",
+      "category": "policy",
+      "title": "Allowed locations policy",
+      "assertion": "The built-in \"Allowed locations\" policy is assigned with the Deny effect at the top management group or every subscription, listing only the regions the firm uses.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Policy assignment export (az policy assignment list) showing Allowed locations, its effect, the allowed region list, and scope.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. The definition supports Audit, Deny, and Disabled. The policy excludes resource groups and resources that use the global region; the separate \"Allowed locations for resource groups\" policy covers resource group metadata. Run it with Audit first to find existing resources outside the list, and record the switch to Deny after reviewing the compliance results, since Deny returns 403 on create and update.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "List of built-in policy definitions",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Overview of Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure Policy definitions deny effect",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deny",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-33",
+      "category": "policy",
+      "title": "Required tags on resource groups",
+      "assertion": "Every resource group carries the firm's required ownership tag, enforced by the built-in \"Require a tag on resource groups\" (deny) or \"Add a tag to resource groups\" (modify) policy.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Policy assignment export for the tag policy plus a compliance report listing non-compliant resource groups.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Deny blocks untagged resource group creation, including by automation; modify adds a value and existing groups need a remediation task. Pick one per tag. Resources don't inherit resource group or subscription tags, and tag values are case sensitive.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "List of built-in policy definitions",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Tutorial: Manage tag governance with Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/govern-tags",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Define your tagging strategy",
+          "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-tagging",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Use tags to organize your Azure resources and management hierarchy",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-34",
+      "category": "policy",
+      "title": "Policy exemptions expire and have an owner",
+      "assertion": "Every Azure Policy exemption has an expiresOn date, an exemptionCategory of Waiver or Mitigated, and a description naming the owner and reason.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Export of policy exemptions (az policy exemption list) showing expiresOn, exemptionCategory, and description for each.",
+      "review_gate": "Default: expiresOn is optional and not set unless you set it. expiresOn is optional, so exemptions without it last indefinitely; expired exemptions are kept for record but no longer honored.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Details of the policy exemption structure",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/exemption-structure",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-35",
+      "category": "detection",
+      "title": "Foundational CSPM enabled on every subscription",
+      "assertion": "Foundational CSPM (free) is enabled on every Azure subscription, including subscriptions created after October 27, 2026 when it becomes opt-in.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings export showing Foundational CSPM status per subscription.",
+      "review_gate": "Default: Enabled by default for existing subscriptions; the page states that starting October 27, 2026 Foundational CSPM moves to an opt-in model and new Azure subscriptions must opt in. Add Foundational CSPM enablement to the subscription creation checklist, because subscriptions created from October 27, 2026 must opt in. The plan is free.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "What is Cloud Security Posture Management (CSPM)",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-cloud-security-posture-management",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Microsoft Defender for Cloud Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-36",
+      "category": "detection",
+      "title": "Secure score reviewed and recommendations owned",
+      "assertion": "The Defender for Cloud secure score is reviewed on a set schedule, and each open MCSB recommendation has a named owner and target date.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Secure score history screenshot plus a recommendation export showing owner and due date columns.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Only built-in MCSB recommendations affect the score and preview recommendations are excluded, so also review preview items. Assigning owners through governance rules may need Defender CSPM; the owner field can be recorded manually.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Cloud Secure Score in Microsoft Defender for Cloud",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-37",
+      "category": "detection",
+      "title": "Defender for Servers plan selected",
+      "assertion": "Each subscription with virtual machines has Defender for Servers enabled, with the choice of Plan 1 or Plan 2 recorded.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.1. Paid plan. Plan 1 focuses on Defender for Endpoint EDR; Plan 2 adds features such as agentless scanning and malware scanning; Plan 2 cannot be enabled per resource.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Select a Defender for Servers plan",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers-select-plan",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-38",
+      "category": "detection",
+      "title": "Defender for Storage enabled",
+      "assertion": "Defender for Storage is enabled on every subscription holding storage accounts with firm or client data.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.7. Paid plan, billed per the Defender for Cloud pricing page; classic Defender for Storage should be migrated to the new plan to get current features.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "What is Microsoft Defender for Storage",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-39",
+      "category": "detection",
+      "title": "Defender for Key Vault enabled",
+      "assertion": "Defender for Key Vault is enabled on every subscription that contains key vaults.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.10. Paid plan, billed as shown on the Defender for Cloud pricing page.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Microsoft Defender for Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-key-vault-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-40",
+      "category": "detection",
+      "title": "Defender for Resource Manager enabled",
+      "assertion": "Defender for Resource Manager is enabled on every subscription.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.12. Paid plan, billed as shown on the Defender for Cloud pricing page.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Microsoft Defender for Resource Manager",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-resource-manager-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-41",
+      "category": "detection",
+      "title": "Defender for App Service enabled where used",
+      "assertion": "Defender for App Service is enabled on every subscription that runs App Service plans.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.2. Paid plan, billed by total compute instances across App Service plans; skip subscriptions with no App Service.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Microsoft Defender for App Service",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-42",
+      "category": "detection",
+      "title": "Defender for Azure SQL Databases enabled where used",
+      "assertion": "Defender for Azure SQL Databases (part of Defender for Databases) is enabled on every subscription that hosts Azure SQL.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.4. Paid plan, billed per the Defender for Cloud pricing page; enabling it protects all supported resources in the subscription, including future ones.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Benefits and Features of Defender for Azure SQL Databases",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-sql-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-43",
+      "category": "detection",
+      "title": "Defender for Containers enabled where containers are used",
+      "assertion": "Where the firm uses containers, Defender for Containers is enabled, with its sensor auto provisioning on, on every subscription that runs Kubernetes clusters or container registries.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud > Environment settings > Defender plans screenshot or az security pricing list output per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.8. Paid plan per the Defender for Cloud pricing page; only relevant if the firm runs containers. CIS 2.1.17 (auto provisioning of Defender for Containers components) also applies but is not cited separately.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Introduction to Microsoft Defender for Containers",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Microsoft Defender for Cloud Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-44",
+      "category": "detection",
+      "title": "Security contact email configured",
+      "assertion": "Defender for Cloud email notifications on every subscription list at least one monitored security contact address in addition to role-based recipients.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Environment settings > Email notifications screenshot, or the securityContacts REST output, per subscription.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.19. Use a shared, monitored mailbox rather than one person. Requires Security Admin, Subscription Owner, or Contributor to change.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure email notifications for alerts and attack paths",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/configure-email-notifications",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-45",
+      "category": "detection",
+      "title": "Alert notification severity and owner role",
+      "assertion": "Defender for Cloud notifies about alerts with severity High or higher, and the Owner role is selected as a recipient, on every subscription.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Email notifications screenshot or securityContacts output showing minimalSeverity and roles.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 2.1.20. The documented severity options are High, Medium, and Low; the API example uses Medium. Email volume is capped per address per day.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure email notifications for alerts and attack paths",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/configure-email-notifications",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-46",
+      "category": "logging",
+      "title": "Activity Log exported to Log Analytics",
+      "assertion": "Every subscription has a diagnostic setting sending Activity Log categories Administrative, Security, Service Health, Alert, Recommendation, Policy, Autoscale, and Resource Health to the central Log Analytics workspace.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor diagnostic-settings subscription list output per subscription showing the workspace and enabled categories.",
+      "review_gate": "Default: Activity Log retained 90 days in the platform; no export unless a diagnostic setting is created. CIS: CIS Azure 2.0.0 5.1.2. Disable legacy log profiles when creating the setting; a management group setting plus subscription settings produces duplicates.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Activity Log in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/activity-log",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure Activity Log event schema",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/activity-log-schema",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-47",
+      "category": "logging",
+      "title": "Activity Log retention beyond 90 days",
+      "assertion": "The AzureActivity table in the central workspace keeps activity data for a documented period longer than 90 days, set to the firm's investigation and regulatory needs.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Workspace table retention settings for AzureActivity (analytics and total retention).",
+      "review_gate": "Default: AzureActivity keeps at least 90 days at no charge. Activity log ingestion is free and 90 days retention is free; retention past 90 days is charged, up to 12 years.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Activity Log in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/activity-log",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Manage Data Retention in a Log Analytics Workspace",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-48",
+      "category": "logging",
+      "title": "Workspace retention set deliberately",
+      "assertion": "The central Log Analytics workspace has its default analytics retention and each security table's total (long-term) retention set to documented values rather than the 30-day default.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor log-analytics workspace show (retentionInDays) and table list output showing retention and totalRetentionInDays.",
+      "review_gate": "Default: Default analytics retention is 30 days for tables (90 days for some such as AzureActivity). Analytics retention can be extended to two years and total retention to 12 years; retention beyond the included 31 days and long-term retention are charged.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Manage Data Retention in a Log Analytics Workspace",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure Monitor Logs Cost Calculations And Options",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-49",
+      "category": "logging",
+      "title": "Key Vault AuditEvent logging",
+      "assertion": "Every key vault has a diagnostic setting sending the AuditEvent category to the central Log Analytics workspace.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor diagnostic-settings list output for each key vault showing AuditEvent enabled and the destination.",
+      "review_gate": "Default: Resource logs aren't collected by default. CIS: CIS Azure 2.0.0 5.1.5. Resource logs are not collected by default; ingestion into Log Analytics is billed per GB.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure Key Vault logging",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/logging",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Diagnostic Settings in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-50",
+      "category": "logging",
+      "title": "Resource logs for all supporting services",
+      "assertion": "Every deployed resource type that supports resource logs has a diagnostic setting routing at least the audit category group to the central workspace.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Policy compliance report for resource-log policies, or a diagnostic-settings inventory per resource.",
+      "review_gate": "Default: Resource logs aren't collected by default. CIS: CIS Azure 2.0.0 5.4. Each resource needs its own setting (up to five per resource), and settings must be recreated if a resource is moved or re-created. Ingestion is billed per GB.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Diagnostic Settings in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-51",
+      "category": "logging",
+      "title": "VNet flow logs replace NSG flow logs",
+      "assertion": "Every virtual network has a virtual network flow log sending to a storage account in the same region, and no new NSG flow logs are relied on, since NSG flow logs retire on September 30, 2027.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az network watcher flow-log list output per region showing VNet flow logs, target, and retention.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. NSG flow logs retire on September 30, 2027 and no longer support new creation. CIS: CIS Azure 2.0.0 5.1.6, which is written for NSG flow logs; VNet flow logs are the documented replacement. VNet flow logs are charged per GB after a 5 GB per month free tier per subscription; storage is charged separately. After retirement Azure deletes NSG flow log resources, so do not build new monitoring on them.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "NSG Flow Logs Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Virtual Network Flow Logs",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-52",
+      "category": "logging",
+      "title": "Alert on create policy assignment",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Authorization/policyAssignments/write and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.1. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Management and governance",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/management-and-governance",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-53",
+      "category": "logging",
+      "title": "Alert on delete policy assignment",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Authorization/policyAssignments/delete and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.2. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Management and governance",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/management-and-governance",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-54",
+      "category": "logging",
+      "title": "Alert on create or update NSG",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Network/networkSecurityGroups/write and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.3. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Networking",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/networking",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-55",
+      "category": "logging",
+      "title": "Alert on delete NSG",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Network/networkSecurityGroups/delete and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.4. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Networking",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/networking",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-56",
+      "category": "logging",
+      "title": "Alert on create or update security solution",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Security/securitySolutions/write and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.5. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Security",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-57",
+      "category": "logging",
+      "title": "Alert on delete security solution",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Security/securitySolutions/delete and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.6. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Security",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-58",
+      "category": "logging",
+      "title": "Alert on create or update SQL firewall rule where Azure SQL is used",
+      "assertion": "Where Azure SQL is used, an activity log alert rule on every subscription that hosts Azure SQL fires on the operation Microsoft.Sql/servers/firewallRules/write and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.7. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Databases",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/databases",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-59",
+      "category": "logging",
+      "title": "Alert on delete SQL firewall rule where Azure SQL is used",
+      "assertion": "Where Azure SQL is used, an activity log alert rule on every subscription that hosts Azure SQL fires on the operation Microsoft.Sql/servers/firewallRules/delete and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 5.2.8. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Databases",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/databases",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-60",
+      "category": "logging",
+      "title": "Alert on role assignment write",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Authorization/roleAssignments/write and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Management and governance",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/management-and-governance",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-61",
+      "category": "logging",
+      "title": "Alert on role assignment delete",
+      "assertion": "An activity log alert rule on every subscription fires on the operation Microsoft.Authorization/roleAssignments/delete and sends to the firm's monitored action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az monitor activity-log alert list output showing the rule, operation name, scope, and action group.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Activity log alerts are stateless and fire on each matching event; make sure the action group reaches a monitored channel.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Types of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure permissions for Management and governance",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/management-and-governance",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-62",
+      "category": "logging",
+      "title": "Action groups reach a monitored channel",
+      "assertion": "Every alert rule uses an action group that emails a monitored shared mailbox or the Owner role (Email Azure Resource Manager role) and is tested after each change.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Action group export showing receivers, plus a test notification record.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Emailing a single person fails when that person is away; use a shared mailbox or role-based email.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create and manage action groups in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-63",
+      "category": "data",
+      "title": "Key Vault purge protection enabled",
+      "assertion": "Every key vault has purge protection enabled, so deleted vaults and objects cannot be purged before the retention period ends.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each vault's enablePurgeProtection property, or the Azure Policy compliance result for 'Key vaults should have deletion protection enabled'.",
+      "review_gate": "Default: Not enabled by default; optional, and requires soft delete. CIS: CIS Azure 2.0.0 8.5. Purge protection cannot be disabled once on (not even by Microsoft), so a vault name stays reserved until retention elapses; services such as Storage customer-managed keys require it. Compensating control that would allow the setting to be relaxed: An independent, tested backup of every key, secret, and certificate that cannot be recreated (Key Vault native backup) held outside the vault's subscription.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure Key Vault soft-delete",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure Key Vault recovery overview",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-64",
+      "category": "data",
+      "title": "Key Vault uses the Azure RBAC permission model",
+      "assertion": "Every key vault uses the Azure RBAC permission model for data plane access rather than vault access policies.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each vault's enableRbacAuthorization property, or the Azure Policy result for 'Azure Key Vault should use RBAC permission model'.",
+      "review_gate": "Default: Azure RBAC is the default access control model for new key vaults starting with API version 2026-02-01, consistent with the Azure portal; older vaults may still use access policies. CIS: CIS Azure 2.0.0 8.6. Switching an existing vault from access policies to RBAC replaces its access rules, so map existing access policies to role assignments first and test applications before switching. Compensating control that would allow the setting to be relaxed: A documented quarterly review of every access policy entry on the vault, kept with the access review evidence.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure role-based access control (Azure RBAC) vs. access policies",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-access-policy",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-65",
+      "category": "network",
+      "title": "Key Vault public network access restricted",
+      "assertion": "Every key vault has public network access disabled with a private endpoint, or the firewall default action set to Deny with only named networks allowed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot or export of each vault's Networking blade showing publicNetworkAccess and networkAcls.defaultAction, plus any private endpoint connections.",
+      "review_gate": "Default: The Key Vault firewall is disabled by default for a new vault, so all applications and Azure services can reach it (authentication still applies). CIS: CIS Azure 2.0.0 8.7. Services not on the trusted services list are blocked once the firewall is on, whether or not the trusted services bypass is enabled; confirm every application's network path before switching. Compensating control that would allow the setting to be relaxed: Conditional Access for Azure management plus RBAC scoped to named groups, with Key Vault diagnostic logs reviewed for unexpected source IPs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure network security for Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/network-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secure your Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/secure-key-vault",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-66",
+      "category": "data",
+      "title": "Key Vault keys have an expiration date",
+      "assertion": "Every key in every key vault has an expiration date set.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Policy compliance result for 'Key Vault keys should have an expiration date' across all subscriptions.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 8.1 and 8.2. Setting an expiration date on a key in use requires a rotation plan so dependent services are not broken when the key expires.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Configure cryptographic key auto-rotation in Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-67",
+      "category": "data",
+      "title": "Key Vault secrets have an expiration date",
+      "assertion": "Every secret in every key vault has an expiration date set.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Policy compliance result for 'Key Vault secrets should have an expiration date' across all subscriptions.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 8.3 and 8.4. Expiry does not rotate the secret itself; assign an owner who renews the underlying credential before the date passes.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-68",
+      "category": "data",
+      "title": "Key rotation policy on Key Vault keys",
+      "assertion": "Every customer-managed key in Key Vault has a rotation policy with an expiry time and an automatic rotation or near-expiry notification.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Output of az keyvault key rotation-policy show for each key, showing lifetimeActions and expiryTime.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Managing rotation needs the Key Vault Crypto Officer role (RBAC model); confirm consuming services pick up new key versions automatically.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure cryptographic key auto-rotation in Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secure your Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/secure-key-vault",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-69",
+      "category": "data",
+      "title": "Key Vault data roles scoped to the vault",
+      "assertion": "Key Vault Administrator and Key Vault Secrets roles are assigned to named groups at the individual vault scope, not at subscription or resource group scope.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native",
+        "manual"
+      ],
+      "evidence_to_collect": "Export of role assignments (az role assignment list) filtered to Key Vault built-in roles, showing assignee and scope.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Assignments on individual secrets are not recommended except for narrow cases; use one vault per application per environment instead. Privileged assignment approval sits with PIM for Azure resource roles.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secure your Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/secure-key-vault",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-70",
+      "category": "data",
+      "title": "Anonymous blob access disallowed",
+      "assertion": "Every storage account has AllowBlobPublicAccess set to false, so no container can be configured for anonymous read access.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Resource Graph or az storage account list output showing allowBlobPublicAccess for every account, or the policy result for 'Storage account public access should be disallowed'.",
+      "review_gate": "Default: Anonymous access is prohibited by default for Azure Resource Manager storage accounts; containers default to Private. CIS: CIS Azure 2.0.0 3.7. Check storage logs for anonymous requests before disallowing, since any public website or shared link relying on anonymous access will stop working. Compensating control that would allow the setting to be relaxed: A dedicated storage account holding only intentionally public content, tagged and reviewed, with no other data in it.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Remediate anonymous read access to blob data (Azure Resource Manager deployments)",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-71",
+      "category": "data",
+      "title": "Shared Key authorization disallowed",
+      "assertion": "Every storage account has AllowSharedKeyAccess set to false, so requests must use Microsoft Entra authorization.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az storage account list output showing allowSharedKeyAccess for every account (null counts as permitted).",
+      "review_gate": "Default: Not set by default (null); Shared Key requests are permitted when the value is null or true. The Azure portal uses Shared Key for Azure file shares by default and Cloud Shell file shares become inaccessible, so test Azure Files and tools first; if Shared Key must stay, apply the SAS expiration policy (AZ-72). Compensating control that would allow the setting to be relaxed: A SAS expiration policy with action Block, a key expiration policy with keys rotated on schedule, and keys stored only in Key Vault.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Prevent authorization with Shared Key",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Security Recommendations for Blob Storage",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-72",
+      "category": "data",
+      "title": "SAS expiration policy where Shared Key remains",
+      "assertion": "Every storage account that still permits Shared Key has a SAS expiration policy with a defined maximum interval and the Block action.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each account's sasPolicy (sasExpirationPeriod and expirationAction).",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. When a policy is configured, its default expiration action is Log, which allows out-of-policy requests. Start with the Log action and review SasExpiryStatus in diagnostic logs before switching to Block, which denies out-of-policy SAS requests.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Configure an expiration policy for shared access signatures (SAS)",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/sas-expiration-policy",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-73",
+      "category": "network",
+      "title": "Secure transfer required on storage accounts",
+      "assertion": "Every storage account has Secure transfer required (supportsHttpsTrafficOnly) enabled, so HTTP requests are rejected.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az storage account list output showing enableHttpsTrafficOnly for every account.",
+      "review_gate": "Default: Enabled by default when you create a storage account. CIS: CIS Azure 2.0.0 3.1. Any client or integration that still calls the account over HTTP will be rejected; check before enabling on an existing account.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Require secure transfer to ensure secure connections",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-74",
+      "category": "network",
+      "title": "Minimum TLS 1.2 on storage accounts",
+      "assertion": "Every storage account has MinimumTlsVersion set to TLS1_2 or higher.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az storage account list output showing minimumTlsVersion for every account (a missing value counts as not set).",
+      "review_gate": "Default: Set to TLS 1.2 by default when created in the Azure portal; not set by default when created with PowerShell, Azure CLI, or an ARM template. CIS: CIS Azure 2.0.0 3.15. Check storage logs for clients still using TLS 1.0 or 1.1 before enforcing, since their requests will fail.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Enforce a Minimum Required Version of Transport Layer Security (TLS)",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-75",
+      "category": "network",
+      "title": "Storage firewall default action Deny",
+      "assertion": "Every storage account holding firm data has its network rule default action set to Deny, with only named virtual networks, IP ranges, or private endpoints allowed.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each account's networkRuleSet.defaultAction and its virtual network and IP rules.",
+      "review_gate": "Default: Storage accounts allow connections from any network by default. CIS: CIS Azure 2.0.0 3.8. Setting Deny blocks every client not on an allow rule, including staff working from home, so add the needed networks or private endpoints first. Compensating control that would allow the setting to be relaxed: AllowSharedKeyAccess false plus Conditional Access for Azure management and storage diagnostic logs reviewed for unexpected source IPs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure Storage firewall rules and network access",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-76",
+      "category": "recovery",
+      "title": "Blob soft delete enabled with retention",
+      "assertion": "Every storage account holding blob data has blob soft delete enabled with a recorded retention period of at least 7 days.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each account's blob service deleteRetentionPolicy (enabled and days).",
+      "review_gate": "Default: Enabled by default when a storage account is created in the Azure portal; retention can be 1 to 365 days. Soft-deleted data is billed at the same rate as active data; choose a retention that balances recovery need and cost.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Soft Delete for Blobs to Recover Data",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Enable soft delete for blobs",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-enable",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-77",
+      "category": "recovery",
+      "title": "Container soft delete enabled with retention",
+      "assertion": "Every storage account holding blob data has container soft delete enabled with a retention period of at least 7 days.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each account's blob service containerDeleteRetentionPolicy (enabled and days).",
+      "review_gate": "Default: When enabled, the default retention is seven days (configurable 1 to 365); whether it is on for new accounts is not stated on the page reviewed. Container soft delete does not protect individual blobs deleted inside a live container; pair it with blob soft delete.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Soft delete for containers",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Security Recommendations for Blob Storage",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-78",
+      "category": "recovery",
+      "title": "Blob versioning enabled",
+      "assertion": "Every storage account holding important blob data has blob versioning enabled, with a lifecycle rule that deletes old versions.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of each account's blob service isVersioningEnabled and its lifecycle management policy.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Every write creates a new version, which can add cost and slow listing; Microsoft recommends fewer than 1000 versions per blob.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Blob Versioning in Azure Storage",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-79",
+      "category": "data",
+      "title": "Cross-tenant object replication disallowed",
+      "assertion": "Every storage account has AllowCrossTenantReplication set to false.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az storage account list output showing allowCrossTenantReplication for every account, paying attention to accounts created before 15 December 2023.",
+      "review_gate": "Default: Defaults to false for accounts created after 15 December 2023; not set for accounts created before that date. Check for existing object replication policies to other tenants before changing the setting. Compensating control that would allow the setting to be relaxed: A documented, approved replication policy to a named partner tenant, reviewed at each access review.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Prevent object replication across Microsoft Entra tenants",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-prevent-cross-tenant-policies",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-80",
+      "category": "network",
+      "title": "No NSG rule allows RDP from the internet",
+      "assertion": "No network security group rule allows inbound TCP 3389 from Any, Internet, or 0.0.0.0/0.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of all NSG rules (Azure Resource Graph) filtered for destination port 3389 and a source of Any, Internet, or 0.0.0.0/0, expected to return none.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 6.1. Before removing a rule, confirm how administrators will reach the VM (Azure Bastion or just-in-time access). Compensating control that would allow the setting to be relaxed: Just-in-time VM access in Defender for Servers Plan 2, which opens the port only for an approved source IP and time window.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure network security best practices",
+          "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/network-best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Reference table for all networking security recommendations",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-networking",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-81",
+      "category": "network",
+      "title": "No NSG rule allows SSH from the internet",
+      "assertion": "No network security group rule allows inbound TCP 22 from Any, Internet, or 0.0.0.0/0.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Export of all NSG rules (Azure Resource Graph) filtered for destination port 22 and a source of Any, Internet, or 0.0.0.0/0, expected to return none.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 6.2. Before removing a rule, confirm how administrators will reach the VM (Azure Bastion or just-in-time access). Compensating control that would allow the setting to be relaxed: Just-in-time VM access in Defender for Servers Plan 2, which opens the port only for an approved source IP and time window.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Azure network security best practices",
+          "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/network-best-practices",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Reference table for all networking security recommendations",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-networking",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-82",
+      "category": "network",
+      "title": "Just-in-time access for VM management ports",
+      "assertion": "Every VM that needs a management port reachable from outside Azure has just-in-time VM access configured for that port instead of a standing allow rule.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Defender for Cloud just-in-time VM access page showing configured VMs, ports, and recent access requests.",
+      "review_gate": "Default: Not configured unless Defender for Servers Plan 2 is enabled and JIT is set up per VM. Just-in-time access requires Microsoft Defender for Servers Plan 2 (paid); existing NSG rules for the same ports take priority over the deny rules it creates.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Understand Just-in-time Virtual Machine Access",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Reference table for all networking security recommendations",
+          "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-networking",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-83",
+      "category": "network",
+      "title": "Azure Bastion for VM remote access",
+      "assertion": "Administrators reach VMs over RDP or SSH through Azure Bastion, and VMs used this way have no public IP address.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "List of Bastion hosts and their SKU, plus a list of VM network interfaces with any public IP association (expected none for Bastion-managed VMs).",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Bastion is a paid service with Developer, Basic, Standard, and Premium SKUs that differ in features (session recording is Premium only); choose the SKU before deployment. Compensating control that would allow the setting to be relaxed: An NSG that denies all inbound internet traffic except named application ports, reviewed with the NSG rule export.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "What is Azure Bastion?",
+          "url": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure network security best practices",
+          "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/network-best-practices",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-84",
+      "category": "network",
+      "title": "Azure SQL firewall closed to the internet",
+      "assertion": "No Azure SQL logical server has a firewall rule covering all IP addresses, and 'Allow Azure services and resources to access this server' is off.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az sql server firewall-rule list output for every server, showing no 0.0.0.0 to 255.255.255.255 rule and no AllowAllWindowsAzureIps (0.0.0.0) rule.",
+      "review_gate": "Default: The portal sets 'Allow Azure services and resources to access this server' to No for a new server. CIS: Microsoft maps this to CIS Azure 2.0.0 4.1.2. Allowing Azure services admits connections from any Azure customer's resources, not only the firm's; replace it with private endpoints or specific rules before turning it off. Adding a private endpoint does not block public routing by default; set Deny public network access explicitly once clients use the private path. Compensating control that would allow the setting to be relaxed: Microsoft Entra-only authentication on the server plus SQL auditing reviewed for unexpected client IPs.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "IP Firewall Rules",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Azure Private Link",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/private-endpoint-overview?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-85",
+      "category": "compute",
+      "title": "Microsoft Entra-only authentication for Azure SQL",
+      "assertion": "Every Azure SQL logical server has Microsoft Entra-only authentication enabled, so SQL authentication is disabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az sql server ad-only-auth get output for every server.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. A Microsoft Entra admin must be set on the server before Entra-only authentication can be enabled. Enabling it blocks all SQL logins, including the server administrator; move applications to managed identities first. SQL Server Contributor cannot change this setting. Compensating control that would allow the setting to be relaxed: The SQL firewall closed to the internet with private endpoints only, plus auditing of failed logins.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Microsoft Entra-Only Authentication",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-azure-ad-only-authentication?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-86",
+      "category": "compute",
+      "title": "Azure SQL auditing enabled",
+      "assertion": "Every Azure SQL logical server has server-level auditing enabled, writing to a storage account, Log Analytics workspace, or Event Hubs.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az sql server audit-policy show output for every server, showing state Enabled and the destination.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 4.1.1. Server-level auditing with default settings can produce large volumes on busy servers; check destination cost.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Auditing",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-overview?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-87",
+      "category": "compute",
+      "title": "Azure SQL audit retention over 90 days",
+      "assertion": "Every Azure SQL server writing audit logs to storage has a retention of more than 90 days, or 0 (unlimited).",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az sql server audit-policy show output showing retentionDays for every server.",
+      "review_gate": "Default: 0 (unlimited retention) when writing to a storage account. CIS: CIS Azure 2.0.0 4.1.6. A changed retention applies only to logs written after the change.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Set up Auditing",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-88",
+      "category": "compute",
+      "title": "Transparent data encryption on Azure SQL",
+      "assertion": "Every Azure SQL database has transparent data encryption enabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Policy compliance result for 'Transparent Data Encryption on SQL databases should be enabled'.",
+      "review_gate": "Default: All newly created SQL databases are encrypted by default with service-managed TDE. CIS: CIS Azure 2.0.0 4.1.5. Exported BACPAC files are not encrypted by TDE; protect exports separately.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Transparent Data Encryption",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/transparent-data-encryption-tde-overview?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-89",
+      "category": "compute",
+      "title": "App Service HTTPS only",
+      "assertion": "Every App Service and Function app has HTTPS Only enabled, so HTTP requests redirect to HTTPS.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Azure Policy compliance result for 'App Service apps should only be accessible over HTTPS' or az webapp list output showing httpsOnly.",
+      "review_gate": "Default: HTTPS-only redirect is not on by default. CIS: CIS Azure 2.0.0 9.2. Check for clients or health probes that call the app over plain HTTP.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secure your Azure App Service deployment",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-90",
+      "category": "compute",
+      "title": "App Service FTP disabled",
+      "assertion": "Every App Service app has FTP state set to Disabled, or FTPS only where FTP deployment is still required.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az webapp config show output showing ftpsState for every app, or the policy result for 'App Service apps should require FTPS only'.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. CIS: CIS Azure 2.0.0 9.10. FTPS only requires minimum inbound TLS 1.2 or higher; disable both FTP and FTPS if the app deploys another way. Compensating control that would allow the setting to be relaxed: FTPS only with minimum TLS 1.2, used only by a named deployment process.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Deploy Content Using FTP/S",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-ftp",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secure your Azure App Service deployment",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Regulatory Compliance details for CIS Microsoft Azure Foundations Benchmark 2.0.0",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/cis-azure-2-0-0",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-91",
+      "category": "compute",
+      "title": "App Service basic auth publishing disabled",
+      "assertion": "Every App Service app has SCM and FTP basic authentication publishing credentials disabled.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot or export of each app's SCM Basic Auth Publishing Credentials and FTP Basic Auth Publishing Credentials settings.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. With basic authentication disabled, FTP/S deployment stops working; confirm deployments use Entra-based methods first. Compensating control that would allow the setting to be relaxed: FTPS only with minimum TLS 1.2 and publishing credentials reset after any staff change.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secure your Azure App Service deployment",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-security",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Deploy Content Using FTP/S",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-ftp",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-92",
+      "category": "recovery",
+      "title": "Delete locks on production resource groups",
+      "assertion": "Every production resource group has a CanNotDelete (Delete) management lock, and only the Owner roster can remove locks.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az lock list output for production resource groups.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Locks inherit to all resources, including storage accounts, and a Delete lock can make Azure Backup fail to clean up restore points; check backup resource groups before locking. A lock prevents deleting the resource, not deleting data inside it, and locks don't block subscription cancellation.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Lock your Azure resources to protect your infrastructure",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Security Recommendations for Blob Storage",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-93",
+      "category": "recovery",
+      "title": "Azure Backup protects VMs",
+      "assertion": "Every production VM is protected by Azure Backup in a Recovery Services vault with a documented backup policy.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Backup center or Recovery Services vault export listing protected VMs, their policy, and last successful backup time.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Azure Backup is a paid service charged for protected instances and storage; check pricing before enabling.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "About Azure VM backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "What is Azure Backup?",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-94",
+      "category": "recovery",
+      "title": "Recovery Services vault soft delete retention",
+      "assertion": "Every Recovery Services and Backup vault has soft delete on, with a recorded retention of at least 14 days.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of each vault's Properties, Security settings, showing soft delete state and retention days.",
+      "review_gate": "Default: Soft delete is enforced by default (secure by default) with 14 days retention, configurable from 14 to 180 days; the state can no longer be modified from the portal. Retention beyond 14 days is charged; the default enforcement is in preview in some regions.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Secure by Default with Soft Delete for Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/secure-by-default",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-95",
+      "category": "recovery",
+      "title": "Immutable vault enabled and locked",
+      "assertion": "Every Recovery Services vault holding production backups has immutability enabled and locked.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of each vault's Properties, Immutable vault setting showing 'Enabled and locked'.",
+      "review_gate": "Default: Not stated on the pages reviewed; the setting has three states (Disabled, Enabled, Enabled and locked), and enabled but unlocked can be disabled. Locking makes the setting irreversible and blocks operations such as reducing retention, so confirm backup policies first.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Concept of Immutable Vault for Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-immutable-vault-concept",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-96",
+      "category": "recovery",
+      "title": "Backup restore test recorded",
+      "assertion": "A restore of at least one VM or database backup is performed and recorded at least once a year, including date, item, and result.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "manual"
+      ],
+      "evidence_to_collect": "The restore test record (ticket or document) with date, item restored, target, and outcome.",
+      "review_gate": "Default: None; this is a procedure, not a setting. Restore to an isolated location so the test does not overwrite production; Cross Region Restore can be used for drills.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Create and Configure Recovery Services Vaults",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+          "reviewed_on": "2026-09-29"
+        },
+        {
+          "title": "Secure your Azure Key Vault",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/secure-key-vault",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-97",
+      "category": "recovery",
+      "title": "Azure SQL point-in-time restore retention",
+      "assertion": "Every production Azure SQL database has point-in-time restore retention set deliberately (7 to 35 days) and backup storage redundancy recorded.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "az sql db str-policy show output (retentionDays) and each database's backup storage redundancy.",
+      "review_gate": "Default: 7 days by default, configurable 1 to 35 days; backups use geo-redundant storage by default. Basic tier databases allow only 1 to 7 days; changing redundancy applies only to new backups.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Automatic, Geo-Redundant Backups",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/automated-backups-overview?view=azuresql",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-98",
+      "category": "cost",
+      "title": "Budget with actual and forecast alerts per subscription",
+      "assertion": "Every subscription has a Cost Management budget with alerts on actual and forecasted cost sent to a monitored mailbox or action group.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot or export of each subscription's budgets, thresholds, and alert recipients or action groups.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Budgets only notify; resources aren't affected and consumption isn't stopped. Budgets are evaluated about every 24 hours, so alerts can lag.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Tutorial",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "AZ-99",
+      "category": "cost",
+      "title": "Cost anomaly alert per subscription",
+      "assertion": "Every subscription has a Cost Management anomaly alert that emails a named owner when an anomaly is detected.",
+      "target": true,
+      "value_type": "boolean",
+      "implementation_modes": [
+        "native"
+      ],
+      "evidence_to_collect": "Screenshot of each subscription's Cost Management alerts list showing an anomaly alert and its recipients.",
+      "review_gate": "Default: Not stated on the pages reviewed; verify in the console. Creating an anomaly alert requires the Cost Management Contributor role or higher; anomaly alerts are not available for Azure Government.",
+      "max_evidence_age_days": 90,
+      "sources": [
+        {
+          "title": "Identify anomalies and unexpected changes in cost",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/analyze-unexpected-charges",
+          "reviewed_on": "2026-09-29"
+        }
+      ]
+    }
+  ]
+}
